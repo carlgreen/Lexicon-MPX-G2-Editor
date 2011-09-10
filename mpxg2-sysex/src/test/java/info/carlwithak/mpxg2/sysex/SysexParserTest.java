@@ -113,6 +113,14 @@ public class SysexParserTest {
 
         assertEquals("I=1=2=G=E=C=D=R=O", program.getRouting());
 
+        assertEquals(0, program.getEffect1Algorithm());
+        assertEquals(0, program.getEffect2Algorithm());
+        assertEquals(0, program.getChorusAlgorithm());
+        assertEquals(0, program.getDelayAlgorithm());
+        assertEquals(0, program.getReverbAlgorithm());
+        assertEquals(0, program.getEqAlgorithm());
+        assertEquals(0, program.getGainAlgorithm());
+
         assertEquals("Clean Slate", program.getProgramName());
     }
 }

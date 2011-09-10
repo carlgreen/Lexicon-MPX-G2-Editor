@@ -34,6 +34,14 @@ public class Program {
     private boolean isRock;
 
     private String routing;
+    private int effect1Algorithm;
+    private int effect2Algorithm;
+    private int chorusAlgorithm;
+    private int delayAlgorithm;
+    private int reverbAlgorithm;
+    private int eqAlgorithm;
+    private int gainAlgorithm;
+
     private String programName;
 
     boolean isChorus() {
@@ -226,6 +234,62 @@ public class Program {
 
     void setRouting(final String routing) {
         this.routing = routing;
+    }
+
+    int getEffect1Algorithm() {
+        return effect1Algorithm;
+    }
+
+    void setEffect1Algorithm(final int effect1Algorithm) {
+        this.effect1Algorithm = effect1Algorithm;
+    }
+
+    int getEffect2Algorithm() {
+        return effect2Algorithm;
+    }
+
+    void setEffect2Algorithm(final int effect2Algorithm) {
+        this.effect2Algorithm = effect2Algorithm;
+    }
+
+    int getChorusAlgorithm() {
+        return chorusAlgorithm;
+    }
+
+    void setChorusAlgorithm(final int chorusAlgorithm) {
+        this.chorusAlgorithm = chorusAlgorithm;
+    }
+
+    int getDelayAlgorithm() {
+        return delayAlgorithm;
+    }
+
+    void setDelayAlgorithm(final int delayAlgorithm) {
+        this.delayAlgorithm = delayAlgorithm;
+    }
+
+    int getReverbAlgorithm() {
+        return reverbAlgorithm;
+    }
+
+    void setReverbAlgorithm(final int reverbAlgorithm) {
+        this.reverbAlgorithm = reverbAlgorithm;
+    }
+
+    int getEqAlgorithm() {
+        return eqAlgorithm;
+    }
+
+    void setEqAlgorithm(final int eqAlgorithm) {
+        this.eqAlgorithm = eqAlgorithm;
+    }
+
+    int getGainAlgorithm() {
+        return gainAlgorithm;
+    }
+
+    void setGainAlgorithm(final int gainAlgorithm) {
+        this.gainAlgorithm = gainAlgorithm;
     }
 
     String getProgramName() {
