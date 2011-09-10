@@ -7,6 +7,8 @@ import java.io.File;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -81,6 +83,33 @@ public class SysexParserTest {
     public void testParseCleanSlate() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("250_Clean_Slate.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
+
+        // effect types
+        assertFalse(program.isChorus());
+        assertTrue(program.isDelay());
+        assertFalse(program.isDistortion());
+        assertFalse(program.isEq());
+        assertFalse(program.isFlanger());
+        assertTrue(program.isGain());
+        assertFalse(program.isMod());
+        assertFalse(program.isOverdrive());
+        assertFalse(program.isPhaser());
+        assertTrue(program.isPitch());
+        assertFalse(program.isReverb());
+        assertFalse(program.isSpeakerSim());
+        assertFalse(program.isWah());
+        assertFalse(program.isPrePost());
+        assertTrue(program.isStandAlone());
+        assertFalse(program.isInline());
+
+        // guitar styles
+        assertFalse(program.isAcoustic());
+        assertFalse(program.isBass());
+        assertTrue(program.isBlues());
+        assertTrue(program.isClean());
+        assertFalse(program.isCountry());
+        assertTrue(program.isJazz());
+        assertTrue(program.isRock());
 
         assertEquals("Clean Slate", program.getProgramName());
     }
