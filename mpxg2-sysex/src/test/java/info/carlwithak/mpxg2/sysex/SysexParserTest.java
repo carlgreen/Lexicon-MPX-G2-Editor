@@ -111,6 +111,8 @@ public class SysexParserTest {
         assertTrue(program.isJazz());
         assertTrue(program.isRock());
 
+        assertEquals("I=1=2=G=E=C=D=R=O", program.getRouting());
+
         assertEquals("Clean Slate", program.getProgramName());
     }
 }

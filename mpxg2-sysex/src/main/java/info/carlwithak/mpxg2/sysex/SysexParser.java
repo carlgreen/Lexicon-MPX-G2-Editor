@@ -118,15 +118,61 @@ public class SysexParser {
         program.setIsJazz((guitarStyle & GUITAR_STYLE_JAZZ) == GUITAR_STYLE_JAZZ);
         program.setIsRock((guitarStyle & GUITAR_STYLE_ROCK) == GUITAR_STYLE_ROCK);
 
-        // skip 58 bytes of data for now
-        for (int i = 0; i < 58 * 2; i++) {
+        StringBuilder sb = new StringBuilder(17);
+        for (int i = 0; i < 9; i++) {
+            bytes = new byte[10];
+            in.read(bytes);
+            System.out.println(java.util.Arrays.toString(bytes));
+            int effect = bytes[0] + bytes[1] * 16;
+            @SuppressWarnings("unused")
+            int upperInputConn = bytes[2] + bytes[3] * 16;
+            @SuppressWarnings("unused")
+            int lowerInputConn = bytes[4] + bytes[5] * 16;
+            @SuppressWarnings("unused")
+            int routing = bytes[6] + bytes[7] * 16;
+            @SuppressWarnings("unused")
+            int pathType = bytes[8] + bytes[9] * 16;
+            switch (effect) {
+                case 0:
+                    sb.append("=1");
+                    break;
+                case 1:
+                    sb.append("=2");
+                    break;
+                case 2:
+                    sb.append("=C");
+                    break;
+                case 3:
+                    sb.append("=D");
+                    break;
+                case 4:
+                    sb.append("=R");
+                    break;
+                case 5:
+                    sb.append("=E");
+                    break;
+                case 6:
+                    sb.append("=G");
+                    break;
+                case 7:
+                    sb.append("=O");
+                    break;
+                case 8:
+                    sb.append("I");
+                    break;
+            }
+        }
+        program.setRouting(sb.toString());
+
+        // skip 13 bytes of data for now
+        for (int i = 0; i < 13 * 2; i++) {
             in.read();
         }
 
         // read program name
         bytes = new byte[24];
         in.read(bytes);
-        StringBuilder sb = new StringBuilder(12);
+        sb = new StringBuilder(12);
         for (int i = 0; i < bytes.length; i += 2) {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
             sb.append(c);

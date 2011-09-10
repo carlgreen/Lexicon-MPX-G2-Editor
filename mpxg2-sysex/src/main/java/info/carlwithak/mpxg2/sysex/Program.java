@@ -5,6 +5,7 @@ package info.carlwithak.mpxg2.sysex;
  * @author carl
  */
 public class Program {
+
     // effect types
     private boolean isChorus;
     private boolean isDelay;
@@ -32,6 +33,7 @@ public class Program {
     private boolean isJazz;
     private boolean isRock;
 
+    private String routing;
     private String programName;
 
     boolean isChorus() {
@@ -216,6 +218,14 @@ public class Program {
 
     void setIsRock(boolean isRock) {
         this.isRock = isRock;
+    }
+
+    String getRouting() {
+        return routing;
+    }
+
+    void setRouting(final String routing) {
+        this.routing = routing;
     }
 
     String getProgramName() {
