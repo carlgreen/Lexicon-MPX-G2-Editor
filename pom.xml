@@ -1,9 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>info.carlwithak.mpxg2</groupId>
-  <artifactId>mpxg2</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>mpxg2</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>info.carlwithak.mpxg2</groupId>
+    <artifactId>mpxg2</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+  
+    <name>mpxg2</name>
+
+    <organization>
+        <name>carl with a K</name>
+        <url>http://carlwithak.info</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>carlgreen@gmail.com</id>
+            <email>carlgreen@gmail.com</email>
+            <name>carl green</name>
+            <url>http://carlwithak.info</url>
+            <organization>carl with a K</organization>
+            <organizationUrl>http://carlwithak.info</organizationUrl>
+            <timezone>+12</timezone>
+        </developer>
+    </developers>
 </project>
