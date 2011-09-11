@@ -154,6 +154,12 @@ public class SysexParserTest {
         assertEquals(0, program.getRandomLow());
         assertEquals(127, program.getRandomHigh());
         assertEquals(1.00, program.getRandomRate(), 0.001);
+
+        assertEquals(0, program.getABMode());
+        assertEquals(100, program.getARate());
+        assertEquals(100, program.getBRate());
+        assertEquals(64, program.getABOnLevel());
+        assertEquals(0, program.getABOnSource());
     }
 
     /**
@@ -234,5 +240,11 @@ public class SysexParserTest {
         assertEquals(0, program.getRandomLow());
         assertEquals(127, program.getRandomHigh());
         assertEquals(1.00, program.getRandomRate(), 0.001);
+
+        assertEquals(0, program.getABMode());
+        assertEquals(100, program.getARate());
+        assertEquals(100, program.getBRate());
+        assertEquals(64, program.getABOnLevel());
+        assertEquals(0, program.getABOnSource());
     }
 }

@@ -360,6 +360,31 @@ public class SysexParser {
         }
         program.setRandomRate(randomRate / 100.0);
 
+        // TODO what is this?
+        in.read(new byte[2]);
+
+        // a/b data
+        bytes = new byte[2];
+        in.read(bytes);
+        int abMode = bytes[0] + (bytes[1] * 16);
+        program.setABMode(abMode);
+
+        in.read(bytes);
+        int aRate = bytes[0] + (bytes[1] * 16);
+        program.setARate(aRate);
+
+        in.read(bytes);
+        int bRate = bytes[0] + (bytes[1] * 16);
+        program.setBRate(bRate);
+
+        in.read(bytes);
+        int abOnLevel = bytes[0] + (bytes[1] * 16);
+        program.setABOnLevel(abOnLevel);
+
+        in.read(bytes);
+        int abOnSource = bytes[0] + (bytes[1] * 16);
+        program.setABOnSource(abOnSource);
+
         in.close();
 
         return program;

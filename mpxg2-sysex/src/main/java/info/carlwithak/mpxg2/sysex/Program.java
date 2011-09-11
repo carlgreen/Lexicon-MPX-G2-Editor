@@ -74,6 +74,11 @@ public class Program {
     private int randomLow;
     private int randomHigh;
     private double randomRate;
+    private int abMode;
+    private int aRate;
+    private int bRate;
+    private int abOnLevel;
+    private int abOnSource;
 
     boolean isChorus() {
         return isChorus;
@@ -545,5 +550,45 @@ public class Program {
 
     void setRandomRate(final double randomRate) {
         this.randomRate = randomRate;
+    }
+
+    int getABMode() {
+        return abMode;
+    }
+
+    void setABMode(final int abMode) {
+        this.abMode = abMode;
+    }
+
+    int getARate() {
+        return aRate;
+    }
+
+    void setARate(final int aRate) {
+        this.aRate = aRate;
+    }
+
+    int getBRate() {
+        return bRate;
+    }
+
+    void setBRate(final int bRate) {
+        this.bRate = bRate;
+    }
+
+    int getABOnLevel() {
+        return abOnLevel;
+    }
+
+    void setABOnLevel(final int abOnLevel) {
+        this.abOnLevel = abOnLevel;
+    }
+
+    int getABOnSource() {
+        return abOnSource;
+    }
+
+    void setABOnSource(final int abOnSource) {
+        this.abOnSource = abOnSource;
     }
 }
