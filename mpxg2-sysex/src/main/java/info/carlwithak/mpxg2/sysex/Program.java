@@ -57,6 +57,20 @@ public class Program {
     private int knobLow;
     private int knobHigh;
     private String knobName;
+    private int lfo1Mode;
+    private double lfo1Rate;
+    private int lfo1PulseWidth;
+    private int lfo1Phase;
+    private int lfo1Depth;
+    private int lfo1OnLevel;
+    private int lfo1OnSource;
+    private int lfo2Mode;
+    private double lfo2Rate;
+    private int lfo2PulseWidth;
+    private int lfo2Phase;
+    private int lfo2Depth;
+    private int lfo2OnLevel;
+    private int lfo2OnSource;
 
     boolean isChorus() {
         return isChorus;
@@ -392,5 +406,117 @@ public class Program {
 
     void setKnobName(final String knobName) {
         this.knobName = knobName;
+    }
+
+    int getLfo1Mode() {
+        return lfo1Mode;
+    }
+
+    void setLfo1Mode(final int lfo1Mode) {
+        this.lfo1Mode = lfo1Mode;
+    }
+
+    double getLfo1Rate() {
+        return lfo1Rate;
+    }
+
+    void setLfo1Rate(final double lfo1Rate) {
+        this.lfo1Rate = lfo1Rate;
+    }
+
+    int getLfo1PulseWidth() {
+        return lfo1PulseWidth;
+    }
+
+    void setLfo1PulseWidth(final int lfo1PulseWidth) {
+        this.lfo1PulseWidth = lfo1PulseWidth;
+    }
+
+    int getLfo1Phase() {
+        return lfo1Phase;
+    }
+
+    void setLfo1Phase(final int lfo1Phase) {
+        this.lfo1Phase = lfo1Phase;
+    }
+
+    int getLfo1Depth() {
+        return lfo1Depth;
+    }
+
+    void setLfo1Depth(final int lfo1Depth) {
+        this.lfo1Depth = lfo1Depth;
+    }
+
+    int getLfo1OnLevel() {
+        return lfo1OnLevel;
+    }
+
+    void setLfo1OnLevel(final int lfo1OnLevel) {
+        this.lfo1OnLevel = lfo1OnLevel;
+    }
+
+    int getLfo1OnSource() {
+        return lfo1OnSource;
+    }
+
+    void setLfo1OnSource(final int lfo1OnSource) {
+        this.lfo1OnSource = lfo1OnSource;
+    }
+
+    int getLfo2Mode() {
+        return lfo2Mode;
+    }
+
+    void setLfo2Mode(final int lfo2Mode) {
+        this.lfo2Mode = lfo2Mode;
+    }
+
+    double getLfo2Rate() {
+        return lfo2Rate;
+    }
+
+    void setLfo2Rate(final double lfo2Rate) {
+        this.lfo2Rate = lfo2Rate;
+    }
+
+    int getLfo2PulseWidth() {
+        return lfo2PulseWidth;
+    }
+
+    void setLfo2PulseWidth(final int lfo2PulseWidth) {
+        this.lfo2PulseWidth = lfo2PulseWidth;
+    }
+
+    int getLfo2Phase() {
+        return lfo2Phase;
+    }
+
+    void setLfo2Phase(final int lfo2Phase) {
+        this.lfo2Phase = lfo2Phase;
+    }
+
+    int getLfo2Depth() {
+        return lfo2Depth;
+    }
+
+    void setLfo2Depth(final int lfo2Depth) {
+        this.lfo2Depth = lfo2Depth;
+    }
+
+    int getLfo2OnLevel() {
+        return lfo2OnLevel;
+    }
+
+    void setLfo2OnLevel(final int lfo2OnLevel) {
+        this.lfo2OnLevel = lfo2OnLevel;
+    }
+
+    int getLfo2OnSource() {
+        return lfo2OnSource;
+    }
+
+    void setLfo2OnSource(final int lfo2OnSource) {
+        this.lfo2OnSource = lfo2OnSource;
     }
 }

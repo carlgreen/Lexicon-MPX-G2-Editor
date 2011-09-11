@@ -134,6 +134,22 @@ public class SysexParserTest {
         assertEquals(0, program.getKnobLow());
         assertEquals(100, program.getKnobHigh());
         assertEquals("Delay Adj", program.getKnobName());
+
+        assertEquals(1, program.getLfo1Mode());
+        assertEquals(0.60, program.getLfo1Rate(), 0.001);
+        assertEquals(50, program.getLfo1PulseWidth());
+        assertEquals(0, program.getLfo1Phase());
+        assertEquals(100, program.getLfo1Depth());
+        assertEquals(64, program.getLfo1OnLevel());
+        assertEquals(0, program.getLfo1OnSource());
+
+        assertEquals(1, program.getLfo2Mode());
+        assertEquals(0.92, program.getLfo2Rate(), 0.001);
+        assertEquals(50, program.getLfo2PulseWidth());
+        assertEquals(0, program.getLfo2Phase());
+        assertEquals(100, program.getLfo2Depth());
+        assertEquals(64, program.getLfo2OnLevel());
+        assertEquals(0, program.getLfo2OnSource());
     }
 
     /**
@@ -194,5 +210,21 @@ public class SysexParserTest {
         assertEquals(0, program.getKnobLow());
         assertEquals(100, program.getKnobHigh());
         assertEquals("Delay Adj", program.getKnobName());
+
+        assertEquals(1, program.getLfo1Mode());
+        assertEquals(0.60, program.getLfo1Rate(), 0.001);
+        assertEquals(50, program.getLfo1PulseWidth());
+        assertEquals(0, program.getLfo1Phase());
+        assertEquals(100, program.getLfo1Depth());
+        assertEquals(64, program.getLfo1OnLevel());
+        assertEquals(0, program.getLfo1OnSource());
+
+        assertEquals(1, program.getLfo2Mode());
+        assertEquals(0.92, program.getLfo2Rate(), 0.001);
+        assertEquals(50, program.getLfo2PulseWidth());
+        assertEquals(0, program.getLfo2Phase());
+        assertEquals(100, program.getLfo2Depth());
+        assertEquals(64, program.getLfo2OnLevel());
+        assertEquals(0, program.getLfo2OnSource());
     }
 }

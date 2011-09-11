@@ -249,7 +249,7 @@ public class SysexParser {
             in.read();
         }
 
-        // controllers
+        // knob controller
         bytes = new byte[2];
         in.read(bytes);
         int knobValue = bytes[0] + (bytes[1] * 16);
@@ -271,6 +271,76 @@ public class SysexParser {
             programName.append(c);
         }
         program.setKnobName(programName.toString());
+
+        // lfo 1 controller
+        bytes = new byte[2];
+        in.read(bytes);
+        int lfo1Mode = bytes[0] + (bytes[1] * 16);
+        program.setLfo1Mode(lfo1Mode);
+
+        bytes = new byte[6];
+        in.read(bytes);
+        int lfo1Rate = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            lfo1Rate += (bytes[i] * Math.pow(16, i));
+        }
+        program.setLfo1Rate(lfo1Rate / 100.0);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int lfo1PulseWidth = bytes[0] + (bytes[1] * 16);
+        program.setLfo1PulseWidth(lfo1PulseWidth);
+
+        in.read(bytes);
+        int lfo1Phase = bytes[0] + (bytes[1] * 16);
+        program.setLfo1Phase(lfo1Phase);
+
+        in.read(bytes);
+        int lfo1Depth = bytes[0] + (bytes[1] * 16);
+        program.setLfo1Depth(lfo1Depth);
+
+        in.read(bytes);
+        int lfo1OnLevel = bytes[0] + (bytes[1] * 16);
+        program.setLfo1OnLevel(lfo1OnLevel);
+
+        in.read(bytes);
+        int lfo1OnSource = bytes[0] + (bytes[1] * 16);
+        program.setLfo1OnSource(lfo1OnSource);
+
+        // lfo 2 controller
+        bytes = new byte[2];
+        in.read(bytes);
+        int lfo2Mode = bytes[0] + (bytes[1] * 16);
+        program.setLfo2Mode(lfo2Mode);
+
+        bytes = new byte[6];
+        in.read(bytes);
+        int lfo2Rate = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            lfo2Rate += (bytes[i] * Math.pow(16, i));
+        }
+        program.setLfo2Rate(lfo2Rate / 100.0);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int lfo2PulseWidth = bytes[0] + (bytes[1] * 16);
+        program.setLfo2PulseWidth(lfo2PulseWidth);
+
+        in.read(bytes);
+        int lfo2Phase = bytes[0] + (bytes[1] * 16);
+        program.setLfo2Phase(lfo2Phase);
+
+        in.read(bytes);
+        int lfo2Depth = bytes[0] + (bytes[1] * 16);
+        program.setLfo2Depth(lfo2Depth);
+
+        in.read(bytes);
+        int lfo2OnLevel = bytes[0] + (bytes[1] * 16);
+        program.setLfo2OnLevel(lfo2OnLevel);
+
+        in.read(bytes);
+        int lfo2OnSource = bytes[0] + (bytes[1] * 16);
+        program.setLfo2OnSource(lfo2OnSource);
 
         in.close();
 
