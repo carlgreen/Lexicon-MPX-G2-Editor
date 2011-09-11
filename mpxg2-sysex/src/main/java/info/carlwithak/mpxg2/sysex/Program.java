@@ -44,6 +44,14 @@ public class Program {
 
     private String programName;
 
+    // tempo
+    private int tempo;
+    private int tempoSource;
+    private int beatValue;
+    private int tapSource;
+    private int tapAverage;
+    private int tapSourceLevel;
+
     boolean isChorus() {
         return isChorus;
     }
@@ -298,5 +306,53 @@ public class Program {
 
     void setProgramName(final String programName) {
         this.programName = programName;
+    }
+
+    int getTempo() {
+        return tempo;
+    }
+
+    void setTempo(final int tempo) {
+        this.tempo = tempo;
+    }
+
+    int getTempoSource() {
+        return tempoSource;
+    }
+
+    void setTempoSource(final int tempoSource) {
+        this.tempoSource = tempoSource;
+    }
+
+    int getBeatValue() {
+        return beatValue;
+    }
+
+    void setBeatValue(final int beatValue) {
+        this.beatValue = beatValue;
+    }
+
+    int getTapSource() {
+        return tapSource;
+    }
+
+    void setTapSource(final int tapSource) {
+        this.tapSource = tapSource;
+    }
+
+    int getTapAverage() {
+        return tapAverage;
+    }
+
+    void setTapAverage(final int tapAverage) {
+        this.tapAverage = tapAverage;
+    }
+
+    int getTapSourceLevel() {
+        return tapSourceLevel;
+    }
+
+    void setTapSourceLevel(final int tapSourceLevel) {
+        this.tapSourceLevel = tapSourceLevel;
     }
 }

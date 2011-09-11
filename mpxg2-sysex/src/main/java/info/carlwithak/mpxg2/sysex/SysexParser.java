@@ -77,7 +77,7 @@ public class SysexParser {
             objectSize += (bytes[i] * Math.pow(16, i));
         }
 
-        // skip 224 bytes of data for now
+        // TODO skip 224 bytes of data for now
         for (int i = 0; i < 224 * 2; i++) {
             in.read();
         }
@@ -163,7 +163,7 @@ public class SysexParser {
         }
         program.setRouting(sb.toString());
 
-        // skip 7 bytes of data for now
+        // TODO skip 7 bytes of data for now
         for (int i = 0; i < 7 * 2; i++) {
             in.read();
         }
@@ -205,6 +205,41 @@ public class SysexParser {
             sb.append(c);
         }
         program.setProgramName(sb.toString().trim());
+
+        // TODO skip 22 bytes of data for now
+        for (int i = 0; i < 22 * 2; i++) {
+            in.read();
+        }
+
+        // tempo
+        bytes = new byte[4];
+        in.read(bytes);
+        int tempo = 0;
+        for (int i = 0; i < 4; i++) {
+            tempo += (bytes[i] * Math.pow(16, i));
+        }
+        program.setTempo(tempo);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int tempoSource = bytes[0] + (bytes[1] * 16);
+        program.setTempoSource(tempoSource);
+
+        in.read(bytes);
+        int beatValue = bytes[0] + (bytes[1] * 16);
+        program.setBeatValue(beatValue);
+
+        in.read(bytes);
+        int tapSource = bytes[0] + (bytes[1] * 16);
+        program.setTapSource(tapSource);
+
+        in.read(bytes);
+        int tapAverage = bytes[0] + (bytes[1] * 16);
+        program.setTapAverage(tapAverage);
+
+        in.read(bytes);
+        int tapSourceLevel = bytes[0] + (bytes[1] * 16);
+        program.setTapSourceLevel(tapSourceLevel);
 
         in.close();
 

@@ -122,6 +122,13 @@ public class SysexParserTest {
         assertEquals(0, program.getGainAlgorithm());
 
         assertEquals("Clean Slate", program.getProgramName());
+
+        assertEquals(120, program.getTempo());
+        assertEquals(0, program.getTempoSource());
+        assertEquals(2, program.getBeatValue()); // quater note
+        assertEquals(0, program.getTapSource());
+        assertEquals(2, program.getTapAverage());
+        assertEquals(64, program.getTapSourceLevel());
     }
 
     /**
@@ -170,5 +177,12 @@ public class SysexParserTest {
         assertEquals(0, program.getGainAlgorithm());
 
         assertEquals("Unity Gain", program.getProgramName());
+
+        assertEquals(170, program.getTempo());
+        assertEquals(0, program.getTempoSource());
+        assertEquals(2, program.getBeatValue()); // quater note
+        assertEquals(0, program.getTapSource());
+        assertEquals(2, program.getTapAverage());
+        assertEquals(64, program.getTapSourceLevel());
     }
 }
