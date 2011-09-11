@@ -123,4 +123,52 @@ public class SysexParserTest {
 
         assertEquals("Clean Slate", program.getProgramName());
     }
+
+    /**
+     * Test parsing the Unity Gain preset, which has a little more than Clean Slate defined.
+     */
+    @Test
+    public void testParseUnityGain() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("249_Unity_Gain.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        // effect types
+        assertFalse(program.isChorus());
+        assertTrue(program.isDelay());
+        assertFalse(program.isDistortion());
+        assertFalse(program.isEq());
+        assertFalse(program.isFlanger());
+        assertTrue(program.isGain());
+        assertFalse(program.isMod());
+        assertFalse(program.isOverdrive());
+        assertFalse(program.isPhaser());
+        assertTrue(program.isPitch());
+        assertFalse(program.isReverb());
+        assertFalse(program.isSpeakerSim());
+        assertFalse(program.isWah());
+        assertFalse(program.isPrePost());
+        assertTrue(program.isStandAlone());
+        assertFalse(program.isInline());
+
+        // guitar styles
+        assertFalse(program.isAcoustic());
+        assertFalse(program.isBass());
+        assertTrue(program.isBlues());
+        assertTrue(program.isClean());
+        assertFalse(program.isCountry());
+        assertTrue(program.isJazz());
+        assertTrue(program.isRock());
+
+        assertEquals("I=1=2=G=E=C=D=R=O", program.getRouting());
+
+        assertEquals(17, program.getEffect1Algorithm());
+        assertEquals(0, program.getEffect2Algorithm());
+        assertEquals(0, program.getChorusAlgorithm());
+        assertEquals(0, program.getDelayAlgorithm());
+        assertEquals(0, program.getReverbAlgorithm());
+        assertEquals(0, program.getEqAlgorithm());
+        assertEquals(0, program.getGainAlgorithm());
+
+        assertEquals("Unity Gain", program.getProgramName());
+    }
 }

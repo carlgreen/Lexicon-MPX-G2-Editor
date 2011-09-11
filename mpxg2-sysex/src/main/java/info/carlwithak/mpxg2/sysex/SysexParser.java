@@ -122,7 +122,6 @@ public class SysexParser {
         for (int i = 0; i < 9; i++) {
             bytes = new byte[10];
             in.read(bytes);
-            System.out.println(java.util.Arrays.toString(bytes));
             int effect = bytes[0] + bytes[1] * 16;
             @SuppressWarnings("unused")
             int upperInputConn = bytes[2] + bytes[3] * 16;
@@ -164,9 +163,37 @@ public class SysexParser {
         }
         program.setRouting(sb.toString());
 
-        // skip 13 bytes of data for now
-        for (int i = 0; i < 13 * 2; i++) {
+        // skip 7 bytes of data for now
+        for (int i = 0; i < 7 * 2; i++) {
             in.read();
+        }
+
+        for (int i = 0; i < 6; i++) {
+            bytes = new byte[2];
+            in.read(bytes);
+            // this doesn't seem right - file contains 0xb1
+            //int algorithmNumber = bytes[0] + bytes[1] * 16;
+            int algorithmNumber = Integer.parseInt(Integer.toString(bytes[0]), 16);
+            switch (i) {
+                case 0:
+                    program.setEffect1Algorithm(algorithmNumber);
+                    break;
+                case 1:
+                    program.setEffect2Algorithm(algorithmNumber);
+                    break;
+                case 2:
+                    program.setChorusAlgorithm(algorithmNumber);
+                    break;
+                case 3:
+                    program.setDelayAlgorithm(algorithmNumber);
+                    break;
+                case 4:
+                    program.setReverbAlgorithm(algorithmNumber);
+                    break;
+                case 5:
+                    program.setEqAlgorithm(algorithmNumber);
+                    break;
+            }
         }
 
         // read program name
