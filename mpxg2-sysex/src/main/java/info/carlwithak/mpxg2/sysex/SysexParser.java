@@ -241,6 +241,37 @@ public class SysexParser {
         int tapSourceLevel = bytes[0] + (bytes[1] * 16);
         program.setTapSourceLevel(tapSourceLevel);
 
+        // unused
+        in.read(new byte[2]);
+
+        // TODO skip 60 bytes of patch data for now
+        for (int i = 0; i < 60 * 2; i++) {
+            in.read();
+        }
+
+        // controllers
+        bytes = new byte[2];
+        in.read(bytes);
+        int knobValue = bytes[0] + (bytes[1] * 16);
+        program.setKnobValue(knobValue);
+
+        in.read(bytes);
+        int knobLow = bytes[0] + (bytes[1] * 16);
+        program.setKnobLow(knobLow);
+
+        in.read(bytes);
+        int knobHigh = bytes[0] + (bytes[1] * 16);
+        program.setKnobHigh(knobHigh);
+
+        bytes = new byte[18];
+        in.read(bytes);
+        StringBuilder programName = new StringBuilder(9);
+        for (int i = 0; i < bytes.length; i += 2) {
+            char c = (char) (bytes[i] + (bytes[i + 1] * 16));
+            programName.append(c);
+        }
+        program.setKnobName(programName.toString());
+
         in.close();
 
         return program;

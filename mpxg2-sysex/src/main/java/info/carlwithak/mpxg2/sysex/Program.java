@@ -52,6 +52,12 @@ public class Program {
     private int tapAverage;
     private int tapSourceLevel;
 
+    // controllers
+    private int knobValue;
+    private int knobLow;
+    private int knobHigh;
+    private String knobName;
+
     boolean isChorus() {
         return isChorus;
     }
@@ -354,5 +360,37 @@ public class Program {
 
     void setTapSourceLevel(final int tapSourceLevel) {
         this.tapSourceLevel = tapSourceLevel;
+    }
+
+    int getKnobValue() {
+        return knobValue;
+    }
+
+    void setKnobValue(final int knobValue) {
+        this.knobValue = knobValue;
+    }
+
+    int getKnobLow() {
+        return knobLow;
+    }
+
+    void setKnobLow(final int knobLow) {
+        this.knobLow = knobLow;
+    }
+
+    int getKnobHigh() {
+        return knobHigh;
+    }
+
+    void setKnobHigh(final int knobHigh) {
+        this.knobHigh = knobHigh;
+    }
+
+    String getKnobName() {
+        return knobName;
+    }
+
+    void setKnobName(final String knobName) {
+        this.knobName = knobName;
     }
 }

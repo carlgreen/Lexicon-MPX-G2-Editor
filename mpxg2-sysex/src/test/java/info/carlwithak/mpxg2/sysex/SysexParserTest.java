@@ -129,6 +129,11 @@ public class SysexParserTest {
         assertEquals(0, program.getTapSource());
         assertEquals(2, program.getTapAverage());
         assertEquals(64, program.getTapSourceLevel());
+
+        assertEquals(50, program.getKnobValue());
+        assertEquals(0, program.getKnobLow());
+        assertEquals(100, program.getKnobHigh());
+        assertEquals("Delay Adj", program.getKnobName());
     }
 
     /**
@@ -184,5 +189,10 @@ public class SysexParserTest {
         assertEquals(0, program.getTapSource());
         assertEquals(2, program.getTapAverage());
         assertEquals(64, program.getTapSourceLevel());
+
+        assertEquals(50, program.getKnobValue());
+        assertEquals(0, program.getKnobLow());
+        assertEquals(100, program.getKnobHigh());
+        assertEquals("Delay Adj", program.getKnobName());
     }
 }
