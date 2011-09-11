@@ -342,6 +342,24 @@ public class SysexParser {
         int lfo2OnSource = bytes[0] + (bytes[1] * 16);
         program.setLfo2OnSource(lfo2OnSource);
 
+        // random controller
+        bytes = new byte[2];
+        in.read(bytes);
+        int randomLow = bytes[0] + (bytes[1] * 16);
+        program.setRandomLow(randomLow);
+
+        in.read(bytes);
+        int randomHigh = bytes[0] + (bytes[1] * 16);
+        program.setRandomHigh(randomHigh);
+
+        bytes = new byte[4];
+        in.read(bytes);
+        int randomRate = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            randomRate += (bytes[i] * Math.pow(16, i));
+        }
+        program.setRandomRate(randomRate / 100.0);
+
         in.close();
 
         return program;

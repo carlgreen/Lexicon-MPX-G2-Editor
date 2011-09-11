@@ -150,6 +150,10 @@ public class SysexParserTest {
         assertEquals(100, program.getLfo2Depth());
         assertEquals(64, program.getLfo2OnLevel());
         assertEquals(0, program.getLfo2OnSource());
+
+        assertEquals(0, program.getRandomLow());
+        assertEquals(127, program.getRandomHigh());
+        assertEquals(1.00, program.getRandomRate(), 0.001);
     }
 
     /**
@@ -226,5 +230,9 @@ public class SysexParserTest {
         assertEquals(100, program.getLfo2Depth());
         assertEquals(64, program.getLfo2OnLevel());
         assertEquals(0, program.getLfo2OnSource());
+
+        assertEquals(0, program.getRandomLow());
+        assertEquals(127, program.getRandomHigh());
+        assertEquals(1.00, program.getRandomRate(), 0.001);
     }
 }

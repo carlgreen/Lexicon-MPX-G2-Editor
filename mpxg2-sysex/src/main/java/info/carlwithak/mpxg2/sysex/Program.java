@@ -71,6 +71,9 @@ public class Program {
     private int lfo2Depth;
     private int lfo2OnLevel;
     private int lfo2OnSource;
+    private int randomLow;
+    private int randomHigh;
+    private double randomRate;
 
     boolean isChorus() {
         return isChorus;
@@ -518,5 +521,29 @@ public class Program {
 
     void setLfo2OnSource(final int lfo2OnSource) {
         this.lfo2OnSource = lfo2OnSource;
+    }
+
+    int getRandomLow() {
+        return randomLow;
+    }
+
+    void setRandomLow(final int randomLow) {
+        this.randomLow = randomLow;
+    }
+
+    int getRandomHigh() {
+        return randomHigh;
+    }
+
+    void setRandomHigh(final int randomHigh) {
+        this.randomHigh = randomHigh;
+    }
+
+    double getRandomRate() {
+        return randomRate;
+    }
+
+    void setRandomRate(final double randomRate) {
+        this.randomRate = randomRate;
     }
 }
