@@ -79,6 +79,10 @@ public class Program {
     private int bRate;
     private int abOnLevel;
     private int abOnSource;
+    private int envelopeGeneratorSrc1;
+    private int envelopeGeneratorSrc2;
+    private int envelopeGeneratorATrim;
+    private int envelopeGeneratorResponse;
 
     boolean isChorus() {
         return isChorus;
@@ -590,5 +594,37 @@ public class Program {
 
     void setABOnSource(final int abOnSource) {
         this.abOnSource = abOnSource;
+    }
+
+    int getEnvelopeGeneratorSrc1() {
+        return envelopeGeneratorSrc1;
+    }
+
+    void setEnvelopeGeneratorSrc1(final int envelopeGeneratorSrc1) {
+        this.envelopeGeneratorSrc1 = envelopeGeneratorSrc1;
+    }
+
+    int getEnvelopeGeneratorSrc2() {
+        return envelopeGeneratorSrc2;
+    }
+
+    void setEnvelopeGeneratorSrc2(final int envelopeGeneratorSrc2) {
+        this.envelopeGeneratorSrc2 = envelopeGeneratorSrc2;
+    }
+
+    int getEnvelopeGeneratorATrim() {
+        return envelopeGeneratorATrim;
+    }
+
+    void setEnvelopeGeneratorATrim(final int envelopeGeneratorATrim) {
+        this.envelopeGeneratorATrim = envelopeGeneratorATrim;
+    }
+
+    int getEnvelopeGeneratorResponse() {
+        return envelopeGeneratorResponse;
+    }
+
+    void setEnvelopeGeneratorResponse(final int envelopeGeneratorResponse) {
+        this.envelopeGeneratorResponse = envelopeGeneratorResponse;
     }
 }

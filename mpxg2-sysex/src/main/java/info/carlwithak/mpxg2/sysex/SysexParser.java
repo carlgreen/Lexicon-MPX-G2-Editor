@@ -385,6 +385,24 @@ public class SysexParser {
         int abOnSource = bytes[0] + (bytes[1] * 16);
         program.setABOnSource(abOnSource);
 
+        // envelope generator data
+        bytes = new byte[2];
+        in.read(bytes);
+        int envGenSrc1 = bytes[0] + (bytes[1] * 16);
+        program.setEnvelopeGeneratorSrc1(envGenSrc1);
+
+        in.read(bytes);
+        int envGenSrc2 = bytes[0] + (bytes[1] * 16);
+        program.setEnvelopeGeneratorSrc2(envGenSrc2);
+
+        in.read(bytes);
+        int envGenATrim = bytes[0] + (bytes[1] * 16);
+        program.setEnvelopeGeneratorATrim(envGenATrim);
+
+        in.read(bytes);
+        int envGenResponse = bytes[0] + (bytes[1] * 16);
+        program.setEnvelopeGeneratorResponse(envGenResponse);
+
         in.close();
 
         return program;

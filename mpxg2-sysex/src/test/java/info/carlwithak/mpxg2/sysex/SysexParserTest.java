@@ -160,6 +160,11 @@ public class SysexParserTest {
         assertEquals(100, program.getBRate());
         assertEquals(64, program.getABOnLevel());
         assertEquals(0, program.getABOnSource());
+
+        assertEquals(0, program.getEnvelopeGeneratorSrc1());
+        assertEquals(0, program.getEnvelopeGeneratorSrc2());
+        assertEquals(100, program.getEnvelopeGeneratorATrim());
+        assertEquals(64, program.getEnvelopeGeneratorResponse());
     }
 
     /**
@@ -246,5 +251,10 @@ public class SysexParserTest {
         assertEquals(100, program.getBRate());
         assertEquals(64, program.getABOnLevel());
         assertEquals(0, program.getABOnSource());
+
+        assertEquals(0, program.getEnvelopeGeneratorSrc1());
+        assertEquals(0, program.getEnvelopeGeneratorSrc2());
+        assertEquals(100, program.getEnvelopeGeneratorATrim());
+        assertEquals(64, program.getEnvelopeGeneratorResponse());
     }
 }
