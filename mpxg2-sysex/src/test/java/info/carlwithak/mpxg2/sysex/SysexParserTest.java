@@ -175,6 +175,9 @@ public class SysexParserTest {
         assertEquals(100, program.getNoiseGateHTime());
         assertEquals(100, program.getNoiseGateRTime());
         assertEquals(0, program.getNoiseGateDelay());
+
+        assertEquals(0, program.getSpeakerSimulatorEnable());
+        assertEquals(1, program.getSpeakerSimulatorCabinet());
     }
 
     /**
@@ -276,6 +279,9 @@ public class SysexParserTest {
         assertEquals(100, program.getNoiseGateHTime());
         assertEquals(100, program.getNoiseGateRTime());
         assertEquals(0, program.getNoiseGateDelay());
+
+        assertEquals(0, program.getSpeakerSimulatorEnable());
+        assertEquals(1, program.getSpeakerSimulatorCabinet());
     }
 
     /**

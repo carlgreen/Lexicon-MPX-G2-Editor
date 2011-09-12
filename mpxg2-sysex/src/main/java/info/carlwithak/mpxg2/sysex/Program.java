@@ -95,6 +95,10 @@ public class Program {
     private int noiseGateRTime;
     private int noiseGateDelay;
 
+    // speaker simulator
+    private int speakerSimulatorEnable;
+    private int speakerSimulatorCabinet;
+
     boolean isChorus() {
         return isChorus;
     }
@@ -709,5 +713,21 @@ public class Program {
 
     void setNoiseGateDelay(final int noiseGateDelay) {
         this.noiseGateDelay = noiseGateDelay;
+    }
+
+    int getSpeakerSimulatorEnable() {
+        return speakerSimulatorEnable;
+    }
+
+    void setSpeakerSimulatorEnable(final int speakerSimulatorEnable) {
+        this.speakerSimulatorEnable = speakerSimulatorEnable;
+    }
+
+    int getSpeakerSimulatorCabinet() {
+        return speakerSimulatorCabinet;
+    }
+
+    void setSpeakerSimulatorCabinet(final int speakerSimulatorCabinet) {
+        this.speakerSimulatorCabinet = speakerSimulatorCabinet;
     }
 }
