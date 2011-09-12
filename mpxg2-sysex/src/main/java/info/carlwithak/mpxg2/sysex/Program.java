@@ -52,6 +52,53 @@ public class Program {
     private int tapAverage;
     private int tapSourceLevel;
 
+    // patching
+    private int patch1Source;
+    private int patch1SourceMin;
+    private int patch1SourceMid;
+    private int patch1SourceMax;
+    private int patch1DestinationEffect;
+    private int patch1DestinationParameter;
+    private int patch1DestinationMin;
+    private int patch1DestinationMid;
+    private int patch1DestinationMax;
+    private int patch2Source;
+    private int patch2SourceMin;
+    private int patch2SourceMid;
+    private int patch2SourceMax;
+    private int patch2DestinationEffect;
+    private int patch2DestinationParameter;
+    private int patch2DestinationMin;
+    private int patch2DestinationMid;
+    private int patch2DestinationMax;
+    private int patch3Source;
+    private int patch3SourceMin;
+    private int patch3SourceMid;
+    private int patch3SourceMax;
+    private int patch3DestinationEffect;
+    private int patch3DestinationParameter;
+    private int patch3DestinationMin;
+    private int patch3DestinationMid;
+    private int patch3DestinationMax;
+    private int patch4Source;
+    private int patch4SourceMin;
+    private int patch4SourceMid;
+    private int patch4SourceMax;
+    private int patch4DestinationEffect;
+    private int patch4DestinationParameter;
+    private int patch4DestinationMin;
+    private int patch4DestinationMid;
+    private int patch4DestinationMax;
+    private int patch5Source;
+    private int patch5SourceMin;
+    private int patch5SourceMid;
+    private int patch5SourceMax;
+    private int patch5DestinationEffect;
+    private int patch5DestinationParameter;
+    private int patch5DestinationMin;
+    private int patch5DestinationMid;
+    private int patch5DestinationMax;
+
     // controllers
     private int knobValue;
     private int knobLow;
@@ -408,6 +455,366 @@ public class Program {
 
     void setTapSourceLevel(final int tapSourceLevel) {
         this.tapSourceLevel = tapSourceLevel;
+    }
+
+    int getPatch1Source() {
+        return patch1Source;
+    }
+
+    void setPatch1Source(final int patch1Source) {
+        this.patch1Source = patch1Source;
+    }
+
+    int getPatch1SourceMin() {
+        return patch1SourceMin;
+    }
+
+    void setPatch1SourceMin(final int patch1SourceMin) {
+        this.patch1SourceMin = patch1SourceMin;
+    }
+
+    int getPatch1SourceMid() {
+        return patch1SourceMid;
+    }
+
+    void setPatch1SourceMid(final int patch1SourceMid) {
+        this.patch1SourceMid = patch1SourceMid;
+    }
+
+    int getPatch1SourceMax() {
+        return patch1SourceMax;
+    }
+
+    void setPatch1SourceMax(final int patch1SourceMax) {
+        this.patch1SourceMax = patch1SourceMax;
+    }
+
+    int getPatch1DestinationEffect() {
+        return patch1DestinationEffect;
+    }
+
+    void setPatch1DestinationEffect(final int patch1DestinationEffect) {
+        this.patch1DestinationEffect = patch1DestinationEffect;
+    }
+
+    int getPatch1DestinationParameter() {
+        return patch1DestinationParameter;
+    }
+
+    void setPatch1DestinationParameter(final int patch1DestinationParameter) {
+        this.patch1DestinationParameter = patch1DestinationParameter;
+    }
+
+    int getPatch1DestinationMin() {
+        return patch1DestinationMin;
+    }
+
+    void setPatch1DestinationMin(final int patch1DestinationMin) {
+        this.patch1DestinationMin = patch1DestinationMin;
+    }
+
+    int getPatch1DestinationMid() {
+        return patch1DestinationMid;
+    }
+
+    void setPatch1DestinationMid(final int patch1DestinationMid) {
+        this.patch1DestinationMid = patch1DestinationMid;
+    }
+
+    int getPatch1DestinationMax() {
+        return patch1DestinationMax;
+    }
+
+    void setPatch1DestinationMax(final int patch1DestinationMax) {
+        this.patch1DestinationMax = patch1DestinationMax;
+    }
+
+    int getPatch2Source() {
+        return patch2Source;
+    }
+
+    void setPatch2Source(final int patch2Source) {
+        this.patch2Source = patch2Source;
+    }
+
+    int getPatch2SourceMin() {
+        return patch2SourceMin;
+    }
+
+    void setPatch2SourceMin(final int patch2SourceMin) {
+        this.patch2SourceMin = patch2SourceMin;
+    }
+
+    int getPatch2SourceMid() {
+        return patch2SourceMid;
+    }
+
+    void setPatch2SourceMid(final int patch2SourceMid) {
+        this.patch2SourceMid = patch2SourceMid;
+    }
+
+    int getPatch2SourceMax() {
+        return patch2SourceMax;
+    }
+
+    void setPatch2SourceMax(final int patch2SourceMax) {
+        this.patch2SourceMax = patch2SourceMax;
+    }
+
+    int getPatch2DestinationEffect() {
+        return patch2DestinationEffect;
+    }
+
+    void setPatch2DestinationEffect(final int patch2DestinationEffect) {
+        this.patch2DestinationEffect = patch2DestinationEffect;
+    }
+
+    int getPatch2DestinationParameter() {
+        return patch2DestinationParameter;
+    }
+
+    void setPatch2DestinationParameter(final int patch2DestinationParameter) {
+        this.patch2DestinationParameter = patch2DestinationParameter;
+    }
+
+    int getPatch2DestinationMin() {
+        return patch2DestinationMin;
+    }
+
+    void setPatch2DestinationMin(final int patch2DestinationMin) {
+        this.patch2DestinationMin = patch2DestinationMin;
+    }
+
+    int getPatch2DestinationMid() {
+        return patch2DestinationMid;
+    }
+
+    void setPatch2DestinationMid(final int patch2DestinationMid) {
+        this.patch2DestinationMid = patch2DestinationMid;
+    }
+
+    int getPatch2DestinationMax() {
+        return patch2DestinationMax;
+    }
+
+    void setPatch2DestinationMax(final int patch2DestinationMax) {
+        this.patch2DestinationMax = patch2DestinationMax;
+    }
+
+    int getPatch3Source() {
+        return patch3Source;
+    }
+
+    void setPatch3Source(final int patch3Source) {
+        this.patch3Source = patch3Source;
+    }
+
+    int getPatch3SourceMin() {
+        return patch3SourceMin;
+    }
+
+    void setPatch3SourceMin(final int patch3SourceMin) {
+        this.patch3SourceMin = patch3SourceMin;
+    }
+
+    int getPatch3SourceMid() {
+        return patch3SourceMid;
+    }
+
+    void setPatch3SourceMid(final int patch3SourceMid) {
+        this.patch3SourceMid = patch3SourceMid;
+    }
+
+    int getPatch3SourceMax() {
+        return patch3SourceMax;
+    }
+
+    void setPatch3SourceMax(final int patch3SourceMax) {
+        this.patch3SourceMax = patch3SourceMax;
+    }
+
+    int getPatch3DestinationEffect() {
+        return patch3DestinationEffect;
+    }
+
+    void setPatch3DestinationEffect(final int patch3DestinationEffect) {
+        this.patch3DestinationEffect = patch3DestinationEffect;
+    }
+
+    int getPatch3DestinationParameter() {
+        return patch3DestinationParameter;
+    }
+
+    void setPatch3DestinationParameter(final int patch3DestinationParameter) {
+        this.patch3DestinationParameter = patch3DestinationParameter;
+    }
+
+    int getPatch3DestinationMin() {
+        return patch3DestinationMin;
+    }
+
+    void setPatch3DestinationMin(final int patch3DestinationMin) {
+        this.patch3DestinationMin = patch3DestinationMin;
+    }
+
+    int getPatch3DestinationMid() {
+        return patch3DestinationMid;
+    }
+
+    void setPatch3DestinationMid(final int patch3DestinationMid) {
+        this.patch3DestinationMid = patch3DestinationMid;
+    }
+
+    int getPatch3DestinationMax() {
+        return patch3DestinationMax;
+    }
+
+    void setPatch3DestinationMax(final int patch3DestinationMax) {
+        this.patch3DestinationMax = patch3DestinationMax;
+    }
+
+    int getPatch4Source() {
+        return patch4Source;
+    }
+
+    void setPatch4Source(final int patch4Source) {
+        this.patch4Source = patch4Source;
+    }
+
+    int getPatch4SourceMin() {
+        return patch4SourceMin;
+    }
+
+    void setPatch4SourceMin(final int patch4SourceMin) {
+        this.patch4SourceMin = patch4SourceMin;
+    }
+
+    int getPatch4SourceMid() {
+        return patch4SourceMid;
+    }
+
+    void setPatch4SourceMid(final int patch4SourceMid) {
+        this.patch4SourceMid = patch4SourceMid;
+    }
+
+    int getPatch4SourceMax() {
+        return patch4SourceMax;
+    }
+
+    void setPatch4SourceMax(final int patch4SourceMax) {
+        this.patch4SourceMax = patch4SourceMax;
+    }
+
+    int getPatch4DestinationEffect() {
+        return patch4DestinationEffect;
+    }
+
+    void setPatch4DestinationEffect(final int patch4DestinationEffect) {
+        this.patch4DestinationEffect = patch4DestinationEffect;
+    }
+
+    int getPatch4DestinationParameter() {
+        return patch4DestinationParameter;
+    }
+
+    void setPatch4DestinationParameter(final int patch4DestinationParameter) {
+        this.patch4DestinationParameter = patch4DestinationParameter;
+    }
+
+    int getPatch4DestinationMin() {
+        return patch4DestinationMin;
+    }
+
+    void setPatch4DestinationMin(final int patch4DestinationMin) {
+        this.patch4DestinationMin = patch4DestinationMin;
+    }
+
+    int getPatch4DestinationMid() {
+        return patch4DestinationMid;
+    }
+
+    void setPatch4DestinationMid(final int patch4DestinationMid) {
+        this.patch4DestinationMid = patch4DestinationMid;
+    }
+
+    int getPatch4DestinationMax() {
+        return patch4DestinationMax;
+    }
+
+    void setPatch4DestinationMax(final int patch4DestinationMax) {
+        this.patch4DestinationMax = patch4DestinationMax;
+    }
+
+    int getPatch5Source() {
+        return patch5Source;
+    }
+
+    void setPatch5Source(final int patch5Source) {
+        this.patch5Source = patch5Source;
+    }
+
+    int getPatch5SourceMin() {
+        return patch5SourceMin;
+    }
+
+    void setPatch5SourceMin(final int patch5SourceMin) {
+        this.patch5SourceMin = patch5SourceMin;
+    }
+
+    int getPatch5SourceMid() {
+        return patch5SourceMid;
+    }
+
+    void setPatch5SourceMid(final int patch5SourceMid) {
+        this.patch5SourceMid = patch5SourceMid;
+    }
+
+    int getPatch5SourceMax() {
+        return patch5SourceMax;
+    }
+
+    void setPatch5SourceMax(final int patch5SourceMax) {
+        this.patch5SourceMax = patch5SourceMax;
+    }
+
+    int getPatch5DestinationEffect() {
+        return patch5DestinationEffect;
+    }
+
+    void setPatch5DestinationEffect(final int patch5DestinationEffect) {
+        this.patch5DestinationEffect = patch5DestinationEffect;
+    }
+
+    int getPatch5DestinationParameter() {
+        return patch5DestinationParameter;
+    }
+
+    void setPatch5DestinationParameter(final int patch5DestinationParameter) {
+        this.patch5DestinationParameter = patch5DestinationParameter;
+    }
+
+    int getPatch5DestinationMin() {
+        return patch5DestinationMin;
+    }
+
+    void setPatch5DestinationMin(final int patch5DestinationMin) {
+        this.patch5DestinationMin = patch5DestinationMin;
+    }
+
+    int getPatch5DestinationMid() {
+        return patch5DestinationMid;
+    }
+
+    void setPatch5DestinationMid(final int patch5DestinationMid) {
+        this.patch5DestinationMid = patch5DestinationMid;
+    }
+
+    int getPatch5DestinationMax() {
+        return patch5DestinationMax;
+    }
+
+    void setPatch5DestinationMax(final int patch5DestinationMax) {
+        this.patch5DestinationMax = patch5DestinationMax;
     }
 
     int getKnobValue() {

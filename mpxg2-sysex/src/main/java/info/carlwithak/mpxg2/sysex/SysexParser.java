@@ -244,10 +244,230 @@ public class SysexParser {
         // unused
         in.read(new byte[2]);
 
-        // TODO skip 60 bytes of patch data for now
-        for (int i = 0; i < 60 * 2; i++) {
-            in.read();
-        }
+        // patching 1
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch1Source = bytes[0] + (bytes[1] * 16);
+        program.setPatch1Source(patch1Source);
+
+        in.read(bytes);
+        int patch1SourceMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch1SourceMin(patch1SourceMin);
+
+        in.read(bytes);
+        int patch1SourceMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch1SourceMid(patch1SourceMid);
+
+        in.read(bytes);
+        int patch1SourceMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch1SourceMax(patch1SourceMax);
+
+        in.read(bytes);
+        int patch1DestinationEffect = bytes[0] + (bytes[1] * 16);
+        program.setPatch1DestinationEffect(patch1DestinationEffect);
+
+        in.read(bytes);
+        int patch1DestinationParameter = bytes[0] + (bytes[1] * 16);
+        program.setPatch1DestinationParameter(patch1DestinationParameter);
+
+        in.read(bytes);
+        int patch1DestinationMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch1DestinationMin(patch1DestinationMin);
+
+        // TODO find out what goes here
+        in.read(new byte[4]);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch1DestinationMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch1DestinationMid(patch1DestinationMid);
+
+        in.read(bytes);
+        int patch1DestinationMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch1DestinationMax(patch1DestinationMax);
+
+        // TODO find out what goes here
+        in.read(new byte[2]);
+
+        // patching 2
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch2Source = bytes[0] + (bytes[1] * 16);
+        program.setPatch2Source(patch2Source);
+
+        in.read(bytes);
+        int patch2SourceMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch2SourceMin(patch2SourceMin);
+
+        in.read(bytes);
+        int patch2SourceMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch2SourceMid(patch2SourceMid);
+
+        in.read(bytes);
+        int patch2SourceMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch2SourceMax(patch2SourceMax);
+
+        in.read(bytes);
+        int patch2DestinationEffect = bytes[0] + (bytes[1] * 16);
+        program.setPatch2DestinationEffect(patch2DestinationEffect);
+
+        in.read(bytes);
+        int patch2DestinationParameter = bytes[0] + (bytes[1] * 16);
+        program.setPatch2DestinationParameter(patch2DestinationParameter);
+
+        in.read(bytes);
+        int patch2DestinationMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch2DestinationMin(patch2DestinationMin);
+
+        // TODO find out what goes here
+        in.read(new byte[4]);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch2DestinationMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch2DestinationMid(patch2DestinationMid);
+
+        in.read(bytes);
+        int patch2DestinationMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch2DestinationMax(patch2DestinationMax);
+
+        // TODO find out what goes here
+        in.read(new byte[2]);
+
+        // patching 3
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch3Source = bytes[0] + (bytes[1] * 16);
+        program.setPatch3Source(patch3Source);
+
+        in.read(bytes);
+        int patch3SourceMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch3SourceMin(patch3SourceMin);
+
+        in.read(bytes);
+        int patch3SourceMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch3SourceMid(patch3SourceMid);
+
+        in.read(bytes);
+        int patch3SourceMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch3SourceMax(patch3SourceMax);
+
+        in.read(bytes);
+        int patch3DestinationEffect = bytes[0] + (bytes[1] * 16);
+        program.setPatch3DestinationEffect(patch3DestinationEffect);
+
+        in.read(bytes);
+        int patch3DestinationParameter = bytes[0] + (bytes[1] * 16);
+        program.setPatch3DestinationParameter(patch3DestinationParameter);
+
+        in.read(bytes);
+        int patch3DestinationMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch3DestinationMin(patch3DestinationMin);
+
+        // TODO find out what goes here
+        in.read(new byte[4]);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch3DestinationMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch3DestinationMid(patch3DestinationMid);
+
+        in.read(bytes);
+        int patch3DestinationMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch3DestinationMax(patch3DestinationMax);
+
+        // TODO find out what goes here
+        in.read(new byte[2]);
+
+        // patching 4
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch4Source = bytes[0] + (bytes[1] * 16);
+        program.setPatch4Source(patch4Source);
+
+        in.read(bytes);
+        int patch4SourceMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch4SourceMin(patch4SourceMin);
+
+        in.read(bytes);
+        int patch4SourceMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch4SourceMid(patch4SourceMid);
+
+        in.read(bytes);
+        int patch4SourceMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch4SourceMax(patch4SourceMax);
+
+        in.read(bytes);
+        int patch4DestinationEffect = bytes[0] + (bytes[1] * 16);
+        program.setPatch4DestinationEffect(patch4DestinationEffect);
+
+        in.read(bytes);
+        int patch4DestinationParameter = bytes[0] + (bytes[1] * 16);
+        program.setPatch4DestinationParameter(patch4DestinationParameter);
+
+        in.read(bytes);
+        int patch4DestinationMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch4DestinationMin(patch4DestinationMin);
+
+        // TODO find out what goes here
+        in.read(new byte[4]);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch4DestinationMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch4DestinationMid(patch4DestinationMid);
+
+        in.read(bytes);
+        int patch4DestinationMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch4DestinationMax(patch4DestinationMax);
+
+        // TODO find out what goes here
+        in.read(new byte[2]);
+
+        // patching 5
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch5Source = bytes[0] + (bytes[1] * 16);
+        program.setPatch5Source(patch5Source);
+
+        in.read(bytes);
+        int patch5SourceMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch5SourceMin(patch5SourceMin);
+
+        in.read(bytes);
+        int patch5SourceMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch5SourceMid(patch5SourceMid);
+
+        in.read(bytes);
+        int patch5SourceMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch5SourceMax(patch5SourceMax);
+
+        in.read(bytes);
+        int patch5DestinationEffect = bytes[0] + (bytes[1] * 16);
+        program.setPatch5DestinationEffect(patch5DestinationEffect);
+
+        in.read(bytes);
+        int patch5DestinationParameter = bytes[0] + (bytes[1] * 16);
+        program.setPatch5DestinationParameter(patch5DestinationParameter);
+
+        in.read(bytes);
+        int patch5DestinationMin = bytes[0] + (bytes[1] * 16);
+        program.setPatch5DestinationMin(patch5DestinationMin);
+
+        // TODO find out what goes here
+        in.read(new byte[4]);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int patch5DestinationMid = bytes[0] + (bytes[1] * 16);
+        program.setPatch5DestinationMid(patch5DestinationMid);
+
+        in.read(bytes);
+        int patch5DestinationMax = bytes[0] + (bytes[1] * 16);
+        program.setPatch5DestinationMax(patch5DestinationMax);
+
+        // TODO find out what goes here
+        in.read(new byte[2]);
 
         // knob controller
         bytes = new byte[2];
