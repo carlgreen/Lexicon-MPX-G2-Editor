@@ -389,6 +389,163 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the G2 Blue preset.
+     */
+    @Test
+    public void testParseG2Blue() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        // effect types
+        assertTrue(program.isChorus());
+        assertTrue(program.isDelay());
+        assertFalse(program.isDistortion());
+        assertFalse(program.isEq());
+        assertFalse(program.isFlanger());
+        assertTrue(program.isGain());
+        assertFalse(program.isMod());
+        assertFalse(program.isOverdrive());
+        assertFalse(program.isPhaser());
+        assertFalse(program.isPitch());
+        assertTrue(program.isReverb());
+        assertFalse(program.isSpeakerSim());
+        assertTrue(program.isWah());
+        assertTrue(program.isPrePost());
+        assertFalse(program.isStandAlone());
+        assertFalse(program.isInline());
+
+        // guitar styles
+        assertFalse(program.isAcoustic());
+        assertFalse(program.isBass());
+        assertTrue(program.isBlues());
+        assertTrue(program.isClean());
+        assertFalse(program.isCountry());
+        assertTrue(program.isJazz());
+        assertTrue(program.isRock());
+
+        assertEquals("I=1=2=G=C=D=R=E=O", program.getRouting());
+
+        assertEquals(12, program.getEffect1Algorithm());
+        assertEquals(18, program.getEffect2Algorithm());
+        assertEquals(16, program.getChorusAlgorithm());
+        assertEquals(6, program.getDelayAlgorithm());
+        assertEquals(4, program.getReverbAlgorithm());
+        assertEquals(0, program.getEqAlgorithm());
+        assertEquals(3, program.getGainAlgorithm());
+
+        assertEquals("G2 Blue", program.getProgramName());
+
+        assertEquals(120, program.getTempo());
+        assertEquals(0, program.getTempoSource());
+        assertEquals(2, program.getBeatValue()); // quater note
+        assertEquals(0, program.getTapSource());
+        assertEquals(2, program.getTapAverage());
+        assertEquals(64, program.getTapSourceLevel());
+
+
+        assertEquals(16, program.getPatch1Source()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(0, program.getPatch1SourceMin());
+        assertEquals(255, program.getPatch1SourceMid());
+        assertEquals(127, program.getPatch1SourceMax());
+        assertEquals(3, program.getPatch1DestinationEffect());
+        assertEquals(0, program.getPatch1DestinationParameter());
+        assertEquals(2, program.getPatch1DestinationMin());
+        assertEquals(128, program.getPatch1DestinationMid());
+        assertEquals(30, program.getPatch1DestinationMax());
+        assertEquals(16, program.getPatch2Source()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(0, program.getPatch2SourceMin());
+        assertEquals(255, program.getPatch2SourceMid());
+        assertEquals(127, program.getPatch2SourceMax());
+        assertEquals(3, program.getPatch2DestinationEffect());
+        assertEquals(3, program.getPatch2DestinationParameter());
+        assertEquals(260, program.getPatch2DestinationMin()); // TODO 260 = 0x0104 => 4, 1 - figure out how to split this
+        assertEquals(128, program.getPatch2DestinationMid());
+        assertEquals(516, program.getPatch2DestinationMax()); // TODO 516 = 0x0204 => 4, 2 - figure out how to split this
+        assertEquals(16, program.getPatch3Source()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(0, program.getPatch3SourceMin());
+        assertEquals(255, program.getPatch3SourceMid());
+        assertEquals(127, program.getPatch3SourceMax());
+        assertEquals(3, program.getPatch3DestinationEffect());
+        assertEquals(6, program.getPatch3DestinationParameter());
+        assertEquals(1, program.getPatch3DestinationMin());
+        assertEquals(128, program.getPatch3DestinationMid());
+        assertEquals(15, program.getPatch3DestinationMax());
+        assertEquals(16, program.getPatch4Source()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(0, program.getPatch4SourceMin());
+        assertEquals(255, program.getPatch4SourceMid());
+        assertEquals(127, program.getPatch4SourceMax());
+        assertEquals(3, program.getPatch4DestinationEffect());
+        assertEquals(7, program.getPatch4DestinationParameter());
+        assertEquals(1, program.getPatch4DestinationMin());
+        assertEquals(128, program.getPatch4DestinationMid());
+        assertEquals(4, program.getPatch4DestinationMax());
+        assertEquals(157, program.getPatch5Source()); // TODO why is the source 157 (0x9d) not 21 (0x15)?
+        assertEquals(0, program.getPatch5SourceMin());
+        assertEquals(255, program.getPatch5SourceMid());
+        assertEquals(127, program.getPatch5SourceMax());
+        assertEquals(16, program.getPatch5DestinationEffect());
+        assertEquals(0, program.getPatch5DestinationParameter());
+        assertEquals(0, program.getPatch5DestinationMin());
+        assertEquals(128, program.getPatch5DestinationMid());
+        assertEquals(6, program.getPatch5DestinationMax());
+
+        assertEquals(50, program.getKnobValue());
+        assertEquals(0, program.getKnobLow());
+        assertEquals(100, program.getKnobHigh());
+        assertEquals("Delay Adj", program.getKnobName());
+
+        assertEquals(1, program.getLfo1Mode());
+        assertEquals(0.60, program.getLfo1Rate(), 0.001);
+        assertEquals(50, program.getLfo1PulseWidth());
+        assertEquals(0, program.getLfo1Phase());
+        assertEquals(100, program.getLfo1Depth());
+        assertEquals(64, program.getLfo1OnLevel());
+        assertEquals(0, program.getLfo1OnSource());
+
+        assertEquals(1, program.getLfo2Mode());
+        assertEquals(0.92, program.getLfo2Rate(), 0.001);
+        assertEquals(50, program.getLfo2PulseWidth());
+        assertEquals(0, program.getLfo2Phase());
+        assertEquals(100, program.getLfo2Depth());
+        assertEquals(64, program.getLfo2OnLevel());
+        assertEquals(0, program.getLfo2OnSource());
+
+        assertEquals(0, program.getRandomLow());
+        assertEquals(127, program.getRandomHigh());
+        assertEquals(1.00, program.getRandomRate(), 0.001);
+
+        assertEquals(0, program.getABMode());
+        assertEquals(100, program.getARate());
+        assertEquals(100, program.getBRate());
+        assertEquals(64, program.getABOnLevel());
+        assertEquals(0, program.getABOnSource());
+
+        assertEquals(0, program.getEnvelopeGeneratorSrc1());
+        assertEquals(0, program.getEnvelopeGeneratorSrc2());
+        assertEquals(100, program.getEnvelopeGeneratorATrim());
+        assertEquals(64, program.getEnvelopeGeneratorResponse());
+
+        assertEquals(1, program.getNoiseGateEnable());
+        assertEquals(1, program.getNoiseGateSend());
+        assertEquals(-83, program.getNoiseGateThreshold());
+        assertEquals(-85, program.getNoiseGateAttenuation());
+        assertEquals(-3, program.getNoiseGateOffset());
+        assertEquals(0, program.getNoiseGateATime());
+        assertEquals(100, program.getNoiseGateHTime());
+        assertEquals(100, program.getNoiseGateRTime());
+        assertEquals(0, program.getNoiseGateDelay());
+
+        assertEquals(0, program.getSpeakerSimulatorEnable());
+        assertEquals(1, program.getSpeakerSimulatorCabinet());
+
+        assertEquals(0, program.getSendLevel());
+        assertEquals(0, program.getSendBypassLevel());
+        assertEquals(100, program.getPostMix());
+        assertEquals(0, program.getPostLevel());
+        assertEquals(0, program.getPostBypassLevel());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test

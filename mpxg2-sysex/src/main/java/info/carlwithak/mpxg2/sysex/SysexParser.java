@@ -168,7 +168,7 @@ public class SysexParser {
             in.read();
         }
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             bytes = new byte[2];
             in.read(bytes);
             int algorithmNumber = bytes[0] + bytes[1] * 16;
@@ -191,6 +191,9 @@ public class SysexParser {
                 case 5:
                     program.setEqAlgorithm(algorithmNumber);
                     break;
+                case 6:
+                    program.setGainAlgorithm(algorithmNumber);
+                    break;
             }
         }
 
@@ -204,8 +207,8 @@ public class SysexParser {
         }
         program.setProgramName(sb.toString().trim());
 
-        // TODO skip 22 bytes of data for now
-        for (int i = 0; i < 22 * 2; i++) {
+        // TODO skip 21 bytes of data for now
+        for (int i = 0; i < 21 * 2; i++) {
             in.read();
         }
 
@@ -313,24 +316,30 @@ public class SysexParser {
         int patch2DestinationParameter = bytes[0] + (bytes[1] * 16);
         program.setPatch2DestinationParameter(patch2DestinationParameter);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch2DestinationMin = bytes[0] + (bytes[1] * 16);
+        int patch2DestinationMin = 0;
+        for (int i = 0; i < 4; i++) {
+            patch2DestinationMin += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch2DestinationMin(patch2DestinationMin);
 
         // TODO find out what goes here
-        in.read(new byte[4]);
+        bytes = new byte[2];
+        in.read(bytes);
 
         bytes = new byte[2];
         in.read(bytes);
         int patch2DestinationMid = bytes[0] + (bytes[1] * 16);
         program.setPatch2DestinationMid(patch2DestinationMid);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch2DestinationMax = bytes[0] + (bytes[1] * 16);
+        int patch2DestinationMax = 0;
+        for (int i = 0; i < 4; i++) {
+            patch2DestinationMax += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch2DestinationMax(patch2DestinationMax);
-
-        // TODO find out what goes here
-        in.read(new byte[2]);
 
         // patching 3
         bytes = new byte[2];
