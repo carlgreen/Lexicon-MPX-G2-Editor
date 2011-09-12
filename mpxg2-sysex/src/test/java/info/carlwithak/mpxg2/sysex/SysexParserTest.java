@@ -269,7 +269,7 @@ public class SysexParserTest {
 
         assertEquals("I=1=2=G=E=C=D=R=O", program.getRouting());
 
-        assertEquals(17, program.getEffect1Algorithm());
+        assertEquals(27, program.getEffect1Algorithm());
         assertEquals(0, program.getEffect2Algorithm());
         assertEquals(0, program.getChorusAlgorithm());
         assertEquals(0, program.getDelayAlgorithm());

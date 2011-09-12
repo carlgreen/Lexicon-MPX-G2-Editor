@@ -171,9 +171,7 @@ public class SysexParser {
         for (int i = 0; i < 6; i++) {
             bytes = new byte[2];
             in.read(bytes);
-            // this doesn't seem right - file contains 0xb1
-            //int algorithmNumber = bytes[0] + bytes[1] * 16;
-            int algorithmNumber = Integer.parseInt(Integer.toString(bytes[0]), 16);
+            int algorithmNumber = bytes[0] + bytes[1] * 16;
             switch (i) {
                 case 0:
                     program.setEffect1Algorithm(algorithmNumber);
