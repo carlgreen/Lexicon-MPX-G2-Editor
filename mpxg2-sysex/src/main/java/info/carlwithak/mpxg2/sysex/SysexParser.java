@@ -271,24 +271,30 @@ public class SysexParser {
         int patch1DestinationParameter = bytes[0] + (bytes[1] * 16);
         program.setPatch1DestinationParameter(patch1DestinationParameter);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch1DestinationMin = bytes[0] + (bytes[1] * 16);
+        int patch1DestinationMin = 0;
+        for (int i = 0; i < 4; i++) {
+            patch1DestinationMin += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch1DestinationMin(patch1DestinationMin);
 
         // TODO find out what goes here
-        in.read(new byte[4]);
+        bytes = new byte[2];
+        in.read(bytes);
 
         bytes = new byte[2];
         in.read(bytes);
         int patch1DestinationMid = bytes[0] + (bytes[1] * 16);
         program.setPatch1DestinationMid(patch1DestinationMid);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch1DestinationMax = bytes[0] + (bytes[1] * 16);
+        int patch1DestinationMax = 0;
+        for (int i = 0; i < 4; i++) {
+            patch1DestinationMax += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch1DestinationMax(patch1DestinationMax);
-
-        // TODO find out what goes here
-        in.read(new byte[2]);
 
         // patching 2
         bytes = new byte[2];
@@ -367,24 +373,31 @@ public class SysexParser {
         int patch3DestinationParameter = bytes[0] + (bytes[1] * 16);
         program.setPatch3DestinationParameter(patch3DestinationParameter);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch3DestinationMin = bytes[0] + (bytes[1] * 16);
+        int patch3DestinationMin = 0;
+        // because this is Delay : Echo (D) : Fbk 1 it only reads the first two
+        for (int i = 0; i < 2; i++) {
+            patch3DestinationMin += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch3DestinationMin(patch3DestinationMin);
 
         // TODO find out what goes here
-        in.read(new byte[4]);
+        bytes = new byte[2];
+        in.read(bytes);
 
         bytes = new byte[2];
         in.read(bytes);
         int patch3DestinationMid = bytes[0] + (bytes[1] * 16);
         program.setPatch3DestinationMid(patch3DestinationMid);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch3DestinationMax = bytes[0] + (bytes[1] * 16);
+        int patch3DestinationMax = 0;
+        for (int i = 0; i < 4; i++) {
+            patch3DestinationMax += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch3DestinationMax(patch3DestinationMax);
-
-        // TODO find out what goes here
-        in.read(new byte[2]);
 
         // patching 4
         bytes = new byte[2];
@@ -412,24 +425,31 @@ public class SysexParser {
         int patch4DestinationParameter = bytes[0] + (bytes[1] * 16);
         program.setPatch4DestinationParameter(patch4DestinationParameter);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch4DestinationMin = bytes[0] + (bytes[1] * 16);
+        int patch4DestinationMin = 0;
+        // because this is Delay : Echo (D) : Fbk 2 it only reads the first two
+        for (int i = 0; i < 2; i++) {
+            patch4DestinationMin += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch4DestinationMin(patch4DestinationMin);
 
         // TODO find out what goes here
-        in.read(new byte[4]);
+        bytes = new byte[2];
+        in.read(bytes);
 
         bytes = new byte[2];
         in.read(bytes);
         int patch4DestinationMid = bytes[0] + (bytes[1] * 16);
         program.setPatch4DestinationMid(patch4DestinationMid);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch4DestinationMax = bytes[0] + (bytes[1] * 16);
+        int patch4DestinationMax = 0;
+        for (int i = 0; i < 4; i++) {
+            patch4DestinationMax += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch4DestinationMax(patch4DestinationMax);
-
-        // TODO find out what goes here
-        in.read(new byte[2]);
 
         // patching 5
         bytes = new byte[2];
@@ -457,24 +477,31 @@ public class SysexParser {
         int patch5DestinationParameter = bytes[0] + (bytes[1] * 16);
         program.setPatch5DestinationParameter(patch5DestinationParameter);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch5DestinationMin = bytes[0] + (bytes[1] * 16);
+        int patch5DestinationMin = 0;
+        // because this is Send Level it only reads the first two
+        for (int i = 0; i < 2; i++) {
+            patch5DestinationMin += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch5DestinationMin(patch5DestinationMin);
 
         // TODO find out what goes here
-        in.read(new byte[4]);
+        bytes = new byte[2];
+        in.read(bytes);
 
         bytes = new byte[2];
         in.read(bytes);
         int patch5DestinationMid = bytes[0] + (bytes[1] * 16);
         program.setPatch5DestinationMid(patch5DestinationMid);
 
+        bytes = new byte[4];
         in.read(bytes);
-        int patch5DestinationMax = bytes[0] + (bytes[1] * 16);
+        int patch5DestinationMax = 0;
+        for (int i = 0; i < 4; i++) {
+            patch5DestinationMax += (bytes[i] * Math.pow(16, i));
+        }
         program.setPatch5DestinationMax(patch5DestinationMax);
-
-        // TODO find out what goes here
-        in.read(new byte[2]);
 
         // knob controller
         bytes = new byte[2];
