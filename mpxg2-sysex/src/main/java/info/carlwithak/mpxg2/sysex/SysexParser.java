@@ -403,6 +403,55 @@ public class SysexParser {
         int envGenResponse = bytes[0] + (bytes[1] * 16);
         program.setEnvelopeGeneratorResponse(envGenResponse);
 
+        // noise gate
+        bytes = new byte[2];
+        in.read(bytes);
+        int noiseGateEnable = bytes[0] + (bytes[1] * 16);
+        program.setNoiseGateEnable(noiseGateEnable);
+
+        in.read(bytes);
+        int noiseGateThreshold = bytes[0] + (bytes[1] * 16);
+        program.setNoiseGateThreshold(-1 * (256 - noiseGateThreshold));
+
+        in.read(bytes);
+        int noiseGateOffset = bytes[0] + (bytes[1] * 16);
+        program.setNoiseGateOffset(-1 * noiseGateOffset);
+
+        bytes = new byte[4];
+        in.read(bytes);
+        int noiseGateHTime = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            noiseGateHTime += (bytes[i] * Math.pow(16, i));
+        }
+        program.setNoiseGateHTime(noiseGateHTime);
+
+        in.read(bytes);
+        int noiseGateATime = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            noiseGateATime += (bytes[i] * Math.pow(16, i));
+        }
+        program.setNoiseGateATime(noiseGateATime);
+
+        in.read(bytes);
+        int noiseGateRTime = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            noiseGateRTime += (bytes[i] * Math.pow(16, i));
+        }
+        program.setNoiseGateRTime(noiseGateRTime);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int noiseGateAttenuation = bytes[0] + (bytes[1] * 16);
+        program.setNoiseGateAttenuation(-1 * (256 - noiseGateAttenuation));
+
+        in.read(bytes);
+        int noiseGateDelay = bytes[0] + (bytes[1] * 16);
+        program.setNoiseGateDelay(noiseGateDelay);
+
+        in.read(bytes);
+        int noiseGateSend = bytes[0] + (bytes[1] * 16);
+        program.setNoiseGateSend(noiseGateSend);
+
         in.close();
 
         return program;

@@ -165,6 +165,16 @@ public class SysexParserTest {
         assertEquals(0, program.getEnvelopeGeneratorSrc2());
         assertEquals(100, program.getEnvelopeGeneratorATrim());
         assertEquals(64, program.getEnvelopeGeneratorResponse());
+
+        assertEquals(0, program.getNoiseGateEnable());
+        assertEquals(0, program.getNoiseGateSend());
+        assertEquals(-83, program.getNoiseGateThreshold());
+        assertEquals(-80, program.getNoiseGateAttenuation());
+        assertEquals(-3, program.getNoiseGateOffset());
+        assertEquals(0, program.getNoiseGateATime());
+        assertEquals(100, program.getNoiseGateHTime());
+        assertEquals(100, program.getNoiseGateRTime());
+        assertEquals(0, program.getNoiseGateDelay());
     }
 
     /**
@@ -256,5 +266,34 @@ public class SysexParserTest {
         assertEquals(0, program.getEnvelopeGeneratorSrc2());
         assertEquals(100, program.getEnvelopeGeneratorATrim());
         assertEquals(64, program.getEnvelopeGeneratorResponse());
+
+        assertEquals(0, program.getNoiseGateEnable());
+        assertEquals(0, program.getNoiseGateSend());
+        assertEquals(-83, program.getNoiseGateThreshold());
+        assertEquals(-80, program.getNoiseGateAttenuation());
+        assertEquals(-3, program.getNoiseGateOffset());
+        assertEquals(0, program.getNoiseGateATime());
+        assertEquals(100, program.getNoiseGateHTime());
+        assertEquals(100, program.getNoiseGateRTime());
+        assertEquals(0, program.getNoiseGateDelay());
+    }
+
+    /**
+     * Test parsing the various noise gate values.
+     */
+    @Test
+    public void testParseNoiseGate() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("noisegate.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertEquals(2, program.getNoiseGateEnable());
+        assertEquals(1, program.getNoiseGateSend());
+        assertEquals(-31, program.getNoiseGateThreshold());
+        assertEquals(-7, program.getNoiseGateAttenuation());
+        assertEquals(-11, program.getNoiseGateOffset());
+        assertEquals(1999, program.getNoiseGateATime());
+        assertEquals(499, program.getNoiseGateHTime());
+        assertEquals(2000, program.getNoiseGateRTime());
+        assertEquals(10, program.getNoiseGateDelay());
     }
 }

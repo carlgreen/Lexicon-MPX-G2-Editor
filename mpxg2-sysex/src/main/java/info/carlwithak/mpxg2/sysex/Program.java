@@ -84,6 +84,17 @@ public class Program {
     private int envelopeGeneratorATrim;
     private int envelopeGeneratorResponse;
 
+    // noise gate
+    private int noiseGateEnable;
+    private int noiseGateSend;
+    private int noiseGateThreshold;
+    private int noiseGateAttenuation;
+    private int noiseGateOffset;
+    private int noiseGateATime;
+    private int noiseGateHTime;
+    private int noiseGateRTime;
+    private int noiseGateDelay;
+
     boolean isChorus() {
         return isChorus;
     }
@@ -626,5 +637,77 @@ public class Program {
 
     void setEnvelopeGeneratorResponse(final int envelopeGeneratorResponse) {
         this.envelopeGeneratorResponse = envelopeGeneratorResponse;
+    }
+
+    int getNoiseGateEnable() {
+        return noiseGateEnable;
+    }
+
+    void setNoiseGateEnable(final int noiseGateEnable) {
+        this.noiseGateEnable = noiseGateEnable;
+    }
+
+    int getNoiseGateSend() {
+        return noiseGateSend;
+    }
+
+    void setNoiseGateSend(final int noiseGateSend) {
+        this.noiseGateSend = noiseGateSend;
+    }
+
+    int getNoiseGateThreshold() {
+        return noiseGateThreshold;
+    }
+
+    void setNoiseGateThreshold(final int noiseGateThreshold) {
+        this.noiseGateThreshold = noiseGateThreshold;
+    }
+
+    int getNoiseGateAttenuation() {
+        return noiseGateAttenuation;
+    }
+
+    void setNoiseGateAttenuation(final int noiseGateAttenuation) {
+        this.noiseGateAttenuation = noiseGateAttenuation;
+    }
+
+    int getNoiseGateOffset() {
+        return noiseGateOffset;
+    }
+
+    void setNoiseGateOffset(final int noiseGateOffset) {
+        this.noiseGateOffset = noiseGateOffset;
+    }
+
+    int getNoiseGateATime() {
+        return noiseGateATime;
+    }
+
+    void setNoiseGateATime(final int noiseGateATime) {
+        this.noiseGateATime = noiseGateATime;
+    }
+
+    int getNoiseGateHTime() {
+        return noiseGateHTime;
+    }
+
+    void setNoiseGateHTime(final int noiseGateHTime) {
+        this.noiseGateHTime = noiseGateHTime;
+    }
+
+    int getNoiseGateRTime() {
+        return noiseGateRTime;
+    }
+
+    void setNoiseGateRTime(final int noiseGateRTime) {
+        this.noiseGateRTime = noiseGateRTime;
+    }
+
+    int getNoiseGateDelay() {
+        return noiseGateDelay;
+    }
+
+    void setNoiseGateDelay(final int noiseGateDelay) {
+        this.noiseGateDelay = noiseGateDelay;
     }
 }
