@@ -99,6 +99,13 @@ public class Program {
     private int speakerSimulatorEnable;
     private int speakerSimulatorCabinet;
 
+    // mix
+    private int sendLevel;
+    private int sendBypassLevel;
+    private int postMix;
+    private int postLevel;
+    private int postBypassLevel;
+
     boolean isChorus() {
         return isChorus;
     }
@@ -729,5 +736,45 @@ public class Program {
 
     void setSpeakerSimulatorCabinet(final int speakerSimulatorCabinet) {
         this.speakerSimulatorCabinet = speakerSimulatorCabinet;
+    }
+
+    int getSendLevel() {
+        return sendLevel;
+    }
+
+    void setSendLevel(final int sendLevel) {
+        this.sendLevel = sendLevel;
+    }
+
+    int getSendBypassLevel() {
+        return sendBypassLevel;
+    }
+
+    void setSendBypassLevel(final int sendBypassLevel) {
+        this.sendBypassLevel = sendBypassLevel;
+    }
+
+    int getPostMix() {
+        return postMix;
+    }
+
+    void setPostMix(final int postMix) {
+        this.postMix = postMix;
+    }
+
+    int getPostLevel() {
+        return postLevel;
+    }
+
+    void setPostLevel(final int postLevel) {
+        this.postLevel = postLevel;
+    }
+
+    int getPostBypassLevel() {
+        return postBypassLevel;
+    }
+
+    void setPostBypassLevel(final int postBypassLevel) {
+        this.postBypassLevel = postBypassLevel;
     }
 }

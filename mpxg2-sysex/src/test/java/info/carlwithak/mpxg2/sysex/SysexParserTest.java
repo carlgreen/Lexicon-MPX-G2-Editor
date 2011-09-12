@@ -178,6 +178,12 @@ public class SysexParserTest {
 
         assertEquals(0, program.getSpeakerSimulatorEnable());
         assertEquals(1, program.getSpeakerSimulatorCabinet());
+
+        assertEquals(0, program.getSendLevel());
+        assertEquals(0, program.getSendBypassLevel());
+        assertEquals(100, program.getPostMix());
+        assertEquals(0, program.getPostLevel());
+        assertEquals(0, program.getPostBypassLevel());
     }
 
     /**
@@ -282,6 +288,12 @@ public class SysexParserTest {
 
         assertEquals(0, program.getSpeakerSimulatorEnable());
         assertEquals(1, program.getSpeakerSimulatorCabinet());
+
+        assertEquals(0, program.getSendLevel());
+        assertEquals(0, program.getSendBypassLevel());
+        assertEquals(100, program.getPostMix());
+        assertEquals(0, program.getPostLevel());
+        assertEquals(0, program.getPostBypassLevel());
     }
 
     /**

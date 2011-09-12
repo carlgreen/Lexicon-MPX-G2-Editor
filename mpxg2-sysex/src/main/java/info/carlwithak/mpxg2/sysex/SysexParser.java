@@ -466,6 +466,32 @@ public class SysexParser {
         int speakerSimulatorCabinet = bytes[0] + (bytes[1] * 16);
         program.setSpeakerSimulatorCabinet(speakerSimulatorCabinet);
 
+        // Mix
+        bytes = new byte[2];
+        in.read(bytes);
+        int postLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        program.setPostLevel(postLevel);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int postBypassLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        program.setPostBypassLevel(postBypassLevel);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int postMix = bytes[0] + (bytes[1] * 16);
+        program.setPostMix(postMix);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int sendLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        program.setSendLevel(sendLevel);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int sendBypassLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        program.setSendBypassLevel(sendBypassLevel);
+
         in.close();
 
         return program;
