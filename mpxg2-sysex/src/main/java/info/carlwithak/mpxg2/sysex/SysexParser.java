@@ -898,9 +898,11 @@ public class SysexParser {
         int noiseGateSend = bytes[0] + (bytes[1] * 16);
         program.setNoiseGateSend(noiseGateSend);
 
-        // TODO Bypass State
+        // Bypass State
         bytes = new byte[2];
         in.read(bytes);
+        int bypassState = bytes[0] + (bytes[1] * 16);
+        program.setBypassState(bypassState);
 
         // Speaker Simulator
         bytes = new byte[2];

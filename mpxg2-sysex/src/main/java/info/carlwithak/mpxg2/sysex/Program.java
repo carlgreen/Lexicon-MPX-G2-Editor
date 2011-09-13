@@ -183,6 +183,8 @@ public class Program {
     private int noiseGateRTime;
     private int noiseGateDelay;
 
+    private int bypassState;
+
     // speaker simulator
     private int speakerSimulatorEnable;
     private int speakerSimulatorCabinet;
@@ -1488,6 +1490,14 @@ public class Program {
 
     void setNoiseGateDelay(final int noiseGateDelay) {
         this.noiseGateDelay = noiseGateDelay;
+    }
+
+    int getBypassState() {
+        return bypassState;
+    }
+
+    void setBypassState(final int bypassState) {
+        this.bypassState = bypassState;
     }
 
     int getSpeakerSimulatorEnable() {
