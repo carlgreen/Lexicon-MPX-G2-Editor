@@ -1053,6 +1053,55 @@ public class SysexParser {
         int sendBypassLevel = (byte) (bytes[0] + (bytes[1] * 16));
         program.setSendBypassLevel(sendBypassLevel);
 
+        // unused
+        in.read(new byte[2]);
+
+        // TODO what is this?
+        in.read(new byte[4]);
+
+        bytes = new byte[4];
+        in.read(bytes);
+        int controlLevels = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            controlLevels += (bytes[i] * Math.pow(16, i));
+        }
+
+        if (controlLevels != 4) {
+            throw new ParseException("Expect 4 control levels for a program dump");
+        }
+
+        in.read(bytes);
+        int controlLevel0 = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            controlLevel0 += (bytes[i] * Math.pow(16, i));
+        }
+
+        in.read(bytes);
+        int controlLevel1 = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            controlLevel1 += (bytes[i] * Math.pow(16, i));
+        }
+
+        if (controlLevel0 != 0x01 || controlLevel1 != 0x0A) {
+            throw new ParseException("Expect ProgramDump control tree path");
+        }
+
+        in.read(bytes);
+        int controlLevel2 = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            controlLevel2 += (bytes[i] * Math.pow(16, i));
+        }
+
+        in.read(bytes);
+        int controlLevel3 = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            controlLevel3 += (bytes[i] * Math.pow(16, i));
+        }
+
+        int programNumber = controlLevel2 * 100 + controlLevel3 + 1;
+
+        program.setProgramNumber(programNumber);
+
         in.close();
 
         return program;

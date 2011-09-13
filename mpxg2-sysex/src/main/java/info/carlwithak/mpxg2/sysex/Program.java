@@ -237,6 +237,8 @@ public class Program {
     private int postLevel;
     private int postBypassLevel;
 
+    private int programNumber;
+
     int getEffect1Mix() {
         return effect1Mix;
     }
@@ -1875,5 +1877,13 @@ public class Program {
 
     void setPostBypassLevel(final int postBypassLevel) {
         this.postBypassLevel = postBypassLevel;
+    }
+
+    int getProgramNumber() {
+        return programNumber;
+    }
+
+    void setProgramNumber(final int programNumber) {
+        this.programNumber = programNumber;
     }
 }

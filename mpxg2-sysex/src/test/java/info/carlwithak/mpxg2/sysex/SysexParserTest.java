@@ -249,6 +249,8 @@ public class SysexParserTest {
         assertEquals(100, program.getPostMix());
         assertEquals(0, program.getPostLevel());
         assertEquals(0, program.getPostBypassLevel());
+
+        assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
 
     /**
@@ -424,6 +426,8 @@ public class SysexParserTest {
         assertEquals(100, program.getPostMix());
         assertEquals(0, program.getPostLevel());
         assertEquals(0, program.getPostBypassLevel());
+
+        assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
 
     /**
@@ -663,6 +667,8 @@ public class SysexParserTest {
         assertEquals(100, program.getPostMix());
         assertEquals(0, program.getPostLevel());
         assertEquals(0, program.getPostBypassLevel());
+
+        assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
 
     /**
