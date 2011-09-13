@@ -94,7 +94,7 @@ public class SysexParser {
         // unused
         in.read(new byte[29 * 2]);
 
-        // effect 1 parameters
+        // effect 2 parameters
         bytes = new byte[2];
         in.read(bytes);
         int effect2Mix = bytes[0] + bytes[1] * 16;
