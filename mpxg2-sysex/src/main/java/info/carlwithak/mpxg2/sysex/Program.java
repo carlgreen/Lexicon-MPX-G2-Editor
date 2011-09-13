@@ -104,6 +104,28 @@ public class Program {
     private boolean gainOn;
     private boolean insertOn;
 
+    // soft row
+    private int softRow0EffectType;
+    private int softRow0Parameter;
+    private int softRow1EffectType;
+    private int softRow1Parameter;
+    private int softRow2EffectType;
+    private int softRow2Parameter;
+    private int softRow3EffectType;
+    private int softRow3Parameter;
+    private int softRow4EffectType;
+    private int softRow4Parameter;
+    private int softRow5EffectType;
+    private int softRow5Parameter;
+    private int softRow6EffectType;
+    private int softRow6Parameter;
+    private int softRow7EffectType;
+    private int softRow7Parameter;
+    private int softRow8EffectType;
+    private int softRow8Parameter;
+    private int softRow9EffectType;
+    private int softRow9Parameter;
+
     // tempo
     private int tempo;
     private int tempoSource;
@@ -909,6 +931,166 @@ public class Program {
 
     void setInsertOn(final boolean insertOn) {
         this.insertOn = insertOn;
+    }
+
+    int getSoftRow0EffectType() {
+        return softRow0EffectType;
+    }
+
+    void setSoftRow0EffectType(final int softRow0EffectType) {
+        this.softRow0EffectType = softRow0EffectType;
+    }
+
+    int getSoftRow0Parameter() {
+        return softRow0Parameter;
+    }
+
+    void setSoftRow0Parameter(final int softRow0Parameter) {
+        this.softRow0Parameter = softRow0Parameter;
+    }
+
+    int getSoftRow1EffectType() {
+        return softRow1EffectType;
+    }
+
+    void setSoftRow1EffectType(final int softRow1EffectType) {
+        this.softRow1EffectType = softRow1EffectType;
+    }
+
+    int getSoftRow1Parameter() {
+        return softRow1Parameter;
+    }
+
+    void setSoftRow1Parameter(final int softRow1Parameter) {
+        this.softRow1Parameter = softRow1Parameter;
+    }
+
+    int getSoftRow2EffectType() {
+        return softRow2EffectType;
+    }
+
+    void setSoftRow2EffectType(final int softRow2EffectType) {
+        this.softRow2EffectType = softRow2EffectType;
+    }
+
+    int getSoftRow2Parameter() {
+        return softRow2Parameter;
+    }
+
+    void setSoftRow2Parameter(final int softRow2Parameter) {
+        this.softRow2Parameter = softRow2Parameter;
+    }
+
+    int getSoftRow3EffectType() {
+        return softRow3EffectType;
+    }
+
+    void setSoftRow3EffectType(final int softRow3EffectType) {
+        this.softRow3EffectType = softRow3EffectType;
+    }
+
+    int getSoftRow3Parameter() {
+        return softRow3Parameter;
+    }
+
+    void setSoftRow3Parameter(final int softRow3Parameter) {
+        this.softRow3Parameter = softRow3Parameter;
+    }
+
+    int getSoftRow4EffectType() {
+        return softRow4EffectType;
+    }
+
+    void setSoftRow4EffectType(final int softRow4EffectType) {
+        this.softRow4EffectType = softRow4EffectType;
+    }
+
+    int getSoftRow4Parameter() {
+        return softRow4Parameter;
+    }
+
+    void setSoftRow4Parameter(final int softRow4Parameter) {
+        this.softRow4Parameter = softRow4Parameter;
+    }
+
+    int getSoftRow5EffectType() {
+        return softRow5EffectType;
+    }
+
+    void setSoftRow5EffectType(final int softRow5EffectType) {
+        this.softRow5EffectType = softRow5EffectType;
+    }
+
+    int getSoftRow5Parameter() {
+        return softRow5Parameter;
+    }
+
+    void setSoftRow5Parameter(final int softRow5Parameter) {
+        this.softRow5Parameter = softRow5Parameter;
+    }
+
+    int getSoftRow6EffectType() {
+        return softRow6EffectType;
+    }
+
+    void setSoftRow6EffectType(final int softRow6EffectType) {
+        this.softRow6EffectType = softRow6EffectType;
+    }
+
+    int getSoftRow6Parameter() {
+        return softRow6Parameter;
+    }
+
+    void setSoftRow6Parameter(final int softRow6Parameter) {
+        this.softRow6Parameter = softRow6Parameter;
+    }
+
+    int getSoftRow7EffectType() {
+        return softRow7EffectType;
+    }
+
+    void setSoftRow7EffectType(final int softRow7EffectType) {
+        this.softRow7EffectType = softRow7EffectType;
+    }
+
+    int getSoftRow7Parameter() {
+        return softRow7Parameter;
+    }
+
+    void setSoftRow7Parameter(final int softRow7Parameter) {
+        this.softRow7Parameter = softRow7Parameter;
+    }
+
+    int getSoftRow8EffectType() {
+        return softRow8EffectType;
+    }
+
+    void setSoftRow8EffectType(final int softRow8EffectType) {
+        this.softRow8EffectType = softRow8EffectType;
+    }
+
+    int getSoftRow8Parameter() {
+        return softRow8Parameter;
+    }
+
+    void setSoftRow8Parameter(final int softRow8Parameter) {
+        this.softRow8Parameter = softRow8Parameter;
+    }
+
+    int getSoftRow9EffectType() {
+        return softRow9EffectType;
+    }
+
+    void setSoftRow9EffectType(final int softRow9EffectType) {
+        this.softRow9EffectType = softRow9EffectType;
+    }
+
+    int getSoftRow9Parameter() {
+        return softRow9Parameter;
+    }
+
+    void setSoftRow9Parameter(final int softRow9Parameter) {
+        this.softRow9Parameter = softRow9Parameter;
     }
 
     int getTempo() {

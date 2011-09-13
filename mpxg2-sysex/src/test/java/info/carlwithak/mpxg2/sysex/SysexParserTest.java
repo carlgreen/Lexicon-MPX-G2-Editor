@@ -532,6 +532,27 @@ public class SysexParserTest {
         assertFalse(program.isGainOn());
         assertTrue(program.isInsertOn());
 
+        assertEquals(6, program.getSoftRow0EffectType());
+        assertEquals(3, program.getSoftRow0Parameter());
+        assertEquals(6, program.getSoftRow1EffectType());
+        assertEquals(4, program.getSoftRow1Parameter());
+        assertEquals(6, program.getSoftRow2EffectType());
+        assertEquals(5, program.getSoftRow2Parameter());
+        assertEquals(0, program.getSoftRow3EffectType());
+        assertEquals(2, program.getSoftRow3Parameter());
+        assertEquals(3, program.getSoftRow4EffectType());
+        assertEquals(2, program.getSoftRow4Parameter());
+        assertEquals(4, program.getSoftRow5EffectType());
+        assertEquals(0, program.getSoftRow5Parameter());
+        assertEquals(4, program.getSoftRow6EffectType());
+        assertEquals(2, program.getSoftRow6Parameter());
+        assertEquals(4, program.getSoftRow7EffectType());
+        assertEquals(5, program.getSoftRow7Parameter());
+        assertEquals(4, program.getSoftRow8EffectType());
+        assertEquals(6, program.getSoftRow8Parameter());
+        assertEquals(4, program.getSoftRow9EffectType());
+        assertEquals(7, program.getSoftRow9Parameter());
+
         assertEquals(120, program.getTempo());
         assertEquals(0, program.getTempoSource());
         assertEquals(2, program.getBeatValue()); // quater note

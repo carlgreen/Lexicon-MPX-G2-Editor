@@ -435,10 +435,87 @@ public class SysexParser {
         program.setGainOn((effectsStatus & 0x40) == 0x40);
         program.setInsertOn((effectsStatus & 0x80) == 0x80);
 
-        // TODO skip 20 bytes of data for now
-        for (int i = 0; i < 21 * 2; i++) {
-            in.read();
-        }
+        // soft row
+        bytes = new byte[2];
+        in.read(bytes);
+        int softRow0EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow0EffectType(softRow0EffectType);
+
+        in.read(bytes);
+        int softRow0Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow0Parameter(softRow0Parameter);
+
+        in.read(bytes);
+        int softRow1EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow1EffectType(softRow1EffectType);
+
+        in.read(bytes);
+        int softRow1Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow1Parameter(softRow1Parameter);
+
+        in.read(bytes);
+        int softRow2EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow2EffectType(softRow2EffectType);
+
+        in.read(bytes);
+        int softRow2Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow2Parameter(softRow2Parameter);
+
+        in.read(bytes);
+        int softRow3EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow3EffectType(softRow3EffectType);
+
+        in.read(bytes);
+        int softRow3Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow3Parameter(softRow3Parameter);
+
+        in.read(bytes);
+        int softRow4EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow4EffectType(softRow4EffectType);
+
+        in.read(bytes);
+        int softRow4Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow4Parameter(softRow4Parameter);
+
+        in.read(bytes);
+        int softRow5EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow5EffectType(softRow5EffectType);
+
+        in.read(bytes);
+        int softRow5Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow5Parameter(softRow5Parameter);
+
+        in.read(bytes);
+        int softRow6EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow6EffectType(softRow6EffectType);
+
+        in.read(bytes);
+        int softRow6Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow6Parameter(softRow6Parameter);
+
+        in.read(bytes);
+        int softRow7EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow7EffectType(softRow7EffectType);
+
+        in.read(bytes);
+        int softRow7Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow7Parameter(softRow7Parameter);
+
+        in.read(bytes);
+        int softRow8EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow8EffectType(softRow8EffectType);
+
+        in.read(bytes);
+        int softRow8Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow8Parameter(softRow8Parameter);
+
+        in.read(bytes);
+        int softRow9EffectType = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow9EffectType(softRow9EffectType);
+
+        in.read(bytes);
+        int softRow9Parameter = bytes[0] + (bytes[1] * 16);
+        program.setSoftRow9Parameter(softRow9Parameter);
 
         // tempo
         bytes = new byte[4];
