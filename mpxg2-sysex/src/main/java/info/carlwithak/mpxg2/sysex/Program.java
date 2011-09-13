@@ -94,6 +94,16 @@ public class Program {
 
     private String programName;
 
+    // effects status
+    private boolean effect1On;
+    private boolean effect2On;
+    private boolean chorusOn;
+    private boolean delayOn;
+    private boolean reverbOn;
+    private boolean eqOn;
+    private boolean gainOn;
+    private boolean insertOn;
+
     // tempo
     private int tempo;
     private int tempoSource;
@@ -835,6 +845,70 @@ public class Program {
 
     void setProgramName(final String programName) {
         this.programName = programName;
+    }
+
+    boolean isEffect1On() {
+        return effect1On;
+    }
+
+    void setEffect1On(final boolean effect1On) {
+        this.effect1On = effect1On;
+    }
+
+    boolean isEffect2On() {
+        return effect2On;
+    }
+
+    void setEffect2On(final boolean effect2On) {
+        this.effect2On = effect2On;
+    }
+
+    boolean isChorusOn() {
+        return chorusOn;
+    }
+
+    void setChorusOn(final boolean chorusOn) {
+        this.chorusOn = chorusOn;
+    }
+
+    boolean isDelayOn() {
+        return delayOn;
+    }
+
+    void setDelayOn(final boolean delayOn) {
+        this.delayOn = delayOn;
+    }
+
+    boolean isReverbOn() {
+        return reverbOn;
+    }
+
+    void setReverbOn(final boolean reverbOn) {
+        this.reverbOn = reverbOn;
+    }
+
+    boolean isEqOn() {
+        return eqOn;
+    }
+
+    void setEqOn(final boolean eqOn) {
+        this.eqOn = eqOn;
+    }
+
+    boolean isGainOn() {
+        return gainOn;
+    }
+
+    void setGainOn(final boolean gainOn) {
+        this.gainOn = gainOn;
+    }
+
+    boolean isInsertOn() {
+        return insertOn;
+    }
+
+    void setInsertOn(final boolean insertOn) {
+        this.insertOn = insertOn;
     }
 
     int getTempo() {

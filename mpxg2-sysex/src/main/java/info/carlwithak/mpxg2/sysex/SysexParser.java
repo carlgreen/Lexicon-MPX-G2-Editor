@@ -423,7 +423,19 @@ public class SysexParser {
         }
         program.setProgramName(sb.toString().trim());
 
-        // TODO skip 21 bytes of data for now
+        bytes = new byte[2];
+        in.read(bytes);
+        int effectsStatus = bytes[0] + (bytes[1] * 16);
+        program.setEffect1On((effectsStatus & 0x01) == 0x01);
+        program.setEffect2On((effectsStatus & 0x02) == 0x02);
+        program.setChorusOn((effectsStatus & 0x04) == 0x04);
+        program.setDelayOn((effectsStatus & 0x08) == 0x08);
+        program.setReverbOn((effectsStatus & 0x10) == 0x10);
+        program.setEqOn((effectsStatus & 0x20) == 0x20);
+        program.setGainOn((effectsStatus & 0x40) == 0x40);
+        program.setInsertOn((effectsStatus & 0x80) == 0x80);
+
+        // TODO skip 20 bytes of data for now
         for (int i = 0; i < 21 * 2; i++) {
             in.read();
         }

@@ -131,6 +131,15 @@ public class SysexParserTest {
 
         assertEquals("Clean Slate", program.getProgramName());
 
+        assertFalse(program.isEffect1On());
+        assertFalse(program.isEffect2On());
+        assertFalse(program.isChorusOn());
+        assertFalse(program.isDelayOn());
+        assertFalse(program.isReverbOn());
+        assertFalse(program.isEqOn());
+        assertFalse(program.isGainOn());
+        assertTrue(program.isInsertOn());
+
         assertEquals(120, program.getTempo());
         assertEquals(0, program.getTempoSource());
         assertEquals(2, program.getBeatValue()); // quater note
@@ -296,6 +305,15 @@ public class SysexParserTest {
         assertEquals(0, program.getGainAlgorithm());
 
         assertEquals("Unity Gain", program.getProgramName());
+
+        assertTrue(program.isEffect1On());
+        assertFalse(program.isEffect2On());
+        assertFalse(program.isChorusOn());
+        assertFalse(program.isDelayOn());
+        assertFalse(program.isReverbOn());
+        assertFalse(program.isEqOn());
+        assertFalse(program.isGainOn());
+        assertTrue(program.isInsertOn());
 
         assertEquals(170, program.getTempo());
         assertEquals(0, program.getTempoSource());
@@ -504,6 +522,15 @@ public class SysexParserTest {
         assertEquals(3, program.getGainAlgorithm());
 
         assertEquals("G2 Blue", program.getProgramName());
+
+        assertTrue(program.isEffect1On());
+        assertFalse(program.isEffect2On());
+        assertTrue(program.isChorusOn());
+        assertTrue(program.isDelayOn());
+        assertFalse(program.isReverbOn());
+        assertFalse(program.isEqOn());
+        assertFalse(program.isGainOn());
+        assertTrue(program.isInsertOn());
 
         assertEquals(120, program.getTempo());
         assertEquals(0, program.getTempoSource());
