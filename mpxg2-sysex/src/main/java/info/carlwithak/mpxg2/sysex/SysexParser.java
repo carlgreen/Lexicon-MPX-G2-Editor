@@ -77,11 +77,203 @@ public class SysexParser {
             objectSize += (bytes[i] * Math.pow(16, i));
         }
 
-        // TODO skip 224 bytes of data for now
-        for (int i = 0; i < 224 * 2; i++) {
-            in.read();
-        }
+        // effect 1 parameters
+        bytes = new byte[2];
+        in.read(bytes);
+        int effect1Mix = bytes[0] + bytes[1] * 16;
+        program.setEffect1Mix(effect1Mix);
 
+        in.read(bytes);
+        int effect1Level = bytes[0] + bytes[1] * 16;
+        program.setEffect1Level(effect1Level);
+
+        in.read(bytes);
+        int effect1Rate = bytes[0] + bytes[1] * 16;
+        program.setEffect1Rate(effect1Rate);
+
+        // unused
+        in.read(new byte[29 * 2]);
+
+        // effect 1 parameters
+        bytes = new byte[2];
+        in.read(bytes);
+        int effect2Mix = bytes[0] + bytes[1] * 16;
+        program.setEffect2Mix(effect2Mix);
+
+        in.read(bytes);
+        int effect2Level = bytes[0] + bytes[1] * 16;
+        program.setEffect2Level(effect2Level);
+
+        in.read(bytes);
+        int effect2Bass = bytes[0] + bytes[1] * 16;
+        program.setEffect2Bass(effect2Bass);
+
+        in.read(bytes);
+        int effect2Type = bytes[0] + bytes[1] * 16;
+        program.setEffect2Type(effect2Type);
+
+        in.read(bytes);
+        int effect2Response = bytes[0] + bytes[1] * 16;
+        program.setEffect2Response(effect2Response);
+
+        in.read(bytes);
+        int effect2Gain = bytes[0] + bytes[1] * 16;
+        program.setEffect2Gain(effect2Gain);
+
+        // unused
+        in.read(new byte[26 * 2]);
+
+        // chorus parameters
+        bytes = new byte[2];
+        in.read(bytes);
+        int chorusMix = bytes[0] + bytes[1] * 16;
+        program.setChorusMix(chorusMix);
+
+        in.read(bytes);
+        int chorusLevel = bytes[0] + bytes[1] * 16;
+        program.setChorusLevel(chorusLevel);
+
+        // unused
+        in.read(new byte[30 * 2]);
+
+        // delay parameters
+        bytes = new byte[2];
+        in.read(bytes);
+        int delayMix = bytes[0] + bytes[1] * 16;
+        program.setDelayMix(delayMix);
+
+        in.read(bytes);
+        int delayLevel = bytes[0] + bytes[1] * 16;
+        program.setDelayLevel(delayLevel);
+
+        in.read(bytes);
+        int delayTime1Beat = bytes[0] + bytes[1] * 16;
+        program.setDelayTime1Beat(delayTime1Beat);
+
+        in.read(bytes);
+        int delayTime1Echoes = bytes[0] + bytes[1] * 16;
+        program.setDelayTime1Echoes(delayTime1Echoes);
+
+        in.read(bytes);
+        int delayTime2Beat = bytes[0] + bytes[1] * 16;
+        program.setDelayTime2Beat(delayTime2Beat);
+
+        in.read(bytes);
+        int delayTime2Echoes = bytes[0] + bytes[1] * 16;
+        program.setDelayTime2Echoes(delayTime2Echoes);
+
+        // TODO what is this?
+        in.read(new byte[4]);
+
+        in.read(bytes);
+        int delayLevel1 = bytes[0] + bytes[1] * 16;
+        program.setDelayLevel1(delayLevel1);
+
+        in.read(bytes);
+        int delayLevel2 = bytes[0] + bytes[1] * 16;
+        program.setDelayLevel2(delayLevel2);
+
+        in.read(bytes);
+        int delayFeedback1 = bytes[0] + bytes[1] * 16;
+        program.setDelayFeedback1(delayFeedback1);
+
+        in.read(bytes);
+        int delayInsert = bytes[0] + bytes[1] * 16;
+        program.setDelayInsert(delayInsert);
+
+        in.read(bytes);
+        int delayFeedback2 = bytes[0] + bytes[1] * 16;
+        program.setDelayFeedback2(delayFeedback2);
+
+        in.read(bytes);
+        int delayDamp1 = bytes[0] + bytes[1] * 16;
+        program.setDelayDamp1(delayDamp1);
+
+        in.read(bytes);
+        int delayDamp2 = bytes[0] + bytes[1] * 16;
+        program.setDelayDamp2(delayDamp2);
+
+        in.read(bytes);
+        int delayClear = bytes[0] + bytes[1] * 16;
+        program.setDelayClear(delayClear);
+
+        // unused
+        in.read(new byte[16 * 2]);
+
+        // reverb parameters
+        bytes = new byte[2];
+        in.read(bytes);
+        int reverbMix = bytes[0] + bytes[1] * 16;
+        program.setReverbMix(reverbMix);
+
+        in.read(bytes);
+        int reverbLevel = bytes[0] + bytes[1] * 16;
+        program.setReverbLevel(reverbLevel);
+
+        in.read(bytes);
+        double reverbSize = (bytes[0] + bytes[1] * 16) / 2.0 + 4;
+        program.setReverbSize(reverbSize);
+
+        in.read(bytes);
+        int reverbLink = bytes[0] + bytes[1] * 16;
+        program.setReverbLink(reverbLink);
+
+        in.read(bytes);
+        int reverbDiff = (bytes[0] + bytes[1] * 16) * 2;
+        program.setReverbDiff(reverbDiff);
+
+        in.read(bytes);
+        int reverbPreDelay = bytes[0] + bytes[1] * 16;
+        program.setReverbPreDelay(reverbPreDelay);
+
+        in.read(bytes);
+        int reverbDelayTime = bytes[0] + bytes[1] * 16;
+        program.setReverbDelayTime(reverbDelayTime);
+
+        in.read(bytes);
+        int reverbDelayLevel = bytes[0] + bytes[1] * 16;
+        program.setReverbDelayLevel(reverbDelayLevel);
+
+        in.read(bytes);
+        int reverbRtHC = bytes[0] + bytes[1] * 16;
+        program.setReverbRtHC(reverbRtHC);
+
+        // unused
+        in.read(new byte[23 * 2]);
+
+        // TODO eq parameters
+        in.read(new byte[32 * 2]);
+
+        // gain parameters
+        bytes = new byte[2];
+        in.read(bytes);
+        int gainLo = bytes[0] + bytes[1] * 16;
+        program.setGainLo(gainLo);
+
+        in.read(bytes);
+        int gainMid = bytes[0] + bytes[1] * 16;
+        program.setGainMid(gainMid);
+
+        in.read(bytes);
+        int gainHi = bytes[0] + bytes[1] * 16;
+        program.setGainHi(gainHi);
+
+        in.read(bytes);
+        int gainDrive = bytes[0] + bytes[1] * 16;
+        program.setGainDrive(gainDrive);
+
+        in.read(bytes);
+        int gainTone = bytes[0] + bytes[1] * 16;
+        program.setGainTone(gainTone);
+
+        in.read(bytes);
+        int gainLevel = bytes[0] + bytes[1] * 16;
+        program.setGainLevel(gainLevel);
+
+        // unused
+        in.read(new byte[26 * 2]);
+
+        // TODO
         bytes = new byte[6];
         in.read(bytes);
 
