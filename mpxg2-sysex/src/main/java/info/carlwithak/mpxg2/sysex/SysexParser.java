@@ -12,6 +12,7 @@ import java.io.InputStream;
 public class SysexParser {
 
     private static final int SYSEX_ID_START = 0xf0;
+    private static final int SYSEX_ID_END = 0xf7;
     private static final int LEXICON_MANUFACTURER_ID = 0x06;
     private static final int MPXG2_PRODUCT_ID = 0x0f;
     private static final int DATA_MESSAGE_TYPE = 0x01;
@@ -1101,6 +1102,14 @@ public class SysexParser {
         int programNumber = controlLevel2 * 100 + controlLevel3 + 1;
 
         program.setProgramNumber(programNumber);
+
+        b = in.read();
+        @SuppressWarnings("unused")
+        int checksum = b;
+
+        if ((b = in.read()) != SYSEX_ID_END) {
+            throw new ParseException("Invalid Sysex ID (end)");
+        }
 
         in.close();
 
