@@ -355,10 +355,34 @@ public class SysexParser {
         }
         program.setRouting(sb.toString());
 
-        // TODO skip 7 bytes of data for now
-        for (int i = 0; i < 7 * 2; i++) {
-            in.read();
-        }
+        bytes = new byte[2];
+        in.read(bytes);
+        int effect1ToePatch = bytes[0] + bytes[1] * 16;
+        program.setEffect1ToePatch(effect1ToePatch);
+
+        in.read(bytes);
+        int effect2ToePatch = bytes[0] + bytes[1] * 16;
+        program.setEffect2ToePatch(effect2ToePatch);
+
+        in.read(bytes);
+        int chorusToePatch = bytes[0] + bytes[1] * 16;
+        program.setChorusToePatch(chorusToePatch);
+
+        in.read(bytes);
+        int delayToePatch = bytes[0] + bytes[1] * 16;
+        program.setDelayToePatch(delayToePatch);
+
+        in.read(bytes);
+        int reverbToePatch = bytes[0] + bytes[1] * 16;
+        program.setReverbToePatch(reverbToePatch);
+
+        in.read(bytes);
+        int eqToePatch = bytes[0] + bytes[1] * 16;
+        program.setEqToePatch(eqToePatch);
+
+        in.read(bytes);
+        int gainToePatch = bytes[0] + bytes[1] * 16;
+        program.setGainToePatch(gainToePatch);
 
         for (int i = 0; i < 7; i++) {
             bytes = new byte[2];

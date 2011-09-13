@@ -113,6 +113,14 @@ public class SysexParserTest {
 
         assertEquals("I=1=2=G=E=C=D=R=O", program.getRouting());
 
+        assertEquals(0, program.getEffect1ToePatch());
+        assertEquals(0, program.getEffect2ToePatch());
+        assertEquals(0, program.getChorusToePatch());
+        assertEquals(0, program.getDelayToePatch());
+        assertEquals(0, program.getReverbToePatch());
+        assertEquals(0, program.getEqToePatch());
+        assertEquals(0, program.getGainToePatch());
+
         assertEquals(0, program.getEffect1Algorithm());
         assertEquals(0, program.getEffect2Algorithm());
         assertEquals(0, program.getChorusAlgorithm());
@@ -270,6 +278,14 @@ public class SysexParserTest {
         assertTrue(program.isRock());
 
         assertEquals("I=1=2=G=E=C=D=R=O", program.getRouting());
+
+        assertEquals(0, program.getEffect1ToePatch());
+        assertEquals(0, program.getEffect2ToePatch());
+        assertEquals(0, program.getChorusToePatch());
+        assertEquals(0, program.getDelayToePatch());
+        assertEquals(0, program.getReverbToePatch());
+        assertEquals(0, program.getEqToePatch());
+        assertEquals(0, program.getGainToePatch());
 
         assertEquals(27, program.getEffect1Algorithm());
         assertEquals(0, program.getEffect2Algorithm());
@@ -470,6 +486,14 @@ public class SysexParserTest {
         assertTrue(program.isRock());
 
         assertEquals("I=1=2=G=C=D=R=E=O", program.getRouting());
+
+        assertEquals(2, program.getEffect1ToePatch());
+        assertEquals(1, program.getEffect2ToePatch());
+        assertEquals(2, program.getChorusToePatch());
+        assertEquals(0, program.getDelayToePatch());
+        assertEquals(1, program.getReverbToePatch());
+        assertEquals(0, program.getEqToePatch());
+        assertEquals(0, program.getGainToePatch());
 
         assertEquals(12, program.getEffect1Algorithm());
         assertEquals(18, program.getEffect2Algorithm());

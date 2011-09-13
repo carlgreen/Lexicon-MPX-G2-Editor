@@ -75,6 +75,15 @@ public class Program {
     private boolean isRock;
 
     private String routing;
+
+    private int effect1ToePatch;
+    private int effect2ToePatch;
+    private int chorusToePatch;
+    private int delayToePatch;
+    private int reverbToePatch;
+    private int eqToePatch;
+    private int gainToePatch;
+
     private int effect1Algorithm;
     private int effect2Algorithm;
     private int chorusAlgorithm;
@@ -706,6 +715,62 @@ public class Program {
 
     void setRouting(final String routing) {
         this.routing = routing;
+    }
+
+    int getEffect1ToePatch() {
+        return effect1ToePatch;
+    }
+
+    void setEffect1ToePatch(final int effect1ToePatch) {
+        this.effect1ToePatch = effect1ToePatch;
+    }
+
+    int getEffect2ToePatch() {
+        return effect2ToePatch;
+    }
+
+    void setEffect2ToePatch(final int effect2ToePatch) {
+        this.effect2ToePatch = effect2ToePatch;
+    }
+
+    int getChorusToePatch() {
+        return chorusToePatch;
+    }
+
+    void setChorusToePatch(final int chorusToePatch) {
+        this.chorusToePatch = chorusToePatch;
+    }
+
+    int getDelayToePatch() {
+        return delayToePatch;
+    }
+
+    void setDelayToePatch(final int delayToePatch) {
+        this.delayToePatch = delayToePatch;
+    }
+
+    int getReverbToePatch() {
+        return reverbToePatch;
+    }
+
+    void setReverbToePatch(final int reverbToePatch) {
+        this.reverbToePatch = reverbToePatch;
+    }
+
+    int getEqToePatch() {
+        return eqToePatch;
+    }
+
+    void setEqToePatch(final int eqToePatch) {
+        this.eqToePatch = eqToePatch;
+    }
+
+    int getGainToePatch() {
+        return gainToePatch;
+    }
+
+    void setGainToePatch(final int gainToePatch) {
+        this.gainToePatch = gainToePatch;
     }
 
     int getEffect1Algorithm() {
