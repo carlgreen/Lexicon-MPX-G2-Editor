@@ -1,0 +1,80 @@
+package info.carlwithak.mpxg2.sysex;
+
+import java.io.File;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+/**
+ * Tests for ProgramPrinter.
+ *
+ * @author carl
+ */
+public class ProgramPrinterTest {
+
+    /**
+     * Test printing a textual representation of the program.
+     *
+     * TODO would be good not to use SysexParser.parseProgram()?
+     */
+    @Test
+    public void testPrintG2Blue() throws Exception {
+        String expected =
+                "G2 Blue\n" +
+                "  Effect 1: UniVybe (on)\n" +
+                "    Toe Switch: on=bypass\n" +
+                "    Mix: 100%\n" +
+                "    Level: 0dB\n" +
+                "    Rate: 20\n" +
+                "  Effect 2: Pedal Wah 1 (off)\n" +
+                "    Toe Switch: off=bypass\n" +
+                "    Mix: 100%\n" +
+                "    Level: 0dB\n" +
+                "    Bass: 19\n" +
+                "    Type: Model C\n" +
+                "    Resp: 100\n" +
+                "    Gain: +10\n" +
+                "  Chorus: Pedal Vol (on)\n" +
+                "    Toe Switch: on=bypass\n" +
+                "    Mix: 100%\n" +
+                "    Level: 0dB\n" +
+                "  Delay: Echo (D) (on)\n" +
+                "    Toe Switch: disabled\n" +
+                "    Mix: 2%\n" +
+                "    Level: +1dB\n" +
+                "    Time1: 4:4\n" +
+                "    Time2: 2:1\n" +
+                "    Level1: 0dB\n" +
+                "    Level2: 0dB\n" +
+                "    Feedback1: +1%\n" +
+                "    Insert: delay\n" +
+                "    Feedback2: +1%\n" +
+                "    Damp1: 20%\n" +
+                "    Damp2: 20%\n" +
+                "    Clear: off\n" +
+                "  Reverb: Ambience (off)\n" +
+                "    Toe Switch: off=bypass\n" +
+                "    Mix: 18%\n" +
+                "    Level: 0dB\n" +
+                "    Size: 24.5m\n" +
+                "    Link: on\n" +
+                "    Diff: 60%\n" +
+                "    Pre Delay: 7ms\n" +
+                "    Delay Time: 1.41s\n" +
+                "    Delay Level: off\n" +
+                "    Rt HC: 12.8k\n" +
+                "  Gain: Screamer (off)\n" +
+                "    Toe Switch: disabled\n" +
+                "    Lo: +2\n" +
+                "    Mid: +1\n" +
+                "    Hi: +3\n" +
+                "    Drive: 22\n" +
+                "    Tone: 25\n" +
+                "    Level: 57";
+        File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+        String actual = ProgramPrinter.print(program);
+        assertEquals(expected, actual);
+    }
+
+}
