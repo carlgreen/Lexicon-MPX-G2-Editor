@@ -41,6 +41,7 @@ public class ProgramPrinterTest {
                 "  Guitar Style: Blues, Clean, Jazz, Rock\n" +
                 "  Effect Type: Chorus, Delay, Gain, Reverb, Wah\n" +
                 "  Application Type: Amp Input + FX Loop\n" +
+                "  Effect Routing: I=1=2=G=C=D=R=E=O\n" + // TODO indicate that EQ is not available
                 "  Effect 1: UniVybe (on)\n" +
                 "    Toe Switch: on=bypass\n" +
                 "    Mix: 100%\n" +
