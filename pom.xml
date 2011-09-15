@@ -21,6 +21,12 @@
         </license>
     </licenses>
 
+    <scm>
+        <connection>scm:git:git@github.com:carlgreen/Lexicon-MPX-G2-Editor.git</connection>
+        <url>scm:git:git@github.com:carlgreen/Lexicon-MPX-G2-Editor.git</url>
+        <developerConnection>scm:git:git@github.com:carlgreen/Lexicon-MPX-G2-Editor.git</developerConnection>
+    </scm>
+
     <developers>
         <developer>
             <id>carlgreen@gmail.com</id>
