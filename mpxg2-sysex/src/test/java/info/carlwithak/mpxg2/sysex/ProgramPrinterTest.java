@@ -38,6 +38,9 @@ public class ProgramPrinterTest {
     public void testPrintG2Blue() throws Exception {
         String expected =
                 "G2 Blue\n" +
+                "  Guitar Style: Blues, Clean, Jazz, Rock\n" +
+                "  Effect Type: Chorus, Delay, Gain, Reverb, Wah\n" +
+                "  Application Type: Amp Input + FX Loop\n" +
                 "  Effect 1: UniVybe (on)\n" +
                 "    Toe Switch: on=bypass\n" +
                 "    Mix: 100%\n" +

@@ -70,6 +70,91 @@ public class ProgramPrinter {
     static String print(Program program) {
         StringBuilder sb = new StringBuilder();
         sb.append(program.getProgramName()).append("\n");
+        StringBuilder styleSB = new StringBuilder();
+        if (program.isAcoustic()) {
+            styleSB.append("Acoustic, ");
+        }
+        if (program.isBass()) {
+            styleSB.append("Bass, ");
+        }
+        if (program.isBlues()) {
+            styleSB.append("Blues, ");
+        }
+        if (program.isClean()) {
+            styleSB.append("Clean, ");
+        }
+        if (program.isCountry()) {
+            styleSB.append("Country, ");
+        }
+        if (program.isJazz()) {
+            styleSB.append("Jazz, ");
+        }
+        if (program.isRock()) {
+            styleSB.append("Rock, ");
+        }
+        sb.append("  Guitar Style: ");
+        if (styleSB.length() > 0) {
+            sb.append(styleSB.substring(0, styleSB.length() - 2));
+        }
+        sb.append("\n");
+        StringBuilder effectTypeSB = new StringBuilder();
+        if (program.isChorus()) {
+            effectTypeSB.append("Chorus, ");
+        }
+        if (program.isDelay()) {
+            effectTypeSB.append("Delay, ");
+        }
+        if (program.isDistortion()) {
+            effectTypeSB.append("Distortion, ");
+        }
+        if (program.isEq()) {
+            effectTypeSB.append("EQ, ");
+        }
+        if (program.isFlanger()) {
+            effectTypeSB.append("Flanger, ");
+        }
+        if (program.isGain()) {
+            effectTypeSB.append("Gain, ");
+        }
+        if (program.isMod()) {
+            effectTypeSB.append("Mod, ");
+        }
+        if (program.isOverdrive()) {
+            effectTypeSB.append("Overdrive, ");
+        }
+        if (program.isPhaser()) {
+            effectTypeSB.append("Phaser, ");
+        }
+        if (program.isPitch()) {
+            effectTypeSB.append("Pitch, ");
+        }
+        if (program.isReverb()) {
+            effectTypeSB.append("Reverb, ");
+        }
+        if (program.isSpeakerSim()) {
+            effectTypeSB.append("Speaker Sim, ");
+        }
+        if (program.isWah()) {
+            effectTypeSB.append("Wah, ");
+        }
+        sb.append("  Effect Type: ");
+        if (effectTypeSB.length() > 0) {
+            sb.append(effectTypeSB.substring(0, effectTypeSB.length() - 2));
+        }
+        sb.append("\n");
+        StringBuilder appTypeSB = new StringBuilder();
+        if (program.isPrePost()) {
+            appTypeSB.append("Amp Input + FX Loop");
+        }
+        if (program.isStandAlone()) {
+            appTypeSB.append("Stand alone");
+        }
+        if (program.isInline()) {
+            appTypeSB.append("Amp Input Only");
+        }
+        sb.append("  Application Type: ");
+        sb.append(appTypeSB.toString());
+        sb.append("\n");
         if (program.getEffect1Algorithm() > 0) {
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
