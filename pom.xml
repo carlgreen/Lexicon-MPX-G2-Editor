@@ -13,6 +13,14 @@
         <url>http://carlwithak.info</url>
     </organization>
 
+    <licenses>
+        <license>
+            <name>GNU General Public License (GPL) version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <developers>
         <developer>
             <id>carlgreen@gmail.com</id>
