@@ -526,27 +526,21 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int patch1Source = bytes[0] + (bytes[1] * 16);
-        program.setPatch1Source(patch1Source);
 
         in.read(bytes);
         int patch1SourceMin = bytes[0] + (bytes[1] * 16);
-        program.setPatch1SourceMin(patch1SourceMin);
 
         in.read(bytes);
         int patch1SourceMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch1SourceMid(patch1SourceMid);
 
         in.read(bytes);
         int patch1SourceMax = bytes[0] + (bytes[1] * 16);
-        program.setPatch1SourceMax(patch1SourceMax);
 
         in.read(bytes);
         int patch1DestinationEffect = bytes[0] + (bytes[1] * 16);
-        program.setPatch1DestinationEffect(patch1DestinationEffect);
 
         in.read(bytes);
         int patch1DestinationParameter = bytes[0] + (bytes[1] * 16);
-        program.setPatch1DestinationParameter(patch1DestinationParameter);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -554,7 +548,6 @@ public class SysexParser {
         for (int i = 0; i < 4; i++) {
             patch1DestinationMin += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch1DestinationMin(patch1DestinationMin);
 
         // TODO find out what goes here
         bytes = new byte[2];
@@ -563,7 +556,6 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int patch1DestinationMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch1DestinationMid(patch1DestinationMid);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -571,33 +563,38 @@ public class SysexParser {
         for (int i = 0; i < 4; i++) {
             patch1DestinationMax += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch1DestinationMax(patch1DestinationMax);
+
+        Patch patch1 = new Patch();
+        patch1.setSource(patch1Source);
+        patch1.setSourceMin(patch1SourceMin);
+        patch1.setSourceMid(patch1SourceMid);
+        patch1.setSourceMax(patch1SourceMax);
+        patch1.setDestinationEffect(patch1DestinationEffect);
+        patch1.setDestinationParameter(patch1DestinationParameter);
+        patch1.setDestinationMin(patch1DestinationMin);
+        patch1.setDestinationMid(patch1DestinationMid);
+        patch1.setDestinationMax(patch1DestinationMax);
+        program.setPatch1(patch1);
 
         // patching 2
         bytes = new byte[2];
         in.read(bytes);
         int patch2Source = bytes[0] + (bytes[1] * 16);
-        program.setPatch2Source(patch2Source);
 
         in.read(bytes);
         int patch2SourceMin = bytes[0] + (bytes[1] * 16);
-        program.setPatch2SourceMin(patch2SourceMin);
 
         in.read(bytes);
         int patch2SourceMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch2SourceMid(patch2SourceMid);
 
         in.read(bytes);
         int patch2SourceMax = bytes[0] + (bytes[1] * 16);
-        program.setPatch2SourceMax(patch2SourceMax);
 
         in.read(bytes);
         int patch2DestinationEffect = bytes[0] + (bytes[1] * 16);
-        program.setPatch2DestinationEffect(patch2DestinationEffect);
 
         in.read(bytes);
         int patch2DestinationParameter = bytes[0] + (bytes[1] * 16);
-        program.setPatch2DestinationParameter(patch2DestinationParameter);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -605,7 +602,6 @@ public class SysexParser {
         for (int i = 0; i < 4; i++) {
             patch2DestinationMin += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch2DestinationMin(patch2DestinationMin);
 
         // TODO find out what goes here
         bytes = new byte[2];
@@ -614,7 +610,6 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int patch2DestinationMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch2DestinationMid(patch2DestinationMid);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -622,33 +617,38 @@ public class SysexParser {
         for (int i = 0; i < 4; i++) {
             patch2DestinationMax += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch2DestinationMax(patch2DestinationMax);
+
+        Patch patch2 = new Patch();
+        patch2.setSource(patch2Source);
+        patch2.setSourceMin(patch2SourceMin);
+        patch2.setSourceMid(patch2SourceMid);
+        patch2.setSourceMax(patch2SourceMax);
+        patch2.setDestinationEffect(patch2DestinationEffect);
+        patch2.setDestinationParameter(patch2DestinationParameter);
+        patch2.setDestinationMin(patch2DestinationMin);
+        patch2.setDestinationMid(patch2DestinationMid);
+        patch2.setDestinationMax(patch2DestinationMax);
+        program.setPatch2(patch2);
 
         // patching 3
         bytes = new byte[2];
         in.read(bytes);
         int patch3Source = bytes[0] + (bytes[1] * 16);
-        program.setPatch3Source(patch3Source);
 
         in.read(bytes);
         int patch3SourceMin = bytes[0] + (bytes[1] * 16);
-        program.setPatch3SourceMin(patch3SourceMin);
 
         in.read(bytes);
         int patch3SourceMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch3SourceMid(patch3SourceMid);
 
         in.read(bytes);
         int patch3SourceMax = bytes[0] + (bytes[1] * 16);
-        program.setPatch3SourceMax(patch3SourceMax);
 
         in.read(bytes);
         int patch3DestinationEffect = bytes[0] + (bytes[1] * 16);
-        program.setPatch3DestinationEffect(patch3DestinationEffect);
 
         in.read(bytes);
         int patch3DestinationParameter = bytes[0] + (bytes[1] * 16);
-        program.setPatch3DestinationParameter(patch3DestinationParameter);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -657,7 +657,6 @@ public class SysexParser {
         for (int i = 0; i < 2; i++) {
             patch3DestinationMin += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch3DestinationMin(patch3DestinationMin);
 
         // TODO find out what goes here
         bytes = new byte[2];
@@ -666,7 +665,6 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int patch3DestinationMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch3DestinationMid(patch3DestinationMid);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -674,33 +672,38 @@ public class SysexParser {
         for (int i = 0; i < 4; i++) {
             patch3DestinationMax += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch3DestinationMax(patch3DestinationMax);
+
+        Patch patch3 = new Patch();
+        patch3.setSource(patch3Source);
+        patch3.setSourceMin(patch3SourceMin);
+        patch3.setSourceMid(patch3SourceMid);
+        patch3.setSourceMax(patch3SourceMax);
+        patch3.setDestinationEffect(patch3DestinationEffect);
+        patch3.setDestinationParameter(patch3DestinationParameter);
+        patch3.setDestinationMin(patch3DestinationMin);
+        patch3.setDestinationMid(patch3DestinationMid);
+        patch3.setDestinationMax(patch3DestinationMax);
+        program.setPatch3(patch3);
 
         // patching 4
         bytes = new byte[2];
         in.read(bytes);
         int patch4Source = bytes[0] + (bytes[1] * 16);
-        program.setPatch4Source(patch4Source);
 
         in.read(bytes);
         int patch4SourceMin = bytes[0] + (bytes[1] * 16);
-        program.setPatch4SourceMin(patch4SourceMin);
 
         in.read(bytes);
         int patch4SourceMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch4SourceMid(patch4SourceMid);
 
         in.read(bytes);
         int patch4SourceMax = bytes[0] + (bytes[1] * 16);
-        program.setPatch4SourceMax(patch4SourceMax);
 
         in.read(bytes);
         int patch4DestinationEffect = bytes[0] + (bytes[1] * 16);
-        program.setPatch4DestinationEffect(patch4DestinationEffect);
 
         in.read(bytes);
         int patch4DestinationParameter = bytes[0] + (bytes[1] * 16);
-        program.setPatch4DestinationParameter(patch4DestinationParameter);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -709,7 +712,6 @@ public class SysexParser {
         for (int i = 0; i < 2; i++) {
             patch4DestinationMin += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch4DestinationMin(patch4DestinationMin);
 
         // TODO find out what goes here
         bytes = new byte[2];
@@ -718,7 +720,6 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int patch4DestinationMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch4DestinationMid(patch4DestinationMid);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -726,33 +727,38 @@ public class SysexParser {
         for (int i = 0; i < 4; i++) {
             patch4DestinationMax += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch4DestinationMax(patch4DestinationMax);
+
+        Patch patch4 = new Patch();
+        patch4.setSource(patch4Source);
+        patch4.setSourceMin(patch4SourceMin);
+        patch4.setSourceMid(patch4SourceMid);
+        patch4.setSourceMax(patch4SourceMax);
+        patch4.setDestinationEffect(patch4DestinationEffect);
+        patch4.setDestinationParameter(patch4DestinationParameter);
+        patch4.setDestinationMin(patch4DestinationMin);
+        patch4.setDestinationMid(patch4DestinationMid);
+        patch4.setDestinationMax(patch4DestinationMax);
+        program.setPatch4(patch4);
 
         // patching 5
         bytes = new byte[2];
         in.read(bytes);
         int patch5Source = bytes[0] + (bytes[1] * 16);
-        program.setPatch5Source(patch5Source);
 
         in.read(bytes);
         int patch5SourceMin = bytes[0] + (bytes[1] * 16);
-        program.setPatch5SourceMin(patch5SourceMin);
 
         in.read(bytes);
         int patch5SourceMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch5SourceMid(patch5SourceMid);
 
         in.read(bytes);
         int patch5SourceMax = bytes[0] + (bytes[1] * 16);
-        program.setPatch5SourceMax(patch5SourceMax);
 
         in.read(bytes);
         int patch5DestinationEffect = bytes[0] + (bytes[1] * 16);
-        program.setPatch5DestinationEffect(patch5DestinationEffect);
 
         in.read(bytes);
         int patch5DestinationParameter = bytes[0] + (bytes[1] * 16);
-        program.setPatch5DestinationParameter(patch5DestinationParameter);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -761,7 +767,6 @@ public class SysexParser {
         for (int i = 0; i < 2; i++) {
             patch5DestinationMin += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch5DestinationMin(patch5DestinationMin);
 
         // TODO find out what goes here
         bytes = new byte[2];
@@ -770,7 +775,6 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int patch5DestinationMid = bytes[0] + (bytes[1] * 16);
-        program.setPatch5DestinationMid(patch5DestinationMid);
 
         bytes = new byte[4];
         in.read(bytes);
@@ -778,7 +782,18 @@ public class SysexParser {
         for (int i = 0; i < 4; i++) {
             patch5DestinationMax += (bytes[i] * Math.pow(16, i));
         }
-        program.setPatch5DestinationMax(patch5DestinationMax);
+
+        Patch patch5 = new Patch();
+        patch5.setSource(patch5Source);
+        patch5.setSourceMin(patch5SourceMin);
+        patch5.setSourceMid(patch5SourceMid);
+        patch5.setSourceMax(patch5SourceMax);
+        patch5.setDestinationEffect(patch5DestinationEffect);
+        patch5.setDestinationParameter(patch5DestinationParameter);
+        patch5.setDestinationMin(patch5DestinationMin);
+        patch5.setDestinationMid(patch5DestinationMid);
+        patch5.setDestinationMax(patch5DestinationMax);
+        program.setPatch5(patch5);
 
         // knob controller
         bytes = new byte[2];
