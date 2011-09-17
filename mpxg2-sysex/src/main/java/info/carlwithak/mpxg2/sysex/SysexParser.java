@@ -522,278 +522,12 @@ public class SysexParser {
         // unused
         in.read(new byte[2]);
 
-        // patching 1
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch1Source = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch1SourceMin = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch1SourceMid = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch1SourceMax = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch1DestinationEffect = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch1DestinationParameter = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch1DestinationMin = 0;
-        for (int i = 0; i < 4; i++) {
-            patch1DestinationMin += (bytes[i] * Math.pow(16, i));
-        }
-
-        // TODO find out what goes here
-        bytes = new byte[2];
-        in.read(bytes);
-
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch1DestinationMid = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch1DestinationMax = 0;
-        for (int i = 0; i < 4; i++) {
-            patch1DestinationMax += (bytes[i] * Math.pow(16, i));
-        }
-
-        Patch patch1 = new Patch();
-        patch1.setSource(patch1Source);
-        patch1.setSourceMin(patch1SourceMin);
-        patch1.setSourceMid(patch1SourceMid);
-        patch1.setSourceMax(patch1SourceMax);
-        patch1.setDestinationEffect(patch1DestinationEffect);
-        patch1.setDestinationParameter(patch1DestinationParameter);
-        patch1.setDestinationMin(patch1DestinationMin);
-        patch1.setDestinationMid(patch1DestinationMid);
-        patch1.setDestinationMax(patch1DestinationMax);
-        program.setPatch1(patch1);
-
-        // patching 2
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch2Source = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch2SourceMin = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch2SourceMid = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch2SourceMax = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch2DestinationEffect = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch2DestinationParameter = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch2DestinationMin = 0;
-        for (int i = 0; i < 4; i++) {
-            patch2DestinationMin += (bytes[i] * Math.pow(16, i));
-        }
-
-        // TODO find out what goes here
-        bytes = new byte[2];
-        in.read(bytes);
-
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch2DestinationMid = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch2DestinationMax = 0;
-        for (int i = 0; i < 4; i++) {
-            patch2DestinationMax += (bytes[i] * Math.pow(16, i));
-        }
-
-        Patch patch2 = new Patch();
-        patch2.setSource(patch2Source);
-        patch2.setSourceMin(patch2SourceMin);
-        patch2.setSourceMid(patch2SourceMid);
-        patch2.setSourceMax(patch2SourceMax);
-        patch2.setDestinationEffect(patch2DestinationEffect);
-        patch2.setDestinationParameter(patch2DestinationParameter);
-        patch2.setDestinationMin(patch2DestinationMin);
-        patch2.setDestinationMid(patch2DestinationMid);
-        patch2.setDestinationMax(patch2DestinationMax);
-        program.setPatch2(patch2);
-
-        // patching 3
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch3Source = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch3SourceMin = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch3SourceMid = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch3SourceMax = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch3DestinationEffect = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch3DestinationParameter = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch3DestinationMin = 0;
-        // because this is Delay : Echo (D) : Fbk 1 it only reads the first two
-        for (int i = 0; i < 2; i++) {
-            patch3DestinationMin += (bytes[i] * Math.pow(16, i));
-        }
-
-        // TODO find out what goes here
-        bytes = new byte[2];
-        in.read(bytes);
-
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch3DestinationMid = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch3DestinationMax = 0;
-        for (int i = 0; i < 4; i++) {
-            patch3DestinationMax += (bytes[i] * Math.pow(16, i));
-        }
-
-        Patch patch3 = new Patch();
-        patch3.setSource(patch3Source);
-        patch3.setSourceMin(patch3SourceMin);
-        patch3.setSourceMid(patch3SourceMid);
-        patch3.setSourceMax(patch3SourceMax);
-        patch3.setDestinationEffect(patch3DestinationEffect);
-        patch3.setDestinationParameter(patch3DestinationParameter);
-        patch3.setDestinationMin(patch3DestinationMin);
-        patch3.setDestinationMid(patch3DestinationMid);
-        patch3.setDestinationMax(patch3DestinationMax);
-        program.setPatch3(patch3);
-
-        // patching 4
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch4Source = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch4SourceMin = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch4SourceMid = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch4SourceMax = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch4DestinationEffect = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch4DestinationParameter = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch4DestinationMin = 0;
-        // because this is Delay : Echo (D) : Fbk 2 it only reads the first two
-        for (int i = 0; i < 2; i++) {
-            patch4DestinationMin += (bytes[i] * Math.pow(16, i));
-        }
-
-        // TODO find out what goes here
-        bytes = new byte[2];
-        in.read(bytes);
-
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch4DestinationMid = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch4DestinationMax = 0;
-        for (int i = 0; i < 4; i++) {
-            patch4DestinationMax += (bytes[i] * Math.pow(16, i));
-        }
-
-        Patch patch4 = new Patch();
-        patch4.setSource(patch4Source);
-        patch4.setSourceMin(patch4SourceMin);
-        patch4.setSourceMid(patch4SourceMid);
-        patch4.setSourceMax(patch4SourceMax);
-        patch4.setDestinationEffect(patch4DestinationEffect);
-        patch4.setDestinationParameter(patch4DestinationParameter);
-        patch4.setDestinationMin(patch4DestinationMin);
-        patch4.setDestinationMid(patch4DestinationMid);
-        patch4.setDestinationMax(patch4DestinationMax);
-        program.setPatch4(patch4);
-
-        // patching 5
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch5Source = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch5SourceMin = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch5SourceMid = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch5SourceMax = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch5DestinationEffect = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int patch5DestinationParameter = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch5DestinationMin = 0;
-        // because this is Send Level it only reads the first two
-        for (int i = 0; i < 2; i++) {
-            patch5DestinationMin += (bytes[i] * Math.pow(16, i));
-        }
-
-        // TODO find out what goes here
-        bytes = new byte[2];
-        in.read(bytes);
-
-        bytes = new byte[2];
-        in.read(bytes);
-        int patch5DestinationMid = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int patch5DestinationMax = 0;
-        for (int i = 0; i < 4; i++) {
-            patch5DestinationMax += (bytes[i] * Math.pow(16, i));
-        }
-
-        Patch patch5 = new Patch();
-        patch5.setSource(patch5Source);
-        patch5.setSourceMin(patch5SourceMin);
-        patch5.setSourceMid(patch5SourceMid);
-        patch5.setSourceMax(patch5SourceMax);
-        patch5.setDestinationEffect(patch5DestinationEffect);
-        patch5.setDestinationParameter(patch5DestinationParameter);
-        patch5.setDestinationMin(patch5DestinationMin);
-        patch5.setDestinationMid(patch5DestinationMid);
-        patch5.setDestinationMax(patch5DestinationMax);
-        program.setPatch5(patch5);
+        // patching
+        program.setPatch1(readPatch(in));
+        program.setPatch2(readPatch(in));
+        program.setPatch3(readPatch(in));
+        program.setPatch4(readPatch(in));
+        program.setPatch5(readPatch(in));
 
         // knob controller
         bytes = new byte[2];
@@ -1103,5 +837,65 @@ public class SysexParser {
         in.close();
 
         return program;
+    }
+
+    private static Patch readPatch(final InputStream in) throws IOException {
+        byte[] bytes = new byte[2];
+        in.read(bytes);
+        int source = bytes[0] + (bytes[1] * 16);
+
+        in.read(bytes);
+        int sourceMin = bytes[0] + (bytes[1] * 16);
+
+        in.read(bytes);
+        int sourceMid = bytes[0] + (bytes[1] * 16);
+
+        in.read(bytes);
+        int sourceMax = bytes[0] + (bytes[1] * 16);
+
+        in.read(bytes);
+        int destinationEffect = bytes[0] + (bytes[1] * 16);
+
+        in.read(bytes);
+        int destinationParameter = bytes[0] + (bytes[1] * 16);
+
+        bytes = new byte[4];
+        in.read(bytes);
+        int destinationMin = 0;
+        // what is this logic?
+        if (bytes[2] == 0xf && bytes[3] == 0xf) {
+            destinationMin = bytes[0] + (bytes[1] * 16);
+        } else {
+            for (int i = 0; i < 4; i++) {
+                destinationMin += (bytes[i] * Math.pow(16, i));
+            }
+        }
+
+        // TODO find out what goes here
+        bytes = new byte[2];
+        in.read(bytes);
+
+        bytes = new byte[2];
+        in.read(bytes);
+        int destinationMid = bytes[0] + (bytes[1] * 16);
+
+        bytes = new byte[4];
+        in.read(bytes);
+        int destinationMax = 0;
+        for (int i = 0; i < 4; i++) {
+            destinationMax += (bytes[i] * Math.pow(16, i));
+        }
+
+        Patch patch = new Patch();
+        patch.setSource(source);
+        patch.setSourceMin(sourceMin);
+        patch.setSourceMid(sourceMid);
+        patch.setSourceMax(sourceMax);
+        patch.setDestinationEffect(destinationEffect);
+        patch.setDestinationParameter(destinationParameter);
+        patch.setDestinationMin(destinationMin);
+        patch.setDestinationMid(destinationMid);
+        patch.setDestinationMax(destinationMax);
+        return patch;
     }
 }
