@@ -17,6 +17,12 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.sysex.effects.Chorus;
+import info.carlwithak.mpxg2.sysex.effects.Delay;
+import info.carlwithak.mpxg2.sysex.effects.Effect1;
+import info.carlwithak.mpxg2.sysex.effects.Effect2;
+import info.carlwithak.mpxg2.sysex.effects.Gain;
+import info.carlwithak.mpxg2.sysex.effects.Reverb;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -99,15 +105,18 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int effect1Mix = bytes[0] + bytes[1] * 16;
-        program.setEffect1Mix(effect1Mix);
 
         in.read(bytes);
         int effect1Level = bytes[0] + bytes[1] * 16;
-        program.setEffect1Level(effect1Level);
 
         in.read(bytes);
         int effect1Rate = bytes[0] + bytes[1] * 16;
-        program.setEffect1Rate(effect1Rate);
+
+        Effect1 effect1 = new Effect1();
+        effect1.setMix(effect1Mix);
+        effect1.setLevel(effect1Level);
+        effect1.setRate(effect1Rate);
+        program.setEffect1(effect1);
 
         // unused
         in.read(new byte[29 * 2]);
@@ -116,27 +125,30 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int effect2Mix = bytes[0] + bytes[1] * 16;
-        program.setEffect2Mix(effect2Mix);
 
         in.read(bytes);
         int effect2Level = bytes[0] + bytes[1] * 16;
-        program.setEffect2Level(effect2Level);
 
         in.read(bytes);
         int effect2Bass = bytes[0] + bytes[1] * 16;
-        program.setEffect2Bass(effect2Bass);
 
         in.read(bytes);
         int effect2Type = bytes[0] + bytes[1] * 16;
-        program.setEffect2Type(effect2Type);
 
         in.read(bytes);
         int effect2Response = bytes[0] + bytes[1] * 16;
-        program.setEffect2Response(effect2Response);
 
         in.read(bytes);
         int effect2Gain = bytes[0] + bytes[1] * 16;
-        program.setEffect2Gain(effect2Gain);
+
+        Effect2 effect2 = new Effect2();
+        effect2.setMix(effect2Mix);
+        effect2.setLevel(effect2Level);
+        effect2.setBass(effect2Bass);
+        effect2.setType(effect2Type);
+        effect2.setResponse(effect2Response);
+        effect2.setGain(effect2Gain);
+        program.setEffect2(effect2);
 
         // unused
         in.read(new byte[26 * 2]);
@@ -145,11 +157,14 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int chorusMix = bytes[0] + bytes[1] * 16;
-        program.setChorusMix(chorusMix);
 
         in.read(bytes);
         int chorusLevel = bytes[0] + bytes[1] * 16;
-        program.setChorusLevel(chorusLevel);
+
+        Chorus chorus = new Chorus();
+        chorus.setMix(chorusMix);
+        chorus.setLevel(chorusLevel);
+        program.setChorus(chorus);
 
         // unused
         in.read(new byte[30 * 2]);
@@ -158,62 +173,65 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int delayMix = bytes[0] + bytes[1] * 16;
-        program.setDelayMix(delayMix);
 
         in.read(bytes);
         int delayLevel = bytes[0] + bytes[1] * 16;
-        program.setDelayLevel(delayLevel);
 
         in.read(bytes);
         int delayTime1Beat = bytes[0] + bytes[1] * 16;
-        program.setDelayTime1Beat(delayTime1Beat);
 
         in.read(bytes);
         int delayTime1Echoes = bytes[0] + bytes[1] * 16;
-        program.setDelayTime1Echoes(delayTime1Echoes);
 
         in.read(bytes);
         int delayTime2Beat = bytes[0] + bytes[1] * 16;
-        program.setDelayTime2Beat(delayTime2Beat);
 
         in.read(bytes);
         int delayTime2Echoes = bytes[0] + bytes[1] * 16;
-        program.setDelayTime2Echoes(delayTime2Echoes);
 
         // TODO what is this?
         in.read(new byte[4]);
 
         in.read(bytes);
         int delayLevel1 = bytes[0] + bytes[1] * 16;
-        program.setDelayLevel1(delayLevel1);
 
         in.read(bytes);
         int delayLevel2 = bytes[0] + bytes[1] * 16;
-        program.setDelayLevel2(delayLevel2);
 
         in.read(bytes);
         int delayFeedback1 = bytes[0] + bytes[1] * 16;
-        program.setDelayFeedback1(delayFeedback1);
 
         in.read(bytes);
         int delayInsert = bytes[0] + bytes[1] * 16;
-        program.setDelayInsert(delayInsert);
 
         in.read(bytes);
         int delayFeedback2 = bytes[0] + bytes[1] * 16;
-        program.setDelayFeedback2(delayFeedback2);
 
         in.read(bytes);
         int delayDamp1 = bytes[0] + bytes[1] * 16;
-        program.setDelayDamp1(delayDamp1);
 
         in.read(bytes);
         int delayDamp2 = bytes[0] + bytes[1] * 16;
-        program.setDelayDamp2(delayDamp2);
 
         in.read(bytes);
         int delayClear = bytes[0] + bytes[1] * 16;
-        program.setDelayClear(delayClear);
+
+        Delay delay = new Delay();
+        delay.setMix(delayMix);
+        delay.setLevel(delayLevel);
+        delay.setTime1Beat(delayTime1Beat);
+        delay.setTime1Echoes(delayTime1Echoes);
+        delay.setTime2Beat(delayTime2Beat);
+        delay.setTime2Echoes(delayTime2Echoes);
+        delay.setLevel1(delayLevel1);
+        delay.setLevel2(delayLevel2);
+        delay.setFeedback1(delayFeedback1);
+        delay.setInsert(delayInsert);
+        delay.setFeedback2(delayFeedback2);
+        delay.setDamp1(delayDamp1);
+        delay.setDamp2(delayDamp2);
+        delay.setClear(delayClear);
+        program.setDelay(delay);
 
         // unused
         in.read(new byte[16 * 2]);
@@ -222,39 +240,42 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int reverbMix = bytes[0] + bytes[1] * 16;
-        program.setReverbMix(reverbMix);
 
         in.read(bytes);
         int reverbLevel = bytes[0] + bytes[1] * 16;
-        program.setReverbLevel(reverbLevel);
 
         in.read(bytes);
         double reverbSize = (bytes[0] + bytes[1] * 16) / 2.0 + 4;
-        program.setReverbSize(reverbSize);
 
         in.read(bytes);
         int reverbLink = bytes[0] + bytes[1] * 16;
-        program.setReverbLink(reverbLink);
 
         in.read(bytes);
         int reverbDiff = (bytes[0] + bytes[1] * 16) * 2;
-        program.setReverbDiff(reverbDiff);
 
         in.read(bytes);
         int reverbPreDelay = bytes[0] + bytes[1] * 16;
-        program.setReverbPreDelay(reverbPreDelay);
 
         in.read(bytes);
         int reverbDelayTime = bytes[0] + bytes[1] * 16;
-        program.setReverbDelayTime(reverbDelayTime);
 
         in.read(bytes);
         int reverbDelayLevel = bytes[0] + bytes[1] * 16;
-        program.setReverbDelayLevel(reverbDelayLevel);
 
         in.read(bytes);
         int reverbRtHC = bytes[0] + bytes[1] * 16;
-        program.setReverbRtHC(reverbRtHC);
+
+        Reverb reverb = new Reverb();
+        reverb.setMix(reverbMix);
+        reverb.setLevel(reverbLevel);
+        reverb.setSize(reverbSize);
+        reverb.setLink(reverbLink);
+        reverb.setDiff(reverbDiff);
+        reverb.setPreDelay(reverbPreDelay);
+        reverb.setDelayTime(reverbDelayTime);
+        reverb.setDelayLevel(reverbDelayLevel);
+        reverb.setRtHC(reverbRtHC);
+        program.setReverb(reverb);
 
         // unused
         in.read(new byte[23 * 2]);
@@ -266,27 +287,30 @@ public class SysexParser {
         bytes = new byte[2];
         in.read(bytes);
         int gainLo = bytes[0] + bytes[1] * 16;
-        program.setGainLo(gainLo);
 
         in.read(bytes);
         int gainMid = bytes[0] + bytes[1] * 16;
-        program.setGainMid(gainMid);
 
         in.read(bytes);
         int gainHi = bytes[0] + bytes[1] * 16;
-        program.setGainHi(gainHi);
 
         in.read(bytes);
         int gainDrive = bytes[0] + bytes[1] * 16;
-        program.setGainDrive(gainDrive);
 
         in.read(bytes);
         int gainTone = bytes[0] + bytes[1] * 16;
-        program.setGainTone(gainTone);
 
         in.read(bytes);
         int gainLevel = bytes[0] + bytes[1] * 16;
-        program.setGainLevel(gainLevel);
+
+        Gain gain = new Gain();
+        gain.setLo(gainLo);
+        gain.setMid(gainMid);
+        gain.setHi(gainHi);
+        gain.setDrive(gainDrive);
+        gain.setTone(gainTone);
+        gain.setLevel(gainLevel);
+        program.setGain(gain);
 
         // unused
         in.read(new byte[26 * 2]);

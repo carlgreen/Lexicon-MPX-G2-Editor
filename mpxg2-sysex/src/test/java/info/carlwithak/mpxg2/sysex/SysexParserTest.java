@@ -455,47 +455,47 @@ public class SysexParserTest {
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
 
-        assertEquals(100, program.getEffect1Mix());
-        assertEquals(0, program.getEffect1Level());
-        assertEquals(20, program.getEffect1Rate());
-        assertEquals(100, program.getEffect2Mix());
-        assertEquals(0, program.getEffect2Level());
-        assertEquals(19, program.getEffect2Bass());
-        assertEquals(0, program.getEffect2Type());
-        assertEquals(100, program.getEffect2Response());
-        assertEquals(10, program.getEffect2Gain());
-        assertEquals(100, program.getChorusMix());
-        assertEquals(0, program.getChorusLevel());
-        assertEquals(2, program.getDelayMix());
-        assertEquals(1, program.getDelayLevel());
-        assertEquals(4, program.getDelayTime1Echoes());
-        assertEquals(4, program.getDelayTime1Beat());
-        assertEquals(2, program.getDelayTime2Echoes());
-        assertEquals(1, program.getDelayTime2Beat());
-        assertEquals(0, program.getDelayLevel1());
-        assertEquals(0, program.getDelayLevel2());
-        assertEquals(1, program.getDelayFeedback1());
-        assertEquals(3, program.getDelayInsert());
-        assertEquals(1, program.getDelayFeedback2());
-        assertEquals(20, program.getDelayDamp1());
-        assertEquals(20, program.getDelayDamp2());
-        assertEquals(0, program.getDelayClear());
-        assertEquals(18, program.getReverbMix());
-        assertEquals(0, program.getReverbLevel());
-        assertEquals(24.5, program.getReverbSize(), 0.01);
-        assertEquals(1, program.getReverbLink());
-        assertEquals(60, program.getReverbDiff());
-        assertEquals(7, program.getReverbPreDelay());
-        assertEquals(51, program.getReverbDelayTime()); // 1.41s is number 51 in list
-        assertEquals(0, program.getReverbDelayLevel());
-        assertEquals(12, program.getReverbRtHC()); // 12.8k is number 12 in list
+        assertEquals(100, program.getEffect1().getMix());
+        assertEquals(0, program.getEffect1().getLevel());
+        assertEquals(20, program.getEffect1().getRate());
+        assertEquals(100, program.getEffect2().getMix());
+        assertEquals(0, program.getEffect2().getLevel());
+        assertEquals(19, program.getEffect2().getBass());
+        assertEquals(0, program.getEffect2().getType());
+        assertEquals(100, program.getEffect2().getResponse());
+        assertEquals(10, program.getEffect2().getGain());
+        assertEquals(100, program.getChorus().getMix());
+        assertEquals(0, program.getChorus().getLevel());
+        assertEquals(2, program.getDelay().getMix());
+        assertEquals(1, program.getDelay().getLevel());
+        assertEquals(4, program.getDelay().getTime1Echoes());
+        assertEquals(4, program.getDelay().getTime1Beat());
+        assertEquals(2, program.getDelay().getTime2Echoes());
+        assertEquals(1, program.getDelay().getTime2Beat());
+        assertEquals(0, program.getDelay().getLevel1());
+        assertEquals(0, program.getDelay().getLevel2());
+        assertEquals(1, program.getDelay().getFeedback1());
+        assertEquals(3, program.getDelay().getInsert());
+        assertEquals(1, program.getDelay().getFeedback2());
+        assertEquals(20, program.getDelay().getDamp1());
+        assertEquals(20, program.getDelay().getDamp2());
+        assertEquals(0, program.getDelay().getClear());
+        assertEquals(18, program.getReverb().getMix());
+        assertEquals(0, program.getReverb().getLevel());
+        assertEquals(24.5, program.getReverb().getSize(), 0.01);
+        assertEquals(1, program.getReverb().getLink());
+        assertEquals(60, program.getReverb().getDiff());
+        assertEquals(7, program.getReverb().getPreDelay());
+        assertEquals(51, program.getReverb().getDelayTime()); // 1.41s is number 51 in list
+        assertEquals(0, program.getReverb().getDelayLevel());
+        assertEquals(12, program.getReverb().getRtHC()); // 12.8k is number 12 in list
         // no eq
-        assertEquals(2, program.getGainLo());
-        assertEquals(1, program.getGainMid());
-        assertEquals(3, program.getGainHi());
-        assertEquals(22, program.getGainDrive());
-        assertEquals(25, program.getGainTone());
-        assertEquals(57, program.getGainLevel());
+        assertEquals(2, program.getGain().getLo());
+        assertEquals(1, program.getGain().getMid());
+        assertEquals(3, program.getGain().getHi());
+        assertEquals(22, program.getGain().getDrive());
+        assertEquals(25, program.getGain().getTone());
+        assertEquals(57, program.getGain().getLevel());
 
         // effect types
         assertTrue(program.isChorus());

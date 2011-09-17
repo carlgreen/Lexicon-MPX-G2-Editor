@@ -17,6 +17,13 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.sysex.effects.Chorus;
+import info.carlwithak.mpxg2.sysex.effects.Delay;
+import info.carlwithak.mpxg2.sysex.effects.Effect1;
+import info.carlwithak.mpxg2.sysex.effects.Effect2;
+import info.carlwithak.mpxg2.sysex.effects.Eq;
+import info.carlwithak.mpxg2.sysex.effects.Gain;
+import info.carlwithak.mpxg2.sysex.effects.Reverb;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,47 +32,13 @@ import java.util.List;
  * @author carl
  */
 public class Program {
-    private int effect1Mix;
-    private int effect1Level;
-    private int effect1Rate;
-    private int effect2Mix;
-    private int effect2Level;
-    private int effect2Bass;
-    private int effect2Type;
-    private int effect2Response;
-    private int effect2Gain;
-    private int chorusMix;
-    private int chorusLevel;
-    private int delayMix;
-    private int delayLevel;
-    private int delayTime1Echoes;
-    private int delayTime1Beat;
-    private int delayTime2Echoes;
-    private int delayTime2Beat;
-    private int delayLevel1;
-    private int delayLevel2;
-    private int delayFeedback1;
-    private int delayInsert;
-    private int delayFeedback2;
-    private int delayDamp1;
-    private int delayDamp2;
-    private int delayClear;
-    private int reverbMix;
-    private int reverbLevel;
-    private double reverbSize;
-    private int reverbLink;
-    private int reverbDiff;
-    private int reverbPreDelay;
-    private int reverbDelayTime;
-    private int reverbDelayLevel;
-    private int reverbRtHC;
-    // TODO eq
-    private int gainLo;
-    private int gainMid;
-    private int gainHi;
-    private int gainDrive;
-    private int gainTone;
-    private int gainLevel;
+    private Effect1 effect1;
+    private Effect2 effect2;
+    private Chorus chorus;
+    private Delay delay;
+    private Reverb reverb;
+    private Eq eq;
+    private Gain gain;
 
     // effect types
     private boolean isChorus;
@@ -240,324 +213,60 @@ public class Program {
 
     private int programNumber;
 
-    int getEffect1Mix() {
-        return effect1Mix;
+    Effect1 getEffect1() {
+        return effect1;
     }
 
-    void setEffect1Mix(final int effect1Mix) {
-        this.effect1Mix = effect1Mix;
+    void setEffect1(final Effect1 effect1) {
+        this.effect1 = effect1;
     }
 
-    int getEffect1Level() {
-        return effect1Level;
+    Effect2 getEffect2() {
+        return effect2;
     }
 
-    void setEffect1Level(final int effect1Level) {
-        this.effect1Level = effect1Level;
+    void setEffect2(final Effect2 effect2) {
+        this.effect2 = effect2;
     }
 
-    int getEffect1Rate() {
-        return effect1Rate;
+    Chorus getChorus() {
+        return chorus;
     }
 
-    void setEffect1Rate(final int effect1Rate) {
-        this.effect1Rate = effect1Rate;
+    void setChorus(final Chorus chorus) {
+        this.chorus = chorus;
     }
 
-    int getEffect2Mix() {
-        return effect2Mix;
+    Delay getDelay() {
+        return delay;
     }
 
-    void setEffect2Mix(final int effect2Mix) {
-        this.effect2Mix = effect2Mix;
+    void setDelay(final Delay delay) {
+        this.delay = delay;
     }
 
-    int getEffect2Level() {
-        return effect2Level;
+    Reverb getReverb() {
+        return reverb;
     }
 
-    void setEffect2Level(final int effect2Level) {
-        this.effect2Level = effect2Level;
+    void setReverb(final Reverb reverb) {
+        this.reverb = reverb;
     }
 
-    int getEffect2Bass() {
-        return effect2Bass;
+    Eq getEq() {
+        return eq;
     }
 
-    void setEffect2Bass(final int effect2Bass) {
-        this.effect2Bass = effect2Bass;
+    void setEq(final Eq eq) {
+        this.eq = eq;
     }
 
-    int getEffect2Type() {
-        return effect2Type;
+    Gain getGain() {
+        return gain;
     }
 
-    void setEffect2Type(final int effect2Type) {
-        this.effect2Type = effect2Type;
-    }
-
-    int getEffect2Response() {
-        return effect2Response;
-    }
-
-    void setEffect2Response(final int effect2Response) {
-        this.effect2Response = effect2Response;
-    }
-
-    int getEffect2Gain() {
-        return effect2Gain;
-    }
-
-    void setEffect2Gain(final int effect2Gain) {
-        this.effect2Gain = effect2Gain;
-    }
-
-    int getChorusMix() {
-        return chorusMix;
-    }
-
-    void setChorusMix(final int chorusMix) {
-        this.chorusMix = chorusMix;
-    }
-
-    int getChorusLevel() {
-        return chorusLevel;
-    }
-
-    void setChorusLevel(final int chorusLevel) {
-        this.chorusLevel = chorusLevel;
-    }
-
-    int getDelayMix() {
-        return delayMix;
-    }
-
-    void setDelayMix(final int delayMix) {
-        this.delayMix = delayMix;
-    }
-
-    int getDelayLevel() {
-        return delayLevel;
-    }
-
-    void setDelayLevel(final int delayLevel) {
-        this.delayLevel = delayLevel;
-    }
-
-    int getDelayTime1Echoes() {
-        return delayTime1Echoes;
-    }
-
-    void setDelayTime1Echoes(final int delayTime1Echoes) {
-        this.delayTime1Echoes = delayTime1Echoes;
-    }
-
-    int getDelayTime1Beat() {
-        return delayTime1Beat;
-    }
-
-    void setDelayTime1Beat(final int delayTime1Beat) {
-        this.delayTime1Beat = delayTime1Beat;
-    }
-
-    int getDelayTime2Echoes() {
-        return delayTime2Echoes;
-    }
-
-    void setDelayTime2Echoes(final int delayTime2Echoes) {
-        this.delayTime2Echoes = delayTime2Echoes;
-    }
-
-    int getDelayTime2Beat() {
-        return delayTime2Beat;
-    }
-
-    void setDelayTime2Beat(final int delayTime2Beat) {
-        this.delayTime2Beat = delayTime2Beat;
-    }
-
-    int getDelayLevel1() {
-        return delayLevel1;
-    }
-
-    void setDelayLevel1(final int delayLevel1) {
-        this.delayLevel1 = delayLevel1;
-    }
-
-    int getDelayLevel2() {
-        return delayLevel2;
-    }
-
-    void setDelayLevel2(final int delayLevel2) {
-        this.delayLevel2 = delayLevel2;
-    }
-
-    int getDelayFeedback1() {
-        return delayFeedback1;
-    }
-
-    void setDelayFeedback1(final int delayFeedback1) {
-        this.delayFeedback1 = delayFeedback1;
-    }
-
-    int getDelayInsert() {
-        return delayInsert;
-    }
-
-    void setDelayInsert(final int delayInsert) {
-        this.delayInsert = delayInsert;
-    }
-
-    int getDelayFeedback2() {
-        return delayFeedback2;
-    }
-
-    void setDelayFeedback2(final int delayFeedback2) {
-        this.delayFeedback2 = delayFeedback2;
-    }
-
-    int getDelayDamp1() {
-        return delayDamp1;
-    }
-
-    void setDelayDamp1(final int delayDamp1) {
-        this.delayDamp1 = delayDamp1;
-    }
-
-    int getDelayDamp2() {
-        return delayDamp2;
-    }
-
-    void setDelayDamp2(final int delayDamp2) {
-        this.delayDamp2 = delayDamp2;
-    }
-
-    int getDelayClear() {
-        return delayClear;
-    }
-
-    void setDelayClear(final int delayClear) {
-        this.delayClear = delayClear;
-    }
-
-    int getReverbMix() {
-        return reverbMix;
-    }
-
-    void setReverbMix(final int reverbMix) {
-        this.reverbMix = reverbMix;
-    }
-
-    int getReverbLevel() {
-        return reverbLevel;
-    }
-
-    void setReverbLevel(final int reverbLevel) {
-        this.reverbLevel = reverbLevel;
-    }
-
-    double getReverbSize() {
-        return reverbSize;
-    }
-
-    void setReverbSize(final double reverbSize) {
-        this.reverbSize = reverbSize;
-    }
-
-    int getReverbLink() {
-        return reverbLink;
-    }
-
-    void setReverbLink(final int reverbLink) {
-        this.reverbLink = reverbLink;
-    }
-
-    int getReverbDiff() {
-        return reverbDiff;
-    }
-
-    void setReverbDiff(final int reverbDiff) {
-        this.reverbDiff = reverbDiff;
-    }
-
-    int getReverbPreDelay() {
-        return reverbPreDelay;
-    }
-
-    void setReverbPreDelay(final int reverbPreDelay) {
-        this.reverbPreDelay = reverbPreDelay;
-    }
-
-    int getReverbDelayTime() {
-        return reverbDelayTime;
-    }
-
-    void setReverbDelayTime(final int reverbDelayTime) {
-        this.reverbDelayTime = reverbDelayTime;
-    }
-
-    int getReverbDelayLevel() {
-        return reverbDelayLevel;
-    }
-
-    void setReverbDelayLevel(final int reverbDelayLevel) {
-        this.reverbDelayLevel = reverbDelayLevel;
-    }
-
-    int getReverbRtHC() {
-        return reverbRtHC;
-    }
-
-    void setReverbRtHC(final int reverbRtHC) {
-        this.reverbRtHC = reverbRtHC;
-    }
-
-    int getGainLo() {
-        return gainLo;
-    }
-
-    void setGainLo(final int gainLo) {
-        this.gainLo = gainLo;
-    }
-
-    int getGainMid() {
-        return gainMid;
-    }
-
-    void setGainMid(final int gainMid) {
-        this.gainMid = gainMid;
-    }
-
-    int getGainHi() {
-        return gainHi;
-    }
-
-    void setGainHi(final int gainHi) {
-        this.gainHi = gainHi;
-    }
-
-    int getGainDrive() {
-        return gainDrive;
-    }
-
-    void setGainDrive(final int gainDrive) {
-        this.gainDrive = gainDrive;
-    }
-
-    int getGainTone() {
-        return gainTone;
-    }
-
-    void setGainTone(final int gainTone) {
-        this.gainTone = gainTone;
-    }
-
-    int getGainLevel() {
-        return gainLevel;
-    }
-
-    void setGainLevel(final int gainLevel) {
-        this.gainLevel = gainLevel;
+    void setGain(final Gain gain) {
+        this.gain = gain;
     }
 
     boolean isChorus() {

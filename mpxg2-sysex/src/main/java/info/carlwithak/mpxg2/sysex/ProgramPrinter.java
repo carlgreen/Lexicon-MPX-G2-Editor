@@ -159,64 +159,64 @@ public class ProgramPrinter {
         if (program.getEffect1Algorithm() > 0) {
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getEffect1Mix()).append("%\n");
-            sb.append("    Level: ").append(program.getEffect1Level()).append("dB\n");
-            sb.append("    Rate: ").append(program.getEffect1Rate()).append("\n");
+            sb.append("    Mix: ").append(program.getEffect1().getMix()).append("%\n");
+            sb.append("    Level: ").append(program.getEffect1().getLevel()).append("dB\n");
+            sb.append("    Rate: ").append(program.getEffect1().getRate()).append("\n");
         }
         if (program.getEffect2Algorithm() > 0) {
             sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(program.isEffect2On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect2ToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getEffect2Mix()).append("%\n");
-            sb.append("    Level: ").append(program.getEffect2Level()).append("dB\n");
-            sb.append("    Bass: ").append(program.getEffect2Bass()).append("\n");
-            sb.append("    Type: Model ").append(program.getEffect2Type() == 0 ? "C" : "V").append("\n");
-            sb.append("    Resp: ").append(program.getEffect2Response()).append("\n");
-            sb.append("    Gain: ").append(program.getEffect2Gain() > 0 ? "+" : "").append(program.getEffect2Gain()).append("\n");
+            sb.append("    Mix: ").append(program.getEffect2().getMix()).append("%\n");
+            sb.append("    Level: ").append(program.getEffect2().getLevel()).append("dB\n");
+            sb.append("    Bass: ").append(program.getEffect2().getBass()).append("\n");
+            sb.append("    Type: Model ").append(program.getEffect2().getType() == 0 ? "C" : "V").append("\n");
+            sb.append("    Resp: ").append(program.getEffect2().getResponse()).append("\n");
+            sb.append("    Gain: ").append(program.getEffect2().getGain() > 0 ? "+" : "").append(program.getEffect2().getGain()).append("\n");
         }
         if (program.getChorusAlgorithm() > 0) {
             sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(program.isChorusOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getChorusToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getChorusMix()).append("%\n");
-            sb.append("    Level: ").append(program.getChorusLevel()).append("dB\n");
+            sb.append("    Mix: ").append(program.getChorus().getMix()).append("%\n");
+            sb.append("    Level: ").append(program.getChorus().getLevel()).append("dB\n");
         }
         if (program.getDelayAlgorithm() > 0) {
             sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(program.isDelayOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getDelayToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getDelayMix()).append("%\n");
-            sb.append("    Level: ").append(program.getDelayLevel() > 0 ? "+" : "").append(program.getDelayLevel()).append("dB\n");
-            sb.append("    Time1: ").append(program.getDelayTime1Echoes()).append(":").append(program.getDelayTime1Beat()).append("\n");
-            sb.append("    Time2: ").append(program.getDelayTime2Echoes()).append(":").append(program.getDelayTime2Beat()).append("\n");
-            sb.append("    Level1: ").append(program.getDelayLevel1() > 0 ? "+" : "").append(program.getDelayLevel1()).append("dB\n");
-            sb.append("    Level2: ").append(program.getDelayLevel2() > 0 ? "+" : "").append(program.getDelayLevel2()).append("dB\n");
-            sb.append("    Feedback1: ").append(program.getDelayFeedback1() > 0 ? "+" : "").append(program.getDelayFeedback1()).append("%\n");
-            sb.append("    Insert: ").append(delayInsertToString(program.getDelayInsert())).append("\n");
-            sb.append("    Feedback2: ").append(program.getDelayFeedback2() > 0 ? "+" : "").append(program.getDelayFeedback2()).append("%\n");
-            sb.append("    Damp1: ").append(program.getDelayDamp1()).append("%\n");
-            sb.append("    Damp2: ").append(program.getDelayDamp2()).append("%\n");
-            sb.append("    Clear: ").append(program.getDelayClear() == 0 ? "off" : "on").append("\n");
+            sb.append("    Mix: ").append(program.getDelay().getMix()).append("%\n");
+            sb.append("    Level: ").append(program.getDelay().getLevel() > 0 ? "+" : "").append(program.getDelay().getLevel()).append("dB\n");
+            sb.append("    Time1: ").append(program.getDelay().getTime1Echoes()).append(":").append(program.getDelay().getTime1Beat()).append("\n");
+            sb.append("    Time2: ").append(program.getDelay().getTime2Echoes()).append(":").append(program.getDelay().getTime2Beat()).append("\n");
+            sb.append("    Level1: ").append(program.getDelay().getLevel1() > 0 ? "+" : "").append(program.getDelay().getLevel1()).append("dB\n");
+            sb.append("    Level2: ").append(program.getDelay().getLevel2() > 0 ? "+" : "").append(program.getDelay().getLevel2()).append("dB\n");
+            sb.append("    Feedback1: ").append(program.getDelay().getFeedback1() > 0 ? "+" : "").append(program.getDelay().getFeedback1()).append("%\n");
+            sb.append("    Insert: ").append(delayInsertToString(program.getDelay().getInsert())).append("\n");
+            sb.append("    Feedback2: ").append(program.getDelay().getFeedback2() > 0 ? "+" : "").append(program.getDelay().getFeedback2()).append("%\n");
+            sb.append("    Damp1: ").append(program.getDelay().getDamp1()).append("%\n");
+            sb.append("    Damp2: ").append(program.getDelay().getDamp2()).append("%\n");
+            sb.append("    Clear: ").append(program.getDelay().getClear() == 0 ? "off" : "on").append("\n");
         }
         if (program.getReverbAlgorithm() > 0) {
             sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(program.isReverbOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getReverbToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getReverbMix()).append("%\n");
-            sb.append("    Level: ").append(program.getReverbLevel()).append("dB\n");
-            sb.append("    Size: ").append(program.getReverbSize()).append("m\n");
-            sb.append("    Link: ").append(program.getReverbLink() == 0 ? "off" : "on").append("\n");
-            sb.append("    Diff: ").append(program.getReverbDiff()).append("%\n");
-            sb.append("    Pre Delay: ").append(program.getReverbPreDelay()).append("ms\n");
-            sb.append("    Delay Time: ").append(reverbDelayTimeToString(program.getReverbDelayTime())).append("s\n");
-            sb.append("    Delay Level: ").append(program.getReverbDelayLevel() == 0 ? "off" : "on").append("\n");
-            sb.append("    Rt HC: ").append(reverbRtHCToString(program.getReverbRtHC())).append("k\n");
+            sb.append("    Mix: ").append(program.getReverb().getMix()).append("%\n");
+            sb.append("    Level: ").append(program.getReverb().getLevel()).append("dB\n");
+            sb.append("    Size: ").append(program.getReverb().getSize()).append("m\n");
+            sb.append("    Link: ").append(program.getReverb().getLink() == 0 ? "off" : "on").append("\n");
+            sb.append("    Diff: ").append(program.getReverb().getDiff()).append("%\n");
+            sb.append("    Pre Delay: ").append(program.getReverb().getPreDelay()).append("ms\n");
+            sb.append("    Delay Time: ").append(reverbDelayTimeToString(program.getReverb().getDelayTime())).append("s\n");
+            sb.append("    Delay Level: ").append(program.getReverb().getDelayLevel() == 0 ? "off" : "on").append("\n");
+            sb.append("    Rt HC: ").append(reverbRtHCToString(program.getReverb().getRtHC())).append("k\n");
         }
         if (program.getGainAlgorithm() > 0) {
             sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(program.isGainOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
-            sb.append("    Lo: ").append(program.getGainLo() > 0 ? "+" : "").append(program.getGainLo()).append("\n");
-            sb.append("    Mid: ").append(program.getGainMid() > 0 ? "+" : "").append(program.getGainMid()).append("\n");
-            sb.append("    Hi: ").append(program.getGainHi() > 0 ? "+" : "").append(program.getGainHi()).append("\n");
-            sb.append("    Drive: ").append(program.getGainDrive()).append("\n");
-            sb.append("    Tone: ").append(program.getGainTone()).append("\n");
-            sb.append("    Level: ").append(program.getGainLevel()).append("\n");
+            sb.append("    Lo: ").append(program.getGain().getLo() > 0 ? "+" : "").append(program.getGain().getLo()).append("\n");
+            sb.append("    Mid: ").append(program.getGain().getMid() > 0 ? "+" : "").append(program.getGain().getMid()).append("\n");
+            sb.append("    Hi: ").append(program.getGain().getHi() > 0 ? "+" : "").append(program.getGain().getHi()).append("\n");
+            sb.append("    Drive: ").append(program.getGain().getDrive()).append("\n");
+            sb.append("    Tone: ").append(program.getGain().getTone()).append("\n");
+            sb.append("    Level: ").append(program.getGain().getLevel()).append("\n");
         }
         return sb.toString().trim();
     }
