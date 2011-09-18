@@ -185,11 +185,36 @@ public class ProgramPrinterTest {
                 "      Src1: off\n" +
                 "      Src2: off\n" +
                 "      A Trim: 100\n" +
-                "      Resp: 64";
-        // TODO: tempo, mix, speakersim, noisegate
+                "      Resp: 64\n" +
+                "  Mix:\n" +
+                "    Send:\n" +
+                "      Level: 0\n" +
+                "      Bypass Level: 0\n" +
+                "    Post:\n" +
+                "      Mix: 100%\n" +
+                "      Level: 0dB\n" +
+                "      Bypass Level: 0dB\n" +
+                "    FX1:\n" +
+                "      Mix: 100%\n" +
+                "      Level: 0dB\n" +
+                "    FX2:\n" +
+                "      Mix: 100%\n" +
+                "      Level: 0dB\n" +
+                "    Chorus:\n" +
+                "      Mix: 100%\n" +
+                "      Level: 0dB\n" +
+                "    Delay:\n" +
+                "      Mix: 2%\n" +
+                "      Level: +1dB\n" +
+                "    Reverb:\n" +
+                "      Mix: 18%\n" +
+                "      Level: 0dB";
+        // TODO: tempo, speakersim, noisegate
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
         String actual = ProgramPrinter.print(program);
+        System.out.println("1: " + actual.replace("\n", "\t"));
+        System.out.println("2: " + expected.replace("\n", "\t"));
         assertEquals(expected, actual);
     }
 

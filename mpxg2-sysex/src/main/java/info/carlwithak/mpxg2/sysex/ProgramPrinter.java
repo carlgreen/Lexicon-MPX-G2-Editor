@@ -366,6 +366,29 @@ public class ProgramPrinter {
         sb.append("      Src2: ").append(program.getEnvelopeGeneratorSrc2() == 0 ? "off" : program.getEnvelopeGeneratorSrc2()).append("\n");
         sb.append("      A Trim: ").append(program.getEnvelopeGeneratorATrim()).append("\n");
         sb.append("      Resp: ").append(program.getEnvelopeGeneratorResponse()).append("\n");
+        sb.append("  Mix:\n");
+        sb.append("    Send:\n");
+        sb.append("      Level: ").append(program.getSendLevel() > 0 ? "+" : "").append(program.getSendLevel()).append("\n");
+        sb.append("      Bypass Level: ").append(program.getSendBypassLevel()).append("\n");
+        sb.append("    Post:\n");
+        sb.append("      Mix: ").append(program.getPostMix()).append("%\n");
+        sb.append("      Level: ").append(program.getPostLevel() > 0 ? "+" : "").append(program.getPostLevel()).append("dB\n");
+        sb.append("      Bypass Level: ").append(program.getPostBypassLevel()).append("dB\n");
+        sb.append("    FX1:\n");
+        sb.append("      Mix: ").append(program.getEffect1().getMix()).append("%\n");
+        sb.append("      Level: ").append(program.getEffect1().getLevel() > 0 ? "+" : "").append(program.getEffect1().getLevel()).append("dB\n");
+        sb.append("    FX2:\n");
+        sb.append("      Mix: ").append(program.getEffect2().getMix()).append("%\n");
+        sb.append("      Level: ").append(program.getEffect2().getLevel() > 0 ? "+" : "").append(program.getEffect2().getLevel()).append("dB\n");
+        sb.append("    Chorus:\n");
+        sb.append("      Mix: ").append(program.getChorus().getMix()).append("%\n");
+        sb.append("      Level: ").append(program.getChorus().getLevel() > 0 ? "+" : "").append(program.getChorus().getLevel()).append("dB\n");
+        sb.append("    Delay:\n");
+        sb.append("      Mix: ").append(program.getDelay().getMix()).append("%\n");
+        sb.append("      Level: ").append(program.getDelay().getLevel() > 0 ? "+" : "").append(program.getDelay().getLevel()).append("dB\n");
+        sb.append("    Reverb:\n");
+        sb.append("      Mix: ").append(program.getReverb().getMix()).append("%\n");
+        sb.append("      Level: ").append(program.getReverb().getLevel() > 0 ? "+" : "").append(program.getReverb().getLevel()).append("dB\n");
         return sb.toString().trim();
     }
 
