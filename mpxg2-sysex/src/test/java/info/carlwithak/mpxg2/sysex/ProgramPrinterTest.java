@@ -208,13 +208,17 @@ public class ProgramPrinterTest {
                 "      Level: +1dB\n" +
                 "    Reverb:\n" +
                 "      Mix: 18%\n" +
-                "      Level: 0dB";
-        // TODO: tempo, speakersim, noisegate
+                "      Level: 0dB\n" +
+                "  Tempo:\n" +
+                "    Rate: 120 BPM\n" +
+                "    Source: internal\n" +
+                "    Beat Value: quarter\n" +
+                "    Tap Average: 2 beats\n" +
+                "    Tap Source: none";
+        // TODO: speakersim, noisegate
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
         String actual = ProgramPrinter.print(program);
-        System.out.println("1: " + actual.replace("\n", "\t"));
-        System.out.println("2: " + expected.replace("\n", "\t"));
         assertEquals(expected, actual);
     }
 

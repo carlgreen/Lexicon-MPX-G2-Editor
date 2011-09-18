@@ -119,6 +119,18 @@ public class ProgramPrinter {
         "none"
     };
 
+    private final static String[] TEMPO_SOURCES = {
+        "internal"
+    };
+
+    private final static String[] BEAT_VALUES = {
+        "", "", "quarter"
+    };
+
+    private final static String[] TAP_SOURCES = {
+        "none"
+    };
+
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     static String print(Program program) {
@@ -389,6 +401,12 @@ public class ProgramPrinter {
         sb.append("    Reverb:\n");
         sb.append("      Mix: ").append(program.getReverb().getMix()).append("%\n");
         sb.append("      Level: ").append(program.getReverb().getLevel() > 0 ? "+" : "").append(program.getReverb().getLevel()).append("dB\n");
+        sb.append("  Tempo:\n");
+        sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");
+        sb.append("    Source: ").append(tempoSourceToString(program.getTempoSource())).append("\n");
+        sb.append("    Beat Value: ").append(beatValueToString(program.getBeatValue())).append("\n");
+        sb.append("    Tap Average: ").append(program.getTapAverage()).append(" beats\n");
+        sb.append("    Tap Source: ").append(tapSourceToString(program.getTapSource())).append("\n");
         return sb.toString().trim();
     }
 
@@ -462,5 +480,17 @@ public class ProgramPrinter {
 
     private static String lfoOnSourceToString(final int lfoOnSource) {
         return LFO_ON_SOURCES[lfoOnSource];
+    }
+
+    private static String tempoSourceToString(final int tempoSource) {
+        return TEMPO_SOURCES[tempoSource];
+    }
+
+    private static String beatValueToString(final int beatValue) {
+        return BEAT_VALUES[beatValue];
+    }
+
+    private static String tapSourceToString(final int tapSource) {
+        return TAP_SOURCES[tapSource];
     }
 }
