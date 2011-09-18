@@ -15,13 +15,30 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.sysex.effects;
+package info.carlwithak.mpxg2.model.effects;
 
 /**
- * Base class for EQ effects.
+ * Base class for Chorus effects.
  *
  * @author Carl Green
  */
-public class Eq {
+public class Chorus {
+    private int mix;
+    private int level;
 
+    public int getMix() {
+        return mix;
+    }
+
+    public void setMix(final int mix) {
+        this.mix = mix;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(final int level) {
+        this.level = level;
+    }
 }

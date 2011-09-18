@@ -17,12 +17,15 @@
 
 package info.carlwithak.mpxg2.sysex;
 
-import info.carlwithak.mpxg2.sysex.effects.Chorus;
-import info.carlwithak.mpxg2.sysex.effects.Delay;
-import info.carlwithak.mpxg2.sysex.effects.Effect1;
-import info.carlwithak.mpxg2.sysex.effects.Effect2;
-import info.carlwithak.mpxg2.sysex.effects.Gain;
-import info.carlwithak.mpxg2.sysex.effects.Reverb;
+import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.Patch;
+import info.carlwithak.mpxg2.model.NoiseGate;
+import info.carlwithak.mpxg2.model.effects.Chorus;
+import info.carlwithak.mpxg2.model.effects.Delay;
+import info.carlwithak.mpxg2.model.effects.Effect1;
+import info.carlwithak.mpxg2.model.effects.Effect2;
+import info.carlwithak.mpxg2.model.effects.Gain;
+import info.carlwithak.mpxg2.model.effects.Reverb;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;

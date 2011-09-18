@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.Program;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

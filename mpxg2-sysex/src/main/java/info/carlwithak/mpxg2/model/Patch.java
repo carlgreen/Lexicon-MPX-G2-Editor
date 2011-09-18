@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.sysex;
+package info.carlwithak.mpxg2.model;
 
 /**
  * The Patching system in the MPX G2 allows both internal and external control
@@ -35,75 +35,75 @@ public class Patch {
     private int destinationMid;
     private int destinationMax;
 
-    int getSource() {
+    public int getSource() {
         return source;
     }
 
-    void setSource(final int source) {
+    public void setSource(final int source) {
         this.source = source;
     }
 
-    int getSourceMin() {
+    public int getSourceMin() {
         return sourceMin;
     }
 
-    void setSourceMin(final int sourceMin) {
+    public void setSourceMin(final int sourceMin) {
         this.sourceMin = sourceMin;
     }
 
-    int getSourceMid() {
+    public int getSourceMid() {
         return sourceMid;
     }
 
-    void setSourceMid(final int sourceMid) {
+    public void setSourceMid(final int sourceMid) {
         this.sourceMid = sourceMid;
     }
 
-    int getSourceMax() {
+    public int getSourceMax() {
         return sourceMax;
     }
 
-    void setSourceMax(final int sourceMax) {
+    public void setSourceMax(final int sourceMax) {
         this.sourceMax = sourceMax;
     }
 
-    int getDestinationEffect() {
+    public int getDestinationEffect() {
         return destinationEffect;
     }
 
-    void setDestinationEffect(final int destinationEffect) {
+    public void setDestinationEffect(final int destinationEffect) {
         this.destinationEffect = destinationEffect;
     }
 
-    int getDestinationParameter() {
+    public int getDestinationParameter() {
         return destinationParameter;
     }
 
-    void setDestinationParameter(final int destinationParameter) {
+    public void setDestinationParameter(final int destinationParameter) {
         this.destinationParameter = destinationParameter;
     }
 
-    int getDestinationMin() {
+    public int getDestinationMin() {
         return destinationMin;
     }
 
-    void setDestinationMin(final int destinationMin) {
+    public void setDestinationMin(final int destinationMin) {
         this.destinationMin = destinationMin;
     }
 
-    int getDestinationMid() {
+    public int getDestinationMid() {
         return destinationMid;
     }
 
-    void setDestinationMid(final int destinationMid) {
+    public void setDestinationMid(final int destinationMid) {
         this.destinationMid = destinationMid;
     }
 
-    int getDestinationMax() {
+    public int getDestinationMax() {
         return destinationMax;
     }
 
-    void setDestinationMax(final int destinationMax) {
+    public void setDestinationMax(final int destinationMax) {
         this.destinationMax = destinationMax;
     }
 }

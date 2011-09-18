@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.sysex;
+package info.carlwithak.mpxg2.model;
 
 /**
  * The Noise Gate blocks signal from being output at the Send jack and/or from

@@ -15,15 +15,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.sysex;
+package info.carlwithak.mpxg2.model;
 
-import info.carlwithak.mpxg2.sysex.effects.Chorus;
-import info.carlwithak.mpxg2.sysex.effects.Delay;
-import info.carlwithak.mpxg2.sysex.effects.Effect1;
-import info.carlwithak.mpxg2.sysex.effects.Effect2;
-import info.carlwithak.mpxg2.sysex.effects.Eq;
-import info.carlwithak.mpxg2.sysex.effects.Gain;
-import info.carlwithak.mpxg2.sysex.effects.Reverb;
+import info.carlwithak.mpxg2.model.effects.Chorus;
+import info.carlwithak.mpxg2.model.effects.Delay;
+import info.carlwithak.mpxg2.model.effects.Effect1;
+import info.carlwithak.mpxg2.model.effects.Effect2;
+import info.carlwithak.mpxg2.model.effects.Eq;
+import info.carlwithak.mpxg2.model.effects.Gain;
+import info.carlwithak.mpxg2.model.effects.Reverb;
 import java.util.Arrays;
 import java.util.List;
 
@@ -165,862 +165,862 @@ public class Program {
 
     private int programNumber;
 
-    Effect1 getEffect1() {
+    public Effect1 getEffect1() {
         return effect1;
     }
 
-    void setEffect1(final Effect1 effect1) {
+    public void setEffect1(final Effect1 effect1) {
         this.effect1 = effect1;
     }
 
-    Effect2 getEffect2() {
+    public Effect2 getEffect2() {
         return effect2;
     }
 
-    void setEffect2(final Effect2 effect2) {
+    public void setEffect2(final Effect2 effect2) {
         this.effect2 = effect2;
     }
 
-    Chorus getChorus() {
+    public Chorus getChorus() {
         return chorus;
     }
 
-    void setChorus(final Chorus chorus) {
+    public void setChorus(final Chorus chorus) {
         this.chorus = chorus;
     }
 
-    Delay getDelay() {
+    public Delay getDelay() {
         return delay;
     }
 
-    void setDelay(final Delay delay) {
+    public void setDelay(final Delay delay) {
         this.delay = delay;
     }
 
-    Reverb getReverb() {
+    public Reverb getReverb() {
         return reverb;
     }
 
-    void setReverb(final Reverb reverb) {
+    public void setReverb(final Reverb reverb) {
         this.reverb = reverb;
     }
 
-    Eq getEq() {
+    public Eq getEq() {
         return eq;
     }
 
-    void setEq(final Eq eq) {
+    public void setEq(final Eq eq) {
         this.eq = eq;
     }
 
-    Gain getGain() {
+    public Gain getGain() {
         return gain;
     }
 
-    void setGain(final Gain gain) {
+    public void setGain(final Gain gain) {
         this.gain = gain;
     }
 
-    boolean isChorus() {
+    public boolean isChorus() {
         return isChorus;
     }
 
-    void setIsChorus(boolean isChorus) {
+    public void setIsChorus(boolean isChorus) {
         this.isChorus = isChorus;
     }
 
-    boolean isDelay() {
+    public boolean isDelay() {
         return isDelay;
     }
 
-    void setIsDelay(boolean isDelay) {
+    public void setIsDelay(boolean isDelay) {
         this.isDelay = isDelay;
     }
 
-    boolean isDistortion() {
+    public boolean isDistortion() {
         return isDistortion;
     }
 
-    void setIsDistortion(boolean isDistortion) {
+    public void setIsDistortion(boolean isDistortion) {
         this.isDistortion = isDistortion;
     }
 
-    boolean isEq() {
+    public boolean isEq() {
         return isEq;
     }
 
-    void setIsEq(boolean isEq) {
+    public void setIsEq(boolean isEq) {
         this.isEq = isEq;
     }
 
-    boolean isFlanger() {
+    public boolean isFlanger() {
         return isFlanger;
     }
 
-    void setIsFlanger(boolean isFlanger) {
+    public void setIsFlanger(boolean isFlanger) {
         this.isFlanger = isFlanger;
     }
 
-    boolean isGain() {
+    public boolean isGain() {
         return isGain;
     }
 
-    void setIsGain(boolean isGain) {
+    public void setIsGain(boolean isGain) {
         this.isGain = isGain;
     }
 
-    boolean isMod() {
+    public boolean isMod() {
         return isMod;
     }
 
-    void setIsMod(boolean isMod) {
+    public void setIsMod(boolean isMod) {
         this.isMod = isMod;
     }
 
-    boolean isOverdrive() {
+    public boolean isOverdrive() {
         return isOverdrive;
     }
 
-    void setIsOverdrive(boolean isOverdrive) {
+    public void setIsOverdrive(boolean isOverdrive) {
         this.isOverdrive = isOverdrive;
     }
 
-    boolean isPhaser() {
+    public boolean isPhaser() {
         return isPhaser;
     }
 
-    void setIsPhaser(boolean isPhaser) {
+    public void setIsPhaser(boolean isPhaser) {
         this.isPhaser = isPhaser;
     }
 
-    boolean isPitch() {
+    public boolean isPitch() {
         return isPitch;
     }
 
-    void setIsPitch(boolean isPitch) {
+    public void setIsPitch(boolean isPitch) {
         this.isPitch = isPitch;
     }
 
-    boolean isReverb() {
+    public boolean isReverb() {
         return isReverb;
     }
 
-    void setIsReverb(boolean isReverb) {
+    public void setIsReverb(boolean isReverb) {
         this.isReverb = isReverb;
     }
 
-    boolean isSpeakerSim() {
+    public boolean isSpeakerSim() {
         return isSpeakerSim;
     }
 
-    void setIsSpeakerSim(boolean isSpeakerSim) {
+    public void setIsSpeakerSim(boolean isSpeakerSim) {
         this.isSpeakerSim = isSpeakerSim;
     }
 
-    boolean isWah() {
+    public boolean isWah() {
         return isWah;
     }
 
-    void setIsWah(boolean isWah) {
+    public void setIsWah(boolean isWah) {
         this.isWah = isWah;
     }
 
-    boolean isPrePost() {
+    public boolean isPrePost() {
         return isPrePost;
     }
 
-    void setIsPrePost(boolean isPrePost) {
+    public void setIsPrePost(boolean isPrePost) {
         this.isPrePost = isPrePost;
     }
 
-    boolean isStandAlone() {
+    public boolean isStandAlone() {
         return isStandAlone;
     }
 
-    void setIsStandAlone(boolean isStandAlone) {
+    public void setIsStandAlone(boolean isStandAlone) {
         this.isStandAlone = isStandAlone;
     }
 
-    boolean isInline() {
+    public boolean isInline() {
         return isInline;
     }
 
-    void setIsInline(boolean isInline) {
+    public void setIsInline(boolean isInline) {
         this.isInline = isInline;
     }
 
-    boolean isAcoustic() {
+    public boolean isAcoustic() {
         return isAcoustic;
     }
 
-    void setIsAcoustic(boolean isAcoustic) {
+    public void setIsAcoustic(boolean isAcoustic) {
         this.isAcoustic = isAcoustic;
     }
 
-    boolean isBass() {
+    public boolean isBass() {
         return isBass;
     }
 
-    void setIsBass(boolean isBass) {
+    public void setIsBass(boolean isBass) {
         this.isBass = isBass;
     }
 
-    boolean isBlues() {
+    public boolean isBlues() {
         return isBlues;
     }
 
-    void setIsBlues(boolean isBlues) {
+    public void setIsBlues(boolean isBlues) {
         this.isBlues = isBlues;
     }
 
-    boolean isClean() {
+    public boolean isClean() {
         return isClean;
     }
 
-    void setIsClean(boolean isClean) {
+    public void setIsClean(boolean isClean) {
         this.isClean = isClean;
     }
 
-    boolean isCountry() {
+    public boolean isCountry() {
         return isCountry;
     }
 
-    void setIsCountry(boolean isCountry) {
+    public void setIsCountry(boolean isCountry) {
         this.isCountry = isCountry;
     }
 
-    boolean isJazz() {
+    public boolean isJazz() {
         return isJazz;
     }
 
-    void setIsJazz(boolean isJazz) {
+    public void setIsJazz(boolean isJazz) {
         this.isJazz = isJazz;
     }
 
-    boolean isRock() {
+    public boolean isRock() {
         return isRock;
     }
 
-    void setIsRock(boolean isRock) {
+    public void setIsRock(boolean isRock) {
         this.isRock = isRock;
     }
 
-    String getRouting() {
+    public String getRouting() {
         return routing;
     }
 
-    void setRouting(final String routing) {
+    public void setRouting(final String routing) {
         this.routing = routing;
     }
 
-    int getEffect1ToePatch() {
+    public int getEffect1ToePatch() {
         return effect1ToePatch;
     }
 
-    void setEffect1ToePatch(final int effect1ToePatch) {
+    public void setEffect1ToePatch(final int effect1ToePatch) {
         this.effect1ToePatch = effect1ToePatch;
     }
 
-    int getEffect2ToePatch() {
+    public int getEffect2ToePatch() {
         return effect2ToePatch;
     }
 
-    void setEffect2ToePatch(final int effect2ToePatch) {
+    public void setEffect2ToePatch(final int effect2ToePatch) {
         this.effect2ToePatch = effect2ToePatch;
     }
 
-    int getChorusToePatch() {
+    public int getChorusToePatch() {
         return chorusToePatch;
     }
 
-    void setChorusToePatch(final int chorusToePatch) {
+    public void setChorusToePatch(final int chorusToePatch) {
         this.chorusToePatch = chorusToePatch;
     }
 
-    int getDelayToePatch() {
+    public int getDelayToePatch() {
         return delayToePatch;
     }
 
-    void setDelayToePatch(final int delayToePatch) {
+    public void setDelayToePatch(final int delayToePatch) {
         this.delayToePatch = delayToePatch;
     }
 
-    int getReverbToePatch() {
+    public int getReverbToePatch() {
         return reverbToePatch;
     }
 
-    void setReverbToePatch(final int reverbToePatch) {
+    public void setReverbToePatch(final int reverbToePatch) {
         this.reverbToePatch = reverbToePatch;
     }
 
-    int getEqToePatch() {
+    public int getEqToePatch() {
         return eqToePatch;
     }
 
-    void setEqToePatch(final int eqToePatch) {
+    public void setEqToePatch(final int eqToePatch) {
         this.eqToePatch = eqToePatch;
     }
 
-    int getGainToePatch() {
+    public int getGainToePatch() {
         return gainToePatch;
     }
 
-    void setGainToePatch(final int gainToePatch) {
+    public void setGainToePatch(final int gainToePatch) {
         this.gainToePatch = gainToePatch;
     }
 
-    int getEffect1Algorithm() {
+    public int getEffect1Algorithm() {
         return effect1Algorithm;
     }
 
-    void setEffect1Algorithm(final int effect1Algorithm) {
+    public void setEffect1Algorithm(final int effect1Algorithm) {
         this.effect1Algorithm = effect1Algorithm;
     }
 
-    int getEffect2Algorithm() {
+    public int getEffect2Algorithm() {
         return effect2Algorithm;
     }
 
-    void setEffect2Algorithm(final int effect2Algorithm) {
+    public void setEffect2Algorithm(final int effect2Algorithm) {
         this.effect2Algorithm = effect2Algorithm;
     }
 
-    int getChorusAlgorithm() {
+    public int getChorusAlgorithm() {
         return chorusAlgorithm;
     }
 
-    void setChorusAlgorithm(final int chorusAlgorithm) {
+    public void setChorusAlgorithm(final int chorusAlgorithm) {
         this.chorusAlgorithm = chorusAlgorithm;
     }
 
-    int getDelayAlgorithm() {
+    public int getDelayAlgorithm() {
         return delayAlgorithm;
     }
 
-    void setDelayAlgorithm(final int delayAlgorithm) {
+    public void setDelayAlgorithm(final int delayAlgorithm) {
         this.delayAlgorithm = delayAlgorithm;
     }
 
-    int getReverbAlgorithm() {
+    public int getReverbAlgorithm() {
         return reverbAlgorithm;
     }
 
-    void setReverbAlgorithm(final int reverbAlgorithm) {
+    public void setReverbAlgorithm(final int reverbAlgorithm) {
         this.reverbAlgorithm = reverbAlgorithm;
     }
 
-    int getEqAlgorithm() {
+    public int getEqAlgorithm() {
         return eqAlgorithm;
     }
 
-    void setEqAlgorithm(final int eqAlgorithm) {
+    public void setEqAlgorithm(final int eqAlgorithm) {
         this.eqAlgorithm = eqAlgorithm;
     }
 
-    int getGainAlgorithm() {
+    public int getGainAlgorithm() {
         return gainAlgorithm;
     }
 
-    void setGainAlgorithm(final int gainAlgorithm) {
+    public void setGainAlgorithm(final int gainAlgorithm) {
         this.gainAlgorithm = gainAlgorithm;
     }
 
-    String getProgramName() {
+    public String getProgramName() {
         return programName;
     }
 
-    void setProgramName(final String programName) {
+    public void setProgramName(final String programName) {
         this.programName = programName;
     }
 
-    boolean isEffect1On() {
+    public boolean isEffect1On() {
         return effect1On;
     }
 
-    void setEffect1On(final boolean effect1On) {
+    public void setEffect1On(final boolean effect1On) {
         this.effect1On = effect1On;
     }
 
-    boolean isEffect2On() {
+    public boolean isEffect2On() {
         return effect2On;
     }
 
-    void setEffect2On(final boolean effect2On) {
+    public void setEffect2On(final boolean effect2On) {
         this.effect2On = effect2On;
     }
 
-    boolean isChorusOn() {
+    public boolean isChorusOn() {
         return chorusOn;
     }
 
-    void setChorusOn(final boolean chorusOn) {
+    public void setChorusOn(final boolean chorusOn) {
         this.chorusOn = chorusOn;
     }
 
-    boolean isDelayOn() {
+    public boolean isDelayOn() {
         return delayOn;
     }
 
-    void setDelayOn(final boolean delayOn) {
+    public void setDelayOn(final boolean delayOn) {
         this.delayOn = delayOn;
     }
 
-    boolean isReverbOn() {
+    public boolean isReverbOn() {
         return reverbOn;
     }
 
-    void setReverbOn(final boolean reverbOn) {
+    public void setReverbOn(final boolean reverbOn) {
         this.reverbOn = reverbOn;
     }
 
-    boolean isEqOn() {
+    public boolean isEqOn() {
         return eqOn;
     }
 
-    void setEqOn(final boolean eqOn) {
+    public void setEqOn(final boolean eqOn) {
         this.eqOn = eqOn;
     }
 
-    boolean isGainOn() {
+    public boolean isGainOn() {
         return gainOn;
     }
 
-    void setGainOn(final boolean gainOn) {
+    public void setGainOn(final boolean gainOn) {
         this.gainOn = gainOn;
     }
 
-    boolean isInsertOn() {
+    public boolean isInsertOn() {
         return insertOn;
     }
 
-    void setInsertOn(final boolean insertOn) {
+    public void setInsertOn(final boolean insertOn) {
         this.insertOn = insertOn;
     }
 
-    int getSoftRowEffectType(final int softRowPosition) {
+    public int getSoftRowEffectType(final int softRowPosition) {
         return this.softRow.get(softRowPosition).getEffectType();
     }
 
-    void setSoftRowEffectType(final int softRowPosition, final int softRowEffectType) {
+    public void setSoftRowEffectType(final int softRowPosition, final int softRowEffectType) {
         if (this.softRow.get(softRowPosition) == null) {
             this.softRow.set(softRowPosition, new SoftRowItem());
         }
         this.softRow.get(softRowPosition).setEffectType(softRowEffectType);
     }
 
-    int getSoftRowParameter(final int softRowPosition) {
+    public int getSoftRowParameter(final int softRowPosition) {
         return this.softRow.get(softRowPosition).getParameter();
     }
 
-    void setSoftRowParameter(final int softRowPosition, final int softRowParameter) {
+    public void setSoftRowParameter(final int softRowPosition, final int softRowParameter) {
         this.softRow.get(softRowPosition).setParameter(softRowParameter);
     }
 
-    int getTempo() {
+    public int getTempo() {
         return tempo;
     }
 
-    void setTempo(final int tempo) {
+    public void setTempo(final int tempo) {
         this.tempo = tempo;
     }
 
-    int getTempoSource() {
+    public int getTempoSource() {
         return tempoSource;
     }
 
-    void setTempoSource(final int tempoSource) {
+    public void setTempoSource(final int tempoSource) {
         this.tempoSource = tempoSource;
     }
 
-    int getBeatValue() {
+    public int getBeatValue() {
         return beatValue;
     }
 
-    void setBeatValue(final int beatValue) {
+    public void setBeatValue(final int beatValue) {
         this.beatValue = beatValue;
     }
 
-    int getTapSource() {
+    public int getTapSource() {
         return tapSource;
     }
 
-    void setTapSource(final int tapSource) {
+    public void setTapSource(final int tapSource) {
         this.tapSource = tapSource;
     }
 
-    int getTapAverage() {
+    public int getTapAverage() {
         return tapAverage;
     }
 
-    void setTapAverage(final int tapAverage) {
+    public void setTapAverage(final int tapAverage) {
         this.tapAverage = tapAverage;
     }
 
-    int getTapSourceLevel() {
+    public int getTapSourceLevel() {
         return tapSourceLevel;
     }
 
-    void setTapSourceLevel(final int tapSourceLevel) {
+    public void setTapSourceLevel(final int tapSourceLevel) {
         this.tapSourceLevel = tapSourceLevel;
     }
 
-    Patch getPatch1() {
+    public Patch getPatch1() {
         return patch1;
     }
 
-    void setPatch1(final Patch patch1) {
+    public void setPatch1(final Patch patch1) {
         this.patch1 = patch1;
     }
 
-    Patch getPatch2() {
+    public Patch getPatch2() {
         return patch2;
     }
 
-    void setPatch2(final Patch patch2) {
+    public void setPatch2(final Patch patch2) {
         this.patch2 = patch2;
     }
 
-    Patch getPatch3() {
+    public Patch getPatch3() {
         return patch3;
     }
 
-    void setPatch3(final Patch patch3) {
+    public void setPatch3(final Patch patch3) {
         this.patch3 = patch3;
     }
 
-    Patch getPatch4() {
+    public Patch getPatch4() {
         return patch4;
     }
 
-    void setPatch4(final Patch patch4) {
+    public void setPatch4(final Patch patch4) {
         this.patch4 = patch4;
     }
 
-    Patch getPatch5() {
+    public Patch getPatch5() {
         return patch5;
     }
 
-    void setPatch5(final Patch patch5) {
+    public void setPatch5(final Patch patch5) {
         this.patch5 = patch5;
     }
 
-    int getKnobValue() {
+    public int getKnobValue() {
         return knobValue;
     }
 
-    void setKnobValue(final int knobValue) {
+    public void setKnobValue(final int knobValue) {
         this.knobValue = knobValue;
     }
 
-    int getKnobLow() {
+    public int getKnobLow() {
         return knobLow;
     }
 
-    void setKnobLow(final int knobLow) {
+    public void setKnobLow(final int knobLow) {
         this.knobLow = knobLow;
     }
 
-    int getKnobHigh() {
+    public int getKnobHigh() {
         return knobHigh;
     }
 
-    void setKnobHigh(final int knobHigh) {
+    public void setKnobHigh(final int knobHigh) {
         this.knobHigh = knobHigh;
     }
 
-    String getKnobName() {
+    public String getKnobName() {
         return knobName;
     }
 
-    void setKnobName(final String knobName) {
+    public void setKnobName(final String knobName) {
         this.knobName = knobName;
     }
 
-    int getLfo1Mode() {
+    public int getLfo1Mode() {
         return lfo1Mode;
     }
 
-    void setLfo1Mode(final int lfo1Mode) {
+    public void setLfo1Mode(final int lfo1Mode) {
         this.lfo1Mode = lfo1Mode;
     }
 
-    double getLfo1Rate() {
+    public double getLfo1Rate() {
         return lfo1Rate;
     }
 
-    void setLfo1Rate(final double lfo1Rate) {
+    public void setLfo1Rate(final double lfo1Rate) {
         this.lfo1Rate = lfo1Rate;
     }
 
-    int getLfo1PulseWidth() {
+    public int getLfo1PulseWidth() {
         return lfo1PulseWidth;
     }
 
-    void setLfo1PulseWidth(final int lfo1PulseWidth) {
+    public void setLfo1PulseWidth(final int lfo1PulseWidth) {
         this.lfo1PulseWidth = lfo1PulseWidth;
     }
 
-    int getLfo1Phase() {
+    public int getLfo1Phase() {
         return lfo1Phase;
     }
 
-    void setLfo1Phase(final int lfo1Phase) {
+    public void setLfo1Phase(final int lfo1Phase) {
         this.lfo1Phase = lfo1Phase;
     }
 
-    int getLfo1Depth() {
+    public int getLfo1Depth() {
         return lfo1Depth;
     }
 
-    void setLfo1Depth(final int lfo1Depth) {
+    public void setLfo1Depth(final int lfo1Depth) {
         this.lfo1Depth = lfo1Depth;
     }
 
-    int getLfo1OnLevel() {
+    public int getLfo1OnLevel() {
         return lfo1OnLevel;
     }
 
-    void setLfo1OnLevel(final int lfo1OnLevel) {
+    public void setLfo1OnLevel(final int lfo1OnLevel) {
         this.lfo1OnLevel = lfo1OnLevel;
     }
 
-    int getLfo1OnSource() {
+    public int getLfo1OnSource() {
         return lfo1OnSource;
     }
 
-    void setLfo1OnSource(final int lfo1OnSource) {
+    public void setLfo1OnSource(final int lfo1OnSource) {
         this.lfo1OnSource = lfo1OnSource;
     }
 
-    int getLfo2Mode() {
+    public int getLfo2Mode() {
         return lfo2Mode;
     }
 
-    void setLfo2Mode(final int lfo2Mode) {
+    public void setLfo2Mode(final int lfo2Mode) {
         this.lfo2Mode = lfo2Mode;
     }
 
-    double getLfo2Rate() {
+    public double getLfo2Rate() {
         return lfo2Rate;
     }
 
-    void setLfo2Rate(final double lfo2Rate) {
+    public void setLfo2Rate(final double lfo2Rate) {
         this.lfo2Rate = lfo2Rate;
     }
 
-    int getLfo2PulseWidth() {
+    public int getLfo2PulseWidth() {
         return lfo2PulseWidth;
     }
 
-    void setLfo2PulseWidth(final int lfo2PulseWidth) {
+    public void setLfo2PulseWidth(final int lfo2PulseWidth) {
         this.lfo2PulseWidth = lfo2PulseWidth;
     }
 
-    int getLfo2Phase() {
+    public int getLfo2Phase() {
         return lfo2Phase;
     }
 
-    void setLfo2Phase(final int lfo2Phase) {
+    public void setLfo2Phase(final int lfo2Phase) {
         this.lfo2Phase = lfo2Phase;
     }
 
-    int getLfo2Depth() {
+    public int getLfo2Depth() {
         return lfo2Depth;
     }
 
-    void setLfo2Depth(final int lfo2Depth) {
+    public void setLfo2Depth(final int lfo2Depth) {
         this.lfo2Depth = lfo2Depth;
     }
 
-    int getLfo2OnLevel() {
+    public int getLfo2OnLevel() {
         return lfo2OnLevel;
     }
 
-    void setLfo2OnLevel(final int lfo2OnLevel) {
+    public void setLfo2OnLevel(final int lfo2OnLevel) {
         this.lfo2OnLevel = lfo2OnLevel;
     }
 
-    int getLfo2OnSource() {
+    public int getLfo2OnSource() {
         return lfo2OnSource;
     }
 
-    void setLfo2OnSource(final int lfo2OnSource) {
+    public void setLfo2OnSource(final int lfo2OnSource) {
         this.lfo2OnSource = lfo2OnSource;
     }
 
-    int getRandomLow() {
+    public int getRandomLow() {
         return randomLow;
     }
 
-    void setRandomLow(final int randomLow) {
+    public void setRandomLow(final int randomLow) {
         this.randomLow = randomLow;
     }
 
-    int getRandomHigh() {
+    public int getRandomHigh() {
         return randomHigh;
     }
 
-    void setRandomHigh(final int randomHigh) {
+    public void setRandomHigh(final int randomHigh) {
         this.randomHigh = randomHigh;
     }
 
-    double getRandomRate() {
+    public double getRandomRate() {
         return randomRate;
     }
 
-    void setRandomRate(final double randomRate) {
+    public void setRandomRate(final double randomRate) {
         this.randomRate = randomRate;
     }
 
-    int getABMode() {
+    public int getABMode() {
         return abMode;
     }
 
-    void setABMode(final int abMode) {
+    public void setABMode(final int abMode) {
         this.abMode = abMode;
     }
 
-    int getARate() {
+    public int getARate() {
         return aRate;
     }
 
-    void setARate(final int aRate) {
+    public void setARate(final int aRate) {
         this.aRate = aRate;
     }
 
-    int getBRate() {
+    public int getBRate() {
         return bRate;
     }
 
-    void setBRate(final int bRate) {
+    public void setBRate(final int bRate) {
         this.bRate = bRate;
     }
 
-    int getABOnLevel() {
+    public int getABOnLevel() {
         return abOnLevel;
     }
 
-    void setABOnLevel(final int abOnLevel) {
+    public void setABOnLevel(final int abOnLevel) {
         this.abOnLevel = abOnLevel;
     }
 
-    int getABOnSource() {
+    public int getABOnSource() {
         return abOnSource;
     }
 
-    void setABOnSource(final int abOnSource) {
+    public void setABOnSource(final int abOnSource) {
         this.abOnSource = abOnSource;
     }
 
-    int getEnvelopeGeneratorSrc1() {
+    public int getEnvelopeGeneratorSrc1() {
         return envelopeGeneratorSrc1;
     }
 
-    void setEnvelopeGeneratorSrc1(final int envelopeGeneratorSrc1) {
+    public void setEnvelopeGeneratorSrc1(final int envelopeGeneratorSrc1) {
         this.envelopeGeneratorSrc1 = envelopeGeneratorSrc1;
     }
 
-    int getEnvelopeGeneratorSrc2() {
+    public int getEnvelopeGeneratorSrc2() {
         return envelopeGeneratorSrc2;
     }
 
-    void setEnvelopeGeneratorSrc2(final int envelopeGeneratorSrc2) {
+    public void setEnvelopeGeneratorSrc2(final int envelopeGeneratorSrc2) {
         this.envelopeGeneratorSrc2 = envelopeGeneratorSrc2;
     }
 
-    int getEnvelopeGeneratorATrim() {
+    public int getEnvelopeGeneratorATrim() {
         return envelopeGeneratorATrim;
     }
 
-    void setEnvelopeGeneratorATrim(final int envelopeGeneratorATrim) {
+    public void setEnvelopeGeneratorATrim(final int envelopeGeneratorATrim) {
         this.envelopeGeneratorATrim = envelopeGeneratorATrim;
     }
 
-    int getEnvelopeGeneratorResponse() {
+    public int getEnvelopeGeneratorResponse() {
         return envelopeGeneratorResponse;
     }
 
-    void setEnvelopeGeneratorResponse(final int envelopeGeneratorResponse) {
+    public void setEnvelopeGeneratorResponse(final int envelopeGeneratorResponse) {
         this.envelopeGeneratorResponse = envelopeGeneratorResponse;
     }
 
-    NoiseGate getNoiseGate() {
+    public NoiseGate getNoiseGate() {
         return noiseGate;
     }
 
-    void setNoiseGate(final NoiseGate noiseGate) {
+    public void setNoiseGate(final NoiseGate noiseGate) {
         this.noiseGate = noiseGate;
     }
 
-    int getBypassState() {
+    public int getBypassState() {
         return bypassState;
     }
 
-    void setBypassState(final int bypassState) {
+    public void setBypassState(final int bypassState) {
         this.bypassState = bypassState;
     }
 
-    int getSpeakerSimulatorEnable() {
+    public int getSpeakerSimulatorEnable() {
         return speakerSimulatorEnable;
     }
 
-    void setSpeakerSimulatorEnable(final int speakerSimulatorEnable) {
+    public void setSpeakerSimulatorEnable(final int speakerSimulatorEnable) {
         this.speakerSimulatorEnable = speakerSimulatorEnable;
     }
 
-    int getSpeakerSimulatorCabinet() {
+    public int getSpeakerSimulatorCabinet() {
         return speakerSimulatorCabinet;
     }
 
-    void setSpeakerSimulatorCabinet(final int speakerSimulatorCabinet) {
+    public void setSpeakerSimulatorCabinet(final int speakerSimulatorCabinet) {
         this.speakerSimulatorCabinet = speakerSimulatorCabinet;
     }
 
-    int getSendLevel() {
+    public int getSendLevel() {
         return sendLevel;
     }
 
-    void setSendLevel(final int sendLevel) {
+    public void setSendLevel(final int sendLevel) {
         this.sendLevel = sendLevel;
     }
 
-    int getSendBypassLevel() {
+    public int getSendBypassLevel() {
         return sendBypassLevel;
     }
 
-    void setSendBypassLevel(final int sendBypassLevel) {
+    public void setSendBypassLevel(final int sendBypassLevel) {
         this.sendBypassLevel = sendBypassLevel;
     }
 
-    int getPostMix() {
+    public int getPostMix() {
         return postMix;
     }
 
-    void setPostMix(final int postMix) {
+    public void setPostMix(final int postMix) {
         this.postMix = postMix;
     }
 
-    int getPostLevel() {
+    public int getPostLevel() {
         return postLevel;
     }
 
-    void setPostLevel(final int postLevel) {
+    public void setPostLevel(final int postLevel) {
         this.postLevel = postLevel;
     }
 
-    int getPostBypassLevel() {
+    public int getPostBypassLevel() {
         return postBypassLevel;
     }
 
-    void setPostBypassLevel(final int postBypassLevel) {
+    public void setPostBypassLevel(final int postBypassLevel) {
         this.postBypassLevel = postBypassLevel;
     }
 
-    int getProgramNumber() {
+    public int getProgramNumber() {
         return programNumber;
     }
 
-    void setProgramNumber(final int programNumber) {
+    public void setProgramNumber(final int programNumber) {
         this.programNumber = programNumber;
     }
 }

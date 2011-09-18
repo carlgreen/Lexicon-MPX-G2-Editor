@@ -15,7 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.sysex.effects;
+package info.carlwithak.mpxg2.model.effects;
 
 /**
  * Base class for Gain effects.

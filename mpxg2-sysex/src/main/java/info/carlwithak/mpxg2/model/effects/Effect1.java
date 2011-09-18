@@ -15,30 +15,39 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.sysex;
+package info.carlwithak.mpxg2.model.effects;
 
 /**
- * Represents a single soft row button associated with a program
+ * Base class for Effect 1 effects.
  *
  * @author Carl Green
  */
-public class SoftRowItem {
-    private int effectType;
-    private int parameter;
+public class Effect1 {
+    private int mix;
+    private int level;
+    private int rate;
 
-    int getEffectType() {
-        return effectType;
+    public int getMix() {
+        return mix;
     }
 
-    void setEffectType(final int effectType) {
-        this.effectType = effectType;
+    public void setMix(final int mix) {
+        this.mix = mix;
     }
 
-    int getParameter() {
-        return parameter;
+    public int getLevel() {
+        return level;
     }
 
-    void setParameter(final int parameter) {
-        this.parameter = parameter;
+    public void setLevel(final int level) {
+        this.level = level;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(final int rate) {
+        this.rate = rate;
     }
 }

@@ -17,10 +17,12 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.NoiseGate;
+import info.carlwithak.mpxg2.model.Program;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.File;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
