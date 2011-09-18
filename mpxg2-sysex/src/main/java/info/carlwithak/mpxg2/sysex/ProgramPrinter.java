@@ -67,6 +67,27 @@ public class ProgramPrinter {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.8
     };
 
+    private static final String[] EFFECT_TYPES = {
+        "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "Equalizer", "Gain"
+    };
+    private static final String[][] EFFECT_PARAMETERS = {
+        {
+            "Mix", "Level", "Rate"
+        },
+        {},
+        {},
+        {
+            "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
+        },
+        {
+            "Mix", "Level", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
+        },
+        {},
+        {
+            "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+        }
+    };
+
     static String print(Program program) {
         StringBuilder sb = new StringBuilder();
         sb.append(program.getProgramName()).append("\n");
@@ -218,6 +239,17 @@ public class ProgramPrinter {
             sb.append("    Tone: ").append(program.getGain().getTone()).append("\n");
             sb.append("    Level: ").append(program.getGain().getLevel()).append("\n");
         }
+        sb.append("  Softrow:\n");
+        sb.append("    1: ").append(effectTypeToString(program.getSoftRowEffectType(0))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(0), program.getSoftRowParameter(0))).append("\n");
+        sb.append("    2: ").append(effectTypeToString(program.getSoftRowEffectType(1))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(1), program.getSoftRowParameter(1))).append("\n");
+        sb.append("    3: ").append(effectTypeToString(program.getSoftRowEffectType(2))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(2), program.getSoftRowParameter(2))).append("\n");
+        sb.append("    4: ").append(effectTypeToString(program.getSoftRowEffectType(3))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(3), program.getSoftRowParameter(3))).append("\n");
+        sb.append("    5: ").append(effectTypeToString(program.getSoftRowEffectType(4))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(4), program.getSoftRowParameter(4))).append("\n");
+        sb.append("    6: ").append(effectTypeToString(program.getSoftRowEffectType(5))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(5), program.getSoftRowParameter(5))).append("\n");
+        sb.append("    7: ").append(effectTypeToString(program.getSoftRowEffectType(6))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(6), program.getSoftRowParameter(6))).append("\n");
+        sb.append("    8: ").append(effectTypeToString(program.getSoftRowEffectType(7))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(7), program.getSoftRowParameter(7))).append("\n");
+        sb.append("    9: ").append(effectTypeToString(program.getSoftRowEffectType(8))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(8), program.getSoftRowParameter(8))).append("\n");
+        sb.append("    10: ").append(effectTypeToString(program.getSoftRowEffectType(9))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(9), program.getSoftRowParameter(9))).append("\n");
         return sb.toString().trim();
     }
 
@@ -271,5 +303,13 @@ public class ProgramPrinter {
 
     private static double reverbRtHCToString(final int reverbRtHC) {
         return REVERB_RT_HC[reverbRtHC];
+    }
+
+    private static String effectTypeToString(final int effectType) {
+        return EFFECT_TYPES[effectType];
+    }
+
+    private static String effectParameterToString(final int effectType, final int effectParameter) {
+        return EFFECT_PARAMETERS[effectType][effectParameter];
     }
 }

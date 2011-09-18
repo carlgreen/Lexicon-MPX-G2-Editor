@@ -91,7 +91,19 @@ public class ProgramPrinterTest {
                 "    Hi: +3\n" +
                 "    Drive: 22\n" +
                 "    Tone: 25\n" +
-                "    Level: 57";
+                "    Level: 57\n" +
+                "  Softrow:\n" +
+                "    1: Gain Drive\n" +
+                "    2: Gain Tone\n" +
+                "    3: Gain Level\n" +
+                "    4: Effect 1 Rate\n" +
+                "    5: Delay Time1\n" +
+                "    6: Reverb Mix\n" +
+                "    7: Reverb Size\n" +
+                "    8: Reverb P Dly\n" +
+                "    9: Reverb DTime\n" +
+                "    10: Reverb D Lvl";
+        // TODO: patching, controllers, tempo, mix, speakersim, noisegate
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
         String actual = ProgramPrinter.print(program);
