@@ -214,8 +214,10 @@ public class ProgramPrinterTest {
                 "    Source: internal\n" +
                 "    Beat Value: quarter\n" +
                 "    Tap Average: 2 beats\n" +
-                "    Tap Source: none";
-        // TODO: speakersim, noisegate
+                "    Tap Source: none\n" +
+                "  Speaker Sim: off\n" +
+                "    Cabinet: ComboNorml";
+        // TODO: noisegate
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
         String actual = ProgramPrinter.print(program);

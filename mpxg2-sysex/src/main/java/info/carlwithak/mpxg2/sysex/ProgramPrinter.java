@@ -131,6 +131,10 @@ public class ProgramPrinter {
         "none"
     };
 
+    private final static String[] SPEAKER_SIMULATOR_CABINETS = {
+        "", "ComboNorml"
+    };
+
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     static String print(Program program) {
@@ -407,6 +411,8 @@ public class ProgramPrinter {
         sb.append("    Beat Value: ").append(beatValueToString(program.getBeatValue())).append("\n");
         sb.append("    Tap Average: ").append(program.getTapAverage()).append(" beats\n");
         sb.append("    Tap Source: ").append(tapSourceToString(program.getTapSource())).append("\n");
+        sb.append("  Speaker Sim: ").append(program.getSpeakerSimulatorEnable() == 0 ? "off" : "on").append("\n");
+        sb.append("    Cabinet: ").append(speakerSimulatorCabinetToString(program.getSpeakerSimulatorCabinet())).append("\n");
         return sb.toString().trim();
     }
 
@@ -492,5 +498,9 @@ public class ProgramPrinter {
 
     private static String tapSourceToString(final int tapSource) {
         return TAP_SOURCES[tapSource];
+    }
+
+    private static String speakerSimulatorCabinetToString(final int speakerSimulatorCabinet) {
+        return SPEAKER_SIMULATOR_CABINETS[speakerSimulatorCabinet];
     }
 }
