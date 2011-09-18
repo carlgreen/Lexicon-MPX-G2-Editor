@@ -229,6 +229,7 @@ public class ProgramPrinter {
         sb.append("  Application Type: ");
         sb.append(appTypeSB.toString());
         sb.append("\n");
+        // TODO indicate inactive effects
         sb.append("  Effect Routing: ").append(program.getRouting()).append("\n");
         if (program.getEffect1Algorithm() > 0) {
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
