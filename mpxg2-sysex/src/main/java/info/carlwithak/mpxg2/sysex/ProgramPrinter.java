@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import java.text.DecimalFormat;
+
 /**
  * Class to print out a program nicely.
  *
@@ -112,6 +114,12 @@ public class ProgramPrinter {
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Midi Toe"
     };
+
+    private final static String[] LFO_ON_SOURCES = {
+        "none"
+    };
+
+    private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     static String print(Program program) {
         StringBuilder sb = new StringBuilder();
@@ -321,6 +329,43 @@ public class ProgramPrinter {
         sb.append("        Min: ").append(program.getPatch5().getDestinationMin()).append("\n");
         sb.append("        Mid: ").append(program.getPatch5().getDestinationMid() == 0x80 ? "--" : program.getPatch5().getDestinationMid()).append("\n");
         sb.append("        Max: ").append(program.getPatch5().getDestinationMax() > 0 ? "+" : "").append(program.getPatch5().getDestinationMax()).append("\n");
+        sb.append("  Controllers:\n");
+        sb.append("    Knob:\n");
+        sb.append("      Value: ").append(program.getKnobValue()).append("\n");
+        sb.append("      Low: ").append(program.getKnobLow()).append("\n");
+        sb.append("      High: ").append(program.getKnobHigh()).append("\n");
+        sb.append("      Name: ").append(program.getKnobName()).append("\n");
+        sb.append("    LFO 1:\n");
+        sb.append("      Mode: ").append(program.getLfo1Mode() == 0 ? "Off" : "On").append("\n");
+        sb.append("      Rate: ").append(DECIMAL_2DP.format(program.getLfo1Rate())).append("Hz\n");
+        sb.append("      PW: ").append(program.getLfo1PulseWidth()).append("%\n");
+        sb.append("      Phase: ").append(program.getLfo1Phase()).append("\n");
+        sb.append("      Depth: ").append(program.getLfo1Depth()).append("%\n");
+        sb.append("      On Level: ").append(program.getLfo1OnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo1OnSource())).append("\n");
+        sb.append("    LFO 2:\n");
+        sb.append("      Mode: ").append(program.getLfo2Mode() == 0 ? "Off" : "On").append("\n");
+        sb.append("      Rate: ").append(DECIMAL_2DP.format(program.getLfo2Rate())).append("Hz\n");
+        sb.append("      PW: ").append(program.getLfo2PulseWidth()).append("%\n");
+        sb.append("      Phase: ").append(program.getLfo2Phase()).append("\n");
+        sb.append("      Depth: ").append(program.getLfo2Depth()).append("%\n");
+        sb.append("      On Level: ").append(program.getLfo2OnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo2OnSource())).append("\n");
+        sb.append("    Random:\n");
+        sb.append("      Low: ").append(program.getRandomLow()).append("\n");
+        sb.append("      High: ").append(program.getRandomHigh()).append("\n");
+        sb.append("      Rate: ").append(DECIMAL_2DP.format(program.getRandomRate())).append("Hz\n");
+        sb.append("    A/B:\n");
+        sb.append("      Mode: ").append(program.getABMode() == 0 ? "Trigger" : "?").append("\n");
+        sb.append("      A Rate: ").append(program.getARate()).append("\n");
+        sb.append("      B Rate: ").append(program.getBRate()).append("\n");
+        sb.append("      On Level: ").append(program.getLfo2OnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo2OnSource())).append("\n");
+        sb.append("    Envelope:\n");
+        sb.append("      Src1: ").append(program.getEnvelopeGeneratorSrc1() == 0 ? "off" : program.getEnvelopeGeneratorSrc1()).append("\n");
+        sb.append("      Src2: ").append(program.getEnvelopeGeneratorSrc2() == 0 ? "off" : program.getEnvelopeGeneratorSrc2()).append("\n");
+        sb.append("      A Trim: ").append(program.getEnvelopeGeneratorATrim()).append("\n");
+        sb.append("      Resp: ").append(program.getEnvelopeGeneratorResponse()).append("\n");
         return sb.toString().trim();
     }
 
@@ -390,5 +435,9 @@ public class ProgramPrinter {
 
     private static String patchDestinationToString(final int patchDestinationEffect, final int patchDestinationParameter) {
         return EFFECT_TYPES[patchDestinationEffect] + " " + EFFECT_PARAMETERS[patchDestinationEffect][patchDestinationParameter];
+    }
+
+    private static String lfoOnSourceToString(final int lfoOnSource) {
+        return LFO_ON_SOURCES[lfoOnSource];
     }
 }

@@ -148,8 +148,45 @@ public class ProgramPrinterTest {
                 "      Destination: Send Level\n" +
                 "        Min: 0\n" +
                 "        Mid: --\n" +
-                "        Max: +6";
-        // TODO: controllers, tempo, mix, speakersim, noisegate
+                "        Max: +6\n" +
+                "  Controllers:\n" +
+                "    Knob:\n" +
+                "      Value: 50\n" +
+                "      Low: 0\n" +
+                "      High: 100\n" +
+                "      Name: Delay Adj\n" +
+                "    LFO 1:\n" +
+                "      Mode: On\n" +
+                "      Rate: 0.60Hz\n" +
+                "      PW: 50%\n" +
+                "      Phase: 0\n" +
+                "      Depth: 100%\n" +
+                "      On Level: 64\n" +
+                "      On Source: none\n" +
+                "    LFO 2:\n" +
+                "      Mode: On\n" +
+                "      Rate: 0.92Hz\n" +
+                "      PW: 50%\n" +
+                "      Phase: 0\n" +
+                "      Depth: 100%\n" +
+                "      On Level: 64\n" +
+                "      On Source: none\n" +
+                "    Random:\n" +
+                "      Low: 0\n" +
+                "      High: 127\n" +
+                "      Rate: 1.00Hz\n" +
+                "    A/B:\n" +
+                "      Mode: Trigger\n" +
+                "      A Rate: 100\n" +
+                "      B Rate: 100\n" +
+                "      On Level: 64\n" +
+                "      On Source: none\n" +
+                "    Envelope:\n" +
+                "      Src1: off\n" +
+                "      Src2: off\n" +
+                "      A Trim: 100\n" +
+                "      Resp: 64";
+        // TODO: tempo, mix, speakersim, noisegate
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
         String actual = ProgramPrinter.print(program);
