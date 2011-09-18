@@ -22,13 +22,9 @@ package info.carlwithak.mpxg2.model.effects;
  *
  * @author Carl Green
  */
-public class Effect2 {
+public abstract class Effect2 {
     private int mix;
     private int level;
-    private int bass;
-    private int type;
-    private int response;
-    private int gain;
 
     public int getMix() {
         return mix;
@@ -44,37 +40,5 @@ public class Effect2 {
 
     public void setLevel(final int level) {
         this.level = level;
-    }
-
-    public int getBass() {
-        return bass;
-    }
-
-    public void setBass(int bass) {
-        this.bass = bass;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
-
-    public int getResponse() {
-        return response;
-    }
-
-    public void setResponse(int response) {
-        this.response = response;
-    }
-
-    public int getGain() {
-        return gain;
-    }
-
-    public void setGain(int gain) {
-        this.gain = gain;
     }
 }

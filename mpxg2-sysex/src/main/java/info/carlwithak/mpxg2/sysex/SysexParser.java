@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.Effect2;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import java.io.File;
 import java.io.FileInputStream;
@@ -111,36 +112,8 @@ public class SysexParser {
         in.read(effect1Parameters);
 
         // effect 2 parameters
-        bytes = new byte[2];
-        in.read(bytes);
-        int effect2Mix = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int effect2Level = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int effect2Bass = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int effect2Type = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int effect2Response = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int effect2Gain = bytes[0] + bytes[1] * 16;
-
-        Effect2 effect2 = new Effect2();
-        effect2.setMix(effect2Mix);
-        effect2.setLevel(effect2Level);
-        effect2.setBass(effect2Bass);
-        effect2.setType(effect2Type);
-        effect2.setResponse(effect2Response);
-        effect2.setGain(effect2Gain);
-        program.setEffect2(effect2);
-
-        // unused
-        in.read(new byte[26 * 2]);
+        byte[] effect2Parameters = new byte[32 * 2];
+        in.read(effect2Parameters);
 
         // chorus parameters
         bytes = new byte[2];
@@ -435,6 +408,13 @@ public class SysexParser {
                     break;
                 case 1:
                     program.setEffect2Algorithm(algorithmNumber);
+                    Effect2 effect2 = null;
+                    switch (algorithmNumber) {
+                        case 18:
+                            effect2 = PedalWah1Parser.parse(effect2Parameters);
+                            break;
+                    }
+                    program.setEffect2(effect2);
                     break;
                 case 2:
                     program.setChorusAlgorithm(algorithmNumber);

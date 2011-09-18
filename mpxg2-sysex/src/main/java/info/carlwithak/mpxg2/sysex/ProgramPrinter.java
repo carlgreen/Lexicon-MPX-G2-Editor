@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.text.DecimalFormat;
 
@@ -234,22 +235,23 @@ public class ProgramPrinter {
         // TODO indicate inactive effects
         sb.append("  Effect Routing: ").append(program.getRouting()).append("\n");
         if (program.getEffect1Algorithm() > 0) {
+            UniVybe univybe = (UniVybe) program.getEffect1();
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
-            UniVybe univybe = (UniVybe) program.getEffect1();
             sb.append("    Mix: ").append(univybe.getMix()).append("%\n");
             sb.append("    Level: ").append(univybe.getLevel()).append("dB\n");
             sb.append("    Rate: ").append(univybe.getRate()).append("\n");
         }
         if (program.getEffect2Algorithm() > 0) {
+            PedalWah1 effect2 = (PedalWah1) program.getEffect2();
             sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(program.isEffect2On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect2ToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getEffect2().getMix()).append("%\n");
-            sb.append("    Level: ").append(program.getEffect2().getLevel()).append("dB\n");
-            sb.append("    Bass: ").append(program.getEffect2().getBass()).append("\n");
-            sb.append("    Type: Model ").append(program.getEffect2().getType() == 0 ? "C" : "V").append("\n");
-            sb.append("    Resp: ").append(program.getEffect2().getResponse()).append("\n");
-            sb.append("    Gain: ").append(program.getEffect2().getGain() > 0 ? "+" : "").append(program.getEffect2().getGain()).append("\n");
+            sb.append("    Mix: ").append(effect2.getMix()).append("%\n");
+            sb.append("    Level: ").append(effect2.getLevel()).append("dB\n");
+            sb.append("    Bass: ").append(effect2.getBass()).append("\n");
+            sb.append("    Type: Model ").append(effect2.getType() == 0 ? "C" : "V").append("\n");
+            sb.append("    Resp: ").append(effect2.getResponse()).append("\n");
+            sb.append("    Gain: ").append(effect2.getGain() > 0 ? "+" : "").append(effect2.getGain()).append("\n");
         }
         if (program.getChorusAlgorithm() > 0) {
             sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(program.isChorusOn() ? "on" : "off").append(")").append("\n");
