@@ -22,10 +22,9 @@ package info.carlwithak.mpxg2.model.effects;
  *
  * @author Carl Green
  */
-public class Effect1 {
+public abstract class Effect1 {
     private int mix;
     private int level;
-    private int rate;
 
     public int getMix() {
         return mix;
@@ -41,13 +40,5 @@ public class Effect1 {
 
     public void setLevel(final int level) {
         this.level = level;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public void setRate(final int rate) {
-        this.rate = rate;
     }
 }

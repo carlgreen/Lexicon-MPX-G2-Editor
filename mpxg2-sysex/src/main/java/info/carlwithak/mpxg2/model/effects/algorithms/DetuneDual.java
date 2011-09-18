@@ -20,19 +20,45 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.Effect1;
 
 /**
- * Class for UniVybe parameters.
+ * Class for Detune (D) parameters.
  *
  * @author Carl Green
  */
-public class UniVybe extends Effect1 {
-    private int rate;
+public class DetuneDual extends Effect1 {
+    private int tune1;
+    private int optimize;
+    private int tune2;
+    private int preDelay;
 
-    public int getRate() {
-        return rate;
+    public int getTune1() {
+        return tune1;
     }
 
-    public void setRate(int rate) {
-        this.rate = rate;
+    public void setTune1(int tune1) {
+        this.tune1 = tune1;
     }
 
+    public int getOptimize() {
+        return optimize;
+    }
+
+    public void setOptimize(int optimize) {
+        this.optimize = optimize;
+    }
+
+    public int getTune2() {
+        return tune2;
+    }
+
+    public void setTune2(int tune2) {
+        this.tune2 = tune2;
+    }
+
+    public int getPreDelay() {
+        return preDelay;
+    }
+
+    public void setPreDelay(int preDelay) {
+        this.preDelay = preDelay;
+    }
 }

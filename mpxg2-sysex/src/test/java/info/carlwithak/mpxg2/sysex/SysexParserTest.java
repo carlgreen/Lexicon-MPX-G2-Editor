@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -457,9 +459,11 @@ public class SysexParserTest {
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
 
-        assertEquals(100, program.getEffect1().getMix());
-        assertEquals(0, program.getEffect1().getLevel());
-        assertEquals(20, program.getEffect1().getRate());
+        assertTrue(program.getEffect1() instanceof UniVybe);
+        UniVybe effect1 = (UniVybe) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(0, effect1.getLevel());
+        assertEquals(20, effect1.getRate());
         assertEquals(100, program.getEffect2().getMix());
         assertEquals(0, program.getEffect2().getLevel());
         assertEquals(19, program.getEffect2().getBass());
@@ -688,6 +692,24 @@ public class SysexParserTest {
         assertEquals(0, program.getPostBypassLevel());
 
         assertEquals(301, program.getProgramNumber()); // 301 is the active program
+    }
+
+    /**
+     * Test parsing the Guitar Solo preset.
+     */
+    @Test
+    public void testParseGuitarSolo() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("002_Guitar_Solo.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect1() instanceof DetuneDual);
+        DetuneDual effect1 = (DetuneDual) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(3, effect1.getLevel());
+        assertEquals(7, effect1.getTune1());
+        assertEquals(10, effect1.getOptimize());
+        assertEquals(5, effect1.getTune2());
+        assertEquals(22, effect1.getPreDelay());
     }
 
     /**

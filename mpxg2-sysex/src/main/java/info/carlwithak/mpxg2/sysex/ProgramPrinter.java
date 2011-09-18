@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.text.DecimalFormat;
 
 /**
@@ -235,9 +236,10 @@ public class ProgramPrinter {
         if (program.getEffect1Algorithm() > 0) {
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getEffect1().getMix()).append("%\n");
-            sb.append("    Level: ").append(program.getEffect1().getLevel()).append("dB\n");
-            sb.append("    Rate: ").append(program.getEffect1().getRate()).append("\n");
+            UniVybe univybe = (UniVybe) program.getEffect1();
+            sb.append("    Mix: ").append(univybe.getMix()).append("%\n");
+            sb.append("    Level: ").append(univybe.getLevel()).append("dB\n");
+            sb.append("    Rate: ").append(univybe.getRate()).append("\n");
         }
         if (program.getEffect2Algorithm() > 0) {
             sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(program.isEffect2On() ? "on" : "off").append(")").append("\n");
