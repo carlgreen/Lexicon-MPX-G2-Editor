@@ -216,8 +216,17 @@ public class ProgramPrinterTest {
                 "    Tap Average: 2 beats\n" +
                 "    Tap Source: none\n" +
                 "  Speaker Sim: off\n" +
-                "    Cabinet: ComboNorml";
-        // TODO: noisegate
+                "    Cabinet: ComboNorml\n" +
+                "  Noise Gate:\n" +
+                "    Enable: Guitar Input\n" +
+                "    Send: on\n" +
+                "    Thrsh: -83dB\n" +
+                "    Atten: -85dB\n" +
+                "    Offset: -3dB\n" +
+                "    ATime: 0\n" +
+                "    HTime: 100\n" +
+                "    RTime: 100\n" +
+                "    Delay: 0";
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
         String actual = ProgramPrinter.print(program);

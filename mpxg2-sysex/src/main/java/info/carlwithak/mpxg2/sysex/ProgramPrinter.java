@@ -135,6 +135,10 @@ public class ProgramPrinter {
         "", "ComboNorml"
     };
 
+    private final static String[] NOISE_GATE_ENABLES = {
+        "", "Guitar Input"
+    };
+
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     static String print(Program program) {
@@ -413,6 +417,16 @@ public class ProgramPrinter {
         sb.append("    Tap Source: ").append(tapSourceToString(program.getTapSource())).append("\n");
         sb.append("  Speaker Sim: ").append(program.getSpeakerSimulatorEnable() == 0 ? "off" : "on").append("\n");
         sb.append("    Cabinet: ").append(speakerSimulatorCabinetToString(program.getSpeakerSimulatorCabinet())).append("\n");
+        sb.append("  Noise Gate:\n");
+        sb.append("    Enable: ").append(noiseGateEnableToString(program.getNoiseGate().getEnable())).append("\n");
+        sb.append("    Send: ").append(program.getNoiseGate().getSend() == 0 ? "off" : "on").append("\n");
+        sb.append("    Thrsh: ").append(program.getNoiseGate().getThreshold()).append("dB\n");
+        sb.append("    Atten: ").append(program.getNoiseGate().getAttenuation()).append("dB\n");
+        sb.append("    Offset: ").append(program.getNoiseGate().getOffset()).append("dB\n");
+        sb.append("    ATime: ").append(program.getNoiseGate().getATime()).append("\n");
+        sb.append("    HTime: ").append(program.getNoiseGate().getHTime()).append("\n");
+        sb.append("    RTime: ").append(program.getNoiseGate().getRTime()).append("\n");
+        sb.append("    Delay: ").append(program.getNoiseGate().getDelay()).append("\n");
         return sb.toString().trim();
     }
 
@@ -502,5 +516,9 @@ public class ProgramPrinter {
 
     private static String speakerSimulatorCabinetToString(final int speakerSimulatorCabinet) {
         return SPEAKER_SIMULATOR_CABINETS[speakerSimulatorCabinet];
+    }
+
+    private static String noiseGateEnableToString(final int noiseGateEnable) {
+        return NOISE_GATE_ENABLES[noiseGateEnable];
     }
 }
