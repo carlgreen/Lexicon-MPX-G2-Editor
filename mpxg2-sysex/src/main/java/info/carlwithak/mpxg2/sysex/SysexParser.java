@@ -17,15 +17,16 @@
 
 package info.carlwithak.mpxg2.sysex;
 
-import info.carlwithak.mpxg2.model.Program;
-import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.NoiseGate;
+import info.carlwithak.mpxg2.model.Patch;
+import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
 import info.carlwithak.mpxg2.model.effects.Effect1;
 import info.carlwithak.mpxg2.model.effects.Effect2;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -105,24 +106,8 @@ public class SysexParser {
         }
 
         // effect 1 parameters
-        bytes = new byte[2];
-        in.read(bytes);
-        int effect1Mix = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int effect1Level = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int effect1Rate = bytes[0] + bytes[1] * 16;
-
-        Effect1 effect1 = new Effect1();
-        effect1.setMix(effect1Mix);
-        effect1.setLevel(effect1Level);
-        effect1.setRate(effect1Rate);
-        program.setEffect1(effect1);
-
-        // unused
-        in.read(new byte[29 * 2]);
+        byte[] effect1Parameters = new byte[32 * 2];
+        in.read(effect1Parameters);
 
         // effect 2 parameters
         bytes = new byte[2];
@@ -436,6 +421,13 @@ public class SysexParser {
             switch (i) {
                 case 0:
                     program.setEffect1Algorithm(algorithmNumber);
+                    Effect1 effect1 = null;
+                    switch (algorithmNumber) {
+                        case 12:
+                            effect1 = UniVybeParser.parse(effect1Parameters);
+                            break;
+                    }
+                    program.setEffect1(effect1);
                     break;
                 case 1:
                     program.setEffect2Algorithm(algorithmNumber);
