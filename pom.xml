@@ -27,6 +27,11 @@
         <developerConnection>scm:git:git@github.com:carlgreen/Lexicon-MPX-G2-Editor.git</developerConnection>
     </scm>
 
+    <ciManagement>
+        <system>jenkins</system>
+        <url>https://carlgreen.ci.cloudbees.com/job/Lexicon-MPX-G2-Editor/</url>
+    </ciManagement>
+
     <developers>
         <developer>
             <id>carlgreen@gmail.com</id>
