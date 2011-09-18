@@ -102,8 +102,54 @@ public class ProgramPrinterTest {
                 "    7: Reverb Size\n" +
                 "    8: Reverb P Dly\n" +
                 "    9: Reverb DTime\n" +
-                "    10: Reverb D Lvl";
-        // TODO: patching, controllers, tempo, mix, speakersim, noisegate
+                "    10: Reverb D Lvl\n" +
+                "  Patching:\n" +
+                "    Patch 1:\n" +
+                "      Source: Ctls A/B\n" +
+                "        Min: 0\n" +
+                "        Mid: --\n" +
+                "        Max: 127\n" +
+                "      Destination: Delay Mix\n" +
+                "        Min: 2%\n" +
+                "        Mid: --\n" +
+                "        Max: 30%\n" +
+                "    Patch 2:\n" +
+                "      Source: Ctls A/B\n" +
+                "        Min: 0\n" +
+                "        Mid: --\n" +
+                "        Max: 127\n" +
+                "      Destination: Delay Time2\n" +
+                "        Min: 4:1\n" +
+                "        Mid: --\n" +
+                "        Max: 4:2\n" +
+                "    Patch 3:\n" +
+                "      Source: Ctls A/B\n" +
+                "        Min: 0\n" +
+                "        Mid: --\n" +
+                "        Max: 127\n" +
+                "      Destination: Delay Fbk 1\n" +
+                "        Min: 1%\n" +
+                "        Mid: --\n" +
+                "        Max: 15%\n" +
+                "    Patch 4:\n" +
+                "      Source: Ctls A/B\n" +
+                "        Min: 0\n" +
+                "        Mid: --\n" +
+                "        Max: 127\n" +
+                "      Destination: Delay Fbk 2\n" +
+                "        Min: 1%\n" +
+                "        Mid: --\n" +
+                "        Max: 4%\n" +
+                "    Patch 5:\n" +
+                "      Source: Midi Toe\n" +
+                "        Min: 0\n" +
+                "        Mid: --\n" +
+                "        Max: 127\n" +
+                "      Destination: Send Level\n" +
+                "        Min: 0\n" +
+                "        Mid: --\n" +
+                "        Max: +6";
+        // TODO: controllers, tempo, mix, speakersim, noisegate
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
         String actual = ProgramPrinter.print(program);
