@@ -25,13 +25,6 @@ package info.carlwithak.mpxg2.model.effects;
 public class Reverb {
     private int mix;
     private int level;
-    private double size;
-    private int link;
-    private int diff;
-    private int preDelay;
-    private int delayTime;
-    private int delayLevel;
-    private int rtHC;
 
     public int getMix() {
         return mix;
@@ -47,62 +40,6 @@ public class Reverb {
 
     public void setLevel(final int level) {
         this.level = level;
-    }
-
-    public double getSize() {
-        return size;
-    }
-
-    public void setSize(double size) {
-        this.size = size;
-    }
-
-    public int getLink() {
-        return link;
-    }
-
-    public void setLink(int link) {
-        this.link = link;
-    }
-
-    public int getDiff() {
-        return diff;
-    }
-
-    public void setDiff(int diff) {
-        this.diff = diff;
-    }
-
-    public int getPreDelay() {
-        return preDelay;
-    }
-
-    public void setPreDelay(int preDelay) {
-        this.preDelay = preDelay;
-    }
-
-    public int getDelayTime() {
-        return delayTime;
-    }
-
-    public void setDelayTime(int delayTime) {
-        this.delayTime = delayTime;
-    }
-
-    public int getDelayLevel() {
-        return delayLevel;
-    }
-
-    public void setDelayLevel(int delayLevel) {
-        this.delayLevel = delayLevel;
-    }
-
-    public int getRtHC() {
-        return rtHC;
-    }
-
-    public void setRtHC(int rtHC) {
-        this.rtHC = rtHC;
     }
 
 }

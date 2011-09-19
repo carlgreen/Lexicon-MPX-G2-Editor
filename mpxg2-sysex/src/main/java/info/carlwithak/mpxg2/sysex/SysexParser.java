@@ -26,11 +26,13 @@ import info.carlwithak.mpxg2.model.effects.Effect1;
 import info.carlwithak.mpxg2.model.effects.Effect2;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import java.io.File;
 import java.io.FileInputStream;
@@ -127,48 +129,8 @@ public class SysexParser {
         in.read(delayParameters);
 
         // reverb parameters
-        bytes = new byte[2];
-        in.read(bytes);
-        int reverbMix = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int reverbLevel = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        double reverbSize = (bytes[0] + bytes[1] * 16) / 2.0 + 4;
-
-        in.read(bytes);
-        int reverbLink = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int reverbDiff = (bytes[0] + bytes[1] * 16) * 2;
-
-        in.read(bytes);
-        int reverbPreDelay = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int reverbDelayTime = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int reverbDelayLevel = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int reverbRtHC = bytes[0] + bytes[1] * 16;
-
-        Reverb reverb = new Reverb();
-        reverb.setMix(reverbMix);
-        reverb.setLevel(reverbLevel);
-        reverb.setSize(reverbSize);
-        reverb.setLink(reverbLink);
-        reverb.setDiff(reverbDiff);
-        reverb.setPreDelay(reverbPreDelay);
-        reverb.setDelayTime(reverbDelayTime);
-        reverb.setDelayLevel(reverbDelayLevel);
-        reverb.setRtHC(reverbRtHC);
-        program.setReverb(reverb);
-
-        // unused
-        in.read(new byte[23 * 2]);
+        byte[] reverbParameters = new byte[32 * 2];
+        in.read(reverbParameters);
 
         // TODO eq parameters
         in.read(new byte[32 * 2]);
@@ -369,6 +331,16 @@ public class SysexParser {
                     break;
                 case 4:
                     program.setReverbAlgorithm(algorithmNumber);
+                    Reverb reverb = null;
+                    switch (algorithmNumber) {
+                        case 3:
+                            reverb = PlateParser.parse(reverbParameters);
+                            break;
+                        case 4:
+                            reverb = AmbienceParser.parse(reverbParameters);
+                            break;
+                    }
+                    program.setReverb(reverb);
                     break;
                 case 5:
                     program.setEqAlgorithm(algorithmNumber);

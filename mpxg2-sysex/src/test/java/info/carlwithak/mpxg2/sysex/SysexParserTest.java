@@ -19,11 +19,13 @@ package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -500,15 +502,18 @@ public class SysexParserTest {
         assertEquals(20, delay.getDamp2());
         assertEquals(0, delay.getClear());
 
-        assertEquals(18, program.getReverb().getMix());
-        assertEquals(0, program.getReverb().getLevel());
-        assertEquals(24.5, program.getReverb().getSize(), 0.01);
-        assertEquals(1, program.getReverb().getLink());
-        assertEquals(60, program.getReverb().getDiff());
-        assertEquals(7, program.getReverb().getPreDelay());
-        assertEquals(51, program.getReverb().getDelayTime()); // 1.41s is number 51 in list
-        assertEquals(0, program.getReverb().getDelayLevel());
-        assertEquals(12, program.getReverb().getRtHC()); // 12.8k is number 12 in list
+        assertTrue(program.getReverb() instanceof Ambience);
+        Ambience reverb = (Ambience) program.getReverb();
+        assertEquals(18, reverb.getMix());
+        assertEquals(0, reverb.getLevel());
+        assertEquals(24.5, reverb.getSize(), 0.01);
+        assertEquals(1, reverb.getLink());
+        assertEquals(60, reverb.getDiff());
+        assertEquals(7, reverb.getPreDelay());
+        assertEquals(51, reverb.getDelayTime()); // 1.41s is number 51 in list
+        assertEquals(0, reverb.getDelayLevel());
+        assertEquals(12, reverb.getRtHC()); // 12.8k is number 12 in list
+
         // no eq
         assertEquals(2, program.getGain().getLo());
         assertEquals(1, program.getGain().getMid());
@@ -748,6 +753,21 @@ public class SysexParserTest {
         assertEquals(25, delay.getDamp1());
         assertEquals(25, delay.getDamp2());
         assertEquals(0, delay.getClear());
+
+        assertTrue(program.getReverb() instanceof Plate);
+        Plate reverb = (Plate) program.getReverb();
+        assertEquals(100, reverb.getMix());
+        assertEquals(6, reverb.getLevel());
+        assertEquals(22.5, reverb.getSize(), 0.01);
+        assertEquals(1, reverb.getLink());
+        assertEquals(66, reverb.getDiff());
+        assertEquals(169, reverb.getPreDelay());
+        assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
+        assertEquals(50, reverb.getDecay()); // 1.30s is number 50 in list
+        assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
+        assertEquals(45, reverb.getRtHC()); // 19.4k is number 45 in list
+        assertEquals(36, reverb.getShape());
+        assertEquals(222, reverb.getSpred()); // screen reads 73, which is ~ 222 / 3
     }
 
     /**

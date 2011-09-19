@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
@@ -280,17 +281,18 @@ public class ProgramPrinter {
             sb.append("    Clear: ").append(delay.getClear() == 0 ? "off" : "on").append("\n");
         }
         if (program.getReverbAlgorithm() > 0) {
+            Ambience reverb = (Ambience) program.getReverb();
             sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(program.isReverbOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getReverbToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getReverb().getMix()).append("%\n");
-            sb.append("    Level: ").append(program.getReverb().getLevel()).append("dB\n");
-            sb.append("    Size: ").append(program.getReverb().getSize()).append("m\n");
-            sb.append("    Link: ").append(program.getReverb().getLink() == 0 ? "off" : "on").append("\n");
-            sb.append("    Diff: ").append(program.getReverb().getDiff()).append("%\n");
-            sb.append("    Pre Delay: ").append(program.getReverb().getPreDelay()).append("ms\n");
-            sb.append("    Delay Time: ").append(reverbDelayTimeToString(program.getReverb().getDelayTime())).append("s\n");
-            sb.append("    Delay Level: ").append(program.getReverb().getDelayLevel() == 0 ? "off" : "on").append("\n");
-            sb.append("    Rt HC: ").append(reverbRtHCToString(program.getReverb().getRtHC())).append("k\n");
+            sb.append("    Mix: ").append(reverb.getMix()).append("%\n");
+            sb.append("    Level: ").append(reverb.getLevel()).append("dB\n");
+            sb.append("    Size: ").append(reverb.getSize()).append("m\n");
+            sb.append("    Link: ").append(reverb.getLink() == 0 ? "off" : "on").append("\n");
+            sb.append("    Diff: ").append(reverb.getDiff()).append("%\n");
+            sb.append("    Pre Delay: ").append(reverb.getPreDelay()).append("ms\n");
+            sb.append("    Delay Time: ").append(reverbDelayTimeToString(reverb.getDelayTime())).append("s\n");
+            sb.append("    Delay Level: ").append(reverb.getDelayLevel() == 0 ? "off" : "on").append("\n");
+            sb.append("    Rt HC: ").append(reverbRtHCToString(reverb.getRtHC())).append("k\n");
         }
         if (program.getGainAlgorithm() > 0) {
             sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(program.isGainOn() ? "on" : "off").append(")").append("\n");
