@@ -35,6 +35,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -515,6 +516,8 @@ public class SysexParserTest {
         assertEquals(12, reverb.getRtHC()); // 12.8k is number 12 in list
 
         // no eq
+        assertNull(program.getEq());
+
         assertEquals(2, program.getGain().getLo());
         assertEquals(1, program.getGain().getMid());
         assertEquals(3, program.getGain().getHi());
@@ -605,7 +608,6 @@ public class SysexParserTest {
         assertEquals(0, program.getTapSource());
         assertEquals(2, program.getTapAverage());
         assertEquals(64, program.getTapSourceLevel());
-
 
         assertEquals(16, program.getPatch1().getSource()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, program.getPatch1().getSourceMin());
@@ -736,6 +738,9 @@ public class SysexParserTest {
         assertEquals(-24, effect2.getLevel());
         assertEquals(-50, effect2.getPan1());
         assertEquals(50, effect2.getPan2());
+
+        // no chorus
+        assertNull(program.getChorus());
 
         assertTrue(program.getDelay() instanceof EchoDual);
         EchoDual delay = (EchoDual) program.getDelay();
