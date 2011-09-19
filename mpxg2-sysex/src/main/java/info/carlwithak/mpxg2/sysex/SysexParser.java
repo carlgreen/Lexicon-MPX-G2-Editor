@@ -132,8 +132,9 @@ public class SysexParser {
         byte[] reverbParameters = new byte[32 * 2];
         in.read(reverbParameters);
 
-        // TODO eq parameters
-        in.read(new byte[32 * 2]);
+        // eq parameters
+        byte[] eqParameters = new byte[32 * 2];
+        in.read(eqParameters);
 
         // gain parameters
         bytes = new byte[2];
