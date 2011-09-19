@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.Effect2;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import java.io.File;
@@ -410,6 +411,9 @@ public class SysexParser {
                     program.setEffect2Algorithm(algorithmNumber);
                     Effect2 effect2 = null;
                     switch (algorithmNumber) {
+                        case 1:
+                            effect2 = PannerParser.parse(effect2Parameters);
+                            break;
                         case 18:
                             effect2 = PedalWah1Parser.parse(effect2Parameters);
                             break;

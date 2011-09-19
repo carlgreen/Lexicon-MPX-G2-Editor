@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.io.File;
@@ -474,6 +475,7 @@ public class SysexParserTest {
         assertEquals(0, effect2.getType());
         assertEquals(100, effect2.getResponse());
         assertEquals(10, effect2.getGain());
+
         assertEquals(100, program.getChorus().getMix());
         assertEquals(0, program.getChorus().getLevel());
         assertEquals(2, program.getDelay().getMix());
@@ -714,6 +716,13 @@ public class SysexParserTest {
         assertEquals(10, effect1.getOptimize());
         assertEquals(5, effect1.getTune2());
         assertEquals(22, effect1.getPreDelay());
+
+        assertTrue(program.getEffect2() instanceof Panner);
+        Panner effect2 = (Panner) program.getEffect2();
+        assertEquals(100, effect2.getMix());
+        assertEquals(-24, effect2.getLevel());
+        assertEquals(-50, effect2.getPan1());
+        assertEquals(50, effect2.getPan2());
     }
 
     /**
