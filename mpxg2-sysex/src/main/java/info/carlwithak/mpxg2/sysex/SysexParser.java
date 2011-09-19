@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -286,60 +287,88 @@ public class SysexParser {
             switch (i) {
                 case 0:
                     program.setEffect1Algorithm(algorithmNumber);
-                    Effect1 effect1 = null;
+                    Effect1 effect1;
                     switch (algorithmNumber) {
+                        case 0:
+                            effect1 = null;
+                            break;
                         case 3:
                             effect1 = DetuneDualParser.parse(effect1Parameters);
                             break;
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
                             break;
+                        case 27:
+                            effect1 = VolumeMonoParser.parse(effect1Parameters);
+                            break;
+                        default:
+                            throw new ParseException("Invalid Effect 1 algorithm number: " + algorithmNumber);
                     }
                     program.setEffect1(effect1);
                     break;
                 case 1:
                     program.setEffect2Algorithm(algorithmNumber);
-                    Effect2 effect2 = null;
+                    Effect2 effect2;
                     switch (algorithmNumber) {
+                        case 0:
+                            effect2 = null;
+                            break;
                         case 1:
                             effect2 = PannerParser.parse(effect2Parameters);
                             break;
                         case 18:
                             effect2 = PedalWah1Parser.parse(effect2Parameters);
                             break;
+                        default:
+                            throw new ParseException("Invalid Effect 2 algorithm number: " + algorithmNumber);
                     }
                     program.setEffect2(effect2);
                     break;
                 case 2:
                     program.setChorusAlgorithm(algorithmNumber);
-                    Chorus chorus = null;
+                    Chorus chorus;
                     switch (algorithmNumber) {
+                        case 0:
+                            chorus = null;
+                            break;
                         case 16:
                             chorus = PedalVolParser.parse(chorusParameters);
                             break;
+                        default:
+                            throw new ParseException("Invalid Chorus algorithm number: " + algorithmNumber);
                     }
                     program.setChorus(chorus);
                     break;
                 case 3:
                     program.setDelayAlgorithm(algorithmNumber);
-                    Delay delay = null;
+                    Delay delay;
                     switch (algorithmNumber) {
+                        case 0:
+                            delay = null;
+                            break;
                         case 6:
                             delay = EchoDualParser.parse(delayParameters);
                             break;
+                        default:
+                            throw new ParseException("Invalid Delay algorithm number: " + algorithmNumber);
                     }
                     program.setDelay(delay);
                     break;
                 case 4:
                     program.setReverbAlgorithm(algorithmNumber);
-                    Reverb reverb = null;
+                    Reverb reverb;
                     switch (algorithmNumber) {
+                        case 0:
+                            reverb = null;
+                            break;
                         case 3:
                             reverb = PlateParser.parse(reverbParameters);
                             break;
                         case 4:
                             reverb = AmbienceParser.parse(reverbParameters);
                             break;
+                        default:
+                            throw new ParseException("Invalid Reverb algorithm number: " + algorithmNumber);
                     }
                     program.setReverb(reverb);
                     break;

@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -288,6 +289,12 @@ public class SysexParserTest {
     public void testParseUnityGain() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("249_Unity_Gain.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect1() instanceof VolumeMono);
+        VolumeMono effect1 = (VolumeMono) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(0, effect1.getLevel());
+        assertEquals(100, effect1.getVolume());
 
         // effect types
         assertFalse(program.isChorus());
