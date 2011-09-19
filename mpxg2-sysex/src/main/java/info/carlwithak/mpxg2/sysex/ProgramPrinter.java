@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.text.DecimalFormat;
 
@@ -295,14 +296,15 @@ public class ProgramPrinter {
             sb.append("    Rt HC: ").append(reverbRtHCToString(reverb.getRtHC())).append("k\n");
         }
         if (program.getGainAlgorithm() > 0) {
+            Screamer gain = (Screamer) program.getGain();
             sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(program.isGainOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
-            sb.append("    Lo: ").append(program.getGain().getLo() > 0 ? "+" : "").append(program.getGain().getLo()).append("\n");
-            sb.append("    Mid: ").append(program.getGain().getMid() > 0 ? "+" : "").append(program.getGain().getMid()).append("\n");
-            sb.append("    Hi: ").append(program.getGain().getHi() > 0 ? "+" : "").append(program.getGain().getHi()).append("\n");
-            sb.append("    Drive: ").append(program.getGain().getDrive()).append("\n");
-            sb.append("    Tone: ").append(program.getGain().getTone()).append("\n");
-            sb.append("    Level: ").append(program.getGain().getLevel()).append("\n");
+            sb.append("    Lo: ").append(gain.getLo() > 0 ? "+" : "").append(gain.getLo()).append("\n");
+            sb.append("    Mid: ").append(gain.getMid() > 0 ? "+" : "").append(gain.getMid()).append("\n");
+            sb.append("    Hi: ").append(gain.getHi() > 0 ? "+" : "").append(gain.getHi()).append("\n");
+            sb.append("    Drive: ").append(gain.getDrive()).append("\n");
+            sb.append("    Tone: ").append(gain.getTone()).append("\n");
+            sb.append("    Level: ").append(gain.getLevel()).append("\n");
         }
         sb.append("  Softrow:\n");
         sb.append("    1: ").append(effectTypeToString(program.getSoftRowEffectType(0))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(0), program.getSoftRowParameter(0))).append("\n");

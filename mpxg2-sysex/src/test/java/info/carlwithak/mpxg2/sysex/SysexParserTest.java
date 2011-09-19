@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
@@ -529,12 +531,14 @@ public class SysexParserTest {
         // no eq
         assertNull(program.getEq());
 
-        assertEquals(2, program.getGain().getLo());
-        assertEquals(1, program.getGain().getMid());
-        assertEquals(3, program.getGain().getHi());
-        assertEquals(22, program.getGain().getDrive());
-        assertEquals(25, program.getGain().getTone());
-        assertEquals(57, program.getGain().getLevel());
+        assertTrue(program.getGain() instanceof Screamer);
+        Screamer gain = (Screamer) program.getGain();
+        assertEquals(2, gain.getLo());
+        assertEquals(1, gain.getMid());
+        assertEquals(3, gain.getHi());
+        assertEquals(22, gain.getDrive());
+        assertEquals(25, gain.getTone());
+        assertEquals(57, gain.getLevel());
 
         // effect types
         assertTrue(program.isChorus());
@@ -785,12 +789,15 @@ public class SysexParserTest {
         assertEquals(36, reverb.getShape());
         assertEquals(222, reverb.getSpred()); // screen reads 73, which is ~ 222 / 3
 
-        assertEquals(5, program.getGain().getLo());
-        assertEquals(0, program.getGain().getMid());
-        assertEquals(0, program.getGain().getHi());
-        assertEquals(40, program.getGain().getDrive());
-        assertEquals(21, program.getGain().getTone());
-        assertEquals(39, program.getGain().getLevel());
+
+        assertTrue(program.getGain() instanceof Screamer);
+        Screamer gain = (Screamer) program.getGain();
+        assertEquals(5, gain.getLo());
+        assertEquals(0, gain.getMid());
+        assertEquals(0, gain.getHi());
+        assertEquals(40, gain.getDrive());
+        assertEquals(21, gain.getTone());
+        assertEquals(39, gain.getLevel());
     }
 
     /**
@@ -868,6 +875,14 @@ public class SysexParserTest {
         EqPedalVol eq = (EqPedalVol) program.getEq();
         assertEquals(100, eq.getMix());
         assertEquals(0, eq.getLevel());
+
+        assertTrue(program.getGain() instanceof Tone);
+        Tone gain = (Tone) program.getGain();
+        assertEquals(25, gain.getLo());
+        assertEquals(10, gain.getMid());
+        assertEquals(20, gain.getHi());
+        assertEquals(0, gain.getInLevel());
+        assertEquals(55, gain.getLevel());
     }
 
     /**

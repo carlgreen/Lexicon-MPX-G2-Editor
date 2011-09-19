@@ -22,60 +22,6 @@ package info.carlwithak.mpxg2.model.effects;
  *
  * @author Carl Green
  */
-public class Gain {
-    private int lo;
-    private int mid;
-    private int hi;
-    private int drive;
-    private int tone;
-    private int level;
-
-    public int getLo() {
-        return lo;
-    }
-
-    public void setLo(int lo) {
-        this.lo = lo;
-    }
-
-    public int getMid() {
-        return mid;
-    }
-
-    public void setMid(int mid) {
-        this.mid = mid;
-    }
-
-    public int getHi() {
-        return hi;
-    }
-
-    public void setHi(int hi) {
-        this.hi = hi;
-    }
-
-    public int getDrive() {
-        return drive;
-    }
-
-    public void setDrive(int drive) {
-        this.drive = drive;
-    }
-
-    public int getTone() {
-        return tone;
-    }
-
-    public void setTone(int tone) {
-        this.tone = tone;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
+public abstract class Gain {
 
 }

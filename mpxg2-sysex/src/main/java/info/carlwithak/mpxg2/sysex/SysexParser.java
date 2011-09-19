@@ -37,6 +37,8 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
 import java.io.File;
@@ -142,36 +144,8 @@ public class SysexParser {
         in.read(eqParameters);
 
         // gain parameters
-        bytes = new byte[2];
-        in.read(bytes);
-        int gainLo = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int gainMid = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int gainHi = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int gainDrive = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int gainTone = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int gainLevel = bytes[0] + bytes[1] * 16;
-
-        Gain gain = new Gain();
-        gain.setLo(gainLo);
-        gain.setMid(gainMid);
-        gain.setHi(gainHi);
-        gain.setDrive(gainDrive);
-        gain.setTone(gainTone);
-        gain.setLevel(gainLevel);
-        program.setGain(gain);
-
-        // unused
-        in.read(new byte[26 * 2]);
+        byte[] gainParameters = new byte[32 * 2];
+        in.read(gainParameters);
 
         // TODO
         bytes = new byte[6];
@@ -405,6 +379,21 @@ public class SysexParser {
                     break;
                 case 6:
                     program.setGainAlgorithm(algorithmNumber);
+                    Gain gain;
+                    switch (algorithmNumber) {
+                        case 0:
+                            gain = null;
+                            break;
+                        case 1:
+                            gain = ToneParser.parse(gainParameters);
+                            break;
+                        case 3:
+                            gain = ScreamerParser.parse(gainParameters);
+                            break;
+                        default:
+                            throw new ParseException("Invalid Gain algorithm number: " + algorithmNumber);
+                    }
+                    program.setGain(gain);
                     break;
             }
         }
