@@ -28,6 +28,7 @@ import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import java.io.File;
@@ -117,20 +118,8 @@ public class SysexParser {
         in.read(effect2Parameters);
 
         // chorus parameters
-        bytes = new byte[2];
-        in.read(bytes);
-        int chorusMix = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int chorusLevel = bytes[0] + bytes[1] * 16;
-
-        Chorus chorus = new Chorus();
-        chorus.setMix(chorusMix);
-        chorus.setLevel(chorusLevel);
-        program.setChorus(chorus);
-
-        // unused
-        in.read(new byte[30 * 2]);
+        byte[] chorusParameters = new byte[32 * 2];
+        in.read(chorusParameters);
 
         // delay parameters
         bytes = new byte[2];
@@ -422,6 +411,13 @@ public class SysexParser {
                     break;
                 case 2:
                     program.setChorusAlgorithm(algorithmNumber);
+                    Chorus chorus = null;
+                    switch (algorithmNumber) {
+                        case 16:
+                            chorus = PedalVolParser.parse(chorusParameters);
+                            break;
+                    }
+                    program.setChorus(chorus);
                     break;
                 case 3:
                     program.setDelayAlgorithm(algorithmNumber);

@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.io.File;
@@ -476,8 +477,11 @@ public class SysexParserTest {
         assertEquals(100, effect2.getResponse());
         assertEquals(10, effect2.getGain());
 
-        assertEquals(100, program.getChorus().getMix());
-        assertEquals(0, program.getChorus().getLevel());
+        assertTrue(program.getChorus() instanceof PedalVol);
+        PedalVol chorus = (PedalVol) program.getChorus();
+        assertEquals(100, chorus.getMix());
+        assertEquals(0, chorus.getLevel());
+
         assertEquals(2, program.getDelay().getMix());
         assertEquals(1, program.getDelay().getLevel());
         assertEquals(4, program.getDelay().getTime1Echoes());
