@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.text.DecimalFormat;
@@ -254,10 +255,11 @@ public class ProgramPrinter {
             sb.append("    Gain: ").append(effect2.getGain() > 0 ? "+" : "").append(effect2.getGain()).append("\n");
         }
         if (program.getChorusAlgorithm() > 0) {
+            PedalVol chorus = (PedalVol) program.getChorus();
             sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(program.isChorusOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getChorusToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getChorus().getMix()).append("%\n");
-            sb.append("    Level: ").append(program.getChorus().getLevel()).append("dB\n");
+            sb.append("    Mix: ").append(chorus.getMix()).append("%\n");
+            sb.append("    Level: ").append(chorus.getLevel()).append("dB\n");
         }
         if (program.getDelayAlgorithm() > 0) {
             sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(program.isDelayOn() ? "on" : "off").append(")").append("\n");
