@@ -27,8 +27,12 @@ import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.AutoPanParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
@@ -295,6 +299,9 @@ public class SysexParser {
                         case 3:
                             effect1 = DetuneDualParser.parse(effect1Parameters);
                             break;
+                        case 9:
+                            effect1 = AutoPanParser.parse(effect1Parameters);
+                            break;
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
                             break;
@@ -316,6 +323,9 @@ public class SysexParser {
                         case 1:
                             effect2 = PannerParser.parse(effect2Parameters);
                             break;
+                        case 2:
+                            effect2 = AutoPanParser.parse(effect2Parameters);
+                            break;
                         case 18:
                             effect2 = PedalWah1Parser.parse(effect2Parameters);
                             break;
@@ -330,6 +340,9 @@ public class SysexParser {
                     switch (algorithmNumber) {
                         case 0:
                             chorus = null;
+                            break;
+                        case 1:
+                            chorus = ChorusParser.parse(chorusParameters);
                             break;
                         case 16:
                             chorus = PedalVolParser.parse(chorusParameters);
@@ -361,6 +374,9 @@ public class SysexParser {
                         case 0:
                             reverb = null;
                             break;
+                        case 1:
+                            reverb = ChamberParser.parse(reverbParameters);
+                            break;
                         case 3:
                             reverb = PlateParser.parse(reverbParameters);
                             break;
@@ -378,6 +394,9 @@ public class SysexParser {
                     switch (algorithmNumber) {
                         case 0:
                             eq = null;
+                            break;
+                        case 14:
+                            eq = EqPedalVolParser.parse(eqParameters);
                             break;
                         default:
                             throw new ParseException("Invalid EQ algorithm number: " + algorithmNumber);

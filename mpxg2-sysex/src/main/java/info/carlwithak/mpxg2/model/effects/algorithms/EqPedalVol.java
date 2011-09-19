@@ -15,30 +15,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.model.effects;
+package info.carlwithak.mpxg2.model.effects.algorithms;
+
+import info.carlwithak.mpxg2.model.effects.Eq;
 
 /**
- * Base class for EQ effects.
+ * Class for Pedal Vol parameters.
  *
  * @author Carl Green
  */
-public class Eq {
-    private int mix;
-    private int level;
+public class EqPedalVol extends Eq {
 
-    public int getMix() {
-        return mix;
-    }
-
-    public void setMix(int mix) {
-        this.mix = mix;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
 }

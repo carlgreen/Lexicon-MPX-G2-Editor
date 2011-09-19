@@ -20,8 +20,12 @@ package info.carlwithak.mpxg2.sysex;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
@@ -787,6 +791,83 @@ public class SysexParserTest {
         assertEquals(40, program.getGain().getDrive());
         assertEquals(21, program.getGain().getTone());
         assertEquals(39, program.getGain().getLevel());
+    }
+
+    /**
+     * Test parsing the Cordovox preset.
+     */
+    @Test
+    public void testParseCordovox() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("003_Cordovox.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect1() instanceof AutoPan);
+        AutoPan effect1 = (AutoPan) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(0, effect1.getLevel());
+        assertEquals(0.04, effect1.getRate(), 0.001);
+        assertEquals(50, effect1.getPulseWidth());
+        assertEquals(100, effect1.getDepth());
+        assertEquals(1, effect1.getPhase()); // 0, 90, 180, 270 degrees
+
+        assertTrue(program.getEffect2() instanceof AutoPan);
+        AutoPan effect2 = (AutoPan) program.getEffect2();
+        assertEquals(100, effect2.getMix());
+        assertEquals(0, effect2.getLevel());
+        assertEquals(1.00, effect2.getRate(), 0.001);
+        assertEquals(50, effect2.getPulseWidth());
+        assertEquals(100, effect2.getDepth());
+        assertEquals(3, effect2.getPhase()); // 0, 90, 180, 270 degrees
+
+        assertTrue(program.getChorus() instanceof ChorusAlgorithm);
+        ChorusAlgorithm chorus = (ChorusAlgorithm) program.getChorus();
+        assertEquals(100, chorus.getMix());
+        assertEquals(0, chorus.getLevel());
+        assertEquals(0.62, chorus.getRate1(), 0.001);
+        assertEquals(45, chorus.getPulseWidth1());
+        assertEquals(30, chorus.getDepth1());
+        assertEquals(0.56, chorus.getRate2(), 0.001);
+        assertEquals(54, chorus.getPulseWidth2());
+        assertEquals(0, chorus.getDepth2());
+        assertEquals(-19, chorus.getResonance1());
+        assertEquals(0, chorus.getResonance2());
+
+        assertTrue(program.getDelay() instanceof EchoDual);
+        EchoDual delay = (EchoDual) program.getDelay();
+        assertEquals(30, delay.getMix());
+        assertEquals(0, delay.getLevel());
+        assertEquals(1, delay.getTime1Echoes());
+        assertEquals(1, delay.getTime1Beat());
+        assertEquals(4, delay.getTime2Echoes());
+        assertEquals(3, delay.getTime2Beat());
+        assertEquals(0, delay.getLevel1());
+        assertEquals(0, delay.getLevel2());
+        assertEquals(-10, delay.getFeedback1());
+        assertEquals(3, delay.getInsert());
+        assertEquals(-20, delay.getFeedback2());
+        assertEquals(20, delay.getDamp1());
+        assertEquals(20, delay.getDamp2());
+        assertEquals(0, delay.getClear());
+
+        assertTrue(program.getReverb() instanceof Chamber);
+        Chamber reverb = (Chamber) program.getReverb();
+        assertEquals(28, reverb.getMix());
+        assertEquals(0, reverb.getLevel());
+        assertEquals(24.0, reverb.getSize(), 0.01);
+        assertEquals(1, reverb.getLink());
+        assertEquals(22, reverb.getDiff());
+        assertEquals(0, reverb.getPreDelay());
+        assertEquals(6, reverb.getBass()); // 1.5X is number 6 in list
+        assertEquals(47, reverb.getDecay()); // 1.05s is number 47 in list
+        assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
+        assertEquals(34, reverb.getRtHC()); // 9.3k is number 34 in list
+        assertEquals(62, reverb.getShape());
+        assertEquals(120, reverb.getSpred()); // screen reads 42, which is ~ 120 / 3
+
+        assertTrue(program.getEq() instanceof EqPedalVol);
+        EqPedalVol eq = (EqPedalVol) program.getEq();
+        assertEquals(100, eq.getMix());
+        assertEquals(0, eq.getLevel());
     }
 
     /**
