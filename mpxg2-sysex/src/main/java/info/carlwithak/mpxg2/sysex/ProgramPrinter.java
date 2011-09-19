@@ -59,7 +59,7 @@ public class ProgramPrinter {
     };
 
     private static final String[] DELAY_INSERTS = {
-        "effect 1", "effect 2", "chorus", "delay", "reverb", "eq", "gain"
+        "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "EQ", "Gain"
     };
 
     private static final double[] REVERB_DELAY_TIMES = {

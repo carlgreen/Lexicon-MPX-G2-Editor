@@ -29,7 +29,7 @@ G2 Blue
     Level1: 0dB
     Level2: 0dB
     Feedback1: +1%
-    Insert: delay
+    Insert: Delay
     Feedback2: +1%
     Damp1: 20%
     Damp2: 20%
