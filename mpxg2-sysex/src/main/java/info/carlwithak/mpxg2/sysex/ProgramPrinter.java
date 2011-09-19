@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
@@ -262,20 +263,21 @@ public class ProgramPrinter {
             sb.append("    Level: ").append(chorus.getLevel()).append("dB\n");
         }
         if (program.getDelayAlgorithm() > 0) {
+            EchoDual delay = (EchoDual) program.getDelay();
             sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(program.isDelayOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getDelayToePatch())).append("\n");
-            sb.append("    Mix: ").append(program.getDelay().getMix()).append("%\n");
-            sb.append("    Level: ").append(program.getDelay().getLevel() > 0 ? "+" : "").append(program.getDelay().getLevel()).append("dB\n");
-            sb.append("    Time1: ").append(program.getDelay().getTime1Echoes()).append(":").append(program.getDelay().getTime1Beat()).append("\n");
-            sb.append("    Time2: ").append(program.getDelay().getTime2Echoes()).append(":").append(program.getDelay().getTime2Beat()).append("\n");
-            sb.append("    Level1: ").append(program.getDelay().getLevel1() > 0 ? "+" : "").append(program.getDelay().getLevel1()).append("dB\n");
-            sb.append("    Level2: ").append(program.getDelay().getLevel2() > 0 ? "+" : "").append(program.getDelay().getLevel2()).append("dB\n");
-            sb.append("    Feedback1: ").append(program.getDelay().getFeedback1() > 0 ? "+" : "").append(program.getDelay().getFeedback1()).append("%\n");
-            sb.append("    Insert: ").append(delayInsertToString(program.getDelay().getInsert())).append("\n");
-            sb.append("    Feedback2: ").append(program.getDelay().getFeedback2() > 0 ? "+" : "").append(program.getDelay().getFeedback2()).append("%\n");
-            sb.append("    Damp1: ").append(program.getDelay().getDamp1()).append("%\n");
-            sb.append("    Damp2: ").append(program.getDelay().getDamp2()).append("%\n");
-            sb.append("    Clear: ").append(program.getDelay().getClear() == 0 ? "off" : "on").append("\n");
+            sb.append("    Mix: ").append(delay.getMix()).append("%\n");
+            sb.append("    Level: ").append(delay.getLevel() > 0 ? "+" : "").append(delay.getLevel()).append("dB\n");
+            sb.append("    Time1: ").append(delay.getTime1Echoes()).append(":").append(delay.getTime1Beat()).append("\n");
+            sb.append("    Time2: ").append(delay.getTime2Echoes()).append(":").append(delay.getTime2Beat()).append("\n");
+            sb.append("    Level1: ").append(delay.getLevel1() > 0 ? "+" : "").append(delay.getLevel1()).append("dB\n");
+            sb.append("    Level2: ").append(delay.getLevel2() > 0 ? "+" : "").append(delay.getLevel2()).append("dB\n");
+            sb.append("    Feedback1: ").append(delay.getFeedback1() > 0 ? "+" : "").append(delay.getFeedback1()).append("%\n");
+            sb.append("    Insert: ").append(delayInsertToString(delay.getInsert())).append("\n");
+            sb.append("    Feedback2: ").append(delay.getFeedback2() > 0 ? "+" : "").append(delay.getFeedback2()).append("%\n");
+            sb.append("    Damp1: ").append(delay.getDamp1()).append("%\n");
+            sb.append("    Damp2: ").append(delay.getDamp2()).append("%\n");
+            sb.append("    Clear: ").append(delay.getClear() == 0 ? "off" : "on").append("\n");
         }
         if (program.getReverbAlgorithm() > 0) {
             sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(program.isReverbOn() ? "on" : "off").append(")").append("\n");

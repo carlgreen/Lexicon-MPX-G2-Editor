@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
@@ -482,20 +483,23 @@ public class SysexParserTest {
         assertEquals(100, chorus.getMix());
         assertEquals(0, chorus.getLevel());
 
-        assertEquals(2, program.getDelay().getMix());
-        assertEquals(1, program.getDelay().getLevel());
-        assertEquals(4, program.getDelay().getTime1Echoes());
-        assertEquals(4, program.getDelay().getTime1Beat());
-        assertEquals(2, program.getDelay().getTime2Echoes());
-        assertEquals(1, program.getDelay().getTime2Beat());
-        assertEquals(0, program.getDelay().getLevel1());
-        assertEquals(0, program.getDelay().getLevel2());
-        assertEquals(1, program.getDelay().getFeedback1());
-        assertEquals(3, program.getDelay().getInsert());
-        assertEquals(1, program.getDelay().getFeedback2());
-        assertEquals(20, program.getDelay().getDamp1());
-        assertEquals(20, program.getDelay().getDamp2());
-        assertEquals(0, program.getDelay().getClear());
+        assertTrue(program.getDelay() instanceof EchoDual);
+        EchoDual delay = (EchoDual) program.getDelay();
+        assertEquals(2, delay.getMix());
+        assertEquals(1, delay.getLevel());
+        assertEquals(4, delay.getTime1Echoes());
+        assertEquals(4, delay.getTime1Beat());
+        assertEquals(2, delay.getTime2Echoes());
+        assertEquals(1, delay.getTime2Beat());
+        assertEquals(0, delay.getLevel1());
+        assertEquals(0, delay.getLevel2());
+        assertEquals(1, delay.getFeedback1());
+        assertEquals(3, delay.getInsert());
+        assertEquals(1, delay.getFeedback2());
+        assertEquals(20, delay.getDamp1());
+        assertEquals(20, delay.getDamp2());
+        assertEquals(0, delay.getClear());
+
         assertEquals(18, program.getReverb().getMix());
         assertEquals(0, program.getReverb().getLevel());
         assertEquals(24.5, program.getReverb().getSize(), 0.01);
@@ -727,6 +731,23 @@ public class SysexParserTest {
         assertEquals(-24, effect2.getLevel());
         assertEquals(-50, effect2.getPan1());
         assertEquals(50, effect2.getPan2());
+
+        assertTrue(program.getDelay() instanceof EchoDual);
+        EchoDual delay = (EchoDual) program.getDelay();
+        assertEquals(100, delay.getMix());
+        assertEquals(5, delay.getLevel());
+        assertEquals(1, delay.getTime1Echoes());
+        assertEquals(1, delay.getTime1Beat());
+        assertEquals(3, delay.getTime2Echoes());
+        assertEquals(2, delay.getTime2Beat());
+        assertEquals(0, delay.getLevel1());
+        assertEquals(0, delay.getLevel2());
+        assertEquals(-10, delay.getFeedback1());
+        assertEquals(3, delay.getInsert());
+        assertEquals(15, delay.getFeedback2());
+        assertEquals(25, delay.getDamp1());
+        assertEquals(25, delay.getDamp2());
+        assertEquals(0, delay.getClear());
     }
 
     /**

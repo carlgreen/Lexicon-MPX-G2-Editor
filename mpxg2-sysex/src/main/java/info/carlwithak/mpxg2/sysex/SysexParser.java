@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.Effect2;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
@@ -122,71 +123,8 @@ public class SysexParser {
         in.read(chorusParameters);
 
         // delay parameters
-        bytes = new byte[2];
-        in.read(bytes);
-        int delayMix = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayLevel = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayTime1Beat = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayTime1Echoes = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayTime2Beat = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayTime2Echoes = bytes[0] + bytes[1] * 16;
-
-        // TODO what is this?
-        in.read(new byte[4]);
-
-        in.read(bytes);
-        int delayLevel1 = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayLevel2 = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayFeedback1 = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayInsert = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayFeedback2 = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayDamp1 = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayDamp2 = bytes[0] + bytes[1] * 16;
-
-        in.read(bytes);
-        int delayClear = bytes[0] + bytes[1] * 16;
-
-        Delay delay = new Delay();
-        delay.setMix(delayMix);
-        delay.setLevel(delayLevel);
-        delay.setTime1Beat(delayTime1Beat);
-        delay.setTime1Echoes(delayTime1Echoes);
-        delay.setTime2Beat(delayTime2Beat);
-        delay.setTime2Echoes(delayTime2Echoes);
-        delay.setLevel1(delayLevel1);
-        delay.setLevel2(delayLevel2);
-        delay.setFeedback1(delayFeedback1);
-        delay.setInsert(delayInsert);
-        delay.setFeedback2(delayFeedback2);
-        delay.setDamp1(delayDamp1);
-        delay.setDamp2(delayDamp2);
-        delay.setClear(delayClear);
-        program.setDelay(delay);
-
-        // unused
-        in.read(new byte[16 * 2]);
+        byte[] delayParameters = new byte[32 * 2];
+        in.read(delayParameters);
 
         // reverb parameters
         bytes = new byte[2];
@@ -421,6 +359,13 @@ public class SysexParser {
                     break;
                 case 3:
                     program.setDelayAlgorithm(algorithmNumber);
+                    Delay delay = null;
+                    switch (algorithmNumber) {
+                        case 6:
+                            delay = EchoDualParser.parse(delayParameters);
+                            break;
+                    }
+                    program.setDelay(delay);
                     break;
                 case 4:
                     program.setReverbAlgorithm(algorithmNumber);
