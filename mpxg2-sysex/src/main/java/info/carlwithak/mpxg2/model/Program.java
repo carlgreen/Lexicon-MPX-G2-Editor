@@ -19,8 +19,7 @@ package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
-import info.carlwithak.mpxg2.model.effects.Effect1;
-import info.carlwithak.mpxg2.model.effects.Effect2;
+import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
@@ -32,8 +31,8 @@ import java.util.List;
  * @author carl
  */
 public class Program {
-    private Effect1 effect1;
-    private Effect2 effect2;
+    private Effect effect1;
+    private Effect effect2;
     private Chorus chorus;
     private Delay delay;
     private Reverb reverb;
@@ -165,19 +164,19 @@ public class Program {
 
     private int programNumber;
 
-    public Effect1 getEffect1() {
+    public Effect getEffect1() {
         return effect1;
     }
 
-    public void setEffect1(final Effect1 effect1) {
+    public void setEffect1(final Effect effect1) {
         this.effect1 = effect1;
     }
 
-    public Effect2 getEffect2() {
+    public Effect getEffect2() {
         return effect2;
     }
 
-    public void setEffect2(final Effect2 effect2) {
+    public void setEffect2(final Effect effect2) {
         this.effect2 = effect2;
     }
 

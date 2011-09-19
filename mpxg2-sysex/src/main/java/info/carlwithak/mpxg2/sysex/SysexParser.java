@@ -22,8 +22,7 @@ import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
-import info.carlwithak.mpxg2.model.effects.Effect1;
-import info.carlwithak.mpxg2.model.effects.Effect2;
+import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
@@ -288,7 +287,7 @@ public class SysexParser {
             switch (i) {
                 case 0:
                     program.setEffect1Algorithm(algorithmNumber);
-                    Effect1 effect1;
+                    Effect effect1;
                     switch (algorithmNumber) {
                         case 0:
                             effect1 = null;
@@ -309,7 +308,7 @@ public class SysexParser {
                     break;
                 case 1:
                     program.setEffect2Algorithm(algorithmNumber);
-                    Effect2 effect2;
+                    Effect effect2;
                     switch (algorithmNumber) {
                         case 0:
                             effect2 = null;

@@ -17,14 +17,14 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.Effect1;
+import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
  * Class for Detune (D) parameters.
  *
  * @author Carl Green
  */
-public class DetuneDual extends Effect1 {
+public class DetuneDual extends Effect {
     private int tune1;
     private int optimize;
     private int tune2;

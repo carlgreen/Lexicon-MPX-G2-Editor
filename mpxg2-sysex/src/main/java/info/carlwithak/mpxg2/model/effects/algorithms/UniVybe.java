@@ -17,14 +17,14 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.Effect1;
+import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
  * Class for UniVybe parameters.
  *
  * @author Carl Green
  */
-public class UniVybe extends Effect1 {
+public class UniVybe extends Effect {
     private int rate;
 
     public int getRate() {

@@ -17,14 +17,14 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.Effect2;
+import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
  * Class for Pedal Wah 1 parameters.
  *
  * @author Carl Green
  */
-public class PedalWah1 extends Effect2 {
+public class PedalWah1 extends Effect {
     private int bass;
     private int type;
     private int response;

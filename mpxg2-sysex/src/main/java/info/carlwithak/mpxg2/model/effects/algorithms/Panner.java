@@ -17,14 +17,14 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.Effect2;
+import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
  * Class for Panner parameters.
  *
  * @author Carl Green
  */
-public class Panner extends Effect2 {
+public class Panner extends Effect {
     private int pan1;
     private int pan2;
 

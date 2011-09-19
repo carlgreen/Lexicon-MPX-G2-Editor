@@ -18,11 +18,11 @@
 package info.carlwithak.mpxg2.model.effects;
 
 /**
- * Base class for Effect 1 effects.
+ * Base class for Effect 1 and 2 effects.
  *
  * @author Carl Green
  */
-public abstract class Effect1 {
+public abstract class Effect {
     private int mix;
     private int level;
 

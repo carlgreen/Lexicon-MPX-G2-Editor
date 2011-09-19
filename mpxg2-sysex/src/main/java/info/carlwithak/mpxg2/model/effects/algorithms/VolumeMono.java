@@ -17,14 +17,14 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.Effect1;
+import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
  * Class for Volume (M) parameters.
  *
  * @author Carl Green
  */
-public class VolumeMono extends Effect1 {
+public class VolumeMono extends Effect {
     private int volume;
 
     public int getVolume() {
