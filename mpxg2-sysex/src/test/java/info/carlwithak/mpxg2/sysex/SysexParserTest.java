@@ -780,6 +780,13 @@ public class SysexParserTest {
         assertEquals(45, reverb.getRtHC()); // 19.4k is number 45 in list
         assertEquals(36, reverb.getShape());
         assertEquals(222, reverb.getSpred()); // screen reads 73, which is ~ 222 / 3
+
+        assertEquals(5, program.getGain().getLo());
+        assertEquals(0, program.getGain().getMid());
+        assertEquals(0, program.getGain().getHi());
+        assertEquals(40, program.getGain().getDrive());
+        assertEquals(21, program.getGain().getTone());
+        assertEquals(39, program.getGain().getLevel());
     }
 
     /**
