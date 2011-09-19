@@ -24,6 +24,7 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
 import info.carlwithak.mpxg2.model.effects.Effect1;
 import info.carlwithak.mpxg2.model.effects.Effect2;
+import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
@@ -374,6 +375,15 @@ public class SysexParser {
                     break;
                 case 5:
                     program.setEqAlgorithm(algorithmNumber);
+                    Eq eq;
+                    switch (algorithmNumber) {
+                        case 0:
+                            eq = null;
+                            break;
+                        default:
+                            throw new ParseException("Invalid EQ algorithm number: " + algorithmNumber);
+                    }
+                    program.setEq(eq);
                     break;
                 case 6:
                     program.setGainAlgorithm(algorithmNumber);
