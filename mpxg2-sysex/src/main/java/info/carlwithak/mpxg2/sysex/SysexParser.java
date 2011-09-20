@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
 import info.carlwithak.mpxg2.model.effects.Effect;
@@ -179,10 +180,41 @@ public class SysexParser {
             int upperInputConn = readInt(in, 2);
             @SuppressWarnings("unused")
             int lowerInputConn = readInt(in, 2);
-            @SuppressWarnings("unused")
             int routing = readInt(in, 2);
-            @SuppressWarnings("unused")
             int pathType = readInt(in, 2);
+            RoutingData routingData = new RoutingData();
+            routingData.setEffectId(effect);
+            routingData.setPathType(pathType);
+            routingData.setRouting(routing);
+            switch (i) {
+                case 0:
+                    program.setRouting0(routingData);
+                    break;
+                case 1:
+                    program.setRouting1(routingData);
+                    break;
+                case 2:
+                    program.setRouting2(routingData);
+                    break;
+                case 3:
+                    program.setRouting3(routingData);
+                    break;
+                case 4:
+                    program.setRouting4(routingData);
+                    break;
+                case 5:
+                    program.setRouting5(routingData);
+                    break;
+                case 6:
+                    program.setRouting6(routingData);
+                    break;
+                case 7:
+                    program.setRouting7(routingData);
+                    break;
+                case 8:
+                    program.setRouting8(routingData);
+                    break;
+            }
             switch (effect) {
                 case 0:
                     sb.append("=1");

@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
@@ -571,6 +572,42 @@ public class SysexParserTest {
         assertTrue(program.isRock());
 
         assertEquals("I=1=2=G=C=D=R=E=O", program.getRouting());
+        RoutingData routing = program.getRouting0();
+        assertEquals(8, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting1();
+        assertEquals(0, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting2();
+        assertEquals(1, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting3();
+        assertEquals(6, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting4();
+        assertEquals(2, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting5();
+        assertEquals(3, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting6();
+        assertEquals(4, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting7();
+        assertEquals(5, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting8();
+        assertEquals(7, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
 
         assertEquals(2, program.getEffect1ToePatch());
         assertEquals(1, program.getEffect2ToePatch());
@@ -792,7 +829,6 @@ public class SysexParserTest {
         assertEquals(36, reverb.getShape());
         assertEquals(222, reverb.getSpred()); // screen reads 73, which is ~ 222 / 3
 
-
         assertTrue(program.getGain() instanceof Screamer);
         Screamer gain = (Screamer) program.getGain();
         assertEquals(5, gain.getLo());
@@ -801,6 +837,43 @@ public class SysexParserTest {
         assertEquals(40, gain.getDrive());
         assertEquals(21, gain.getTone());
         assertEquals(39, gain.getLevel());
+
+        RoutingData routing = program.getRouting0();
+        assertEquals(8, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting1();
+        assertEquals(5, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting2();
+        assertEquals(2, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting3();
+        assertEquals(6, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting4();
+        assertEquals(0, routing.getEffectId());
+        assertEquals(3, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting5();
+        assertEquals(3, routing.getEffectId());
+        assertEquals(1, routing.getRouting());
+        assertEquals(1, routing.getPathType());
+        routing = program.getRouting6();
+        assertEquals(4, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(1, routing.getPathType());
+        routing = program.getRouting7();
+        assertEquals(1, routing.getEffectId());
+        assertEquals(2, routing.getRouting());
+        assertEquals(1, routing.getPathType());
+        routing = program.getRouting8();
+        assertEquals(7, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
     }
 
     /**
@@ -886,6 +959,43 @@ public class SysexParserTest {
         assertEquals(20, gain.getHi());
         assertEquals(0, gain.getInLevel());
         assertEquals(55, gain.getLevel());
+
+        RoutingData routing = program.getRouting0();
+        assertEquals(8, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting1();
+        assertEquals(5, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting2();
+        assertEquals(6, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting3();
+        assertEquals(2, routing.getEffectId());
+        assertEquals(3, routing.getRouting());
+        assertEquals(0, routing.getPathType());
+        routing = program.getRouting4();
+        assertEquals(0, routing.getEffectId());
+        assertEquals(1, routing.getRouting());
+        assertEquals(1, routing.getPathType());
+        routing = program.getRouting5();
+        assertEquals(1, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(1, routing.getPathType());
+        routing = program.getRouting6();
+        assertEquals(3, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(1, routing.getPathType());
+        routing = program.getRouting7();
+        assertEquals(4, routing.getEffectId());
+        assertEquals(0, routing.getRouting());
+        assertEquals(1, routing.getPathType());
+        routing = program.getRouting8();
+        assertEquals(7, routing.getEffectId());
+        assertEquals(2, routing.getRouting());
+        assertEquals(1, routing.getPathType());
     }
 
     /**

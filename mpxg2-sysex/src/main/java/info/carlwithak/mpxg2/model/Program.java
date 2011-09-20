@@ -66,7 +66,17 @@ public class Program {
     private boolean isJazz;
     private boolean isRock;
 
+    @Deprecated
     private String routing;
+    private RoutingData routing0;
+    private RoutingData routing1;
+    private RoutingData routing2;
+    private RoutingData routing3;
+    private RoutingData routing4;
+    private RoutingData routing5;
+    private RoutingData routing6;
+    private RoutingData routing7;
+    private RoutingData routing8;
 
     private int effect1ToePatch;
     private int effect2ToePatch;
@@ -404,12 +414,86 @@ public class Program {
         this.isRock = isRock;
     }
 
+    @Deprecated
     public String getRouting() {
         return routing;
     }
 
+    @Deprecated
     public void setRouting(final String routing) {
         this.routing = routing;
+    }
+
+    public RoutingData getRouting0() {
+        return routing0;
+    }
+
+    public void setRouting0(RoutingData routing0) {
+        this.routing0 = routing0;
+    }
+
+    public RoutingData getRouting1() {
+        return routing1;
+    }
+
+    public void setRouting1(RoutingData routing1) {
+        this.routing1 = routing1;
+    }
+
+    public RoutingData getRouting2() {
+        return routing2;
+    }
+
+    public void setRouting2(RoutingData routing2) {
+        this.routing2 = routing2;
+    }
+
+    public RoutingData getRouting3() {
+        return routing3;
+    }
+
+    public void setRouting3(RoutingData routing3) {
+        this.routing3 = routing3;
+    }
+
+    public RoutingData getRouting4() {
+        return routing4;
+    }
+
+    public void setRouting4(RoutingData routing4) {
+        this.routing4 = routing4;
+    }
+
+    public RoutingData getRouting5() {
+        return routing5;
+    }
+
+    public void setRouting5(RoutingData routing5) {
+        this.routing5 = routing5;
+    }
+
+    public RoutingData getRouting6() {
+        return routing6;
+    }
+
+    public void setRouting6(RoutingData routing6) {
+        this.routing6 = routing6;
+    }
+
+    public RoutingData getRouting7() {
+        return routing7;
+    }
+
+    public void setRouting7(RoutingData routing7) {
+        this.routing7 = routing7;
+    }
+
+    public RoutingData getRouting8() {
+        return routing8;
+    }
+
+    public void setRouting8(RoutingData routing8) {
+        this.routing8 = routing8;
     }
 
     public int getEffect1ToePatch() {
