@@ -17,21 +17,24 @@
 
 package info.carlwithak.mpxg2.sysex;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
-import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import java.io.File;
@@ -883,6 +886,70 @@ public class SysexParserTest {
         assertEquals(20, gain.getHi());
         assertEquals(0, gain.getInLevel());
         assertEquals(55, gain.getLevel());
+    }
+
+    /**
+     * Test parsing the Power Chords preset.
+     */
+    @Test
+    public void testParsePowerChords() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("004_Power_Chords.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect1() instanceof ShiftDual);
+        ShiftDual effect1 = (ShiftDual) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(6, effect1.getLevel());
+        assertEquals(-1200, effect1.getTune1());
+        assertEquals(10, effect1.getOptimize());
+        assertEquals(-500, effect1.getTune2());
+        assertTrue(effect1.isGlide());
+
+        assertTrue(program.getDelay() instanceof DelayDual);
+        DelayDual delay = (DelayDual) program.getDelay();
+        assertEquals(25, delay.getMix());
+        assertEquals(0, delay.getLevel());
+        assertEquals(3, delay.getTime1Echoes());
+        assertEquals(4, delay.getTime1Beat());
+        assertEquals(4, delay.getTime2Echoes());
+        assertEquals(3, delay.getTime2Beat());
+        assertEquals(0, delay.getLevel1());
+        assertEquals(0, delay.getLevel2());
+        assertEquals(-50, delay.getPan1());
+        assertEquals(50, delay.getPan2());
+        assertEquals(10, delay.getFeedback1());
+        assertEquals(3, delay.getInsert());
+        assertEquals(10, delay.getFeedback2());
+        assertEquals(0, delay.getXFbk1());
+        assertEquals(0, delay.getXFbk2());
+        assertFalse(delay.isClear());
+
+        assertTrue(program.getReverb() instanceof Chamber);
+        Chamber reverb = (Chamber) program.getReverb();
+        assertEquals(35, reverb.getMix());
+        assertEquals(0, reverb.getLevel());
+        assertEquals(28.0, reverb.getSize(), 0.01);
+        assertEquals(1, reverb.getLink());
+        assertEquals(90, reverb.getDiff());
+        assertEquals(82, reverb.getPreDelay());
+        assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
+        assertEquals(35, reverb.getDecay()); // 0.73s is number 35 in list
+        assertEquals(15, reverb.getXovr()); // 818 is number 15 in list
+        assertEquals(36, reverb.getRtHC()); // 10.4k is number 36 in list
+        assertEquals(62, reverb.getShape());
+        assertEquals(120, reverb.getSpred()); // screen reads 48, which is ~ 120 / 3
+
+        assertTrue(program.getGain() instanceof Overdrive);
+        Overdrive gain = (Overdrive) program.getGain();
+        assertEquals(4, gain.getLo());
+        assertEquals(8, gain.getMid());
+        assertEquals(0, gain.getHi());
+        assertEquals(-8, gain.getInLevel());
+        assertEquals(0, gain.getLoCut());
+        assertEquals(32, gain.getFeel());
+        assertEquals(40, gain.getDrive());
+        assertEquals(21, gain.getTone());
+        assertEquals(44, gain.getLevel());
     }
 
     /**

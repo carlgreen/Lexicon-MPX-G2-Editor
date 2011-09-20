@@ -30,14 +30,17 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AutoPanParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
@@ -273,6 +276,9 @@ public class SysexParser {
                         case 3:
                             effect1 = DetuneDualParser.parse(effect1Parameters);
                             break;
+                        case 6:
+                            effect1 = ShiftDualParser.parse(effect1Parameters);
+                            break;
                         case 9:
                             effect1 = AutoPanParser.parse(effect1Parameters);
                             break;
@@ -333,6 +339,9 @@ public class SysexParser {
                         case 0:
                             delay = null;
                             break;
+                        case 3:
+                            delay = DelayDualParser.parse(delayParameters);
+                            break;
                         case 6:
                             delay = EchoDualParser.parse(delayParameters);
                             break;
@@ -389,6 +398,9 @@ public class SysexParser {
                             break;
                         case 3:
                             gain = ScreamerParser.parse(gainParameters);
+                            break;
+                        case 4:
+                            gain = OverdriveParser.parse(gainParameters);
                             break;
                         default:
                             throw new ParseException("Invalid Gain algorithm number: " + algorithmNumber);
