@@ -176,13 +176,13 @@ public class SysexParser {
         StringBuilder sb = new StringBuilder(17);
         for (int i = 0; i < 9; i++) {
             int effect = readInt(in, 2);
-            @SuppressWarnings("unused")
             int upperInputConn = readInt(in, 2);
-            @SuppressWarnings("unused")
             int lowerInputConn = readInt(in, 2);
             int routing = readInt(in, 2);
             int pathType = readInt(in, 2);
             RoutingData routingData = new RoutingData();
+            routingData.setUpperInputConnection(upperInputConn);
+            routingData.setLowerInputConnection(lowerInputConn);
             routingData.setEffectId(effect);
             routingData.setPathType(pathType);
             routingData.setRouting(routing);

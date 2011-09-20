@@ -29,6 +29,21 @@ public class RoutingData {
      */
     private int effectId;
     /**
+     * This defines the connector used for this block if the "routing" field
+     * places it in the upper signal path:
+     * 0. Stereo
+     * 1. Left Only
+     * 2. Right Only
+     * 3. Left to Mono
+     * 4. Right to Mono
+     */
+    private int upperInputConnection;
+    /**
+     * This defines the connector used for this block if the "routing" field
+     * places it in the lower signal path.
+     */
+    private int lowerInputConnection;
+    /**
      * This defines how this block deals with the upper lower audio paths:
      * 0. The effect is on the upper signal path only.
      * 1. The effect is on the lower signal path only.
@@ -49,6 +64,22 @@ public class RoutingData {
 
     public void setEffectId(int effectId) {
         this.effectId = effectId;
+    }
+
+    public int getUpperInputConnection() {
+        return upperInputConnection;
+    }
+
+    public void setUpperInputConnection(int upperInputConnection) {
+        this.upperInputConnection = upperInputConnection;
+    }
+
+    public int getLowerInputConnection() {
+        return lowerInputConnection;
+    }
+
+    public void setLowerInputConnection(int lowerInputConnection) {
+        this.lowerInputConnection = lowerInputConnection;
     }
 
     public int getRouting() {
