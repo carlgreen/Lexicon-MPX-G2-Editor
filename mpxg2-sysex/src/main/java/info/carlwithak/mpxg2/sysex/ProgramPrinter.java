@@ -255,7 +255,7 @@ public class ProgramPrinter {
             sb.append("    Bass: ").append(effect2.getBass()).append("\n");
             sb.append("    Type: Model ").append(effect2.getType() == 0 ? "C" : "V").append("\n");
             sb.append("    Resp: ").append(effect2.getResponse()).append("\n");
-            sb.append("    Gain: ").append(effect2.getGain() > 0 ? "+" : "").append(effect2.getGain()).append("\n");
+            sb.append("    Gain: ").append(signInt(effect2.getGain())).append("\n");
         }
         if (program.getChorusAlgorithm() > 0) {
             PedalVol chorus = (PedalVol) program.getChorus();
@@ -269,14 +269,14 @@ public class ProgramPrinter {
             sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(program.isDelayOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getDelayToePatch())).append("\n");
             sb.append("    Mix: ").append(delay.getMix()).append("%\n");
-            sb.append("    Level: ").append(delay.getLevel() > 0 ? "+" : "").append(delay.getLevel()).append("dB\n");
+            sb.append("    Level: ").append(signInt(delay.getLevel())).append("dB\n");
             sb.append("    Time1: ").append(delay.getTime1Echoes()).append(":").append(delay.getTime1Beat()).append("\n");
             sb.append("    Time2: ").append(delay.getTime2Echoes()).append(":").append(delay.getTime2Beat()).append("\n");
-            sb.append("    Level1: ").append(delay.getLevel1() > 0 ? "+" : "").append(delay.getLevel1()).append("dB\n");
-            sb.append("    Level2: ").append(delay.getLevel2() > 0 ? "+" : "").append(delay.getLevel2()).append("dB\n");
-            sb.append("    Feedback1: ").append(delay.getFeedback1() > 0 ? "+" : "").append(delay.getFeedback1()).append("%\n");
+            sb.append("    Level1: ").append(signInt(delay.getLevel1())).append("dB\n");
+            sb.append("    Level2: ").append(signInt(delay.getLevel2())).append("dB\n");
+            sb.append("    Feedback1: ").append(signInt(delay.getFeedback1())).append("%\n");
             sb.append("    Insert: ").append(delayInsertToString(delay.getInsert())).append("\n");
-            sb.append("    Feedback2: ").append(delay.getFeedback2() > 0 ? "+" : "").append(delay.getFeedback2()).append("%\n");
+            sb.append("    Feedback2: ").append(signInt(delay.getFeedback2())).append("%\n");
             sb.append("    Damp1: ").append(delay.getDamp1()).append("%\n");
             sb.append("    Damp2: ").append(delay.getDamp2()).append("%\n");
             sb.append("    Clear: ").append(delay.getClear() == 0 ? "off" : "on").append("\n");
@@ -299,9 +299,9 @@ public class ProgramPrinter {
             Screamer gain = (Screamer) program.getGain();
             sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(program.isGainOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
-            sb.append("    Lo: ").append(gain.getLo() > 0 ? "+" : "").append(gain.getLo()).append("\n");
-            sb.append("    Mid: ").append(gain.getMid() > 0 ? "+" : "").append(gain.getMid()).append("\n");
-            sb.append("    Hi: ").append(gain.getHi() > 0 ? "+" : "").append(gain.getHi()).append("\n");
+            sb.append("    Lo: ").append(signInt(gain.getLo())).append("\n");
+            sb.append("    Mid: ").append(signInt(gain.getMid())).append("\n");
+            sb.append("    Hi: ").append(signInt(gain.getHi())).append("\n");
             sb.append("    Drive: ").append(gain.getDrive()).append("\n");
             sb.append("    Tone: ").append(gain.getTone()).append("\n");
             sb.append("    Level: ").append(gain.getLevel()).append("\n");
@@ -362,7 +362,7 @@ public class ProgramPrinter {
         sb.append("      Destination: ").append(patchDestinationToString(program.getPatch5().getDestinationEffect(), program.getPatch5().getDestinationParameter())).append("\n");
         sb.append("        Min: ").append(program.getPatch5().getDestinationMin()).append("\n");
         sb.append("        Mid: ").append(program.getPatch5().getDestinationMid() == 0x80 ? "--" : program.getPatch5().getDestinationMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch5().getDestinationMax() > 0 ? "+" : "").append(program.getPatch5().getDestinationMax()).append("\n");
+        sb.append("        Max: ").append(signInt(program.getPatch5().getDestinationMax())).append("\n");
         sb.append("  Controllers:\n");
         sb.append("    Knob:\n");
         sb.append("      Value: ").append(program.getKnobValue()).append("\n");
@@ -402,27 +402,27 @@ public class ProgramPrinter {
         sb.append("      Resp: ").append(program.getEnvelopeGeneratorResponse()).append("\n");
         sb.append("  Mix:\n");
         sb.append("    Send:\n");
-        sb.append("      Level: ").append(program.getSendLevel() > 0 ? "+" : "").append(program.getSendLevel()).append("\n");
+        sb.append("      Level: ").append(signInt(program.getSendLevel())).append("\n");
         sb.append("      Bypass Level: ").append(program.getSendBypassLevel()).append("\n");
         sb.append("    Post:\n");
         sb.append("      Mix: ").append(program.getPostMix()).append("%\n");
-        sb.append("      Level: ").append(program.getPostLevel() > 0 ? "+" : "").append(program.getPostLevel()).append("dB\n");
+        sb.append("      Level: ").append(signInt(program.getPostLevel())).append("dB\n");
         sb.append("      Bypass Level: ").append(program.getPostBypassLevel()).append("dB\n");
         sb.append("    FX1:\n");
         sb.append("      Mix: ").append(program.getEffect1().getMix()).append("%\n");
-        sb.append("      Level: ").append(program.getEffect1().getLevel() > 0 ? "+" : "").append(program.getEffect1().getLevel()).append("dB\n");
+        sb.append("      Level: ").append(signInt(program.getEffect1().getLevel())).append("dB\n");
         sb.append("    FX2:\n");
         sb.append("      Mix: ").append(program.getEffect2().getMix()).append("%\n");
-        sb.append("      Level: ").append(program.getEffect2().getLevel() > 0 ? "+" : "").append(program.getEffect2().getLevel()).append("dB\n");
+        sb.append("      Level: ").append(signInt(program.getEffect2().getLevel())).append("dB\n");
         sb.append("    Chorus:\n");
         sb.append("      Mix: ").append(program.getChorus().getMix()).append("%\n");
-        sb.append("      Level: ").append(program.getChorus().getLevel() > 0 ? "+" : "").append(program.getChorus().getLevel()).append("dB\n");
+        sb.append("      Level: ").append(signInt(program.getChorus().getLevel())).append("dB\n");
         sb.append("    Delay:\n");
         sb.append("      Mix: ").append(program.getDelay().getMix()).append("%\n");
-        sb.append("      Level: ").append(program.getDelay().getLevel() > 0 ? "+" : "").append(program.getDelay().getLevel()).append("dB\n");
+        sb.append("      Level: ").append(signInt(program.getDelay().getLevel())).append("dB\n");
         sb.append("    Reverb:\n");
         sb.append("      Mix: ").append(program.getReverb().getMix()).append("%\n");
-        sb.append("      Level: ").append(program.getReverb().getLevel() > 0 ? "+" : "").append(program.getReverb().getLevel()).append("dB\n");
+        sb.append("      Level: ").append(signInt(program.getReverb().getLevel())).append("dB\n");
         sb.append("  Tempo:\n");
         sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");
         sb.append("    Source: ").append(tempoSourceToString(program.getTempoSource())).append("\n");
@@ -534,5 +534,9 @@ public class ProgramPrinter {
 
     private static String noiseGateEnableToString(final int noiseGateEnable) {
         return NOISE_GATE_ENABLES[noiseGateEnable];
+    }
+
+    private static String signInt(final int i) {
+        return i > 0 ? "+" + Integer.toString(i) : Integer.toString(i);
     }
 }
