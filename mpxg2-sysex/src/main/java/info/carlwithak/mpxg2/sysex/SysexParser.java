@@ -114,13 +114,8 @@ public class SysexParser {
             throw new ParseException("Invalid Message Type");
         }
 
-        byte[] bytes = new byte[4];
-        in.read(bytes);
         @SuppressWarnings("unused")
-        int objectSize = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            objectSize += (bytes[i] * Math.pow(16, i));
-        }
+        int objectSize = readInt(in, 4);
 
         // effect 1 parameters
         byte[] effect1Parameters = new byte[32 * 2];
@@ -150,12 +145,7 @@ public class SysexParser {
         byte[] gainParameters = new byte[32 * 2];
         in.read(gainParameters);
 
-        bytes = new byte[4];
-        in.read(bytes);
-        int effectTypes = 0;
-        for (int i = 0; i < 4; i++) {
-            effectTypes += (bytes[i] * Math.pow(16, i));
-        }
+        int effectTypes = readInt(in, 4);
         program.setIsChorus((effectTypes & EFFECT_TYPE_CHORUS) == EFFECT_TYPE_CHORUS);
         program.setIsDelay((effectTypes & EFFECT_TYPE_DELAY) == EFFECT_TYPE_DELAY);
         program.setIsDistortion((effectTypes & EFFECT_TYPE_DISTORTION) == EFFECT_TYPE_DISTORTION);
@@ -173,12 +163,7 @@ public class SysexParser {
         program.setIsStandAlone((effectTypes & APP_TYPE_STANDALONE) == APP_TYPE_STANDALONE);
         program.setIsInline((effectTypes & APP_TYPE_INLINE) == APP_TYPE_INLINE);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int guitarStyle = 0;
-        for (int i = 0; i < 2; i++) {
-            guitarStyle += (bytes[i] * Math.pow(16, i));
-        }
+        int guitarStyle = readInt(in, 2);
         program.setIsAcoustic((guitarStyle & GUITAR_STYLE_ACOUSTIC) == GUITAR_STYLE_ACOUSTIC);
         program.setIsBass((guitarStyle & GUITAR_STYLE_BASS) == GUITAR_STYLE_BASS);
         program.setIsBlues((guitarStyle & GUITAR_STYLE_BLUES) == GUITAR_STYLE_BLUES);
@@ -189,17 +174,15 @@ public class SysexParser {
 
         StringBuilder sb = new StringBuilder(17);
         for (int i = 0; i < 9; i++) {
-            bytes = new byte[10];
-            in.read(bytes);
-            int effect = bytes[0] + bytes[1] * 16;
+            int effect = readInt(in, 2);
             @SuppressWarnings("unused")
-            int upperInputConn = bytes[2] + bytes[3] * 16;
+            int upperInputConn = readInt(in, 2);
             @SuppressWarnings("unused")
-            int lowerInputConn = bytes[4] + bytes[5] * 16;
+            int lowerInputConn = readInt(in, 2);
             @SuppressWarnings("unused")
-            int routing = bytes[6] + bytes[7] * 16;
+            int routing = readInt(in, 2);
             @SuppressWarnings("unused")
-            int pathType = bytes[8] + bytes[9] * 16;
+            int pathType = readInt(in, 2);
             switch (effect) {
                 case 0:
                     sb.append("=1");
@@ -232,39 +215,29 @@ public class SysexParser {
         }
         program.setRouting(sb.toString());
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int effect1ToePatch = bytes[0] + bytes[1] * 16;
+        int effect1ToePatch = readInt(in, 2);
         program.setEffect1ToePatch(effect1ToePatch);
 
-        in.read(bytes);
-        int effect2ToePatch = bytes[0] + bytes[1] * 16;
+        int effect2ToePatch = readInt(in, 2);
         program.setEffect2ToePatch(effect2ToePatch);
 
-        in.read(bytes);
-        int chorusToePatch = bytes[0] + bytes[1] * 16;
+        int chorusToePatch = readInt(in, 2);
         program.setChorusToePatch(chorusToePatch);
 
-        in.read(bytes);
-        int delayToePatch = bytes[0] + bytes[1] * 16;
+        int delayToePatch = readInt(in, 2);
         program.setDelayToePatch(delayToePatch);
 
-        in.read(bytes);
-        int reverbToePatch = bytes[0] + bytes[1] * 16;
+        int reverbToePatch = readInt(in, 2);
         program.setReverbToePatch(reverbToePatch);
 
-        in.read(bytes);
-        int eqToePatch = bytes[0] + bytes[1] * 16;
+        int eqToePatch = readInt(in, 2);
         program.setEqToePatch(eqToePatch);
 
-        in.read(bytes);
-        int gainToePatch = bytes[0] + bytes[1] * 16;
+        int gainToePatch = readInt(in, 2);
         program.setGainToePatch(gainToePatch);
 
         for (int i = 0; i < 7; i++) {
-            bytes = new byte[2];
-            in.read(bytes);
-            int algorithmNumber = bytes[0] + bytes[1] * 16;
+            int algorithmNumber = readInt(in, 2);
             switch (i) {
                 case 0:
                     program.setEffect1Algorithm(algorithmNumber);
@@ -411,7 +384,7 @@ public class SysexParser {
         }
 
         // read program name
-        bytes = new byte[24];
+        byte[] bytes = new byte[24];
         in.read(bytes);
         sb = new StringBuilder(12);
         for (int i = 0; i < bytes.length; i += 2) {
@@ -420,9 +393,7 @@ public class SysexParser {
         }
         program.setProgramName(sb.toString().trim());
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int effectsStatus = bytes[0] + (bytes[1] * 16);
+        int effectsStatus = readInt(in, 2);
         program.setEffect1On((effectsStatus & 0x01) == 0x01);
         program.setEffect2On((effectsStatus & 0x02) == 0x02);
         program.setChorusOn((effectsStatus & 0x04) == 0x04);
@@ -433,45 +404,31 @@ public class SysexParser {
         program.setInsertOn((effectsStatus & 0x80) == 0x80);
 
         // soft row
-        bytes = new byte[2];
         for (int i = 0; i < 10; i++) {
-            in.read(bytes);
-            int softRowEffectType = bytes[0] + (bytes[1] * 16);
+            int softRowEffectType = readInt(in, 2);
             program.setSoftRowEffectType(i, softRowEffectType);
 
-            in.read(bytes);
-            int softRowParameter = bytes[0] + (bytes[1] * 16);
+            int softRowParameter = readInt(in, 2);
             program.setSoftRowParameter(i, softRowParameter);
         }
 
         // tempo
-        bytes = new byte[4];
-        in.read(bytes);
-        int tempo = 0;
-        for (int i = 0; i < 4; i++) {
-            tempo += (bytes[i] * Math.pow(16, i));
-        }
+        int tempo = readInt(in, 4);
         program.setTempo(tempo);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int tempoSource = bytes[0] + (bytes[1] * 16);
+        int tempoSource = readInt(in, 2);
         program.setTempoSource(tempoSource);
 
-        in.read(bytes);
-        int beatValue = bytes[0] + (bytes[1] * 16);
+        int beatValue = readInt(in, 2);
         program.setBeatValue(beatValue);
 
-        in.read(bytes);
-        int tapSource = bytes[0] + (bytes[1] * 16);
+        int tapSource = readInt(in, 2);
         program.setTapSource(tapSource);
 
-        in.read(bytes);
-        int tapAverage = bytes[0] + (bytes[1] * 16);
+        int tapAverage = readInt(in, 2);
         program.setTapAverage(tapAverage);
 
-        in.read(bytes);
-        int tapSourceLevel = bytes[0] + (bytes[1] * 16);
+        int tapSourceLevel = readInt(in, 2);
         program.setTapSourceLevel(tapSourceLevel);
 
         // unused
@@ -485,198 +442,120 @@ public class SysexParser {
         program.setPatch5(readPatch(in));
 
         // knob controller
-        bytes = new byte[2];
-        in.read(bytes);
-        int knobValue = bytes[0] + (bytes[1] * 16);
+        int knobValue = readInt(in, 2);
         program.setKnobValue(knobValue);
 
-        in.read(bytes);
-        int knobLow = bytes[0] + (bytes[1] * 16);
+        int knobLow = readInt(in, 2);
         program.setKnobLow(knobLow);
 
-        in.read(bytes);
-        int knobHigh = bytes[0] + (bytes[1] * 16);
+        int knobHigh = readInt(in, 2);
         program.setKnobHigh(knobHigh);
 
         bytes = new byte[18];
         in.read(bytes);
-        StringBuilder programName = new StringBuilder(9);
+        StringBuilder knobName = new StringBuilder(9);
         for (int i = 0; i < bytes.length; i += 2) {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
-            programName.append(c);
+            knobName.append(c);
         }
-        program.setKnobName(programName.toString());
+        program.setKnobName(knobName.toString());
 
         // lfo 1 controller
-        bytes = new byte[2];
-        in.read(bytes);
-        int lfo1Mode = bytes[0] + (bytes[1] * 16);
+        int lfo1Mode = readInt(in, 2);
         program.setLfo1Mode(lfo1Mode);
 
-        bytes = new byte[6];
-        in.read(bytes);
-        int lfo1Rate = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            lfo1Rate += (bytes[i] * Math.pow(16, i));
-        }
+        int lfo1Rate = readInt(in, 6);
         program.setLfo1Rate(lfo1Rate / 100.0);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int lfo1PulseWidth = bytes[0] + (bytes[1] * 16);
+        int lfo1PulseWidth = readInt(in, 2);
         program.setLfo1PulseWidth(lfo1PulseWidth);
 
-        in.read(bytes);
-        int lfo1Phase = bytes[0] + (bytes[1] * 16);
+        int lfo1Phase = readInt(in, 2);
         program.setLfo1Phase(lfo1Phase);
 
-        in.read(bytes);
-        int lfo1Depth = bytes[0] + (bytes[1] * 16);
+        int lfo1Depth = readInt(in, 2);
         program.setLfo1Depth(lfo1Depth);
 
-        in.read(bytes);
-        int lfo1OnLevel = bytes[0] + (bytes[1] * 16);
+        int lfo1OnLevel = readInt(in, 2);
         program.setLfo1OnLevel(lfo1OnLevel);
 
-        in.read(bytes);
-        int lfo1OnSource = bytes[0] + (bytes[1] * 16);
+        int lfo1OnSource = readInt(in, 2);
         program.setLfo1OnSource(lfo1OnSource);
 
         // lfo 2 controller
-        bytes = new byte[2];
-        in.read(bytes);
-        int lfo2Mode = bytes[0] + (bytes[1] * 16);
+        int lfo2Mode = readInt(in, 2);
         program.setLfo2Mode(lfo2Mode);
 
-        bytes = new byte[6];
-        in.read(bytes);
-        int lfo2Rate = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            lfo2Rate += (bytes[i] * Math.pow(16, i));
-        }
+        int lfo2Rate = readInt(in, 6);
         program.setLfo2Rate(lfo2Rate / 100.0);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int lfo2PulseWidth = bytes[0] + (bytes[1] * 16);
+        int lfo2PulseWidth = readInt(in, 2);
         program.setLfo2PulseWidth(lfo2PulseWidth);
 
-        in.read(bytes);
-        int lfo2Phase = bytes[0] + (bytes[1] * 16);
+        int lfo2Phase = readInt(in, 2);
         program.setLfo2Phase(lfo2Phase);
 
-        in.read(bytes);
-        int lfo2Depth = bytes[0] + (bytes[1] * 16);
+        int lfo2Depth = readInt(in, 2);
         program.setLfo2Depth(lfo2Depth);
 
-        in.read(bytes);
-        int lfo2OnLevel = bytes[0] + (bytes[1] * 16);
+        int lfo2OnLevel = readInt(in, 2);
         program.setLfo2OnLevel(lfo2OnLevel);
 
-        in.read(bytes);
-        int lfo2OnSource = bytes[0] + (bytes[1] * 16);
+        int lfo2OnSource = readInt(in, 2);
         program.setLfo2OnSource(lfo2OnSource);
 
         // random controller
-        bytes = new byte[2];
-        in.read(bytes);
-        int randomLow = bytes[0] + (bytes[1] * 16);
+        int randomLow = readInt(in, 2);
         program.setRandomLow(randomLow);
 
-        in.read(bytes);
-        int randomHigh = bytes[0] + (bytes[1] * 16);
+        int randomHigh = readInt(in, 2);
         program.setRandomHigh(randomHigh);
 
-        bytes = new byte[4];
-        in.read(bytes);
-        int randomRate = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            randomRate += (bytes[i] * Math.pow(16, i));
-        }
+        int randomRate = readInt(in, 4);
         program.setRandomRate(randomRate / 100.0);
 
         // TODO what is this?
         in.read(new byte[2]);
 
         // a/b data
-        bytes = new byte[2];
-        in.read(bytes);
-        int abMode = bytes[0] + (bytes[1] * 16);
+        int abMode = readInt(in, 2);
         program.setABMode(abMode);
 
-        in.read(bytes);
-        int aRate = bytes[0] + (bytes[1] * 16);
+        int aRate = readInt(in, 2);
         program.setARate(aRate);
 
-        in.read(bytes);
-        int bRate = bytes[0] + (bytes[1] * 16);
+        int bRate = readInt(in, 2);
         program.setBRate(bRate);
 
-        in.read(bytes);
-        int abOnLevel = bytes[0] + (bytes[1] * 16);
+        int abOnLevel = readInt(in, 2);
         program.setABOnLevel(abOnLevel);
 
-        in.read(bytes);
-        int abOnSource = bytes[0] + (bytes[1] * 16);
+        int abOnSource = readInt(in, 2);
         program.setABOnSource(abOnSource);
 
         // envelope generator data
-        bytes = new byte[2];
-        in.read(bytes);
-        int envGenSrc1 = bytes[0] + (bytes[1] * 16);
+        int envGenSrc1 = readInt(in, 2);
         program.setEnvelopeGeneratorSrc1(envGenSrc1);
 
-        in.read(bytes);
-        int envGenSrc2 = bytes[0] + (bytes[1] * 16);
+        int envGenSrc2 = readInt(in, 2);
         program.setEnvelopeGeneratorSrc2(envGenSrc2);
 
-        in.read(bytes);
-        int envGenATrim = bytes[0] + (bytes[1] * 16);
+        int envGenATrim = readInt(in, 2);
         program.setEnvelopeGeneratorATrim(envGenATrim);
 
-        in.read(bytes);
-        int envGenResponse = bytes[0] + (bytes[1] * 16);
+        int envGenResponse = readInt(in, 2);
         program.setEnvelopeGeneratorResponse(envGenResponse);
 
         // noise gate
-        bytes = new byte[2];
-        in.read(bytes);
-        int noiseGateEnable = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int noiseGateThreshold = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int noiseGateOffset = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int noiseGateHTime = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            noiseGateHTime += (bytes[i] * Math.pow(16, i));
-        }
-
-        in.read(bytes);
-        int noiseGateATime = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            noiseGateATime += (bytes[i] * Math.pow(16, i));
-        }
-
-        in.read(bytes);
-        int noiseGateRTime = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            noiseGateRTime += (bytes[i] * Math.pow(16, i));
-        }
-
-        bytes = new byte[2];
-        in.read(bytes);
-        int noiseGateAttenuation = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int noiseGateDelay = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int noiseGateSend = bytes[0] + (bytes[1] * 16);
+        int noiseGateEnable = readInt(in, 2);
+        int noiseGateThreshold = readInt(in, 2);
+        int noiseGateOffset = readInt(in, 2);
+        int noiseGateHTime = readInt(in, 4);
+        int noiseGateATime = readInt(in, 4);
+        int noiseGateRTime = readInt(in, 4);
+        int noiseGateAttenuation = readInt(in, 2);
+        int noiseGateDelay = readInt(in, 2);
+        int noiseGateSend = readInt(in, 2);
 
         NoiseGate noiseGate = new NoiseGate();
         noiseGate.setEnable(noiseGateEnable);
@@ -691,45 +570,30 @@ public class SysexParser {
         program.setNoiseGate(noiseGate);
 
         // Bypass State
-        bytes = new byte[2];
-        in.read(bytes);
-        int bypassState = bytes[0] + (bytes[1] * 16);
+        int bypassState = readInt(in, 2);
         program.setBypassState(bypassState);
 
         // Speaker Simulator
-        bytes = new byte[2];
-        in.read(bytes);
-        int speakerSimulatorEnable = bytes[0] + (bytes[1] * 16);
+        int speakerSimulatorEnable = readInt(in, 2);
         program.setSpeakerSimulatorEnable(speakerSimulatorEnable);
 
-        in.read(bytes);
-        int speakerSimulatorCabinet = bytes[0] + (bytes[1] * 16);
+        int speakerSimulatorCabinet = readInt(in, 2);
         program.setSpeakerSimulatorCabinet(speakerSimulatorCabinet);
 
         // Mix
-        bytes = new byte[2];
-        in.read(bytes);
-        int postLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        int postLevel = (byte) readInt(in, 2);
         program.setPostLevel(postLevel);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int postBypassLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        int postBypassLevel = (byte) readInt(in, 2);
         program.setPostBypassLevel(postBypassLevel);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int postMix = bytes[0] + (bytes[1] * 16);
+        int postMix = readInt(in, 2);
         program.setPostMix(postMix);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int sendLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        int sendLevel = (byte) readInt(in, 2);
         program.setSendLevel(sendLevel);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int sendBypassLevel = (byte) (bytes[0] + (bytes[1] * 16));
+        int sendBypassLevel = (byte) readInt(in, 2);
         program.setSendBypassLevel(sendBypassLevel);
 
         // unused
@@ -738,47 +602,20 @@ public class SysexParser {
         // TODO what is this?
         in.read(new byte[4]);
 
-        bytes = new byte[4];
-        in.read(bytes);
-        int controlLevels = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            controlLevels += (bytes[i] * Math.pow(16, i));
-        }
-
+        int controlLevels = readInt(in, 4);
         if (controlLevels != 4) {
             throw new ParseException("Expect 4 control levels for a program dump");
         }
 
-        in.read(bytes);
-        int controlLevel0 = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            controlLevel0 += (bytes[i] * Math.pow(16, i));
-        }
-
-        in.read(bytes);
-        int controlLevel1 = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            controlLevel1 += (bytes[i] * Math.pow(16, i));
-        }
-
+        int controlLevel0 = readInt(in, 4);
+        int controlLevel1 = readInt(in, 4);
         if (controlLevel0 != 0x01 || controlLevel1 != 0x0A) {
             throw new ParseException("Expect ProgramDump control tree path");
         }
 
-        in.read(bytes);
-        int controlLevel2 = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            controlLevel2 += (bytes[i] * Math.pow(16, i));
-        }
-
-        in.read(bytes);
-        int controlLevel3 = 0;
-        for (int i = 0; i < bytes.length; i++) {
-            controlLevel3 += (bytes[i] * Math.pow(16, i));
-        }
-
+        int controlLevel2 = readInt(in, 4);
+        int controlLevel3 = readInt(in, 4);
         int programNumber = controlLevel2 * 100 + controlLevel3 + 1;
-
         program.setProgramNumber(programNumber);
 
         b = in.read();
@@ -795,51 +632,24 @@ public class SysexParser {
     }
 
     private static Patch readPatch(final InputStream in) throws IOException {
-        byte[] bytes = new byte[2];
-        in.read(bytes);
-        int source = bytes[0] + (bytes[1] * 16);
+        int source = readInt(in, 2);
+        int sourceMin = readInt(in, 2);
+        int sourceMid = readInt(in, 2);
+        int sourceMax = readInt(in, 2);
+        int destinationEffect = readInt(in, 2);
+        int destinationParameter = readInt(in, 2);
 
-        in.read(bytes);
-        int sourceMin = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int sourceMid = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int sourceMax = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int destinationEffect = bytes[0] + (bytes[1] * 16);
-
-        in.read(bytes);
-        int destinationParameter = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int destinationMin = 0;
         // what is this logic?
-        if (bytes[2] == 0xf && bytes[3] == 0xf) {
-            destinationMin = bytes[0] + (bytes[1] * 16);
-        } else {
-            for (int i = 0; i < 4; i++) {
-                destinationMin += (bytes[i] * Math.pow(16, i));
-            }
+        int destinationMin = readInt(in, 4);
+        if ((destinationMin & 0xff00) == 0xff00) {
+            destinationMin %= 0xff00;
         }
 
         // TODO find out what goes here
-        bytes = new byte[2];
-        in.read(bytes);
+        readInt(in, 2);
 
-        bytes = new byte[2];
-        in.read(bytes);
-        int destinationMid = bytes[0] + (bytes[1] * 16);
-
-        bytes = new byte[4];
-        in.read(bytes);
-        int destinationMax = 0;
-        for (int i = 0; i < 4; i++) {
-            destinationMax += (bytes[i] * Math.pow(16, i));
-        }
+        int destinationMid = readInt(in, 2);
+        int destinationMax = readInt(in, 4);
 
         Patch patch = new Patch();
         patch.setSource(source);
@@ -852,5 +662,15 @@ public class SysexParser {
         patch.setDestinationMid(destinationMid);
         patch.setDestinationMax(destinationMax);
         return patch;
+    }
+
+    private static int readInt(final InputStream in, final int size) throws IOException {
+        byte[] bytes = new byte[size];
+        in.read(bytes);
+        int result = 0;
+        for (int i = 0; i < size; i++) {
+            result += (bytes[i] * Math.pow(16, i));
+        }
+        return result;
     }
 }
