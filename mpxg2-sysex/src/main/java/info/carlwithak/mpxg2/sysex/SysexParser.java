@@ -150,10 +150,8 @@ public class SysexParser {
         byte[] gainParameters = new byte[32 * 2];
         in.read(gainParameters);
 
-        // TODO
-        bytes = new byte[6];
+        bytes = new byte[4];
         in.read(bytes);
-
         int effectTypes = 0;
         for (int i = 0; i < 4; i++) {
             effectTypes += (bytes[i] * Math.pow(16, i));
@@ -175,9 +173,11 @@ public class SysexParser {
         program.setIsStandAlone((effectTypes & APP_TYPE_STANDALONE) == APP_TYPE_STANDALONE);
         program.setIsInline((effectTypes & APP_TYPE_INLINE) == APP_TYPE_INLINE);
 
+        bytes = new byte[2];
+        in.read(bytes);
         int guitarStyle = 0;
         for (int i = 0; i < 2; i++) {
-            guitarStyle += (bytes[i + 4] * Math.pow(16, i));
+            guitarStyle += (bytes[i] * Math.pow(16, i));
         }
         program.setIsAcoustic((guitarStyle & GUITAR_STYLE_ACOUSTIC) == GUITAR_STYLE_ACOUSTIC);
         program.setIsBass((guitarStyle & GUITAR_STYLE_BASS) == GUITAR_STYLE_BASS);
