@@ -32,26 +32,60 @@ public class RoutingPrinter {
         "=", "-", "_", "\\", "/"
     };
 
-    static String print(Program program) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(routingEffectIdToString(program.getRouting0().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting1().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting1().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting2().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting2().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting3().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting3().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting4().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting4().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting5().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting5().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting6().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting6().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting7().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting7().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting8().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting8().getEffectId()));
-        return sb.toString();
+    private Program program;
+    private StringBuilder upper = new StringBuilder();
+    private StringBuilder lower = new StringBuilder();
+
+    private RoutingPrinter(final Program program) {
+        this.program = program;
+    }
+
+    private String print() {
+        printRoute(program.getRouting0());
+        printRoute(program.getRouting1());
+        printRoute(program.getRouting2());
+        printRoute(program.getRouting3());
+        printRoute(program.getRouting4());
+        printRoute(program.getRouting5());
+        printRoute(program.getRouting6());
+        printRoute(program.getRouting7());
+        printRoute(program.getRouting8());
+
+        if (!lower.toString().trim().isEmpty()) {
+            upper.append("\n").append(lower.toString().replaceAll("\\s+$", ""));
+        }
+        return upper.toString();
+    }
+
+    private void printRoute(final RoutingData route) {
+        if (route.getEffectId() != 8) {
+            // incoming connections
+            upper.append(routingInputConnectionToString(route.getUpperInputConnection()));
+            if (route.getPathType() == 0) {
+                lower.append(' ');
+            } else {
+                lower.append('=');
+            }
+        }
+
+        int routing = route.getRouting();
+        if (routing == 1) {
+            upper.append(ROUTING_INPUT_CONNECTIONS[0]);
+            lower.append(routingEffectIdToString(route.getEffectId()));
+        } else {
+            upper.append(routingEffectIdToString(route.getEffectId()));
+            if (routing == 2 || routing == 3) {
+                lower.append('|');
+            } else if (route.getPathType() == 1) {
+                lower.append('=');
+            } else {
+                lower.append(' ');
+            }
+        }
+    }
+
+    static String print(final Program program) {
+        return new RoutingPrinter(program).print();
     }
 
     private static String routingEffectIdToString(final int routingEffectId) {
