@@ -145,13 +145,6 @@ public class ProgramPrinter {
         "", "Guitar Input"
     };
 
-    private static final String[] ROUTING_EFFECT_IDS = {
-        "1", "2", "C", "D", "R", "E", "G", "O", "I"
-    };
-    private static final String[] ROUTING_INPUT_CONNECTIONS = {
-        "=", "-", "_", "\\", "/"
-    };
-
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     static String print(Program program) {
@@ -243,25 +236,7 @@ public class ProgramPrinter {
         sb.append(appTypeSB.toString());
         sb.append("\n");
         // TODO indicate inactive effects
-        sb.append("  Effect Routing: ");
-        sb.append(routingEffectIdToString(program.getRouting0().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting1().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting1().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting2().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting2().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting3().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting3().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting4().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting4().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting5().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting5().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting6().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting6().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting7().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting7().getEffectId()));
-        sb.append(routingInputConnectionToString(program.getRouting8().getUpperInputConnection()));
-        sb.append(routingEffectIdToString(program.getRouting8().getEffectId()));
-        sb.append("\n");
+        sb.append("  Effect Routing: ").append(RoutingPrinter.print(program)).append("\n");
         if (program.getEffect1Algorithm() > 0) {
             UniVybe univybe = (UniVybe) program.getEffect1();
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
@@ -558,14 +533,6 @@ public class ProgramPrinter {
 
     private static String noiseGateEnableToString(final int noiseGateEnable) {
         return NOISE_GATE_ENABLES[noiseGateEnable];
-    }
-
-    private static String routingEffectIdToString(final int routingEffectId) {
-        return ROUTING_EFFECT_IDS[routingEffectId];
-    }
-
-    private static String routingInputConnectionToString(final int routingInputConnection) {
-        return ROUTING_INPUT_CONNECTIONS[routingInputConnection];
     }
 
     private static String signInt(final int i) {
