@@ -66,8 +66,6 @@ public class Program {
     private boolean isJazz;
     private boolean isRock;
 
-    @Deprecated
-    private String routing;
     private RoutingData routing0;
     private RoutingData routing1;
     private RoutingData routing2;
@@ -412,16 +410,6 @@ public class Program {
 
     public void setIsRock(boolean isRock) {
         this.isRock = isRock;
-    }
-
-    @Deprecated
-    public String getRouting() {
-        return routing;
-    }
-
-    @Deprecated
-    public void setRouting(final String routing) {
-        this.routing = routing;
     }
 
     public RoutingData getRouting0() {

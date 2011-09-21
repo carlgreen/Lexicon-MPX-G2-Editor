@@ -173,7 +173,6 @@ public class SysexParser {
         program.setIsJazz((guitarStyle & GUITAR_STYLE_JAZZ) == GUITAR_STYLE_JAZZ);
         program.setIsRock((guitarStyle & GUITAR_STYLE_ROCK) == GUITAR_STYLE_ROCK);
 
-        StringBuilder sb = new StringBuilder(17);
         for (int i = 0; i < 9; i++) {
             int effect = readInt(in, 2);
             int upperInputConn = readInt(in, 2);
@@ -215,37 +214,7 @@ public class SysexParser {
                     program.setRouting8(routingData);
                     break;
             }
-            switch (effect) {
-                case 0:
-                    sb.append("=1");
-                    break;
-                case 1:
-                    sb.append("=2");
-                    break;
-                case 2:
-                    sb.append("=C");
-                    break;
-                case 3:
-                    sb.append("=D");
-                    break;
-                case 4:
-                    sb.append("=R");
-                    break;
-                case 5:
-                    sb.append("=E");
-                    break;
-                case 6:
-                    sb.append("=G");
-                    break;
-                case 7:
-                    sb.append("=O");
-                    break;
-                case 8:
-                    sb.append("I");
-                    break;
-            }
         }
-        program.setRouting(sb.toString());
 
         int effect1ToePatch = readInt(in, 2);
         program.setEffect1ToePatch(effect1ToePatch);
@@ -418,7 +387,7 @@ public class SysexParser {
         // read program name
         byte[] bytes = new byte[24];
         in.read(bytes);
-        sb = new StringBuilder(12);
+        StringBuilder sb = new StringBuilder(12);
         for (int i = 0; i < bytes.length; i += 2) {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
             sb.append(c);
