@@ -41,15 +41,11 @@ public class RoutingPrinter {
     }
 
     private String print() {
-        printRoute(program.getRouting0());
-        printRoute(program.getRouting1());
-        printRoute(program.getRouting2());
-        printRoute(program.getRouting3());
-        printRoute(program.getRouting4());
-        printRoute(program.getRouting5());
-        printRoute(program.getRouting6());
-        printRoute(program.getRouting7());
-        printRoute(program.getRouting8());
+        printRoute(new RoutingData[] {
+            program.getRouting0(), program.getRouting1(), program.getRouting2(),
+            program.getRouting3(), program.getRouting4(), program.getRouting5(),
+            program.getRouting6(), program.getRouting7(), program.getRouting8()
+        });
 
         if (!lower.toString().trim().isEmpty()) {
             upper.append("\n").append(lower.toString().replaceAll("\\s+$", ""));
@@ -57,31 +53,55 @@ public class RoutingPrinter {
         return upper.toString();
     }
 
-    private void printRoute(final RoutingData route) {
-        if (route.getEffectId() != 8) {
-            // incoming connections
-            upper.append(routingInputConnectionToString(route.getUpperInputConnection()));
-            if (route.getPathType() == 0) {
-                lower.append(' ');
-            } else {
-                lower.append('=');
+    private void printRoute(final RoutingData[] routes) {
+        for (int i = 0; i < routes.length; i++) {
+            RoutingData route = routes[i];
+            if (i > 0) {
+                // incoming connections
+                if (route.getRouting() != 1) {
+                    upper.append(routingInputConnectionToString(route.getUpperInputConnection()));
+                } else {
+                    upper.append(getNextUpperInputConnection(routes, i) == 0 ? '=' : '-');
+                }
+                if (route.getPathType() == 0) {
+                    lower.append(' ');
+                } else {
+                    lower.append(routingInputConnectionToString(route.getLowerInputConnection()));
+                }
             }
-        }
 
-        int routing = route.getRouting();
-        if (routing == 1) {
-            upper.append(ROUTING_INPUT_CONNECTIONS[0]);
-            lower.append(routingEffectIdToString(route.getEffectId()));
-        } else {
-            upper.append(routingEffectIdToString(route.getEffectId()));
-            if (routing == 2 || routing == 3) {
-                lower.append('|');
-            } else if (route.getPathType() == 1) {
-                lower.append('=');
+            int routing = route.getRouting();
+            if (routing == 1) {
+                // find next upper effect input and derive from that
+                upper.append(getNextUpperInputConnection(routes, i) == 0 ? '=' : '-');
+                lower.append(routingEffectIdToString(route.getEffectId()));
             } else {
-                lower.append(' ');
+                upper.append(routingEffectIdToString(route.getEffectId()));
+                if (routing == 2 || routing == 3) {
+                    lower.append('|');
+                } else if (route.getPathType() == 1) {
+                    lower.append('=');
+                } else {
+                    lower.append(' ');
+                }
             }
         }
+    }
+
+    /**
+     * @param routes array of RoutingData to step through
+     * @param currentConnection position of current connection in routes
+     * @return routing type of next upper connection
+     */
+    private static int getNextUpperInputConnection(final RoutingData[] routes, final int currentConnection) {
+        RoutingData nextRoute = null;
+        for (int j = currentConnection + 1; j < routes.length; j++) {
+            if (routes[j].getRouting() != 1) {
+                nextRoute = routes[j];
+                break;
+            }
+        }
+        return nextRoute.getUpperInputConnection();
     }
 
     static String print(final Program program) {
