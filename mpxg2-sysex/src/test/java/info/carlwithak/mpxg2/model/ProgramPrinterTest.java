@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.sysex;
+package info.carlwithak.mpxg2.model;
 
-import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.sysex.SysexParser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

@@ -92,7 +92,7 @@ public class SysexParser {
      *
      * See {@link http://www.stecrecords.com/gear/mpxg2/doc/MPXG2_MIDI_Impl.htm}
      */
-    static Program parseProgram(final File preset) throws IOException, ParseException {
+    public static Program parseProgram(final File preset) throws IOException, ParseException {
         InputStream in = new FileInputStream(preset);
 
         Program program = new Program();
