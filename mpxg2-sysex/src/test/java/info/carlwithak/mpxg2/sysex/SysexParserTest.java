@@ -27,7 +27,9 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -1219,6 +1221,81 @@ public class SysexParserTest {
         assertEquals(40, gain.getDrive());
         assertEquals(21, gain.getTone());
         assertEquals(44, gain.getLevel());
+    }
+
+    /**
+     * Test parsing the Vybe/Flange preset.
+     */
+    @Test
+    public void testParseVybeFlange() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect1() instanceof UniVybe);
+        UniVybe effect1 = (UniVybe) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(0, effect1.getLevel());
+        assertEquals(20, effect1.getRate());
+
+        assertTrue(program.getEffect2() instanceof AutoPan);
+        AutoPan effect2 = (AutoPan) program.getEffect2();
+        assertEquals(100, effect2.getMix());
+        assertEquals(3, effect2.getLevel());
+        // TODO rate=1:2 assertEquals(0.04, effect2.getRate(), 0.001);
+        assertEquals(50, effect2.getPulseWidth());
+        assertEquals(100, effect2.getDepth());
+        assertEquals(0, effect2.getPhase()); // 0, 90, 180, 270 degrees
+
+        assertTrue(program.getChorus() instanceof FlangerStereo);
+        FlangerStereo chorus = (FlangerStereo) program.getChorus();
+        assertEquals(67, chorus.getMix());
+        assertEquals(1, chorus.getLevel());
+        // TODO rate=1:4 assertEquals(0.04, chorus.getRate(), 0.001);
+        assertEquals(50, chorus.getPulseWidth());
+        assertEquals(62, chorus.getDepth());
+        assertEquals(1, chorus.getPhase()); // 0, 90, 180, 270 degrees
+        assertEquals(20, chorus.getResonance());
+        assertEquals(0, chorus.getBlend());
+
+        assertTrue(program.getDelay() instanceof EchoMono);
+        EchoMono delay = (EchoMono) program.getDelay();
+        assertEquals(6, delay.getMix());
+        assertEquals(1, delay.getLevel());
+        assertEquals(4, delay.getTimeEchoes());
+        assertEquals(4, delay.getTimeBeat());
+        assertEquals(-15, delay.getFeedback());
+        assertEquals(3, delay.getInsert());
+        assertEquals(20, delay.getDamp());
+        assertEquals(0, delay.getClear());
+
+        assertTrue(program.getReverb() instanceof Plate);
+        Plate reverb = (Plate) program.getReverb();
+        assertEquals(28, reverb.getMix());
+        assertEquals(0, reverb.getLevel());
+        assertEquals(16.5, reverb.getSize(), 0.01);
+        assertEquals(1, reverb.getLink());
+        assertEquals(90, reverb.getDiff());
+        assertEquals(10, reverb.getPreDelay());
+        assertEquals(0, reverb.getBass()); // 0.2X is number 0 in list
+        assertEquals(0, reverb.getDecay()); // 0.09s is number 0 in list
+        assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
+        assertEquals(33, reverb.getRtHC()); // 8.8k is number 33 in list
+        assertEquals(58, reverb.getShape());
+        // TODO this makes no sense assertEquals(254, reverb.getSpred()); // screen reads 65, which is ~ 254 / 3
+
+        assertTrue(program.getEq() instanceof EqPedalVol);
+        EqPedalVol eq = (EqPedalVol) program.getEq();
+        assertEquals(100, eq.getMix());
+        assertEquals(0, eq.getLevel());
+
+        assertTrue(program.getGain() instanceof Screamer);
+        Screamer gain = (Screamer) program.getGain();
+        assertEquals(0, gain.getLo());
+        assertEquals(1, gain.getMid());
+        assertEquals(0, gain.getHi());
+        assertEquals(29, gain.getDrive());
+        assertEquals(19, gain.getTone());
+        assertEquals(53, gain.getLevel());
     }
 
     /**
