@@ -1051,10 +1051,10 @@ public class SysexParserTest {
         ChorusAlgorithm chorus = (ChorusAlgorithm) program.getChorus();
         assertEquals(100, chorus.getMix());
         assertEquals(0, chorus.getLevel());
-        assertEquals(0.62, chorus.getRate1(), 0.001);
+        assertEquals(new FrequencyRate(0.62), chorus.getRate1());
         assertEquals(45, chorus.getPulseWidth1());
         assertEquals(30, chorus.getDepth1());
-        assertEquals(0.56, chorus.getRate2(), 0.001);
+        assertEquals(new FrequencyRate(0.56), chorus.getRate2());
         assertEquals(54, chorus.getPulseWidth2());
         assertEquals(0, chorus.getDepth2());
         assertEquals(-19, chorus.getResonance1());

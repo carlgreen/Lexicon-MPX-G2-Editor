@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
 /**
@@ -25,20 +26,20 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class ChorusAlgorithm extends Chorus {
-    private double rate1;
+    private Rate rate1;
     private int pulseWidth1;
     private int depth1;
-    private double rate2;
+    private Rate rate2;
     private int pulseWidth2;
     private int depth2;
     private int resonance1;
     private int resonance2;
 
-    public double getRate1() {
+    public Rate getRate1() {
         return rate1;
     }
 
-    public void setRate1(double rate1) {
+    public void setRate1(Rate rate1) {
         this.rate1 = rate1;
     }
 
@@ -58,11 +59,11 @@ public class ChorusAlgorithm extends Chorus {
         this.depth1 = depth1;
     }
 
-    public double getRate2() {
+    public Rate getRate2() {
         return rate2;
     }
 
-    public void setRate2(double rate2) {
+    public void setRate2(Rate rate2) {
         this.rate2 = rate2;
     }
 
