@@ -289,6 +289,9 @@ public class SysexParser {
                         case 18:
                             effect2 = PedalWah1Parser.parse(effect2Parameters);
                             break;
+                        case 20:
+                            effect2 = VolumeMonoParser.parse(effect2Parameters);
+                            break;
                         default:
                             throw new ParseException("Invalid Effect 2 algorithm number: " + algorithmNumber);
                     }
