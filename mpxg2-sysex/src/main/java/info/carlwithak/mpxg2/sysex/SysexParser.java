@@ -47,6 +47,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.Wah1Parser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -260,6 +261,9 @@ public class SysexParser {
                             break;
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
+                            break;
+                        case 23:
+                            effect1 = Wah1Parser.parse(effect1Parameters);
                             break;
                         case 27:
                             effect1 = VolumeMonoParser.parse(effect1Parameters);
