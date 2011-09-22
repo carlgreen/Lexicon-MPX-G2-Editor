@@ -17,9 +17,10 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BeatRate;
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.sysex.ParseException;
+import info.carlwithak.mpxg2.sysex.RateParser;
+import java.util.Arrays;
 
 /**
  * Class to parse parameter data for Chorus effect.
@@ -28,7 +29,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
  */
 public class ChorusParser {
 
-    public static ChorusAlgorithm parse(byte[] effectParameters) {
+    public static ChorusAlgorithm parse(byte[] effectParameters) throws ParseException {
         ChorusAlgorithm chorus = new ChorusAlgorithm();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
@@ -37,18 +38,7 @@ public class ChorusParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         chorus.setLevel(level);
 
-        int rate1Unit = effectParameters[8] + effectParameters[9] * 16;
-        if (rate1Unit == 0) {
-            int frequency = 0;
-            for (int i = 0; i < 4; i++) {
-                frequency += (effectParameters[4 + i] * Math.pow(16, i));
-            }
-            chorus.setRate1(new FrequencyRate(frequency / 100.0));
-        } else if (rate1Unit == 1) {
-            int cycles = effectParameters[4] + effectParameters[5] * 16;
-            int beats = effectParameters[6] + effectParameters[7] * 16;
-            chorus.setRate1(new BeatRate(cycles, beats));
-        }
+        chorus.setRate1(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
         chorus.setPulseWidth1(pulseWidth1);
@@ -56,18 +46,7 @@ public class ChorusParser {
         int depth1 = (byte) (effectParameters[12] + effectParameters[13] * 16);
         chorus.setDepth1(depth1);
 
-        int rate2Unit = effectParameters[18] + effectParameters[19] * 16;
-        if (rate2Unit == 0) {
-            int frequency = 0;
-            for (int i = 0; i < 4; i++) {
-                frequency += (effectParameters[14 + i] * Math.pow(16, i));
-            }
-            chorus.setRate2(new FrequencyRate(frequency / 100.0));
-        } else if (rate2Unit == 1) {
-            int cycles = effectParameters[14] + effectParameters[15] * 16;
-            int beats = effectParameters[16] + effectParameters[17] * 16;
-            chorus.setRate2(new BeatRate(cycles, beats));
-        }
+        chorus.setRate2(RateParser.parse(Arrays.copyOfRange(effectParameters, 14, 20)));
 
         int pulseWidth2 = (byte) (effectParameters[20] + effectParameters[21] * 16);
         chorus.setPulseWidth2(pulseWidth2);
