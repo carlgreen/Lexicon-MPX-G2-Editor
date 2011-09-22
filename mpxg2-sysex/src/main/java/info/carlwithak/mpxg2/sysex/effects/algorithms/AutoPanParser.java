@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.BeatRate;
+import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 
 /**
@@ -35,11 +37,18 @@ public class AutoPanParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         autoPan.setLevel(level);
 
-        int rate = 0;
-        for (int i = 0; i < 6; i++) {
-            rate += (effectParameters[4 + i] * Math.pow(16, i));
+        int rateUnit = effectParameters[8] + effectParameters[9] * 16;
+        if (rateUnit == 0) {
+            int frequency = 0;
+            for (int i = 0; i < 4; i++) {
+                frequency += (effectParameters[4 + i] * Math.pow(16, i));
+            }
+            autoPan.setRate(new FrequencyRate(frequency / 100.0));
+        } else if (rateUnit == 1) {
+            int cycles = effectParameters[4] + effectParameters[5] * 16;
+            int beats = effectParameters[6] + effectParameters[7] * 16;
+            autoPan.setRate(new BeatRate(cycles, beats));
         }
-        autoPan.setRate(rate / 100.0);
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
         autoPan.setPulseWidth(pulseWidth);

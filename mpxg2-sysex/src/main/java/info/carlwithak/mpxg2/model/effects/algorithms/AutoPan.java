@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
@@ -25,7 +26,7 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class AutoPan extends Effect {
-    private double rate;
+    private Rate rate;
     private int pulseWidth;
     private int depth;
     private int phase;
@@ -54,11 +55,11 @@ public class AutoPan extends Effect {
         this.pulseWidth = pulseWidth;
     }
 
-    public double getRate() {
+    public Rate getRate() {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(Rate rate) {
         this.rate = rate;
     }
 }

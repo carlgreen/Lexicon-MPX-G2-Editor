@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.BeatRate;
+import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.RoutingData;
@@ -1031,7 +1033,7 @@ public class SysexParserTest {
         AutoPan effect1 = (AutoPan) program.getEffect1();
         assertEquals(100, effect1.getMix());
         assertEquals(0, effect1.getLevel());
-        assertEquals(0.04, effect1.getRate(), 0.001);
+        assertEquals(new FrequencyRate(0.04), effect1.getRate());
         assertEquals(50, effect1.getPulseWidth());
         assertEquals(100, effect1.getDepth());
         assertEquals(1, effect1.getPhase()); // 0, 90, 180, 270 degrees
@@ -1040,7 +1042,7 @@ public class SysexParserTest {
         AutoPan effect2 = (AutoPan) program.getEffect2();
         assertEquals(100, effect2.getMix());
         assertEquals(0, effect2.getLevel());
-        assertEquals(1.00, effect2.getRate(), 0.001);
+        assertEquals(new FrequencyRate(1.00), effect2.getRate());
         assertEquals(50, effect2.getPulseWidth());
         assertEquals(100, effect2.getDepth());
         assertEquals(3, effect2.getPhase()); // 0, 90, 180, 270 degrees
@@ -1241,7 +1243,7 @@ public class SysexParserTest {
         AutoPan effect2 = (AutoPan) program.getEffect2();
         assertEquals(100, effect2.getMix());
         assertEquals(3, effect2.getLevel());
-        // TODO rate=1:2 assertEquals(0.04, effect2.getRate(), 0.001);
+        assertEquals(new BeatRate(1, 2), effect2.getRate());
         assertEquals(50, effect2.getPulseWidth());
         assertEquals(100, effect2.getDepth());
         assertEquals(0, effect2.getPhase()); // 0, 90, 180, 270 degrees
@@ -1250,7 +1252,7 @@ public class SysexParserTest {
         FlangerStereo chorus = (FlangerStereo) program.getChorus();
         assertEquals(67, chorus.getMix());
         assertEquals(1, chorus.getLevel());
-        // TODO rate=1:4 assertEquals(0.04, chorus.getRate(), 0.001);
+        assertEquals(new BeatRate(1, 4), chorus.getRate());
         assertEquals(50, chorus.getPulseWidth());
         assertEquals(62, chorus.getDepth());
         assertEquals(1, chorus.getPhase()); // 0, 90, 180, 270 degrees

@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
 /**
@@ -25,7 +26,7 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class FlangerStereo extends Chorus {
-    private double rate;
+    private Rate rate;
     private int pulseWidth;
     private int depth;
     private int phase;
@@ -56,11 +57,11 @@ public class FlangerStereo extends Chorus {
         this.pulseWidth = pulseWidth;
     }
 
-    public double getRate() {
+    public Rate getRate() {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(Rate rate) {
         this.rate = rate;
     }
 
