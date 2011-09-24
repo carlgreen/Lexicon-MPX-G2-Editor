@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
@@ -42,6 +44,20 @@ public class AlgorithmPrinterTest {
     public void testPrintInvalidAlgorithm() throws PrintException {
         String notAnAlgorithm = "Not an algorithm";
         AlgorithmPrinter.print(notAnAlgorithm);
+    }
+
+    @Test
+    public void testPrintPanner() throws PrintException {
+        Panner panner = new Panner();
+        panner.setMix(100);
+        panner.setLevel(-24);
+        panner.setPan1(-50);
+        panner.setPan2(50);
+
+        String expected = "    Mix: 100%\n    Level: -24dB\n    Pan1: 50L\n    Pan2: 50R\n";
+        String actual = AlgorithmPrinter.print(panner);
+
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -126,6 +142,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +3dB\n    Tune: 7\n    Optimize: 10ms\n    P Dly: 22ms\n";
         String actual = AlgorithmPrinter.print(detuneMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDetuneDual() throws PrintException {
+        DetuneDual detuneDual = new DetuneDual();
+        detuneDual.setMix(100);
+        detuneDual.setLevel(3);
+        detuneDual.setTune1(7);
+        detuneDual.setOptimize(10);
+        detuneDual.setTune2(5);
+        detuneDual.setPreDelay(22);
+
+        String expected = "    Mix: 100%\n    Level: +3dB\n    Tune1: 7\n    Optimize: 10ms\n    Tune2: 5\n    P Dly: 22ms\n";
+        String actual = AlgorithmPrinter.print(detuneDual);
 
         assertEquals(expected, actual);
     }

@@ -18,8 +18,10 @@
 package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
@@ -28,8 +30,10 @@ import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AmbiencePrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.EchoDualPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.PannerPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalVolPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalWah1Printer;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PlatePrinter;
@@ -58,12 +62,14 @@ public class AlgorithmPrinter {
      * Mapping between algorithms and their printers. Is there a better way?
      */
     private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>() {{
+       put(Panner.class, new PannerPrinter());
        put(UniVybe.class, new UniVybePrinter());
        put(Wah1.class, new Wah1Printer());
        put(PedalWah1.class, new PedalWah1Printer());
        put(VolumeMono.class, new VolumeMonoPrinter());
        put(PedalVol.class, new PedalVolPrinter());
        put(DetuneMono.class, new DetuneMonoPrinter());
+       put(DetuneDual.class, new DetuneDualPrinter());
        put(EchoDual.class, new EchoDualPrinter());
        put(Plate.class, new PlatePrinter());
        put(Ambience.class, new AmbiencePrinter());
