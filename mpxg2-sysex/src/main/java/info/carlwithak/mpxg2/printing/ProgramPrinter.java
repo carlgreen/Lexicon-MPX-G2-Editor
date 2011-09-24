@@ -18,13 +18,9 @@
 package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.Program;
-import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
-import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
-import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
-import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
-import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
-import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import java.text.DecimalFormat;
+
+import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  * Class to print out a program nicely.
@@ -60,20 +56,6 @@ public class ProgramPrinter {
     };
     private static final String[] GAIN_ALGORITHM_NAMES = {
         "no effect", "Tone", "Crunch", "Screamer", "Overdrive", "Distortion", "Preamp", "SplitPreamp"
-    };
-
-    private static final String[] DELAY_INSERTS = {
-        "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "EQ", "Gain"
-    };
-
-    private static final double[] REVERB_DELAY_TIMES = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.41
-    };
-
-    private static final double[] REVERB_RT_HC = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.8
     };
 
     private static final String[] EFFECT_TYPES = {
@@ -148,7 +130,7 @@ public class ProgramPrinter {
 
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
-    static String print(Program program) {
+    static String print(Program program) throws PrintException {
         StringBuilder sb = new StringBuilder();
         sb.append(program.getProgramName()).append("\n");
         StringBuilder styleSB = new StringBuilder();
@@ -239,72 +221,34 @@ public class ProgramPrinter {
         // TODO indicate inactive effects
         sb.append("  Effect Routing: ").append(RoutingPrinter.print(program)).append("\n");
         if (program.getEffect1Algorithm() > 0) {
-            UniVybe univybe = (UniVybe) program.getEffect1();
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
-            sb.append("    Mix: ").append(univybe.getMix()).append("%\n");
-            sb.append("    Level: ").append(univybe.getLevel()).append("dB\n");
-            sb.append("    Rate: ").append(univybe.getRate()).append("\n");
+            sb.append(AlgorithmPrinter.print(program.getEffect1()));
         }
         if (program.getEffect2Algorithm() > 0) {
-            PedalWah1 effect2 = (PedalWah1) program.getEffect2();
             sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(program.isEffect2On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect2ToePatch())).append("\n");
-            sb.append("    Mix: ").append(effect2.getMix()).append("%\n");
-            sb.append("    Level: ").append(effect2.getLevel()).append("dB\n");
-            sb.append("    Bass: ").append(effect2.getBass()).append("\n");
-            sb.append("    Type: Model ").append(effect2.getType() == 0 ? "C" : "V").append("\n");
-            sb.append("    Resp: ").append(effect2.getResponse()).append("\n");
-            sb.append("    Gain: ").append(signInt(effect2.getGain())).append("\n");
+            sb.append(AlgorithmPrinter.print(program.getEffect2()));
         }
         if (program.getChorusAlgorithm() > 0) {
-            PedalVol chorus = (PedalVol) program.getChorus();
             sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(program.isChorusOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getChorusToePatch())).append("\n");
-            sb.append("    Mix: ").append(chorus.getMix()).append("%\n");
-            sb.append("    Level: ").append(chorus.getLevel()).append("dB\n");
+            sb.append(AlgorithmPrinter.print(program.getChorus()));
         }
         if (program.getDelayAlgorithm() > 0) {
-            EchoDual delay = (EchoDual) program.getDelay();
             sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(program.isDelayOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getDelayToePatch())).append("\n");
-            sb.append("    Mix: ").append(delay.getMix()).append("%\n");
-            sb.append("    Level: ").append(signInt(delay.getLevel())).append("dB\n");
-            sb.append("    Time1: ").append(delay.getTime1Echoes()).append(":").append(delay.getTime1Beat()).append("\n");
-            sb.append("    Time2: ").append(delay.getTime2Echoes()).append(":").append(delay.getTime2Beat()).append("\n");
-            sb.append("    Level1: ").append(signInt(delay.getLevel1())).append("dB\n");
-            sb.append("    Level2: ").append(signInt(delay.getLevel2())).append("dB\n");
-            sb.append("    Feedback1: ").append(signInt(delay.getFeedback1())).append("%\n");
-            sb.append("    Insert: ").append(delayInsertToString(delay.getInsert())).append("\n");
-            sb.append("    Feedback2: ").append(signInt(delay.getFeedback2())).append("%\n");
-            sb.append("    Damp1: ").append(delay.getDamp1()).append("%\n");
-            sb.append("    Damp2: ").append(delay.getDamp2()).append("%\n");
-            sb.append("    Clear: ").append(delay.getClear() == 0 ? "off" : "on").append("\n");
+            sb.append(AlgorithmPrinter.print(program.getDelay()));
         }
         if (program.getReverbAlgorithm() > 0) {
-            Ambience reverb = (Ambience) program.getReverb();
             sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(program.isReverbOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getReverbToePatch())).append("\n");
-            sb.append("    Mix: ").append(reverb.getMix()).append("%\n");
-            sb.append("    Level: ").append(reverb.getLevel()).append("dB\n");
-            sb.append("    Size: ").append(reverb.getSize()).append("m\n");
-            sb.append("    Link: ").append(reverb.getLink() == 0 ? "off" : "on").append("\n");
-            sb.append("    Diff: ").append(reverb.getDiff()).append("%\n");
-            sb.append("    Pre Delay: ").append(reverb.getPreDelay()).append("ms\n");
-            sb.append("    Delay Time: ").append(reverbDelayTimeToString(reverb.getDelayTime())).append("s\n");
-            sb.append("    Delay Level: ").append(reverb.getDelayLevel() == 0 ? "off" : "on").append("\n");
-            sb.append("    Rt HC: ").append(reverbRtHCToString(reverb.getRtHC())).append("k\n");
+            sb.append(AlgorithmPrinter.print(program.getReverb()));
         }
         if (program.getGainAlgorithm() > 0) {
-            Screamer gain = (Screamer) program.getGain();
             sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(program.isGainOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
-            sb.append("    Lo: ").append(signInt(gain.getLo())).append("\n");
-            sb.append("    Mid: ").append(signInt(gain.getMid())).append("\n");
-            sb.append("    Hi: ").append(signInt(gain.getHi())).append("\n");
-            sb.append("    Drive: ").append(gain.getDrive()).append("\n");
-            sb.append("    Tone: ").append(gain.getTone()).append("\n");
-            sb.append("    Level: ").append(gain.getLevel()).append("\n");
+            sb.append(AlgorithmPrinter.print(program.getGain()));
         }
         sb.append("  Softrow:\n");
         sb.append("    1: ").append(effectTypeToString(program.getSoftRowEffectType(0))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(0), program.getSoftRowParameter(0))).append("\n");
@@ -484,18 +428,6 @@ public class ProgramPrinter {
         return s;
     }
 
-    private static String delayInsertToString(final int delayInsert) {
-        return DELAY_INSERTS[delayInsert];
-    }
-
-    private static double reverbDelayTimeToString(final int reverbDelayTime) {
-        return REVERB_DELAY_TIMES[reverbDelayTime];
-    }
-
-    private static double reverbRtHCToString(final int reverbRtHC) {
-        return REVERB_RT_HC[reverbRtHC];
-    }
-
     private static String effectTypeToString(final int effectType) {
         return EFFECT_TYPES[effectType];
     }
@@ -534,9 +466,5 @@ public class ProgramPrinter {
 
     private static String noiseGateEnableToString(final int noiseGateEnable) {
         return NOISE_GATE_ENABLES[noiseGateEnable];
-    }
-
-    private static String signInt(final int i) {
-        return i > 0 ? "+" + Integer.toString(i) : Integer.toString(i);
     }
 }

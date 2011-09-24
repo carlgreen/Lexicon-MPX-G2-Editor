@@ -1,0 +1,143 @@
+/*
+ *  Copyright (C) 2011 Carl Green
+ * 
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+package info.carlwithak.mpxg2.printing;
+
+import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+/**
+ * Tests AlgorithmPrinter and all the implementation of AlgorithmPrinter.Printer.
+ *
+ * @author Carl Green
+ */
+public class AlgorithmPrinterTest {
+
+    @Test(expected=PrintException.class)
+    public void testPrintInvalidAlgorithm() throws PrintException {
+        String notAnAlgorithm = "Not an algorithm";
+        AlgorithmPrinter.print(notAnAlgorithm);
+    }
+
+    @Test
+    public void testPrintUniVybe() throws PrintException {
+        UniVybe univybe = new UniVybe();
+        univybe.setMix(100);
+        univybe.setLevel(0);
+        univybe.setRate(20);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
+        String actual = AlgorithmPrinter.print(univybe);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintPedalWah1() throws PrintException {
+        PedalWah1 pedalWah1 = new PedalWah1();
+        pedalWah1.setMix(100);
+        pedalWah1.setLevel(0);
+        pedalWah1.setBass(19);
+        pedalWah1.setType(0);
+        pedalWah1.setResponse(100);
+        pedalWah1.setGain(10);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10\n";
+        String actual = AlgorithmPrinter.print(pedalWah1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintPedalVol() throws PrintException {
+        PedalVol pedalVol = new PedalVol();
+        pedalVol.setMix(100);
+        pedalVol.setLevel(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n";
+        String actual = AlgorithmPrinter.print(pedalVol);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintEchoDual() throws PrintException {
+        EchoDual echoDual = new EchoDual();
+        echoDual.setMix(2);
+        echoDual.setLevel(1);
+        echoDual.setTime1Echoes(4);
+        echoDual.setTime1Beat(4);
+        echoDual.setTime2Echoes(2);
+        echoDual.setTime2Beat(1);
+        echoDual.setLevel1(0);
+        echoDual.setLevel2(0);
+        echoDual.setFeedback1(1);
+        echoDual.setInsert(3);
+        echoDual.setFeedback2(1);
+        echoDual.setDamp1(20);
+        echoDual.setDamp2(20);
+        echoDual.setClear(0);
+
+        String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Level1: 0dB\n    Level2: 0dB\n    Feedback1: +1%\n    Insert: Delay\n    Feedback2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: off\n";
+        String actual = AlgorithmPrinter.print(echoDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintAmbience() throws PrintException {
+        Ambience ambience = new Ambience();
+        ambience.setMix(18);
+        ambience.setLevel(0);
+        ambience.setSize(24.5);
+        ambience.setLink(1);
+        ambience.setDiff(60);
+        ambience.setPreDelay(7);
+        ambience.setDelayTime(51);
+        ambience.setDelayLevel(0);
+        ambience.setRtHC(12);
+
+        String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: on\n    Diff: 60%\n    Pre Delay: 7ms\n    Delay Time: 1.41s\n    Delay Level: off\n    Rt HC: 12.8k\n";
+        String actual = AlgorithmPrinter.print(ambience);
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void testPrintScreamer() throws PrintException {
+        Screamer screamer = new Screamer();
+        screamer.setLo(2);
+        screamer.setMid(1);
+        screamer.setHi(3);
+        screamer.setDrive(22);
+        screamer.setTone(25);
+        screamer.setLevel(57);
+
+        String expected = "    Lo: +2\n    Mid: +1\n    Hi: +3\n    Drive: 22\n    Tone: 25\n    Level: 57\n";
+        String actual = AlgorithmPrinter.print(screamer);
+
+        assertEquals(expected, actual);
+    }
+}
