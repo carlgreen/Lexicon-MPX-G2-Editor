@@ -196,13 +196,13 @@ public class AlgorithmPrinterTest {
         plate.setDiff(66);
         plate.setPreDelay(169);
         plate.setBass(5);
-        plate.setDecay(54);
+        plate.setDecay(50);
         plate.setXovr(16);
-        plate.setRtHC(44);
+        plate.setRtHC(45);
         plate.setShape(36);
-        plate.setSpred(73);
+        plate.setSpred(222);
 
-        String expected = "    Mix: 100%\n    Level: +6dB\n    Size: 22.5m\n    Link: on\n    Diff: 66%\n    Pre Delay: 169ms\n    Bass: 1.2X\n    Decay: 1.26s\n    Xovr: 986\n    Rt HC: 19.4k\n    Shape: 36\n    Spred: 18\n";
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Size: 22.5m\n    Link: on\n    Diff: 66%\n    Pre Delay: 169ms\n    Bass: 1.2X\n    Decay: 1.30s\n    Xovr: 986\n    Rt HC: 19.4k\n    Shape: 36\n    Spred: 73\n";
         String actual = AlgorithmPrinter.print(plate);
 
         assertEquals(expected, actual);
