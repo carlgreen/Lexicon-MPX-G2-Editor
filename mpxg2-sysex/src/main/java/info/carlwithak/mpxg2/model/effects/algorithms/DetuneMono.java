@@ -29,7 +29,7 @@ public class DetuneMono extends Chorus {
     private int optimize;
     private int preDelay;
 
-    public int getTune1() {
+    public int getTune() {
         return tune;
     }
 
