@@ -15,7 +15,10 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.model;
+package info.carlwithak.mpxg2.printing;
+
+import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.RoutingData;
 
 /**
  * Class to print out a program's routing nicely.
