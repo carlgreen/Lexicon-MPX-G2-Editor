@@ -17,6 +17,10 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
@@ -54,6 +58,23 @@ public class AlgorithmPrinterTest {
     }
 
     @Test
+    public void testPrintWah1() throws PrintException {
+        Wah1 wah1 = new Wah1();
+        wah1.setMix(100);
+        wah1.setLevel(0);
+        wah1.setSweep(50);
+        wah1.setBass(19);
+        wah1.setType(0);
+        wah1.setResponse(100);
+        wah1.setGain(10);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Sweep: 50\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10\n";
+        String actual = AlgorithmPrinter.print(wah1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testPrintPedalWah1() throws PrintException {
         PedalWah1 pedalWah1 = new PedalWah1();
         pedalWah1.setMix(100);
@@ -70,6 +91,19 @@ public class AlgorithmPrinterTest {
     }
 
     @Test
+    public void testPrintVolumeMono() throws PrintException {
+        VolumeMono volumeMono = new VolumeMono();
+        volumeMono.setMix(100);
+        volumeMono.setLevel(0);
+        volumeMono.setVolume(60);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 60%\n";
+        String actual = AlgorithmPrinter.print(volumeMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testPrintPedalVol() throws PrintException {
         PedalVol pedalVol = new PedalVol();
         pedalVol.setMix(100);
@@ -77,6 +111,21 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n";
         String actual = AlgorithmPrinter.print(pedalVol);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDetuneMono() throws PrintException {
+        DetuneMono detuneMono = new DetuneMono();
+        detuneMono.setMix(100);
+        detuneMono.setLevel(3);
+        detuneMono.setTune(7);
+        detuneMono.setOptimize(10);
+        detuneMono.setPreDelay(22);
+
+        String expected = "    Mix: 100%\n    Level: +3dB\n    Tune: 7\n    Optimize: 10ms\n    P Dly: 22ms\n";
+        String actual = AlgorithmPrinter.print(detuneMono);
 
         assertEquals(expected, actual);
     }
@@ -106,6 +155,28 @@ public class AlgorithmPrinterTest {
     }
 
     @Test
+    public void testPrintPlate() throws PrintException {
+        Plate plate = new Plate();
+        plate.setMix(100);
+        plate.setLevel(6);
+        plate.setSize(22.5);
+        plate.setLink(1);
+        plate.setDiff(66);
+        plate.setPreDelay(169);
+        plate.setBass(5);
+        plate.setDecay(54);
+        plate.setXovr(16);
+        plate.setRtHC(44);
+        plate.setShape(36);
+        plate.setSpred(73);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Size: 22.5m\n    Link: on\n    Diff: 66%\n    Pre Delay: 169ms\n    Bass: 1.2X\n    Decay: 1.26s\n    Xovr: 986\n    Rt HC: 19.4k\n    Shape: 36\n    Spred: 18\n";
+        String actual = AlgorithmPrinter.print(plate);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testPrintAmbience() throws PrintException {
         Ambience ambience = new Ambience();
         ambience.setMix(18);
@@ -123,7 +194,6 @@ public class AlgorithmPrinterTest {
 
         assertEquals(expected, actual);
     }
-
 
     @Test
     public void testPrintScreamer() throws PrintException {

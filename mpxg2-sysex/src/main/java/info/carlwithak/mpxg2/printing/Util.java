@@ -34,6 +34,15 @@ public class Util {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.41
     };
 
+    private static final String[] REVERB_RT_HC = {
+        "525", "589", "654", "818", "986", "1.1k", "1.3k", "1.5k", "1.6k",
+        "1.8k", "2.0k", "2.4k", "2.6k", "2.9k", "3.1k", "3.3k", "3.5k", "3.8k",
+        "4.0k", "4.3k", "4.6k", "4.8k", "5.1k", "5.4k", "5.7k", "6.1k", "6.4k",
+        "6.8k", "7.1k", "7.5k", "7.9k", "8.4k", "8.8k", "9.3k", "9.9k", "10.4k",
+        "11.0k", "11.7k", "12.4k", "13.2k", "14.1k", "15.2k", "16.3k", "17.7k",
+        "19.4k", "21.6k", "24.7k", "Flat"
+    };
+
     private static final double[] REVERB_AMBIENCE_RT_HC = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.8
     };
@@ -50,6 +59,13 @@ public class Util {
      */
     public static double reverbDelayTimeToString(final int reverbDelayTime) {
         return REVERB_DELAY_TIMES[reverbDelayTime];
+    }
+
+    /**
+     * @return String representation of Rt HC index.
+     */
+    public static String reverbRtHCToString(final int reverbRtHC) {
+        return REVERB_RT_HC[reverbRtHC];
     }
 
     /**
