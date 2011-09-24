@@ -21,7 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
 import static info.carlwithak.mpxg2.printing.Util.reverbDelayTimeToString;
-import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
+import static info.carlwithak.mpxg2.printing.Util.reverbAmbienceRtHCToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -42,7 +42,7 @@ public class AmbiencePrinter implements Printer {
         sb.append("    Pre Delay: ").append(ambience.getPreDelay()).append("ms\n");
         sb.append("    Delay Time: ").append(reverbDelayTimeToString(ambience.getDelayTime())).append("s\n");
         sb.append("    Delay Level: ").append(ambience.getDelayLevel() == 0 ? "off" : "on").append("\n");
-        sb.append("    Rt HC: ").append(reverbRtHCToString(ambience.getRtHC())).append("k\n");
+        sb.append("    Rt HC: ").append(reverbAmbienceRtHCToString(ambience.getRtHC())).append("k\n");
         return sb.toString();
     }
 

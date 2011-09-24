@@ -34,7 +34,7 @@ public class Util {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.41
     };
 
-    private static final double[] REVERB_RT_HC = {
+    private static final double[] REVERB_AMBIENCE_RT_HC = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.8
     };
 
@@ -53,10 +53,10 @@ public class Util {
     }
 
     /**
-     * @return String representation of Rt HC index.
+     * @return String representation of Rt HC index for Ambience algorithm.
      */
-    public static double reverbRtHCToString(final int reverbRtHC) {
-        return REVERB_RT_HC[reverbRtHC];
+    public static double reverbAmbienceRtHCToString(final int reverbRtHC) {
+        return REVERB_AMBIENCE_RT_HC[reverbRtHC];
     }
 
     /**
@@ -65,5 +65,4 @@ public class Util {
     public static String signInt(final int i) {
         return i > 0 ? "+" + Integer.toString(i) : Integer.toString(i);
     }
-
 }
