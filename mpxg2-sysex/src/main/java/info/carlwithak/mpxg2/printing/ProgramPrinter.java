@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import java.text.DecimalFormat;
 
@@ -89,6 +90,37 @@ public class ProgramPrinter {
         {},
         {
             "Level"
+        }
+    };
+    private static final String[][] EFFECT_PARAMETER_UNITS = {
+        {
+            "%", "dB", "Rate"
+        },
+        {
+            "%", "dB", "Pan1", "Pan2"
+        },
+        {},
+        {
+            "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "%", "%", "%", "%", "Clear"
+        },
+        {
+            "%", "dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
+        },
+        {},
+        {
+            "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+            ""
         }
     };
 
@@ -258,51 +290,11 @@ public class ProgramPrinter {
             sb.append(printSoftRow(program, i));
         }
         sb.append("  Patching:\n");
-        sb.append("    Patch 1:\n");
-        sb.append("      Source: ").append(patchSourceToString(program.getPatch1().getSource())).append("\n");
-        sb.append("        Min: ").append(program.getPatch1().getSourceMin()).append("\n");
-        sb.append("        Mid: ").append(program.getPatch1().getSourceMid() == 0xff ? "--" : program.getPatch1().getSourceMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch1().getSourceMax()).append("\n");
-        sb.append("      Destination: ").append(patchDestinationToString(program.getPatch1().getDestinationEffect(), program.getPatch1().getDestinationParameter())).append("\n");
-        sb.append("        Min: ").append(program.getPatch1().getDestinationMin()).append("%\n");
-        sb.append("        Mid: ").append(program.getPatch1().getDestinationMid() == 0x80 ? "--" : program.getPatch1().getDestinationMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch1().getDestinationMax()).append("%\n");
-        sb.append("    Patch 2:\n");
-        sb.append("      Source: ").append(patchSourceToString(program.getPatch2().getSource())).append("\n");
-        sb.append("        Min: ").append(program.getPatch2().getSourceMin()).append("\n");
-        sb.append("        Mid: ").append(program.getPatch2().getSourceMid() == 0xff ? "--" : program.getPatch2().getSourceMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch2().getSourceMax()).append("\n");
-        sb.append("      Destination: ").append(patchDestinationToString(program.getPatch2().getDestinationEffect(), program.getPatch2().getDestinationParameter())).append("\n");
-        sb.append("        Min: ").append(program.getPatch2().getDestinationMin() % 0x100).append(":").append(program.getPatch2().getDestinationMin() / 0x100).append("\n");
-        sb.append("        Mid: ").append(program.getPatch2().getDestinationMid() == 0x80 ? "--" : program.getPatch2().getDestinationMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch2().getDestinationMax() % 0x100).append(":").append(program.getPatch2().getDestinationMax() / 0x100).append("\n");
-        sb.append("    Patch 3:\n");
-        sb.append("      Source: ").append(patchSourceToString(program.getPatch3().getSource())).append("\n");
-        sb.append("        Min: ").append(program.getPatch3().getSourceMin()).append("\n");
-        sb.append("        Mid: ").append(program.getPatch3().getSourceMid() == 0xff ? "--" : program.getPatch3().getSourceMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch3().getSourceMax()).append("\n");
-        sb.append("      Destination: ").append(patchDestinationToString(program.getPatch3().getDestinationEffect(), program.getPatch3().getDestinationParameter())).append("\n");
-        sb.append("        Min: ").append(program.getPatch3().getDestinationMin()).append("%\n");
-        sb.append("        Mid: ").append(program.getPatch3().getDestinationMid() == 0x80 ? "--" : program.getPatch3().getDestinationMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch3().getDestinationMax()).append("%\n");
-        sb.append("    Patch 4:\n");
-        sb.append("      Source: ").append(patchSourceToString(program.getPatch4().getSource())).append("\n");
-        sb.append("        Min: ").append(program.getPatch4().getSourceMin()).append("\n");
-        sb.append("        Mid: ").append(program.getPatch4().getSourceMid() == 0xff ? "--" : program.getPatch4().getSourceMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch4().getSourceMax()).append("\n");
-        sb.append("      Destination: ").append(patchDestinationToString(program.getPatch4().getDestinationEffect(), program.getPatch4().getDestinationParameter())).append("\n");
-        sb.append("        Min: ").append(program.getPatch4().getDestinationMin()).append("%\n");
-        sb.append("        Mid: ").append(program.getPatch4().getDestinationMid() == 0x80 ? "--" : program.getPatch4().getDestinationMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch4().getDestinationMax()).append("%\n");
-        sb.append("    Patch 5:\n");
-        sb.append("      Source: ").append(patchSourceToString(program.getPatch5().getSource())).append("\n");
-        sb.append("        Min: ").append(program.getPatch5().getSourceMin()).append("\n");
-        sb.append("        Mid: ").append(program.getPatch5().getSourceMid() == 0xff ? "--" : program.getPatch5().getSourceMid()).append("\n");
-        sb.append("        Max: ").append(program.getPatch5().getSourceMax()).append("\n");
-        sb.append("      Destination: ").append(patchDestinationToString(program.getPatch5().getDestinationEffect(), program.getPatch5().getDestinationParameter())).append("\n");
-        sb.append("        Min: ").append(program.getPatch5().getDestinationMin()).append("\n");
-        sb.append("        Mid: ").append(program.getPatch5().getDestinationMid() == 0x80 ? "--" : program.getPatch5().getDestinationMid()).append("\n");
-        sb.append("        Max: ").append(signInt(program.getPatch5().getDestinationMax())).append("\n");
+        sb.append(printPatch(program.getPatch1(), 1));
+        sb.append(printPatch(program.getPatch2(), 2));
+        sb.append(printPatch(program.getPatch3(), 3));
+        sb.append(printPatch(program.getPatch4(), 4));
+        sb.append(printPatch(program.getPatch5(), 5));
         sb.append("  Controllers:\n");
         sb.append("    Knob:\n");
         sb.append("      Value: ").append(program.getKnobValue()).append("\n");
@@ -396,6 +388,39 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
+    private static String printPatch(final Patch patch, final int patchNumber) {
+        if (patch.getSource() == 0) {
+            return "";
+        }
+        String patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffect(), patch.getDestinationParameter());
+        StringBuilder sb = new StringBuilder();
+        sb.append("    Patch ").append(patchNumber).append(":\n");
+        sb.append("      Source: ").append(patchSourceToString(patch.getSource())).append("\n");
+        sb.append("        Min: ").append(patch.getSourceMin()).append("\n");
+        sb.append("        Mid: ").append(patch.getSourceMid() == 0xff ? "--" : patch.getSourceMid()).append("\n");
+        sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
+        sb.append("      Destination: ").append(patchDestinationToString(patch.getDestinationEffect(), patch.getDestinationParameter())).append("\n");
+        sb.append("        Min: ");
+        if (":".equals(patchDestinationUnit)) {
+            sb.append(patch.getDestinationMin() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMin() / 0x100).append("\n");
+        } else if ("%".equals(patchDestinationUnit)) {
+            sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
+        } else {
+            sb.append(signInt(patch.getDestinationMin())).append(patchDestinationUnit).append("\n");
+        }
+        sb.append("        Mid: ").append(patch.getDestinationMid() == 0x80 ? "--" : patch.getDestinationMid()).append("\n");
+        sb.append("        Max: ");
+        if (":".equals(patchDestinationUnit)) {
+            sb.append(patch.getDestinationMax() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMax() / 0x100);
+        } else if ("%".equals(patchDestinationUnit)) {
+            sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
+        } else {
+            sb.append(signInt(patch.getDestinationMax())).append(patchDestinationUnit);
+        }
+        sb.append("\n");
+        return sb.toString();
+    }
+
     private static String effect1AlgorithmToString(final int effect1Algorithm) {
         return EFFECT1_ALGORITHM_NAMES[effect1Algorithm];
     }
@@ -442,6 +467,10 @@ public class ProgramPrinter {
 
     private static String effectParameterToString(final int effectType, final int effectParameter) {
         return EFFECT_PARAMETERS[effectType][effectParameter];
+    }
+
+    private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
+        return EFFECT_PARAMETER_UNITS[effectType][effectParameter];
     }
 
     private static String patchSourceToString(final int patchSource) {
