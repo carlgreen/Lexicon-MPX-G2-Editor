@@ -67,7 +67,9 @@ public class ProgramPrinter {
         {
             "Mix", "Level", "Rate"
         },
-        {},
+        {
+            "Mix", "Level", "Pan1", "Pan2"
+        },
         {},
         {
             "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
@@ -129,7 +131,7 @@ public class ProgramPrinter {
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+        "", "", "Midi CC48", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -340,21 +342,31 @@ public class ProgramPrinter {
         sb.append("      Mix: ").append(program.getPostMix()).append("%\n");
         sb.append("      Level: ").append(signInt(program.getPostLevel())).append("dB\n");
         sb.append("      Bypass Level: ").append(program.getPostBypassLevel()).append("dB\n");
-        sb.append("    FX1:\n");
-        sb.append("      Mix: ").append(program.getEffect1().getMix()).append("%\n");
-        sb.append("      Level: ").append(signInt(program.getEffect1().getLevel())).append("dB\n");
-        sb.append("    FX2:\n");
-        sb.append("      Mix: ").append(program.getEffect2().getMix()).append("%\n");
-        sb.append("      Level: ").append(signInt(program.getEffect2().getLevel())).append("dB\n");
-        sb.append("    Chorus:\n");
-        sb.append("      Mix: ").append(program.getChorus().getMix()).append("%\n");
-        sb.append("      Level: ").append(signInt(program.getChorus().getLevel())).append("dB\n");
-        sb.append("    Delay:\n");
-        sb.append("      Mix: ").append(program.getDelay().getMix()).append("%\n");
-        sb.append("      Level: ").append(signInt(program.getDelay().getLevel())).append("dB\n");
-        sb.append("    Reverb:\n");
-        sb.append("      Mix: ").append(program.getReverb().getMix()).append("%\n");
-        sb.append("      Level: ").append(signInt(program.getReverb().getLevel())).append("dB\n");
+        if (program.getEffect1() != null) {
+            sb.append("    FX1:\n");
+            sb.append("      Mix: ").append(program.getEffect1().getMix()).append("%\n");
+            sb.append("      Level: ").append(signInt(program.getEffect1().getLevel())).append("dB\n");
+        }
+        if (program.getEffect2() != null) {
+            sb.append("    FX2:\n");
+            sb.append("      Mix: ").append(program.getEffect2().getMix()).append("%\n");
+            sb.append("      Level: ").append(signInt(program.getEffect2().getLevel())).append("dB\n");
+        }
+        if (program.getChorus() != null) {
+            sb.append("    Chorus:\n");
+            sb.append("      Mix: ").append(program.getChorus().getMix()).append("%\n");
+            sb.append("      Level: ").append(signInt(program.getChorus().getLevel())).append("dB\n");
+        }
+        if (program.getDelay() != null) {
+            sb.append("    Delay:\n");
+            sb.append("      Mix: ").append(program.getDelay().getMix()).append("%\n");
+            sb.append("      Level: ").append(signInt(program.getDelay().getLevel())).append("dB\n");
+        }
+        if (program.getReverb() != null) {
+            sb.append("    Reverb:\n");
+            sb.append("      Mix: ").append(program.getReverb().getMix()).append("%\n");
+            sb.append("      Level: ").append(signInt(program.getReverb().getLevel())).append("dB\n");
+        }
         sb.append("  Tempo:\n");
         sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");
         sb.append("    Source: ").append(tempoSourceToString(program.getTempoSource())).append("\n");
