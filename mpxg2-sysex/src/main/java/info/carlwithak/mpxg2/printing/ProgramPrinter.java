@@ -254,16 +254,9 @@ public class ProgramPrinter {
             sb.append(AlgorithmPrinter.print(program.getGain()));
         }
         sb.append("  Softrow:\n");
-        sb.append("    1: ").append(effectTypeToString(program.getSoftRowEffectType(0))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(0), program.getSoftRowParameter(0))).append("\n");
-        sb.append("    2: ").append(effectTypeToString(program.getSoftRowEffectType(1))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(1), program.getSoftRowParameter(1))).append("\n");
-        sb.append("    3: ").append(effectTypeToString(program.getSoftRowEffectType(2))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(2), program.getSoftRowParameter(2))).append("\n");
-        sb.append("    4: ").append(effectTypeToString(program.getSoftRowEffectType(3))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(3), program.getSoftRowParameter(3))).append("\n");
-        sb.append("    5: ").append(effectTypeToString(program.getSoftRowEffectType(4))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(4), program.getSoftRowParameter(4))).append("\n");
-        sb.append("    6: ").append(effectTypeToString(program.getSoftRowEffectType(5))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(5), program.getSoftRowParameter(5))).append("\n");
-        sb.append("    7: ").append(effectTypeToString(program.getSoftRowEffectType(6))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(6), program.getSoftRowParameter(6))).append("\n");
-        sb.append("    8: ").append(effectTypeToString(program.getSoftRowEffectType(7))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(7), program.getSoftRowParameter(7))).append("\n");
-        sb.append("    9: ").append(effectTypeToString(program.getSoftRowEffectType(8))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(8), program.getSoftRowParameter(8))).append("\n");
-        sb.append("    10: ").append(effectTypeToString(program.getSoftRowEffectType(9))).append(" ").append(effectParameterToString(program.getSoftRowEffectType(9), program.getSoftRowParameter(9))).append("\n");
+        for (int i = 0; i < 10; i++) {
+            sb.append(printSoftRow(program, i));
+        }
         sb.append("  Patching:\n");
         sb.append("    Patch 1:\n");
         sb.append("      Source: ").append(patchSourceToString(program.getPatch1().getSource())).append("\n");
@@ -389,6 +382,18 @@ public class ProgramPrinter {
         sb.append("    RTime: ").append(program.getNoiseGate().getRTime()).append("\n");
         sb.append("    Delay: ").append(program.getNoiseGate().getDelay()).append("\n");
         return sb.toString().trim();
+    }
+
+    private static String printSoftRow(final Program program, final int i) {
+        // TODO should be null if it's not used
+        if (program.getSoftRowEffectType(i) == 255) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("    ").append(i + 1).append(": ");
+        sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
+        sb.append(effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i))).append("\n");
+        return sb.toString();
     }
 
     private static String effect1AlgorithmToString(final int effect1Algorithm) {
