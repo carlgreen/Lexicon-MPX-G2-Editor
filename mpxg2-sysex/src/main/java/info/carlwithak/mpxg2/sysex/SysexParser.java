@@ -662,7 +662,7 @@ public class SysexParser {
         // what is this logic?
         int destinationMin = readInt(in, 4);
         if ((destinationMin & 0xff00) == 0xff00) {
-            destinationMin %= 0xff00;
+            destinationMin = (byte) (destinationMin % 0xff00);
         }
 
         // TODO find out what goes here
