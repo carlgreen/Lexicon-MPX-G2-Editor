@@ -2,7 +2,8 @@ G2 Blue
   Guitar Style: Blues, Clean, Jazz, Rock
   Effect Type: Chorus, Delay, Gain, Reverb, Wah
   Application Type: Amp Input + FX Loop
-  Effect Routing: I=1=2=G=C=D=R=E=O
+  Effect Routing:
+    I=1=2=G=C=D=R=E=O
   Effect 1: UniVybe (on)
     Toe Switch: on=bypass
     Mix: 100%

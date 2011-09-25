@@ -219,7 +219,10 @@ public class ProgramPrinter {
         sb.append(appTypeSB.toString());
         sb.append("\n");
         // TODO indicate inactive effects
-        sb.append("  Effect Routing: ").append(RoutingPrinter.print(program)).append("\n");
+        sb.append("  Effect Routing:\n");
+        for (String line : RoutingPrinter.print(program).split("\n")) {
+            sb.append("    ").append(line).append("\n");
+        }
         if (program.getEffect1Algorithm() > 0) {
             sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
