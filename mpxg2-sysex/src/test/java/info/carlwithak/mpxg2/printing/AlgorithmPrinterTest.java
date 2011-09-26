@@ -25,6 +25,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
@@ -286,6 +287,18 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: on\n    Diff: 60%\n    Pre Delay: 7ms\n    Delay Time: 1.41s\n    Delay Level: off\n    Rt HC: 12.8k\n";
         String actual = AlgorithmPrinter.print(ambience);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintEqPedalVol() throws PrintException {
+        EqPedalVol pedalVol = new EqPedalVol();
+        pedalVol.setMix(100);
+        pedalVol.setLevel(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n";
+        String actual = AlgorithmPrinter.print(pedalVol);
 
         assertEquals(expected, actual);
     }
