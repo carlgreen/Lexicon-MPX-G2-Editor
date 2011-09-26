@@ -69,60 +69,164 @@ public class ProgramPrinter {
         "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "Equalizer", "Gain",
         "", "", "", "", "A/B", "", "", "", "", "Send"
     };
-    private static final String[][] EFFECT_PARAMETERS = {
+    private static final String[][][] EFFECT_PARAMETERS = {
         {
-            "Mix", "Level", "Rate"
+            {},
+            {},
+            {},
+            {
+                "Mix", "Level", "Tune1", "Tune2", "P Dly"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+                "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
+            },
+            {},
+            {},
+            {
+                "Mix", "Level", "Rate"
+            }
         },
         {
-            "Mix", "Level", "Pan1", "Pan2"
+            {},
+            {
+                "Mix", "Level", "Pan1", "Pan2"
+            },
+            {
+                "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
+            }
         },
         {
-            "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
+            {},
+            {
+                "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
+            }
         },
         {
-            "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+                "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
+            }
         },
         {
-            "Mix", "Level", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
+            {},
+            {
+                "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
+            },
+            {},
+            {
+                "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
+            },
+            {
+                "Mix", "Level", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
+            }
         },
         {},
         {
-            "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+            {},
+            {
+                "Lo", "Mid", "Hi", "InLvl", "Level"
+            },
+            {},
+            {
+                "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+            }
         },
         {},
         {},
         {},
         {},
         {
-            "", "A Rate", "B Rate"
+            {
+                "", "ARate", "BRate"
+            }
         },
         {},
         {},
         {},
         {},
         {
-            "Level"
+            {
+                "Level"
+            }
         }
     };
-    private static final String[][] EFFECT_PARAMETER_UNITS = {
+    private static final String[][][] EFFECT_PARAMETER_UNITS = {
         {
-            "%", "dB", "Rate"
+            {},
+            {},
+            {},
+            {
+                "%", "dB", "Rate"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+                "%", "dB", "Hz", "%", "%", "Phase"
+            },
+            {},
+            {},
+            {
+                "Mix", "Level", "Rate"
+            }
         },
         {
-            "%", "dB", "Pan1", "Pan2"
+            {},
+            {
+                "%", "dB", "Pan1", "Pan2"
+            },
+            {
+                "%", "dB", "Hz", "%", "%", "Phase"
+            }
         },
         {
-            "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
+            {},
+            {
+                "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
+            }
         },
         {
-            "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "%", "%", "%", "%", "Clear"
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+                "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "%", "%", "%", "%", "Clear"
+            }
         },
         {
-            "%", "dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
+            {},
+            {
+                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
+            },
+            {},
+            {
+                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
+            },
+            {
+                "%", "dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
+            }
         },
         {},
         {
-            "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+            {},
+            {
+                "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+            }
         },
         {},
         {},
@@ -134,7 +238,9 @@ public class ProgramPrinter {
         {},
         {},
         {
-            ""
+            {
+                ""
+            }
         }
     };
 
@@ -309,11 +415,11 @@ public class ProgramPrinter {
             sb.append(printSoftRow(program, i));
         }
         sb.append("  Patching:\n");
-        sb.append(printPatch(program.getPatch1(), 1));
-        sb.append(printPatch(program.getPatch2(), 2));
-        sb.append(printPatch(program.getPatch3(), 3));
-        sb.append(printPatch(program.getPatch4(), 4));
-        sb.append(printPatch(program.getPatch5(), 5));
+        sb.append(printPatch(program, program.getPatch1(), 1));
+        sb.append(printPatch(program, program.getPatch2(), 2));
+        sb.append(printPatch(program, program.getPatch3(), 3));
+        sb.append(printPatch(program, program.getPatch4(), 4));
+        sb.append(printPatch(program, program.getPatch5(), 5));
         sb.append("  Controllers:\n");
         sb.append("    Knob:\n");
         sb.append("      Value: ").append(program.getKnobValue()).append("\n");
@@ -413,41 +519,82 @@ public class ProgramPrinter {
         StringBuilder sb = new StringBuilder();
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
-        sb.append(effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i))).append("\n");
+        int algorithm = getAlgorithmForEffectType(program, program.getSoftRowEffectType(i));
+        sb.append(effectParameterToString(program.getSoftRowEffectType(i), algorithm, program.getSoftRowParameter(i))).append("\n");
         return sb.toString();
     }
 
-    private static String printPatch(final Patch patch, final int patchNumber) {
+    private static String printPatch(final Program program, final Patch patch, final int patchNumber) {
         if (patch.getSource() == 0) {
             return "";
         }
-        String patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffect(), patch.getDestinationParameter());
+        int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffect());
+        String patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter());
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
         sb.append("      Source: ").append(patchSourceToString(patch.getSource())).append("\n");
         sb.append("        Min: ").append(patch.getSourceMin()).append("\n");
         sb.append("        Mid: ").append(patch.getSourceMid() == 0xff ? "--" : patch.getSourceMid()).append("\n");
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
-        sb.append("      Destination: ").append(patchDestinationToString(patch.getDestinationEffect(), patch.getDestinationParameter())).append("\n");
+        sb.append("      Destination: ").append(patchDestinationToString(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter())).append("\n");
         sb.append("        Min: ");
         if (":".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMin() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMin() / 0x100).append("\n");
         } else if ("%".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
+        } else if ("Hz".equals(patchDestinationUnit)) {
+            sb.append(DECIMAL_2DP.format(patch.getDestinationMin() / 100.0)).append(patchDestinationUnit).append("\n");
         } else {
             sb.append(signInt(patch.getDestinationMin())).append(patchDestinationUnit).append("\n");
         }
-        sb.append("        Mid: ").append(patch.getDestinationMid() == 0x80 ? "--" : patch.getDestinationMid()).append("\n");
+        sb.append("        Mid: ");
+        if ("Hz".equals(patchDestinationUnit)) {
+            sb.append(patch.getDestinationMid() == 0x8000 ? "--" : DECIMAL_2DP.format(patch.getDestinationMid() / 100.0)).append(patchDestinationUnit).append("\n");
+        } else {
+            sb.append(patch.getDestinationMid() == 0x8000 ? "--" : patch.getDestinationMid()).append("\n");
+        }
         sb.append("        Max: ");
         if (":".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMax() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMax() / 0x100);
         } else if ("%".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
+        } else if ("Hz".equals(patchDestinationUnit)) {
+            sb.append(DECIMAL_2DP.format(patch.getDestinationMax() / 100.0)).append(patchDestinationUnit);
         } else {
             sb.append(signInt(patch.getDestinationMax())).append(patchDestinationUnit);
         }
         sb.append("\n");
         return sb.toString();
+    }
+
+    private static int getAlgorithmForEffectType(final Program program, final int effectType) {
+        int algorithm;
+        switch (effectType) {
+            case 0:
+                algorithm = program.getEffect1Algorithm();
+                break;
+            case 1:
+                algorithm = program.getEffect2Algorithm();
+                break;
+            case 2:
+                algorithm = program.getChorusAlgorithm();
+                break;
+            case 3:
+                algorithm = program.getDelayAlgorithm();
+                break;
+            case 4:
+                algorithm = program.getReverbAlgorithm();
+                break;
+            case 5:
+                algorithm = program.getEqAlgorithm();
+                break;
+            case 6:
+                algorithm = program.getGainAlgorithm();
+                break;
+            default:
+                algorithm = 0;
+        }
+        return algorithm;
     }
 
     private static String effect1AlgorithmToString(final int effect1Algorithm) {
@@ -498,20 +645,20 @@ public class ProgramPrinter {
         return EFFECT_TYPES[effectType];
     }
 
-    private static String effectParameterToString(final int effectType, final int effectParameter) {
-        return EFFECT_PARAMETERS[effectType][effectParameter];
+    private static String effectParameterToString(final int effectType, final int algorithm, final int effectParameter) {
+        return EFFECT_PARAMETERS[effectType][algorithm][effectParameter];
     }
 
-    private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
-        return EFFECT_PARAMETER_UNITS[effectType][effectParameter];
+    private static String getEffectParameterUnits(final int effectType, final int algorithm, final int effectParameter) {
+        return EFFECT_PARAMETER_UNITS[effectType][algorithm][effectParameter];
     }
 
     private static String patchSourceToString(final int patchSource) {
         return PATCH_SOURCES[patchSource];
     }
 
-    private static String patchDestinationToString(final int patchDestinationEffect, final int patchDestinationParameter) {
-        return EFFECT_TYPES[patchDestinationEffect] + " " + EFFECT_PARAMETERS[patchDestinationEffect][patchDestinationParameter];
+    private static String patchDestinationToString(final int patchDestinationEffect, final int algorithm, final int patchDestinationParameter) {
+        return EFFECT_TYPES[patchDestinationEffect] + " " + EFFECT_PARAMETERS[patchDestinationEffect][algorithm][patchDestinationParameter];
     }
 
     private static String lfoOnSourceToString(final int lfoOnSource) {

@@ -665,10 +665,7 @@ public class SysexParser {
             destinationMin = (byte) (destinationMin % 0xff00);
         }
 
-        // TODO find out what goes here
-        readInt(in, 2);
-
-        int destinationMid = readInt(in, 2);
+        int destinationMid = readInt(in, 4);
         int destinationMax = readInt(in, 4);
 
         Patch patch = new Patch();
