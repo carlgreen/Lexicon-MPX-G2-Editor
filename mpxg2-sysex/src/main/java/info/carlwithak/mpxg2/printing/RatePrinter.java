@@ -31,7 +31,7 @@ public class RatePrinter {
 
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
-    static String print(Rate rate) throws PrintException {
+    public static String print(Rate rate) throws PrintException {
         String result;
         if (rate instanceof FrequencyRate) {
             FrequencyRate frequencyRate = (FrequencyRate) rate;

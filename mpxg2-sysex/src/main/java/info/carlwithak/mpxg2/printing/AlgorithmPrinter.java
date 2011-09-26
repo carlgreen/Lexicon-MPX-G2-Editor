@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
@@ -30,6 +31,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AmbiencePrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.AutoPanPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.EchoDualPrinter;
@@ -55,7 +57,7 @@ public class AlgorithmPrinter {
      * Printers for specific algorithms should implement this.
      */
     public interface Printer {
-        String print(Object algorithm);
+        String print(Object algorithm) throws PrintException;
     }
 
     /**
@@ -63,6 +65,7 @@ public class AlgorithmPrinter {
      */
     private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>() {{
        put(Panner.class, new PannerPrinter());
+       put(AutoPan.class, new AutoPanPrinter());
        put(UniVybe.class, new UniVybePrinter());
        put(Wah1.class, new Wah1Printer());
        put(PedalWah1.class, new PedalWah1Printer());

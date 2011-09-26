@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
@@ -56,6 +58,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: -24dB\n    Pan1: 50L\n    Pan2: 50R\n";
         String actual = AlgorithmPrinter.print(panner);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintAutoPan() throws PrintException {
+        AutoPan autoPan = new AutoPan();
+        autoPan.setMix(100);
+        autoPan.setLevel(0);
+        autoPan.setRate(new FrequencyRate(1.0));
+        autoPan.setPulseWidth(50);
+        autoPan.setDepth(100);
+        autoPan.setPhase(3);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 1.00Hz\n    PW: 50%\n    Depth: 100%\n    Phase: 270°\n";
+        String actual = AlgorithmPrinter.print(autoPan);
 
         assertEquals(expected, actual);
     }
