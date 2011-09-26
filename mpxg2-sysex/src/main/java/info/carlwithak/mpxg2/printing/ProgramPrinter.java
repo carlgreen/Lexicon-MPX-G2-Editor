@@ -70,7 +70,9 @@ public class ProgramPrinter {
         {
             "Mix", "Level", "Pan1", "Pan2"
         },
-        {},
+        {
+            "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
+        },
         {
             "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
         },
@@ -103,7 +105,9 @@ public class ProgramPrinter {
         {
             "%", "dB", "Pan1", "Pan2"
         },
-        {},
+        {
+            "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
+        },
         {
             "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "%", "%", "%", "%", "Clear"
         },
