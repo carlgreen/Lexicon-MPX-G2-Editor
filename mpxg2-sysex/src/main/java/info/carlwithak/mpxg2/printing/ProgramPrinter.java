@@ -61,7 +61,7 @@ public class ProgramPrinter {
 
     private static final String[] EFFECT_TYPES = {
         "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "Equalizer", "Gain",
-        "", "", "", "", "", "", "", "", "", "Send"
+        "", "", "", "", "A/B", "", "", "", "", "Send"
     };
     private static final String[][] EFFECT_PARAMETERS = {
         {
@@ -85,7 +85,9 @@ public class ProgramPrinter {
         {},
         {},
         {},
-        {},
+        {
+            "", "A Rate", "B Rate"
+        },
         {},
         {},
         {},
