@@ -490,6 +490,11 @@ public class ProgramPrinter {
             sb.append("      Mix: ").append(program.getReverb().getMix()).append("%\n");
             sb.append("      Level: ").append(signInt(program.getReverb().getLevel())).append("dB\n");
         }
+        if (program.getEq() != null) {
+            sb.append("    Eq:\n");
+            sb.append("      Mix: ").append(program.getEq().getMix()).append("%\n");
+            sb.append("      Level: ").append(signInt(program.getEq().getLevel())).append("dB\n");
+        }
         sb.append("  Tempo:\n");
         sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");
         sb.append("    Source: ").append(tempoSourceToString(program.getTempoSource())).append("\n");
