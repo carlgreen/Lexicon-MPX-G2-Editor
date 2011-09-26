@@ -29,6 +29,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
@@ -44,6 +45,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.PedalVolPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalWah1Printer;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PlatePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ScreamerPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.TonePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.UniVybePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.VolumeMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.Wah1Printer;
@@ -82,6 +84,7 @@ public class AlgorithmPrinter {
        put(Chamber.class, new ChamberPrinter());
        put(Plate.class, new PlatePrinter());
        put(Ambience.class, new AmbiencePrinter());
+       put(Tone.class, new TonePrinter());
        put(Screamer.class, new ScreamerPrinter());
     }};
 

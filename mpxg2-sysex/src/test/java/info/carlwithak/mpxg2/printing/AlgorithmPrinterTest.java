@@ -17,22 +17,23 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.FrequencyRate;
-import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
-import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
-import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
-import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
-import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
-import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
-import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
-import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -285,6 +286,21 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: on\n    Diff: 60%\n    Pre Delay: 7ms\n    Delay Time: 1.41s\n    Delay Level: off\n    Rt HC: 12.8k\n";
         String actual = AlgorithmPrinter.print(ambience);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTone() throws PrintException {
+        Tone tone = new Tone();
+        tone.setLo(25);
+        tone.setMid(10);
+        tone.setHi(20);
+        tone.setInLevel(0);
+        tone.setLevel(55);
+
+        String expected = "    Lo: +25\n    Mid: +10\n    Hi: +20\n    InLvl: 0\n    Level: 55\n";
+        String actual = AlgorithmPrinter.print(tone);
 
         assertEquals(expected, actual);
     }
