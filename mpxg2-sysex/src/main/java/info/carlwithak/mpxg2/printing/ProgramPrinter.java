@@ -55,6 +55,12 @@ public class ProgramPrinter {
     private static final String[] REVERB_ALGORITHM_NAMES = {
         "no effect", "Chamber", "Hall", "Plate", "Ambience", "Gate"
     };
+    private static final String[] EQ_ALGORITHM_NAMES = {
+        "no effect", "1-Band (M)", "2-Band (M)", "3-Band (M)", "4-Band (M)",
+        "1-Band (S)", "2-Band (S)", "1-Band (D)", "2-Band (D)", "Fc Splitter",
+        "Crossover", "Volume (M)", "Volume (S)", "Volume (D)", "Pedal Vol",
+        "ExtPedalVol"
+    };
     private static final String[] GAIN_ALGORITHM_NAMES = {
         "no effect", "Tone", "Crunch", "Screamer", "Overdrive", "Distortion", "Preamp", "SplitPreamp"
     };
@@ -288,6 +294,11 @@ public class ProgramPrinter {
             sb.append("    Toe Switch: ").append(toePatchToString(program.getReverbToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getReverb()));
         }
+        if (program.getEqAlgorithm() > 0) {
+            sb.append("  EQ: ").append(eqAlgorithmToString(program.getEqAlgorithm())).append(" (").append(program.isEqOn() ? "on" : "off").append(")").append("\n");
+            sb.append("    Toe Switch: ").append(toePatchToString(program.getEqToePatch())).append("\n");
+            sb.append(AlgorithmPrinter.print(program.getEq()));
+        }
         if (program.getGainAlgorithm() > 0) {
             sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(program.isGainOn() ? "on" : "off").append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
@@ -457,6 +468,10 @@ public class ProgramPrinter {
 
     private static String reverbAlgorithmToString(final int reverbAlgorithm) {
         return REVERB_ALGORITHM_NAMES[reverbAlgorithm];
+    }
+
+    private static String eqAlgorithmToString(final int eqAlgorithm) {
+        return EQ_ALGORITHM_NAMES[eqAlgorithm];
     }
 
     private static String gainAlgorithmToString(final int gainAlgorithm) {
