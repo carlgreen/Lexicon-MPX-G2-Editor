@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
@@ -145,6 +146,26 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n";
         String actual = AlgorithmPrinter.print(pedalVol);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintChorus() throws PrintException {
+        ChorusAlgorithm chorus = new ChorusAlgorithm();
+        chorus.setMix(100);
+        chorus.setLevel(0);
+        chorus.setRate1(new FrequencyRate(0.62));
+        chorus.setPulseWidth1(45);
+        chorus.setDepth1(30);
+        chorus.setRate2(new FrequencyRate(0.56));
+        chorus.setPulseWidth2(54);
+        chorus.setDepth2(0);
+        chorus.setResonance1(-19);
+        chorus.setResonance2(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.62Hz\n    PW1: 45%\n    Depth1: 30%\n    Rate2: 0.56Hz\n    PW2: 54%\n    Depth2: 0%\n    Res1: -19\n    Res2: 0\n";
+        String actual = AlgorithmPrinter.print(chorus);
 
         assertEquals(expected, actual);
     }

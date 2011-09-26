@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
@@ -32,6 +33,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AmbiencePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AutoPanPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.EchoDualPrinter;
@@ -71,6 +73,7 @@ public class AlgorithmPrinter {
        put(PedalWah1.class, new PedalWah1Printer());
        put(VolumeMono.class, new VolumeMonoPrinter());
        put(PedalVol.class, new PedalVolPrinter());
+       put(ChorusAlgorithm.class, new ChorusPrinter());
        put(DetuneMono.class, new DetuneMonoPrinter());
        put(DetuneDual.class, new DetuneDualPrinter());
        put(EchoDual.class, new EchoDualPrinter());
