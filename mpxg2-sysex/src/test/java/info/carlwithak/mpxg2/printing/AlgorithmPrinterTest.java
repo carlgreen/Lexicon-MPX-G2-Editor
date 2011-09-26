@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
@@ -221,6 +222,28 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Level1: 0dB\n    Level2: 0dB\n    Feedback1: +1%\n    Insert: Delay\n    Feedback2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: off\n";
         String actual = AlgorithmPrinter.print(echoDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintChamber() throws PrintException {
+        Chamber chamber = new Chamber();
+        chamber.setMix(28);
+        chamber.setLevel(0);
+        chamber.setSize(24.0);
+        chamber.setLink(1);
+        chamber.setDiff(22);
+        chamber.setPreDelay(0);
+        chamber.setBass(6);
+        chamber.setDecay(47);
+        chamber.setXovr(16);
+        chamber.setRtHC(34);
+        chamber.setShape(62);
+        chamber.setSpred(120);
+
+        String expected = "    Mix: 28%\n    Level: 0dB\n    Size: 24.0m\n    Link: on\n    Diff: 22%\n    Pre Delay: 0ms\n    Bass: 1.5X\n    Decay: 1.05s\n    Xovr: 986\n    Rt HC: 9.3k\n    Shape: 62\n    Spred: 120\n";
+        String actual = AlgorithmPrinter.print(chamber);
 
         assertEquals(expected, actual);
     }

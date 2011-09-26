@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
@@ -33,6 +34,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AmbiencePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AutoPanPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.ChamberPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneMonoPrinter;
@@ -77,6 +79,7 @@ public class AlgorithmPrinter {
        put(DetuneMono.class, new DetuneMonoPrinter());
        put(DetuneDual.class, new DetuneDualPrinter());
        put(EchoDual.class, new EchoDualPrinter());
+       put(Chamber.class, new ChamberPrinter());
        put(Plate.class, new PlatePrinter());
        put(Ambience.class, new AmbiencePrinter());
        put(Screamer.class, new ScreamerPrinter());
