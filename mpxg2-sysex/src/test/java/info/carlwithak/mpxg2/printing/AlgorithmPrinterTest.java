@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
@@ -217,6 +218,32 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +3dB\n    Tune1: 7\n    Optimize: 10ms\n    Tune2: 5\n    P Dly: 22ms\n";
         String actual = AlgorithmPrinter.print(detuneDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDelayDual() throws PrintException {
+        DelayDual delayDual = new DelayDual();
+        delayDual.setMix(25);
+        delayDual.setLevel(0);
+        delayDual.setTime1Echoes(3);
+        delayDual.setTime1Beat(4);
+        delayDual.setTime2Echoes(4);
+        delayDual.setTime2Beat(3);
+        delayDual.setLevel1(0);
+        delayDual.setLevel2(0);
+        delayDual.setPan1(-50);
+        delayDual.setPan2(50);
+        delayDual.setFeedback1(10);
+        delayDual.setInsert(3);
+        delayDual.setFeedback2(10);
+        delayDual.setXFbk1(0);
+        delayDual.setXFbk2(0);
+        delayDual.setClear(false);
+
+        String expected = "    Mix: 25%\n    Level: 0dB\n    Time1: 3:4\n    Time2: 4:3\n    Level1: 0dB\n    Level2: 0dB\n    Pan1: 50L\n    Pan2: 50R\n    Feedback1: +10%\n    Insert: Delay\n    Feedback2: +10%\n    XFbk1: 0%\n    XFbk2: 0%\n    Clear: Off\n";
+        String actual = AlgorithmPrinter.print(delayDual);
 
         assertEquals(expected, actual);
     }
