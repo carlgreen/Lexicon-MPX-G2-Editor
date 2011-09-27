@@ -127,4 +127,17 @@ public class Util {
     public static String signInt(final int i) {
         return i > 0 ? "+" + Integer.toString(i) : Integer.toString(i);
     }
+
+    /**
+     * @return number with trailing 'L' or 'R'.
+     */
+    public static String panToString(final int pan) {
+        String suffix = "";
+        if (pan < 0) {
+            suffix = "L";
+        } else if (pan > 0) {
+            suffix = "R";
+        }
+        return Integer.toString(Math.abs(pan)) + suffix;
+    }
 }

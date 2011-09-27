@@ -20,6 +20,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
+import static info.carlwithak.mpxg2.printing.Util.panToString;
+
 /**
  *
  * @author Carl Green
@@ -35,15 +37,5 @@ public class PannerPrinter implements Printer {
         sb.append("    Pan1: ").append(panToString(panner.getPan1())).append("\n");
         sb.append("    Pan2: ").append(panToString(panner.getPan2())).append("\n");
         return sb.toString();
-    }
-
-    private static String panToString(final int pan) {
-        String suffix = "";
-        if (pan < 0) {
-            suffix = "L";
-        } else if (pan > 0) {
-            suffix = "R";
-        }
-        return Integer.toString(Math.abs(pan)) + suffix;
     }
 }
