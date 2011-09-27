@@ -31,6 +31,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
@@ -50,6 +51,22 @@ public class AlgorithmPrinterTest {
     public void testPrintInvalidAlgorithm() throws PrintException {
         String notAnAlgorithm = "Not an algorithm";
         AlgorithmPrinter.print(notAnAlgorithm);
+    }
+
+    @Test
+    public void testPrintShiftDual() throws PrintException {
+        ShiftDual shiftDual = new ShiftDual();
+        shiftDual.setMix(100);
+        shiftDual.setLevel(6);
+        shiftDual.setTune1(-1200);
+        shiftDual.setOptimize(10);
+        shiftDual.setTune2(-500);
+        shiftDual.setGlide(true);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Tune1: -1200\n    Optimize: 10\n    Tune2: -500\n    Glide: On\n";
+        String actual = AlgorithmPrinter.print(shiftDual);
+
+        assertEquals(expected, actual);
     }
 
     @Test

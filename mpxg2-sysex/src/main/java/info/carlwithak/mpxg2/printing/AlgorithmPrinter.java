@@ -30,6 +30,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
@@ -47,6 +48,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.PedalVolPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalWah1Printer;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PlatePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ScreamerPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.ShiftDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.TonePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.UniVybePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.VolumeMonoPrinter;
@@ -72,6 +74,7 @@ public class AlgorithmPrinter {
      * Mapping between algorithms and their printers. Is there a better way?
      */
     private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>() {{
+       put(ShiftDual.class, new ShiftDualPrinter());
        put(Panner.class, new PannerPrinter());
        put(AutoPan.class, new AutoPanPrinter());
        put(UniVybe.class, new UniVybePrinter());
