@@ -67,7 +67,7 @@ public class PlatePrinter implements Printer {
         sb.append("    Diff: ").append(plate.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(plate.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(plate.getBass())).append("X\n");
-        sb.append("    Decay: ").append(reverbDecayToString(plate.getDecay())).append("s\n");
+        sb.append("    Decay: ").append(reverbDecayToString(plate.getLink(), plate.getSize(), plate.getDecay())).append("s\n");
         sb.append("    Xovr: ").append(reverbXovrToString(plate.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(plate.getRtHC())).append("\n");
         sb.append("    Shape: ").append(plate.getShape()).append("\n");

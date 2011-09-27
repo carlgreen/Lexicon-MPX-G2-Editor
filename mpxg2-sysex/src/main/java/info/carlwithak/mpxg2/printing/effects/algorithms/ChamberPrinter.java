@@ -43,7 +43,7 @@ public class ChamberPrinter implements Printer {
         sb.append("    Diff: ").append(chamber.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(chamber.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(chamber.getBass())).append("X\n");
-        sb.append("    Decay: ").append(reverbDecayToString(chamber.getDecay())).append("s\n");
+        sb.append("    Decay: ").append(reverbDecayToString(chamber.getLink(), chamber.getSize(), chamber.getDecay())).append("s\n");
         sb.append("    Xovr: ").append(reverbXovrToString(chamber.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(chamber.getRtHC())).append("\n");
         sb.append("    Shape: ").append(chamber.getShape()).append("\n");
