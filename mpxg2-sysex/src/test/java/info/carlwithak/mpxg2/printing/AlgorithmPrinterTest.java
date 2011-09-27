@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
@@ -374,6 +375,25 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Lo: +2\n    Mid: +1\n    Hi: +3\n    Drive: 22\n    Tone: 25\n    Level: 57\n";
         String actual = AlgorithmPrinter.print(screamer);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintOverdrive() throws PrintException {
+        Overdrive overdrive = new Overdrive();
+        overdrive.setLo(4);
+        overdrive.setMid(8);
+        overdrive.setHi(0);
+        overdrive.setInLevel(-8);
+        overdrive.setLoCut(0);
+        overdrive.setFeel(32);
+        overdrive.setDrive(40);
+        overdrive.setTone(21);
+        overdrive.setLevel(44);
+
+        String expected = "    Lo: +4\n    Mid: +8\n    Hi: 0\n    InLvl: -8\n    LoCut: 0\n    Feel: 32\n    Drive: 40\n    Tone: 21\n    Level: 44\n";
+        String actual = AlgorithmPrinter.print(overdrive);
 
         assertEquals(expected, actual);
     }

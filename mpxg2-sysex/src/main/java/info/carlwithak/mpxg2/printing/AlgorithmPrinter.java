@@ -26,6 +26,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
@@ -45,6 +46,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.EchoDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.EqPedalVolPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.OverdrivePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PannerPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalVolPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalWah1Printer;
@@ -95,6 +97,7 @@ public class AlgorithmPrinter {
        put(EqPedalVol.class, new EqPedalVolPrinter());
        put(Tone.class, new TonePrinter());
        put(Screamer.class, new ScreamerPrinter());
+       put(Overdrive.class, new OverdrivePrinter());
     }};
 
     static String print(Object algorithm) throws PrintException {
