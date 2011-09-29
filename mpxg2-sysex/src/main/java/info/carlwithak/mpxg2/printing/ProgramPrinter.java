@@ -79,7 +79,9 @@ public class ProgramPrinter {
             },
             {},
             {},
-            {},
+            {
+                "Mix", "Level", "Tune1", "Tune2", "Glide"
+            },
             {},
             {},
             {
@@ -139,6 +141,9 @@ public class ProgramPrinter {
             {},
             {
                 "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+            },
+            {
+                "Lo", "Mid", "Hi", "InLvl", "LoCut", "Feel", "Drive", "Tone", "Level"
             }
         },
         {},
@@ -170,7 +175,8 @@ public class ProgramPrinter {
             },
             {},
             {},
-            {},
+            {
+                "%", "dB", "", "", "Glide"},
             {},
             {},
             {
@@ -225,7 +231,14 @@ public class ProgramPrinter {
         {
             {},
             {
+                "Lo", "Mid", "Hi", "InLvl", "Level"
+            },
+            {},
+            {
                 "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
+            },
+            {
+                "Lo", "Mid", "Hi", "InLvl", "LoCut", "Feel", "Drive", "Tone", "Level"
             }
         },
         {},
@@ -359,16 +372,18 @@ public class ProgramPrinter {
         sb.append("\n");
         StringBuilder appTypeSB = new StringBuilder();
         if (program.isPrePost()) {
-            appTypeSB.append("Amp Input + FX Loop");
+            appTypeSB.append("Amp Input + FX Loop, ");
         }
         if (program.isStandAlone()) {
-            appTypeSB.append("Stand alone");
+            appTypeSB.append("Stand alone, ");
         }
         if (program.isInline()) {
-            appTypeSB.append("Amp Input Only");
+            appTypeSB.append("Amp Input Only, ");
         }
         sb.append("  Application Type: ");
-        sb.append(appTypeSB.toString());
+        if (appTypeSB.length() > 0) {
+            sb.append(appTypeSB.substring(0, appTypeSB.length() - 2));
+        }
         sb.append("\n");
         // TODO indicate inactive effects
         sb.append("  Effect Routing:\n");
@@ -518,7 +533,7 @@ public class ProgramPrinter {
 
     private static String printSoftRow(final Program program, final int i) {
         // TODO should be null if it's not used
-        if (program.getSoftRowEffectType(i) == 255) {
+        if (program.getSoftRowEffectType(i) == 255 || program.getSoftRowParameter(i) == 255) {
             return "";
         }
         StringBuilder sb = new StringBuilder();
