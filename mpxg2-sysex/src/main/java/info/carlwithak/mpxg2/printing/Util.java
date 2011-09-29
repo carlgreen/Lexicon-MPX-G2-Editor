@@ -180,7 +180,8 @@ public class Util {
      * @return postive numbers prefixed with '+' and negative numbers prefixed with '-'.
      */
     public static String signInt(final int i) {
-        return i > 0 ? "+" + Integer.toString(i) : Integer.toString(i);
+        int shifted = i > 32768 ? i - 65536 : i;
+        return shifted > 0 ? "+" + Integer.toString(shifted) : Integer.toString(shifted);
     }
 
     /**

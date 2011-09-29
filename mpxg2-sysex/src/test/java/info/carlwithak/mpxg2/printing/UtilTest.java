@@ -107,4 +107,16 @@ public class UtilTest {
         actual = Util.reverbDecayToString(link, size, reverbDecay);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testSignInt() {
+        // standard stuff
+        assertEquals("+1", Util.signInt(1));
+        assertEquals("0", Util.signInt(0));
+        assertEquals("-1", Util.signInt(-1));
+
+        // wrapping
+        assertEquals("-500", Util.signInt(65036));
+        assertEquals("-8", Util.signInt(65528));
+    }
 }
