@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.printing.RatePrinter;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
+import static info.carlwithak.mpxg2.printing.Util.phaseToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -29,8 +30,6 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
  * @author Carl Green
  */
 public class FlangerStereoPrinter implements Printer {
-
-    private static final String[] PHASES = {"0", "90", "180", "270"};
 
     @Override
     public String print(Object algorithm) throws PrintException {
@@ -41,14 +40,10 @@ public class FlangerStereoPrinter implements Printer {
         sb.append("    Rate: ").append(RatePrinter.print(flangerStereo.getRate())).append("\n");
         sb.append("    PW: ").append(flangerStereo.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(flangerStereo.getDepth()).append("%\n");
-        sb.append("    Phase: ").append(phaseToString(flangerStereo.getPhase())).append("°\n");
+        sb.append("    Phase: ").append(phaseToString(flangerStereo.getPhase())).append("\n");
         sb.append("    Res: ").append(signInt(flangerStereo.getResonance())).append("%\n");
         sb.append("    Blend: ").append(flangerStereo.getBlend()).append("\n");
         return sb.toString();
-    }
-
-    private static String phaseToString(final int phase) {
-        return PHASES[phase];
     }
 
 }

@@ -118,6 +118,8 @@ public class Util {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.8
     };
 
+    private static final String[] PHASES = {"0", "90", "180", "270"};
+
     /**
      * @return String representation of insert position.
      */
@@ -195,5 +197,12 @@ public class Util {
             suffix = "R";
         }
         return Integer.toString(Math.abs(pan)) + suffix;
+    }
+
+    /**
+     * @return return phase postion indicated by phase
+     */
+    public static String phaseToString(final int phase) {
+        return PHASES[phase] + '°';
     }
 }

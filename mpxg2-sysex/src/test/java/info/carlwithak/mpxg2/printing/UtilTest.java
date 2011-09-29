@@ -119,4 +119,12 @@ public class UtilTest {
         assertEquals("-500", Util.signInt(65036));
         assertEquals("-8", Util.signInt(65528));
     }
+
+    @Test
+    public void testPhaseToString() {
+        assertEquals("0°", Util.phaseToString(0));
+        assertEquals("90°", Util.phaseToString(1));
+        assertEquals("180°", Util.phaseToString(2));
+        assertEquals("270°", Util.phaseToString(3));
+    }
 }

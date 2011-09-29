@@ -22,13 +22,13 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.PrintException;
 import info.carlwithak.mpxg2.printing.RatePrinter;
 
+import static info.carlwithak.mpxg2.printing.Util.phaseToString;
+
 /**
  *
  * @author Carl Green
  */
 public class AutoPanPrinter implements Printer {
-
-    private static final String[] PHASES = {"0", "90", "180", "270"};
 
     @Override
     public String print(Object algorithm) throws PrintException {
@@ -39,11 +39,7 @@ public class AutoPanPrinter implements Printer {
         sb.append("    Rate: ").append(RatePrinter.print(autoPan.getRate())).append("\n");
         sb.append("    PW: ").append(autoPan.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(autoPan.getDepth()).append("%\n");
-        sb.append("    Phase: ").append(phaseToString(autoPan.getPhase())).append("°\n");
+        sb.append("    Phase: ").append(phaseToString(autoPan.getPhase())).append("\n");
         return sb.toString();
-    }
-
-    private static String phaseToString(final int phase) {
-        return PHASES[phase];
     }
 }
