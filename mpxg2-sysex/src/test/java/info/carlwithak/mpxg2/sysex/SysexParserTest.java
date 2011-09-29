@@ -952,9 +952,9 @@ public class SysexParserTest {
         assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
         assertEquals(50, reverb.getDecay()); // 1.30s is number 50 in list
         assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
-        assertEquals(45, reverb.getRtHC()); // 19.4k is number 45 in list
+        assertEquals(45, reverb.getRtHC()); // 19.4k is number 45 in list for this size
         assertEquals(36, reverb.getShape());
-        assertEquals(222, reverb.getSpred()); // screen reads 73, which is ~ 222 / 3
+        assertEquals(222, reverb.getSpred()); // 73 is number 222 in list for this size
 
         assertTrue(program.getGain() instanceof Screamer);
         Screamer gain = (Screamer) program.getGain();
@@ -1086,11 +1086,11 @@ public class SysexParserTest {
         assertEquals(22, reverb.getDiff());
         assertEquals(0, reverb.getPreDelay());
         assertEquals(6, reverb.getBass()); // 1.5X is number 6 in list
-        assertEquals(47, reverb.getDecay()); // 1.05s is number 47 in list
+        assertEquals(47, reverb.getDecay()); // 1.05s is number 47 in list for this size
         assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
         assertEquals(34, reverb.getRtHC()); // 9.3k is number 34 in list
         assertEquals(62, reverb.getShape());
-        assertEquals(120, reverb.getSpred()); // screen reads 42, which is ~ 120 / 3
+        assertEquals(120, reverb.getSpred()); // 42 is number 120 in list for this size
 
         assertTrue(program.getEq() instanceof EqPedalVol);
         EqPedalVol eq = (EqPedalVol) program.getEq();
@@ -1210,7 +1210,7 @@ public class SysexParserTest {
         assertEquals(15, reverb.getXovr()); // 818 is number 15 in list
         assertEquals(36, reverb.getRtHC()); // 10.4k is number 36 in list
         assertEquals(62, reverb.getShape());
-        assertEquals(120, reverb.getSpred()); // screen reads 48, which is ~ 120 / 3
+        assertEquals(120, reverb.getSpred()); // 48 is number 120 in list for this size
 
         assertTrue(program.getGain() instanceof Overdrive);
         Overdrive gain = (Overdrive) program.getGain();
@@ -1279,11 +1279,11 @@ public class SysexParserTest {
         assertEquals(90, reverb.getDiff());
         assertEquals(10, reverb.getPreDelay());
         assertEquals(0, reverb.getBass()); // 0.2X is number 0 in list
-        assertEquals(0, reverb.getDecay()); // 0.09s is number 0 in list
+        assertEquals(0, reverb.getDecay()); // 0.09s is number 0 in list for this size
         assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
         assertEquals(33, reverb.getRtHC()); // 8.8k is number 33 in list
         assertEquals(58, reverb.getShape());
-        // TODO this makes no sense assertEquals(254, reverb.getSpred()); // screen reads 65, which is ~ 254 / 3
+        assertEquals(254, reverb.getSpred()); // 65 is number 254 in list for this size
 
         assertTrue(program.getEq() instanceof EqPedalVol);
         EqPedalVol eq = (EqPedalVol) program.getEq();
