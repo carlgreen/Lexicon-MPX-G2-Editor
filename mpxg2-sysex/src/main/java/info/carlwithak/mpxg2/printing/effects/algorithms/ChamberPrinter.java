@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
@@ -47,7 +48,7 @@ public class ChamberPrinter implements Printer {
         sb.append("    Xovr: ").append(reverbXovrToString(chamber.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(chamber.getRtHC())).append("\n");
         sb.append("    Shape: ").append(chamber.getShape()).append("\n");
-        sb.append("    Spred: ").append(chamber.getSpred()).append("\n");
+        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(chamber.getLink(), chamber.getSize(), chamber.getSpred())).append("\n");
         return sb.toString();
     }
 }

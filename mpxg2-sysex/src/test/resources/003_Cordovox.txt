@@ -60,7 +60,7 @@ Cordovox
     Xovr: 986
     Rt HC: 9.3k
     Shape: 62
-    Spred: 120
+    Spred: 42
   EQ: Pedal Vol (on)
     Toe Switch: off=bypass
     Mix: 100%

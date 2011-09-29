@@ -289,7 +289,7 @@ public class AlgorithmPrinterTest {
         chamber.setShape(62);
         chamber.setSpred(120);
 
-        String expected = "    Mix: 28%\n    Level: 0dB\n    Size: 24.0m\n    Link: on\n    Diff: 22%\n    Pre Delay: 0ms\n    Bass: 1.5X\n    Decay: 1.05s\n    Xovr: 986\n    Rt HC: 9.3k\n    Shape: 62\n    Spred: 120\n";
+        String expected = "    Mix: 28%\n    Level: 0dB\n    Size: 24.0m\n    Link: on\n    Diff: 22%\n    Pre Delay: 0ms\n    Bass: 1.5X\n    Decay: 1.05s\n    Xovr: 986\n    Rt HC: 9.3k\n    Shape: 62\n    Spred: 42\n";
         String actual = AlgorithmPrinter.print(chamber);
 
         assertEquals(expected, actual);
