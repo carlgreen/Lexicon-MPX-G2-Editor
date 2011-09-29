@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
@@ -265,6 +266,24 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 25%\n    Level: 0dB\n    Time1: 3:4\n    Time2: 4:3\n    Level1: 0dB\n    Level2: 0dB\n    Pan1: 50L\n    Pan2: 50R\n    Feedback1: +10%\n    Insert: Delay\n    Feedback2: +10%\n    XFbk1: 0%\n    XFbk2: 0%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintEchoMono() throws PrintException {
+        EchoMono echoMono = new EchoMono();
+        echoMono.setMix(6);
+        echoMono.setLevel(1);
+        echoMono.setTimeEchoes(4);
+        echoMono.setTimeBeat(4);
+        echoMono.setFeedback(-15);
+        echoMono.setInsert(3);
+        echoMono.setDamp(20);
+        echoMono.setClear(0);
+
+        String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Feedback: -15%\n    Insert: Delay\n    Damp: 20%\n    Clear: off\n";
+        String actual = AlgorithmPrinter.print(echoMono);
 
         assertEquals(expected, actual);
     }
