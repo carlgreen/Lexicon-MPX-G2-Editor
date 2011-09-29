@@ -89,6 +89,50 @@ public class ReverbSpredPrinterTest {
     }
 
     /**
+     * Test spred conversion when link is on and size is 22.5.
+     */
+    @Test
+    public void testReverbSpredToString_size22_5() {
+        int link = 1;
+        double size = 22.5;
+
+        int reverbSpred = 0;
+        String expected = "0";
+        String actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
+        assertEquals(expected, actual);
+
+        reverbSpred = 3;
+        expected = "0";
+        actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
+        assertEquals(expected, actual);
+
+        reverbSpred = 4;
+        expected = "1";
+        actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
+        assertEquals(expected, actual);
+
+        reverbSpred = 222;
+        expected = "73";
+        actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
+        assertEquals(expected, actual);
+
+        reverbSpred = 253;
+        expected = "83";
+        actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
+        assertEquals(expected, actual);
+
+        reverbSpred = 254;
+        expected = "84";
+        actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
+        assertEquals(expected, actual);
+
+        reverbSpred = 255;
+        expected = "84";
+        actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
+        assertEquals(expected, actual);
+    }
+
+    /**
      * Test spred conversion when link is on and size is 24.0.
      */
     @Test
