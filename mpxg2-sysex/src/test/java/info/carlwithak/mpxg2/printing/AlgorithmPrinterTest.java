@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
@@ -27,6 +28,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -219,6 +221,24 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +3dB\n    Tune1: 7\n    Optimize: 10ms\n    Tune2: 5\n    P Dly: 22ms\n";
         String actual = AlgorithmPrinter.print(detuneDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintFlangerStereo() throws PrintException {
+        FlangerStereo flangerStereo = new FlangerStereo();
+        flangerStereo.setMix(67);
+        flangerStereo.setLevel(1);
+        flangerStereo.setRate(new BeatRate(1, 4));
+        flangerStereo.setPulseWidth(50);
+        flangerStereo.setDepth(62);
+        flangerStereo.setPhase(1);
+        flangerStereo.setResonance(20);
+        flangerStereo.setBlend(0);
+
+        String expected = "    Mix: 67%\n    Level: +1dB\n    Rate: 1:4\n    PW: 50%\n    Depth: 62%\n    Phase: 90°\n    Res: +20%\n    Blend: 0\n";
+        String actual = AlgorithmPrinter.print(flangerStereo);
 
         assertEquals(expected, actual);
     }
