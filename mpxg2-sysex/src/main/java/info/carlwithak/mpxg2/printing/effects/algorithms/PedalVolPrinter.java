@@ -20,6 +20,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
+import static info.carlwithak.mpxg2.printing.Util.signInt;
+
 /**
  *
  * @author Carl Green
@@ -31,7 +33,7 @@ public class PedalVolPrinter implements Printer {
         PedalVol pedalVol = (PedalVol) algorithm;
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(pedalVol.getMix()).append("%\n");
-        sb.append("    Level: ").append(pedalVol.getLevel()).append("dB\n");
+        sb.append("    Level: ").append(signInt(pedalVol.getLevel())).append("dB\n");
         return sb.toString();
     }
 

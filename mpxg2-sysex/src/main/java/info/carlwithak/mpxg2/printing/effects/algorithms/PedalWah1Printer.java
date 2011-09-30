@@ -33,7 +33,7 @@ public class PedalWah1Printer implements Printer {
         PedalWah1 pedalWah1 = (PedalWah1) algorithm;
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(pedalWah1.getMix()).append("%\n");
-        sb.append("    Level: ").append(pedalWah1.getLevel()).append("dB\n");
+        sb.append("    Level: ").append(signInt(pedalWah1.getLevel())).append("dB\n");
         sb.append("    Bass: ").append(pedalWah1.getBass()).append("\n");
         sb.append("    Type: Model ").append(pedalWah1.getType() == 0 ? "C" : "V").append("\n");
         sb.append("    Resp: ").append(pedalWah1.getResponse()).append("\n");

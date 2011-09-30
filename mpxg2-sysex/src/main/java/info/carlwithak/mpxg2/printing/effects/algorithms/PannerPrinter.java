@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
 import static info.carlwithak.mpxg2.printing.Util.panToString;
+import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -33,7 +34,7 @@ public class PannerPrinter implements Printer {
         Panner panner = (Panner) algorithm;
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(panner.getMix()).append("%\n");
-        sb.append("    Level: ").append(panner.getLevel()).append("dB\n");
+        sb.append("    Level: ").append(signInt(panner.getLevel())).append("dB\n");
         sb.append("    Pan1: ").append(panToString(panner.getPan1())).append("\n");
         sb.append("    Pan2: ").append(panToString(panner.getPan2())).append("\n");
         return sb.toString();

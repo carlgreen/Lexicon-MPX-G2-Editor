@@ -33,7 +33,7 @@ public class Wah1Printer implements Printer {
         Wah1 wah1 = (Wah1) algorithm;
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(wah1.getMix()).append("%\n");
-        sb.append("    Level: ").append(wah1.getLevel()).append("dB\n");
+        sb.append("    Level: ").append(signInt(wah1.getLevel())).append("dB\n");
         sb.append("    Sweep: ").append(wah1.getSweep()).append("\n");
         sb.append("    Bass: ").append(wah1.getBass()).append("\n");
         sb.append("    Type: Model ").append(wah1.getType() == 0 ? "C" : "V").append("\n");
