@@ -36,10 +36,16 @@ import static org.mockito.Mockito.mock;
  */
 public class Util {
 
-    public static <T> void testBean(final Class<T> algorithmClass) throws IntrospectionException {
-        final PropertyDescriptor[] props = Introspector.getBeanInfo(algorithmClass).getPropertyDescriptors();
+    public static <T> void testBean(final Class<T> clazz, final String... skipThese) throws IntrospectionException {
+        final PropertyDescriptor[] props = Introspector.getBeanInfo(clazz).getPropertyDescriptors();
         nextProp:
         for (PropertyDescriptor prop : props) {
+            // Check the list of properties that we don't want to test
+            for (String skipThis : skipThese) {
+                if (skipThis.equals(prop.getName())) {
+                    continue nextProp;
+                }
+            }
             final Method getter = prop.getReadMethod();
             final Method setter = prop.getWriteMethod();
 
@@ -55,7 +61,7 @@ public class Util {
                         Object value = buildValue(returnType);
 
                         // Build an instance of the bean that we are testing (each property test gets a new instance)
-                        T bean = algorithmClass.newInstance();
+                        T bean = clazz.newInstance();
 
                         // Call the set method, then check the same value comes back out of the get method
                         setter.invoke(bean, value);
