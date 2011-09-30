@@ -23,6 +23,8 @@ package info.carlwithak.mpxg2.sysex;
  */
 public class ParseException extends Exception {
 
+    private static final long serialVersionUID = 1L;
+
     ParseException(final String message) {
         super(message);
     }
