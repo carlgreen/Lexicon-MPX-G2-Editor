@@ -106,6 +106,7 @@
     </dependencyManagement>
 
     <modules>
+        <module>mpxg2-model</module>
         <module>mpxg2-sysex</module>
     </modules>
 </project>
