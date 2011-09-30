@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
@@ -146,6 +147,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10\n";
         String actual = AlgorithmPrinter.print(pedalWah1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintPedalWah2() throws PrintException {
+        PedalWah2 pedalWah2 = new PedalWah2();
+        pedalWah2.setMix(100);
+        pedalWah2.setLevel(0);
+        pedalWah2.setBass(10);
+        pedalWah2.setType(0);
+        pedalWah2.setResponse(100);
+        pedalWah2.setGain(6);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Bass: 10\n    Type: Model C\n    Resp: 100\n    Gain: +6\n";
+        String actual = AlgorithmPrinter.print(pedalWah2);
 
         assertEquals(expected, actual);
     }
