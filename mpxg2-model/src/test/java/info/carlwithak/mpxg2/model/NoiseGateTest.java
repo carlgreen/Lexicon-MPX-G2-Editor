@@ -14,31 +14,23 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package info.carlwithak.mpxg2.model;
 
+import java.beans.IntrospectionException;
+import org.junit.Test;
+
+import static info.carlwithak.mpxg2.model.Util.testBean;
+
 /**
- * Represents a single soft row button associated with a program
+ * Test NoiseGate using bean tester.
  *
  * @author Carl Green
  */
-public class SoftRowItem {
-    private int effectType;
-    private int parameter;
+public class NoiseGateTest {
 
-    public int getEffectType() {
-        return effectType;
+    @Test
+    public void testNoiseGate() throws IntrospectionException {
+        testBean(NoiseGate.class);
     }
 
-    public void setEffectType(final int effectType) {
-        this.effectType = effectType;
-    }
-
-    public int getParameter() {
-        return parameter;
-    }
-
-    public void setParameter(final int parameter) {
-        this.parameter = parameter;
-    }
 }
