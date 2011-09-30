@@ -105,7 +105,7 @@ public class Program {
     private boolean insertOn;
 
     // soft row
-    private List<SoftRowItem> softRow = Arrays.asList(null, null, null, null, null, null, null, null, null, null);
+    private List<SoftRowItem> softRow = Arrays.<SoftRowItem>asList(null, null, null, null, null, null, null, null, null, null);
 
     // tempo
     private int tempo;
