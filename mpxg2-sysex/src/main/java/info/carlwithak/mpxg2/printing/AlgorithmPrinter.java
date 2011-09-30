@@ -83,31 +83,32 @@ public class AlgorithmPrinter {
     /**
      * Mapping between algorithms and their printers. Is there a better way?
      */
-    private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>() {{
-       put(ShiftDual.class, new ShiftDualPrinter());
-       put(Panner.class, new PannerPrinter());
-       put(AutoPan.class, new AutoPanPrinter());
-       put(UniVybe.class, new UniVybePrinter());
-       put(Wah1.class, new Wah1Printer());
-       put(PedalWah1.class, new PedalWah1Printer());
-       put(PedalWah2.class, new PedalWah2Printer());
-       put(VolumeMono.class, new VolumeMonoPrinter());
-       put(PedalVol.class, new PedalVolPrinter());
-       put(ChorusAlgorithm.class, new ChorusPrinter());
-       put(DetuneMono.class, new DetuneMonoPrinter());
-       put(DetuneDual.class, new DetuneDualPrinter());
-       put(FlangerStereo.class, new FlangerStereoPrinter());
-       put(DelayDual.class, new DelayDualPrinter());
-       put(EchoMono.class, new EchoMonoPrinter());
-       put(EchoDual.class, new EchoDualPrinter());
-       put(Chamber.class, new ChamberPrinter());
-       put(Plate.class, new PlatePrinter());
-       put(Ambience.class, new AmbiencePrinter());
-       put(EqPedalVol.class, new EqPedalVolPrinter());
-       put(Tone.class, new TonePrinter());
-       put(Screamer.class, new ScreamerPrinter());
-       put(Overdrive.class, new OverdrivePrinter());
-    }};
+    private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>();
+    static {
+       PRINTERS.put(ShiftDual.class, new ShiftDualPrinter());
+       PRINTERS.put(Panner.class, new PannerPrinter());
+       PRINTERS.put(AutoPan.class, new AutoPanPrinter());
+       PRINTERS.put(UniVybe.class, new UniVybePrinter());
+       PRINTERS.put(Wah1.class, new Wah1Printer());
+       PRINTERS.put(PedalWah1.class, new PedalWah1Printer());
+       PRINTERS.put(PedalWah2.class, new PedalWah2Printer());
+       PRINTERS.put(VolumeMono.class, new VolumeMonoPrinter());
+       PRINTERS.put(PedalVol.class, new PedalVolPrinter());
+       PRINTERS.put(ChorusAlgorithm.class, new ChorusPrinter());
+       PRINTERS.put(DetuneMono.class, new DetuneMonoPrinter());
+       PRINTERS.put(DetuneDual.class, new DetuneDualPrinter());
+       PRINTERS.put(FlangerStereo.class, new FlangerStereoPrinter());
+       PRINTERS.put(DelayDual.class, new DelayDualPrinter());
+       PRINTERS.put(EchoMono.class, new EchoMonoPrinter());
+       PRINTERS.put(EchoDual.class, new EchoDualPrinter());
+       PRINTERS.put(Chamber.class, new ChamberPrinter());
+       PRINTERS.put(Plate.class, new PlatePrinter());
+       PRINTERS.put(Ambience.class, new AmbiencePrinter());
+       PRINTERS.put(EqPedalVol.class, new EqPedalVolPrinter());
+       PRINTERS.put(Tone.class, new TonePrinter());
+       PRINTERS.put(Screamer.class, new ScreamerPrinter());
+       PRINTERS.put(Overdrive.class, new OverdrivePrinter());
+    };
 
     static String print(Object algorithm) throws PrintException {
         if (!PRINTERS.containsKey(algorithm.getClass())) {
