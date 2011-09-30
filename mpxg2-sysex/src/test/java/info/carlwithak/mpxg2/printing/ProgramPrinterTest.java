@@ -93,6 +93,21 @@ public class ProgramPrinterTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Test printing a textual representation of the program.
+     *
+     * TODO would be good not to use SysexParser.parseProgram()?
+     */
+    @Test
+    public void testPrintVybeFlange() throws Exception {
+        File expectedFile = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.txt").toURI());
+        String expected = readFile(expectedFile);
+        File preset = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+        String actual = ProgramPrinter.print(program);
+        assertEquals(expected, actual);
+    }
+
     private static String readFile(final File file) throws FileNotFoundException {
         return new Scanner(file).useDelimiter("\\Z").next();
     }

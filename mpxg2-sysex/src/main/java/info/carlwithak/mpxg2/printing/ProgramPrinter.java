@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import java.text.DecimalFormat;
@@ -106,6 +108,12 @@ public class ProgramPrinter {
             {},
             {
                 "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
+            },
+            {},
+            {},
+            {},
+            {
+                "Mix", "Level", "Rate", "PW", "Depth", "Phase", "Res", "Blend"
             }
         },
         {
@@ -113,7 +121,9 @@ public class ProgramPrinter {
             {},
             {},
             {},
-            {},
+            {
+                "Mix", "Level", "Time", "Fbk", "Damp", "Clear"
+            },
             {},
             {
                 "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
@@ -201,6 +211,12 @@ public class ProgramPrinter {
             {},
             {
                 "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
+            },
+            {},
+            {},
+            {},
+            {
+                "%", "dB", "Hz", "%", "%", "°", "", ""
             }
         },
         {
@@ -208,20 +224,22 @@ public class ProgramPrinter {
             {},
             {},
             {},
-            {},
-            {},
             {
-                "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "%", "%", "%", "%", "Clear"
-            }
-        },
-        {
-            {},
-            {
-                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
+                "%", "dB", ":", "-%", "%", "Clear"
             },
             {},
             {
-                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
+                "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "-%", "-%", "%", "%", "Clear"
+            }
+        },
+        {
+            {},
+            {
+                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
+            },
+            {},
+            {
+                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
             },
             {
                 "%", "dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
@@ -544,7 +562,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    private static String printPatch(final Program program, final Patch patch, final int patchNumber) {
+    private static String printPatch(final Program program, final Patch patch, final int patchNumber) throws PrintException {
         if (patch.getSource() == 0) {
             return "";
         }
@@ -556,12 +574,32 @@ public class ProgramPrinter {
         sb.append("        Min: ").append(patch.getSourceMin()).append("\n");
         sb.append("        Mid: ").append(patch.getSourceMid() == 0xff ? "--" : patch.getSourceMid()).append("\n");
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
-        sb.append("      Destination: ").append(patchDestinationToString(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter())).append("\n");
+        String patchEffect = effectTypeToString(patch.getDestinationEffect());
+        String patchParameter = effectParameterToString(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter());
+        sb.append("      Destination: ").append(patchEffect).append(" ").append(patchParameter).append("\n");
         sb.append("        Min: ");
-        if (":".equals(patchDestinationUnit)) {
+        if ("Decay".equals(patchParameter)) {
+            int link;
+            double size;
+            if (program.getReverb() instanceof Chamber) {
+                Chamber chamber = (Chamber) program.getReverb();
+                link = chamber.getLink();
+                size = chamber.getSize();
+            } else if (program.getReverb() instanceof Plate) {
+                Plate plate = (Plate) program.getReverb();
+                link = plate.getLink();
+                size = plate.getSize();
+            } else {
+                throw new PrintException("Cannot determine reverb decay for class " + program.getReverb().getClass());
+            }
+            String reverbDecay = Util.reverbDecayToString(link, size, patch.getDestinationMin());
+            sb.append(reverbDecay).append("s\n");
+        } else if(":".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMin() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMin() / 0x100).append("\n");
         } else if ("%".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
+        } else if ("-%".equals(patchDestinationUnit)) {
+            sb.append(signInt(patch.getDestinationMin())).append("%\n");
         } else if ("Hz".equals(patchDestinationUnit)) {
             sb.append(DECIMAL_2DP.format(patch.getDestinationMin() / 100.0)).append(patchDestinationUnit).append("\n");
         } else {
@@ -574,10 +612,28 @@ public class ProgramPrinter {
             sb.append(patch.getDestinationMid() == 0x8000 ? "--" : patch.getDestinationMid()).append("\n");
         }
         sb.append("        Max: ");
-        if (":".equals(patchDestinationUnit)) {
+        if ("Decay".equals(patchParameter)) {
+            int link;
+            double size;
+            if (program.getReverb() instanceof Chamber) {
+                Chamber chamber = (Chamber) program.getReverb();
+                link = chamber.getLink();
+                size = chamber.getSize();
+            } else if (program.getReverb() instanceof Plate) {
+                Plate plate = (Plate) program.getReverb();
+                link = plate.getLink();
+                size = plate.getSize();
+            } else {
+                throw new PrintException("Cannot determine reverb decay for class " + program.getReverb().getClass());
+            }
+            String reverbDecay = Util.reverbDecayToString(link, size, patch.getDestinationMax());
+            sb.append(reverbDecay).append("s");
+        } else if (":".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMax() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMax() / 0x100);
         } else if ("%".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
+        } else if ("-%".equals(patchDestinationUnit)) {
+            sb.append(signInt(patch.getDestinationMax())).append('%');
         } else if ("Hz".equals(patchDestinationUnit)) {
             sb.append(DECIMAL_2DP.format(patch.getDestinationMax() / 100.0)).append(patchDestinationUnit);
         } else {
@@ -675,10 +731,6 @@ public class ProgramPrinter {
 
     private static String patchSourceToString(final int patchSource) {
         return PATCH_SOURCES[patchSource];
-    }
-
-    private static String patchDestinationToString(final int patchDestinationEffect, final int algorithm, final int patchDestinationParameter) {
-        return EFFECT_TYPES[patchDestinationEffect] + " " + EFFECT_PARAMETERS[patchDestinationEffect][algorithm][patchDestinationParameter];
     }
 
     private static String lfoOnSourceToString(final int lfoOnSource) {
