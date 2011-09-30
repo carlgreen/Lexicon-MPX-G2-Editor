@@ -93,6 +93,22 @@ public class ProgramPrinter {
             {},
             {
                 "Mix", "Level", "Rate"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+                "Mix", "Level", "Bass", "Resp", "Gain"
             }
         },
         {
@@ -196,6 +212,22 @@ public class ProgramPrinter {
             {},
             {
                 "Mix", "Level", "Rate"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+                "%", "dB", "Bass", "Resp", "Gain"
             }
         },
         {

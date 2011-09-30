@@ -42,6 +42,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
@@ -265,6 +266,9 @@ public class SysexParser {
                             break;
                         case 23:
                             effect1 = Wah1Parser.parse(effect1Parameters);
+                            break;
+                        case 26:
+                            effect1 = PedalWah2Parser.parse(effect1Parameters);
                             break;
                         case 27:
                             effect1 = VolumeMonoParser.parse(effect1Parameters);
