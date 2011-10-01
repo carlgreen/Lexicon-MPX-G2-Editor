@@ -25,7 +25,43 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Patch {
-    private int source;
+
+    private enum PatchSource {
+        NONE,
+        /* Internal Controllers */
+        CTLS_OFF, CTLS_ON, CTLS_KNOB, CTLS_PULS1, CTLS_TRI1, CTLS_SINE1,
+        CTLS_COS1, CTLS_PULS2, CTLS_TRI2, CTLS_SINE2, CTLS_COS2, CTLS_RAND,
+        CTLS_ENV, CTLS_INLVL, CTLS_RNLVL, CTLS_AB, CTLS_ATRG, CTLS_BTRG,
+        CTLS_ABTRG, CTLS_PEDAL, CTLS_TOG1, CTLS_TOG2, CTLS_TOG3, CTLS_SW1,
+        CTLS_SW2, CTLS_SW3,
+        /* Midi Controllers */
+        MIDI_CC1, MIDI_CC2, MIDI_CC3, MIDI_CC4, MIDI_CC5, MIDI_CC6, MIDI_CC7,
+        MIDI_CC8, MIDI_CC9, MIDI_CC10, MIDI_CC11, MIDI_CC12, MIDI_CC13,
+        MIDI_CC14, MIDI_CC15, MIDI_CC16, MIDI_CC17, MIDI_CC18, MIDI_CC19,
+        MIDI_CC20, MIDI_CC21, MIDI_CC22, MIDI_CC23, MIDI_CC24, MIDI_CC25,
+        MIDI_CC26, MIDI_CC27, MIDI_CC28, MIDI_CC29, MIDI_CC30, MIDI_CC31,
+        MIDI_CC33, MIDI_CC34, MIDI_CC35, MIDI_CC36, MIDI_CC37, MIDI_CC38,
+        MIDI_CC39, MIDI_CC40, MIDI_CC41, MIDI_CC42, MIDI_CC43, MIDI_CC44,
+        MIDI_CC45, MIDI_CC46, MIDI_CC47, MIDI_CC48, MIDI_CC49, MIDI_CC50,
+        MIDI_CC51, MIDI_CC52, MIDI_CC53, MIDI_CC54, MIDI_CC55, MIDI_CC56,
+        MIDI_CC57, MIDI_CC58, MIDI_CC59, MIDI_CC60, MIDI_CC61, MIDI_CC62,
+        MIDI_CC63, MIDI_CC64, MIDI_CC65, MIDI_CC66, MIDI_CC67, MIDI_CC68,
+        MIDI_CC69, MIDI_CC70, MIDI_CC71, MIDI_CC72, MIDI_CC73, MIDI_CC74,
+        MIDI_CC75, MIDI_CC76, MIDI_CC77, MIDI_CC78, MIDI_CC79, MIDI_CC80,
+        MIDI_CC81, MIDI_CC82, MIDI_CC83, MIDI_CC84, MIDI_CC85, MIDI_CC86,
+        MIDI_CC87, MIDI_CC88, MIDI_CC89, MIDI_CC90, MIDI_CC91, MIDI_CC92,
+        MIDI_CC93, MIDI_CC94, MIDI_CC95, MIDI_CC96, MIDI_CC97, MIDI_CC98,
+        MIDI_CC99, MIDI_CC100, MIDI_CC101, MIDI_CC102, MIDI_CC103, MIDI_CC104,
+        MIDI_CC105, MIDI_CC106, MIDI_CC107, MIDI_CC108, MIDI_CC109, MIDI_CC110,
+        MIDI_CC111, MIDI_CC112, MIDI_CC113, MIDI_CC114, MIDI_CC115, MIDI_CC116,
+        MIDI_CC117, MIDI_CC118, MIDI_CC119,
+        /* Midi Controls */
+        MIDI_BEND, MIDI_TOUCH, MIDI_VEL, MIDI_LASTNOTE, MIDI_LOWNOTE,
+        MIDI_HIGHNOTE, MIDI_TEMPO, MIDI_CMNDS, MIDI_GATE, MIDI_TRIG, MIDI_LGATE,
+        MIDI_TSW, MIDI_TOE;
+    }
+
+    private PatchSource source = PatchSource.NONE;
     private int sourceMin;
     private int sourceMid;
     private int sourceMax;
@@ -36,11 +72,11 @@ public class Patch {
     private int destinationMax;
 
     public int getSource() {
-        return source;
+        return source.ordinal();
     }
 
     public void setSource(final int source) {
-        this.source = source;
+        this.source = PatchSource.values()[source];
     }
 
     public int getSourceMin() {
