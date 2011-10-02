@@ -26,14 +26,14 @@ package info.carlwithak.mpxg2.model;
  */
 public class Patch {
 
-    private enum PatchSource {
-        NONE,
+    enum PatchSource {
+        NONE(null),
         /* Internal Controllers */
         CTLS_OFF, CTLS_ON, CTLS_KNOB, CTLS_PULS1, CTLS_TRI1, CTLS_SINE1,
         CTLS_COS1, CTLS_PULS2, CTLS_TRI2, CTLS_SINE2, CTLS_COS2, CTLS_RAND,
-        CTLS_ENV, CTLS_INLVL, CTLS_RNLVL, CTLS_AB, CTLS_ATRG, CTLS_BTRG,
-        CTLS_ABTRG, CTLS_PEDAL, CTLS_TOG1, CTLS_TOG2, CTLS_TOG3, CTLS_SW1,
-        CTLS_SW2, CTLS_SW3,
+        CTLS_ENV, CTLS_INLVL, CTLS_RNLVL, CTLS_AB("Ctls A/B"), CTLS_ATRG,
+        CTLS_BTRG, CTLS_ABTRG, CTLS_PEDAL, CTLS_TOG1, CTLS_TOG2, CTLS_TOG3,
+        CTLS_SW1, CTLS_SW2, CTLS_SW3,
         /* Midi Controllers */
         MIDI_CC1, MIDI_CC2, MIDI_CC3, MIDI_CC4, MIDI_CC5, MIDI_CC6, MIDI_CC7,
         MIDI_CC8, MIDI_CC9, MIDI_CC10, MIDI_CC11, MIDI_CC12, MIDI_CC13,
@@ -58,7 +58,30 @@ public class Patch {
         /* Midi Controls */
         MIDI_BEND, MIDI_TOUCH, MIDI_VEL, MIDI_LASTNOTE, MIDI_LOWNOTE,
         MIDI_HIGHNOTE, MIDI_TEMPO, MIDI_CMNDS, MIDI_GATE, MIDI_TRIG, MIDI_LGATE,
-        MIDI_TSW, MIDI_TOE;
+        MIDI_TSW, MIDI_TOE("Midi Toe");
+
+        private final String displayName;
+
+        /**
+         * Generates correct display name for all Midi CC values. For anything
+         * else where a name hasn't been defined it makes a guess.
+         */
+        private PatchSource() {
+            final String MIDI_CONTROLLER_PREFIX = "MIDI_CC";
+            if (name().indexOf(MIDI_CONTROLLER_PREFIX) > -1) {
+                this.displayName = "Midi CC" + name().substring(MIDI_CONTROLLER_PREFIX.length());
+            } else {
+                this.displayName = name();
+            }
+        }
+
+        private PatchSource(final String displayName) {
+            this.displayName = displayName;
+        }
+
+        private String getDisplayName() {
+            return displayName;
+        }
     }
 
     private PatchSource source = PatchSource.NONE;
@@ -71,8 +94,12 @@ public class Patch {
     private int destinationMid;
     private int destinationMax;
 
-    public int getSource() {
+    public int getSourceIndex() {
         return source.ordinal();
+    }
+
+    public String getSourceName() {
+        return source.getDisplayName();
     }
 
     public void setSource(final int source) {

@@ -17,20 +17,45 @@
 package info.carlwithak.mpxg2.model;
 
 import java.beans.IntrospectionException;
+import org.junit.Before;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
- * Test Patch using bean tester.
+ * Test Patch using bean tester where possible. Hard code other tests.
  *
  * @author Carl Green
  */
 public class PatchTest {
+
+    Patch patch;
+
+    @Before
+    public void setup() {
+        patch = new Patch();
+    }
 
     @Test
     public void testPatch() throws IntrospectionException {
         testBean(Patch.class);
     }
 
+    @Test
+    public void testGetAndSetSource() {
+        assertEquals(0, patch.getSourceIndex());
+        patch.setSource(157);
+        assertEquals(157, patch.getSourceIndex());
+    }
+
+    @Test
+    public void testGetSourceName() {
+        assertNull(patch.getSourceName());
+        patch.setSource(Patch.PatchSource.MIDI_CC19.ordinal());
+        assertEquals("Midi CC19", patch.getSourceName());
+        patch.setSource(Patch.PatchSource.CTLS_AB.ordinal());
+        assertEquals("Ctls A/B", patch.getSourceName());
+    }
 }

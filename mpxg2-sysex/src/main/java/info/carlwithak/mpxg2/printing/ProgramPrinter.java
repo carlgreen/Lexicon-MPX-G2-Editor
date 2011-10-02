@@ -307,18 +307,6 @@ public class ProgramPrinter {
         }
     };
 
-    private final static String[] PATCH_SOURCES = {
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Ctls A/B",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "Midi CC48", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Midi Toe"
-    };
-
     private final static String[] LFO_ON_SOURCES = {
         "none"
     };
@@ -595,14 +583,14 @@ public class ProgramPrinter {
     }
 
     private static String printPatch(final Program program, final Patch patch, final int patchNumber) throws PrintException {
-        if (patch.getSource() == 0) {
+        if (patch.getSourceIndex() == 0) {
             return "";
         }
         int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffect());
         String patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter());
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
-        sb.append("      Source: ").append(patchSourceToString(patch.getSource())).append("\n");
+        sb.append("      Source: ").append(patch.getSourceName()).append("\n");
         sb.append("        Min: ").append(patch.getSourceMin()).append("\n");
         sb.append("        Mid: ").append(patch.getSourceMid() == 0xff ? "--" : patch.getSourceMid()).append("\n");
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
@@ -759,10 +747,6 @@ public class ProgramPrinter {
 
     private static String getEffectParameterUnits(final int effectType, final int algorithm, final int effectParameter) {
         return EFFECT_PARAMETER_UNITS[effectType][algorithm][effectParameter];
-    }
-
-    private static String patchSourceToString(final int patchSource) {
-        return PATCH_SOURCES[patchSource];
     }
 
     private static String lfoOnSourceToString(final int lfoOnSource) {

@@ -243,7 +243,7 @@ public class SysexParserTest {
         assertEquals(2, program.getTapAverage());
         assertEquals(64, program.getTapSourceLevel());
 
-        assertEquals(0, program.getPatch1().getSource());
+        assertEquals(0, program.getPatch1().getSourceIndex());
         assertEquals(0, program.getPatch1().getSourceMin());
         assertEquals(255, program.getPatch1().getSourceMid());
         assertEquals(127, program.getPatch1().getSourceMax());
@@ -252,7 +252,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch1().getDestinationMin());
         assertEquals(0x8000, program.getPatch1().getDestinationMid());
         assertEquals(0, program.getPatch1().getDestinationMax());
-        assertEquals(0, program.getPatch2().getSource());
+        assertEquals(0, program.getPatch2().getSourceIndex());
         assertEquals(0, program.getPatch2().getSourceMin());
         assertEquals(255, program.getPatch2().getSourceMid());
         assertEquals(127, program.getPatch2().getSourceMax());
@@ -261,7 +261,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch2().getDestinationMin());
         assertEquals(0x8000, program.getPatch2().getDestinationMid());
         assertEquals(0, program.getPatch2().getDestinationMax());
-        assertEquals(0, program.getPatch3().getSource());
+        assertEquals(0, program.getPatch3().getSourceIndex());
         assertEquals(0, program.getPatch3().getSourceMin());
         assertEquals(255, program.getPatch3().getSourceMid());
         assertEquals(127, program.getPatch3().getSourceMax());
@@ -270,7 +270,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch3().getDestinationMin());
         assertEquals(0x8000, program.getPatch3().getDestinationMid());
         assertEquals(0, program.getPatch3().getDestinationMax());
-        assertEquals(0, program.getPatch4().getSource());
+        assertEquals(0, program.getPatch4().getSourceIndex());
         assertEquals(0, program.getPatch4().getSourceMin());
         assertEquals(255, program.getPatch4().getSourceMid());
         assertEquals(127, program.getPatch4().getSourceMax());
@@ -279,7 +279,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch4().getDestinationMin());
         assertEquals(0x8000, program.getPatch4().getDestinationMid());
         assertEquals(0, program.getPatch4().getDestinationMax());
-        assertEquals(0, program.getPatch5().getSource());
+        assertEquals(0, program.getPatch5().getSourceIndex());
         assertEquals(0, program.getPatch5().getSourceMin());
         assertEquals(255, program.getPatch5().getSourceMid());
         assertEquals(127, program.getPatch5().getSourceMax());
@@ -479,7 +479,7 @@ public class SysexParserTest {
         assertEquals(2, program.getTapAverage());
         assertEquals(64, program.getTapSourceLevel());
 
-        assertEquals(0, program.getPatch1().getSource());
+        assertEquals(0, program.getPatch1().getSourceIndex());
         assertEquals(0, program.getPatch1().getSourceMin());
         assertEquals(255, program.getPatch1().getSourceMid());
         assertEquals(127, program.getPatch1().getSourceMax());
@@ -488,7 +488,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch1().getDestinationMin());
         assertEquals(0x8000, program.getPatch1().getDestinationMid());
         assertEquals(0, program.getPatch1().getDestinationMax());
-        assertEquals(0, program.getPatch2().getSource());
+        assertEquals(0, program.getPatch2().getSourceIndex());
         assertEquals(0, program.getPatch2().getSourceMin());
         assertEquals(255, program.getPatch2().getSourceMid());
         assertEquals(127, program.getPatch2().getSourceMax());
@@ -497,7 +497,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch2().getDestinationMin());
         assertEquals(0x8000, program.getPatch2().getDestinationMid());
         assertEquals(0, program.getPatch2().getDestinationMax());
-        assertEquals(0, program.getPatch3().getSource());
+        assertEquals(0, program.getPatch3().getSourceIndex());
         assertEquals(0, program.getPatch3().getSourceMin());
         assertEquals(255, program.getPatch3().getSourceMid());
         assertEquals(127, program.getPatch3().getSourceMax());
@@ -506,7 +506,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch3().getDestinationMin());
         assertEquals(0x8000, program.getPatch3().getDestinationMid());
         assertEquals(0, program.getPatch3().getDestinationMax());
-        assertEquals(0, program.getPatch4().getSource());
+        assertEquals(0, program.getPatch4().getSourceIndex());
         assertEquals(0, program.getPatch4().getSourceMin());
         assertEquals(255, program.getPatch4().getSourceMid());
         assertEquals(127, program.getPatch4().getSourceMax());
@@ -515,7 +515,7 @@ public class SysexParserTest {
         assertEquals(0, program.getPatch4().getDestinationMin());
         assertEquals(0x8000, program.getPatch4().getDestinationMid());
         assertEquals(0, program.getPatch4().getDestinationMax());
-        assertEquals(0, program.getPatch5().getSource());
+        assertEquals(0, program.getPatch5().getSourceIndex());
         assertEquals(0, program.getPatch5().getSourceMin());
         assertEquals(255, program.getPatch5().getSourceMid());
         assertEquals(127, program.getPatch5().getSourceMax());
@@ -791,7 +791,7 @@ public class SysexParserTest {
         assertEquals(2, program.getTapAverage());
         assertEquals(64, program.getTapSourceLevel());
 
-        assertEquals(16, program.getPatch1().getSource()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(16, program.getPatch1().getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, program.getPatch1().getSourceMin());
         assertEquals(255, program.getPatch1().getSourceMid());
         assertEquals(127, program.getPatch1().getSourceMax());
@@ -800,7 +800,7 @@ public class SysexParserTest {
         assertEquals(2, program.getPatch1().getDestinationMin());
         assertEquals(0x8000, program.getPatch1().getDestinationMid());
         assertEquals(30, program.getPatch1().getDestinationMax());
-        assertEquals(16, program.getPatch2().getSource()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(16, program.getPatch2().getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, program.getPatch2().getSourceMin());
         assertEquals(255, program.getPatch2().getSourceMid());
         assertEquals(127, program.getPatch2().getSourceMax());
@@ -809,7 +809,7 @@ public class SysexParserTest {
         assertEquals(260, program.getPatch2().getDestinationMin()); // TODO 260 = 0x0104 => 4, 1 - figure out how to split this
         assertEquals(0x8000, program.getPatch2().getDestinationMid());
         assertEquals(516, program.getPatch2().getDestinationMax()); // TODO 516 = 0x0204 => 4, 2 - figure out how to split this
-        assertEquals(16, program.getPatch3().getSource()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(16, program.getPatch3().getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, program.getPatch3().getSourceMin());
         assertEquals(255, program.getPatch3().getSourceMid());
         assertEquals(127, program.getPatch3().getSourceMax());
@@ -818,7 +818,7 @@ public class SysexParserTest {
         assertEquals(1, program.getPatch3().getDestinationMin());
         assertEquals(0x8000, program.getPatch3().getDestinationMid());
         assertEquals(15, program.getPatch3().getDestinationMax());
-        assertEquals(16, program.getPatch4().getSource()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertEquals(16, program.getPatch4().getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, program.getPatch4().getSourceMin());
         assertEquals(255, program.getPatch4().getSourceMid());
         assertEquals(127, program.getPatch4().getSourceMax());
@@ -827,7 +827,7 @@ public class SysexParserTest {
         assertEquals(1, program.getPatch4().getDestinationMin());
         assertEquals(0x8000, program.getPatch4().getDestinationMid());
         assertEquals(4, program.getPatch4().getDestinationMax());
-        assertEquals(157, program.getPatch5().getSource()); // TODO why is the source 157 (0x9d) not 21 (0x15)?
+        assertEquals(157, program.getPatch5().getSourceIndex()); // TODO why is the source 157 (0x9d) not 21 (0x15)?
         assertEquals(0, program.getPatch5().getSourceMin());
         assertEquals(255, program.getPatch5().getSourceMid());
         assertEquals(127, program.getPatch5().getSourceMax());
