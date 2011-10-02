@@ -586,16 +586,16 @@ public class ProgramPrinter {
         if (patch.getSourceIndex() == 0) {
             return "";
         }
-        int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffect());
-        String patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter());
+        int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffectIndex());
+        String patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
         sb.append("      Source: ").append(patch.getSourceName()).append("\n");
         sb.append("        Min: ").append(patch.getSourceMin()).append("\n");
         sb.append("        Mid: ").append(patch.getSourceMid() == null ? "--" : patch.getSourceMid()).append("\n");
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
-        String patchEffect = effectTypeToString(patch.getDestinationEffect());
-        String patchParameter = effectParameterToString(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter());
+        String patchEffect = patch.getDestinationEffectName();
+        String patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
         sb.append("      Destination: ").append(patchEffect).append(" ").append(patchParameter).append("\n");
         sb.append("        Min: ");
         if ("Decay".equals(patchParameter)) {

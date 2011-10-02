@@ -91,10 +91,15 @@ public class Patch {
      * or ALG_SELECT.
      */
     enum PatchDestination {
-        EFFECT1, EFFECT2, CHORUS, DELAY, REVERB, EQ, GAIN,
+        EFFECT_1, EFFECT_2, CHORUS, DELAY, REVERB, EQ, GAIN,
         CTLS_KNOB, CTLS_LFO1, CTLS_LFO2, CTLS_RAND, CTLS_AB, CTLS_ENV,
         PATCHING, SOFTROW, POST, SEND, MISC, SPKRSIM, NGATE, TEMPO,
         TOE_PATCHES, AUDIO_ROUTE, ALG_SELECT, BYPASS;
+
+        private String getDisplayName() {
+            String name = name();
+            return name.substring(0, 1) + name.substring(1).toLowerCase().replace('_', ' ');
+        }
     }
 
     private PatchSource source = PatchSource.NONE;
@@ -143,8 +148,12 @@ public class Patch {
         this.sourceMax = sourceMax;
     }
 
-    public Integer getDestinationEffect() {
+    public Integer getDestinationEffectIndex() {
         return destinationEffect == null ? null : destinationEffect.ordinal();
+    }
+
+    public String getDestinationEffectName() {
+        return destinationEffect == null ? null : destinationEffect.getDisplayName();
     }
 
     public void setDestinationEffect(final int destinationEffect) {

@@ -70,11 +70,18 @@ public class PatchTest {
 
     @Test
     public void testGetAndSetDestinationEffect() {
-        assertNull(patch.getDestinationEffect());
+        assertNull(patch.getDestinationEffectIndex());
         patch.setDestinationEffect(4);
-        assertEquals(4, patch.getDestinationEffect().intValue());
+        assertEquals(4, patch.getDestinationEffectIndex().intValue());
         patch.setDestinationEffect(255);
-        assertNull(patch.getDestinationEffect());
+        assertNull(patch.getDestinationEffectIndex());
+    }
+
+    @Test
+    public void testGetDestinationEffectName() {
+        assertNull(patch.getDestinationEffectName());
+        patch.setDestinationEffect(Patch.PatchDestination.EFFECT_1.ordinal());
+        assertEquals("Effect 1", patch.getDestinationEffectName());
     }
 
 }
