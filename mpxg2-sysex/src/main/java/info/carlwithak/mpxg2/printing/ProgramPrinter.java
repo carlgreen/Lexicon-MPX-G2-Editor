@@ -69,7 +69,8 @@ public class ProgramPrinter {
 
     private static final String[] EFFECT_TYPES = {
         "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "Equalizer", "Gain",
-        "", "", "", "", "A/B", "", "", "", "", "Send"
+        "Knob", "LFO1", "LFO2", "Rand", "A/B", "Env", "", "", "Post", "Send",
+        "SpkrSim", "NGate", "Tempo"
     };
     private static final String[][][] EFFECT_PARAMETERS = {
         {
