@@ -592,7 +592,7 @@ public class ProgramPrinter {
         sb.append("    Patch ").append(patchNumber).append(":\n");
         sb.append("      Source: ").append(patch.getSourceName()).append("\n");
         sb.append("        Min: ").append(patch.getSourceMin()).append("\n");
-        sb.append("        Mid: ").append(patch.getSourceMid() == 0xff ? "--" : patch.getSourceMid()).append("\n");
+        sb.append("        Mid: ").append(patch.getSourceMid() == null ? "--" : patch.getSourceMid()).append("\n");
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
         String patchEffect = effectTypeToString(patch.getDestinationEffect());
         String patchParameter = effectParameterToString(patch.getDestinationEffect(), algorithm, patch.getDestinationParameter());

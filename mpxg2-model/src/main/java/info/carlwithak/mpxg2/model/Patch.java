@@ -25,6 +25,7 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Patch {
+    private static final int NO_SOURCE_MID = 0xff;
 
     enum PatchSource {
         NONE(null),
@@ -85,9 +86,9 @@ public class Patch {
     }
 
     private PatchSource source = PatchSource.NONE;
-    private int sourceMin;
-    private int sourceMid;
-    private int sourceMax;
+    private Integer sourceMin;
+    private Integer sourceMid;
+    private Integer sourceMax;
     private int destinationEffect;
     private int destinationParameter;
     private int destinationMin;
@@ -106,27 +107,27 @@ public class Patch {
         this.source = PatchSource.values()[source];
     }
 
-    public int getSourceMin() {
+    public Integer getSourceMin() {
         return sourceMin;
     }
 
-    public void setSourceMin(final int sourceMin) {
+    public void setSourceMin(final Integer sourceMin) {
         this.sourceMin = sourceMin;
     }
 
-    public int getSourceMid() {
+    public Integer getSourceMid() {
         return sourceMid;
     }
 
-    public void setSourceMid(final int sourceMid) {
-        this.sourceMid = sourceMid;
+    public void setSourceMid(final Integer sourceMid) {
+        this.sourceMid = (sourceMid == NO_SOURCE_MID ? null : sourceMid);
     }
 
-    public int getSourceMax() {
+    public Integer getSourceMax() {
         return sourceMax;
     }
 
-    public void setSourceMax(final int sourceMax) {
+    public void setSourceMax(final Integer sourceMax) {
         this.sourceMax = sourceMax;
     }
 
