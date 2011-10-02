@@ -26,6 +26,7 @@ package info.carlwithak.mpxg2.model;
  */
 public class Patch {
     private static final int NO_SOURCE_MID = 0xff;
+    private static final int NO_DESTINATION = 0xff;
 
     enum PatchSource {
         NONE(null),
@@ -85,11 +86,22 @@ public class Patch {
         }
     }
 
+    /**
+     * Cannot select PATCHING, SOFTROW, MISC, SPKRSIM, TOE_PATCHES, AUDIO_ROUTE
+     * or ALG_SELECT.
+     */
+    enum PatchDestination {
+        EFFECT1, EFFECT2, CHORUS, DELAY, REVERB, EQ, GAIN,
+        CTLS_KNOB, CTLS_LFO1, CTLS_LFO2, CTLS_RAND, CTLS_AB, CTLS_ENV,
+        PATCHING, SOFTROW, POST, SEND, MISC, SPKRSIM, NGATE, TEMPO,
+        TOE_PATCHES, AUDIO_ROUTE, ALG_SELECT, BYPASS;
+    }
+
     private PatchSource source = PatchSource.NONE;
     private Integer sourceMin;
     private Integer sourceMid;
     private Integer sourceMax;
-    private int destinationEffect;
+    private PatchDestination destinationEffect;
     private int destinationParameter;
     private int destinationMin;
     private int destinationMid;
@@ -131,12 +143,12 @@ public class Patch {
         this.sourceMax = sourceMax;
     }
 
-    public int getDestinationEffect() {
-        return destinationEffect;
+    public Integer getDestinationEffect() {
+        return destinationEffect == null ? null : destinationEffect.ordinal();
     }
 
     public void setDestinationEffect(final int destinationEffect) {
-        this.destinationEffect = destinationEffect;
+        this.destinationEffect = destinationEffect == NO_DESTINATION ? null : PatchDestination.values()[destinationEffect];
     }
 
     public int getDestinationParameter() {

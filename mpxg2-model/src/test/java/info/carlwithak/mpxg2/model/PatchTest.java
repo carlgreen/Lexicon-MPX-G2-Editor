@@ -58,4 +58,23 @@ public class PatchTest {
         patch.setSource(Patch.PatchSource.CTLS_AB.ordinal());
         assertEquals("Ctls A/B", patch.getSourceName());
     }
+
+    @Test
+    public void testGetAndSetSourceMid() {
+        assertNull(patch.getSourceMid());
+        patch.setSourceMid(3);
+        assertEquals(3, patch.getSourceMid().intValue());
+        patch.setSourceMid(255);
+        assertNull(patch.getSourceMid());
+    }
+
+    @Test
+    public void testGetAndSetDestinationEffect() {
+        assertNull(patch.getDestinationEffect());
+        patch.setDestinationEffect(4);
+        assertEquals(4, patch.getDestinationEffect().intValue());
+        patch.setDestinationEffect(255);
+        assertNull(patch.getDestinationEffect());
+    }
+
 }
