@@ -19,14 +19,8 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
-import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
-import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
-import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
-import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
-import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
-import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import java.text.DecimalFormat;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
