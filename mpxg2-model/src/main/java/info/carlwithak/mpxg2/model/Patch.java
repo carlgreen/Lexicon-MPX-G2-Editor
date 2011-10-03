@@ -25,7 +25,6 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Patch {
-    private static final int NO_SOURCE_MID = 0xff;
     private static final int NO_DESTINATION = 0xff;
 
     enum PatchSource {
@@ -137,7 +136,7 @@ public class Patch {
     }
 
     public void setSourceMid(final Integer sourceMid) {
-        this.sourceMid = (sourceMid == NO_SOURCE_MID ? null : sourceMid);
+        this.sourceMid = sourceMid;
     }
 
     public Integer getSourceMax() {

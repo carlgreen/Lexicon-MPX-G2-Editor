@@ -60,15 +60,6 @@ public class PatchTest {
     }
 
     @Test
-    public void testGetAndSetSourceMid() {
-        assertNull(patch.getSourceMid());
-        patch.setSourceMid(3);
-        assertEquals(3, patch.getSourceMid().intValue());
-        patch.setSourceMid(255);
-        assertNull(patch.getSourceMid());
-    }
-
-    @Test
     public void testGetAndSetDestinationEffect() {
         assertNull(patch.getDestinationEffectIndex());
         patch.setDestinationEffect(4);

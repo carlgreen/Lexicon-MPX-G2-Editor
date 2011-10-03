@@ -66,6 +66,7 @@ public class SysexParser {
     private static final int LEXICON_MANUFACTURER_ID = 0x06;
     private static final int MPXG2_PRODUCT_ID = 0x0f;
     private static final int DATA_MESSAGE_TYPE = 0x01;
+    private static final int NO_SOURCE_MID = 0xff;
     // effect type constants
     private static final int EFFECT_TYPE_CHORUS = 0x0001;
     private static final int EFFECT_TYPE_DELAY = 0x0002;
@@ -675,7 +676,7 @@ public class SysexParser {
         Patch patch = new Patch();
         patch.setSource(source);
         patch.setSourceMin(sourceMin);
-        patch.setSourceMid(sourceMid);
+        patch.setSourceMid(sourceMid == NO_SOURCE_MID ? null : sourceMid);
         patch.setSourceMax(sourceMax);
         patch.setDestinationEffect(destinationEffect);
         patch.setDestinationParameter(destinationParameter);
