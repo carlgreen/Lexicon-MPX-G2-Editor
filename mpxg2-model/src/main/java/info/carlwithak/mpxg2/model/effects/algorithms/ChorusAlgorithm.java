@@ -39,6 +39,7 @@ public class ChorusAlgorithm extends Chorus {
     private int resonance1;
     private int resonance2;
 
+    @Override
     public String getParameterUnit(final int parameterIndex) {
         return PARAMETER_UNITS[parameterIndex];
     }

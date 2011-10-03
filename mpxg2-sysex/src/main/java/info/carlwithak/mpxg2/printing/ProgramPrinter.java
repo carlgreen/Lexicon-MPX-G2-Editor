@@ -235,16 +235,7 @@ public class ProgramPrinter {
             }
         },
         {},
-        {
-            {},
-            {},
-            {},
-            {},
-            {},
-            {
-                "%", "dB", "Hz", "%", "%", "°", "", ""
-            }
-        },
+        {},
         {},
         {},
         {},
@@ -574,9 +565,7 @@ public class ProgramPrinter {
                 }
                 break;
             case 2:
-                if (program.getChorus() instanceof ChorusAlgorithm) {
-                    patchDestinationUnit = ((ChorusAlgorithm) program.getChorus()).getParameterUnit(patch.getDestinationParameter());
-                }
+                patchDestinationUnit = program.getChorus().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 3:
                 patchDestinationUnit = program.getDelay().getParameterUnit(patch.getDestinationParameter());

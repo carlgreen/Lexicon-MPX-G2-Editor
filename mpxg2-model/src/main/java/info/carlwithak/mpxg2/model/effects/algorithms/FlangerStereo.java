@@ -26,12 +26,21 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class FlangerStereo extends Chorus {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Hz", "%", "%", "°", "", ""
+    };
+
     private Rate rate;
     private int pulseWidth;
     private int depth;
     private int phase;
     private int resonance;
     private int blend;
+
+    @Override
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getDepth() {
         return depth;

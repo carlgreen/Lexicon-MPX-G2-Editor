@@ -25,5 +25,13 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class PedalVol extends Chorus {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB"
+    };
+
+    @Override
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
 }

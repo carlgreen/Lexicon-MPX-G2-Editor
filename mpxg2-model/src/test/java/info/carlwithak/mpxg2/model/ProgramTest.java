@@ -56,7 +56,7 @@ public class ProgramTest {
      */
     @Test
     public void testChorus() {
-        Chorus chorus = new Chorus();
+        Chorus chorus = mock(Chorus.class);
         assertNull(program.getChorus());
         program.setChorus(chorus);
         assertEquals(chorus, program.getChorus());

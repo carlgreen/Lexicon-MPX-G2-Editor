@@ -77,6 +77,9 @@ public class AlgorithmsTest {
     @Test
     public void testDetuneMonoAlgorithm() throws IntrospectionException {
         testBean(DetuneMono.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new DetuneMono().getParameterUnit(0));
     }
 
     @Test
@@ -103,6 +106,9 @@ public class AlgorithmsTest {
     @Test
     public void testFlangerStereoAlgorithm() throws IntrospectionException {
         testBean(FlangerStereo.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new FlangerStereo().getParameterUnit(0));
     }
 
     @Test
@@ -121,6 +127,9 @@ public class AlgorithmsTest {
     @Test
     public void testPedalVolAlgorithm() throws IntrospectionException {
         testBean(PedalVol.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new PedalVol().getParameterUnit(0));
     }
 
     @Test
