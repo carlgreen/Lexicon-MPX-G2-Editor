@@ -42,6 +42,7 @@ public class EchoDual extends Delay {
     private int damp2;
     private int clear;
 
+    @Override
     public String getParameterUnit(final int parameterIndex) {
         return PARAMETER_UNITS[parameterIndex];
     }

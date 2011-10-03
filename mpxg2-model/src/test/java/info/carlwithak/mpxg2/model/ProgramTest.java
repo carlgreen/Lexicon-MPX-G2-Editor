@@ -67,7 +67,7 @@ public class ProgramTest {
      */
     @Test
     public void testDelay() {
-        Delay delay = new Delay();
+        Delay delay = mock(Delay.class);
         assertNull(program.getDelay());
         program.setDelay(delay);
         assertEquals(delay, program.getDelay());

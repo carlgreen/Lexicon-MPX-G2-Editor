@@ -64,6 +64,9 @@ public class AlgorithmsTest {
     @Test
     public void testDelayDualAlgorithm() throws IntrospectionException {
         testBean(DelayDual.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new DelayDual().getParameterUnit(0));
     }
 
     @Test

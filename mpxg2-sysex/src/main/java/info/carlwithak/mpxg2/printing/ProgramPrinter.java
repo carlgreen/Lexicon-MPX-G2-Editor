@@ -579,11 +579,7 @@ public class ProgramPrinter {
                 }
                 break;
             case 3:
-                if (program.getDelay() instanceof EchoMono) {
-                    patchDestinationUnit = ((EchoMono) program.getDelay()).getParameterUnit(patch.getDestinationParameter());
-                } else if (program.getDelay() instanceof EchoDual) {
-                    patchDestinationUnit = ((EchoDual) program.getDelay()).getParameterUnit(patch.getDestinationParameter());
-                }
+                patchDestinationUnit = program.getDelay().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 4:
                 patchDestinationUnit = program.getReverb().getParameterUnit(patch.getDestinationParameter());

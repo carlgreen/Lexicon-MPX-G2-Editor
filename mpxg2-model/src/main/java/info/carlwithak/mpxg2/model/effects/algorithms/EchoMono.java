@@ -36,6 +36,7 @@ public class EchoMono extends Delay {
     private int damp;
     private int clear;
 
+    @Override
     public String getParameterUnit(final int parameterIndex) {
         return PARAMETER_UNITS[parameterIndex];
     }
