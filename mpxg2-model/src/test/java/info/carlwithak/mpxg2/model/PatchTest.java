@@ -64,7 +64,7 @@ public class PatchTest {
         assertNull(patch.getDestinationEffectIndex());
         patch.setDestinationEffect(4);
         assertEquals(4, patch.getDestinationEffectIndex().intValue());
-        patch.setDestinationEffect(255);
+        patch.setDestinationEffect(null);
         assertNull(patch.getDestinationEffectIndex());
     }
 

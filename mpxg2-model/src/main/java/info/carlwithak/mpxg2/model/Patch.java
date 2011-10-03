@@ -25,8 +25,6 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Patch {
-    private static final int NO_DESTINATION = 0xff;
-
     enum PatchSource {
         NONE(null),
         /* Internal Controllers */
@@ -155,8 +153,8 @@ public class Patch {
         return destinationEffect == null ? null : destinationEffect.getDisplayName();
     }
 
-    public void setDestinationEffect(final int destinationEffect) {
-        this.destinationEffect = destinationEffect == NO_DESTINATION ? null : PatchDestination.values()[destinationEffect];
+    public void setDestinationEffect(final Integer destinationEffect) {
+        this.destinationEffect = destinationEffect == null ? null : PatchDestination.values()[destinationEffect];
     }
 
     public int getDestinationParameter() {
