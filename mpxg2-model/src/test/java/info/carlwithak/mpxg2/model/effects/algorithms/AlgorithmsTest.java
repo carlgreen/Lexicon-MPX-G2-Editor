@@ -67,7 +67,8 @@ public class AlgorithmsTest {
     public void testDelayDualAlgorithm() throws IntrospectionException {
         testBean(DelayDual.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new DelayDual().getParameterName(0));
         assertEquals("%", new DelayDual().getParameterUnit(0));
     }
 
@@ -91,7 +92,8 @@ public class AlgorithmsTest {
     public void testEchoMonoAlgorithm() throws IntrospectionException {
         testBean(EchoMono.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new EchoMono().getParameterName(0));
         assertEquals("%", new EchoMono().getParameterUnit(0));
     }
 
@@ -99,7 +101,8 @@ public class AlgorithmsTest {
     public void testEchoDualAlgorithm() throws IntrospectionException {
         testBean(EchoDual.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new EchoDual().getParameterName(0));
         assertEquals("%", new EchoDual().getParameterUnit(0));
     }
 

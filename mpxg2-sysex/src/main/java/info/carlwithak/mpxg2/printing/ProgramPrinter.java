@@ -133,19 +133,7 @@ public class ProgramPrinter {
                 "Mix", "Level", "Rate", "PW", "Depth", "Phase", "Res", "Blend"
             }
         },
-        {
-            {},
-            {},
-            {},
-            {},
-            {
-                "Mix", "Level", "Time", "Fbk", "Damp", "Clear"
-            },
-            {},
-            {
-                "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
-            }
-        },
+        {},
         {},
         {},
         {
@@ -496,6 +484,7 @@ public class ProgramPrinter {
             case 2:
                 break;
             case 3:
+                effectParameter = program.getDelay().getParameterName(program.getSoftRowParameter(i));
                 break;
             case 4:
                 effectParameter = program.getReverb().getParameterName(program.getSoftRowParameter(i));
@@ -526,6 +515,7 @@ public class ProgramPrinter {
                 patchDestinationUnit = program.getChorus().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 3:
+                patchParameter = program.getDelay().getParameterName(patch.getDestinationParameter());
                 patchDestinationUnit = program.getDelay().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 4:

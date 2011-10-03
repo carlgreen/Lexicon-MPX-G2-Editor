@@ -25,6 +25,9 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  * @author Carl Green
  */
 public class DelayDual extends Delay {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Time", "Fbk", "Damp", "Clear"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "Pan", "Pan", "-%", "-%", "%", "%", "Clear"
     };
@@ -43,6 +46,11 @@ public class DelayDual extends Delay {
     private int xFbk1;
     private int xFbk2;
     private boolean clear;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {

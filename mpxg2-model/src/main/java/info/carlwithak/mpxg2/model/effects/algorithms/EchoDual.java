@@ -25,6 +25,9 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  * @author Carl Green
  */
 public class EchoDual extends Delay {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "-%", "-%", "%", "%", "Clear"
     };
@@ -41,6 +44,11 @@ public class EchoDual extends Delay {
     private int damp1;
     private int damp2;
     private int clear;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
