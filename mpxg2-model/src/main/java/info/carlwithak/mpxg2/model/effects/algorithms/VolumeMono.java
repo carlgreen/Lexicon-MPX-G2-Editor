@@ -25,11 +25,19 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class VolumeMono extends Effect {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Volume"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", "%"
     };
 
     private int volume;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {

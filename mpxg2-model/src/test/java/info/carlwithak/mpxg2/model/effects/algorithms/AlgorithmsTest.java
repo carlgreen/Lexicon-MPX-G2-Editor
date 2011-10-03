@@ -42,7 +42,8 @@ public class AlgorithmsTest {
     public void testAutoPanAlgorithm() throws IntrospectionException {
         testBean(AutoPan.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new AutoPan().getParameterName(0));
         assertEquals("%", new AutoPan().getParameterUnit(0));
     }
 
@@ -77,7 +78,8 @@ public class AlgorithmsTest {
     public void testDetuneDualAlgorithm() throws IntrospectionException {
         testBean(DetuneDual.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new DetuneDual().getParameterName(0));
         assertEquals("%", new DetuneDual().getParameterUnit(0));
     }
 
@@ -131,7 +133,8 @@ public class AlgorithmsTest {
     public void testPannerAlgorithm() throws IntrospectionException {
         testBean(Panner.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Panner().getParameterName(0));
         assertEquals("%", new Panner().getParameterUnit(0));
     }
 
@@ -148,7 +151,8 @@ public class AlgorithmsTest {
     public void testPedalWah1Algorithm() throws IntrospectionException {
         testBean(PedalWah1.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new PedalWah1().getParameterName(0));
         assertEquals("%", new PedalWah1().getParameterUnit(0));
     }
 
@@ -156,7 +160,8 @@ public class AlgorithmsTest {
     public void testPedalWah2Algorithm() throws IntrospectionException {
         testBean(PedalWah2.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new PedalWah2().getParameterName(0));
         assertEquals("%", new PedalWah2().getParameterUnit(0));
     }
 
@@ -178,7 +183,8 @@ public class AlgorithmsTest {
     public void testShiftDualAlgorithm() throws IntrospectionException {
         testBean(ShiftDual.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new ShiftDual().getParameterName(0));
         assertEquals("%", new ShiftDual().getParameterUnit(0));
     }
 
@@ -191,7 +197,8 @@ public class AlgorithmsTest {
     public void testUniVybeAlgorithm() throws IntrospectionException {
         testBean(UniVybe.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new UniVybe().getParameterName(0));
         assertEquals("%", new UniVybe().getParameterUnit(0));
     }
 
@@ -199,7 +206,8 @@ public class AlgorithmsTest {
     public void testVolumeMonoAlgorithm() throws IntrospectionException {
         testBean(VolumeMono.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new VolumeMono().getParameterName(0));
         assertEquals("%", new VolumeMono().getParameterUnit(0));
     }
 
@@ -207,7 +215,8 @@ public class AlgorithmsTest {
     public void testWah1Algorithm() throws IntrospectionException {
         testBean(Wah1.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Wah1().getParameterName(0));
         assertEquals("%", new Wah1().getParameterUnit(0));
     }
 }

@@ -25,6 +25,9 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class Wah1 extends Effect {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Sweep", "Bass", "Resp", "Gain"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", "", "Bass", "Resp", "Gain"
     };
@@ -34,6 +37,11 @@ public class Wah1 extends Effect {
     private int type;
     private int response;
     private int gain;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {

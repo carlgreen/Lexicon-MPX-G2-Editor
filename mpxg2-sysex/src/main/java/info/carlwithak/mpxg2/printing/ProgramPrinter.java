@@ -73,54 +73,8 @@ public class ProgramPrinter {
         "SpkrSim", "NGate", "Tempo"
     };
     private static final String[][][] EFFECT_PARAMETERS = {
-        {
-            {},
-            {},
-            {},
-            {
-                "Mix", "Level", "Tune1", "Tune2", "P Dly"
-            },
-            {},
-            {},
-            {
-                "Mix", "Level", "Tune1", "Tune2", "Glide"
-            },
-            {},
-            {},
-            {
-                "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
-            },
-            {},
-            {},
-            {
-                "Mix", "Level", "Rate"
-            },
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {
-                "Mix", "Level", "Bass", "Resp", "Gain"
-            }
-        },
-        {
-            {},
-            {
-                "Mix", "Level", "Pan1", "Pan2"
-            },
-            {
-                "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
-            }
-        },
+        {},
+        {},
         {},
         {},
         {},
@@ -467,8 +421,10 @@ public class ProgramPrinter {
         String effectParameter = null;
         switch (program.getSoftRowEffectType(i)) {
             case 0:
+                effectParameter = program.getEffect1().getParameterName(program.getSoftRowParameter(i));
                 break;
             case 1:
+                effectParameter = program.getEffect2().getParameterName(program.getSoftRowParameter(i));
                 break;
             case 2:
                 effectParameter = program.getChorus().getParameterName(program.getSoftRowParameter(i));
@@ -496,9 +452,11 @@ public class ProgramPrinter {
         String patchDestinationUnit = null;
         switch (patch.getDestinationEffectIndex()) {
             case 0:
+                patchParameter = program.getEffect1().getParameterName(patch.getDestinationParameter());
                 patchDestinationUnit = program.getEffect1().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 1:
+                patchParameter = program.getEffect2().getParameterName(patch.getDestinationParameter());
                 patchDestinationUnit = program.getEffect2().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 2:

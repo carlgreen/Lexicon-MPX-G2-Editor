@@ -26,6 +26,9 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class AutoPan extends Effect {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", "Hz", "%", "%", "Phase"
     };
@@ -34,6 +37,11 @@ public class AutoPan extends Effect {
     private int pulseWidth;
     private int depth;
     private int phase;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
