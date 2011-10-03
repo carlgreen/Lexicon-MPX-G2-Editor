@@ -22,9 +22,11 @@ package info.carlwithak.mpxg2.model.effects;
  *
  * @author Carl Green
  */
-public class Reverb {
+public abstract class Reverb {
     private int mix;
     private int level;
+
+    public abstract String getParameterUnit(final int parameterIndex);
 
     public int getMix() {
         return mix;

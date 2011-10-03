@@ -25,6 +25,10 @@ import info.carlwithak.mpxg2.model.effects.Reverb;
  * @author Carl Green
  */
 public class Chamber extends Reverb {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
+    };
+
     private double size;
     private int link;
     private int diff;
@@ -35,6 +39,11 @@ public class Chamber extends Reverb {
     private int rtHC;
     private int shape;
     private int spred;
+
+    @Override
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public double getSize() {
         return size;

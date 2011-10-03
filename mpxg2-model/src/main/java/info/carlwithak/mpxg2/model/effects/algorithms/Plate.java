@@ -40,6 +40,7 @@ public class Plate extends Reverb {
     private int shape;
     private int spred;
 
+    @Override
     public String getParameterUnit(final int parameterIndex) {
         return PARAMETER_UNITS[parameterIndex];
     }

@@ -32,6 +32,9 @@ public class AlgorithmsTest {
     @Test
     public void testAmbienceAlgorithm() throws IntrospectionException {
         testBean(Ambience.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new Ambience().getParameterUnit(0));
     }
 
     @Test
@@ -45,6 +48,9 @@ public class AlgorithmsTest {
     @Test
     public void testChamberAlgorithm() throws IntrospectionException {
         testBean(Chamber.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new Chamber().getParameterUnit(0));
     }
 
     @Test

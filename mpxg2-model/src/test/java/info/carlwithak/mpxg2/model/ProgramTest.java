@@ -30,6 +30,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
 
 /**
  * Test Program using bean tester where possible. Hard code other tests.
@@ -77,7 +78,7 @@ public class ProgramTest {
      */
     @Test
     public void testReverb() {
-        Reverb reverb = new Reverb();
+        Reverb reverb = mock(Reverb.class);
         assertNull(program.getReverb());
         program.setReverb(reverb);
         assertEquals(reverb, program.getReverb());

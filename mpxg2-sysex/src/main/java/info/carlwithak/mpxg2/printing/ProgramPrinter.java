@@ -246,17 +246,7 @@ public class ProgramPrinter {
             }
         },
         {},
-        {
-            {},
-            {
-                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
-            },
-            {},
-            {},
-            {
-                "%", "dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
-            }
-        },
+        {},
         {},
         {
             {},
@@ -596,9 +586,7 @@ public class ProgramPrinter {
                 }
                 break;
             case 4:
-                if (program.getReverb() instanceof Plate) {
-                    patchDestinationUnit = ((Plate) program.getReverb()).getParameterUnit(patch.getDestinationParameter());
-                }
+                patchDestinationUnit = program.getReverb().getParameterUnit(patch.getDestinationParameter());
                 break;
         }
         if (patchDestinationUnit == null) {
