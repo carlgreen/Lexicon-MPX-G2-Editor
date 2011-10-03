@@ -199,41 +199,7 @@ public class ProgramPrinter {
         }
     };
     private static final String[][][] EFFECT_PARAMETER_UNITS = {
-        {
-            {},
-            {},
-            {},
-            {
-                "%", "dB", "Rate"
-            },
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {
-                "Mix", "Level", "Rate"
-            },
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {
-                "%", "dB", "Bass", "Resp", "Gain"
-            }
-        },
+        {},
         {},
         {},
         {},
@@ -551,18 +517,10 @@ public class ProgramPrinter {
         String patchDestinationUnit = null;
         switch (patch.getDestinationEffectIndex()) {
             case 0:
-                if (program.getEffect1() instanceof AutoPan) {
-                    patchDestinationUnit = ((AutoPan) program.getEffect1()).getParameterUnit(patch.getDestinationParameter());
-                } else if (program.getEffect1() instanceof ShiftDual) {
-                    patchDestinationUnit = ((ShiftDual) program.getEffect1()).getParameterUnit(patch.getDestinationParameter());
-                }
+                patchDestinationUnit = program.getEffect1().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 1:
-                if (program.getEffect2() instanceof Panner) {
-                    patchDestinationUnit = ((Panner) program.getEffect2()).getParameterUnit(patch.getDestinationParameter());
-                } else if (program.getEffect2() instanceof AutoPan) {
-                    patchDestinationUnit = ((AutoPan) program.getEffect2()).getParameterUnit(patch.getDestinationParameter());
-                }
+                patchDestinationUnit = program.getEffect2().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 2:
                 patchDestinationUnit = program.getChorus().getParameterUnit(patch.getDestinationParameter());

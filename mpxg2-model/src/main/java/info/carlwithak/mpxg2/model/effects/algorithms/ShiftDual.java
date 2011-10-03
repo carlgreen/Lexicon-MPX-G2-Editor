@@ -34,6 +34,7 @@ public class ShiftDual extends Effect {
     private int tune2;
     private boolean glide;
 
+    @Override
     public String getParameterUnit(final int parameterIndex) {
         return PARAMETER_UNITS[parameterIndex];
     }

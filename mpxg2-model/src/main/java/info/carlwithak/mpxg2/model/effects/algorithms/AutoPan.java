@@ -35,6 +35,7 @@ public class AutoPan extends Effect {
     private int depth;
     private int phase;
 
+    @Override
     public String getParameterUnit(final int parameterIndex) {
         return PARAMETER_UNITS[parameterIndex];
     }

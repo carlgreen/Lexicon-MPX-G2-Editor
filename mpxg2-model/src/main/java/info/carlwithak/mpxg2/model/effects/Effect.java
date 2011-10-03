@@ -26,6 +26,8 @@ public abstract class Effect {
     private int mix;
     private int level;
 
+    public abstract String getParameterUnit(final int parameterIndex);
+
     public int getMix() {
         return mix;
     }

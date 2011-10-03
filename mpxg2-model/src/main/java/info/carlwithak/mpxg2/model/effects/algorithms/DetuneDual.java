@@ -25,10 +25,19 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class DetuneDual extends Effect {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Tune1", "Tune2", "PreDly"
+    };
+
     private int tune1;
     private int optimize;
     private int tune2;
     private int preDelay;
+
+    @Override
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getTune1() {
         return tune1;

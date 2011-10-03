@@ -72,6 +72,9 @@ public class AlgorithmsTest {
     @Test
     public void testDetuneDualAlgorithm() throws IntrospectionException {
         testBean(DetuneDual.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new DetuneDual().getParameterUnit(0));
     }
 
     @Test
@@ -135,11 +138,17 @@ public class AlgorithmsTest {
     @Test
     public void testPedalWah1Algorithm() throws IntrospectionException {
         testBean(PedalWah1.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new PedalWah1().getParameterUnit(0));
     }
 
     @Test
     public void testPedalWah2Algorithm() throws IntrospectionException {
         testBean(PedalWah2.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new PedalWah2().getParameterUnit(0));
     }
 
     @Test
@@ -171,15 +180,24 @@ public class AlgorithmsTest {
     @Test
     public void testUniVybeAlgorithm() throws IntrospectionException {
         testBean(UniVybe.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new UniVybe().getParameterUnit(0));
     }
 
     @Test
     public void testVolumeMonoAlgorithm() throws IntrospectionException {
         testBean(VolumeMono.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new VolumeMono().getParameterUnit(0));
     }
 
     @Test
     public void testWah1Algorithm() throws IntrospectionException {
         testBean(Wah1.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new Wah1().getParameterUnit(0));
     }
 }

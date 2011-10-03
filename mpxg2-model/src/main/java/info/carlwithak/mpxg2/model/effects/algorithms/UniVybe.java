@@ -25,7 +25,16 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class UniVybe extends Effect {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Rate"
+    };
+
     private int rate;
+
+    @Override
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getRate() {
         return rate;

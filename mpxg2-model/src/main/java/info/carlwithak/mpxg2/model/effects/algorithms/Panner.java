@@ -32,6 +32,7 @@ public class Panner extends Effect {
     private int pan1;
     private int pan2;
 
+    @Override
     public String getParameterUnit(final int parameterIndex) {
         return PARAMETER_UNITS[parameterIndex];
     }

@@ -25,10 +25,19 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class PedalWah2 extends Effect {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Bass", "Resp", "Gain"
+    };
+
     private int bass;
     private int type;
     private int response;
     private int gain;
+
+    @Override
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getBass() {
         return bass;
