@@ -26,6 +26,9 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class FlangerStereo extends Chorus {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Rate", "PW", "Depth", "Phase", "Res", "Blend"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", "Hz", "%", "%", "°", "", ""
     };
@@ -36,6 +39,11 @@ public class FlangerStereo extends Chorus {
     private int phase;
     private int resonance;
     private int blend;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {

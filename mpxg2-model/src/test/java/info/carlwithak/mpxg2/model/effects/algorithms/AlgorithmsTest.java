@@ -59,7 +59,8 @@ public class AlgorithmsTest {
     public void testChorusAlgorithm() throws IntrospectionException {
         testBean(ChorusAlgorithm.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new ChorusAlgorithm().getParameterName(0));
         assertEquals("%", new ChorusAlgorithm().getParameterUnit(0));
     }
 
@@ -84,7 +85,8 @@ public class AlgorithmsTest {
     public void testDetuneMonoAlgorithm() throws IntrospectionException {
         testBean(DetuneMono.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new DetuneMono().getParameterName(0));
         assertEquals("%", new DetuneMono().getParameterUnit(0));
     }
 
@@ -115,7 +117,8 @@ public class AlgorithmsTest {
     public void testFlangerStereoAlgorithm() throws IntrospectionException {
         testBean(FlangerStereo.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new FlangerStereo().getParameterName(0));
         assertEquals("%", new FlangerStereo().getParameterUnit(0));
     }
 
@@ -136,7 +139,8 @@ public class AlgorithmsTest {
     public void testPedalVolAlgorithm() throws IntrospectionException {
         testBean(PedalVol.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new PedalVol().getParameterName(0));
         assertEquals("%", new PedalVol().getParameterUnit(0));
     }
 

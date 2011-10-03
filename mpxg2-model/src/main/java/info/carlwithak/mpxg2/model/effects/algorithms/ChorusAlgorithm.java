@@ -26,6 +26,9 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class ChorusAlgorithm extends Chorus {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
     };
@@ -38,6 +41,11 @@ public class ChorusAlgorithm extends Chorus {
     private int depth2;
     private int resonance1;
     private int resonance2;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {

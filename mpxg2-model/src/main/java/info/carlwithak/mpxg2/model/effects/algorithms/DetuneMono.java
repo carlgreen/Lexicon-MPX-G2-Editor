@@ -25,6 +25,9 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class DetuneMono extends Chorus {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Tune", "P Dly"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", "", "ms"
     };
@@ -32,6 +35,11 @@ public class DetuneMono extends Chorus {
     private int tune;
     private int optimize;
     private int preDelay;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
