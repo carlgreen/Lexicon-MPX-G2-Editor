@@ -25,12 +25,20 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  * @author Carl Green
  */
 public class EchoMono extends Delay {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", ":", "-%", "%", "Clear"
+    };
+
     private int timeEchoes;
     private int timeBeat;
     private int feedback;
     private int insert;
     private int damp;
     private int clear;
+
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getTimeEchoes() {
         return timeEchoes;

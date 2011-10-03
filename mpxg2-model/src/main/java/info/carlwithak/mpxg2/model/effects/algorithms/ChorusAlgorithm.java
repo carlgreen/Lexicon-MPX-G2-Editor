@@ -26,6 +26,10 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class ChorusAlgorithm extends Chorus {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
+    };
+
     private Rate rate1;
     private int pulseWidth1;
     private int depth1;
@@ -34,6 +38,10 @@ public class ChorusAlgorithm extends Chorus {
     private int depth2;
     private int resonance1;
     private int resonance2;
+
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public Rate getRate1() {
         return rate1;

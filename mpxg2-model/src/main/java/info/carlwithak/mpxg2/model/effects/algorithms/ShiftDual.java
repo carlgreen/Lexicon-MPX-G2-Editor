@@ -25,10 +25,18 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class ShiftDual extends Effect {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "", "", "Glide"
+    };
+
     private int tune1;
     private int optimize;
     private int tune2;
     private boolean glide;
+
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getTune1() {
         return tune1;

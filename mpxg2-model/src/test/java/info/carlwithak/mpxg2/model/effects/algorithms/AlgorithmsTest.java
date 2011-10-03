@@ -20,6 +20,7 @@ import java.beans.IntrospectionException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Run a java bean test for each algorithm class.
@@ -36,6 +37,9 @@ public class AlgorithmsTest {
     @Test
     public void testAutoPanAlgorithm() throws IntrospectionException {
         testBean(AutoPan.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new AutoPan().getParameterUnit(0));
     }
 
     @Test
@@ -46,6 +50,9 @@ public class AlgorithmsTest {
     @Test
     public void testChorusAlgorithm() throws IntrospectionException {
         testBean(ChorusAlgorithm.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new ChorusAlgorithm().getParameterUnit(0));
     }
 
     @Test
@@ -66,11 +73,17 @@ public class AlgorithmsTest {
     @Test
     public void testEchoMonoAlgorithm() throws IntrospectionException {
         testBean(EchoMono.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new EchoMono().getParameterUnit(0));
     }
 
     @Test
     public void testEchoDualAlgorithm() throws IntrospectionException {
         testBean(EchoDual.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new EchoDual().getParameterUnit(0));
     }
 
     @Test
@@ -91,6 +104,9 @@ public class AlgorithmsTest {
     @Test
     public void testPannerAlgorithm() throws IntrospectionException {
         testBean(Panner.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new Panner().getParameterUnit(0));
     }
 
     @Test
@@ -111,6 +127,9 @@ public class AlgorithmsTest {
     @Test
     public void testPlateAlgorithm() throws IntrospectionException {
         testBean(Plate.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new Plate().getParameterUnit(0));
     }
 
     @Test
@@ -121,6 +140,9 @@ public class AlgorithmsTest {
     @Test
     public void testShiftDualAlgorithm() throws IntrospectionException {
         testBean(ShiftDual.class);
+
+        // token test of getParameterUnit()
+        assertEquals("%", new ShiftDual().getParameterUnit(0));
     }
 
     @Test

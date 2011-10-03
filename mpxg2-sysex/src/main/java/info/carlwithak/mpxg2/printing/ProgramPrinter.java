@@ -17,10 +17,16 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
-import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
+import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import java.text.DecimalFormat;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
@@ -202,13 +208,10 @@ public class ProgramPrinter {
             },
             {},
             {},
-            {
-                "%", "dB", "", "", "Glide"},
             {},
             {},
-            {
-                "%", "dB", "Hz", "%", "%", "Phase"
-            },
+            {},
+            {},
             {},
             {},
             {
@@ -231,20 +234,10 @@ public class ProgramPrinter {
                 "%", "dB", "Bass", "Resp", "Gain"
             }
         },
+        {},
         {
             {},
-            {
-                "%", "dB", "Pan1", "Pan2"
-            },
-            {
-                "%", "dB", "Hz", "%", "%", "Phase"
-            }
-        },
-        {
             {},
-            {
-                "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
-            },
             {},
             {},
             {},
@@ -252,28 +245,14 @@ public class ProgramPrinter {
                 "%", "dB", "Hz", "%", "%", "°", "", ""
             }
         },
-        {
-            {},
-            {},
-            {},
-            {},
-            {
-                "%", "dB", ":", "-%", "%", "Clear"
-            },
-            {},
-            {
-                "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "-%", "-%", "%", "%", "Clear"
-            }
-        },
+        {},
         {
             {},
             {
                 "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
             },
             {},
-            {
-                "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
-            },
+            {},
             {
                 "%", "dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
             }
@@ -588,7 +567,43 @@ public class ProgramPrinter {
             return "";
         }
         int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffectIndex());
-        String patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
+        String patchDestinationUnit = null;
+        switch (patch.getDestinationEffectIndex()) {
+            case 0:
+                if (program.getEffect1() instanceof AutoPan) {
+                    patchDestinationUnit = ((AutoPan) program.getEffect1()).getParameterUnit(patch.getDestinationParameter());
+                } else if (program.getEffect1() instanceof ShiftDual) {
+                    patchDestinationUnit = ((ShiftDual) program.getEffect1()).getParameterUnit(patch.getDestinationParameter());
+                }
+                break;
+            case 1:
+                if (program.getEffect2() instanceof Panner) {
+                    patchDestinationUnit = ((Panner) program.getEffect2()).getParameterUnit(patch.getDestinationParameter());
+                } else if (program.getEffect2() instanceof AutoPan) {
+                    patchDestinationUnit = ((AutoPan) program.getEffect2()).getParameterUnit(patch.getDestinationParameter());
+                }
+                break;
+            case 2:
+                if (program.getChorus() instanceof ChorusAlgorithm) {
+                    patchDestinationUnit = ((ChorusAlgorithm) program.getChorus()).getParameterUnit(patch.getDestinationParameter());
+                }
+                break;
+            case 3:
+                if (program.getDelay() instanceof EchoMono) {
+                    patchDestinationUnit = ((EchoMono) program.getDelay()).getParameterUnit(patch.getDestinationParameter());
+                } else if (program.getDelay() instanceof EchoDual) {
+                    patchDestinationUnit = ((EchoDual) program.getDelay()).getParameterUnit(patch.getDestinationParameter());
+                }
+                break;
+            case 4:
+                if (program.getReverb() instanceof Plate) {
+                    patchDestinationUnit = ((Plate) program.getReverb()).getParameterUnit(patch.getDestinationParameter());
+                }
+                break;
+        }
+        if (patchDestinationUnit == null) {
+            patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
+        }
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
         sb.append("      Source: ").append(patch.getSourceName()).append("\n");

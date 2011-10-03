@@ -25,8 +25,16 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class Panner extends Effect {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Pan1", "Pan2"
+    };
+
     private int pan1;
     private int pan2;
+
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getPan1() {
         return pan1;

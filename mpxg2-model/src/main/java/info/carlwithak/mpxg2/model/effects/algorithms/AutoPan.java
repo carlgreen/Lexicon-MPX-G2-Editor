@@ -26,10 +26,18 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class AutoPan extends Effect {
+    private static final String[] PARAMETER_UNITS = {
+        "%", "dB", "Hz", "%", "%", "Phase"
+    };
+
     private Rate rate;
     private int pulseWidth;
     private int depth;
     private int phase;
+
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getDepth() {
         return depth;
