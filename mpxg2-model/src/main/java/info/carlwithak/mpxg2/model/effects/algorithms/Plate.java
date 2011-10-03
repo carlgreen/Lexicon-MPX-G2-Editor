@@ -25,6 +25,9 @@ import info.carlwithak.mpxg2.model.effects.Reverb;
  * @author Carl Green
  */
 public class Plate extends Reverb {
+    private static final String[] PARAMETER_NAMES = {
+        "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
+    };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
     };
@@ -39,6 +42,11 @@ public class Plate extends Reverb {
     private int rtHC;
     private int shape;
     private int spred;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
 
     @Override
     public String getParameterUnit(final int parameterIndex) {

@@ -33,7 +33,8 @@ public class AlgorithmsTest {
     public void testAmbienceAlgorithm() throws IntrospectionException {
         testBean(Ambience.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Ambience().getParameterName(0));
         assertEquals("%", new Ambience().getParameterUnit(0));
     }
 
@@ -49,7 +50,8 @@ public class AlgorithmsTest {
     public void testChamberAlgorithm() throws IntrospectionException {
         testBean(Chamber.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Chamber().getParameterName(0));
         assertEquals("%", new Chamber().getParameterUnit(0));
     }
 
@@ -155,7 +157,8 @@ public class AlgorithmsTest {
     public void testPlateAlgorithm() throws IntrospectionException {
         testBean(Plate.class);
 
-        // token test of getParameterUnit()
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Plate().getParameterName(0));
         assertEquals("%", new Plate().getParameterUnit(0));
     }
 

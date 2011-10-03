@@ -26,6 +26,8 @@ public abstract class Reverb {
     private int mix;
     private int level;
 
+    public abstract String getParameterName(final int destinationParameter);
+
     public abstract String getParameterUnit(final int parameterIndex);
 
     public int getMix() {

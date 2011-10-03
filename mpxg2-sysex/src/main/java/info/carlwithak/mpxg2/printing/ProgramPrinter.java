@@ -146,19 +146,7 @@ public class ProgramPrinter {
                 "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
             }
         },
-        {
-            {},
-            {
-                "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
-            },
-            {},
-            {
-                "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
-            },
-            {
-                "Mix", "Level", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
-            }
-        },
+        {},
         {},
         {
             {},
@@ -499,7 +487,24 @@ public class ProgramPrinter {
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
         int algorithm = getAlgorithmForEffectType(program, program.getSoftRowEffectType(i));
-        sb.append(effectParameterToString(program.getSoftRowEffectType(i), algorithm, program.getSoftRowParameter(i))).append("\n");
+        String effectParameter = null;
+        switch (program.getSoftRowEffectType(i)) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                effectParameter = program.getReverb().getParameterName(program.getSoftRowParameter(i));
+                break;
+        }
+        if (effectParameter == null) {
+            effectParameter = effectParameterToString(program.getSoftRowEffectType(i), algorithm, program.getSoftRowParameter(i));
+        }
+        sb.append(effectParameter).append("\n");
         return sb.toString();
     }
 
@@ -508,6 +513,7 @@ public class ProgramPrinter {
             return "";
         }
         int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffectIndex());
+        String patchParameter = null;
         String patchDestinationUnit = null;
         switch (patch.getDestinationEffectIndex()) {
             case 0:
@@ -523,8 +529,12 @@ public class ProgramPrinter {
                 patchDestinationUnit = program.getDelay().getParameterUnit(patch.getDestinationParameter());
                 break;
             case 4:
+                patchParameter = program.getReverb().getParameterName(patch.getDestinationParameter());
                 patchDestinationUnit = program.getReverb().getParameterUnit(patch.getDestinationParameter());
                 break;
+        }
+        if (patchParameter == null) {
+            patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
         }
         if (patchDestinationUnit == null) {
             patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
@@ -536,7 +546,6 @@ public class ProgramPrinter {
         sb.append("        Mid: ").append(patch.getSourceMid() == null ? "--" : patch.getSourceMid()).append("\n");
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
         String patchEffect = patch.getDestinationEffectName();
-        String patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
         sb.append("      Destination: ").append(patchEffect).append(" ").append(patchParameter).append("\n");
         sb.append("        Min: ");
         if ("Decay".equals(patchParameter)) {
