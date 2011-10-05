@@ -29,6 +29,7 @@ import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AutoPanParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.BlueCompParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
@@ -292,6 +293,9 @@ public class SysexParser {
                             break;
                         case 2:
                             effect2 = AutoPanParser.parse(effect2Parameters);
+                            break;
+                        case 10:
+                            effect2 = BlueCompParser.parse(effect2Parameters);
                             break;
                         case 18:
                             effect2 = PedalWah1Parser.parse(effect2Parameters);

@@ -24,6 +24,7 @@ import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
@@ -1298,6 +1299,27 @@ public class SysexParserTest {
         assertEquals(29, gain.getDrive());
         assertEquals(19, gain.getTone());
         assertEquals(53, gain.getLevel());
+    }
+
+    /**
+     * Test parsing the AnotherBrick preset.
+     */
+    @Test
+    public void testParseAnotherBrick() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("006_AnotherBrick.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect2() instanceof BlueComp);
+        BlueComp effect2 = (BlueComp) program.getEffect2();
+        assertEquals(100, effect2.getMix());
+        assertEquals(6, effect2.getLevel());
+        assertEquals(5, effect2.getSensitivity());
+        assertEquals(-28, effect2.getThreshold());
+        assertEquals(5, effect2.getGain());
+        assertEquals(20, effect2.getAttackTime());
+        assertEquals(100, effect2.getReleaseTime());
+
+        assertEquals("AnotherBrick", program.getProgramName());
     }
 
     /**

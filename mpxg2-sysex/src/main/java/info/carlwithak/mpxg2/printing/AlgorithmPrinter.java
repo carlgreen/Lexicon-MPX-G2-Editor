@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
@@ -42,6 +43,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AmbiencePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AutoPanPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.BlueCompPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ChamberPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DelayDualPrinter;
@@ -89,6 +91,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(Panner.class, new PannerPrinter());
        PRINTERS.put(AutoPan.class, new AutoPanPrinter());
        PRINTERS.put(UniVybe.class, new UniVybePrinter());
+       PRINTERS.put(BlueComp.class, new BlueCompPrinter());
        PRINTERS.put(Wah1.class, new Wah1Printer());
        PRINTERS.put(PedalWah1.class, new PedalWah1Printer());
        PRINTERS.put(PedalWah2.class, new PedalWah2Printer());

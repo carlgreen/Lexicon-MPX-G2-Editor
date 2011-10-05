@@ -48,6 +48,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testBlueCompAlgorithm() throws IntrospectionException {
+        testBean(BlueComp.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new BlueComp().getParameterName(0));
+        assertEquals("%", new BlueComp().getParameterUnit(0));
+    }
+
+    @Test
     public void testChamberAlgorithm() throws IntrospectionException {
         testBean(Chamber.class);
 

@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
@@ -114,6 +115,23 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
         String actual = AlgorithmPrinter.print(univybe);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintBlueComp() throws PrintException {
+        BlueComp blueComp = new BlueComp();
+        blueComp.setMix(100);
+        blueComp.setLevel(6);
+        blueComp.setSensitivity(5);
+        blueComp.setThreshold(-28);
+        blueComp.setGain(5);
+        blueComp.setAttackTime(20);
+        blueComp.setReleaseTime(100);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +5dB\n    Thrsh: -28dB\n    Gain: +5\n    ATime: 20ms\n    RTime: 100ms\n";
+        String actual = AlgorithmPrinter.print(blueComp);
 
         assertEquals(expected, actual);
     }
