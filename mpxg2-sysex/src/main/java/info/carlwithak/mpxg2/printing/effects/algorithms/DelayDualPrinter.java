@@ -45,8 +45,8 @@ public class DelayDualPrinter implements Printer {
         sb.append("    Feedback1: ").append(signInt(delayDual.getFeedback1())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(delayDual.getInsert())).append("\n");
         sb.append("    Feedback2: ").append(signInt(delayDual.getFeedback2())).append("%\n");
-        sb.append("    XFbk1: ").append(delayDual.getXFbk1()).append("%\n");
-        sb.append("    XFbk2: ").append(delayDual.getXFbk2()).append("%\n");
+        sb.append("    XFbk1: ").append(signInt(delayDual.getXFbk1())).append("%\n");
+        sb.append("    XFbk2: ").append(signInt(delayDual.getXFbk2())).append("%\n");
         sb.append("    Clear: ").append(delayDual.isClear()  ? "On" : "Off").append("\n");
         return sb.toString();
     }

@@ -26,7 +26,7 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  */
 public class DelayDual extends Delay {
     private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Time", "Fbk", "Damp", "Clear"
+        "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Pan 1", "Pan 2", "Fbk 1", "Fbk 2", "XFbk1", "XFbk2", "Clear"
     };
     private static final String[] PARAMETER_UNITS = {
         "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "Pan", "Pan", "-%", "-%", "%", "%", "Clear"
