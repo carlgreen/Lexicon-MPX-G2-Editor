@@ -39,6 +39,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
@@ -132,6 +133,23 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +5dB\n    Thrsh: -28dB\n    Gain: +5\n    ATime: 20ms\n    RTime: 100ms\n";
         String actual = AlgorithmPrinter.print(blueComp);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintSweepFilter() throws PrintException {
+        SweepFilter sweepFilter = new SweepFilter();
+        sweepFilter.setMix(100);
+        sweepFilter.setLevel(6);
+        sweepFilter.setFc(88);
+        sweepFilter.setFRes(34);
+        sweepFilter.setMod(2120);
+        sweepFilter.setScale(50);
+        sweepFilter.setPan(0);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Fc: 88Hz\n    FRes: 34\n    Mod: 2120Hz\n    Scale: +50%\n    Pan: C\n";
+        String actual = AlgorithmPrinter.print(sweepFilter);
 
         assertEquals(expected, actual);
     }
