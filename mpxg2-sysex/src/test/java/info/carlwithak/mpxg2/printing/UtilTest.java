@@ -121,6 +121,13 @@ public class UtilTest {
     }
 
     @Test
+    public void testPanToString() {
+        assertEquals("10L", Util.panToString(-10));
+        assertEquals("C", Util.panToString(0));
+        assertEquals("10R", Util.panToString(10));
+    }
+
+    @Test
     public void testPhaseToString() {
         assertEquals("0°", Util.phaseToString(0));
         assertEquals("90°", Util.phaseToString(1));
