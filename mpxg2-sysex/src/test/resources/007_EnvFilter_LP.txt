@@ -52,36 +52,36 @@ EnvFilter LP
         Mid: --
         Max: 127
       Destination: Effect 1 Mod
-        Min: 20
+        Min: 20Hz
         Mid: --
-        Max: 19500
+        Max: 19500Hz
     Patch 2:
       Source: Ctls Env
         Min: 0
         Mid: --
         Max: 127
       Destination: Effect 1 Mod
-        Min: 20
+        Min: 20Hz
         Mid: --
-        Max: 20000
+        Max: 20000Hz
     Patch 3:
       Source: Ctls Env
         Min: 0
         Mid: --
         Max: 127
       Destination: Effect 1 Mod
-        Min: 20
+        Min: 20Hz
         Mid: --
-        Max: 19500
+        Max: 19500Hz
     Patch 4:
       Source: Midi CC48
         Min: 0
         Mid: --
         Max: 127
       Destination: Effect 1 Scale
-        Min: +10
+        Min: +10%
         Mid: --
-        Max: +100
+        Max: +100%
     Patch 5:
       Source: Ctls A/B
         Min: 0

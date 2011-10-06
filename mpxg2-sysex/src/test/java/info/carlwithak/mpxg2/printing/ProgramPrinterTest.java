@@ -129,6 +129,21 @@ public class ProgramPrinterTest {
      * TODO would be good not to use SysexParser.parseProgram()?
      */
     @Test
+    public void testPrintEnvFilterLP() throws Exception {
+        File expectedFile = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.txt").toURI());
+        String expected = readFile(expectedFile);
+        File preset = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+        String actual = ProgramPrinter.print(program);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test printing a textual representation of the program.
+     *
+     * TODO would be good not to use SysexParser.parseProgram()?
+     */
+    @Test
     public void testPrintCWah() throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("064_C-Wah.txt").toURI());
         String expected = readFile(expectedFile);

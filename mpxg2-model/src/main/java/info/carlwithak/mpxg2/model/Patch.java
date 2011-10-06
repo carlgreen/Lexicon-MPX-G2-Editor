@@ -30,7 +30,7 @@ public class Patch {
         /* Internal Controllers */
         CTLS_OFF, CTLS_ON, CTLS_KNOB, CTLS_PULS1, CTLS_TRI1, CTLS_SINE1,
         CTLS_COS1, CTLS_PULS2, CTLS_TRI2, CTLS_SINE2, CTLS_COS2, CTLS_RAND,
-        CTLS_ENV, CTLS_INLVL, CTLS_RNLVL, CTLS_AB("Ctls A/B"), CTLS_ATRG,
+        CTLS_ENV("Ctls Env"), CTLS_INLVL, CTLS_RNLVL, CTLS_AB("Ctls A/B"), CTLS_ATRG,
         CTLS_BTRG, CTLS_ABTRG, CTLS_PEDAL, CTLS_TOG1, CTLS_TOG2, CTLS_TOG3,
         CTLS_SW1, CTLS_SW2, CTLS_SW3,
         /* Midi Controllers */
