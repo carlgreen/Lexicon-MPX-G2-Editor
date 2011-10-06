@@ -1345,6 +1345,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the TremoWah preset.
+     */
+    @Test
+    public void testParseTremoWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("008_TremoWah.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertEquals("TremoWah", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
