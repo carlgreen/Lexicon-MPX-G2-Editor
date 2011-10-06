@@ -129,8 +129,8 @@ AnotherBrick
       On Level: 64
       On Source: none
     Envelope:
-      Src1: off
-      Src2: off
+      Src1: Off
+      Src2: Off
       A Trim: 100
       Resp: 64
   Mix:

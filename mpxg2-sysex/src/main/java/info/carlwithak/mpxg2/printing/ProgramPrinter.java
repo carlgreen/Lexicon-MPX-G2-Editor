@@ -346,8 +346,8 @@ public class ProgramPrinter {
         sb.append("      On Level: ").append(program.getLfo2OnLevel()).append("\n");
         sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo2OnSource())).append("\n");
         sb.append("    Envelope:\n");
-        sb.append("      Src1: ").append(program.getEnvelopeGeneratorSrc1() == 0 ? "off" : program.getEnvelopeGeneratorSrc1()).append("\n");
-        sb.append("      Src2: ").append(program.getEnvelopeGeneratorSrc2() == 0 ? "off" : program.getEnvelopeGeneratorSrc2()).append("\n");
+        sb.append("      Src1: ").append(program.getEnvelopeGeneratorSrc1() == 0 ? "Off" : program.getEnvelopeGeneratorSrc1()).append("\n");
+        sb.append("      Src2: ").append(program.getEnvelopeGeneratorSrc2() == 0 ? "Off" : program.getEnvelopeGeneratorSrc2()).append("\n");
         sb.append("      A Trim: ").append(program.getEnvelopeGeneratorATrim()).append("\n");
         sb.append("      Resp: ").append(program.getEnvelopeGeneratorResponse()).append("\n");
         sb.append("  Mix:\n");
