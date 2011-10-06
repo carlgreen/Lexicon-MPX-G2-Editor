@@ -30,7 +30,7 @@ public class ChorusAlgorithm extends Chorus {
         "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Hz", "%", "%", "Hz", "%", "%", "", ""
+        "%", "dB", "100Hz", "%", "%", "100Hz", "%", "%", "", ""
     };
 
     private Rate rate1;

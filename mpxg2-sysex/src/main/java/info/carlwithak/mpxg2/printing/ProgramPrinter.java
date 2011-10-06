@@ -516,15 +516,23 @@ public class ProgramPrinter {
         } else if ("-%".equals(patchDestinationUnit)) {
             sb.append(signInt(patch.getDestinationMin())).append("%\n");
         } else if ("Hz".equals(patchDestinationUnit)) {
-            sb.append(DECIMAL_2DP.format(patch.getDestinationMin() / 100.0)).append(patchDestinationUnit).append("\n");
+            sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
+        } else if ("100Hz".equals(patchDestinationUnit)) {
+            sb.append(DECIMAL_2DP.format(patch.getDestinationMin() / 100.0)).append(patchDestinationUnit.substring(3)).append("\n");
         } else {
             sb.append(signInt(patch.getDestinationMin())).append(patchDestinationUnit).append("\n");
         }
         sb.append("        Mid: ");
-        if ("Hz".equals(patchDestinationUnit)) {
-            sb.append(patch.getDestinationMid() == 0x8000 ? "--" : DECIMAL_2DP.format(patch.getDestinationMid() / 100.0)).append(patchDestinationUnit).append("\n");
+        if (patch.getDestinationMid() == 0x8000) {
+            sb.append("--\n");
         } else {
-            sb.append(patch.getDestinationMid() == 0x8000 ? "--" : patch.getDestinationMid()).append("\n");
+            if ("Hz".equals(patchDestinationUnit)) {
+                sb.append(patch.getDestinationMid()).append(patchDestinationUnit).append("\n");
+            } else if ("100Hz".equals(patchDestinationUnit)) {
+                sb.append(DECIMAL_2DP.format(patch.getDestinationMid() / 100.0)).append(patchDestinationUnit.substring(3)).append("\n");
+            } else {
+                sb.append(patch.getDestinationMid()).append("\n");
+            }
         }
         sb.append("        Max: ");
         if ("Decay".equals(patchParameter)) {
@@ -550,7 +558,9 @@ public class ProgramPrinter {
         } else if ("-%".equals(patchDestinationUnit)) {
             sb.append(signInt(patch.getDestinationMax())).append('%');
         } else if ("Hz".equals(patchDestinationUnit)) {
-            sb.append(DECIMAL_2DP.format(patch.getDestinationMax() / 100.0)).append(patchDestinationUnit);
+            sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
+        } else if ("100Hz".equals(patchDestinationUnit)) {
+            sb.append(DECIMAL_2DP.format(patch.getDestinationMax() / 100.0)).append(patchDestinationUnit.substring(3));
         } else {
             sb.append(signInt(patch.getDestinationMax())).append(patchDestinationUnit);
         }

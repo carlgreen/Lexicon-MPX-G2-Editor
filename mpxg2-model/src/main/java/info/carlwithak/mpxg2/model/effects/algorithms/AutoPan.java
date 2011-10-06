@@ -30,7 +30,7 @@ public class AutoPan extends Effect {
         "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Hz", "%", "%", "Phase"
+        "%", "dB", "100Hz", "%", "%", "Phase"
     };
 
     private Rate rate;
