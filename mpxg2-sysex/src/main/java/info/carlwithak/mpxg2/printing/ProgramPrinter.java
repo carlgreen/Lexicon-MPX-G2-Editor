@@ -163,6 +163,12 @@ public class ProgramPrinter {
         "none"
     };
 
+    private final static String[] ENVELOPE_GENERATOR_SOURCES = {
+        "Off", "In", "Ret L", "Ret R", "Raw L", "Raw R", "FX 1 L", "FX 1 R",
+        "FX 2 L", "FX 2 R", "Chrs L", "Chrs R", "EQ L", "EQ R", "Rvb L", "Rvb R",
+        "Dly L", "Dly R", "PreOut", "MainL", "MainR"
+    };
+
     private final static String[] SPEAKER_SIMULATOR_CABINETS = {
         "", "ComboNorml"
     };
@@ -346,8 +352,8 @@ public class ProgramPrinter {
         sb.append("      On Level: ").append(program.getLfo2OnLevel()).append("\n");
         sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo2OnSource())).append("\n");
         sb.append("    Envelope:\n");
-        sb.append("      Src1: ").append(program.getEnvelopeGeneratorSrc1() == 0 ? "Off" : program.getEnvelopeGeneratorSrc1()).append("\n");
-        sb.append("      Src2: ").append(program.getEnvelopeGeneratorSrc2() == 0 ? "Off" : program.getEnvelopeGeneratorSrc2()).append("\n");
+        sb.append("      Src1: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc1())).append("\n");
+        sb.append("      Src2: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc2())).append("\n");
         sb.append("      A Trim: ").append(program.getEnvelopeGeneratorATrim()).append("\n");
         sb.append("      Resp: ").append(program.getEnvelopeGeneratorResponse()).append("\n");
         sb.append("  Mix:\n");
@@ -652,6 +658,10 @@ public class ProgramPrinter {
 
     private static String tapSourceToString(final int tapSource) {
         return TAP_SOURCES[tapSource];
+    }
+
+    private static String envelopeGeneratorSourceToString(final int envelopeGeneratorSource) {
+        return ENVELOPE_GENERATOR_SOURCES[envelopeGeneratorSource];
     }
 
     private static String speakerSimulatorCabinetToString(final int speakerSimulatorCabinet) {
