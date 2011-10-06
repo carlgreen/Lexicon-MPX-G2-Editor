@@ -40,6 +40,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
@@ -1320,6 +1321,27 @@ public class SysexParserTest {
         assertEquals(100, effect2.getReleaseTime());
 
         assertEquals("AnotherBrick", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the EnvFilter LP preset.
+     */
+    @Test
+    public void testParseEnvFilterLP() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect1() instanceof SweepFilter);
+        SweepFilter effect1 = (SweepFilter) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(6, effect1.getLevel());
+        assertEquals(88, effect1.getFc());
+        assertEquals(34, effect1.getFRes());
+        assertEquals(2120, effect1.getMod());
+        assertEquals(50, effect1.getScale());
+        assertEquals(0, effect1.getPan());
+
+        assertEquals("EnvFilter LP", program.getProgramName());
     }
 
     /**

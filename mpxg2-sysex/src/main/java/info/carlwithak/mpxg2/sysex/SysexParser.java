@@ -47,6 +47,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
@@ -266,6 +267,9 @@ public class SysexParser {
                             break;
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
+                            break;
+                        case 21:
+                            effect1 = SweepFilterParser.parse(effect1Parameters);
                             break;
                         case 23:
                             effect1 = Wah1Parser.parse(effect1Parameters);

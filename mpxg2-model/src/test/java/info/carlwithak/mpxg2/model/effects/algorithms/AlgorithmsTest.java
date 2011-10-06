@@ -198,6 +198,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testSweepFilterAlgorithm() throws IntrospectionException {
+        testBean(SweepFilter.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new SweepFilter().getParameterName(0));
+        assertEquals("%", new SweepFilter().getParameterUnit(0));
+    }
+
+    @Test
     public void testToneAlgorithm() throws IntrospectionException {
         testBean(Tone.class);
     }
