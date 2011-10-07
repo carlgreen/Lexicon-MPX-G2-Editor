@@ -277,8 +277,8 @@ public class ReverbSpredPrinterTest {
         actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
         assertEquals(expected, actual);
 
-        reverbSpred = 89;
-        expected = "125";
+        reverbSpred = 125;
+        expected = "89";
         actual = ReverbSpredPrinter.reverbSpredToString(link, size, reverbSpred);
         assertEquals(expected, actual);
 
