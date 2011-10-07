@@ -23,5 +23,7 @@ package info.carlwithak.mpxg2.model.effects;
  * @author Carl Green
  */
 public abstract class Gain {
+    public abstract String getParameterName(final int destinationParameter);
 
+    public abstract String getParameterUnit(final int parameterIndex);
 }

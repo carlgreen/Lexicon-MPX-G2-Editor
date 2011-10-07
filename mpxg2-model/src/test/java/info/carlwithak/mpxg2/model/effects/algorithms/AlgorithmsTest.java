@@ -136,6 +136,10 @@ public class AlgorithmsTest {
     @Test
     public void testOverdriveAlgorithm() throws IntrospectionException {
         testBean(Overdrive.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Lo", new Overdrive().getParameterName(0));
+        assertEquals("", new Overdrive().getParameterUnit(0));
     }
 
     @Test
@@ -186,6 +190,10 @@ public class AlgorithmsTest {
     @Test
     public void testScreamerAlgorithm() throws IntrospectionException {
         testBean(Screamer.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Lo", new Screamer().getParameterName(0));
+        assertEquals("", new Screamer().getParameterUnit(0));
     }
 
     @Test
@@ -209,6 +217,10 @@ public class AlgorithmsTest {
     @Test
     public void testToneAlgorithm() throws IntrospectionException {
         testBean(Tone.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Lo", new Tone().getParameterName(0));
+        assertEquals("", new Tone().getParameterUnit(0));
     }
 
     @Test

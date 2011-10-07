@@ -25,11 +25,28 @@ import info.carlwithak.mpxg2.model.effects.Gain;
  * @author Carl Green
  */
 public class Tone extends Gain {
+    private static final String[] PARAMETER_NAMES = {
+        "Lo", "Mid", "Hi", "InLvl", "Level"
+    };
+    private static final String[] PARAMETER_UNITS = {
+        "", "", "", "", ""
+    };
+
     private int lo;
     private int mid;
     private int hi;
     private int inLevel;
     private int level;
+
+    @Override
+    public String getParameterName(final int destinationParameter) {
+        return PARAMETER_NAMES[destinationParameter];
+    }
+
+    @Override
+    public String getParameterUnit(final int parameterIndex) {
+        return PARAMETER_UNITS[parameterIndex];
+    }
 
     public int getLo() {
         return lo;

@@ -79,19 +79,7 @@ public class ProgramPrinter {
         {},
         {},
         {},
-        {
-            {},
-            {
-                "Lo", "Mid", "Hi", "InLvl", "Level"
-            },
-            {},
-            {
-                "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
-            },
-            {
-                "Lo", "Mid", "Hi", "InLvl", "LoCut", "Feel", "Drive", "Tone", "Level"
-            }
-        },
+        {},
         {},
         {},
         {},
@@ -440,6 +428,9 @@ public class ProgramPrinter {
                 break;
             case 4:
                 effectParameter = program.getReverb().getParameterName(program.getSoftRowParameter(i));
+                break;
+            case 6:
+                effectParameter = program.getGain().getParameterName(program.getSoftRowParameter(i));
                 break;
         }
         if (effectParameter == null) {

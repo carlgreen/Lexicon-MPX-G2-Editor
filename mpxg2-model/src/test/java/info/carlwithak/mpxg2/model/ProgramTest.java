@@ -100,8 +100,7 @@ public class ProgramTest {
      */
     @Test
     public void testGain() {
-        Gain gain = new Gain() {
-        };
+        Gain gain = mock(Gain.class);
         assertNull(program.getGain());
         program.setGain(gain);
         assertEquals(gain, program.getGain());
