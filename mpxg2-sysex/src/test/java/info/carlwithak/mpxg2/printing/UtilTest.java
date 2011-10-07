@@ -45,7 +45,7 @@ public class UtilTest {
     }
 
     @Test
-    public void testReverbDecayToString_smallLink() {
+    public void testReverbDecayToString_Link0() {
         int link = 1;
         double size = 5.0;
 
@@ -61,7 +61,7 @@ public class UtilTest {
     }
 
     @Test
-    public void testReverbDecayToString_mediumLink() {
+    public void testReverbDecayToString_Link1() {
         int link = 1;
         double size = 12.0;
 
@@ -77,7 +77,7 @@ public class UtilTest {
     }
 
     @Test
-    public void testReverbDecayToString_largeLink() {
+    public void testReverbDecayToString_Link2() {
         int link = 1;
         double size = 27.5;
 
@@ -93,7 +93,7 @@ public class UtilTest {
     }
 
     @Test
-    public void testReverbDecayToString_hugeLink() {
+    public void testReverbDecayToString_Link3() {
         int link = 1;
         double size = 35.0;
 
@@ -104,6 +104,43 @@ public class UtilTest {
 
         reverbDecay = 63;
         expected = "26.2";
+        actual = Util.reverbDecayToString(link, size, reverbDecay);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testReverbDecayToString_Link6() {
+        int link = 1;
+        double size = 53.0;
+
+        int reverbDecay = 0;
+        String expected = "0.21";
+        String actual = Util.reverbDecayToString(link, size, reverbDecay);
+        assertEquals(expected, actual);
+
+        reverbDecay = 41;
+        expected = "1.67";
+        actual = Util.reverbDecayToString(link, size, reverbDecay);
+        assertEquals(expected, actual);
+
+        reverbDecay = 63;
+        expected = "45.8";
+        actual = Util.reverbDecayToString(link, size, reverbDecay);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testReverbDecayToString_Link9() {
+        int link = 1;
+        double size = 76.0;
+
+        int reverbDecay = 0;
+        String expected = "0.29";
+        String actual = Util.reverbDecayToString(link, size, reverbDecay);
+        assertEquals(expected, actual);
+
+        reverbDecay = 63;
+        expected = "65.4";
         actual = Util.reverbDecayToString(link, size, reverbDecay);
         assertEquals(expected, actual);
     }
