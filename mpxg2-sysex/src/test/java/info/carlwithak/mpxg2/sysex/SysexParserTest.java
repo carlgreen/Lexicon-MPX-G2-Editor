@@ -17,6 +17,11 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
+import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.NoiseGate;
@@ -1351,6 +1356,55 @@ public class SysexParserTest {
     public void testParseTremoWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("008_TremoWah.syx").toURI());
         Program program = SysexParser.parseProgram(preset);
+
+        assertTrue(program.getEffect1() instanceof TremoloMono);
+        TremoloMono effect1 = (TremoloMono) program.getEffect1();
+        assertEquals(100, effect1.getMix());
+        assertEquals(6, effect1.getLevel());
+        assertEquals(new BeatRate(7, 4), effect1.getRate());
+        assertEquals(30, effect1.getPulseWidth());
+        assertEquals(100, effect1.getDepth());
+
+        assertTrue(program.getEffect2() instanceof Wah2);
+        Wah2 effect2 = (Wah2) program.getEffect2();
+        assertEquals(100, effect2.getMix());
+        assertEquals(6, effect2.getLevel());
+        assertEquals(50, effect2.getSweep());
+        assertEquals(0, effect2.getBass());
+        assertEquals(0, effect2.getType());
+        assertEquals(100, effect2.getResponse());
+        assertEquals(10, effect2.getGain());
+
+        assertTrue(program.getChorus() instanceof VolumeDual);
+        VolumeDual chorus = (VolumeDual) program.getChorus();
+        assertEquals(100, chorus.getMix());
+        assertEquals(0, chorus.getLevel());
+        assertEquals(100, chorus.getVolumeLeft());
+        assertEquals(100, chorus.getVolumeRight());
+
+        assertTrue(program.getDelay() instanceof DelayStereo);
+        DelayStereo delay = (DelayStereo) program.getDelay();
+        assertEquals(20, delay.getMix());
+        assertEquals(0, delay.getLevel());
+        assertEquals(new BeatRate(2, 4), delay.getTime());
+        assertEquals(20, delay.getFeedback());
+        assertEquals(3, delay.getInsert());
+        assertFalse(delay.isClear());
+
+        assertTrue(program.getReverb() instanceof Hall);
+        Hall reverb = (Hall) program.getReverb();
+        assertEquals(20, reverb.getMix());
+        assertEquals(0, reverb.getLevel());
+        assertEquals(53.0, reverb.getSize(), 0.01);
+        assertEquals(1, reverb.getLink());
+        assertEquals(80, reverb.getDiff());
+        assertEquals(25, reverb.getPreDelay());
+        assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
+        assertEquals(41, reverb.getDecay()); // 1.67s is number 41 in list
+        assertEquals(15, reverb.getXovr()); // 818 is number 15 in list
+        assertEquals(31, reverb.getRtHC()); // 7.9k is number 31 in list for this size
+        assertEquals(110, reverb.getShape());
+        assertEquals(125, reverb.getSpred()); // 89 is number 125 in list for this size
 
         assertEquals("TremoWah", program.getProgramName());
     }

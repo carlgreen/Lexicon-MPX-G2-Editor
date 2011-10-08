@@ -33,12 +33,15 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.BlueCompParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
@@ -49,9 +52,12 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.TremoloMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Wah1Parser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.Wah2Parser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -265,6 +271,9 @@ public class SysexParser {
                         case 9:
                             effect1 = AutoPanParser.parse(effect1Parameters);
                             break;
+                        case 10:
+                            effect1 = TremoloMonoParser.parse(effect1Parameters);
+                            break;
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
                             break;
@@ -301,6 +310,9 @@ public class SysexParser {
                         case 10:
                             effect2 = BlueCompParser.parse(effect2Parameters);
                             break;
+                        case 17:
+                            effect2 = Wah2Parser.parse(effect2Parameters);
+                            break;
                         case 18:
                             effect2 = PedalWah1Parser.parse(effect2Parameters);
                             break;
@@ -328,6 +340,9 @@ public class SysexParser {
                         case 5:
                             chorus = FlangerStereoParser.parse(chorusParameters);
                             break;
+                        case 15:
+                            chorus = VolumeDualParser.parse(chorusParameters);
+                            break;
                         case 16:
                             chorus = PedalVolParser.parse(chorusParameters);
                             break;
@@ -342,6 +357,9 @@ public class SysexParser {
                     switch (algorithmNumber) {
                         case 0:
                             delay = null;
+                            break;
+                        case 2:
+                            delay = DelayStereoParser.parse(delayParameters);
                             break;
                         case 3:
                             delay = DelayDualParser.parse(delayParameters);
@@ -366,6 +384,9 @@ public class SysexParser {
                             break;
                         case 1:
                             reverb = ChamberParser.parse(reverbParameters);
+                            break;
+                        case 2:
+                            reverb = HallParser.parse(reverbParameters);
                             break;
                         case 3:
                             reverb = PlateParser.parse(reverbParameters);
@@ -408,6 +429,9 @@ public class SysexParser {
                             break;
                         case 4:
                             gain = OverdriveParser.parse(gainParameters);
+                            break;
+                        case 5:
+                            gain = DistortionParser.parse(gainParameters);
                             break;
                         default:
                             throw new ParseException("Invalid Gain algorithm number: " + algorithmNumber);
