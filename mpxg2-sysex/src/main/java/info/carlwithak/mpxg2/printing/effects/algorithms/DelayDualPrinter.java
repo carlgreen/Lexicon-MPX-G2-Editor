@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
+import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.panToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -47,7 +48,7 @@ public class DelayDualPrinter implements Printer {
         sb.append("    Feedback2: ").append(signInt(delayDual.getFeedback2())).append("%\n");
         sb.append("    XFbk1: ").append(signInt(delayDual.getXFbk1())).append("%\n");
         sb.append("    XFbk2: ").append(signInt(delayDual.getXFbk2())).append("%\n");
-        sb.append("    Clear: ").append(delayDual.isClear()  ? "On" : "Off").append("\n");
+        sb.append("    Clear: ").append(onOffToString(delayDual.isClear())).append("\n");
         return sb.toString();
     }
 }

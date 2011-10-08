@@ -171,4 +171,34 @@ public class UtilTest {
         assertEquals("180°", Util.phaseToString(2));
         assertEquals("270°", Util.phaseToString(3));
     }
+
+    @Test
+    public void testOnOffToString_Int() {
+        assertEquals("Off", Util.onOffToString(0));
+        assertEquals("On", Util.onOffToString(1));
+    }
+
+    @Test
+    public void testOnOffToLowerString_Int() {
+        assertEquals("off", Util.onOffToLowerString(0));
+        assertEquals("on", Util.onOffToLowerString(1));
+    }
+
+    @Test
+    public void testOnOffToString_Boolean() {
+        assertEquals("Off", Util.onOffToString(false));
+        assertEquals("On", Util.onOffToString(true));
+    }
+
+    @Test
+    public void testOnOffToLowerString_Boolean() {
+        assertEquals("off", Util.onOffToLowerString(false));
+        assertEquals("on", Util.onOffToLowerString(true));
+    }
+
+    @Test
+    public void testWahTypeToString() {
+        assertEquals("Model C", Util.wahTypeToString(0));
+        assertEquals("Model V", Util.wahTypeToString(1));
+    }
 }

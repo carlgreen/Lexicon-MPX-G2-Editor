@@ -23,6 +23,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import java.text.DecimalFormat;
 
+import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
+import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -263,37 +265,37 @@ public class ProgramPrinter {
             sb.append("    ").append(line).append("\n");
         }
         if (program.getEffect1Algorithm() > 0) {
-            sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(program.isEffect1On() ? "on" : "off").append(")").append("\n");
+            sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(onOffToLowerString(program.isEffect1On())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEffect1()));
         }
         if (program.getEffect2Algorithm() > 0) {
-            sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(program.isEffect2On() ? "on" : "off").append(")").append("\n");
+            sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(onOffToLowerString(program.isEffect2On())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect2ToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEffect2()));
         }
         if (program.getChorusAlgorithm() > 0) {
-            sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(program.isChorusOn() ? "on" : "off").append(")").append("\n");
+            sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(onOffToLowerString(program.isChorusOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getChorusToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getChorus()));
         }
         if (program.getDelayAlgorithm() > 0) {
-            sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(program.isDelayOn() ? "on" : "off").append(")").append("\n");
+            sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(onOffToLowerString(program.isDelayOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getDelayToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getDelay()));
         }
         if (program.getReverbAlgorithm() > 0) {
-            sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(program.isReverbOn() ? "on" : "off").append(")").append("\n");
+            sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(onOffToLowerString(program.isReverbOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getReverbToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getReverb()));
         }
         if (program.getEqAlgorithm() > 0) {
-            sb.append("  EQ: ").append(eqAlgorithmToString(program.getEqAlgorithm())).append(" (").append(program.isEqOn() ? "on" : "off").append(")").append("\n");
+            sb.append("  EQ: ").append(eqAlgorithmToString(program.getEqAlgorithm())).append(" (").append(onOffToLowerString(program.isEqOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEqToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEq()));
         }
         if (program.getGainAlgorithm() > 0) {
-            sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(program.isGainOn() ? "on" : "off").append(")").append("\n");
+            sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(onOffToLowerString(program.isGainOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getGain()));
         }
@@ -314,7 +316,7 @@ public class ProgramPrinter {
         sb.append("      High: ").append(program.getKnobHigh()).append("\n");
         sb.append("      Name: ").append(program.getKnobName()).append("\n");
         sb.append("    LFO 1:\n");
-        sb.append("      Mode: ").append(program.getLfo1Mode() == 0 ? "Off" : "On").append("\n");
+        sb.append("      Mode: ").append(onOffToString(program.getLfo1Mode())).append("\n");
         sb.append("      Rate: ").append(RatePrinter.print(program.getLfo1Rate())).append("\n");
         sb.append("      PW: ").append(program.getLfo1PulseWidth()).append("%\n");
         sb.append("      Phase: ").append(program.getLfo1Phase()).append("\n");
@@ -322,7 +324,7 @@ public class ProgramPrinter {
         sb.append("      On Level: ").append(program.getLfo1OnLevel()).append("\n");
         sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo1OnSource())).append("\n");
         sb.append("    LFO 2:\n");
-        sb.append("      Mode: ").append(program.getLfo2Mode() == 0 ? "Off" : "On").append("\n");
+        sb.append("      Mode: ").append(onOffToString(program.getLfo2Mode())).append("\n");
         sb.append("      Rate: ").append(RatePrinter.print(program.getLfo2Rate())).append("\n");
         sb.append("      PW: ").append(program.getLfo2PulseWidth()).append("%\n");
         sb.append("      Phase: ").append(program.getLfo2Phase()).append("\n");
@@ -388,11 +390,11 @@ public class ProgramPrinter {
         sb.append("    Beat Value: ").append(beatValueToString(program.getBeatValue())).append("\n");
         sb.append("    Tap Average: ").append(program.getTapAverage()).append(" beats\n");
         sb.append("    Tap Source: ").append(tapSourceToString(program.getTapSource())).append("\n");
-        sb.append("  Speaker Sim: ").append(program.getSpeakerSimulatorEnable() == 0 ? "off" : "on").append("\n");
+        sb.append("  Speaker Sim: ").append(onOffToLowerString(program.getSpeakerSimulatorEnable())).append("\n");
         sb.append("    Cabinet: ").append(speakerSimulatorCabinetToString(program.getSpeakerSimulatorCabinet())).append("\n");
         sb.append("  Noise Gate:\n");
         sb.append("    Enable: ").append(noiseGateEnableToString(program.getNoiseGate().getEnable())).append("\n");
-        sb.append("    Send: ").append(program.getNoiseGate().getSend() == 0 ? "off" : "on").append("\n");
+        sb.append("    Send: ").append(onOffToLowerString(program.getNoiseGate().getSend())).append("\n");
         sb.append("    Thrsh: ").append(program.getNoiseGate().getThreshold()).append("dB\n");
         sb.append("    Atten: ").append(program.getNoiseGate().getAttenuation()).append("dB\n");
         sb.append("    Offset: ").append(program.getNoiseGate().getOffset()).append("dB\n");
@@ -502,10 +504,6 @@ public class ProgramPrinter {
             sb.append(reverbDecay).append("s\n");
         } else if(":".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMin() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMin() / 0x100).append("\n");
-        } else if ("%".equals(patchDestinationUnit)) {
-            sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
-        } else if ("-%".equals(patchDestinationUnit)) {
-            sb.append(signInt(patch.getDestinationMin())).append("%\n");
         } else if ("Hz".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
         } else if ("100Hz".equals(patchDestinationUnit)) {
@@ -552,10 +550,6 @@ public class ProgramPrinter {
             sb.append(reverbDecay).append("s");
         } else if (":".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMax() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMax() / 0x100);
-        } else if ("%".equals(patchDestinationUnit)) {
-            sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
-        } else if ("-%".equals(patchDestinationUnit)) {
-            sb.append(signInt(patch.getDestinationMax())).append('%');
         } else if ("Hz".equals(patchDestinationUnit)) {
             sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
         } else if ("100Hz".equals(patchDestinationUnit)) {

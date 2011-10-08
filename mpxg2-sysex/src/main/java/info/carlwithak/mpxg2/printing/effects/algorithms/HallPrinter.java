@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
+import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
 import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
@@ -40,7 +41,7 @@ public class HallPrinter implements Printer {
         sb.append("    Mix: ").append(hall.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(hall.getLevel())).append("dB\n");
         sb.append("    Size: ").append(hall.getSize()).append("m\n");
-        sb.append("    Link: ").append(hall.getLink() == 0 ? "off" : "on").append("\n");
+        sb.append("    Link: ").append(onOffToLowerString(hall.getLink())).append("\n");
         sb.append("    Diff: ").append(hall.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(hall.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(hall.getBass())).append("X\n");

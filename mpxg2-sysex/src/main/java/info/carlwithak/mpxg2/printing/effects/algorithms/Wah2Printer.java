@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
+import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
 
 /**
  *
@@ -36,7 +37,7 @@ public class Wah2Printer implements Printer {
         sb.append("    Level: ").append(signInt(wah2.getLevel())).append("dB\n");
         sb.append("    Sweep: ").append(wah2.getSweep()).append("\n");
         sb.append("    Bass: ").append(wah2.getBass()).append("\n");
-        sb.append("    Type: Model ").append(wah2.getType() == 0 ? "C" : "V").append("\n");
+        sb.append("    Type: ").append(wahTypeToString(wah2.getType())).append("\n");
         sb.append("    Resp: ").append(wah2.getResponse()).append("\n");
         sb.append("    Gain: ").append(signInt(wah2.getGain())).append("\n");
         return sb.toString();

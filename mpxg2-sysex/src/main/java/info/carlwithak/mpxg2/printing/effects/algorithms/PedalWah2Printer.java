@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
+import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
 
 /**
  *
@@ -35,7 +36,7 @@ public class PedalWah2Printer implements Printer {
         sb.append("    Mix: ").append(pedalWah2.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(pedalWah2.getLevel())).append("dB\n");
         sb.append("    Bass: ").append(pedalWah2.getBass()).append("\n");
-        sb.append("    Type: Model ").append(pedalWah2.getType() == 0 ? "C" : "V").append("\n");
+        sb.append("    Type: ").append(wahTypeToString(pedalWah2.getType())).append("\n");
         sb.append("    Resp: ").append(pedalWah2.getResponse()).append("\n");
         sb.append("    Gain: ").append(signInt(pedalWah2.getGain())).append("\n");
         return sb.toString();

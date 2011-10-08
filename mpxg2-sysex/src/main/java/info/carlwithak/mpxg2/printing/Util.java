@@ -222,4 +222,39 @@ public class Util {
     public static String phaseToString(final int phase) {
         return PHASES[phase] + '°';
     }
+
+    /**
+     * @return String 'On' or 'Off' depending on value of ind
+     * @deprecated Should be a boolean value already
+     */
+    public static String onOffToString(final int ind) {
+        return ind == 0 ? "Off" : "On";
+    }
+
+    /**
+     * @return String 'on' or 'off' depending on value of ind
+     * @deprecated Should use capitalized string
+     */
+    public static String onOffToLowerString(final int ind) {
+        return onOffToString(ind).toLowerCase();
+    }
+
+    /**
+     * @return String 'On' or 'Off' depending on value of ind
+     */
+    public static String onOffToString(final boolean ind) {
+        return ind ? "On" : "Off";
+    }
+
+    /**
+     * @return String 'on' or 'off' depending on value of ind
+     * @deprecated Should use capitalized string
+     */
+    public static String onOffToLowerString(final boolean ind) {
+        return onOffToString(ind).toLowerCase();
+    }
+
+    public static String wahTypeToString(final int wahType) {
+        return "Model " + (wahType == 0 ? 'C' : 'V');
+    }
 }

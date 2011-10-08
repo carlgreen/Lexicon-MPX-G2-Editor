@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
+import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -44,7 +45,7 @@ public class EchoDualPrinter implements Printer {
         sb.append("    Feedback2: ").append(signInt(echoDual.getFeedback2())).append("%\n");
         sb.append("    Damp1: ").append(echoDual.getDamp1()).append("%\n");
         sb.append("    Damp2: ").append(echoDual.getDamp2()).append("%\n");
-        sb.append("    Clear: ").append(echoDual.getClear() == 0 ? "off" : "on").append("\n");
+        sb.append("    Clear: ").append(onOffToLowerString(echoDual.getClear())).append("\n");
         return sb.toString();
     }
 

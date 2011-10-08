@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
+import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDelayTimeToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbAmbienceRtHCToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
@@ -37,11 +38,11 @@ public class AmbiencePrinter implements Printer {
         sb.append("    Mix: ").append(ambience.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(ambience.getLevel())).append("dB\n");
         sb.append("    Size: ").append(ambience.getSize()).append("m\n");
-        sb.append("    Link: ").append(ambience.getLink() == 0 ? "off" : "on").append("\n");
+        sb.append("    Link: ").append(onOffToLowerString(ambience.getLink())).append("\n");
         sb.append("    Diff: ").append(ambience.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(ambience.getPreDelay()).append("ms\n");
         sb.append("    Delay Time: ").append(reverbDelayTimeToString(ambience.getDelayTime())).append("s\n");
-        sb.append("    Delay Level: ").append(ambience.getDelayLevel() == 0 ? "off" : "on").append("\n");
+        sb.append("    Delay Level: ").append(onOffToLowerString(ambience.getDelayLevel())).append("\n");
         sb.append("    Rt HC: ").append(reverbAmbienceRtHCToString(ambience.getRtHC())).append("k\n");
         return sb.toString();
     }

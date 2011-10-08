@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
+import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
 import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
@@ -40,7 +41,7 @@ public class ChamberPrinter implements Printer {
         sb.append("    Mix: ").append(chamber.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(chamber.getLevel())).append("dB\n");
         sb.append("    Size: ").append(chamber.getSize()).append("m\n");
-        sb.append("    Link: ").append(chamber.getLink() == 0 ? "off" : "on").append("\n");
+        sb.append("    Link: ").append(onOffToLowerString(chamber.getLink())).append("\n");
         sb.append("    Diff: ").append(chamber.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(chamber.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(chamber.getBass())).append("X\n");
