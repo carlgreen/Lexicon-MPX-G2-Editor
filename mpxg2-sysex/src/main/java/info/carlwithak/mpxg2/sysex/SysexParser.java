@@ -522,8 +522,9 @@ public class SysexParser {
         int lfo1Mode = readInt(in, 2);
         program.setLfo1Mode(lfo1Mode);
 
-        int lfo1Rate = readInt(in, 6);
-        program.setLfo1Rate(lfo1Rate / 100.0);
+        bytes = new byte[6];
+        in.read(bytes);
+        program.setLfo1Rate(RateParser.parse(bytes));
 
         int lfo1PulseWidth = readInt(in, 2);
         program.setLfo1PulseWidth(lfo1PulseWidth);
@@ -544,8 +545,9 @@ public class SysexParser {
         int lfo2Mode = readInt(in, 2);
         program.setLfo2Mode(lfo2Mode);
 
-        int lfo2Rate = readInt(in, 6);
-        program.setLfo2Rate(lfo2Rate / 100.0);
+        bytes = new byte[6];
+        in.read(bytes);
+        program.setLfo2Rate(RateParser.parse(bytes));
 
         int lfo2PulseWidth = readInt(in, 2);
         program.setLfo2PulseWidth(lfo2PulseWidth);

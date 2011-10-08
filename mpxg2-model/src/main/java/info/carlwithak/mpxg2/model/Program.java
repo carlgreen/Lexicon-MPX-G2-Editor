@@ -128,14 +128,14 @@ public class Program {
     private int knobHigh;
     private String knobName;
     private int lfo1Mode;
-    private double lfo1Rate;
+    private Rate lfo1Rate;
     private int lfo1PulseWidth;
     private int lfo1Phase;
     private int lfo1Depth;
     private int lfo1OnLevel;
     private int lfo1OnSource;
     private int lfo2Mode;
-    private double lfo2Rate;
+    private Rate lfo2Rate;
     private int lfo2PulseWidth;
     private int lfo2Phase;
     private int lfo2Depth;
@@ -815,11 +815,11 @@ public class Program {
         this.lfo1Mode = lfo1Mode;
     }
 
-    public double getLfo1Rate() {
+    public Rate getLfo1Rate() {
         return lfo1Rate;
     }
 
-    public void setLfo1Rate(final double lfo1Rate) {
+    public void setLfo1Rate(final Rate lfo1Rate) {
         this.lfo1Rate = lfo1Rate;
     }
 
@@ -871,11 +871,11 @@ public class Program {
         this.lfo2Mode = lfo2Mode;
     }
 
-    public double getLfo2Rate() {
+    public Rate getLfo2Rate() {
         return lfo2Rate;
     }
 
-    public void setLfo2Rate(final double lfo2Rate) {
+    public void setLfo2Rate(final Rate lfo2Rate) {
         this.lfo2Rate = lfo2Rate;
     }
 

@@ -315,7 +315,7 @@ public class ProgramPrinter {
         sb.append("      Name: ").append(program.getKnobName()).append("\n");
         sb.append("    LFO 1:\n");
         sb.append("      Mode: ").append(program.getLfo1Mode() == 0 ? "Off" : "On").append("\n");
-        sb.append("      Rate: ").append(DECIMAL_2DP.format(program.getLfo1Rate())).append("Hz\n");
+        sb.append("      Rate: ").append(RatePrinter.print(program.getLfo1Rate())).append("\n");
         sb.append("      PW: ").append(program.getLfo1PulseWidth()).append("%\n");
         sb.append("      Phase: ").append(program.getLfo1Phase()).append("\n");
         sb.append("      Depth: ").append(program.getLfo1Depth()).append("%\n");
@@ -323,7 +323,7 @@ public class ProgramPrinter {
         sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo1OnSource())).append("\n");
         sb.append("    LFO 2:\n");
         sb.append("      Mode: ").append(program.getLfo2Mode() == 0 ? "Off" : "On").append("\n");
-        sb.append("      Rate: ").append(DECIMAL_2DP.format(program.getLfo2Rate())).append("Hz\n");
+        sb.append("      Rate: ").append(RatePrinter.print(program.getLfo2Rate())).append("\n");
         sb.append("      PW: ").append(program.getLfo2PulseWidth()).append("%\n");
         sb.append("      Phase: ").append(program.getLfo2Phase()).append("\n");
         sb.append("      Depth: ").append(program.getLfo2Depth()).append("%\n");

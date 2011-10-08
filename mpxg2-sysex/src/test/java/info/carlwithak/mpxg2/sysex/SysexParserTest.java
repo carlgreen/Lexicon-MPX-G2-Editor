@@ -302,7 +302,7 @@ public class SysexParserTest {
         assertEquals("Delay Adj", program.getKnobName());
 
         assertEquals(1, program.getLfo1Mode());
-        assertEquals(0.60, program.getLfo1Rate(), 0.001);
+        assertEquals(new FrequencyRate(0.60), program.getLfo1Rate());
         assertEquals(50, program.getLfo1PulseWidth());
         assertEquals(0, program.getLfo1Phase());
         assertEquals(100, program.getLfo1Depth());
@@ -310,7 +310,7 @@ public class SysexParserTest {
         assertEquals(0, program.getLfo1OnSource());
 
         assertEquals(1, program.getLfo2Mode());
-        assertEquals(0.92, program.getLfo2Rate(), 0.001);
+        assertEquals(new FrequencyRate(0.92), program.getLfo2Rate());
         assertEquals(50, program.getLfo2PulseWidth());
         assertEquals(0, program.getLfo2Phase());
         assertEquals(100, program.getLfo2Depth());
@@ -538,7 +538,7 @@ public class SysexParserTest {
         assertEquals("Delay Adj", program.getKnobName());
 
         assertEquals(1, program.getLfo1Mode());
-        assertEquals(0.60, program.getLfo1Rate(), 0.001);
+        assertEquals(new FrequencyRate(0.60), program.getLfo1Rate());
         assertEquals(50, program.getLfo1PulseWidth());
         assertEquals(0, program.getLfo1Phase());
         assertEquals(100, program.getLfo1Depth());
@@ -546,7 +546,7 @@ public class SysexParserTest {
         assertEquals(0, program.getLfo1OnSource());
 
         assertEquals(1, program.getLfo2Mode());
-        assertEquals(0.92, program.getLfo2Rate(), 0.001);
+        assertEquals(new FrequencyRate(0.92), program.getLfo2Rate());
         assertEquals(50, program.getLfo2PulseWidth());
         assertEquals(0, program.getLfo2Phase());
         assertEquals(100, program.getLfo2Depth());
@@ -850,7 +850,7 @@ public class SysexParserTest {
         assertEquals("Delay Adj", program.getKnobName());
 
         assertEquals(1, program.getLfo1Mode());
-        assertEquals(0.60, program.getLfo1Rate(), 0.001);
+        assertEquals(new FrequencyRate(0.60), program.getLfo1Rate());
         assertEquals(50, program.getLfo1PulseWidth());
         assertEquals(0, program.getLfo1Phase());
         assertEquals(100, program.getLfo1Depth());
@@ -858,7 +858,7 @@ public class SysexParserTest {
         assertEquals(0, program.getLfo1OnSource());
 
         assertEquals(1, program.getLfo2Mode());
-        assertEquals(0.92, program.getLfo2Rate(), 0.001);
+        assertEquals(new FrequencyRate(0.92), program.getLfo2Rate());
         assertEquals(50, program.getLfo2PulseWidth());
         assertEquals(0, program.getLfo2Phase());
         assertEquals(100, program.getLfo2Depth());
@@ -1407,6 +1407,42 @@ public class SysexParserTest {
         assertEquals(125, reverb.getSpred()); // 89 is number 125 in list for this size
 
         assertEquals("TremoWah", program.getProgramName());
+
+        assertEquals(50, program.getKnobValue());
+        assertEquals(0, program.getKnobLow());
+        assertEquals(100, program.getKnobHigh());
+        assertEquals("Delay Adj", program.getKnobName());
+
+        assertEquals(1, program.getLfo1Mode());
+        assertEquals(new BeatRate(1, 4), program.getLfo1Rate());
+        assertEquals(50, program.getLfo1PulseWidth());
+        assertEquals(0, program.getLfo1Phase());
+        assertEquals(100, program.getLfo1Depth());
+        assertEquals(64, program.getLfo1OnLevel());
+        assertEquals(0, program.getLfo1OnSource());
+
+        assertEquals(1, program.getLfo2Mode());
+        assertEquals(new BeatRate(1, 4), program.getLfo2Rate());
+        assertEquals(50, program.getLfo2PulseWidth());
+        assertEquals(0, program.getLfo2Phase());
+        assertEquals(100, program.getLfo2Depth());
+        assertEquals(64, program.getLfo2OnLevel());
+        assertEquals(0, program.getLfo2OnSource());
+
+        assertEquals(0, program.getRandomLow());
+        assertEquals(127, program.getRandomHigh());
+        assertEquals(1.00, program.getRandomRate(), 0.001);
+
+        assertEquals(0, program.getABMode());
+        assertEquals(100, program.getARate());
+        assertEquals(100, program.getBRate());
+        assertEquals(64, program.getABOnLevel());
+        assertEquals(0, program.getABOnSource());
+
+        assertEquals(0, program.getEnvelopeGeneratorSrc1());
+        assertEquals(0, program.getEnvelopeGeneratorSrc2());
+        assertEquals(100, program.getEnvelopeGeneratorATrim());
+        assertEquals(64, program.getEnvelopeGeneratorResponse());
     }
 
     /**
