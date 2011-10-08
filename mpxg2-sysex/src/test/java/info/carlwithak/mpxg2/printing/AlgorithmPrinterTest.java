@@ -25,12 +25,15 @@ import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
-import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -41,9 +44,12 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
+import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -103,6 +109,21 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 1.00Hz\n    PW: 50%\n    Depth: 100%\n    Phase: 270°\n";
         String actual = AlgorithmPrinter.print(autoPan);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTremoloMono() throws PrintException {
+        TremoloMono tremoloMono = new TremoloMono();
+        tremoloMono.setMix(100);
+        tremoloMono.setLevel(6);
+        tremoloMono.setRate(new BeatRate(7, 4));
+        tremoloMono.setPulseWidth(30);
+        tremoloMono.setDepth(100);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Rate: 7:4\n    PW: 30%\n    Depth: 100%\n";
+        String actual = AlgorithmPrinter.print(tremoloMono);
 
         assertEquals(expected, actual);
     }
@@ -172,6 +193,23 @@ public class AlgorithmPrinterTest {
     }
 
     @Test
+    public void testPrintWah2() throws PrintException {
+        Wah2 wah2 = new Wah2();
+        wah2.setMix(100);
+        wah2.setLevel(6);
+        wah2.setSweep(50);
+        wah2.setBass(0);
+        wah2.setType(0);
+        wah2.setResponse(100);
+        wah2.setGain(10);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Sweep: 50\n    Bass: 0\n    Type: Model C\n    Resp: 100\n    Gain: +10\n";
+        String actual = AlgorithmPrinter.print(wah2);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testPrintPedalWah1() throws PrintException {
         PedalWah1 pedalWah1 = new PedalWah1();
         pedalWah1.setMix(100);
@@ -212,6 +250,20 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 60%\n";
         String actual = AlgorithmPrinter.print(volumeMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintVolumeDual() throws PrintException {
+        VolumeDual volumeDual = new VolumeDual();
+        volumeDual.setMix(100);
+        volumeDual.setLevel(0);
+        volumeDual.setVolumeLeft(80);
+        volumeDual.setVolumeRight(90);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Vol-L: 80%\n    Vol-R: 90%\n";
+        String actual = AlgorithmPrinter.print(volumeDual);
 
         assertEquals(expected, actual);
     }
@@ -293,6 +345,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 67%\n    Level: +1dB\n    Rate: 1:4\n    PW: 50%\n    Depth: 62%\n    Phase: 90°\n    Res: +20%\n    Blend: 0\n";
         String actual = AlgorithmPrinter.print(flangerStereo);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDelayStereo() throws PrintException {
+        DelayStereo delayStereo = new DelayStereo();
+        delayStereo.setMix(20);
+        delayStereo.setLevel(0);
+        delayStereo.setTime(new BeatRate(2, 4));
+        delayStereo.setFeedback(20);
+        delayStereo.setInsert(3);
+        delayStereo.setClear(false);
+
+        String expected = "    Mix: 20%\n    Level: 0dB\n    Time: 2:4\n    Feedback: +20%\n    Insert: Delay\n    Clear: Off\n";
+        String actual = AlgorithmPrinter.print(delayStereo);
 
         assertEquals(expected, actual);
     }
@@ -383,6 +451,28 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 28%\n    Level: 0dB\n    Size: 24.0m\n    Link: on\n    Diff: 22%\n    Pre Delay: 0ms\n    Bass: 1.5X\n    Decay: 1.05s\n    Xovr: 986\n    Rt HC: 9.3k\n    Shape: 62\n    Spred: 42\n";
         String actual = AlgorithmPrinter.print(chamber);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintHall() throws PrintException {
+        Hall hall = new Hall();
+        hall.setMix(20);
+        hall.setLevel(0);
+        hall.setSize(53.0);
+        hall.setLink(1);
+        hall.setDiff(80);
+        hall.setPreDelay(25);
+        hall.setBass(5);
+        hall.setDecay(41);
+        hall.setXovr(15);
+        hall.setRtHC(31);
+        hall.setShape(110);
+        hall.setSpred(125);
+
+        String expected = "    Mix: 20%\n    Level: 0dB\n    Size: 53.0m\n    Link: on\n    Diff: 80%\n    Pre Delay: 25ms\n    Bass: 1.2X\n    Decay: 1.67s\n    Xovr: 818\n    Rt HC: 7.9k\n    Shape: 110\n    Spred: 89\n";
+        String actual = AlgorithmPrinter.print(hall);
 
         assertEquals(expected, actual);
     }
@@ -486,6 +576,24 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Lo: +4\n    Mid: +8\n    Hi: 0\n    InLvl: -8\n    LoCut: 0\n    Feel: 32\n    Drive: 40\n    Tone: 21\n    Level: 44\n";
         String actual = AlgorithmPrinter.print(overdrive);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDistortion() throws PrintException {
+        Distortion distortion = new Distortion();
+        distortion.setLo(0);
+        distortion.setMid(4);
+        distortion.setHi(11);
+        distortion.setDrive(25);
+        distortion.setTone(21);
+        distortion.setBass(7);
+        distortion.setTreble(6);
+        distortion.setLevel(40);
+
+        String expected = "    Lo: 0\n    Mid: +4\n    Hi: 11\n    Drive: 25\n    Tone: 21\n    Bass: +7\n    Trebl: +6\n    Level: 40\n";
+        String actual = AlgorithmPrinter.print(distortion);
 
         assertEquals(expected, actual);
     }
