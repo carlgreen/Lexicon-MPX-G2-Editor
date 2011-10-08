@@ -75,6 +75,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testDelayStereoAlgorithm() throws IntrospectionException {
+        testBean(DelayStereo.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new DelayStereo().getParameterName(0));
+        assertEquals("%", new DelayStereo().getParameterUnit(0));
+    }
+
+    @Test
     public void testDelayDualAlgorithm() throws IntrospectionException {
         testBean(DelayDual.class);
 
@@ -99,6 +108,15 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new DetuneMono().getParameterName(0));
         assertEquals("%", new DetuneMono().getParameterUnit(0));
+    }
+
+    @Test
+    public void testDistortionAlgorithm() throws IntrospectionException {
+        testBean(Distortion.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Lo", new Distortion().getParameterName(0));
+        assertEquals("", new Distortion().getParameterUnit(0));
     }
 
     @Test
@@ -131,6 +149,15 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new FlangerStereo().getParameterName(0));
         assertEquals("%", new FlangerStereo().getParameterUnit(0));
+    }
+
+    @Test
+    public void testHallAlgorithm() throws IntrospectionException {
+        testBean(Hall.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Hall().getParameterName(0));
+        assertEquals("%", new Hall().getParameterUnit(0));
     }
 
     @Test
@@ -224,6 +251,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testTremoloMonoAlgorithm() throws IntrospectionException {
+        testBean(TremoloMono.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new TremoloMono().getParameterName(0));
+        assertEquals("%", new TremoloMono().getParameterUnit(0));
+    }
+
+    @Test
     public void testUniVybeAlgorithm() throws IntrospectionException {
         testBean(UniVybe.class);
 
@@ -242,11 +278,29 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testVolumeDualAlgorithm() throws IntrospectionException {
+        testBean(VolumeDual.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new VolumeDual().getParameterName(0));
+        assertEquals("%", new VolumeDual().getParameterUnit(0));
+    }
+
+    @Test
     public void testWah1Algorithm() throws IntrospectionException {
         testBean(Wah1.class);
 
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new Wah1().getParameterName(0));
         assertEquals("%", new Wah1().getParameterUnit(0));
+    }
+
+    @Test
+    public void testWah2Algorithm() throws IntrospectionException {
+        testBean(Wah2.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Wah2().getParameterName(0));
+        assertEquals("%", new Wah2().getParameterUnit(0));
     }
 }
