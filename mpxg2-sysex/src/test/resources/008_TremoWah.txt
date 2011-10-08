@@ -1,0 +1,202 @@
+TremoWah
+  Guitar Style: Blues, Clean, Rock
+  Effect Type: Delay, Gain, Mod, Reverb, Wah
+  Application Type: Amp Input + FX Loop
+  Effect Routing:
+    I=2=G=1=E=D=R=C=O
+  Effect 1: Tremolo (M) (on)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: +6dB
+    Rate: 7:4
+    PW: 30%
+    Depth: 100%
+  Effect 2: Wah  2 (on)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: +6dB
+    Sweep: 50
+    Bass: 0
+    Type: Model C
+    Resp: 100
+    Gain: +10
+  Chorus: Volume (D) (on)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Vol-L: 100%
+    Vol-R: 100%
+  Delay: Delay (S) (on)
+    Toe Switch: disabled
+    Mix: 20%
+    Level: 0dB
+    Time: 2:4
+    Feedback: +20%
+    Insert: Delay
+    Clear: Off
+  Reverb: Hall (off)
+    Toe Switch: disabled
+    Mix: 20%
+    Level: 0dB
+    Size: 53.0m
+    Link: on
+    Diff: 80%
+    Pre Delay: 25ms
+    Bass: 1.2X
+    Decay: 1.67s
+    Xovr: 818
+    Rt HC: 7.9k
+    Shape: 110
+    Spred: 89
+  EQ: Pedal Vol (on)
+    Toe Switch: off=bypass
+    Mix: 100%
+    Level: 0dB
+  Gain: Distortion (off)
+    Toe Switch: disabled
+    Lo: 0
+    Mid: +4
+    Hi: 11
+    Drive: 25
+    Tone: 21
+    Bass: +7
+    Trebl: +6
+    Level: 40
+  Softrow:
+    1: Gain Drive
+    2: Gain Tone
+    3: Gain Level
+    4: Effect 1 Rate
+    5: Delay Mix
+    6: Delay Time
+    7: Reverb Mix
+    8: Reverb Size
+    9: Reverb P Dly
+    10: Reverb Decay
+  Patching:
+    Patch 1:
+      Source: Ctls Sine1
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Sweep
+        Min: 30
+        Mid: --
+        Max: 100
+    Patch 2:
+      Source: Ctls Sine2
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Chorus Vol-L
+        Min: 0%
+        Mid: --
+        Max: 100%
+    Patch 3:
+      Source: Ctls Sine2
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Chorus Vol-R
+        Min: 100%
+        Mid: --
+        Max: 0%
+    Patch 4:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 1 Mix
+        Min: 100%
+        Mid: --
+        Max: 50%
+    Patch 5:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Mix
+        Min: 100%
+        Mid: --
+        Max: 50%
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 1:4
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 1:4
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +2dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 100%
+      Level: +6dB
+    FX2:
+      Mix: 100%
+      Level: +6dB
+    Chorus:
+      Mix: 100%
+      Level: 0dB
+    Delay:
+      Mix: 20%
+      Level: 0dB
+    Reverb:
+      Mix: 20%
+      Level: 0dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 266 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: off
+    Cabinet: ComboNorml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: on
+    Thrsh: -83dB
+    Atten: -80dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
