@@ -29,14 +29,14 @@ public class Wah1Parser {
     public static Wah1 parse(byte[] effectParameters) {
         Wah1 wah1 = new Wah1();
 
-        int sweep = effectParameters[0] + effectParameters[1] * 16;
-        wah1.setSweep(sweep);
-
-        int mix = effectParameters[2] + effectParameters[3] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         wah1.setMix(mix);
 
-        int level = effectParameters[4] + effectParameters[5] * 16;
+        int level = effectParameters[2] + effectParameters[3] * 16;
         wah1.setLevel(level);
+
+        int sweep = effectParameters[4] + effectParameters[5] * 16;
+        wah1.setSweep(sweep);
 
         int bass = effectParameters[6] + effectParameters[7] * 16;
         wah1.setBass(bass);
