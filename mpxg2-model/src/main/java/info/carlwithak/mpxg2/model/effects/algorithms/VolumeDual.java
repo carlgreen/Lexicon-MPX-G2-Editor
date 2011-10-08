@@ -29,7 +29,7 @@ public class VolumeDual extends Chorus {
         "Mix", "Level", "Vol-L", "Vol-R"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "%", "%"
+        "%", "-dB", "%", "%"
     };
 
     private int volumeLeft;

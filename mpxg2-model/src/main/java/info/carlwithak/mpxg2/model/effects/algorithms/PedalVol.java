@@ -29,7 +29,7 @@ public class PedalVol extends Chorus {
         "Mix", "Level"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB"
+        "%", "-dB"
     };
 
     @Override

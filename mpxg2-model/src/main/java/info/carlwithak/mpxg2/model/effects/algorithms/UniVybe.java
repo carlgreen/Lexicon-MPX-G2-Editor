@@ -29,7 +29,7 @@ public class UniVybe extends Effect {
         "Mix", "Level", "Rate"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Rate"
+        "%", "-dB", "Rate"
     };
 
     private int rate;

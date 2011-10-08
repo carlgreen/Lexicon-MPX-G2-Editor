@@ -29,7 +29,7 @@ public class SweepFilter extends Effect {
         "Mix", "Level", "Fc", "FRes", "Mod", "Scale", "Pan"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Hz", "", "Hz", "-%", "Pan"
+        "%", "-dB", "Hz", "", "Hz", "-%", "Pan"
     };
 
     private int fc;

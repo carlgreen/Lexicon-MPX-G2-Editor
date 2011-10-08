@@ -29,7 +29,7 @@ public class ShiftDual extends Effect {
         "Mix", "Level", "Tune1", "Tune2", "Glide"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "", "", "Glide"
+        "%", "-dB", "-", "-", "Glide"
     };
 
     private int tune1;

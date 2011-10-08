@@ -29,7 +29,7 @@ public class Panner extends Effect {
         "Mix", "Level", "Pan1", "Pan2"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Pan1", "Pan2"
+        "%", "-dB", "Pan1", "Pan2"
     };
 
     private int pan1;

@@ -29,7 +29,7 @@ public class VolumeMono extends Effect {
         "Mix", "Level", "Volume"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "%"
+        "%", "-dB", "%"
     };
 
     private int volume;

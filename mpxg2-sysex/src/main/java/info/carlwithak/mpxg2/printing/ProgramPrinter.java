@@ -510,8 +510,16 @@ public class ProgramPrinter {
             sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
         } else if ("100Hz".equals(patchDestinationUnit)) {
             sb.append(DECIMAL_2DP.format(patch.getDestinationMin() / 100.0)).append(patchDestinationUnit.substring(3)).append("\n");
-        } else {
+        } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
             sb.append(signInt(patch.getDestinationMin())).append(patchDestinationUnit).append("\n");
+        } else {
+            // TODO better way of determining what sign is necessary
+            if (patchDestinationUnit.indexOf("-") == 0) {
+                String newPatchDestinationUnit = patchDestinationUnit.substring(1);
+                sb.append(signInt(patch.getDestinationMin())).append(newPatchDestinationUnit).append("\n");
+            } else {
+                sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
+            }
         }
         sb.append("        Mid: ");
         if (patch.getDestinationMid() == 0x8000) {
@@ -552,8 +560,16 @@ public class ProgramPrinter {
             sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
         } else if ("100Hz".equals(patchDestinationUnit)) {
             sb.append(DECIMAL_2DP.format(patch.getDestinationMax() / 100.0)).append(patchDestinationUnit.substring(3));
-        } else {
+        } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
             sb.append(signInt(patch.getDestinationMax())).append(patchDestinationUnit);
+        } else {
+            // TODO better way of determining what sign is necessary
+            if (patchDestinationUnit.indexOf("-") == 0) {
+                String newPatchDestinationUnit = patchDestinationUnit.substring(1);
+                sb.append(signInt(patch.getDestinationMax())).append(newPatchDestinationUnit);
+            } else {
+                sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
+            }
         }
         sb.append("\n");
         return sb.toString();

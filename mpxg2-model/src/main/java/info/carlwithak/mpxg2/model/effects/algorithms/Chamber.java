@@ -29,7 +29,7 @@ public class Chamber extends Reverb {
         "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
+        "%", "-dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
     };
 
     private double size;

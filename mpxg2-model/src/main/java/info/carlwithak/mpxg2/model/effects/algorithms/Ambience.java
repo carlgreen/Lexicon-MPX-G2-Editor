@@ -29,7 +29,7 @@ public class Ambience extends Reverb {
         "Mix", "Level", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
+        "%", "-dB", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
     };
 
     private double size;

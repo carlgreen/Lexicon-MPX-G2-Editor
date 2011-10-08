@@ -28,7 +28,7 @@ public class BlueComp extends Effect {
         "Mix", "Level", "Sense", "Thrsh", "Gain", "ATime", "RTime"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "dB", "dB", "dB", "ms", "ms"
+        "%", "-dB", "dB", "dB", "dB", "ms", "ms"
     };
 
     private int sensitivity;

@@ -30,7 +30,7 @@ public class TremoloMono extends Effect {
         "Mix", "Level", "Rate", "PW", "Depth"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", ":", "%", "%"
+        "%", "-dB", ":", "%", "%"
     };
 
     private Rate rate;

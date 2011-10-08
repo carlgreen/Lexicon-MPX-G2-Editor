@@ -29,7 +29,7 @@ public class EchoMono extends Delay {
         "Mix", "Level", "Time", "Fbk", "Damp", "Clear"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", ":", "-%", "%", "Clear"
+        "%", "-dB", ":", "-%", "%", "Clear"
     };
 
     private int timeEchoes;

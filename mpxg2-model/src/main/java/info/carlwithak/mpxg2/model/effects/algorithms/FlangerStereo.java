@@ -30,7 +30,7 @@ public class FlangerStereo extends Chorus {
         "Mix", "Level", "Rate", "PW", "Depth", "Phase", "Res", "Blend"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Hz", "%", "%", "°", "", ""
+        "%", "-dB", "Hz", "%", "%", "°", "", ""
     };
 
     private Rate rate;

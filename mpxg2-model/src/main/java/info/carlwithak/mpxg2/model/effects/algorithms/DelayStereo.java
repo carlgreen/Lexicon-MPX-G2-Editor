@@ -30,7 +30,7 @@ public class DelayStereo extends Delay {
         "Mix", "Level", "Time", "Fbk", "Clear"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", ":", "-%", "Clear"
+        "%", "-dB", ":", "-%", "Clear"
     };
 
     private Rate time;

@@ -29,7 +29,7 @@ public class PedalWah1 extends Effect {
         "Mix", "Level", "Bass", "Resp", "Gain"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Bass", "Resp", "Gain"
+        "%", "-dB", "Bass", "Resp", "Gain"
     };
 
     private int bass;

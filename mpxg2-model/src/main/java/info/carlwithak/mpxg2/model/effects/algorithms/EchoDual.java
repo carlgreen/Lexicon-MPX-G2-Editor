@@ -29,7 +29,7 @@ public class EchoDual extends Delay {
         "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Fbk 1", "Fbk 2", "Damp1", "Damp2", "Clear"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "-%", "-%", "%", "%", "Clear"
+        "%", "-dB", ":", ":", "Lvl 1", "Lvl 2", "-%", "-%", "%", "%", "Clear"
     };
 
     private int time1Echoes;

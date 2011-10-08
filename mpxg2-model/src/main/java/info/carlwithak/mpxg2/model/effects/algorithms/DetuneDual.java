@@ -29,7 +29,7 @@ public class DetuneDual extends Effect {
         "Mix", "Level", "Tune1", "Tune2", "P Dly"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "Tune1", "Tune2", "PreDly"
+        "%", "-dB", "Tune1", "Tune2", "PreDly"
     };
 
     private int tune1;

@@ -29,7 +29,7 @@ public class DelayDual extends Delay {
         "Mix", "Level", "Time1", "Time2", "Lvl 1", "Lvl 2", "Pan 1", "Pan 2", "Fbk 1", "Fbk 2", "XFbk1", "XFbk2", "Clear"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", ":", ":", "Lvl 1", "Lvl 2", "Pan", "Pan", "-%", "-%", "%", "%", "Clear"
+        "%", "-dB", ":", ":", "Lvl 1", "Lvl 2", "Pan", "Pan", "-%", "-%", "%", "%", "Clear"
     };
 
     private int time1Echoes;

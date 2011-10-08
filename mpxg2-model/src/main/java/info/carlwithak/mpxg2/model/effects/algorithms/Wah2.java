@@ -29,7 +29,7 @@ public class Wah2 extends Effect {
         "Mix", "Level", "Sweep", "Bass", "Resp", "Gain"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "", "Bass", "Resp", "Gain"
+        "%", "-dB", "", "Bass", "Resp", "Gain"
     };
 
     private int sweep;

@@ -29,7 +29,7 @@ public class DetuneMono extends Chorus {
         "Mix", "Level", "Tune", "P Dly"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "dB", "", "ms"
+        "%", "-dB", "", "ms"
     };
 
     private int tune;
