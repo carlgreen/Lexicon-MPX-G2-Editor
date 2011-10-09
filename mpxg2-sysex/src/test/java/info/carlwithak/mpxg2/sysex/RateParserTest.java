@@ -72,4 +72,10 @@ public class RateParserTest {
         actual = RateParser.parse(bytes42);
         assertEquals(expected, actual);
     }
+
+    @Test(expected = ParseException.class)
+    public void testInvalidType() throws ParseException {
+        byte[] bytes = {0, 0, 0, 0, 2, 0};
+        RateParser.parse(bytes);
+    }
 }
