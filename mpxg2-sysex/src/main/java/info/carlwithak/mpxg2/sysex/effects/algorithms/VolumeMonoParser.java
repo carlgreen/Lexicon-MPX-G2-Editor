@@ -26,16 +26,16 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
  */
 public class VolumeMonoParser {
 
-    public static VolumeMono parse(byte[] effect1Parameters) {
+    public static VolumeMono parse(byte[] effectParameters) {
         VolumeMono volumeMono = new VolumeMono();
 
-        int mix = effect1Parameters[0] + effect1Parameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         volumeMono.setMix(mix);
 
-        int level = (byte) (effect1Parameters[2] + effect1Parameters[3] * 16);
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         volumeMono.setLevel(level);
 
-        int volume = (byte) (effect1Parameters[4] + effect1Parameters[5] * 16);
+        int volume = (byte) (effectParameters[4] + effectParameters[5] * 16);
         volumeMono.setVolume(volume);
 
         return volumeMono;

@@ -26,33 +26,33 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
  */
 public class EchoMonoParser {
 
-    public static EchoMono parse(byte[] delayParameters) {
+    public static EchoMono parse(byte[] effectParameters) {
         EchoMono echoMono = new EchoMono();
 
-        int mix = delayParameters[0] + delayParameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         echoMono.setMix(mix);
 
-        int level = (byte) (delayParameters[2] + delayParameters[3] * 16);
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         echoMono.setLevel(level);
 
-        int timeEchoes = delayParameters[4] + delayParameters[5] * 16;
+        int timeEchoes = effectParameters[4] + effectParameters[5] * 16;
         echoMono.setTimeEchoes(timeEchoes);
 
-        int timeBeat = delayParameters[6] + delayParameters[7] * 16;
+        int timeBeat = effectParameters[6] + effectParameters[7] * 16;
         echoMono.setTimeBeat(timeBeat);
 
         // TODO time units?
 
-        int feedback = (byte) (delayParameters[10] + delayParameters[11] * 16);
+        int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
         echoMono.setFeedback(feedback);
 
-        int insert = delayParameters[12] + delayParameters[13] * 16;
+        int insert = effectParameters[12] + effectParameters[13] * 16;
         echoMono.setInsert(insert);
 
-        int damp = delayParameters[14] + delayParameters[15] * 16;
+        int damp = effectParameters[14] + effectParameters[15] * 16;
         echoMono.setDamp(damp);
 
-        int clear = delayParameters[16] + delayParameters[17] * 16;
+        int clear = effectParameters[16] + effectParameters[17] * 16;
         echoMono.setClear(clear);
 
         return echoMono;

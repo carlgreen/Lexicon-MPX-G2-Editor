@@ -26,25 +26,25 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
  */
 public class PedalWah1Parser {
 
-    public static PedalWah1 parse(byte[] effect1Parameters) {
+    public static PedalWah1 parse(byte[] effectParameters) {
         PedalWah1 pedalWah1 = new PedalWah1();
 
-        int mix = effect1Parameters[0] + effect1Parameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         pedalWah1.setMix(mix);
 
-        int level = effect1Parameters[2] + effect1Parameters[3] * 16;
+        int level = effectParameters[2] + effectParameters[3] * 16;
         pedalWah1.setLevel(level);
 
-        int bass = effect1Parameters[4] + effect1Parameters[5] * 16;
+        int bass = effectParameters[4] + effectParameters[5] * 16;
         pedalWah1.setBass(bass);
 
-        int type = effect1Parameters[6] + effect1Parameters[7] * 16;
+        int type = effectParameters[6] + effectParameters[7] * 16;
         pedalWah1.setType(type);
 
-        int response = effect1Parameters[8] + effect1Parameters[9] * 16;
+        int response = effectParameters[8] + effectParameters[9] * 16;
         pedalWah1.setResponse(response);
 
-        int gain = effect1Parameters[10] + effect1Parameters[11] * 16;
+        int gain = effectParameters[10] + effectParameters[11] * 16;
         pedalWah1.setGain(gain);
 
         return pedalWah1;

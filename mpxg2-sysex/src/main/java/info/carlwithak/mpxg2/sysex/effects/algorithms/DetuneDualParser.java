@@ -26,25 +26,25 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
  */
 public class DetuneDualParser {
 
-    public static DetuneDual parse(byte[] effect1Parameters) {
+    public static DetuneDual parse(byte[] effectParameters) {
         DetuneDual detuneDual = new DetuneDual();
 
-        int mix = effect1Parameters[0] + effect1Parameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         detuneDual.setMix(mix);
 
-        int level = effect1Parameters[2] + effect1Parameters[3] * 16;
+        int level = effectParameters[2] + effectParameters[3] * 16;
         detuneDual.setLevel(level);
 
-        int tune1 = effect1Parameters[4] + effect1Parameters[5] * 16;
+        int tune1 = effectParameters[4] + effectParameters[5] * 16;
         detuneDual.setTune1(tune1);
 
-        int optimize = effect1Parameters[6] + effect1Parameters[7] * 16;
+        int optimize = effectParameters[6] + effectParameters[7] * 16;
         detuneDual.setOptimize(optimize);
 
-        int tune2 = effect1Parameters[8] + effect1Parameters[9] * 16;
+        int tune2 = effectParameters[8] + effectParameters[9] * 16;
         detuneDual.setTune2(tune2);
 
-        int preDelay = effect1Parameters[10] + effect1Parameters[11] * 16;
+        int preDelay = effectParameters[10] + effectParameters[11] * 16;
         detuneDual.setPreDelay(preDelay);
 
         return detuneDual;

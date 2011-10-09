@@ -26,19 +26,19 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
  */
 public class PannerParser {
 
-    public static Panner parse(byte[] effect1Parameters) {
+    public static Panner parse(byte[] effectParameters) {
         Panner panner = new Panner();
 
-        int mix = effect1Parameters[0] + effect1Parameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         panner.setMix(mix);
 
-        int level = (byte) (effect1Parameters[2] + effect1Parameters[3] * 16);
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         panner.setLevel(level);
 
-        int pan1 = (byte) (effect1Parameters[4] + effect1Parameters[5] * 16);
+        int pan1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
         panner.setPan1(pan1);
 
-        int pan2 = (byte) (effect1Parameters[6] + effect1Parameters[7] * 16);
+        int pan2 = (byte) (effectParameters[6] + effectParameters[7] * 16);
         panner.setPan2(pan2);
 
         return panner;

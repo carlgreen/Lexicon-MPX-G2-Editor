@@ -26,43 +26,43 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
  */
 public class PlateParser {
 
-    public static Plate parse(byte[] reverbParameters) {
+    public static Plate parse(byte[] effectParameters) {
         Plate plate = new Plate();
 
-        int mix = reverbParameters[0] + reverbParameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         plate.setMix(mix);
 
-        int level = (byte) (reverbParameters[2] + reverbParameters[3] * 16);
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         plate.setLevel(level);
 
-        double size = (reverbParameters[4] + reverbParameters[5] * 16) / 2.0 + 4;
+        double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
         plate.setSize(size);
 
-        int link = reverbParameters[6] + reverbParameters[7] * 16;
+        int link = effectParameters[6] + effectParameters[7] * 16;
         plate.setLink(link);
 
-        int diff = (reverbParameters[8] + reverbParameters[9] * 16) * 2;
+        int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
         plate.setDiff(diff);
 
-        int preDelay = reverbParameters[10] + reverbParameters[11] * 16;
+        int preDelay = effectParameters[10] + effectParameters[11] * 16;
         plate.setPreDelay(preDelay);
         
-        int bass = reverbParameters[12] + reverbParameters[13] * 16;
+        int bass = effectParameters[12] + effectParameters[13] * 16;
         plate.setBass(bass);
 
-        int decay = reverbParameters[14] + reverbParameters[15] * 16;
+        int decay = effectParameters[14] + effectParameters[15] * 16;
         plate.setDecay(decay);
 
-        int xovr = reverbParameters[16] + reverbParameters[17] * 16;
+        int xovr = effectParameters[16] + effectParameters[17] * 16;
         plate.setXovr(xovr);
 
-        int rtHC = reverbParameters[18] + reverbParameters[19] * 16;
+        int rtHC = effectParameters[18] + effectParameters[19] * 16;
         plate.setRtHC(rtHC);
 
-        int shape = reverbParameters[20] + reverbParameters[21] * 16;
+        int shape = effectParameters[20] + effectParameters[21] * 16;
         plate.setShape(shape);
 
-        int spred = reverbParameters[22] + reverbParameters[23] * 16;
+        int spred = effectParameters[22] + effectParameters[23] * 16;
         plate.setSpred(spred);
 
         return plate;

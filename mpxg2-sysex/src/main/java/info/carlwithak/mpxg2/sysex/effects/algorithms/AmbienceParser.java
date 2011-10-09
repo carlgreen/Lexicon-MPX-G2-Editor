@@ -26,34 +26,34 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
  */
 public class AmbienceParser {
 
-    public static Ambience parse(byte[] reverbParameters) {
+    public static Ambience parse(byte[] effectParameters) {
         Ambience ambience = new Ambience();
 
-        int mix = reverbParameters[0] + reverbParameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         ambience.setMix(mix);
 
-        int level = (byte) (reverbParameters[2] + reverbParameters[3] * 16);
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         ambience.setLevel(level);
 
-        double size = (reverbParameters[4] + reverbParameters[5] * 16) / 2.0 + 4;
+        double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
         ambience.setSize(size);
 
-        int link = reverbParameters[6] + reverbParameters[7] * 16;
+        int link = effectParameters[6] + effectParameters[7] * 16;
         ambience.setLink(link);
 
-        int diff = (reverbParameters[8] + reverbParameters[9] * 16) * 2;
+        int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
         ambience.setDiff(diff);
 
-        int preDelay = reverbParameters[10] + reverbParameters[11] * 16;
+        int preDelay = effectParameters[10] + effectParameters[11] * 16;
         ambience.setPreDelay(preDelay);
 
-        int delayTime = reverbParameters[12] + reverbParameters[13] * 16;
+        int delayTime = effectParameters[12] + effectParameters[13] * 16;
         ambience.setDelayTime(delayTime);
 
-        int delayLevel = reverbParameters[14] + reverbParameters[15] * 16;
+        int delayLevel = effectParameters[14] + effectParameters[15] * 16;
         ambience.setDelayLevel(delayLevel);
 
-        int rtHC = reverbParameters[16] + reverbParameters[17] * 16;
+        int rtHC = effectParameters[16] + effectParameters[17] * 16;
         ambience.setRtHC(rtHC);
 
         return ambience;

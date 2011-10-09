@@ -26,13 +26,13 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
  */
 public class PedalVolParser {
 
-    public static PedalVol parse(byte[] effect1Parameters) {
+    public static PedalVol parse(byte[] effectParameters) {
         PedalVol pedalVol = new PedalVol();
 
-        int mix = effect1Parameters[0] + effect1Parameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         pedalVol.setMix(mix);
 
-        int level = (byte) (effect1Parameters[2] + effect1Parameters[3] * 16);
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         pedalVol.setLevel(level);
 
         return pedalVol;

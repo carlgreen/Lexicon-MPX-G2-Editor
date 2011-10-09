@@ -26,53 +26,53 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
  */
 public class EchoDualParser {
 
-    public static EchoDual parse(byte[] delayParameters) {
+    public static EchoDual parse(byte[] effectParameters) {
         EchoDual echoDual = new EchoDual();
 
-        int mix = delayParameters[0] + delayParameters[1] * 16;
+        int mix = effectParameters[0] + effectParameters[1] * 16;
         echoDual.setMix(mix);
 
-        int level = (byte) (delayParameters[2] + delayParameters[3] * 16);
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         echoDual.setLevel(level);
 
-        int time1Echoes = delayParameters[4] + delayParameters[5] * 16;
+        int time1Echoes = effectParameters[4] + effectParameters[5] * 16;
         echoDual.setTime1Echoes(time1Echoes);
 
-        int time1Beat = delayParameters[6] + delayParameters[7] * 16;
+        int time1Beat = effectParameters[6] + effectParameters[7] * 16;
         echoDual.setTime1Beat(time1Beat);
 
         // TODO time1 units?
 
-        int time2Echoes = delayParameters[10] + delayParameters[11] * 16;
+        int time2Echoes = effectParameters[10] + effectParameters[11] * 16;
         echoDual.setTime2Echoes(time2Echoes);
 
-        int time2Beat = delayParameters[12] + delayParameters[13] * 16;
+        int time2Beat = effectParameters[12] + effectParameters[13] * 16;
         echoDual.setTime2Beat(time2Beat);
 
         // TODO time2 units?
 
-        int level1 = delayParameters[16] + delayParameters[17] * 16;
+        int level1 = effectParameters[16] + effectParameters[17] * 16;
         echoDual.setLevel1(level1);
 
-        int level2 = delayParameters[18] + delayParameters[19] * 16;
+        int level2 = effectParameters[18] + effectParameters[19] * 16;
         echoDual.setLevel2(level2);
 
-        int feedback1 = (byte) (delayParameters[20] + delayParameters[21] * 16);
+        int feedback1 = (byte) (effectParameters[20] + effectParameters[21] * 16);
         echoDual.setFeedback1(feedback1);
 
-        int insert = delayParameters[22] + delayParameters[23] * 16;
+        int insert = effectParameters[22] + effectParameters[23] * 16;
         echoDual.setInsert(insert);
 
-        int feedback2 = (byte) (delayParameters[24] + delayParameters[25] * 16);
+        int feedback2 = (byte) (effectParameters[24] + effectParameters[25] * 16);
         echoDual.setFeedback2(feedback2);
 
-        int damp1 = delayParameters[26] + delayParameters[27] * 16;
+        int damp1 = effectParameters[26] + effectParameters[27] * 16;
         echoDual.setDamp1(damp1);
 
-        int damp2 = delayParameters[28] + delayParameters[29] * 16;
+        int damp2 = effectParameters[28] + effectParameters[29] * 16;
         echoDual.setDamp2(damp2);
 
-        int clear = delayParameters[30] + delayParameters[31] * 16;
+        int clear = effectParameters[30] + effectParameters[31] * 16;
         echoDual.setClear(clear);
 
         return echoDual;
