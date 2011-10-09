@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.sysex.Util;
 
 /**
  * Class to parse parameter data for Shift (D) effect.
@@ -39,7 +40,7 @@ public class ShiftDualParser {
         for (int i = 0; i < 4; i++) {
             tune1 += (effectParameters[4 + i] * Math.pow(16, i));
         }
-        shiftDual.setTune1(tune1 > 32768 ? tune1 - 65536 : tune1);
+        shiftDual.setTune1(Util.wrapInteger(tune1));
 
         int optimize = effectParameters[8] + effectParameters[9] * 16;
         shiftDual.setOptimize(optimize);
@@ -48,10 +49,10 @@ public class ShiftDualParser {
         for (int i = 0; i < 4; i++) {
             tune2 += (effectParameters[10 + i] * Math.pow(16, i));
         }
-        shiftDual.setTune2(tune2 > 32768 ? tune2 - 65536 : tune2);
+        shiftDual.setTune2(Util.wrapInteger(tune2));
 
         int glide = effectParameters[14] + effectParameters[15] * 16;
-        shiftDual.setGlide(glide == 1);
+        shiftDual.setGlide(Util.parseBoolean(glide));
 
         return shiftDual;
     }

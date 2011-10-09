@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.sysex.Util;
 
 /**
  * Class to parse parameter data for Delay (D) effect.
@@ -79,7 +80,7 @@ public class DelayDualParser {
         delayDual.setXFbk2(xFbk2);
 
         int clear = effectParameters[34] + effectParameters[35] * 16;
-        delayDual.setClear(clear == 1);
+        delayDual.setClear(Util.parseBoolean(clear));
 
         return delayDual;
     }

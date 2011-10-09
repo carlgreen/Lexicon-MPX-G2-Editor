@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import info.carlwithak.mpxg2.sysex.RateParser;
+import info.carlwithak.mpxg2.sysex.Util;
 import java.util.Arrays;
 
 /**
@@ -47,7 +48,7 @@ public class DelayStereoParser {
         delayStereo.setInsert(insert);
 
         int clear = effectParameters[14] + effectParameters[15] * 16;
-        delayStereo.setClear(clear == 1);
+        delayStereo.setClear(Util.parseBoolean(clear));
 
         return delayStereo;
     }
