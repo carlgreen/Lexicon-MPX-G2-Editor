@@ -160,7 +160,7 @@ public class Program {
     private int bypassState;
 
     // speaker simulator
-    private int speakerSimulatorEnable;
+    private boolean speakerSimulatorEnable;
     private int speakerSimulatorCabinet;
 
     // mix
@@ -1031,11 +1031,11 @@ public class Program {
         this.bypassState = bypassState;
     }
 
-    public int getSpeakerSimulatorEnable() {
+    public boolean isSpeakerSimulatorEnable() {
         return speakerSimulatorEnable;
     }
 
-    public void setSpeakerSimulatorEnable(final int speakerSimulatorEnable) {
+    public void setSpeakerSimulatorEnable(final boolean speakerSimulatorEnable) {
         this.speakerSimulatorEnable = speakerSimulatorEnable;
     }
 

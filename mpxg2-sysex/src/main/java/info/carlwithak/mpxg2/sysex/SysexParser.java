@@ -635,7 +635,7 @@ public class SysexParser {
 
         // Speaker Simulator
         int speakerSimulatorEnable = readInt(in, 2);
-        program.setSpeakerSimulatorEnable(speakerSimulatorEnable);
+        program.setSpeakerSimulatorEnable(Util.parseBoolean(speakerSimulatorEnable));
 
         int speakerSimulatorCabinet = readInt(in, 2);
         program.setSpeakerSimulatorCabinet(speakerSimulatorCabinet);
