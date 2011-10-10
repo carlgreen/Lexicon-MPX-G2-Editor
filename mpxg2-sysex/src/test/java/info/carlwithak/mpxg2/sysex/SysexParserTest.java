@@ -1437,6 +1437,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the JamMan preset.
+     */
+    @Test
+    public void testParseJamMan() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("009_JamMan.syx").toURI());
+        Program program = SysexParser.parseProgram(preset);
+
+        assertEquals("JamMan", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test

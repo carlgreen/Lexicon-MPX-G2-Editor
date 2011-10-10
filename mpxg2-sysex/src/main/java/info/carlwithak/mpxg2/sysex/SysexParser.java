@@ -42,6 +42,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
@@ -283,6 +284,9 @@ public class SysexParser {
                         case 23:
                             effect1 = Wah1Parser.parse(effect1Parameters);
                             break;
+                        case 25:
+                            effect1 = PedalWah1Parser.parse(effect1Parameters);
+                            break;
                         case 26:
                             effect1 = PedalWah2Parser.parse(effect1Parameters);
                             break;
@@ -369,6 +373,9 @@ public class SysexParser {
                             break;
                         case 6:
                             delay = EchoDualParser.parse(delayParameters);
+                            break;
+                        case 8:
+                            delay = JamManParser.parse(delayParameters);
                             break;
                         default:
                             throw new ParseException("Invalid Delay algorithm number: " + algorithmNumber);
