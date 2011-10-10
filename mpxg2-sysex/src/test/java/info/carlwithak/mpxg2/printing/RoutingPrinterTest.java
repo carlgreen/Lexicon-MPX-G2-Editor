@@ -36,7 +36,7 @@ public class RoutingPrinterTest {
      * G2 Blue is a simple all along the upper route routing.
      */
     @Test
-    public void testPrintG2Blue() {
+    public void testPrintG2Blue() throws PrintException {
         Program program = new Program();
 
         RoutingData routing = new RoutingData();
@@ -122,7 +122,7 @@ public class RoutingPrinterTest {
      * Guitar Solo splits into the lower route.
      */
     @Test
-    public void testPrintGuitarSolo() {
+    public void testPrintGuitarSolo() throws PrintException {
         Program program = new Program();
 
         RoutingData routing = new RoutingData();
@@ -211,7 +211,7 @@ public class RoutingPrinterTest {
      * Cordovox splits and has mono and stereo paths.
      */
     @Test
-    public void testPrintCordovox() {
+    public void testPrintCordovox() throws PrintException {
         Program program = new Program();
 
         RoutingData routing = new RoutingData();
@@ -291,5 +291,88 @@ public class RoutingPrinterTest {
         String actual = RoutingPrinter.print(program);
 
         assertEquals(expected, actual);
+    }
+
+    /**
+     * Test printing an invalid routing where it splits into two routes but
+     * never combines again.
+     */
+    @Test(expected = PrintException.class)
+    public void testInvalidRouting() throws PrintException {
+        Program program = new Program();
+
+        RoutingData routing = new RoutingData();
+        routing.setEffectId(8);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting0(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(5);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting1(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(2);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting2(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(6);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting3(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(0);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(3);
+        routing.setPathType(0);
+        program.setRouting4(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(3);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting5(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(4);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting6(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(1);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting7(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(7);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting8(routing);
+
+        RoutingPrinter.print(program);
     }
 }

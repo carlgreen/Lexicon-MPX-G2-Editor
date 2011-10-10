@@ -43,7 +43,7 @@ public class RoutingPrinter {
         this.program = program;
     }
 
-    private String print() {
+    private String print() throws PrintException {
         printRoute(new RoutingData[] {
             program.getRouting0(), program.getRouting1(), program.getRouting2(),
             program.getRouting3(), program.getRouting4(), program.getRouting5(),
@@ -56,7 +56,7 @@ public class RoutingPrinter {
         return upper.toString();
     }
 
-    private void printRoute(final RoutingData[] routes) {
+    private void printRoute(final RoutingData[] routes) throws PrintException {
         for (int i = 0; i < routes.length; i++) {
             RoutingData route = routes[i];
             if (i > 0) {
@@ -95,8 +95,9 @@ public class RoutingPrinter {
      * @param routes array of RoutingData to step through
      * @param currentConnection position of current connection in routes
      * @return routing type of next upper connection
+     * @throws PrintException if the routing information is not valid
      */
-    private static int getNextUpperInputConnection(final RoutingData[] routes, final int currentConnection) {
+    private static int getNextUpperInputConnection(final RoutingData[] routes, final int currentConnection) throws PrintException {
         RoutingData nextRoute = null;
         for (int j = currentConnection + 1; j < routes.length; j++) {
             if (routes[j].getRouting() != 1) {
@@ -104,10 +105,13 @@ public class RoutingPrinter {
                 break;
             }
         }
+        if (nextRoute == null) {
+            throw new PrintException("No following Upper Input Connection found");
+        }
         return nextRoute.getUpperInputConnection();
     }
 
-    static String print(final Program program) {
+    static String print(final Program program) throws PrintException {
         return new RoutingPrinter(program).print();
     }
 
