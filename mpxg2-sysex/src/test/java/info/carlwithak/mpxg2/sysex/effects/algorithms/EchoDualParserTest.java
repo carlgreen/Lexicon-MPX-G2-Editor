@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 /**
  *
@@ -45,6 +46,6 @@ public class EchoDualParserTest {
         assertEquals(1, echoDual.getFeedback2());
         assertEquals(20, echoDual.getDamp1());
         assertEquals(20, echoDual.getDamp2());
-        assertEquals(0, echoDual.getClear());
+        assertFalse(echoDual.isClear());
     }
 }

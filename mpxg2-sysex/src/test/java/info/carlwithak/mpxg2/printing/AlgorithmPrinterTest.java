@@ -401,7 +401,7 @@ public class AlgorithmPrinterTest {
         echoMono.setFeedback(-15);
         echoMono.setInsert(3);
         echoMono.setDamp(20);
-        echoMono.setClear(0);
+        echoMono.setClear(false);
 
         String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Feedback: -15%\n    Insert: Delay\n    Damp: 20%\n    Clear: off\n";
         String actual = AlgorithmPrinter.print(echoMono);
@@ -425,7 +425,7 @@ public class AlgorithmPrinterTest {
         echoDual.setFeedback2(1);
         echoDual.setDamp1(20);
         echoDual.setDamp2(20);
-        echoDual.setClear(0);
+        echoDual.setClear(false);
 
         String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Level1: 0dB\n    Level2: 0dB\n    Feedback1: +1%\n    Insert: Delay\n    Feedback2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: off\n";
         String actual = AlgorithmPrinter.print(echoDual);
@@ -439,7 +439,7 @@ public class AlgorithmPrinterTest {
         chamber.setMix(28);
         chamber.setLevel(0);
         chamber.setSize(24.0);
-        chamber.setLink(1);
+        chamber.setLink(true);
         chamber.setDiff(22);
         chamber.setPreDelay(0);
         chamber.setBass(6);
@@ -461,7 +461,7 @@ public class AlgorithmPrinterTest {
         hall.setMix(20);
         hall.setLevel(0);
         hall.setSize(53.0);
-        hall.setLink(1);
+        hall.setLink(true);
         hall.setDiff(80);
         hall.setPreDelay(25);
         hall.setBass(5);
@@ -483,7 +483,7 @@ public class AlgorithmPrinterTest {
         plate.setMix(100);
         plate.setLevel(6);
         plate.setSize(22.5);
-        plate.setLink(1);
+        plate.setLink(true);
         plate.setDiff(66);
         plate.setPreDelay(169);
         plate.setBass(5);
@@ -505,7 +505,7 @@ public class AlgorithmPrinterTest {
         ambience.setMix(18);
         ambience.setLevel(0);
         ambience.setSize(24.5);
-        ambience.setLink(1);
+        ambience.setLink(true);
         ambience.setDiff(60);
         ambience.setPreDelay(7);
         ambience.setDelayTime(51);

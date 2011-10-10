@@ -33,7 +33,7 @@ public class Ambience extends Reverb {
     };
 
     private double size;
-    private int link;
+    private boolean link;
     private int diff;
     private int preDelay;
     private int delayTime;
@@ -58,11 +58,11 @@ public class Ambience extends Reverb {
         this.size = size;
     }
 
-    public int getLink() {
+    public boolean isLink() {
         return link;
     }
 
-    public void setLink(int link) {
+    public void setLink(boolean link) {
         this.link = link;
     }
 

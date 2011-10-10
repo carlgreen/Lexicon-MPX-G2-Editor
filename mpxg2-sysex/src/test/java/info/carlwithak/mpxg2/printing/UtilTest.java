@@ -30,7 +30,7 @@ public class UtilTest {
 
     @Test
     public void testReverbDecayToString_noLink() {
-        int link = 0;
+        boolean link = false;
         int reverbDecay = 0;
 
         double size = 5.0;
@@ -46,7 +46,7 @@ public class UtilTest {
 
     @Test
     public void testReverbDecayToString_Link0() {
-        int link = 1;
+        boolean link = true;
         double size = 5.0;
 
         int reverbDecay = 0;
@@ -62,7 +62,7 @@ public class UtilTest {
 
     @Test
     public void testReverbDecayToString_Link1() {
-        int link = 1;
+        boolean link = true;
         double size = 12.0;
 
         int reverbDecay = 0;
@@ -78,7 +78,7 @@ public class UtilTest {
 
     @Test
     public void testReverbDecayToString_Link2() {
-        int link = 1;
+        boolean link = true;
         double size = 27.5;
 
         int reverbDecay = 0;
@@ -94,7 +94,7 @@ public class UtilTest {
 
     @Test
     public void testReverbDecayToString_Link3() {
-        int link = 1;
+        boolean link = true;
         double size = 35.0;
 
         int reverbDecay = 0;
@@ -110,7 +110,7 @@ public class UtilTest {
 
     @Test
     public void testReverbDecayToString_Link6() {
-        int link = 1;
+        boolean link = true;
         double size = 53.0;
 
         int reverbDecay = 0;
@@ -131,7 +131,7 @@ public class UtilTest {
 
     @Test
     public void testReverbDecayToString_Link9() {
-        int link = 1;
+        boolean link = true;
         double size = 76.0;
 
         int reverbDecay = 0;

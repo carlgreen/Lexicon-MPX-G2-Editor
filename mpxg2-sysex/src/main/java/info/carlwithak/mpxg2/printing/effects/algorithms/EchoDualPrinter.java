@@ -45,7 +45,7 @@ public class EchoDualPrinter implements Printer {
         sb.append("    Feedback2: ").append(signInt(echoDual.getFeedback2())).append("%\n");
         sb.append("    Damp1: ").append(echoDual.getDamp1()).append("%\n");
         sb.append("    Damp2: ").append(echoDual.getDamp2()).append("%\n");
-        sb.append("    Clear: ").append(onOffToLowerString(echoDual.getClear())).append("\n");
+        sb.append("    Clear: ").append(onOffToLowerString(echoDual.isClear())).append("\n");
         return sb.toString();
     }
 

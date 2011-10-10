@@ -41,15 +41,15 @@ public class ChamberPrinter implements Printer {
         sb.append("    Mix: ").append(chamber.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(chamber.getLevel())).append("dB\n");
         sb.append("    Size: ").append(chamber.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToLowerString(chamber.getLink())).append("\n");
+        sb.append("    Link: ").append(onOffToLowerString(chamber.isLink())).append("\n");
         sb.append("    Diff: ").append(chamber.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(chamber.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(chamber.getBass())).append("X\n");
-        sb.append("    Decay: ").append(reverbDecayToString(chamber.getLink(), chamber.getSize(), chamber.getDecay())).append("s\n");
+        sb.append("    Decay: ").append(reverbDecayToString(chamber.isLink(), chamber.getSize(), chamber.getDecay())).append("s\n");
         sb.append("    Xovr: ").append(reverbXovrToString(chamber.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(chamber.getRtHC())).append("\n");
         sb.append("    Shape: ").append(chamber.getShape()).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(chamber.getLink(), chamber.getSize(), chamber.getSpred())).append("\n");
+        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(chamber.isLink(), chamber.getSize(), chamber.getSpred())).append("\n");
         return sb.toString();
     }
 }

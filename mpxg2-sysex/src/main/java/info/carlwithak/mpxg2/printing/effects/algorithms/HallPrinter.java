@@ -41,15 +41,15 @@ public class HallPrinter implements Printer {
         sb.append("    Mix: ").append(hall.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(hall.getLevel())).append("dB\n");
         sb.append("    Size: ").append(hall.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToLowerString(hall.getLink())).append("\n");
+        sb.append("    Link: ").append(onOffToLowerString(hall.isLink())).append("\n");
         sb.append("    Diff: ").append(hall.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(hall.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(hall.getBass())).append("X\n");
-        sb.append("    Decay: ").append(reverbDecayToString(hall.getLink(), hall.getSize(), hall.getDecay())).append("s\n");
+        sb.append("    Decay: ").append(reverbDecayToString(hall.isLink(), hall.getSize(), hall.getDecay())).append("s\n");
         sb.append("    Xovr: ").append(reverbXovrToString(hall.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(hall.getRtHC())).append("\n");
         sb.append("    Shape: ").append(hall.getShape()).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(hall.getLink(), hall.getSize(), hall.getSpred())).append("\n");
+        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(hall.isLink(), hall.getSize(), hall.getSpred())).append("\n");
         return sb.toString();
     }
 }

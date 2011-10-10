@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
+import info.carlwithak.mpxg2.sysex.Util;
 
 /**
  * Class to parse parameter data for Echo (M) effect.
@@ -53,7 +54,7 @@ public class EchoMonoParser {
         echoMono.setDamp(damp);
 
         int clear = effectParameters[16] + effectParameters[17] * 16;
-        echoMono.setClear(clear);
+        echoMono.setClear(Util.parseBoolean(clear));
 
         return echoMono;
     }

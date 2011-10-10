@@ -158,9 +158,9 @@ public class Util {
     /**
      * @return String representation of reverb decay index.
      */
-    public static String reverbDecayToString(final int link, final double size, final int reverbDecay) {
+    public static String reverbDecayToString(final boolean link, final double size, final int reverbDecay) {
         int decayIndex;
-        if (link == 1) {
+        if (link) {
             decayIndex = 0;
             while (size > REVERB_LINK_SIZES[decayIndex] - 0.01) {
                 decayIndex++;

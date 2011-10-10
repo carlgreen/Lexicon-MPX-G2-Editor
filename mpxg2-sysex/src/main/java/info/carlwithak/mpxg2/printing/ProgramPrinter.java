@@ -487,15 +487,15 @@ public class ProgramPrinter {
         sb.append("      Destination: ").append(patchEffect).append(" ").append(patchParameter).append("\n");
         sb.append("        Min: ");
         if ("Decay".equals(patchParameter)) {
-            int link;
+            boolean link;
             double size;
             if (program.getReverb() instanceof Chamber) {
                 Chamber chamber = (Chamber) program.getReverb();
-                link = chamber.getLink();
+                link = chamber.isLink();
                 size = chamber.getSize();
             } else if (program.getReverb() instanceof Plate) {
                 Plate plate = (Plate) program.getReverb();
-                link = plate.getLink();
+                link = plate.isLink();
                 size = plate.getSize();
             } else {
                 throw new PrintException("Cannot determine reverb decay for class " + program.getReverb().getClass());
@@ -533,15 +533,15 @@ public class ProgramPrinter {
         }
         sb.append("        Max: ");
         if ("Decay".equals(patchParameter)) {
-            int link;
+            boolean link;
             double size;
             if (program.getReverb() instanceof Chamber) {
                 Chamber chamber = (Chamber) program.getReverb();
-                link = chamber.getLink();
+                link = chamber.isLink();
                 size = chamber.getSize();
             } else if (program.getReverb() instanceof Plate) {
                 Plate plate = (Plate) program.getReverb();
-                link = plate.getLink();
+                link = plate.isLink();
                 size = plate.getSize();
             } else {
                 throw new PrintException("Cannot determine reverb decay for class " + program.getReverb().getClass());

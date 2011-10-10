@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -35,7 +36,7 @@ public class PlateParserTest {
         assertEquals(100, plate.getMix());
         assertEquals(6, plate.getLevel());
         assertEquals(22.5, plate.getSize(), 0.01);
-        assertEquals(1, plate.getLink());
+        assertTrue(plate.isLink());
         assertEquals(66, plate.getDiff());
         assertEquals(169, plate.getPreDelay());
         assertEquals(5, plate.getBass()); // 1.2X is number 5 in list

@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -35,7 +36,7 @@ public class HallParserTest {
         assertEquals(20, hall.getMix());
         assertEquals(0, hall.getLevel());
         assertEquals(53.0, hall.getSize(), 0.01);
-        assertEquals(1, hall.getLink());
+        assertTrue(hall.isLink());
         assertEquals(80, hall.getDiff());
         assertEquals(25, hall.getPreDelay());
         assertEquals(5, hall.getBass()); // 1.2X is number 5 in list

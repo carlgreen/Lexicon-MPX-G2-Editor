@@ -38,7 +38,7 @@ public class AmbiencePrinter implements Printer {
         sb.append("    Mix: ").append(ambience.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(ambience.getLevel())).append("dB\n");
         sb.append("    Size: ").append(ambience.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToLowerString(ambience.getLink())).append("\n");
+        sb.append("    Link: ").append(onOffToLowerString(ambience.isLink())).append("\n");
         sb.append("    Diff: ").append(ambience.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(ambience.getPreDelay()).append("ms\n");
         sb.append("    Delay Time: ").append(reverbDelayTimeToString(ambience.getDelayTime())).append("s\n");

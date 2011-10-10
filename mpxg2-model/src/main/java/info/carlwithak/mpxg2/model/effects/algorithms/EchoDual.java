@@ -43,7 +43,7 @@ public class EchoDual extends Delay {
     private int feedback2;
     private int damp1;
     private int damp2;
-    private int clear;
+    private boolean clear;
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -143,11 +143,11 @@ public class EchoDual extends Delay {
         this.damp2 = damp2;
     }
 
-    public int getClear() {
+    public boolean isClear() {
         return clear;
     }
 
-    public void setClear(int clear) {
+    public void setClear(boolean clear) {
         this.clear = clear;
     }
 }

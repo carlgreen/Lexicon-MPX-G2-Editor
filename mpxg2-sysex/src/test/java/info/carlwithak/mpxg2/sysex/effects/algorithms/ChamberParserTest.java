@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -35,7 +36,7 @@ public class ChamberParserTest {
         assertEquals(28, chamber.getMix());
         assertEquals(0, chamber.getLevel());
         assertEquals(24.0, chamber.getSize(), 0.01);
-        assertEquals(1, chamber.getLink());
+        assertTrue(chamber.isLink());
         assertEquals(22, chamber.getDiff());
         assertEquals(0, chamber.getPreDelay());
         assertEquals(6, chamber.getBass()); // 1.5X is number 6 in list

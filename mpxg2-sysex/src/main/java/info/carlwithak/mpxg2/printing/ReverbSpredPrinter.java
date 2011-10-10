@@ -266,9 +266,9 @@ public class ReverbSpredPrinter {
     /**
      * @return String representation of reverb spred index.
      */
-    public static String reverbSpredToString(int link, double size, int reverbSpred) {
+    public static String reverbSpredToString(boolean link, double size, int reverbSpred) {
         String spred;
-        if (link == 1) {
+        if (link) {
             int sizeIndex = (int) ((size - 4) * 2);
             spred = Integer.toString(REVERB_SPRED[sizeIndex][reverbSpred]);
         } else {

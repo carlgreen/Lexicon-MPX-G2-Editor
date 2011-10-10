@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.sysex.Util;
 
 /**
  * Class to parse parameter data for Plate effect.
@@ -39,7 +40,7 @@ public class PlateParser {
         plate.setSize(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        plate.setLink(link);
+        plate.setLink(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
         plate.setDiff(diff);

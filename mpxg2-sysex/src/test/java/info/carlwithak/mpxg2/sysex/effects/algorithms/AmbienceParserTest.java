@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -35,7 +36,7 @@ public class AmbienceParserTest {
         assertEquals(18, ambience.getMix());
         assertEquals(0, ambience.getLevel());
         assertEquals(24.5, ambience.getSize(), 0.01);
-        assertEquals(1, ambience.getLink());
+        assertTrue(ambience.isLink());
         assertEquals(60, ambience.getDiff());
         assertEquals(7, ambience.getPreDelay());
         assertEquals(51, ambience.getDelayTime()); // 1.41s is number 51 in list

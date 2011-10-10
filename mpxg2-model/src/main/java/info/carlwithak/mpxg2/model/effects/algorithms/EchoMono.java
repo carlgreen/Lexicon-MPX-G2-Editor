@@ -37,7 +37,7 @@ public class EchoMono extends Delay {
     private int feedback;
     private int insert;
     private int damp;
-    private int clear;
+    private boolean clear;
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -89,11 +89,11 @@ public class EchoMono extends Delay {
         this.damp = damp;
     }
 
-    public int getClear() {
+    public boolean isClear() {
         return clear;
     }
 
-    public void setClear(int clear) {
+    public void setClear(boolean clear) {
         this.clear = clear;
     }
 }

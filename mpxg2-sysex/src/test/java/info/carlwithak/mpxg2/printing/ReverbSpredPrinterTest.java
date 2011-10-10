@@ -33,7 +33,7 @@ public class ReverbSpredPrinterTest {
      */
     @Test
     public void testReverbSpredToString_noLink() {
-        int link = 0;
+        boolean link = false;
         int reverbSpred = 0;
 
         double size = 5.0;
@@ -59,7 +59,7 @@ public class ReverbSpredPrinterTest {
      */
     @Test
     public void testReverbSpredToString_size4() {
-        int link = 1;
+        boolean link = true;
         double size = 4.0;
 
         int reverbSpred = 0;
@@ -93,7 +93,7 @@ public class ReverbSpredPrinterTest {
      */
     @Test
     public void testReverbSpredToString_size22_5() {
-        int link = 1;
+        boolean link = true;
         double size = 22.5;
 
         int reverbSpred = 0;
@@ -137,7 +137,7 @@ public class ReverbSpredPrinterTest {
      */
     @Test
     public void testReverbSpredToString_size24() {
-        int link = 1;
+        boolean link = true;
         double size = 24.0;
 
         int reverbSpred = 0;
@@ -176,7 +176,7 @@ public class ReverbSpredPrinterTest {
      */
     @Test
     public void testReverbSpredToString_size28() {
-        int link = 1;
+        boolean link = true;
         double size = 28.0;
 
         int reverbSpred = 0;
@@ -215,7 +215,7 @@ public class ReverbSpredPrinterTest {
      */
     @Test
     public void testReverbSpredToString_size35() {
-        int link = 1;
+        boolean link = true;
         double size = 35.0;
 
         int reverbSpred = 0;
@@ -259,7 +259,7 @@ public class ReverbSpredPrinterTest {
      */
     @Test
     public void testReverbSpredToString_size53() {
-        int link = 1;
+        boolean link = true;
         double size = 53.0;
 
         int reverbSpred = 0;

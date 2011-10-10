@@ -635,14 +635,14 @@ public class SysexParserTest {
         assertEquals(1, delay.getFeedback2());
         assertEquals(20, delay.getDamp1());
         assertEquals(20, delay.getDamp2());
-        assertEquals(0, delay.getClear());
+        assertFalse(delay.isClear());
 
         assertTrue(program.getReverb() instanceof Ambience);
         Ambience reverb = (Ambience) program.getReverb();
         assertEquals(18, reverb.getMix());
         assertEquals(0, reverb.getLevel());
         assertEquals(24.5, reverb.getSize(), 0.01);
-        assertEquals(1, reverb.getLink());
+        assertTrue(reverb.isLink());
         assertEquals(60, reverb.getDiff());
         assertEquals(7, reverb.getPreDelay());
         assertEquals(51, reverb.getDelayTime()); // 1.41s is number 51 in list
@@ -946,14 +946,14 @@ public class SysexParserTest {
         assertEquals(15, delay.getFeedback2());
         assertEquals(25, delay.getDamp1());
         assertEquals(25, delay.getDamp2());
-        assertEquals(0, delay.getClear());
+        assertFalse(delay.isClear());
 
         assertTrue(program.getReverb() instanceof Plate);
         Plate reverb = (Plate) program.getReverb();
         assertEquals(100, reverb.getMix());
         assertEquals(6, reverb.getLevel());
         assertEquals(22.5, reverb.getSize(), 0.01);
-        assertEquals(1, reverb.getLink());
+        assertTrue(reverb.isLink());
         assertEquals(66, reverb.getDiff());
         assertEquals(169, reverb.getPreDelay());
         assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
@@ -1082,14 +1082,14 @@ public class SysexParserTest {
         assertEquals(-20, delay.getFeedback2());
         assertEquals(20, delay.getDamp1());
         assertEquals(20, delay.getDamp2());
-        assertEquals(0, delay.getClear());
+        assertFalse(delay.isClear());
 
         assertTrue(program.getReverb() instanceof Chamber);
         Chamber reverb = (Chamber) program.getReverb();
         assertEquals(28, reverb.getMix());
         assertEquals(0, reverb.getLevel());
         assertEquals(24.0, reverb.getSize(), 0.01);
-        assertEquals(1, reverb.getLink());
+        assertTrue(reverb.isLink());
         assertEquals(22, reverb.getDiff());
         assertEquals(0, reverb.getPreDelay());
         assertEquals(6, reverb.getBass()); // 1.5X is number 6 in list
@@ -1209,7 +1209,7 @@ public class SysexParserTest {
         assertEquals(35, reverb.getMix());
         assertEquals(0, reverb.getLevel());
         assertEquals(28.0, reverb.getSize(), 0.01);
-        assertEquals(1, reverb.getLink());
+        assertTrue(reverb.isLink());
         assertEquals(90, reverb.getDiff());
         assertEquals(82, reverb.getPreDelay());
         assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
@@ -1275,14 +1275,14 @@ public class SysexParserTest {
         assertEquals(-15, delay.getFeedback());
         assertEquals(3, delay.getInsert());
         assertEquals(20, delay.getDamp());
-        assertEquals(0, delay.getClear());
+        assertFalse(delay.isClear());
 
         assertTrue(program.getReverb() instanceof Plate);
         Plate reverb = (Plate) program.getReverb();
         assertEquals(28, reverb.getMix());
         assertEquals(0, reverb.getLevel());
         assertEquals(16.5, reverb.getSize(), 0.01);
-        assertEquals(1, reverb.getLink());
+        assertTrue(reverb.isLink());
         assertEquals(90, reverb.getDiff());
         assertEquals(10, reverb.getPreDelay());
         assertEquals(0, reverb.getBass()); // 0.2X is number 0 in list
@@ -1396,7 +1396,7 @@ public class SysexParserTest {
         assertEquals(20, reverb.getMix());
         assertEquals(0, reverb.getLevel());
         assertEquals(53.0, reverb.getSize(), 0.01);
-        assertEquals(1, reverb.getLink());
+        assertTrue(reverb.isLink());
         assertEquals(80, reverb.getDiff());
         assertEquals(25, reverb.getPreDelay());
         assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list

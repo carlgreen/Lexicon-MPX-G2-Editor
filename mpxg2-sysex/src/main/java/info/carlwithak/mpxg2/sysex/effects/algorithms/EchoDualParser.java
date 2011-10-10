@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.sysex.Util;
 
 /**
  * Class to parse parameter data for Echo (D) effect.
@@ -73,7 +74,7 @@ public class EchoDualParser {
         echoDual.setDamp2(damp2);
 
         int clear = effectParameters[30] + effectParameters[31] * 16;
-        echoDual.setClear(clear);
+        echoDual.setClear(Util.parseBoolean(clear));
 
         return echoDual;
     }

@@ -41,15 +41,15 @@ public class PlatePrinter implements Printer {
         sb.append("    Mix: ").append(plate.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(plate.getLevel())).append("dB\n");
         sb.append("    Size: ").append(plate.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToLowerString(plate.getLink())).append("\n");
+        sb.append("    Link: ").append(onOffToLowerString(plate.isLink())).append("\n");
         sb.append("    Diff: ").append(plate.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(plate.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(plate.getBass())).append("X\n");
-        sb.append("    Decay: ").append(reverbDecayToString(plate.getLink(), plate.getSize(), plate.getDecay())).append("s\n");
+        sb.append("    Decay: ").append(reverbDecayToString(plate.isLink(), plate.getSize(), plate.getDecay())).append("s\n");
         sb.append("    Xovr: ").append(reverbXovrToString(plate.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(plate.getRtHC())).append("\n");
         sb.append("    Shape: ").append(plate.getShape()).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(plate.getLink(), plate.getSize(), plate.getSpred())).append("\n");
+        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(plate.isLink(), plate.getSize(), plate.getSpred())).append("\n");
         return sb.toString();
     }
 }

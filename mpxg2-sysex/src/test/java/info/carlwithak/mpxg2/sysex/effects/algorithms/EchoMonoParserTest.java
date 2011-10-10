@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 /**
  *
@@ -39,6 +40,6 @@ public class EchoMonoParserTest {
         assertEquals(-15, echoMono.getFeedback());
         assertEquals(3, echoMono.getInsert());
         assertEquals(20, echoMono.getDamp());
-        assertEquals(0, echoMono.getClear());
+        assertFalse(echoMono.isClear());
     }
 }
