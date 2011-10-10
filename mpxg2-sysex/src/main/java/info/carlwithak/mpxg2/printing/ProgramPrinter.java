@@ -146,7 +146,7 @@ public class ProgramPrinter {
     };
 
     private final static String[] BEAT_VALUES = {
-        "", "", "quarter"
+        "eighth", "dotted eighth", "quarter", "dotted quarter"
     };
 
     private final static String[] TAP_SOURCES = {
@@ -663,8 +663,14 @@ public class ProgramPrinter {
         return TEMPO_SOURCES[tempoSource];
     }
 
-    private static String beatValueToString(final int beatValue) {
-        return BEAT_VALUES[beatValue];
+    static String beatValueToString(final int beatValue) {
+        String value;
+        if (beatValue < BEAT_VALUES.length) {
+            value = BEAT_VALUES[beatValue];
+        } else {
+            value = (beatValue - BEAT_VALUES.length + 2) + " beats";
+        }
+        return value;
     }
 
     private static String tapSourceToString(final int tapSource) {
