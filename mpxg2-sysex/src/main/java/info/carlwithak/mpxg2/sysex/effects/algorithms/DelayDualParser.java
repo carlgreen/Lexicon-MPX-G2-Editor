@@ -18,7 +18,10 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.sysex.ParseException;
+import info.carlwithak.mpxg2.sysex.RateParser;
 import info.carlwithak.mpxg2.sysex.Util;
+import java.util.Arrays;
 
 /**
  * Class to parse parameter data for Delay (D) effect.
@@ -27,7 +30,7 @@ import info.carlwithak.mpxg2.sysex.Util;
  */
 public class DelayDualParser {
 
-    public static DelayDual parse(byte[] effectParameters) {
+    public static DelayDual parse(byte[] effectParameters) throws ParseException {
         DelayDual delayDual = new DelayDual();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
@@ -36,21 +39,9 @@ public class DelayDualParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         delayDual.setLevel(level);
 
-        int time1Echoes = effectParameters[4] + effectParameters[5] * 16;
-        delayDual.setTime1Echoes(time1Echoes);
+        delayDual.setTime1(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
 
-        int time1Beat = effectParameters[6] + effectParameters[7] * 16;
-        delayDual.setTime1Beat(time1Beat);
-
-        // TODO time1 units?
-
-        int time2Echoes = effectParameters[10] + effectParameters[11] * 16;
-        delayDual.setTime2Echoes(time2Echoes);
-
-        int time2Beat = effectParameters[12] + effectParameters[13] * 16;
-        delayDual.setTime2Beat(time2Beat);
-
-        // TODO time2 units?
+        delayDual.setTime2(RateParser.parse(Arrays.copyOfRange(effectParameters, 10, 16)));
 
         int level1 = effectParameters[16] + effectParameters[17] * 16;
         delayDual.setLevel1(level1);

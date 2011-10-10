@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
 
 /**
@@ -32,8 +33,7 @@ public class EchoMono extends Delay {
         "%", "-dB", ":", "-%", "%", "Clear"
     };
 
-    private int timeEchoes;
-    private int timeBeat;
+    private Rate time;
     private int feedback;
     private int insert;
     private int damp;
@@ -49,20 +49,12 @@ public class EchoMono extends Delay {
         return PARAMETER_UNITS[parameterIndex];
     }
 
-    public int getTimeEchoes() {
-        return timeEchoes;
+    public Rate getTime() {
+        return time;
     }
 
-    public void setTimeEchoes(int timeEchoes) {
-        this.timeEchoes = timeEchoes;
-    }
-
-    public int getTimeBeat() {
-        return timeBeat;
-    }
-
-    public void setTimeBeat(int timeBeat) {
-        this.timeBeat = timeBeat;
+    public void setTime(Rate time) {
+        this.time = time;
     }
 
     public int getFeedback() {

@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
 
 /**
@@ -32,10 +33,8 @@ public class EchoDual extends Delay {
         "%", "-dB", ":", ":", "Lvl 1", "Lvl 2", "-%", "-%", "%", "%", "Clear"
     };
 
-    private int time1Echoes;
-    private int time1Beat;
-    private int time2Echoes;
-    private int time2Beat;
+    private Rate time1;
+    private Rate time2;
     private int level1;
     private int level2;
     private int feedback1;
@@ -55,36 +54,20 @@ public class EchoDual extends Delay {
         return PARAMETER_UNITS[parameterIndex];
     }
 
-    public int getTime1Echoes() {
-        return time1Echoes;
+    public Rate getTime1() {
+        return time1;
     }
 
-    public void setTime1Echoes(int time1Echoes) {
-        this.time1Echoes = time1Echoes;
+    public void setTime1(Rate time1) {
+        this.time1 = time1;
     }
 
-    public int getTime1Beat() {
-        return time1Beat;
+    public Rate getTime2() {
+        return time2;
     }
 
-    public void setTime1Beat(int time1Beat) {
-        this.time1Beat = time1Beat;
-    }
-
-    public int getTime2Echoes() {
-        return time2Echoes;
-    }
-
-    public void setTime2Echoes(int time2Echoes) {
-        this.time2Echoes = time2Echoes;
-    }
-
-    public int getTime2Beat() {
-        return time2Beat;
-    }
-
-    public void setTime2Beat(int time2Beat) {
-        this.time2Beat = time2Beat;
+    public void setTime2(Rate time2) {
+        this.time2 = time2;
     }
 
     public int getLevel1() {

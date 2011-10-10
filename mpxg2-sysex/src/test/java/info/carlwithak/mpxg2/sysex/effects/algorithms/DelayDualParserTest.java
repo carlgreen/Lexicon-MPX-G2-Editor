@@ -17,7 +17,9 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,15 +32,13 @@ import static org.junit.Assert.assertFalse;
 public class DelayDualParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse() throws ParseException {
         byte[] effectParameters = {3, 1, 0, 0, 1, 0, 1, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayDual delayDual = DelayDualParser.parse(effectParameters);
         assertEquals(19, delayDual.getMix());
         assertEquals(0, delayDual.getLevel());
-        assertEquals(1, delayDual.getTime1Echoes());
-        assertEquals(1, delayDual.getTime1Beat());
-        assertEquals(4, delayDual.getTime2Echoes());
-        assertEquals(3, delayDual.getTime2Beat());
+        assertEquals(new BeatRate(1, 1), delayDual.getTime1());
+        assertEquals(new BeatRate(4, 3), delayDual.getTime2());
         assertEquals(0, delayDual.getLevel1());
         assertEquals(0, delayDual.getLevel2());
         assertEquals(-50, delayDual.getPan1());

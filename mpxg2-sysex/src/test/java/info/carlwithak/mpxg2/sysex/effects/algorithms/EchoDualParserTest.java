@@ -17,7 +17,9 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,15 +32,13 @@ import static org.junit.Assert.assertFalse;
 public class EchoDualParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse() throws ParseException {
         byte[] effectParameters = {2, 0, 1, 0, 4, 0, 4, 0, 1, 0, 2, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 3, 0, 1, 0, 4, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
         assertEquals(2, echoDual.getMix());
         assertEquals(1, echoDual.getLevel());
-        assertEquals(4, echoDual.getTime1Echoes());
-        assertEquals(4, echoDual.getTime1Beat());
-        assertEquals(2, echoDual.getTime2Echoes());
-        assertEquals(1, echoDual.getTime2Beat());
+        assertEquals(new BeatRate(4, 4), echoDual.getTime1());
+        assertEquals(new BeatRate(2, 1), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
         assertEquals(0, echoDual.getLevel2());
         assertEquals(1, echoDual.getFeedback1());

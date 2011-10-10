@@ -370,10 +370,8 @@ public class AlgorithmPrinterTest {
         DelayDual delayDual = new DelayDual();
         delayDual.setMix(25);
         delayDual.setLevel(0);
-        delayDual.setTime1Echoes(3);
-        delayDual.setTime1Beat(4);
-        delayDual.setTime2Echoes(4);
-        delayDual.setTime2Beat(3);
+        delayDual.setTime1(new BeatRate(3, 4));
+        delayDual.setTime2(new BeatRate(4, 3));
         delayDual.setLevel1(0);
         delayDual.setLevel2(0);
         delayDual.setPan1(-50);
@@ -396,8 +394,7 @@ public class AlgorithmPrinterTest {
         EchoMono echoMono = new EchoMono();
         echoMono.setMix(6);
         echoMono.setLevel(1);
-        echoMono.setTimeEchoes(4);
-        echoMono.setTimeBeat(4);
+        echoMono.setTime(new BeatRate(4, 4));
         echoMono.setFeedback(-15);
         echoMono.setInsert(3);
         echoMono.setDamp(20);
@@ -414,10 +411,8 @@ public class AlgorithmPrinterTest {
         EchoDual echoDual = new EchoDual();
         echoDual.setMix(2);
         echoDual.setLevel(1);
-        echoDual.setTime1Echoes(4);
-        echoDual.setTime1Beat(4);
-        echoDual.setTime2Echoes(2);
-        echoDual.setTime2Beat(1);
+        echoDual.setTime1(new BeatRate(4, 4));
+        echoDual.setTime2(new BeatRate(2, 1));
         echoDual.setLevel1(0);
         echoDual.setLevel2(0);
         echoDual.setFeedback1(1);

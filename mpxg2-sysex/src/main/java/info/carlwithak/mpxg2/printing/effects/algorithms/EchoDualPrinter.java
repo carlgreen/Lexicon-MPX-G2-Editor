@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.PrintException;
+import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
 import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
@@ -31,13 +33,13 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class EchoDualPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         EchoDual echoDual = (EchoDual) algorithm;
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(echoDual.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(echoDual.getLevel())).append("dB\n");
-        sb.append("    Time1: ").append(echoDual.getTime1Echoes()).append(":").append(echoDual.getTime1Beat()).append("\n");
-        sb.append("    Time2: ").append(echoDual.getTime2Echoes()).append(":").append(echoDual.getTime2Beat()).append("\n");
+        sb.append("    Time1: ").append(RatePrinter.print(echoDual.getTime1())).append("\n");
+        sb.append("    Time2: ").append(RatePrinter.print(echoDual.getTime2())).append("\n");
         sb.append("    Level1: ").append(signInt(echoDual.getLevel1())).append("dB\n");
         sb.append("    Level2: ").append(signInt(echoDual.getLevel2())).append("dB\n");
         sb.append("    Feedback1: ").append(signInt(echoDual.getFeedback1())).append("%\n");
