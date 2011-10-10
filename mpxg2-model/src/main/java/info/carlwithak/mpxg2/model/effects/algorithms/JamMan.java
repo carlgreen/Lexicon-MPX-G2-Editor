@@ -34,6 +34,7 @@ public class JamMan extends Delay {
 
     private int size;
     private int feedback;
+    private int insert;
     private boolean clear;
     private boolean layer;
     private boolean replace;
@@ -64,6 +65,14 @@ public class JamMan extends Delay {
 
     public void setFeedback(int feedback) {
         this.feedback = feedback;
+    }
+
+    public int getInsert() {
+        return insert;
+    }
+
+    public void setInsert(int insert) {
+        this.insert = insert;
     }
 
     public boolean isClear() {
