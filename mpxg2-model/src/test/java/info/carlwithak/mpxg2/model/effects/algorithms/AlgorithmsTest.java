@@ -161,6 +161,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testJamManAlgorithm() throws IntrospectionException {
+        testBean(JamMan.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new JamMan().getParameterName(0));
+        assertEquals("%", new JamMan().getParameterUnit(0));
+    }
+
+    @Test
     public void testOverdriveAlgorithm() throws IntrospectionException {
         testBean(Overdrive.class);
 
