@@ -204,14 +204,13 @@ public class Util {
      * @return number with trailing 'L' or 'R', or just 'C' for zero.
      */
     public static String panToString(final int pan) {
-        if (pan == 0) {
-            return "C";
-        }
-        String suffix = "";
+        String suffix;
         if (pan < 0) {
             suffix = "L";
         } else if (pan > 0) {
             suffix = "R";
+        } else {
+            return "C";
         }
         return Integer.toString(Math.abs(pan)) + suffix;
     }
