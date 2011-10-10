@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
+import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -424,6 +425,26 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Level1: 0dB\n    Level2: 0dB\n    Feedback1: +1%\n    Insert: Delay\n    Feedback2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: off\n";
         String actual = AlgorithmPrinter.print(echoDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintJamMan() throws PrintException {
+        JamMan jamMan = new JamMan();
+        jamMan.setMix(100);
+        jamMan.setLevel(0);
+        jamMan.setSize(250);
+        jamMan.setFeedback(0);
+        jamMan.setInsert(3);
+        jamMan.setClear(false);
+        jamMan.setLayer(false);
+        jamMan.setReplace(false);
+        jamMan.setDelay(false);
+        jamMan.setMute(false);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Feedback: 0%\n    Insert: Delay\n    Clear: off\n    Layer: off\n    Replace: off\n    Delay: off\n    Mute: off\n";
+        String actual = AlgorithmPrinter.print(jamMan);
 
         assertEquals(expected, actual);
     }
