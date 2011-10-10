@@ -508,6 +508,8 @@ public class ProgramPrinter {
             sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
         } else if ("100Hz".equals(patchDestinationUnit)) {
             sb.append(DECIMAL_2DP.format(patch.getDestinationMin() / 100.0)).append(patchDestinationUnit.substring(3)).append("\n");
+        } else if ("OnOff".equals(patchDestinationUnit)) {
+            sb.append(Util.onOffToString(patch.getDestinationMin())).append("\n");
         } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
             sb.append(signInt(patch.getDestinationMin())).append(patchDestinationUnit).append("\n");
         } else {
@@ -554,6 +556,8 @@ public class ProgramPrinter {
             sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
         } else if ("100Hz".equals(patchDestinationUnit)) {
             sb.append(DECIMAL_2DP.format(patch.getDestinationMax() / 100.0)).append(patchDestinationUnit.substring(3));
+        } else if ("OnOff".equals(patchDestinationUnit)) {
+            sb.append(Util.onOffToString(patch.getDestinationMax()));
         } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
             sb.append(signInt(patch.getDestinationMax())).append(patchDestinationUnit);
         } else {

@@ -29,7 +29,7 @@ public class JamMan extends Delay {
         "Mix", "Level", "Size", "Fbk", "Clear", "Layer", "Replc", "Delay", "MuteS"
     };
     private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "ms", "-%", "", "", "", "", ""
+        "%", "-dB", "ms", "-%", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff"
     };
 
     private int size;
