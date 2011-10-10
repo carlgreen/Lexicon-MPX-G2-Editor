@@ -153,6 +153,10 @@ public class ProgramPrinter {
         "none"
     };
 
+    private final static String[] AB_MODES = {
+        "Trigger", "Gate"
+    };
+
     private final static String[] ENVELOPE_GENERATOR_SOURCES = {
         "Off", "In", "Ret L", "Ret R", "Raw L", "Raw R", "FX 1 L", "FX 1 R",
         "FX 2 L", "FX 2 R", "Chrs L", "Chrs R", "EQ L", "EQ R", "Rvb L", "Rvb R",
@@ -336,7 +340,7 @@ public class ProgramPrinter {
         sb.append("      High: ").append(program.getRandomHigh()).append("\n");
         sb.append("      Rate: ").append(DECIMAL_2DP.format(program.getRandomRate())).append("Hz\n");
         sb.append("    A/B:\n");
-        sb.append("      Mode: ").append(program.getABMode() == 0 ? "Trigger" : "?").append("\n");
+        sb.append("      Mode: ").append(abModeToString(program.getABMode())).append("\n");
         sb.append("      A Rate: ").append(program.getARate()).append("\n");
         sb.append("      B Rate: ").append(program.getBRate()).append("\n");
         sb.append("      On Level: ").append(program.getLfo2OnLevel()).append("\n");
@@ -679,6 +683,10 @@ public class ProgramPrinter {
 
     private static String tapSourceToString(final int tapSource) {
         return TAP_SOURCES[tapSource];
+    }
+
+    private static String abModeToString(final int abMode) {
+        return AB_MODES[abMode];
     }
 
     private static String envelopeGeneratorSourceToString(final int envelopeGeneratorSource) {
