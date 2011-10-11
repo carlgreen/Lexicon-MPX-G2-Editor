@@ -181,7 +181,7 @@ Vybe/Flange
     Cabinet: ComboNorml
   Noise Gate:
     Enable: Guitar Input
-    Send: on
+    Send: On
     Thrsh: -83dB
     Atten: -85dB
     Offset: -3dB
