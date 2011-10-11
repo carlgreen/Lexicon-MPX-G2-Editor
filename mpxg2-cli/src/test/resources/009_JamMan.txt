@@ -5,7 +5,7 @@ JamMan
   Effect Routing:
     I=1=2=E=G=C=D=R=O
             |=======|
-  Effect 1: Pedal Wah 1 (off)
+  Effect 1: Pedal Wah 1 (Off)
     Toe Switch: off=bypass
     Mix: 100%
     Level: 0dB
@@ -13,7 +13,7 @@ JamMan
     Type: Model C
     Resp: 100
     Gain: +10
-  Chorus: Chorus (on)
+  Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 20%
     Level: +6dB
@@ -25,7 +25,7 @@ JamMan
     Depth2: 82%
     Res1: -22
     Res2: -15
-  Delay: JamMan (on)
+  Delay: JamMan (On)
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
@@ -37,7 +37,7 @@ JamMan
     Replace: off
     Delay: off
     Mute: off
-  Reverb: Plate (off)
+  Reverb: Plate (Off)
     Toe Switch: disabled
     Mix: 10%
     Level: +6dB
@@ -51,11 +51,11 @@ JamMan
     Rt HC: 19.4k
     Shape: 36
     Spred: 73
-  EQ: Pedal Vol (on)
+  EQ: Pedal Vol (On)
     Toe Switch: on=bypass
     Mix: 100%
     Level: 0dB
-  Gain: Distortion (off)
+  Gain: Distortion (Off)
     Toe Switch: disabled
     Lo: 0
     Mid: +10

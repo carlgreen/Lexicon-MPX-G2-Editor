@@ -4,14 +4,14 @@ TremoWah
   Application Type: Amp Input + FX Loop
   Effect Routing:
     I=2=G=1=E=D=R=C=O
-  Effect 1: Tremolo (M) (on)
+  Effect 1: Tremolo (M) (On)
     Toe Switch: disabled
     Mix: 100%
     Level: +6dB
     Rate: 7:4
     PW: 30%
     Depth: 100%
-  Effect 2: Wah  2 (on)
+  Effect 2: Wah  2 (On)
     Toe Switch: disabled
     Mix: 100%
     Level: +6dB
@@ -20,13 +20,13 @@ TremoWah
     Type: Model C
     Resp: 100
     Gain: +10
-  Chorus: Volume (D) (on)
+  Chorus: Volume (D) (On)
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
     Vol-L: 100%
     Vol-R: 100%
-  Delay: Delay (S) (on)
+  Delay: Delay (S) (On)
     Toe Switch: disabled
     Mix: 20%
     Level: 0dB
@@ -34,7 +34,7 @@ TremoWah
     Feedback: +20%
     Insert: Delay
     Clear: Off
-  Reverb: Hall (off)
+  Reverb: Hall (Off)
     Toe Switch: disabled
     Mix: 20%
     Level: 0dB
@@ -48,11 +48,11 @@ TremoWah
     Rt HC: 7.9k
     Shape: 110
     Spred: 89
-  EQ: Pedal Vol (on)
+  EQ: Pedal Vol (On)
     Toe Switch: off=bypass
     Mix: 100%
     Level: 0dB
-  Gain: Distortion (off)
+  Gain: Distortion (Off)
     Toe Switch: disabled
     Lo: 0
     Mid: +4

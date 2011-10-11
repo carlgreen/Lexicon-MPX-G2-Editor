@@ -4,12 +4,12 @@ G2 Blue
   Application Type: Amp Input + FX Loop
   Effect Routing:
     I=1=2=G=C=D=R=E=O
-  Effect 1: UniVybe (on)
+  Effect 1: UniVybe (On)
     Toe Switch: on=bypass
     Mix: 100%
     Level: 0dB
     Rate: 20
-  Effect 2: Pedal Wah 1 (off)
+  Effect 2: Pedal Wah 1 (Off)
     Toe Switch: off=bypass
     Mix: 100%
     Level: 0dB
@@ -17,11 +17,11 @@ G2 Blue
     Type: Model C
     Resp: 100
     Gain: +10
-  Chorus: Pedal Vol (on)
+  Chorus: Pedal Vol (On)
     Toe Switch: on=bypass
     Mix: 100%
     Level: 0dB
-  Delay: Echo (D) (on)
+  Delay: Echo (D) (On)
     Toe Switch: disabled
     Mix: 2%
     Level: +1dB
@@ -35,7 +35,7 @@ G2 Blue
     Damp1: 20%
     Damp2: 20%
     Clear: off
-  Reverb: Ambience (off)
+  Reverb: Ambience (Off)
     Toe Switch: off=bypass
     Mix: 18%
     Level: 0dB
@@ -46,7 +46,7 @@ G2 Blue
     Delay Time: 1.41s
     Delay Level: off
     Rt HC: 12.8k
-  Gain: Screamer (off)
+  Gain: Screamer (Off)
     Toe Switch: disabled
     Lo: +2
     Mid: +1

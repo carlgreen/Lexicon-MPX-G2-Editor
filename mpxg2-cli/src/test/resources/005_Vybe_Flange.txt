@@ -4,12 +4,12 @@ Vybe/Flange
   Application Type: Amp Input + FX Loop
   Effect Routing:
     I=1=G=E=C=D=R=2=O
-  Effect 1: UniVybe (on)
+  Effect 1: UniVybe (On)
     Toe Switch: on=bypass
     Mix: 100%
     Level: 0dB
     Rate: 20
-  Effect 2: Auto Pan (off)
+  Effect 2: Auto Pan (Off)
     Toe Switch: off=bypass
     Mix: 100%
     Level: +3dB
@@ -17,7 +17,7 @@ Vybe/Flange
     PW: 50%
     Depth: 100%
     Phase: 0°
-  Chorus: Flanger (S) (off)
+  Chorus: Flanger (S) (Off)
     Toe Switch: off=bypass
     Mix: 67%
     Level: +1dB
@@ -27,7 +27,7 @@ Vybe/Flange
     Phase: 90°
     Res: +20%
     Blend: 0
-  Delay: Echo (M) (off)
+  Delay: Echo (M) (Off)
     Toe Switch: off=bypass
     Mix: 6%
     Level: +1dB
@@ -36,7 +36,7 @@ Vybe/Flange
     Insert: Delay
     Damp: 20%
     Clear: off
-  Reverb: Plate (on)
+  Reverb: Plate (On)
     Toe Switch: on=bypass
     Mix: 28%
     Level: 0dB
@@ -50,11 +50,11 @@ Vybe/Flange
     Rt HC: 8.8k
     Shape: 58
     Spred: 65
-  EQ: Pedal Vol (on)
+  EQ: Pedal Vol (On)
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-  Gain: Screamer (off)
+  Gain: Screamer (Off)
     Toe Switch: disabled
     Lo: 0
     Mid: +1

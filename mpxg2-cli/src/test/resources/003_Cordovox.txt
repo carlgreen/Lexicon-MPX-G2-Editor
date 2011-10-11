@@ -5,7 +5,7 @@ Cordovox
   Effect Routing:
     I=E=G=C--\2=D=R=O
           |/1=======|
-  Effect 1: Auto Pan (on)
+  Effect 1: Auto Pan (On)
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
@@ -13,7 +13,7 @@ Cordovox
     PW: 50%
     Depth: 100%
     Phase: 90°
-  Effect 2: Auto Pan (on)
+  Effect 2: Auto Pan (On)
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
@@ -21,7 +21,7 @@ Cordovox
     PW: 50%
     Depth: 100%
     Phase: 270°
-  Chorus: Chorus (on)
+  Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
@@ -33,7 +33,7 @@ Cordovox
     Depth2: 0%
     Res1: -19
     Res2: 0
-  Delay: Echo (D) (on)
+  Delay: Echo (D) (On)
     Toe Switch: disabled
     Mix: 30%
     Level: 0dB
@@ -47,7 +47,7 @@ Cordovox
     Damp1: 20%
     Damp2: 20%
     Clear: off
-  Reverb: Chamber (on)
+  Reverb: Chamber (On)
     Toe Switch: disabled
     Mix: 28%
     Level: 0dB
@@ -61,11 +61,11 @@ Cordovox
     Rt HC: 9.3k
     Shape: 62
     Spred: 42
-  EQ: Pedal Vol (on)
+  EQ: Pedal Vol (On)
     Toe Switch: off=bypass
     Mix: 100%
     Level: 0dB
-  Gain: Tone (off)
+  Gain: Tone (Off)
     Toe Switch: disabled
     Lo: +25
     Mid: +10

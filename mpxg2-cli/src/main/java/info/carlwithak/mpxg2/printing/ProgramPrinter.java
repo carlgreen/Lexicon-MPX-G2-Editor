@@ -269,37 +269,37 @@ public class ProgramPrinter {
             sb.append("    ").append(line).append("\n");
         }
         if (program.getEffect1Algorithm() > 0) {
-            sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(onOffToLowerString(program.isEffect1On())).append(")").append("\n");
+            sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(onOffToString(program.isEffect1On())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEffect1()));
         }
         if (program.getEffect2Algorithm() > 0) {
-            sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(onOffToLowerString(program.isEffect2On())).append(")").append("\n");
+            sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(onOffToString(program.isEffect2On())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect2ToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEffect2()));
         }
         if (program.getChorusAlgorithm() > 0) {
-            sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(onOffToLowerString(program.isChorusOn())).append(")").append("\n");
+            sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(onOffToString(program.isChorusOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getChorusToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getChorus()));
         }
         if (program.getDelayAlgorithm() > 0) {
-            sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(onOffToLowerString(program.isDelayOn())).append(")").append("\n");
+            sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(onOffToString(program.isDelayOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getDelayToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getDelay()));
         }
         if (program.getReverbAlgorithm() > 0) {
-            sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(onOffToLowerString(program.isReverbOn())).append(")").append("\n");
+            sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(onOffToString(program.isReverbOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getReverbToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getReverb()));
         }
         if (program.getEqAlgorithm() > 0) {
-            sb.append("  EQ: ").append(eqAlgorithmToString(program.getEqAlgorithm())).append(" (").append(onOffToLowerString(program.isEqOn())).append(")").append("\n");
+            sb.append("  EQ: ").append(eqAlgorithmToString(program.getEqAlgorithm())).append(" (").append(onOffToString(program.isEqOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEqToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEq()));
         }
         if (program.getGainAlgorithm() > 0) {
-            sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(onOffToLowerString(program.isGainOn())).append(")").append("\n");
+            sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(onOffToString(program.isGainOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getGain()));
         }

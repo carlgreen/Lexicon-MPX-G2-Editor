@@ -5,7 +5,7 @@ AnotherBrick
   Effect Routing:
     I=E=1=2=G-D=C=R=O
             |===|
-  Effect 2: Blue Comp (on)
+  Effect 2: Blue Comp (On)
     Toe Switch: disabled
     Mix: 100%
     Level: +6dB
@@ -14,14 +14,14 @@ AnotherBrick
     Gain: +5
     ATime: 20ms
     RTime: 100ms
-  Chorus: Detune (M) (on)
+  Chorus: Detune (M) (On)
     Toe Switch: disabled
     Mix: 50%
     Level: +6dB
     Tune: 10
     Optimize: 10ms
     P Dly: 0ms
-  Delay: Delay (D) (on)
+  Delay: Delay (D) (On)
     Toe Switch: disabled
     Mix: 100%
     Level: -10dB
@@ -37,7 +37,7 @@ AnotherBrick
     XFbk1: +37%
     XFbk2: +23%
     Clear: Off
-  Reverb: Plate (on)
+  Reverb: Plate (On)
     Toe Switch: disabled
     Mix: 23%
     Level: +6dB
@@ -51,11 +51,11 @@ AnotherBrick
     Rt HC: 19.4k
     Shape: 36
     Spred: 95
-  EQ: Pedal Vol (on)
+  EQ: Pedal Vol (On)
     Toe Switch: off=bypass
     Mix: 100%
     Level: 0dB
-  Gain: Overdrive (off)
+  Gain: Overdrive (Off)
     Toe Switch: disabled
     Lo: 0
     Mid: 0

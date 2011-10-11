@@ -5,7 +5,7 @@ EnvFilter LP
   Effect Routing:
     I=1=G=E=C=====R=O
         |=====2=D===|
-  Effect 1: SweepFilter (on)
+  Effect 1: SweepFilter (On)
     Toe Switch: on=bypass
     Mix: 100%
     Level: +6dB
@@ -14,12 +14,12 @@ EnvFilter LP
     Mod: 2120Hz
     Scale: +50%
     Pan: C
-  Effect 2: Volume (M) (on)
+  Effect 2: Volume (M) (On)
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
     Volume: 0%
-  Delay: Delay (D) (on)
+  Delay: Delay (D) (On)
     Toe Switch: disabled
     Mix: 19%
     Level: 0dB

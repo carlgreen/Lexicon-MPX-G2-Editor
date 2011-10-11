@@ -4,7 +4,7 @@ Power Chords
   Application Type: Amp Input + FX Loop, Stand alone
   Effect Routing:
     I=2=G=E=1=C=D=R=O
-  Effect 1: Shift (D) (on)
+  Effect 1: Shift (D) (On)
     Toe Switch: on=bypass
     Mix: 100%
     Level: +6dB
@@ -12,7 +12,7 @@ Power Chords
     Optimize: 10
     Tune2: -500
     Glide: On
-  Delay: Delay (D) (off)
+  Delay: Delay (D) (Off)
     Toe Switch: disabled
     Mix: 25%
     Level: 0dB
@@ -28,7 +28,7 @@ Power Chords
     XFbk1: 0%
     XFbk2: 0%
     Clear: Off
-  Reverb: Chamber (on)
+  Reverb: Chamber (On)
     Toe Switch: disabled
     Mix: 35%
     Level: 0dB
@@ -42,7 +42,7 @@ Power Chords
     Rt HC: 10.4k
     Shape: 62
     Spred: 48
-  Gain: Overdrive (off)
+  Gain: Overdrive (Off)
     Toe Switch: disabled
     Lo: +4
     Mid: +8

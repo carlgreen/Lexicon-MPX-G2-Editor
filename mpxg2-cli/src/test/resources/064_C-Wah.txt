@@ -4,7 +4,7 @@ C-Wah
   Application Type: Amp Input + FX Loop
   Effect Routing:
     I=1=2=G=E=C=D=R=O
-  Effect 1: Pedal Wah 2 (on)
+  Effect 1: Pedal Wah 2 (On)
     Toe Switch: off=bypass
     Mix: 100%
     Level: 0dB
