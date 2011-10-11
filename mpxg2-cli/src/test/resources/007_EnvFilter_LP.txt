@@ -151,7 +151,7 @@ EnvFilter LP
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: none
-  Speaker Sim: off
+  Speaker Sim: Off
     Cabinet: ComboNorml
   Noise Gate:
     Enable: Guitar Input
