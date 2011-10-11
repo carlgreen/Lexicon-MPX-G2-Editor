@@ -26,12 +26,13 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * Basic application to read a SysEx program dump and print it out.
  *
  * @author Carl Green
  */
 public class App {
     public static void main(String[] args) throws IOException, ParseException, PrintException {
         Program program = SysexParser.parseProgram(new File(args[0]));
-        //System.out.println(ProgramPrinter.print(program));
+        System.out.println(ProgramPrinter.print(program));
     }
 }

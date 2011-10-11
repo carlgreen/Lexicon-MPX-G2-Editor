@@ -173,7 +173,7 @@ public class ProgramPrinter {
 
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
-    static String print(Program program) throws PrintException {
+    public static String print(Program program) throws PrintException {
         StringBuilder sb = new StringBuilder();
         sb.append(program.getProgramName()).append("\n");
         StringBuilder styleSB = new StringBuilder();
