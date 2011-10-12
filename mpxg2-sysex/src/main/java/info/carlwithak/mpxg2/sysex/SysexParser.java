@@ -63,6 +63,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 /**
  *
@@ -134,35 +135,31 @@ public class SysexParser {
         @SuppressWarnings("unused")
         int objectSize = readInt(in, 4);
 
+        byte[] objectData = new byte[objectSize * 2];
+        in.read(objectData);
+
         // effect 1 parameters
-        byte[] effect1Parameters = new byte[32 * 2];
-        in.read(effect1Parameters);
+        byte[] effect1Parameters = Arrays.copyOfRange(objectData, 0, 64);
 
         // effect 2 parameters
-        byte[] effect2Parameters = new byte[32 * 2];
-        in.read(effect2Parameters);
+        byte[] effect2Parameters = Arrays.copyOfRange(objectData, 64, 128);
 
         // chorus parameters
-        byte[] chorusParameters = new byte[32 * 2];
-        in.read(chorusParameters);
+        byte[] chorusParameters = Arrays.copyOfRange(objectData, 128, 192);
 
         // delay parameters
-        byte[] delayParameters = new byte[32 * 2];
-        in.read(delayParameters);
+        byte[] delayParameters = Arrays.copyOfRange(objectData, 192, 256);
 
         // reverb parameters
-        byte[] reverbParameters = new byte[32 * 2];
-        in.read(reverbParameters);
+        byte[] reverbParameters = Arrays.copyOfRange(objectData, 256, 320);
 
         // eq parameters
-        byte[] eqParameters = new byte[32 * 2];
-        in.read(eqParameters);
+        byte[] eqParameters = Arrays.copyOfRange(objectData, 320, 384);
 
         // gain parameters
-        byte[] gainParameters = new byte[32 * 2];
-        in.read(gainParameters);
+        byte[] gainParameters = Arrays.copyOfRange(objectData, 384, 448);
 
-        int effectTypes = readInt(in, 4);
+        int effectTypes = readInt(objectData, 448, 4);
         program.setIsChorus((effectTypes & EFFECT_TYPE_CHORUS) == EFFECT_TYPE_CHORUS);
         program.setIsDelay((effectTypes & EFFECT_TYPE_DELAY) == EFFECT_TYPE_DELAY);
         program.setIsDistortion((effectTypes & EFFECT_TYPE_DISTORTION) == EFFECT_TYPE_DISTORTION);
@@ -180,7 +177,7 @@ public class SysexParser {
         program.setIsStandAlone((effectTypes & APP_TYPE_STANDALONE) == APP_TYPE_STANDALONE);
         program.setIsInline((effectTypes & APP_TYPE_INLINE) == APP_TYPE_INLINE);
 
-        int guitarStyle = readInt(in, 2);
+        int guitarStyle = readInt(objectData, 452, 2);
         program.setIsAcoustic((guitarStyle & GUITAR_STYLE_ACOUSTIC) == GUITAR_STYLE_ACOUSTIC);
         program.setIsBass((guitarStyle & GUITAR_STYLE_BASS) == GUITAR_STYLE_BASS);
         program.setIsBlues((guitarStyle & GUITAR_STYLE_BLUES) == GUITAR_STYLE_BLUES);
@@ -190,11 +187,11 @@ public class SysexParser {
         program.setIsRock((guitarStyle & GUITAR_STYLE_ROCK) == GUITAR_STYLE_ROCK);
 
         for (int i = 0; i < 9; i++) {
-            int effect = readInt(in, 2);
-            int upperInputConn = readInt(in, 2);
-            int lowerInputConn = readInt(in, 2);
-            int routing = readInt(in, 2);
-            int pathType = readInt(in, 2);
+            int effect = readInt(objectData, 454 + (i * 10), 2);
+            int upperInputConn = readInt(objectData, 456 + (i * 10), 2);
+            int lowerInputConn = readInt(objectData, 458 + (i * 10), 2);
+            int routing = readInt(objectData, 460 + (i * 10), 2);
+            int pathType = readInt(objectData, 462 + (i * 10), 2);
             RoutingData routingData = new RoutingData();
             routingData.setUpperInputConnection(upperInputConn);
             routingData.setLowerInputConnection(lowerInputConn);
@@ -232,29 +229,29 @@ public class SysexParser {
             }
         }
 
-        int effect1ToePatch = readInt(in, 2);
+        int effect1ToePatch = readInt(objectData, 544, 2);
         program.setEffect1ToePatch(effect1ToePatch);
 
-        int effect2ToePatch = readInt(in, 2);
+        int effect2ToePatch = readInt(objectData, 546, 2);
         program.setEffect2ToePatch(effect2ToePatch);
 
-        int chorusToePatch = readInt(in, 2);
+        int chorusToePatch = readInt(objectData, 548, 2);
         program.setChorusToePatch(chorusToePatch);
 
-        int delayToePatch = readInt(in, 2);
+        int delayToePatch = readInt(objectData, 550, 2);
         program.setDelayToePatch(delayToePatch);
 
-        int reverbToePatch = readInt(in, 2);
+        int reverbToePatch = readInt(objectData, 552, 2);
         program.setReverbToePatch(reverbToePatch);
 
-        int eqToePatch = readInt(in, 2);
+        int eqToePatch = readInt(objectData, 554, 2);
         program.setEqToePatch(eqToePatch);
 
-        int gainToePatch = readInt(in, 2);
+        int gainToePatch = readInt(objectData, 556, 2);
         program.setGainToePatch(gainToePatch);
 
         for (int i = 0; i < 7; i++) {
-            int algorithmNumber = readInt(in, 2);
+            int algorithmNumber = readInt(objectData, 558 + (i * 2), 2);
             switch (i) {
                 case 0:
                     program.setEffect1Algorithm(algorithmNumber);
@@ -449,8 +446,7 @@ public class SysexParser {
         }
 
         // read program name
-        byte[] bytes = new byte[24];
-        in.read(bytes);
+        byte[] bytes = Arrays.copyOfRange(objectData, 572, 596);
         StringBuilder sb = new StringBuilder(12);
         for (int i = 0; i < bytes.length; i += 2) {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
@@ -458,7 +454,7 @@ public class SysexParser {
         }
         program.setProgramName(sb.toString().trim());
 
-        int effectsStatus = readInt(in, 2);
+        int effectsStatus = readInt(objectData, 596, 2);
         program.setEffect1On((effectsStatus & 0x01) == 0x01);
         program.setEffect2On((effectsStatus & 0x02) == 0x02);
         program.setChorusOn((effectsStatus & 0x04) == 0x04);
@@ -470,54 +466,52 @@ public class SysexParser {
 
         // soft row
         for (int i = 0; i < 10; i++) {
-            int softRowEffectType = readInt(in, 2);
+            int softRowEffectType = readInt(objectData, 598 + (i * 4), 2);
             program.setSoftRowEffectType(i, softRowEffectType);
 
-            int softRowParameter = readInt(in, 2);
+            int softRowParameter = readInt(objectData, 600 + (i * 4), 2);
             program.setSoftRowParameter(i, softRowParameter);
         }
 
         // tempo
-        int tempo = readInt(in, 4);
+        int tempo = readInt(objectData, 638, 4);
         program.setTempo(tempo);
 
-        int tempoSource = readInt(in, 2);
+        int tempoSource = readInt(objectData, 642, 2);
         program.setTempoSource(tempoSource);
 
-        int beatValue = readInt(in, 2);
+        int beatValue = readInt(objectData, 644, 2);
         program.setBeatValue(beatValue);
 
-        int tapSource = readInt(in, 2);
+        int tapSource = readInt(objectData, 646, 2);
         program.setTapSource(tapSource);
 
-        int tapAverage = readInt(in, 2);
+        int tapAverage = readInt(objectData, 648, 2);
         program.setTapAverage(tapAverage);
 
-        int tapSourceLevel = readInt(in, 2);
+        int tapSourceLevel = readInt(objectData, 650, 2);
         program.setTapSourceLevel(tapSourceLevel);
 
-        // unused
-        in.read(new byte[2]);
+        // unused bytes 652 - 654
 
         // patching
-        program.setPatch1(readPatch(in));
-        program.setPatch2(readPatch(in));
-        program.setPatch3(readPatch(in));
-        program.setPatch4(readPatch(in));
-        program.setPatch5(readPatch(in));
+        program.setPatch1(readPatch(Arrays.copyOfRange(objectData, 654, 678)));
+        program.setPatch2(readPatch(Arrays.copyOfRange(objectData, 678, 702)));
+        program.setPatch3(readPatch(Arrays.copyOfRange(objectData, 702, 726)));
+        program.setPatch4(readPatch(Arrays.copyOfRange(objectData, 726, 750)));
+        program.setPatch5(readPatch(Arrays.copyOfRange(objectData, 750, 774)));
 
         // knob controller
-        int knobValue = readInt(in, 2);
+        int knobValue = readInt(objectData, 774, 2);
         program.setKnobValue(knobValue);
 
-        int knobLow = readInt(in, 2);
+        int knobLow = readInt(objectData, 776, 2);
         program.setKnobLow(knobLow);
 
-        int knobHigh = readInt(in, 2);
+        int knobHigh = readInt(objectData, 778, 2);
         program.setKnobHigh(knobHigh);
 
-        bytes = new byte[18];
-        in.read(bytes);
+        bytes = Arrays.copyOfRange(objectData, 780, 798);
         StringBuilder knobName = new StringBuilder(9);
         for (int i = 0; i < bytes.length; i += 2) {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
@@ -526,103 +520,101 @@ public class SysexParser {
         program.setKnobName(knobName.toString());
 
         // lfo 1 controller
-        int lfo1Mode = readInt(in, 2);
+        int lfo1Mode = readInt(objectData, 798, 2);
         program.setLfo1Mode(lfo1Mode);
 
-        bytes = new byte[6];
-        in.read(bytes);
+        bytes = Arrays.copyOfRange(objectData, 800, 806);
         program.setLfo1Rate(RateParser.parse(bytes));
 
-        int lfo1PulseWidth = readInt(in, 2);
+        int lfo1PulseWidth = readInt(objectData, 806, 2);
         program.setLfo1PulseWidth(lfo1PulseWidth);
 
-        int lfo1Phase = readInt(in, 2);
+        int lfo1Phase = readInt(objectData, 808, 2);
         program.setLfo1Phase(lfo1Phase);
 
-        int lfo1Depth = readInt(in, 2);
+        int lfo1Depth = readInt(objectData, 810, 2);
         program.setLfo1Depth(lfo1Depth);
 
-        int lfo1OnLevel = readInt(in, 2);
+        int lfo1OnLevel = readInt(objectData, 812, 2);
         program.setLfo1OnLevel(lfo1OnLevel);
 
-        int lfo1OnSource = readInt(in, 2);
+        int lfo1OnSource = readInt(objectData, 814, 2);
         program.setLfo1OnSource(lfo1OnSource);
 
         // lfo 2 controller
-        int lfo2Mode = readInt(in, 2);
+        int lfo2Mode = readInt(objectData, 816, 2);
         program.setLfo2Mode(lfo2Mode);
 
-        bytes = new byte[6];
-        in.read(bytes);
+        bytes = Arrays.copyOfRange(objectData, 818, 824);
         program.setLfo2Rate(RateParser.parse(bytes));
 
-        int lfo2PulseWidth = readInt(in, 2);
+        int lfo2PulseWidth = readInt(objectData, 824, 2);
         program.setLfo2PulseWidth(lfo2PulseWidth);
 
-        int lfo2Phase = readInt(in, 2);
+        int lfo2Phase = readInt(objectData, 826, 2);
         program.setLfo2Phase(lfo2Phase);
 
-        int lfo2Depth = readInt(in, 2);
+        int lfo2Depth = readInt(objectData, 828, 2);
         program.setLfo2Depth(lfo2Depth);
 
-        int lfo2OnLevel = readInt(in, 2);
+        int lfo2OnLevel = readInt(objectData, 830, 2);
         program.setLfo2OnLevel(lfo2OnLevel);
 
-        int lfo2OnSource = readInt(in, 2);
+        int lfo2OnSource = readInt(objectData, 832, 2);
         program.setLfo2OnSource(lfo2OnSource);
 
         // random controller
-        int randomLow = readInt(in, 2);
+        int randomLow = readInt(objectData, 834, 2);
         program.setRandomLow(randomLow);
 
-        int randomHigh = readInt(in, 2);
+        int randomHigh = readInt(objectData, 836, 2);
         program.setRandomHigh(randomHigh);
 
-        int randomRate = readInt(in, 4);
+        int randomRate = readInt(objectData, 838, 4);
         program.setRandomRate(randomRate / 100.0);
 
         // TODO what is this?
-        in.read(new byte[2]);
+        // skip bytes 842 - 844
 
         // a/b data
-        int abMode = readInt(in, 2);
+        int abMode = readInt(objectData, 844, 2);
         program.setABMode(abMode);
 
-        int aRate = readInt(in, 2);
+        int aRate = readInt(objectData, 846, 2);
         program.setARate(aRate);
 
-        int bRate = readInt(in, 2);
+        int bRate = readInt(objectData, 848, 2);
         program.setBRate(bRate);
 
-        int abOnLevel = readInt(in, 2);
+        int abOnLevel = readInt(objectData, 850, 2);
         program.setABOnLevel(abOnLevel);
 
-        int abOnSource = readInt(in, 2);
+        int abOnSource = readInt(objectData, 852, 2);
         program.setABOnSource(abOnSource);
 
         // envelope generator data
-        int envGenSrc1 = readInt(in, 2);
+        int envGenSrc1 = readInt(objectData, 854, 2);
         program.setEnvelopeGeneratorSrc1(envGenSrc1);
 
-        int envGenSrc2 = readInt(in, 2);
+        int envGenSrc2 = readInt(objectData, 856, 2);
         program.setEnvelopeGeneratorSrc2(envGenSrc2);
 
-        int envGenATrim = readInt(in, 2);
+        int envGenATrim = readInt(objectData, 858, 2);
         program.setEnvelopeGeneratorATrim(envGenATrim);
 
-        int envGenResponse = readInt(in, 2);
+        int envGenResponse = readInt(objectData, 860, 2);
         program.setEnvelopeGeneratorResponse(envGenResponse);
 
         // noise gate
-        int noiseGateEnable = readInt(in, 2);
-        int noiseGateThreshold = readInt(in, 2);
-        int noiseGateOffset = readInt(in, 2);
-        int noiseGateHTime = readInt(in, 4);
-        int noiseGateATime = readInt(in, 4);
-        int noiseGateRTime = readInt(in, 4);
-        int noiseGateAttenuation = readInt(in, 2);
-        int noiseGateDelay = readInt(in, 2);
-        int noiseGateSend = readInt(in, 2);
+        int noiseGateEnable = readInt(objectData, 862, 2);
+        int noiseGateThreshold = readInt(objectData, 864, 2);
+        int noiseGateOffset = readInt(objectData, 866, 2);
+        int noiseGateHTime = readInt(objectData, 868, 4);
+        int noiseGateATime = readInt(objectData, 872, 4);
+        int noiseGateRTime = readInt(objectData, 876, 4);
+        int noiseGateAttenuation = readInt(objectData, 880, 2);
+        int noiseGateDelay = readInt(objectData, 882, 2);
+        int noiseGateSend = readInt(objectData, 884, 2);
 
         NoiseGate noiseGate = new NoiseGate();
         noiseGate.setEnable(noiseGateEnable);
@@ -637,37 +629,36 @@ public class SysexParser {
         program.setNoiseGate(noiseGate);
 
         // Bypass State
-        int bypassState = readInt(in, 2);
+        int bypassState = readInt(objectData, 886, 2);
         program.setBypassState(bypassState);
 
         // Speaker Simulator
-        int speakerSimulatorEnable = readInt(in, 2);
+        int speakerSimulatorEnable = readInt(objectData, 888, 2);
         program.setSpeakerSimulatorEnable(Util.parseBoolean(speakerSimulatorEnable));
 
-        int speakerSimulatorCabinet = readInt(in, 2);
+        int speakerSimulatorCabinet = readInt(objectData, 890, 2);
         program.setSpeakerSimulatorCabinet(speakerSimulatorCabinet);
 
         // Mix
-        int postLevel = (byte) readInt(in, 2);
+        int postLevel = readInt(objectData, 892, 2);
         program.setPostLevel(postLevel);
 
-        int postBypassLevel = (byte) readInt(in, 2);
+        int postBypassLevel = readInt(objectData, 894, 2);
         program.setPostBypassLevel(postBypassLevel);
 
-        int postMix = readInt(in, 2);
+        int postMix = readInt(objectData, 896, 2);
         program.setPostMix(postMix);
 
-        int sendLevel = (byte) readInt(in, 2);
+        int sendLevel = readInt(objectData, 898, 2);
         program.setSendLevel(sendLevel);
 
-        int sendBypassLevel = (byte) readInt(in, 2);
+        int sendBypassLevel = readInt(objectData, 900, 2);
         program.setSendBypassLevel(sendBypassLevel);
 
-        // unused
-        in.read(new byte[2]);
+        // unused bytes 902 - 904
 
         // TODO what is this?
-        in.read(new byte[4]);
+        // skip bytes 904 - 908
 
         int controlLevels = readInt(in, 4);
         if (controlLevels != 4) {
@@ -698,22 +689,22 @@ public class SysexParser {
         return program;
     }
 
-    private static Patch readPatch(final InputStream in) throws IOException {
-        int source = readInt(in, 2);
-        int sourceMin = readInt(in, 2);
-        int sourceMid = readInt(in, 2);
-        int sourceMax = readInt(in, 2);
-        int destinationEffect = readInt(in, 2);
-        int destinationParameter = readInt(in, 2);
+    private static Patch readPatch(final byte[] bytes) throws IOException {
+        int source = readInt(bytes, 0, 2);
+        int sourceMin = readInt(bytes, 2, 2);
+        int sourceMid = readInt(bytes, 4, 2);
+        int sourceMax = readInt(bytes, 6, 2);
+        int destinationEffect = readInt(bytes, 8, 2);
+        int destinationParameter = readInt(bytes, 10, 2);
 
         // what is this logic?
-        int destinationMin = readInt(in, 4);
+        int destinationMin = readInt(bytes, 12, 4);
         if ((destinationMin & 0xff00) == 0xff00) {
             destinationMin = (byte) (destinationMin % 0xff00);
         }
 
-        int destinationMid = readInt(in, 4);
-        int destinationMax = readInt(in, 4);
+        int destinationMid = readInt(bytes, 16, 4);
+        int destinationMax = readInt(bytes, 20, 4);
 
         Patch patch = new Patch();
         patch.setSource(source);
@@ -731,9 +722,13 @@ public class SysexParser {
     private static int readInt(final InputStream in, final int size) throws IOException {
         byte[] bytes = new byte[size];
         in.read(bytes);
+        return readInt(bytes, 0, size);
+    }
+
+    private static int readInt(final byte[] bytes, final int offset, final int size) {
         int result = 0;
         for (int i = 0; i < size; i++) {
-            result += (bytes[i] * Math.pow(16, i));
+            result += (bytes[i + offset] * Math.pow(16, i));
         }
         return result;
     }
