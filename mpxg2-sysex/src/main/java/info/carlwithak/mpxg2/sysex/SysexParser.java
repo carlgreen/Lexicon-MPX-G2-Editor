@@ -137,6 +137,32 @@ public class SysexParser {
         byte[] objectData = new byte[objectSize * 2];
         in.read(objectData);
 
+        int controlLevels = readInt(in, 4);
+        if (controlLevels != 4) {
+            throw new ParseException("Expect 4 control levels for a program dump");
+        }
+
+        int controlLevel0 = readInt(in, 4);
+        int controlLevel1 = readInt(in, 4);
+        if (controlLevel0 != 0x01 || controlLevel1 != 0x0A) {
+            throw new ParseException("Expect ProgramDump control tree path");
+        }
+
+        int controlLevel2 = readInt(in, 4);
+        int controlLevel3 = readInt(in, 4);
+        int programNumber = controlLevel2 * 100 + controlLevel3 + 1;
+        program.setProgramNumber(programNumber);
+
+        b = in.read();
+        @SuppressWarnings("unused")
+        int checksum = b;
+
+        if ((b = in.read()) != SYSEX_ID_END) {
+            throw new ParseException("Invalid Sysex ID (end)");
+        }
+
+        in.close();
+
         // effect 1 parameters
         byte[] effect1Parameters = Arrays.copyOfRange(objectData, 0, 64);
 
@@ -658,32 +684,6 @@ public class SysexParser {
 
         // TODO what is this?
         // skip bytes 904 - 908
-
-        int controlLevels = readInt(in, 4);
-        if (controlLevels != 4) {
-            throw new ParseException("Expect 4 control levels for a program dump");
-        }
-
-        int controlLevel0 = readInt(in, 4);
-        int controlLevel1 = readInt(in, 4);
-        if (controlLevel0 != 0x01 || controlLevel1 != 0x0A) {
-            throw new ParseException("Expect ProgramDump control tree path");
-        }
-
-        int controlLevel2 = readInt(in, 4);
-        int controlLevel3 = readInt(in, 4);
-        int programNumber = controlLevel2 * 100 + controlLevel3 + 1;
-        program.setProgramNumber(programNumber);
-
-        b = in.read();
-        @SuppressWarnings("unused")
-        int checksum = b;
-
-        if ((b = in.read()) != SYSEX_ID_END) {
-            throw new ParseException("Invalid Sysex ID (end)");
-        }
-
-        in.close();
 
         return program;
     }
