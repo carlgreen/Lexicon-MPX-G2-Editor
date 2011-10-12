@@ -132,7 +132,6 @@ public class SysexParser {
             throw new ParseException("Invalid Message Type");
         }
 
-        @SuppressWarnings("unused")
         int objectSize = readInt(in, 4);
 
         byte[] objectData = new byte[objectSize * 2];
