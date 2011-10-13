@@ -42,7 +42,7 @@ AnotherBrick
     Mix: 23%
     Level: +6dB
     Size: 30.5m
-    Link: on
+    Link: On
     Diff: 90%
     Pre Delay: 133ms
     Bass: 0.8X

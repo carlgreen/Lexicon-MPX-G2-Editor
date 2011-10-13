@@ -23,7 +23,7 @@ import info.carlwithak.mpxg2.printing.PrintException;
 import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
+import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -47,7 +47,7 @@ public class EchoDualPrinter implements Printer {
         sb.append("    Feedback2: ").append(signInt(echoDual.getFeedback2())).append("%\n");
         sb.append("    Damp1: ").append(echoDual.getDamp1()).append("%\n");
         sb.append("    Damp2: ").append(echoDual.getDamp2()).append("%\n");
-        sb.append("    Clear: ").append(onOffToLowerString(echoDual.isClear())).append("\n");
+        sb.append("    Clear: ").append(onOffToString(echoDual.isClear())).append("\n");
         return sb.toString();
     }
 

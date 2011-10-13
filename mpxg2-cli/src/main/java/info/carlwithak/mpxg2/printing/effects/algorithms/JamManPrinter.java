@@ -21,7 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
+import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -39,11 +39,11 @@ public class JamManPrinter implements Printer {
         sb.append("    Size: ").append(jamMan.getSize()).append("ms\n");
         sb.append("    Feedback: ").append(signInt(jamMan.getFeedback())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(jamMan.getInsert())).append("\n");
-        sb.append("    Clear: ").append(onOffToLowerString(jamMan.isClear())).append("\n");
-        sb.append("    Layer: ").append(onOffToLowerString(jamMan.isLayer())).append("\n");
-        sb.append("    Replace: ").append(onOffToLowerString(jamMan.isReplace())).append("\n");
-        sb.append("    Delay: ").append(onOffToLowerString(jamMan.isDelay())).append("\n");
-        sb.append("    Mute: ").append(onOffToLowerString(jamMan.isMute())).append("\n");
+        sb.append("    Clear: ").append(onOffToString(jamMan.isClear())).append("\n");
+        sb.append("    Layer: ").append(onOffToString(jamMan.isLayer())).append("\n");
+        sb.append("    Replace: ").append(onOffToString(jamMan.isReplace())).append("\n");
+        sb.append("    Delay: ").append(onOffToString(jamMan.isDelay())).append("\n");
+        sb.append("    Mute: ").append(onOffToString(jamMan.isMute())).append("\n");
         return sb.toString();
     }
 

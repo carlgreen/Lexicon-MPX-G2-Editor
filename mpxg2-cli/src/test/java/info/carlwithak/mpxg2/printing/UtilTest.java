@@ -191,12 +191,6 @@ public class UtilTest {
     }
 
     @Test
-    public void testOnOffToLowerString_Boolean() {
-        assertEquals("off", Util.onOffToLowerString(false));
-        assertEquals("on", Util.onOffToLowerString(true));
-    }
-
-    @Test
     public void testWahTypeToString() {
         assertEquals("Model C", Util.wahTypeToString(0));
         assertEquals("Model V", Util.wahTypeToString(1));

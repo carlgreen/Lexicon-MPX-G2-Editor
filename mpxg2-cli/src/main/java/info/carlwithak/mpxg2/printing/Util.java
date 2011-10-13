@@ -245,14 +245,6 @@ public class Util {
         return ind ? "On" : "Off";
     }
 
-    /**
-     * @return String 'on' or 'off' depending on value of ind
-     * @deprecated Should use capitalized string
-     */
-    public static String onOffToLowerString(final boolean ind) {
-        return onOffToString(ind).toLowerCase();
-    }
-
     public static String wahTypeToString(final int wahType) {
         return "Model " + (wahType == 0 ? 'C' : 'V');
     }

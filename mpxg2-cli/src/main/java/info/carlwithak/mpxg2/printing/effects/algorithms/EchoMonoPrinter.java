@@ -23,7 +23,7 @@ import info.carlwithak.mpxg2.printing.PrintException;
 import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
+import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -42,7 +42,7 @@ public class EchoMonoPrinter implements Printer {
         sb.append("    Feedback: ").append(signInt(echoMono.getFeedback())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(echoMono.getInsert())).append("\n");
         sb.append("    Damp: ").append(echoMono.getDamp()).append("%\n");
-        sb.append("    Clear: ").append(onOffToLowerString(echoMono.isClear())).append("\n");
+        sb.append("    Clear: ").append(onOffToString(echoMono.isClear())).append("\n");
         return sb.toString();
     }
 

@@ -21,7 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
-import static info.carlwithak.mpxg2.printing.Util.onOffToLowerString;
+import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
@@ -41,7 +41,7 @@ public class PlatePrinter implements Printer {
         sb.append("    Mix: ").append(plate.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(plate.getLevel())).append("dB\n");
         sb.append("    Size: ").append(plate.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToLowerString(plate.isLink())).append("\n");
+        sb.append("    Link: ").append(onOffToString(plate.isLink())).append("\n");
         sb.append("    Diff: ").append(plate.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(plate.getPreDelay()).append("ms\n");
         sb.append("    Bass: ").append(reverbBassToString(plate.getBass())).append("X\n");

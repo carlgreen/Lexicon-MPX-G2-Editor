@@ -35,13 +35,13 @@ Vybe/Flange
     Feedback: -15%
     Insert: Delay
     Damp: 20%
-    Clear: off
+    Clear: Off
   Reverb: Plate (On)
     Toe Switch: on=bypass
     Mix: 28%
     Level: 0dB
     Size: 16.5m
-    Link: on
+    Link: On
     Diff: 90%
     Pre Delay: 10ms
     Bass: 0.2X

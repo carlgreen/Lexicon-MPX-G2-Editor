@@ -34,17 +34,17 @@ G2 Blue
     Feedback2: +1%
     Damp1: 20%
     Damp2: 20%
-    Clear: off
+    Clear: Off
   Reverb: Ambience (Off)
     Toe Switch: off=bypass
     Mix: 18%
     Level: 0dB
     Size: 24.5m
-    Link: on
+    Link: On
     Diff: 60%
     Pre Delay: 7ms
     Delay Time: 1.41s
-    Delay Level: off
+    Delay Level: Off
     Rt HC: 12.8k
   Gain: Screamer (Off)
     Toe Switch: disabled

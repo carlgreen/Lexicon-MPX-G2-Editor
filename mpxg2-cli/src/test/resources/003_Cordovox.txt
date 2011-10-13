@@ -46,13 +46,13 @@ Cordovox
     Feedback2: -20%
     Damp1: 20%
     Damp2: 20%
-    Clear: off
+    Clear: Off
   Reverb: Chamber (On)
     Toe Switch: disabled
     Mix: 28%
     Level: 0dB
     Size: 24.0m
-    Link: on
+    Link: On
     Diff: 22%
     Pre Delay: 0ms
     Bass: 1.5X

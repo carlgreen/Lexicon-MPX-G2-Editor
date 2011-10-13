@@ -33,7 +33,7 @@ Power Chords
     Mix: 35%
     Level: 0dB
     Size: 28.0m
-    Link: on
+    Link: On
     Diff: 90%
     Pre Delay: 82ms
     Bass: 1.2X

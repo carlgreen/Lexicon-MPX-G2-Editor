@@ -32,13 +32,13 @@ Guitar Solo
     Feedback2: +15%
     Damp1: 25%
     Damp2: 25%
-    Clear: off
+    Clear: Off
   Reverb: Plate (On)
     Toe Switch: disabled
     Mix: 100%
     Level: +6dB
     Size: 22.5m
-    Link: on
+    Link: On
     Diff: 66%
     Pre Delay: 169ms
     Bass: 1.2X

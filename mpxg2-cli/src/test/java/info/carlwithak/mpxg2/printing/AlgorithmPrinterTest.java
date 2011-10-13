@@ -401,7 +401,7 @@ public class AlgorithmPrinterTest {
         echoMono.setDamp(20);
         echoMono.setClear(false);
 
-        String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Feedback: -15%\n    Insert: Delay\n    Damp: 20%\n    Clear: off\n";
+        String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Feedback: -15%\n    Insert: Delay\n    Damp: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoMono);
 
         assertEquals(expected, actual);
@@ -423,7 +423,7 @@ public class AlgorithmPrinterTest {
         echoDual.setDamp2(20);
         echoDual.setClear(false);
 
-        String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Level1: 0dB\n    Level2: 0dB\n    Feedback1: +1%\n    Insert: Delay\n    Feedback2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: off\n";
+        String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Level1: 0dB\n    Level2: 0dB\n    Feedback1: +1%\n    Insert: Delay\n    Feedback2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoDual);
 
         assertEquals(expected, actual);
@@ -443,7 +443,7 @@ public class AlgorithmPrinterTest {
         jamMan.setDelay(false);
         jamMan.setMute(false);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Feedback: 0%\n    Insert: Delay\n    Clear: off\n    Layer: off\n    Replace: off\n    Delay: off\n    Mute: off\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Feedback: 0%\n    Insert: Delay\n    Clear: Off\n    Layer: Off\n    Replace: Off\n    Delay: Off\n    Mute: Off\n";
         String actual = AlgorithmPrinter.print(jamMan);
 
         assertEquals(expected, actual);
@@ -465,7 +465,7 @@ public class AlgorithmPrinterTest {
         chamber.setShape(62);
         chamber.setSpred(120);
 
-        String expected = "    Mix: 28%\n    Level: 0dB\n    Size: 24.0m\n    Link: on\n    Diff: 22%\n    Pre Delay: 0ms\n    Bass: 1.5X\n    Decay: 1.05s\n    Xovr: 986\n    Rt HC: 9.3k\n    Shape: 62\n    Spred: 42\n";
+        String expected = "    Mix: 28%\n    Level: 0dB\n    Size: 24.0m\n    Link: On\n    Diff: 22%\n    Pre Delay: 0ms\n    Bass: 1.5X\n    Decay: 1.05s\n    Xovr: 986\n    Rt HC: 9.3k\n    Shape: 62\n    Spred: 42\n";
         String actual = AlgorithmPrinter.print(chamber);
 
         assertEquals(expected, actual);
@@ -487,7 +487,7 @@ public class AlgorithmPrinterTest {
         hall.setShape(110);
         hall.setSpred(125);
 
-        String expected = "    Mix: 20%\n    Level: 0dB\n    Size: 53.0m\n    Link: on\n    Diff: 80%\n    Pre Delay: 25ms\n    Bass: 1.2X\n    Decay: 1.67s\n    Xovr: 818\n    Rt HC: 7.9k\n    Shape: 110\n    Spred: 89\n";
+        String expected = "    Mix: 20%\n    Level: 0dB\n    Size: 53.0m\n    Link: On\n    Diff: 80%\n    Pre Delay: 25ms\n    Bass: 1.2X\n    Decay: 1.67s\n    Xovr: 818\n    Rt HC: 7.9k\n    Shape: 110\n    Spred: 89\n";
         String actual = AlgorithmPrinter.print(hall);
 
         assertEquals(expected, actual);
@@ -509,7 +509,7 @@ public class AlgorithmPrinterTest {
         plate.setShape(36);
         plate.setSpred(222);
 
-        String expected = "    Mix: 100%\n    Level: +6dB\n    Size: 22.5m\n    Link: on\n    Diff: 66%\n    Pre Delay: 169ms\n    Bass: 1.2X\n    Decay: 1.30s\n    Xovr: 986\n    Rt HC: 19.4k\n    Shape: 36\n    Spred: 73\n";
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Size: 22.5m\n    Link: On\n    Diff: 66%\n    Pre Delay: 169ms\n    Bass: 1.2X\n    Decay: 1.30s\n    Xovr: 986\n    Rt HC: 19.4k\n    Shape: 36\n    Spred: 73\n";
         String actual = AlgorithmPrinter.print(plate);
 
         assertEquals(expected, actual);
@@ -528,7 +528,7 @@ public class AlgorithmPrinterTest {
         ambience.setDelayLevel(0);
         ambience.setRtHC(12);
 
-        String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: on\n    Diff: 60%\n    Pre Delay: 7ms\n    Delay Time: 1.41s\n    Delay Level: off\n    Rt HC: 12.8k\n";
+        String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: On\n    Diff: 60%\n    Pre Delay: 7ms\n    Delay Time: 1.41s\n    Delay Level: Off\n    Rt HC: 12.8k\n";
         String actual = AlgorithmPrinter.print(ambience);
 
         assertEquals(expected, actual);
