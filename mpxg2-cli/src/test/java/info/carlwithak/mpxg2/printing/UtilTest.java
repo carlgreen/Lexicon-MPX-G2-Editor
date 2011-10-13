@@ -179,12 +179,6 @@ public class UtilTest {
     }
 
     @Test
-    public void testOnOffToLowerString_Int() {
-        assertEquals("off", Util.onOffToLowerString(0));
-        assertEquals("on", Util.onOffToLowerString(1));
-    }
-
-    @Test
     public void testOnOffToString_Boolean() {
         assertEquals("Off", Util.onOffToString(false));
         assertEquals("On", Util.onOffToString(true));

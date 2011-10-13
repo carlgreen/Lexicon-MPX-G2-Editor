@@ -231,14 +231,6 @@ public class Util {
     }
 
     /**
-     * @return String 'on' or 'off' depending on value of ind
-     * @deprecated Should use capitalized string
-     */
-    public static String onOffToLowerString(final int ind) {
-        return onOffToString(ind).toLowerCase();
-    }
-
-    /**
      * @return String 'On' or 'Off' depending on value of ind
      */
     public static String onOffToString(final boolean ind) {
