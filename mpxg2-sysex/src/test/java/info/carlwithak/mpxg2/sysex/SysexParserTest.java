@@ -111,6 +111,68 @@ public class SysexParserTest {
         }
     }
 
+    @Test
+    public void testNotFourLevelsOfControl() throws Exception {
+        String expectedMessage = null;
+        try {
+            File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+            0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00});
+            expectedMessage = "Expect 4 control levels for a program dump";
+            SysexParser.parseProgram(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testNotProgramDumpControlPath() throws Exception {
+        String expectedMessage = null;
+        try {
+            File temp = tempFileWithData(new byte[]{
+                (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+                0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+            });
+            expectedMessage = "Expect ProgramDump control tree path";
+            SysexParser.parseProgram(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+
+        try {
+            File temp = tempFileWithData(new byte[]{
+                (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+                0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0b, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+            });
+            expectedMessage = "Expect ProgramDump control tree path";
+            SysexParser.parseProgram(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testNoSysexEndMarker() throws Exception {
+        String expectedMessage = null;
+        try {
+            File temp = tempFileWithData(new byte[]{
+                (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+                0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                0x00, (byte) 0xf6
+            });
+            expectedMessage = "Invalid Sysex ID (end)";
+            SysexParser.parseProgram(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
     private File tempFileWithData(final byte[] data) throws IOException {
         File temp = File.createTempFile("test_", ".syx", new File("target/test-classes/"));
         temp.deleteOnExit();
