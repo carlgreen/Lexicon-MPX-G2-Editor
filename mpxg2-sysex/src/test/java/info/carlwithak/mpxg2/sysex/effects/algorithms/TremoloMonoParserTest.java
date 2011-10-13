@@ -31,7 +31,7 @@ import static org.junit.Assert.assertEquals;
 public class TremoloMonoParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_TremoWah() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 7, 0, 4, 0, 1, 0, 14, 1, 4, 6, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TremoloMono tremoloMono = TremoloMonoParser.parse(effectParameters);
         assertEquals(100, tremoloMono.getMix());

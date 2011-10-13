@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class EqPedalVolParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_Cordovox() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EqPedalVol eqPedalVol = EqPedalVolParser.parse(effectParameters);
         assertEquals(100, eqPedalVol.getMix());

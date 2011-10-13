@@ -31,7 +31,7 @@ import static org.junit.Assert.assertEquals;
 public class FlangerStereoParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {3, 4, 1, 0, 1, 0, 4, 0, 1, 0, 2, 3, 14, 3, 1, 0, 4, 1, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         FlangerStereo flangerStereo = FlangerStereoParser.parse(effectParameters);
         assertEquals(67, flangerStereo.getMix());

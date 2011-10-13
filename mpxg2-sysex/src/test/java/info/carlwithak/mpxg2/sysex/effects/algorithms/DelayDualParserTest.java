@@ -32,6 +32,26 @@ import static org.junit.Assert.assertFalse;
 public class DelayDualParserTest {
 
     @Test
+    public void testParse_PowerChords() throws ParseException {
+        byte[] effectParameters = {9, 1, 0, 0, 3, 0, 4, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 14, 12, 2, 3, 10, 0, 3, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        DelayDual delayDual = DelayDualParser.parse(effectParameters);
+        assertEquals(25, delayDual.getMix());
+        assertEquals(0, delayDual.getLevel());
+        assertEquals(new BeatRate(3, 4), delayDual.getTime1());
+        assertEquals(new BeatRate(4, 3), delayDual.getTime2());
+        assertEquals(0, delayDual.getLevel1());
+        assertEquals(0, delayDual.getLevel2());
+        assertEquals(-50, delayDual.getPan1());
+        assertEquals(50, delayDual.getPan2());
+        assertEquals(10, delayDual.getFeedback1());
+        assertEquals(3, delayDual.getInsert());
+        assertEquals(10, delayDual.getFeedback2());
+        assertEquals(0, delayDual.getXFbk1());
+        assertEquals(0, delayDual.getXFbk2());
+        assertFalse(delayDual.isClear());
+    }
+
+    @Test
     public void testParse() throws ParseException {
         byte[] effectParameters = {3, 1, 0, 0, 1, 0, 1, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayDual delayDual = DelayDualParser.parse(effectParameters);

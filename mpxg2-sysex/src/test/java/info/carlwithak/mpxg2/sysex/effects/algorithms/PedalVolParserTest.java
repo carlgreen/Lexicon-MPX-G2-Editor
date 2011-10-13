@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class PedalVolParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_G2Blue() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         PedalVol pedalVol = PedalVolParser.parse(effectParameters);
         assertEquals(100, pedalVol.getMix());

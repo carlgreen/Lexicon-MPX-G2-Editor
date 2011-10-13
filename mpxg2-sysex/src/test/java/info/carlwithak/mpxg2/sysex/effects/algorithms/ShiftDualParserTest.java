@@ -30,7 +30,7 @@ import static org.junit.Assert.assertTrue;
 public class ShiftDualParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_PowerChords() {
         byte[] effectParameters = {4, 6, 6, 0, 0, 5, 11, 15, 10, 0, 12, 0, 14, 15, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ShiftDual shiftDual = ShiftDualParser.parse(effectParameters);
         assertEquals(100, shiftDual.getMix());

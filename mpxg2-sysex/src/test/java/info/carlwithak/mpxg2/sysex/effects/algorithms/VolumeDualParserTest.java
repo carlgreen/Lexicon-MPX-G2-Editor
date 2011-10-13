@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class VolumeDualParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_TremoWah() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 4, 6, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         VolumeDual volumeDual = VolumeDualParser.parse(effectParameters);
         assertEquals(100, volumeDual.getMix());

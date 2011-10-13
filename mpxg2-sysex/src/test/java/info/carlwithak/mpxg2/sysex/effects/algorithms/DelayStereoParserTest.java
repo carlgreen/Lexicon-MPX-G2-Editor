@@ -32,7 +32,7 @@ import static org.junit.Assert.assertFalse;
 public class DelayStereoParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_TremoWah() throws ParseException {
         byte[] effectParameters = {4, 1, 0, 0, 2, 0, 4, 0, 1, 0, 4, 1, 3, 0, 0, 0, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayStereo delayStereo = DelayStereoParser.parse(effectParameters);
         assertEquals(20, delayStereo.getMix());

@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class UniVybeParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_G2Blue() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         UniVybe uniVybe = UniVybeParser.parse(effectParameters);
         assertEquals(100, uniVybe.getMix());

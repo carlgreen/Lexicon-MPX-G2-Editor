@@ -29,7 +29,31 @@ import static org.junit.Assert.assertEquals;
 public class ScreamerParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_G2Blue() {
+        byte[] effectParameters = {2, 0, 1, 0, 3, 0, 6, 1, 9, 1, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        Screamer screamer = ScreamerParser.parse(effectParameters);
+        assertEquals(2, screamer.getLo());
+        assertEquals(1, screamer.getMid());
+        assertEquals(3, screamer.getHi());
+        assertEquals(22, screamer.getDrive());
+        assertEquals(25, screamer.getTone());
+        assertEquals(57, screamer.getLevel());
+    }
+
+    @Test
+    public void testParse_GuitarSolo() {
+        byte[] effectParameters = {5, 0, 0, 0, 0, 0, 8, 2, 5, 1, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        Screamer screamer = ScreamerParser.parse(effectParameters);
+        assertEquals(5, screamer.getLo());
+        assertEquals(0, screamer.getMid());
+        assertEquals(0, screamer.getHi());
+        assertEquals(40, screamer.getDrive());
+        assertEquals(21, screamer.getTone());
+        assertEquals(39, screamer.getLevel());
+    }
+
+    @Test
+    public void testParse_VybeFlange() {
         byte[] effectParameters = {0, 0, 1, 0, 0, 0, 13, 1, 3, 1, 5, 3, 8, 2, 5, 1, 12, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Screamer screamer = ScreamerParser.parse(effectParameters);
         assertEquals(0, screamer.getLo());

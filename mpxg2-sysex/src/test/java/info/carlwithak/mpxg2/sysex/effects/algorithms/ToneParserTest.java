@@ -30,7 +30,7 @@ import static org.junit.Assert.assertEquals;
 public class ToneParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_Cordovox() throws ParseException {
         byte[] effectParameters = {9, 1, 10, 0, 4, 1, 0, 0, 7, 3, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Tone tone = ToneParser.parse(effectParameters);
         assertEquals(25, tone.getLo());

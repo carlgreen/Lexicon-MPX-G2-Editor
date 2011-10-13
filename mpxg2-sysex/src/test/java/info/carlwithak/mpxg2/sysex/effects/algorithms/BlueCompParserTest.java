@@ -30,7 +30,7 @@ import static org.junit.Assert.assertEquals;
 public class BlueCompParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_AnotherBrick() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 5, 0, 4, 14, 5, 0, 4, 1, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
         assertEquals(100, blueComp.getMix());

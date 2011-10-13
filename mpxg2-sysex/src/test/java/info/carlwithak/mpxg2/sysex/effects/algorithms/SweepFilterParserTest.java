@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class SweepFilterParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_EnvFilterLP() {
         byte[] effectParameters = {4, 6, 6, 0, 8, 5, 0, 0, 2, 2, 8, 4, 8, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
         assertEquals(100, sweepFilter.getMix());

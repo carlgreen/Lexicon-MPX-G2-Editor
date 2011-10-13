@@ -427,10 +427,6 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof VolumeMono);
-        VolumeMono effect1 = (VolumeMono) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(0, effect1.getLevel());
-        assertEquals(100, effect1.getVolume());
 
         // effect types
         assertFalse(program.isChorus());
@@ -663,63 +659,12 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof UniVybe);
-        UniVybe effect1 = (UniVybe) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(0, effect1.getLevel());
-        assertEquals(20, effect1.getRate());
-
         assertTrue(program.getEffect2() instanceof PedalWah1);
-        PedalWah1 effect2 = (PedalWah1) program.getEffect2();
-        assertEquals(100, effect2.getMix());
-        assertEquals(0, effect2.getLevel());
-        assertEquals(19, effect2.getBass());
-        assertEquals(0, effect2.getType());
-        assertEquals(100, effect2.getResponse());
-        assertEquals(10, effect2.getGain());
-
         assertTrue(program.getChorus() instanceof PedalVol);
-        PedalVol chorus = (PedalVol) program.getChorus();
-        assertEquals(100, chorus.getMix());
-        assertEquals(0, chorus.getLevel());
-
         assertTrue(program.getDelay() instanceof EchoDual);
-        EchoDual delay = (EchoDual) program.getDelay();
-        assertEquals(2, delay.getMix());
-        assertEquals(1, delay.getLevel());
-        assertEquals(new BeatRate(4, 4), delay.getTime1());
-        assertEquals(new BeatRate(2, 1), delay.getTime2());
-        assertEquals(0, delay.getLevel1());
-        assertEquals(0, delay.getLevel2());
-        assertEquals(1, delay.getFeedback1());
-        assertEquals(3, delay.getInsert());
-        assertEquals(1, delay.getFeedback2());
-        assertEquals(20, delay.getDamp1());
-        assertEquals(20, delay.getDamp2());
-        assertFalse(delay.isClear());
-
         assertTrue(program.getReverb() instanceof Ambience);
-        Ambience reverb = (Ambience) program.getReverb();
-        assertEquals(18, reverb.getMix());
-        assertEquals(0, reverb.getLevel());
-        assertEquals(24.5, reverb.getSize(), 0.01);
-        assertTrue(reverb.isLink());
-        assertEquals(60, reverb.getDiff());
-        assertEquals(7, reverb.getPreDelay());
-        assertEquals(51, reverb.getDelayTime()); // 1.41s is number 51 in list
-        assertEquals(0, reverb.getDelayLevel());
-        assertEquals(12, reverb.getRtHC()); // 12.8k is number 12 in list
-
-        // no eq
-        assertNull(program.getEq());
-
+        assertNull(program.getEq()); // no eq
         assertTrue(program.getGain() instanceof Screamer);
-        Screamer gain = (Screamer) program.getGain();
-        assertEquals(2, gain.getLo());
-        assertEquals(1, gain.getMid());
-        assertEquals(3, gain.getHi());
-        assertEquals(22, gain.getDrive());
-        assertEquals(25, gain.getTone());
-        assertEquals(57, gain.getLevel());
 
         // effect types
         assertTrue(program.isChorus());
@@ -973,62 +918,11 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof DetuneDual);
-        DetuneDual effect1 = (DetuneDual) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(3, effect1.getLevel());
-        assertEquals(7, effect1.getTune1());
-        assertEquals(10, effect1.getOptimize());
-        assertEquals(5, effect1.getTune2());
-        assertEquals(22, effect1.getPreDelay());
-
         assertTrue(program.getEffect2() instanceof Panner);
-        Panner effect2 = (Panner) program.getEffect2();
-        assertEquals(100, effect2.getMix());
-        assertEquals(-24, effect2.getLevel());
-        assertEquals(-50, effect2.getPan1());
-        assertEquals(50, effect2.getPan2());
-
-        // no chorus
-        assertNull(program.getChorus());
-
+        assertNull(program.getChorus()); // no chorus
         assertTrue(program.getDelay() instanceof EchoDual);
-        EchoDual delay = (EchoDual) program.getDelay();
-        assertEquals(100, delay.getMix());
-        assertEquals(5, delay.getLevel());
-        assertEquals(new BeatRate(1, 1), delay.getTime1());
-        assertEquals(new BeatRate(3, 2), delay.getTime2());
-        assertEquals(0, delay.getLevel1());
-        assertEquals(0, delay.getLevel2());
-        assertEquals(-10, delay.getFeedback1());
-        assertEquals(3, delay.getInsert());
-        assertEquals(15, delay.getFeedback2());
-        assertEquals(25, delay.getDamp1());
-        assertEquals(25, delay.getDamp2());
-        assertFalse(delay.isClear());
-
         assertTrue(program.getReverb() instanceof Plate);
-        Plate reverb = (Plate) program.getReverb();
-        assertEquals(100, reverb.getMix());
-        assertEquals(6, reverb.getLevel());
-        assertEquals(22.5, reverb.getSize(), 0.01);
-        assertTrue(reverb.isLink());
-        assertEquals(66, reverb.getDiff());
-        assertEquals(169, reverb.getPreDelay());
-        assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
-        assertEquals(50, reverb.getDecay()); // 1.30s is number 50 in list
-        assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
-        assertEquals(45, reverb.getRtHC()); // 19.4k is number 45 in list for this size
-        assertEquals(36, reverb.getShape());
-        assertEquals(222, reverb.getSpred()); // 73 is number 222 in list for this size
-
         assertTrue(program.getGain() instanceof Screamer);
-        Screamer gain = (Screamer) program.getGain();
-        assertEquals(5, gain.getLo());
-        assertEquals(0, gain.getMid());
-        assertEquals(0, gain.getHi());
-        assertEquals(40, gain.getDrive());
-        assertEquals(21, gain.getTone());
-        assertEquals(39, gain.getLevel());
 
         RoutingData routing = program.getRouting0();
         assertEquals(8, routing.getEffectId());
@@ -1095,78 +989,12 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof AutoPan);
-        AutoPan effect1 = (AutoPan) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(0, effect1.getLevel());
-        assertEquals(new FrequencyRate(0.04), effect1.getRate());
-        assertEquals(50, effect1.getPulseWidth());
-        assertEquals(100, effect1.getDepth());
-        assertEquals(1, effect1.getPhase()); // 0, 90, 180, 270 degrees
-
         assertTrue(program.getEffect2() instanceof AutoPan);
-        AutoPan effect2 = (AutoPan) program.getEffect2();
-        assertEquals(100, effect2.getMix());
-        assertEquals(0, effect2.getLevel());
-        assertEquals(new FrequencyRate(1.00), effect2.getRate());
-        assertEquals(50, effect2.getPulseWidth());
-        assertEquals(100, effect2.getDepth());
-        assertEquals(3, effect2.getPhase()); // 0, 90, 180, 270 degrees
-
         assertTrue(program.getChorus() instanceof ChorusAlgorithm);
-        ChorusAlgorithm chorus = (ChorusAlgorithm) program.getChorus();
-        assertEquals(100, chorus.getMix());
-        assertEquals(0, chorus.getLevel());
-        assertEquals(new FrequencyRate(0.62), chorus.getRate1());
-        assertEquals(45, chorus.getPulseWidth1());
-        assertEquals(30, chorus.getDepth1());
-        assertEquals(new FrequencyRate(0.56), chorus.getRate2());
-        assertEquals(54, chorus.getPulseWidth2());
-        assertEquals(0, chorus.getDepth2());
-        assertEquals(-19, chorus.getResonance1());
-        assertEquals(0, chorus.getResonance2());
-
         assertTrue(program.getDelay() instanceof EchoDual);
-        EchoDual delay = (EchoDual) program.getDelay();
-        assertEquals(30, delay.getMix());
-        assertEquals(0, delay.getLevel());
-        assertEquals(new BeatRate(1, 1), delay.getTime1());
-        assertEquals(new BeatRate(4, 3), delay.getTime2());
-        assertEquals(0, delay.getLevel1());
-        assertEquals(0, delay.getLevel2());
-        assertEquals(-10, delay.getFeedback1());
-        assertEquals(3, delay.getInsert());
-        assertEquals(-20, delay.getFeedback2());
-        assertEquals(20, delay.getDamp1());
-        assertEquals(20, delay.getDamp2());
-        assertFalse(delay.isClear());
-
         assertTrue(program.getReverb() instanceof Chamber);
-        Chamber reverb = (Chamber) program.getReverb();
-        assertEquals(28, reverb.getMix());
-        assertEquals(0, reverb.getLevel());
-        assertEquals(24.0, reverb.getSize(), 0.01);
-        assertTrue(reverb.isLink());
-        assertEquals(22, reverb.getDiff());
-        assertEquals(0, reverb.getPreDelay());
-        assertEquals(6, reverb.getBass()); // 1.5X is number 6 in list
-        assertEquals(47, reverb.getDecay()); // 1.05s is number 47 in list for this size
-        assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
-        assertEquals(34, reverb.getRtHC()); // 9.3k is number 34 in list
-        assertEquals(62, reverb.getShape());
-        assertEquals(120, reverb.getSpred()); // 42 is number 120 in list for this size
-
         assertTrue(program.getEq() instanceof EqPedalVol);
-        EqPedalVol eq = (EqPedalVol) program.getEq();
-        assertEquals(100, eq.getMix());
-        assertEquals(0, eq.getLevel());
-
         assertTrue(program.getGain() instanceof Tone);
-        Tone gain = (Tone) program.getGain();
-        assertEquals(25, gain.getLo());
-        assertEquals(10, gain.getMid());
-        assertEquals(20, gain.getHi());
-        assertEquals(0, gain.getInLevel());
-        assertEquals(55, gain.getLevel());
 
         RoutingData routing = program.getRouting0();
         assertEquals(8, routing.getEffectId());
@@ -1233,57 +1061,9 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof ShiftDual);
-        ShiftDual effect1 = (ShiftDual) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(6, effect1.getLevel());
-        assertEquals(-1200, effect1.getTune1());
-        assertEquals(10, effect1.getOptimize());
-        assertEquals(-500, effect1.getTune2());
-        assertTrue(effect1.isGlide());
-
         assertTrue(program.getDelay() instanceof DelayDual);
-        DelayDual delay = (DelayDual) program.getDelay();
-        assertEquals(25, delay.getMix());
-        assertEquals(0, delay.getLevel());
-        assertEquals(new BeatRate(3, 4), delay.getTime1());
-        assertEquals(new BeatRate(4, 3), delay.getTime2());
-        assertEquals(0, delay.getLevel1());
-        assertEquals(0, delay.getLevel2());
-        assertEquals(-50, delay.getPan1());
-        assertEquals(50, delay.getPan2());
-        assertEquals(10, delay.getFeedback1());
-        assertEquals(3, delay.getInsert());
-        assertEquals(10, delay.getFeedback2());
-        assertEquals(0, delay.getXFbk1());
-        assertEquals(0, delay.getXFbk2());
-        assertFalse(delay.isClear());
-
         assertTrue(program.getReverb() instanceof Chamber);
-        Chamber reverb = (Chamber) program.getReverb();
-        assertEquals(35, reverb.getMix());
-        assertEquals(0, reverb.getLevel());
-        assertEquals(28.0, reverb.getSize(), 0.01);
-        assertTrue(reverb.isLink());
-        assertEquals(90, reverb.getDiff());
-        assertEquals(82, reverb.getPreDelay());
-        assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
-        assertEquals(35, reverb.getDecay()); // 0.73s is number 35 in list
-        assertEquals(15, reverb.getXovr()); // 818 is number 15 in list
-        assertEquals(36, reverb.getRtHC()); // 10.4k is number 36 in list
-        assertEquals(62, reverb.getShape());
-        assertEquals(120, reverb.getSpred()); // 48 is number 120 in list for this size
-
         assertTrue(program.getGain() instanceof Overdrive);
-        Overdrive gain = (Overdrive) program.getGain();
-        assertEquals(4, gain.getLo());
-        assertEquals(8, gain.getMid());
-        assertEquals(0, gain.getHi());
-        assertEquals(-8, gain.getInLevel());
-        assertEquals(0, gain.getLoCut());
-        assertEquals(32, gain.getFeel());
-        assertEquals(40, gain.getDrive());
-        assertEquals(21, gain.getTone());
-        assertEquals(44, gain.getLevel());
     }
 
     /**
@@ -1295,69 +1075,12 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof UniVybe);
-        UniVybe effect1 = (UniVybe) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(0, effect1.getLevel());
-        assertEquals(20, effect1.getRate());
-
         assertTrue(program.getEffect2() instanceof AutoPan);
-        AutoPan effect2 = (AutoPan) program.getEffect2();
-        assertEquals(100, effect2.getMix());
-        assertEquals(3, effect2.getLevel());
-        assertEquals(new BeatRate(1, 2), effect2.getRate());
-        assertEquals(50, effect2.getPulseWidth());
-        assertEquals(100, effect2.getDepth());
-        assertEquals(0, effect2.getPhase()); // 0, 90, 180, 270 degrees
-
         assertTrue(program.getChorus() instanceof FlangerStereo);
-        FlangerStereo chorus = (FlangerStereo) program.getChorus();
-        assertEquals(67, chorus.getMix());
-        assertEquals(1, chorus.getLevel());
-        assertEquals(new BeatRate(1, 4), chorus.getRate());
-        assertEquals(50, chorus.getPulseWidth());
-        assertEquals(62, chorus.getDepth());
-        assertEquals(1, chorus.getPhase()); // 0, 90, 180, 270 degrees
-        assertEquals(20, chorus.getResonance());
-        assertEquals(0, chorus.getBlend());
-
         assertTrue(program.getDelay() instanceof EchoMono);
-        EchoMono delay = (EchoMono) program.getDelay();
-        assertEquals(6, delay.getMix());
-        assertEquals(1, delay.getLevel());
-        assertEquals(new BeatRate(4, 4), delay.getTime());
-        assertEquals(-15, delay.getFeedback());
-        assertEquals(3, delay.getInsert());
-        assertEquals(20, delay.getDamp());
-        assertFalse(delay.isClear());
-
         assertTrue(program.getReverb() instanceof Plate);
-        Plate reverb = (Plate) program.getReverb();
-        assertEquals(28, reverb.getMix());
-        assertEquals(0, reverb.getLevel());
-        assertEquals(16.5, reverb.getSize(), 0.01);
-        assertTrue(reverb.isLink());
-        assertEquals(90, reverb.getDiff());
-        assertEquals(10, reverb.getPreDelay());
-        assertEquals(0, reverb.getBass()); // 0.2X is number 0 in list
-        assertEquals(0, reverb.getDecay()); // 0.09s is number 0 in list for this size
-        assertEquals(16, reverb.getXovr()); // 986 is number 16 in list
-        assertEquals(33, reverb.getRtHC()); // 8.8k is number 33 in list
-        assertEquals(58, reverb.getShape());
-        assertEquals(254, reverb.getSpred()); // 65 is number 254 in list for this size
-
         assertTrue(program.getEq() instanceof EqPedalVol);
-        EqPedalVol eq = (EqPedalVol) program.getEq();
-        assertEquals(100, eq.getMix());
-        assertEquals(0, eq.getLevel());
-
         assertTrue(program.getGain() instanceof Screamer);
-        Screamer gain = (Screamer) program.getGain();
-        assertEquals(0, gain.getLo());
-        assertEquals(1, gain.getMid());
-        assertEquals(0, gain.getHi());
-        assertEquals(29, gain.getDrive());
-        assertEquals(19, gain.getTone());
-        assertEquals(53, gain.getLevel());
     }
 
     /**
@@ -1369,14 +1092,6 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect2() instanceof BlueComp);
-        BlueComp effect2 = (BlueComp) program.getEffect2();
-        assertEquals(100, effect2.getMix());
-        assertEquals(6, effect2.getLevel());
-        assertEquals(5, effect2.getSensitivity());
-        assertEquals(-28, effect2.getThreshold());
-        assertEquals(5, effect2.getGain());
-        assertEquals(20, effect2.getAttackTime());
-        assertEquals(100, effect2.getReleaseTime());
 
         assertEquals("AnotherBrick", program.getProgramName());
     }
@@ -1390,14 +1105,6 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof SweepFilter);
-        SweepFilter effect1 = (SweepFilter) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(6, effect1.getLevel());
-        assertEquals(88, effect1.getFc());
-        assertEquals(34, effect1.getFRes());
-        assertEquals(2120, effect1.getMod());
-        assertEquals(50, effect1.getScale());
-        assertEquals(0, effect1.getPan());
 
         assertEquals("EnvFilter LP", program.getProgramName());
     }
@@ -1411,53 +1118,10 @@ public class SysexParserTest {
         Program program = SysexParser.parseProgram(preset);
 
         assertTrue(program.getEffect1() instanceof TremoloMono);
-        TremoloMono effect1 = (TremoloMono) program.getEffect1();
-        assertEquals(100, effect1.getMix());
-        assertEquals(6, effect1.getLevel());
-        assertEquals(new BeatRate(7, 4), effect1.getRate());
-        assertEquals(30, effect1.getPulseWidth());
-        assertEquals(100, effect1.getDepth());
-
         assertTrue(program.getEffect2() instanceof Wah2);
-        Wah2 effect2 = (Wah2) program.getEffect2();
-        assertEquals(100, effect2.getMix());
-        assertEquals(6, effect2.getLevel());
-        assertEquals(50, effect2.getSweep());
-        assertEquals(0, effect2.getBass());
-        assertEquals(0, effect2.getType());
-        assertEquals(100, effect2.getResponse());
-        assertEquals(10, effect2.getGain());
-
         assertTrue(program.getChorus() instanceof VolumeDual);
-        VolumeDual chorus = (VolumeDual) program.getChorus();
-        assertEquals(100, chorus.getMix());
-        assertEquals(0, chorus.getLevel());
-        assertEquals(100, chorus.getVolumeLeft());
-        assertEquals(100, chorus.getVolumeRight());
-
         assertTrue(program.getDelay() instanceof DelayStereo);
-        DelayStereo delay = (DelayStereo) program.getDelay();
-        assertEquals(20, delay.getMix());
-        assertEquals(0, delay.getLevel());
-        assertEquals(new BeatRate(2, 4), delay.getTime());
-        assertEquals(20, delay.getFeedback());
-        assertEquals(3, delay.getInsert());
-        assertFalse(delay.isClear());
-
         assertTrue(program.getReverb() instanceof Hall);
-        Hall reverb = (Hall) program.getReverb();
-        assertEquals(20, reverb.getMix());
-        assertEquals(0, reverb.getLevel());
-        assertEquals(53.0, reverb.getSize(), 0.01);
-        assertTrue(reverb.isLink());
-        assertEquals(80, reverb.getDiff());
-        assertEquals(25, reverb.getPreDelay());
-        assertEquals(5, reverb.getBass()); // 1.2X is number 5 in list
-        assertEquals(41, reverb.getDecay()); // 1.67s is number 41 in list
-        assertEquals(15, reverb.getXovr()); // 818 is number 15 in list
-        assertEquals(31, reverb.getRtHC()); // 7.9k is number 31 in list for this size
-        assertEquals(110, reverb.getShape());
-        assertEquals(125, reverb.getSpred()); // 89 is number 125 in list for this size
 
         assertEquals("TremoWah", program.getProgramName());
 

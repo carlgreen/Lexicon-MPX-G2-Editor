@@ -31,7 +31,7 @@ import static org.junit.Assert.assertEquals;
 public class ChorusParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_Cordovox() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 14, 3, 0, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusAlgorithm chorus = ChorusParser.parse(effectParameters);
         assertEquals(100, chorus.getMix());

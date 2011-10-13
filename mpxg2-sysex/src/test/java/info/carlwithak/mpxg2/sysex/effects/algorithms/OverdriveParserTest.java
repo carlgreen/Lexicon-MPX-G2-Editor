@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class OverdriveParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_PowerChords() {
         byte[] effectParameters = {4, 0, 8, 0, 0, 0, 8, 15, 0, 0, 0, 2, 8, 2, 5, 1, 12, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Overdrive overdrive = OverdriveParser.parse(effectParameters);
         assertEquals(4, overdrive.getLo());

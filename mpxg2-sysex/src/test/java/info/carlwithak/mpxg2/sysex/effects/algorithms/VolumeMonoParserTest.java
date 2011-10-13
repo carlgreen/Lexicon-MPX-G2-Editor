@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class VolumeMonoParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_UnityGain() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         VolumeMono volumeMono = VolumeMonoParser.parse(effectParameters);
         assertEquals(100, volumeMono.getMix());

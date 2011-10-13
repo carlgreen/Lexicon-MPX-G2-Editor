@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class Wah2ParserTest {
 
     @Test
-    public void testParse() {
+    public void testParse_TremoWah() {
         byte[] effectParameters = {4, 6, 6, 0, 2, 3, 0, 0, 0, 0, 4, 6, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Wah2 wah2 = Wah2Parser.parse(effectParameters);
         assertEquals(100, wah2.getMix());

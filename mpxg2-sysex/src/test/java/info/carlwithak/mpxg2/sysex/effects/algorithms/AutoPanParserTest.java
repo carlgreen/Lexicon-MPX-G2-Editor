@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.sysex.ParseException;
@@ -31,7 +32,7 @@ import static org.junit.Assert.assertEquals;
 public class AutoPanParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_Cordovox1() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 0, 0, 0, 0, 2, 3, 4, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         AutoPan autoPan = AutoPanParser.parse(effectParameters);
         assertEquals(100, autoPan.getMix());
@@ -40,5 +41,29 @@ public class AutoPanParserTest {
         assertEquals(50, autoPan.getPulseWidth());
         assertEquals(100, autoPan.getDepth());
         assertEquals(1, autoPan.getPhase()); // 0, 90, 180, 270 degrees
+    }
+
+    @Test
+    public void testParse_Cordovox2() throws ParseException {
+        byte[] effectParameters = {4, 6, 0, 0, 4, 6, 0, 0, 0, 0, 2, 3, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        AutoPan autoPan = AutoPanParser.parse(effectParameters);
+        assertEquals(100, autoPan.getMix());
+        assertEquals(0, autoPan.getLevel());
+        assertEquals(new FrequencyRate(1.00), autoPan.getRate());
+        assertEquals(50, autoPan.getPulseWidth());
+        assertEquals(100, autoPan.getDepth());
+        assertEquals(3, autoPan.getPhase()); // 0, 90, 180, 270 degrees
+    }
+
+    @Test
+    public void testParse_VybeFlange() throws ParseException {
+        byte[] effectParameters = {4, 6, 3, 0, 1, 0, 2, 0, 1, 0, 2, 3, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        AutoPan autoPan = AutoPanParser.parse(effectParameters);
+        assertEquals(100, autoPan.getMix());
+        assertEquals(3, autoPan.getLevel());
+        assertEquals(new BeatRate(1, 2), autoPan.getRate());
+        assertEquals(50, autoPan.getPulseWidth());
+        assertEquals(100, autoPan.getDepth());
+        assertEquals(0, autoPan.getPhase()); // 0, 90, 180, 270 degrees
     }
 }

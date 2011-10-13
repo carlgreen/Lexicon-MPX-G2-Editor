@@ -32,7 +32,7 @@ import static org.junit.Assert.assertFalse;
 public class EchoMonoParserTest {
 
     @Test
-    public void testParse() throws ParseException {
+    public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {6, 0, 1, 0, 4, 0, 4, 0, 1, 0, 1, 15, 3, 0, 4, 1, 0, 0, 0, 0, 6, 15, 3, 0, 15, 0, 9, 1, 9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoMono echoMono = EchoMonoParser.parse(effectParameters);
         assertEquals(6, echoMono.getMix());
