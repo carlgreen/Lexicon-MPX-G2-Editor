@@ -84,21 +84,30 @@ public class AlgorithmsTest {
     }
 
     @Test
-    public void testDelayStereoAlgorithm() throws IntrospectionException {
-        testBean(DelayStereo.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new DelayStereo().getParameterName(0));
-        assertEquals("%", new DelayStereo().getParameterUnit(0));
-    }
-
-    @Test
     public void testDelayDualAlgorithm() throws IntrospectionException {
         testBean(DelayDual.class);
 
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new DelayDual().getParameterName(0));
         assertEquals("%", new DelayDual().getParameterUnit(0));
+    }
+
+    @Test
+    public void testDelayMonoAlgorithm() throws IntrospectionException {
+        testBean(DelayMono.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new DelayMono().getParameterName(0));
+        assertEquals("%", new DelayMono().getParameterUnit(0));
+    }
+
+    @Test
+    public void testDelayStereoAlgorithm() throws IntrospectionException {
+        testBean(DelayStereo.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new DelayStereo().getParameterName(0));
+        assertEquals("%", new DelayStereo().getParameterUnit(0));
     }
 
     @Test
