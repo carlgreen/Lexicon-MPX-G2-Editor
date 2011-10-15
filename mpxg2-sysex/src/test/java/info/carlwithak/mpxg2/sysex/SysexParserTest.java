@@ -1221,6 +1221,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Rotary Cab preset.
+     */
+    @Test
+    public void testParseRotaryCab() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("011_Rotary_Cab.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Rotary Cab", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
