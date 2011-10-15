@@ -251,6 +251,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testPreampAlgorithm() throws IntrospectionException {
+        testBean(Preamp.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Lo", new Preamp().getParameterName(0));
+        assertEquals("", new Preamp().getParameterUnit(0));
+    }
+
+    @Test
     public void testRotaryCabAlgorithm() throws IntrospectionException {
         testBean(RotaryCab.class);
 
