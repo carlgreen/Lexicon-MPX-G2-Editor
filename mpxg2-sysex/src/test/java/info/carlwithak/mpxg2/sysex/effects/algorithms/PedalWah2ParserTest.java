@@ -29,14 +29,14 @@ import static org.junit.Assert.assertEquals;
 public class PedalWah2ParserTest {
 
     @Test
-    public void testParse() {
-        byte[] effectParameters = {4, 6, 0, 0, 3, 1, 0, 0, 4, 6, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    public void testParse_RotaryCab() {
+        byte[] effectParameters = {4, 6, 0, 0, 10, 0, 1, 0, 4, 6, 0, 0, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         PedalWah2 pedalWah2 = PedalWah2Parser.parse(effectParameters);
         assertEquals(100, pedalWah2.getMix());
         assertEquals(0, pedalWah2.getLevel());
-        assertEquals(19, pedalWah2.getBass());
-        assertEquals(0, pedalWah2.getType());
+        assertEquals(10, pedalWah2.getBass());
+        assertEquals(1, pedalWah2.getType());
         assertEquals(100, pedalWah2.getResponse());
-        assertEquals(10, pedalWah2.getGain());
+        assertEquals(0, pedalWah2.getGain());
     }
 }
