@@ -57,6 +57,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testCentrifuge1Algorithm() throws IntrospectionException {
+        testBean(Centrifuge1.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new Centrifuge1().getParameterName(0));
+        assertEquals("%", new Centrifuge1().getParameterUnit(0));
+    }
+
+    @Test
     public void testChamberAlgorithm() throws IntrospectionException {
         testBean(Chamber.class);
 
