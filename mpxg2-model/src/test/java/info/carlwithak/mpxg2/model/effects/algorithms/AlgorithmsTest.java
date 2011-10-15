@@ -179,6 +179,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testOrangePhaseAlgorithm() throws IntrospectionException {
+        testBean(OrangePhase.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new OrangePhase().getParameterName(0));
+        assertEquals("%", new OrangePhase().getParameterUnit(0));
+    }
+
+    @Test
     public void testPannerAlgorithm() throws IntrospectionException {
         testBean(Panner.class);
 
