@@ -1232,6 +1232,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Little Wing preset.
+     */
+    @Test
+    public void testParseLittleWing() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("012_Little_Wing.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Little Wing", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
