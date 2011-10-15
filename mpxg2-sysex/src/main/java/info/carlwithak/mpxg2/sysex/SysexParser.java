@@ -63,7 +63,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -104,18 +106,35 @@ public class SysexParser {
     private static final int GUITAR_STYLE_JAZZ = 0x40;
     private static final int GUITAR_STYLE_ROCK = 0x80;
 
+    public static List<Program> parsePrograms(final File presets) throws IOException, ParseException {
+        InputStream in = null;
+        try {
+            in = new FileInputStream(presets);
+            List<Program> programs = new ArrayList<Program>();
+            Program program;
+            while ((program = parseProgram(in)) != null) {
+                programs.add(program);
+            }
+            return programs;
+        } finally {
+            if (in != null) {
+                in.close();
+            }
+        }
+    }
+
     /**
      * Parse a Program dumped in SysEx format.
      *
      * See {@link http://www.stecrecords.com/gear/mpxg2/doc/MPXG2_MIDI_Impl.htm}
      */
-    public static Program parseProgram(final File preset) throws IOException, ParseException {
-        InputStream in = new FileInputStream(preset);
+    private static Program parseProgram(final InputStream in) throws IOException, ParseException {
+        int b = in.read();
+        if (b == -1) {
+            return null;
+        }
 
-        Program program = new Program();
-
-        int b;
-        if ((b = in.read()) != SYSEX_ID_START) {
+        if (b != SYSEX_ID_START) {
             throw new ParseException("Invalid Sysex ID (start)");
         }
         if ((b = in.read()) != LEXICON_MANUFACTURER_ID) {
@@ -131,6 +150,8 @@ public class SysexParser {
         if ((b = in.read()) != DATA_MESSAGE_TYPE) {
             throw new ParseException("Invalid Message Type");
         }
+
+        Program program = new Program();
 
         int objectSize = readInt(in, 4);
 
@@ -160,8 +181,6 @@ public class SysexParser {
         if ((b = in.read()) != SYSEX_ID_END) {
             throw new ParseException("Invalid Sysex ID (end)");
         }
-
-        in.close();
 
         // effect 1 parameters
         byte[] effect1Parameters = Arrays.copyOfRange(objectData, 0, 64);

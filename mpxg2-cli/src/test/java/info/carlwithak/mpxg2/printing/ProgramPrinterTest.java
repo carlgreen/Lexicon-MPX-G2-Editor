@@ -43,7 +43,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -58,7 +58,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("002_Guitar_Solo.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("002_Guitar_Solo.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -73,7 +73,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("003_Cordovox.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("003_Cordovox.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -88,7 +88,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("004_Power_Chords.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("004_Power_Chords.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -103,7 +103,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -118,7 +118,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("006_AnotherBrick.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("006_AnotherBrick.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -133,7 +133,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -148,7 +148,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("008_TremoWah.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("008_TremoWah.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -163,7 +163,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("009_JamMan.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("009_JamMan.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -178,7 +178,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("064_C-Wah.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("064_C-Wah.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }
@@ -193,7 +193,7 @@ public class ProgramPrinterTest {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("074_V-Wah.txt").toURI());
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource("074_V-Wah.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
     }

@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import java.util.List;
+import java.util.Arrays;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
@@ -77,7 +79,7 @@ public class SysexParserTest {
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xe0});
             expectedMessage = "Invalid Sysex ID (start)";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
@@ -86,7 +88,7 @@ public class SysexParserTest {
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x05});
             expectedMessage = "Invalid Manufacturer ID";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
@@ -95,7 +97,7 @@ public class SysexParserTest {
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x06, 0x10});
             expectedMessage = "Invalid Product ID";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
@@ -104,7 +106,7 @@ public class SysexParserTest {
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x06, 0x0f, 0x00, 0x00});
             expectedMessage = "Invalid Message Type";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
@@ -118,7 +120,7 @@ public class SysexParserTest {
             File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
             0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00});
             expectedMessage = "Expect 4 control levels for a program dump";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
@@ -135,7 +137,7 @@ public class SysexParserTest {
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
             });
             expectedMessage = "Expect ProgramDump control tree path";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
@@ -148,7 +150,7 @@ public class SysexParserTest {
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
             });
             expectedMessage = "Expect ProgramDump control tree path";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
@@ -166,11 +168,31 @@ public class SysexParserTest {
                 0x00, (byte) 0xf6
             });
             expectedMessage = "Invalid Sysex ID (end)";
-            SysexParser.parseProgram(temp);
+            SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
             assertEquals(expectedMessage, e.getMessage());
         }
+    }
+
+    @Test
+    public void testParsePrograms() throws IOException, ParseException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        byte[] file = concat(fileIntro, programData, fileOutro);
+        byte[] files = concat(file, file);
+
+        File temp = tempFileWithData(files);
+        List<Program> programs = SysexParser.parsePrograms(temp);
+        assertEquals(2, programs.size());
     }
 
     private File tempFileWithData(final byte[] data) throws IOException {
@@ -188,13 +210,27 @@ public class SysexParserTest {
         return temp;
     }
 
+    private byte[] concat(byte[]... bb) {
+        int length = 0;
+        for (byte[] b : bb) {
+            length += b.length;
+        }
+        byte[] result = new byte[length];
+        int offset = 0;
+        for (byte[] b : bb) {
+            System.arraycopy(b, 0, result, offset, b.length);
+            offset += b.length;
+        }
+        return result;
+    }
+
     /**
      * Test parsing the Clean Slate preset, which has pretty much nothing defined.
      */
     @Test
     public void testParseCleanSlate() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("250_Clean_Slate.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         // effect types
         assertFalse(program.isChorus());
@@ -424,7 +460,7 @@ public class SysexParserTest {
     @Test
     public void testParseUnityGain() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("249_Unity_Gain.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof VolumeMono);
 
@@ -656,7 +692,7 @@ public class SysexParserTest {
     @Test
     public void testParseG2Blue() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof UniVybe);
         assertTrue(program.getEffect2() instanceof PedalWah1);
@@ -915,7 +951,7 @@ public class SysexParserTest {
     @Test
     public void testParseGuitarSolo() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("002_Guitar_Solo.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof DetuneDual);
         assertTrue(program.getEffect2() instanceof Panner);
@@ -986,7 +1022,7 @@ public class SysexParserTest {
     @Test
     public void testParseCordovox() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("003_Cordovox.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof AutoPan);
         assertTrue(program.getEffect2() instanceof AutoPan);
@@ -1058,7 +1094,7 @@ public class SysexParserTest {
     @Test
     public void testParsePowerChords() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("004_Power_Chords.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof ShiftDual);
         assertTrue(program.getDelay() instanceof DelayDual);
@@ -1072,7 +1108,7 @@ public class SysexParserTest {
     @Test
     public void testParseVybeFlange() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof UniVybe);
         assertTrue(program.getEffect2() instanceof AutoPan);
@@ -1089,7 +1125,7 @@ public class SysexParserTest {
     @Test
     public void testParseAnotherBrick() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("006_AnotherBrick.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect2() instanceof BlueComp);
 
@@ -1102,7 +1138,7 @@ public class SysexParserTest {
     @Test
     public void testParseEnvFilterLP() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof SweepFilter);
 
@@ -1115,7 +1151,7 @@ public class SysexParserTest {
     @Test
     public void testParseTremoWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("008_TremoWah.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertTrue(program.getEffect1() instanceof TremoloMono);
         assertTrue(program.getEffect2() instanceof Wah2);
@@ -1168,7 +1204,7 @@ public class SysexParserTest {
     @Test
     public void testParseJamMan() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("009_JamMan.syx").toURI());
-        Program program = SysexParser.parseProgram(preset);
+        Program program = SysexParser.parsePrograms(preset).get(0);
 
         assertEquals("JamMan", program.getProgramName());
     }
@@ -1179,7 +1215,7 @@ public class SysexParserTest {
     @Test
     public void testParseNoiseGate() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("noisegate.syx").toURI());
-        NoiseGate noiseGate = SysexParser.parseProgram(preset).getNoiseGate();
+        NoiseGate noiseGate = SysexParser.parsePrograms(preset).get(0).getNoiseGate();
 
         assertEquals(2, noiseGate.getEnable());
         assertEquals(1, noiseGate.getSend());

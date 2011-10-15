@@ -24,6 +24,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
 import info.carlwithak.mpxg2.sysex.SysexParser;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Basic application to read a SysEx program dump and print it out.
@@ -32,7 +33,9 @@ import java.io.IOException;
  */
 public class App {
     public static void main(String[] args) throws IOException, ParseException, PrintException {
-        Program program = SysexParser.parseProgram(new File(args[0]));
-        System.out.println(ProgramPrinter.print(program));
+        List<Program> programs = SysexParser.parsePrograms(new File(args[0]));
+        for (Program program : programs) {
+            System.out.println(ProgramPrinter.print(program));
+        }
     }
 }
