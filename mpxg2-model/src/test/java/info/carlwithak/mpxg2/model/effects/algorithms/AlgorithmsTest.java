@@ -251,6 +251,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testRotaryCabAlgorithm() throws IntrospectionException {
+        testBean(RotaryCab.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new RotaryCab().getParameterName(0));
+        assertEquals("%", new RotaryCab().getParameterUnit(0));
+    }
+
+    @Test
     public void testScreamerAlgorithm() throws IntrospectionException {
         testBean(Screamer.class);
 
