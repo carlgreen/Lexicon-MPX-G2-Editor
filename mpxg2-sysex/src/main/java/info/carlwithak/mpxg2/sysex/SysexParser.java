@@ -52,6 +52,8 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PreampParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.RotaryCabParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
@@ -367,6 +369,9 @@ public class SysexParser {
                         case 18:
                             effect2 = PedalWah1Parser.parse(effect2Parameters);
                             break;
+                        case 19:
+                            effect2 = PedalWah2Parser.parse(effect2Parameters);
+                            break;
                         case 20:
                             effect2 = VolumeMonoParser.parse(effect2Parameters);
                             break;
@@ -390,6 +395,9 @@ public class SysexParser {
                             break;
                         case 5:
                             chorus = FlangerStereoParser.parse(chorusParameters);
+                            break;
+                        case 6:
+                            chorus = RotaryCabParser.parse(chorusParameters);
                             break;
                         case 9:
                             chorus = Centrifuge1Parser.parse(chorusParameters);
@@ -492,6 +500,9 @@ public class SysexParser {
                             break;
                         case 5:
                             gain = DistortionParser.parse(gainParameters);
+                            break;
+                        case 6:
+                            gain = PreampParser.parse(gainParameters);
                             break;
                         default:
                             throw new ParseException("Invalid Gain algorithm number: " + algorithmNumber);
