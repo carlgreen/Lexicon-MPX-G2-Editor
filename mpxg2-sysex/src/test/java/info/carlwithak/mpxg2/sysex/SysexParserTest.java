@@ -1210,6 +1210,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the VH Rig preset.
+     */
+    @Test
+    public void testParseVHRig() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("010_VH_Rig.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("VH Rig", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test

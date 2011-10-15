@@ -30,9 +30,11 @@ import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AutoPanParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.BlueCompParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.Centrifuge1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneMonoParser;
@@ -43,6 +45,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.OrangePhaseParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
@@ -352,6 +355,9 @@ public class SysexParser {
                         case 2:
                             effect2 = AutoPanParser.parse(effect2Parameters);
                             break;
+                        case 8:
+                            effect2 = OrangePhaseParser.parse(effect2Parameters);
+                            break;
                         case 10:
                             effect2 = BlueCompParser.parse(effect2Parameters);
                             break;
@@ -385,6 +391,9 @@ public class SysexParser {
                         case 5:
                             chorus = FlangerStereoParser.parse(chorusParameters);
                             break;
+                        case 9:
+                            chorus = Centrifuge1Parser.parse(chorusParameters);
+                            break;
                         case 15:
                             chorus = VolumeDualParser.parse(chorusParameters);
                             break;
@@ -402,6 +411,9 @@ public class SysexParser {
                     switch (algorithmNumber) {
                         case 0:
                             delay = null;
+                            break;
+                        case 1:
+                            delay = DelayMonoParser.parse(delayParameters);
                             break;
                         case 2:
                             delay = DelayStereoParser.parse(delayParameters);
