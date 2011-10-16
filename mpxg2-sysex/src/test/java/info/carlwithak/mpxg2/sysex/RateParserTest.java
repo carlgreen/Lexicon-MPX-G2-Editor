@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.TapMsRate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -73,9 +74,25 @@ public class RateParserTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Test parse with tap ms data.
+     */
+    @Test
+    public void testParseTapMs() throws Exception {
+        byte[] bytes100 = {4, 6, 0, 0, 4, 0};
+        Rate expected = new TapMsRate(100);
+        Rate actual = RateParser.parse(bytes100);
+        assertEquals(expected, actual);
+
+        byte[] bytes2000 = {0, 13, 7, 0, 4, 0};
+        expected = new TapMsRate(2000);
+        actual = RateParser.parse(bytes2000);
+        assertEquals(expected, actual);
+    }
+
     @Test(expected = ParseException.class)
     public void testInvalidType() throws ParseException {
-        byte[] bytes = {0, 0, 0, 0, 2, 0};
+        byte[] bytes = {0, 0, 0, 0, 5, 0};
         RateParser.parse(bytes);
     }
 }

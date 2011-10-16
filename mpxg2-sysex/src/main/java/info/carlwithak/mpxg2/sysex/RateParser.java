@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.TapMsRate;
 
 /**
  * Parse appropriate Rate from bytes.
@@ -41,6 +42,12 @@ public class RateParser {
             int cycles = rateBytes[0] + rateBytes[1] * 16;
             int beats = rateBytes[2] + rateBytes[3] * 16;
             rate = new BeatRate(cycles, beats);
+        } else if (rateUnit == 4) {
+            int ms = 0;
+            for (int i = 0; i < 4; i++) {
+                ms += (rateBytes[i] * Math.pow(16, i));
+            }
+            rate = new TapMsRate(ms);
         } else {
             throw new ParseException("Unexpected rate unit: " + rateUnit);
         }
