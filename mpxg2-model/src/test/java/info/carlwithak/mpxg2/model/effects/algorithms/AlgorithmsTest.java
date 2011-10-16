@@ -188,6 +188,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testOctaBuzzAlgorithm() throws IntrospectionException {
+        testBean(OctaBuzz.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new OctaBuzz().getParameterName(0));
+        assertEquals("%", new OctaBuzz().getParameterUnit(0));
+    }
+
+    @Test
     public void testOverdriveAlgorithm() throws IntrospectionException {
         testBean(Overdrive.class);
 
