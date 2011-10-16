@@ -1254,6 +1254,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Pedal Swell preset.
+     */
+    @Test
+    public void testParsePedalSwell() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("014_Pedal_Swell.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Pedal Swell", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test

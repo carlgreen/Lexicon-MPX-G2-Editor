@@ -53,6 +53,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PreampParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.RedCompParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.RotaryCabParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
@@ -359,6 +360,9 @@ public class SysexParser {
                             break;
                         case 8:
                             effect2 = OrangePhaseParser.parse(effect2Parameters);
+                            break;
+                        case 9:
+                            effect2 = RedCompParser.parse(effect2Parameters);
                             break;
                         case 10:
                             effect2 = BlueCompParser.parse(effect2Parameters);
