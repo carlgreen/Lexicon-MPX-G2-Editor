@@ -1397,6 +1397,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Unchained preset.
+     */
+    @Test
+    public void testParseUnchained() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("017_Unchained.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Unchained", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
