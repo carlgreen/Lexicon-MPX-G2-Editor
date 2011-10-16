@@ -42,6 +42,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
@@ -406,6 +407,9 @@ public class SysexParser {
                             break;
                         case 2:
                             chorus = DetuneMonoParser.parse(chorusParameters);
+                            break;
+                        case 3:
+                            chorus = FlangerMonoParser.parse(chorusParameters);
                             break;
                         case 5:
                             chorus = FlangerStereoParser.parse(chorusParameters);

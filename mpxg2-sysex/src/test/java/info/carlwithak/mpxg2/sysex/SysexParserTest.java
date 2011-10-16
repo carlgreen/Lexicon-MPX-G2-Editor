@@ -1408,6 +1408,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Stomp! preset.
+     */
+    @Test
+    public void testParseStomp() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("018_Stomp!.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Stomp!", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
