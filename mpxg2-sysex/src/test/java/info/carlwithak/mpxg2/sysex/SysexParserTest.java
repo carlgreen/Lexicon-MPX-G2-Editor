@@ -195,6 +195,181 @@ public class SysexParserTest {
         assertEquals(2, programs.size());
     }
 
+    @Test
+    public void testInvalidEffect1AlgorithmNumber() throws IOException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        programData[558] = 0x22;
+        byte[] file = concat(fileIntro, programData, fileOutro);
+
+        File temp = tempFileWithData(file);
+        String expectedMessage = "Invalid Effect 1 algorithm number: 34";
+        try {
+            SysexParser.parsePrograms(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInvalidEffect2AlgorithmNumber() throws IOException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        programData[560] = 0x1b;
+        byte[] file = concat(fileIntro, programData, fileOutro);
+
+        File temp = tempFileWithData(file);
+        String expectedMessage = "Invalid Effect 2 algorithm number: 27";
+        try {
+            SysexParser.parsePrograms(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInvalidChorusAlgorithmNumber() throws IOException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        programData[562] = 0x12;
+        byte[] file = concat(fileIntro, programData, fileOutro);
+
+        File temp = tempFileWithData(file);
+        String expectedMessage = "Invalid Chorus algorithm number: 18";
+        try {
+            SysexParser.parsePrograms(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInvalidDelayAlgorithmNumber() throws IOException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        programData[564] = 0x0a;
+        byte[] file = concat(fileIntro, programData, fileOutro);
+
+        File temp = tempFileWithData(file);
+        String expectedMessage = "Invalid Delay algorithm number: 10";
+        try {
+            SysexParser.parsePrograms(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInvalidReverbAlgorithmNumber() throws IOException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        programData[566] = 0x06;
+        byte[] file = concat(fileIntro, programData, fileOutro);
+
+        File temp = tempFileWithData(file);
+        String expectedMessage = "Invalid Reverb algorithm number: 6";
+        try {
+            SysexParser.parsePrograms(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInvalidEqAlgorithmNumber() throws IOException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        programData[568] = 0x10;
+        byte[] file = concat(fileIntro, programData, fileOutro);
+
+        File temp = tempFileWithData(file);
+        String expectedMessage = "Invalid EQ algorithm number: 16";
+        try {
+            SysexParser.parsePrograms(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testInvalidGainAlgorithmNumber() throws IOException {
+        byte[] fileIntro = {
+            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+        };
+        byte[] programData = new byte[454 * 2];
+        Arrays.fill(programData, (byte) 0);
+        byte[] fileOutro = {
+            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, (byte) 0xf7
+        };
+        programData[570] = 0x09;
+        byte[] file = concat(fileIntro, programData, fileOutro);
+
+        File temp = tempFileWithData(file);
+        String expectedMessage = "Invalid Gain algorithm number: 9";
+        try {
+            SysexParser.parsePrograms(temp);
+            fail("Expected \"" + expectedMessage + "\"");
+        } catch (ParseException e) {
+            assertEquals(expectedMessage, e.getMessage());
+        }
+    }
+
     private File tempFileWithData(final byte[] data) throws IOException {
         File temp = File.createTempFile("test_", ".syx", new File("target/test-classes/"));
         temp.deleteOnExit();
