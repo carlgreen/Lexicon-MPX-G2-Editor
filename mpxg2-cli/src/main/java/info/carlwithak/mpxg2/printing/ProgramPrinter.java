@@ -162,11 +162,12 @@ public class ProgramPrinter {
         "Dly L", "Dly R", "PreOut", "MainL", "MainR"
     };
 
-    private final static String[] SPEAKER_SIMULATOR_CABINETS = {
-        "Combo1Brite", "Combo1Norml", "Combo1Warm", "Combo1Dark",
-        "Combo2Brite", "Combo2Norml", "Combo2Warm", "Combo2Dark",
-        "Stack1Brite", "Stack1Norml", "Stack1Warm", "Stack1Dark",
-        "Stack2Brite", "Stack2Norml", "Stack2Warm", "Stack2Dark"
+    private final static String[] SPEAKER_SIMULATOR_CABINET_DESIGNS = {
+        "Combo1", "Combo2", "Stack1", "Stack2"
+    };
+
+    private final static String[] SPEAKER_SIMULATOR_SPEAKER_TYPES = {
+        "Brite", "Norml", "Warm", "Dark"
     };
 
     private final static String[] NOISE_GATE_ENABLES = {
@@ -695,8 +696,10 @@ public class ProgramPrinter {
         return ENVELOPE_GENERATOR_SOURCES[envelopeGeneratorSource];
     }
 
-    private static String speakerSimulatorCabinetToString(final int speakerSimulatorCabinet) {
-        return SPEAKER_SIMULATOR_CABINETS[speakerSimulatorCabinet];
+    static String speakerSimulatorCabinetToString(final int speakerSimulatorCabinet) {
+        String cabinet = SPEAKER_SIMULATOR_CABINET_DESIGNS[speakerSimulatorCabinet / 4];
+        String speaker = SPEAKER_SIMULATOR_SPEAKER_TYPES[speakerSimulatorCabinet % 4];
+        return cabinet + speaker;
     }
 
     private static String noiseGateEnableToString(final int noiseGateEnable) {
