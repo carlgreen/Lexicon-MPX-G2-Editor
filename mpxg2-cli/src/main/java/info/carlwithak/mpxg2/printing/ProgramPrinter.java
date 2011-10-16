@@ -163,7 +163,10 @@ public class ProgramPrinter {
     };
 
     private final static String[] SPEAKER_SIMULATOR_CABINETS = {
-        "", "ComboNorml"
+        "Combo1Brite", "Combo1Norml", "Combo1Warm", "Combo1Dark",
+        "Combo2Brite", "Combo2Norml", "Combo2Warm", "Combo2Dark",
+        "Stack1Brite", "Stack1Norml", "Stack1Warm", "Stack1Dark",
+        "Stack2Brite", "Stack2Norml", "Stack2Warm", "Stack2Dark"
     };
 
     private final static String[] NOISE_GATE_ENABLES = {

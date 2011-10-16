@@ -178,7 +178,7 @@ Vybe/Flange
     Tap Average: 2 beats
     Tap Source: none
   Speaker Sim: Off
-    Cabinet: ComboNorml
+    Cabinet: Combo1Norml
   Noise Gate:
     Enable: Guitar Input
     Send: On
