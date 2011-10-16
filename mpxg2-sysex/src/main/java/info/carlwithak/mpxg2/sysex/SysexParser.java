@@ -325,6 +325,9 @@ public class SysexParser {
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
                             break;
+                        case 17:
+                            effect1 = BlueCompParser.parse(effect1Parameters);
+                            break;
                         case 21:
                             effect1 = SweepFilterParser.parse(effect1Parameters);
                             break;

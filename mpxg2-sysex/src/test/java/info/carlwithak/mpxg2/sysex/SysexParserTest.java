@@ -1375,6 +1375,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Slide Comp preset.
+     */
+    @Test
+    public void testParseSlideComp() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("015_Slide_Comp.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Slide Comp", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test

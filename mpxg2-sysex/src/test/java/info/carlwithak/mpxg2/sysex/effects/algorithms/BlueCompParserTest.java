@@ -41,4 +41,17 @@ public class BlueCompParserTest {
         assertEquals(20, blueComp.getAttackTime());
         assertEquals(100, blueComp.getReleaseTime());
     }
+
+    @Test
+    public void testParse_SlideComp() throws ParseException {
+        byte[] effectParameters = {4, 6, 0, 0, 10, 0, 13, 13, 0, 0, 4, 4, 0, 0, 14, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        BlueComp blueComp = BlueCompParser.parse(effectParameters);
+        assertEquals(100, blueComp.getMix());
+        assertEquals(0, blueComp.getLevel());
+        assertEquals(10, blueComp.getSensitivity());
+        assertEquals(-35, blueComp.getThreshold());
+        assertEquals(0, blueComp.getGain());
+        assertEquals(68, blueComp.getAttackTime());
+        assertEquals(190, blueComp.getReleaseTime());
+    }
 }
