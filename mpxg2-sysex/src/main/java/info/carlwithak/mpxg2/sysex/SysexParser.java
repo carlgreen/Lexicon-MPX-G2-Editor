@@ -45,6 +45,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.OctaBuzzParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OrangePhaseParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
@@ -327,6 +328,9 @@ public class SysexParser {
                             break;
                         case 17:
                             effect1 = BlueCompParser.parse(effect1Parameters);
+                            break;
+                        case 20:
+                            effect1 = OctaBuzzParser.parse(effect1Parameters);
                             break;
                         case 21:
                             effect1 = SweepFilterParser.parse(effect1Parameters);

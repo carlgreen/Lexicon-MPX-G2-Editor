@@ -1386,6 +1386,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Kiss the Sky preset.
+     */
+    @Test
+    public void testParseKissTheSky() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("016_Kiss_the_Sky.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Kiss the Sky", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
