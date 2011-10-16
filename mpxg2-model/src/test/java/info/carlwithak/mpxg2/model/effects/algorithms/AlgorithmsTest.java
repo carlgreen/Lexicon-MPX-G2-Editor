@@ -161,6 +161,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testFlangerMonoAlgorithm() throws IntrospectionException {
+        testBean(FlangerMono.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new FlangerMono().getParameterName(0));
+        assertEquals("%", new FlangerMono().getParameterUnit(0));
+    }
+
+    @Test
     public void testFlangerStereoAlgorithm() throws IntrospectionException {
         testBean(FlangerStereo.class);
 
