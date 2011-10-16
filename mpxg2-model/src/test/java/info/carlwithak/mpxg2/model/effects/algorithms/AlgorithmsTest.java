@@ -206,6 +206,11 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testOneBandMonoAlgorithm() throws IntrospectionException {
+        testBean(OneBandMono.class);
+    }
+
+    @Test
     public void testOverdriveAlgorithm() throws IntrospectionException {
         testBean(Overdrive.class);
 
