@@ -26,6 +26,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
@@ -382,6 +383,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Depth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Depth2: 43%\n    Res: +100%\n";
         String actual = AlgorithmPrinter.print(centrifuge1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDelayMono() throws PrintException {
+        DelayMono delayMono = new DelayMono();
+        delayMono.setMix(10);
+        delayMono.setLevel(0);
+        delayMono.setTime(new BeatRate(4, 3));
+        delayMono.setFeedback(10);
+        delayMono.setInsert(3);
+        delayMono.setClear(false);
+
+        String expected = "    Mix: 10%\n    Level: 0dB\n    Time: 4:3\n    Feedback: +10%\n    Insert: Delay\n    Clear: Off\n";
+        String actual = AlgorithmPrinter.print(delayMono);
 
         assertEquals(expected, actual);
     }
