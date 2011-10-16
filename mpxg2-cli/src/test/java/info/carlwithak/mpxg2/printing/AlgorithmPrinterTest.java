@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
@@ -155,6 +156,19 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +5dB\n    Thrsh: -28dB\n    Gain: +5\n    ATime: 20ms\n    RTime: 100ms\n";
         String actual = AlgorithmPrinter.print(blueComp);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintOrangePhase() throws PrintException {
+        OrangePhase orangePhase = new OrangePhase();
+        orangePhase.setMix(100);
+        orangePhase.setLevel(0);
+        orangePhase.setRate(20);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
+        String actual = AlgorithmPrinter.print(orangePhase);
 
         assertEquals(expected, actual);
     }
