@@ -44,6 +44,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
@@ -362,6 +363,25 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 67%\n    Level: +1dB\n    Rate: 1:4\n    PW: 50%\n    Depth: 62%\n    Phase: 90°\n    Res: +20%\n    Blend: 0\n";
         String actual = AlgorithmPrinter.print(flangerStereo);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintRotaryCab() throws PrintException {
+        RotaryCab rotaryCab = new RotaryCab();
+        rotaryCab.setMix(100);
+        rotaryCab.setLevel(4);
+        rotaryCab.setRate1(new FrequencyRate(5.73));
+        rotaryCab.setDepth1(43);
+        rotaryCab.setRate2(new FrequencyRate(5.73));
+        rotaryCab.setDepth2(36);
+        rotaryCab.setResonance(0);
+        rotaryCab.setWidth(100);
+        rotaryCab.setBalance(-20);
+
+        String expected = "    Mix: 100%\n    Level: +4dB\n    Rate1: 5.73Hz\n    Depth1: 43%\n    Rate2: 5.73Hz\n    Depth2: 36%\n    Res: 0\n    Width: 100%\n    Bal: -20\n";
+        String actual = AlgorithmPrinter.print(rotaryCab);
 
         assertEquals(expected, actual);
     }
