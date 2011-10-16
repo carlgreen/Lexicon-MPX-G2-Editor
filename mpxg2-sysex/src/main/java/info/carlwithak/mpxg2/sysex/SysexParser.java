@@ -363,6 +363,9 @@ public class SysexParser {
                         case 10:
                             effect2 = BlueCompParser.parse(effect2Parameters);
                             break;
+                        case 14:
+                            effect2 = SweepFilterParser.parse(effect2Parameters);
+                            break;
                         case 17:
                             effect2 = Wah2Parser.parse(effect2Parameters);
                             break;

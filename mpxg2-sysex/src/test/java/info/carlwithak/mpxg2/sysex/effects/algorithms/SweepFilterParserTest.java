@@ -40,4 +40,17 @@ public class SweepFilterParserTest {
         assertEquals(50, sweepFilter.getScale());
         assertEquals(0, sweepFilter.getPan());
     }
+
+    @Test
+    public void testParse_TechnoChords() {
+        byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 4, 2, 4, 14, 7, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
+        assertEquals(100, sweepFilter.getMix());
+        assertEquals(0, sweepFilter.getLevel());
+        assertEquals(20, sweepFilter.getFc());
+        assertEquals(36, sweepFilter.getFRes());
+        assertEquals(2020, sweepFilter.getMod());
+        assertEquals(49, sweepFilter.getScale());
+        assertEquals(0, sweepFilter.getPan());
+    }
 }

@@ -1243,6 +1243,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the TechnoChords preset.
+     */
+    @Test
+    public void testParseTechnoChords() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("013_TechnoChords.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("TechnoChords", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
