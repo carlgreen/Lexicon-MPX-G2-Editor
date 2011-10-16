@@ -17,12 +17,12 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
+import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
@@ -36,6 +36,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
+import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -360,6 +361,27 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 67%\n    Level: +1dB\n    Rate: 1:4\n    PW: 50%\n    Depth: 62%\n    Phase: 90°\n    Res: +20%\n    Blend: 0\n";
         String actual = AlgorithmPrinter.print(flangerStereo);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintCentrifuge1() throws PrintException {
+        Centrifuge1 centrifuge1 = new Centrifuge1();
+        centrifuge1.setMix(100);
+        centrifuge1.setLevel(6);
+        centrifuge1.setRate1(new FrequencyRate(0.6));
+        centrifuge1.setPulseWidth1(45);
+        centrifuge1.setSync1(120);
+        centrifuge1.setDepth1(100);
+        centrifuge1.setRate2(new FrequencyRate(1.0));
+        centrifuge1.setPulseWidth2(100);
+        centrifuge1.setSync2(-120);
+        centrifuge1.setDepth2(43);
+        centrifuge1.setResonance(100);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Depth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Depth2: 43%\n    Res: +100%\n";
+        String actual = AlgorithmPrinter.print(centrifuge1);
 
         assertEquals(expected, actual);
     }
