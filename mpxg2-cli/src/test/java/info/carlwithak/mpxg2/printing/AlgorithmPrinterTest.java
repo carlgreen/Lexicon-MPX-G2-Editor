@@ -44,6 +44,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
@@ -683,6 +684,27 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Lo: 0\n    Mid: +4\n    Hi: 11\n    Drive: 25\n    Tone: 21\n    Bass: +7\n    Trebl: +6\n    Level: 40\n";
         String actual = AlgorithmPrinter.print(distortion);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintPreamp() throws PrintException {
+        Preamp preamp = new Preamp();
+        preamp.setLo(7);
+        preamp.setMid(3);
+        preamp.setHi(0);
+        preamp.setInLevel(-5);
+        preamp.setLoCut(0);
+        preamp.setFeel(32);
+        preamp.setDrive(23);
+        preamp.setTone(22);
+        preamp.setBass(0);
+        preamp.setTreble(0);
+        preamp.setLevel(45);
+
+        String expected = "    Lo: +7\n    Mid: +3\n    Hi: 0\n    InLvl: -5\n    LoCut: 0\n    Feel: 32\n    Drive: 23\n    Tone: 22\n    Bass: 0\n    Trebl: 0\n    Level: 45\n";
+        String actual = AlgorithmPrinter.print(preamp);
 
         assertEquals(expected, actual);
     }

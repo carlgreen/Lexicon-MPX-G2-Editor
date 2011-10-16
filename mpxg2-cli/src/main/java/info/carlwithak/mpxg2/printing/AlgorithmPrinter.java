@@ -42,6 +42,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
@@ -78,6 +79,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.PedalVolPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalWah1Printer;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PedalWah2Printer;
 import info.carlwithak.mpxg2.printing.effects.algorithms.PlatePrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.PreampPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.RotaryCabPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ScreamerPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ShiftDualPrinter;
@@ -147,6 +149,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(Screamer.class, new ScreamerPrinter());
        PRINTERS.put(Overdrive.class, new OverdrivePrinter());
        PRINTERS.put(Distortion.class, new DistortionPrinter());
+       PRINTERS.put(Preamp.class, new PreampPrinter());
     };
 
     static String print(Object algorithm) throws PrintException {
