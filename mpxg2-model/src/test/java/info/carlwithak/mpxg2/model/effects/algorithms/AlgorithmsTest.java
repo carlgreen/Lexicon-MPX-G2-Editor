@@ -260,6 +260,15 @@ public class AlgorithmsTest {
     }
 
     @Test
+    public void testRedCompAlgorithm() throws IntrospectionException {
+        testBean(RedComp.class);
+
+        // token test of getParameterName() and getParameterUnit()
+        assertEquals("Mix", new RedComp().getParameterName(0));
+        assertEquals("%", new RedComp().getParameterUnit(0));
+    }
+
+    @Test
     public void testRotaryCabAlgorithm() throws IntrospectionException {
         testBean(RotaryCab.class);
 
