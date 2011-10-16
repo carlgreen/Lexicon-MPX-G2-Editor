@@ -1419,6 +1419,17 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the OctaWah preset.
+     */
+    @Test
+    public void testParseOctaWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("019_OctaWah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("OctaWah", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
