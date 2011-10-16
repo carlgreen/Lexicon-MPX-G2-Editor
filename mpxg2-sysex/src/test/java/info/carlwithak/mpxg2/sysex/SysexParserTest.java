@@ -17,13 +17,6 @@
 
 package info.carlwithak.mpxg2.sysex;
 
-import java.util.List;
-import java.util.Arrays;
-import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
-import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
-import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
-import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
-import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.NoiseGate;
@@ -35,11 +28,13 @@ import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -49,12 +44,18 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
+import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Arrays;
+import java.util.List;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -69,6 +70,20 @@ import static org.junit.Assert.fail;
  * @author carl
  */
 public class SysexParserTest {
+    private static final byte[] FILE_INTRO = {
+        (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
+    };
+    private static final byte[] FILE_OUTRO = {
+        0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, (byte) 0xf7
+    };
+    private static final byte[] BLANK_PROGRAM_DATA = new byte[454 * 2];
+
+    @Before
+    public void setUp() {
+        Arrays.fill(BLANK_PROGRAM_DATA, (byte) 0);
+    }
 
     /**
      * Test parsing invalid data.
@@ -177,17 +192,7 @@ public class SysexParserTest {
 
     @Test
     public void testParsePrograms() throws IOException, ParseException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
         byte[] files = concat(file, file);
 
         File temp = tempFileWithData(files);
@@ -197,18 +202,8 @@ public class SysexParserTest {
 
     @Test
     public void testInvalidEffect1AlgorithmNumber() throws IOException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        programData[558] = 0x22;
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        BLANK_PROGRAM_DATA[558] = 0x22;
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
 
         File temp = tempFileWithData(file);
         String expectedMessage = "Invalid Effect 1 algorithm number: 34";
@@ -222,18 +217,8 @@ public class SysexParserTest {
 
     @Test
     public void testInvalidEffect2AlgorithmNumber() throws IOException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        programData[560] = 0x1b;
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        BLANK_PROGRAM_DATA[560] = 0x1b;
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
 
         File temp = tempFileWithData(file);
         String expectedMessage = "Invalid Effect 2 algorithm number: 27";
@@ -247,18 +232,8 @@ public class SysexParserTest {
 
     @Test
     public void testInvalidChorusAlgorithmNumber() throws IOException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        programData[562] = 0x12;
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        BLANK_PROGRAM_DATA[562] = 0x12;
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
 
         File temp = tempFileWithData(file);
         String expectedMessage = "Invalid Chorus algorithm number: 18";
@@ -272,18 +247,8 @@ public class SysexParserTest {
 
     @Test
     public void testInvalidDelayAlgorithmNumber() throws IOException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        programData[564] = 0x0a;
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        BLANK_PROGRAM_DATA[564] = 0x0a;
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
 
         File temp = tempFileWithData(file);
         String expectedMessage = "Invalid Delay algorithm number: 10";
@@ -297,18 +262,8 @@ public class SysexParserTest {
 
     @Test
     public void testInvalidReverbAlgorithmNumber() throws IOException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        programData[566] = 0x06;
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        BLANK_PROGRAM_DATA[566] = 0x06;
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
 
         File temp = tempFileWithData(file);
         String expectedMessage = "Invalid Reverb algorithm number: 6";
@@ -322,18 +277,8 @@ public class SysexParserTest {
 
     @Test
     public void testInvalidEqAlgorithmNumber() throws IOException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        programData[568] = 0x10;
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        BLANK_PROGRAM_DATA[568] = 0x10;
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
 
         File temp = tempFileWithData(file);
         String expectedMessage = "Invalid EQ algorithm number: 16";
@@ -347,18 +292,8 @@ public class SysexParserTest {
 
     @Test
     public void testInvalidGainAlgorithmNumber() throws IOException {
-        byte[] fileIntro = {
-            (byte) 0xf0, 0x06, 0x0f, 0x00, 0x01, 0x06, 0x0c, 0x01, 0x00,
-        };
-        byte[] programData = new byte[454 * 2];
-        Arrays.fill(programData, (byte) 0);
-        byte[] fileOutro = {
-            0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, (byte) 0xf7
-        };
-        programData[570] = 0x09;
-        byte[] file = concat(fileIntro, programData, fileOutro);
+        BLANK_PROGRAM_DATA[570] = 0x09;
+        byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);
 
         File temp = tempFileWithData(file);
         String expectedMessage = "Invalid Gain algorithm number: 9";
