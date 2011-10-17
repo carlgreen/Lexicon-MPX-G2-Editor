@@ -98,6 +98,18 @@ public class ProgramPrinter {
             {
                 "Level"
             }
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+            {
+                "FX1  Byp", "FX2  Byp", "Chrs Byp", "Dly  Byp", "Rvb  Byp", "EQ   Byp", "Gain Byp", "Ins  Byp"
+            }
         }
     };
     private static final String[][][] EFFECT_PARAMETER_UNITS = {
@@ -132,6 +144,18 @@ public class ProgramPrinter {
         {
             {
                 ""
+            }
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+            {
+                "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff"
             }
         }
     };
