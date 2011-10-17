@@ -37,6 +37,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
+import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
@@ -187,6 +188,18 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
         String actual = AlgorithmPrinter.print(orangePhase);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintOctaBuzz() throws PrintException {
+        OctaBuzz octaBuzz = new OctaBuzz();
+        octaBuzz.setMix(100);
+        octaBuzz.setLevel(3);
+
+        String expected = "    Mix: 100%\n    Level: +3dB\n";
+        String actual = AlgorithmPrinter.print(octaBuzz);
 
         assertEquals(expected, actual);
     }
