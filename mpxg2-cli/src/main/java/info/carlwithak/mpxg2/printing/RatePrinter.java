@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.printing;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.TapMsRate;
 import java.text.DecimalFormat;
 
 /**
@@ -39,6 +40,9 @@ public class RatePrinter {
         } else if (rate instanceof BeatRate) {
             BeatRate beatRate = (BeatRate) rate;
             result = beatRate.getMeasures() + ":" + beatRate.getBeats();
+        } else if (rate instanceof TapMsRate) {
+            TapMsRate tapMsRate = (TapMsRate) rate;
+            result = tapMsRate.getMs() + "ms";
         } else {
             throw new PrintException("Invalid rate type: " + rate.getClass());
         }

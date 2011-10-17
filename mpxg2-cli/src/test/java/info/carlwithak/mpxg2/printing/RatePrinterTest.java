@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.TapMsRate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -52,6 +53,16 @@ public class RatePrinterTest {
         Rate rate = new BeatRate(3, 7);
 
         String expected = "3:7";
+        String actual = RatePrinter.print(rate);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTapMsRate() throws PrintException {
+        Rate rate = new TapMsRate(200);
+
+        String expected = "200ms";
         String actual = RatePrinter.print(rate);
 
         assertEquals(expected, actual);
