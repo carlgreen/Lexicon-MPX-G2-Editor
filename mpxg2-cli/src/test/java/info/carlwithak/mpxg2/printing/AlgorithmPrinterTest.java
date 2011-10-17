@@ -45,6 +45,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
+import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
@@ -143,6 +144,19 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
         String actual = AlgorithmPrinter.print(univybe);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintRedComp() throws PrintException {
+        RedComp redComp = new RedComp();
+        redComp.setMix(100);
+        redComp.setLevel(6);
+        redComp.setSensitivity(70);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +70\n";
+        String actual = AlgorithmPrinter.print(redComp);
 
         assertEquals(expected, actual);
     }
