@@ -436,7 +436,7 @@ public class ProgramPrinter {
         return sb.toString().trim();
     }
 
-    private static String printSoftRow(final Program program, final int i) {
+    private static String printSoftRow(final Program program, final int i) throws PrintException {
         // TODO should be null if it's not used
         if (program.getSoftRowEffectType(i) == 255 || program.getSoftRowParameter(i) == 255) {
             return "";
@@ -465,6 +465,8 @@ public class ProgramPrinter {
             case 6:
                 effectParameter = program.getGain().getParameterName(program.getSoftRowParameter(i));
                 break;
+            default:
+                throw new PrintException("Invalid effect index for soft row effect type: " + i);
         }
         if (effectParameter == null) {
             effectParameter = effectParameterToString(program.getSoftRowEffectType(i), algorithm, program.getSoftRowParameter(i));
@@ -501,6 +503,8 @@ public class ProgramPrinter {
                 patchParameter = program.getReverb().getParameterName(patch.getDestinationParameter());
                 patchDestinationUnit = program.getReverb().getParameterUnit(patch.getDestinationParameter());
                 break;
+            default:
+                throw new PrintException("Unsupported patch destination effect index: " + patch.getDestinationEffectIndex());
         }
         if (patchParameter == null) {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
@@ -662,7 +666,7 @@ public class ProgramPrinter {
         return GAIN_ALGORITHM_NAMES[gainAlgorithm];
     }
 
-    private static String toePatchToString(final int toePatch) {
+    private static String toePatchToString(final int toePatch) throws PrintException {
         String s = null;
         switch(toePatch) {
             case 0:
@@ -674,6 +678,8 @@ public class ProgramPrinter {
             case 2:
                 s = "on=bypass";
                 break;
+            default:
+                throw new PrintException("Invalid toe patch index:" + toePatch);
         }
         return s;
     }
