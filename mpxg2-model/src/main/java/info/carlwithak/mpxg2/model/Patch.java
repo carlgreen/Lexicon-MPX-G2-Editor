@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Locale;
+
 /**
  * The Patching system in the MPX G2 allows both internal and external control
  * sources to control program parameters. Each program contains 5 Patches which
@@ -95,7 +97,7 @@ public class Patch {
 
         private String getDisplayName() {
             String name = name();
-            return name.substring(0, 1) + name.substring(1).toLowerCase().replace('_', ' ');
+            return name.substring(0, 1) + name.substring(1).toLowerCase(Locale.ENGLISH).replace('_', ' ');
         }
     }
 
