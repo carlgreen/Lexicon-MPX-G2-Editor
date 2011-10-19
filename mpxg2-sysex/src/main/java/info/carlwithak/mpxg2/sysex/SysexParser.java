@@ -72,6 +72,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -114,6 +116,18 @@ public class SysexParser {
     private static final int GUITAR_STYLE_COUNTRY = 0x20;
     private static final int GUITAR_STYLE_JAZZ = 0x40;
     private static final int GUITAR_STYLE_ROCK = 0x80;
+
+    private static final Method[] SET_ROUTING_METHODS;
+    static {
+        SET_ROUTING_METHODS = new Method[9];
+        for (int i = 0; i < SET_ROUTING_METHODS.length; i++) {
+            try {
+                SET_ROUTING_METHODS[i] = Program.class.getMethod("setRouting" + i, RoutingData.class);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException("Could not access \"setRouting" + i + "\" method on Program", e);
+            }
+        }
+    }
 
     public static List<Program> parsePrograms(final File presets) throws IOException, ParseException {
         InputStream in = null;
@@ -254,34 +268,12 @@ public class SysexParser {
             routingData.setEffectId(effect);
             routingData.setPathType(pathType);
             routingData.setRouting(routing);
-            switch (i) {
-                case 0:
-                    program.setRouting0(routingData);
-                    break;
-                case 1:
-                    program.setRouting1(routingData);
-                    break;
-                case 2:
-                    program.setRouting2(routingData);
-                    break;
-                case 3:
-                    program.setRouting3(routingData);
-                    break;
-                case 4:
-                    program.setRouting4(routingData);
-                    break;
-                case 5:
-                    program.setRouting5(routingData);
-                    break;
-                case 6:
-                    program.setRouting6(routingData);
-                    break;
-                case 7:
-                    program.setRouting7(routingData);
-                    break;
-                case 8:
-                    program.setRouting8(routingData);
-                    break;
+            try {
+                SET_ROUTING_METHODS[i].invoke(program, routingData);
+            } catch (IllegalAccessException e) {
+                throw new ParseException("Could not call \"setRoutingData" + i + "\"", e);
+            } catch (InvocationTargetException e) {
+                throw new ParseException("Could not call \"setRoutingData" + i + "\"", e);
             }
         }
 

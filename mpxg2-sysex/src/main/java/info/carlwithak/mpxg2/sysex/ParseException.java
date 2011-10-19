@@ -29,4 +29,8 @@ public class ParseException extends Exception {
         super(message);
     }
 
+    ParseException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
+
 }
