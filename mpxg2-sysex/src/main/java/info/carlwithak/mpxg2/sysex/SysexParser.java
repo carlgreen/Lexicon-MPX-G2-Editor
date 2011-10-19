@@ -165,7 +165,10 @@ public class SysexParser {
         int objectSize = readInt(in, 4);
 
         byte[] objectData = new byte[objectSize * 2];
-        in.read(objectData);
+        int length = in.read(objectData);
+        if (length != objectSize * 2) {
+            throw new ParseException("Expected to read " + (objectSize * 2) + " bytes, only read " + length);
+        }
 
         int controlLevels = readInt(in, 4);
         if (controlLevels != 4) {
@@ -187,7 +190,7 @@ public class SysexParser {
         @SuppressWarnings("unused")
         int checksum = b;
 
-        if ((b = in.read()) != SYSEX_ID_END) {
+        if (in.read() != SYSEX_ID_END) {
             throw new ParseException("Invalid Sysex ID (end)");
         }
 
@@ -782,9 +785,12 @@ public class SysexParser {
         return patch;
     }
 
-    private static int readInt(final InputStream in, final int size) throws IOException {
+    private static int readInt(final InputStream in, final int size) throws IOException, ParseException {
         byte[] bytes = new byte[size];
-        in.read(bytes);
+        int length = in.read(bytes);
+        if (length != size) {
+            throw new ParseException("Expected to read " + size + " bytes, only read " + length);
+        }
         return readInt(bytes, 0, size);
     }
 
