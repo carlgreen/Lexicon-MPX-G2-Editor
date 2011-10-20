@@ -445,7 +445,7 @@ public class ProgramPrinter {
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
         int algorithm = getAlgorithmForEffectType(program, program.getSoftRowEffectType(i));
-        String effectParameter = null;
+        String effectParameter;
         switch (program.getSoftRowEffectType(i)) {
             case 0:
                 effectParameter = program.getEffect1().getParameterName(program.getSoftRowParameter(i));
@@ -466,7 +466,7 @@ public class ProgramPrinter {
                 effectParameter = program.getGain().getParameterName(program.getSoftRowParameter(i));
                 break;
             default:
-                throw new PrintException("Invalid effect index for soft row effect type: " + i);
+                effectParameter = null;
         }
         if (effectParameter == null) {
             effectParameter = effectParameterToString(program.getSoftRowEffectType(i), algorithm, program.getSoftRowParameter(i));
