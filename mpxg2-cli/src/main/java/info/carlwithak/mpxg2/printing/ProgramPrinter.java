@@ -480,8 +480,8 @@ public class ProgramPrinter {
             return "";
         }
         int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffectIndex());
-        String patchParameter = null;
-        String patchDestinationUnit = null;
+        String patchParameter;
+        String patchDestinationUnit;
         switch (patch.getDestinationEffectIndex()) {
             case 0:
                 patchParameter = program.getEffect1().getParameterName(patch.getDestinationParameter());
@@ -504,7 +504,8 @@ public class ProgramPrinter {
                 patchDestinationUnit = program.getReverb().getParameterUnit(patch.getDestinationParameter());
                 break;
             default:
-                throw new PrintException("Unsupported patch destination effect index: " + patch.getDestinationEffectIndex());
+                patchParameter = null;
+                patchDestinationUnit = null;
         }
         if (patchParameter == null) {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
