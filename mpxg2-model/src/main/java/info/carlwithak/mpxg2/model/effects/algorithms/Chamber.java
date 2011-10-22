@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 
 /**
@@ -28,20 +30,17 @@ public class Chamber extends Reverb {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "Size", "Link", "Diff", "P Dly", "Bass", "s", "Xovr", "Rt HC", "Shape", "Spred"
-    };
 
-    private double size;
-    private boolean link;
-    private int diff;
-    private int preDelay;
-    private int bass;
-    private int decay;
-    private int xovr;
-    private int rtHC;
-    private int shape;
-    private int spred;
+    private GenericValue<Double> size = new GenericValue<Double>("m", 4.0, 35.0);
+    private GenericValue<Boolean> link = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Integer> diff = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> preDelay = new GenericValue<Integer>("ms", 0, 250);
+    private GenericValue<Integer> bass = new GenericValue<Integer>("x", 0, 255); // 0.2 - 4.0
+    private GenericValue<Integer> decay = new GenericValue<Integer>("s", 0, 255); // 0.07 - 65.4
+    private GenericValue<Integer> xovr = new GenericValue<Integer>("Hz", 0, 255); // 30 - 24700
+    private GenericValue<Integer> rtHC = new GenericValue<Integer>("Hz", 0, 255); // 525 - 24700
+    private GenericValue<Integer> shape = new GenericValue<Integer>("", 0, 255);
+    private GenericValue<Integer> spred = new GenericValue<Integer>("", 0, 255);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -50,87 +49,136 @@ public class Chamber extends Reverb {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = size;
+                break;
+            case 3:
+                parameter = link;
+                break;
+            case 4:
+                parameter = diff;
+                break;
+            case 5:
+                parameter = preDelay;
+                break;
+            case 6:
+                parameter = bass;
+                break;
+            case 7:
+                parameter = decay;
+                break;
+            case 8:
+                parameter = xovr;
+                break;
+            case 9:
+                parameter = rtHC;
+                break;
+            case 10:
+                parameter = shape;
+                break;
+            case 11:
+                parameter = spred;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public double getSize() {
-        return size;
+        return size.getValue();
     }
 
     public void setSize(double size) {
-        this.size = size;
+        this.size.setValue(size);
     }
 
     public boolean isLink() {
-        return link;
+        return link.getValue();
     }
 
     public void setLink(boolean link) {
-        this.link = link;
+        this.link.setValue(link);
     }
 
     public int getDiff() {
-        return diff;
+        return diff.getValue();
     }
 
     public void setDiff(int diff) {
-        this.diff = diff;
+        this.diff.setValue(diff);
     }
 
     public int getPreDelay() {
-        return preDelay;
+        return preDelay.getValue();
     }
 
     public void setPreDelay(int preDelay) {
-        this.preDelay = preDelay;
+        this.preDelay.setValue(preDelay);
     }
 
     public int getBass() {
-        return bass;
+        return bass.getValue();
     }
 
     public void setBass(int bass) {
-        this.bass = bass;
+        this.bass.setValue(bass);
     }
 
     public int getDecay() {
-        return decay;
+        return decay.getValue();
     }
 
     public void setDecay(int decay) {
-        this.decay = decay;
+        this.decay.setValue(decay);
     }
 
     public int getXovr() {
-        return xovr;
+        return xovr.getValue();
     }
 
     public void setXovr(int xovr) {
-        this.xovr = xovr;
+        this.xovr.setValue(xovr);
     }
 
     public int getRtHC() {
-        return rtHC;
+        return rtHC.getValue();
     }
 
     public void setRtHC(int rtHC) {
-        this.rtHC = rtHC;
+        this.rtHC.setValue(rtHC);
     }
 
     public int getShape() {
-        return shape;
+        return shape.getValue();
     }
 
     public void setShape(int shape) {
-        this.shape = shape;
+        this.shape.setValue(shape);
     }
 
     public int getSpred() {
-        return spred;
+        return spred.getValue();
     }
 
     public void setSpred(int spred) {
-        this.spred = spred;
+        this.spred.setValue(spred);
     }
 
 }

@@ -30,15 +30,6 @@ import static org.junit.Assert.assertEquals;
 public class AlgorithmsTest {
 
     @Test
-    public void testAmbienceAlgorithm() throws IntrospectionException {
-        testBean(Ambience.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new Ambience().getParameterName(0));
-        assertEquals("%", new Ambience().getParameterUnit(0));
-    }
-
-    @Test
     public void testAutoPanAlgorithm() throws IntrospectionException {
         testBean(AutoPan.class);
 
@@ -63,15 +54,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new Centrifuge1().getParameterName(0));
         assertEquals("%", new Centrifuge1().getParameterUnit(0));
-    }
-
-    @Test
-    public void testChamberAlgorithm() throws IntrospectionException {
-        testBean(Chamber.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new Chamber().getParameterName(0));
-        assertEquals("%", new Chamber().getParameterUnit(0));
     }
 
     @Test
@@ -131,15 +113,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new FlangerStereo().getParameterName(0));
         assertEquals("%", new FlangerStereo().getParameterUnit(0));
-    }
-
-    @Test
-    public void testHallAlgorithm() throws IntrospectionException {
-        testBean(Hall.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new Hall().getParameterName(0));
-        assertEquals("%", new Hall().getParameterUnit(0));
     }
 
     @Test
@@ -208,15 +181,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new PedalWah2().getParameterName(0));
         assertEquals("%", new PedalWah2().getParameterUnit(0));
-    }
-
-    @Test
-    public void testPlateAlgorithm() throws IntrospectionException {
-        testBean(Plate.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new Plate().getParameterName(0));
-        assertEquals("%", new Plate().getParameterUnit(0));
     }
 
     @Test
