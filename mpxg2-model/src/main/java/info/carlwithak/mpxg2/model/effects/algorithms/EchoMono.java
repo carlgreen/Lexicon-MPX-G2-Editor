@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
 
@@ -29,15 +31,12 @@ public class EchoMono extends Delay {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Time", "Fbk", "Damp", "Clear"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", ":", "-%", "%", "Clear"
-    };
 
     private Rate time;
-    private int feedback;
+    private GenericValue<Integer> feedback = new GenericValue<Integer>("%", -100, 100);
     private int insert;
-    private int damp;
-    private boolean clear;
+    private GenericValue<Integer> damp = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Boolean> clear = new GenericValue<Boolean>("OnOff", false, true);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -46,7 +45,38 @@ public class EchoMono extends Delay {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = time;
+                break;
+            case 3:
+                parameter = feedback;
+                break;
+            case 4:
+                parameter = damp;
+                break;
+            case 5:
+                parameter = clear;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public Rate getTime() {
@@ -58,11 +88,11 @@ public class EchoMono extends Delay {
     }
 
     public int getFeedback() {
-        return feedback;
+        return feedback.getValue();
     }
 
     public void setFeedback(int feedback) {
-        this.feedback = feedback;
+        this.feedback.setValue(feedback);
     }
 
     public int getInsert() {
@@ -74,18 +104,18 @@ public class EchoMono extends Delay {
     }
 
     public int getDamp() {
-        return damp;
+        return damp.getValue();
     }
 
     public void setDamp(int damp) {
-        this.damp = damp;
+        this.damp.setValue(damp);
     }
 
     public boolean isClear() {
-        return clear;
+        return clear.getValue();
     }
 
     public void setClear(boolean clear) {
-        this.clear = clear;
+        this.clear.setValue(clear);
     }
 }

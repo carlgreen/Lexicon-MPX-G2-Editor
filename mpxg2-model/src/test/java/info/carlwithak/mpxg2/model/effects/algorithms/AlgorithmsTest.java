@@ -84,33 +84,6 @@ public class AlgorithmsTest {
     }
 
     @Test
-    public void testDelayDualAlgorithm() throws IntrospectionException {
-        testBean(DelayDual.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new DelayDual().getParameterName(0));
-        assertEquals("%", new DelayDual().getParameterUnit(0));
-    }
-
-    @Test
-    public void testDelayMonoAlgorithm() throws IntrospectionException {
-        testBean(DelayMono.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new DelayMono().getParameterName(0));
-        assertEquals("%", new DelayMono().getParameterUnit(0));
-    }
-
-    @Test
-    public void testDelayStereoAlgorithm() throws IntrospectionException {
-        testBean(DelayStereo.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new DelayStereo().getParameterName(0));
-        assertEquals("%", new DelayStereo().getParameterUnit(0));
-    }
-
-    @Test
     public void testDetuneDualAlgorithm() throws IntrospectionException {
         testBean(DetuneDual.class);
 
@@ -135,24 +108,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Lo", new Distortion().getParameterName(0));
         assertEquals("", new Distortion().getParameterUnit(0));
-    }
-
-    @Test
-    public void testEchoMonoAlgorithm() throws IntrospectionException {
-        testBean(EchoMono.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new EchoMono().getParameterName(0));
-        assertEquals("%", new EchoMono().getParameterUnit(0));
-    }
-
-    @Test
-    public void testEchoDualAlgorithm() throws IntrospectionException {
-        testBean(EchoDual.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new EchoDual().getParameterName(0));
-        assertEquals("%", new EchoDual().getParameterUnit(0));
     }
 
     @Test
@@ -185,15 +140,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new Hall().getParameterName(0));
         assertEquals("%", new Hall().getParameterUnit(0));
-    }
-
-    @Test
-    public void testJamManAlgorithm() throws IntrospectionException {
-        testBean(JamMan.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new JamMan().getParameterName(0));
-        assertEquals("%", new JamMan().getParameterUnit(0));
     }
 
     @Test

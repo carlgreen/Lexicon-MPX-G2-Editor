@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Delay;
 
 /**
@@ -28,18 +30,15 @@ public class JamMan extends Delay {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Size", "Fbk", "Clear", "Layer", "Replc", "Delay", "MuteS"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "ms", "-%", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff"
-    };
 
-    private int size;
-    private int feedback;
+    private GenericValue<Integer> size = new GenericValue<Integer>("ms", 0, 20000);
+    private GenericValue<Integer> feedback = new GenericValue<Integer>("%", -100, 100);
     private int insert;
-    private boolean clear;
-    private boolean layer;
-    private boolean replace;
-    private boolean delay;
-    private boolean mute;
+    private GenericValue<Boolean> clear = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Boolean> layer = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Boolean> replace = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Boolean> delay = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Boolean> mute = new GenericValue<Boolean>("OnOff", false, true);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -48,23 +47,63 @@ public class JamMan extends Delay {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = size;
+                break;
+            case 3:
+                parameter = feedback;
+                break;
+            case 4:
+                parameter = clear;
+                break;
+            case 5:
+                parameter = layer;
+                break;
+            case 6:
+                parameter = replace;
+                break;
+            case 7:
+                parameter = delay;
+                break;
+            case 8:
+                parameter = mute;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getSize() {
-        return size;
+        return size.getValue();
     }
 
     public void setSize(int size) {
-        this.size = size;
+        this.size.setValue(size);
     }
 
     public int getFeedback() {
-        return feedback;
+        return feedback.getValue();
     }
 
     public void setFeedback(int feedback) {
-        this.feedback = feedback;
+        this.feedback.setValue(feedback);
     }
 
     public int getInsert() {
@@ -76,43 +115,43 @@ public class JamMan extends Delay {
     }
 
     public boolean isClear() {
-        return clear;
+        return clear.getValue();
     }
 
     public void setClear(boolean clear) {
-        this.clear = clear;
+        this.clear.setValue(clear);
     }
 
     public boolean isLayer() {
-        return layer;
+        return layer.getValue();
     }
 
     public void setLayer(boolean layer) {
-        this.layer = layer;
+        this.layer.setValue(layer);
     }
 
     public boolean isReplace() {
-        return replace;
+        return replace.getValue();
     }
 
     public void setReplace(boolean replace) {
-        this.replace = replace;
+        this.replace.setValue(replace);
     }
 
     public boolean isDelay() {
-        return delay;
+        return delay.getValue();
     }
 
     public void setDelay(boolean delay) {
-        this.delay = delay;
+        this.delay.setValue(delay);
     }
 
     public boolean isMute() {
-        return mute;
+        return mute.getValue();
     }
 
     public void setMute(boolean mute) {
-        this.mute = mute;
+        this.mute.setValue(mute);
     }
 
 }
