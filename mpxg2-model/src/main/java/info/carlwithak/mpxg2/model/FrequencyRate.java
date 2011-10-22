@@ -29,6 +29,11 @@ public class FrequencyRate implements Rate {
         this.frequency = frequency;
     }
 
+    @Override
+    public final String getUnit() {
+        return "Hz";
+    }
+
     public double getFrequency() {
         return frequency;
     }

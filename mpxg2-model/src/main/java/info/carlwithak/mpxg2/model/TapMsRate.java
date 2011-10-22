@@ -28,6 +28,11 @@ public class TapMsRate implements Rate {
         this.ms = ms;
     }
 
+    @Override
+    public final String getUnit() {
+        return "ms";
+    }
+
     public int getMs() {
         return ms;
     }

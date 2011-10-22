@@ -22,6 +22,5 @@ package info.carlwithak.mpxg2.model;
  *
  * @author Carl Green
  */
-public interface Rate {
-
+public interface Rate extends Parameter {
 }

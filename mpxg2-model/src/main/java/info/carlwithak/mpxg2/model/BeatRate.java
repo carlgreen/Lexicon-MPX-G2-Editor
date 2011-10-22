@@ -31,6 +31,11 @@ public class BeatRate implements Rate {
         this.beats = beats;
     }
 
+    @Override
+    public final String getUnit() {
+        return ":";
+    }
+
     public int getMeasures() {
         return measures;
     }
