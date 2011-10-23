@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Eq;
 
 /**
@@ -25,40 +27,66 @@ import info.carlwithak.mpxg2.model.effects.Eq;
  * @author Carl Green
  */
 public class OneBandMono extends Eq {
-    private int gain;
-    private int fc;
-    private double q;
-    private int mode;
+    private GenericValue<Integer> gain = new GenericValue<Integer>("dB", -72, 24);
+    private GenericValue<Integer> fc = new GenericValue<Integer>("Hz", 20, 20000);
+    private GenericValue<Double> q = new GenericValue<Double>("", 0.1, 10.0);
+    private GenericValue<Integer> mode = new GenericValue<Integer>("", 0, 2);
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = gain;
+                break;
+            case 3:
+                parameter = fc;
+                break;
+            case 4:
+                parameter = q;
+                break;
+            case 5:
+                parameter = mode;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
+    }
 
     public int getGain() {
-        return gain;
+        return gain.getValue();
     }
 
     public void setGain(final int gain) {
-        this.gain = gain;
+        this.gain.setValue(gain);
     }
 
     public int getFc() {
-        return fc;
+        return fc.getValue();
     }
 
     public void setFc(final int fc) {
-        this.fc = fc;
+        this.fc.setValue(fc);
     }
 
     public double getQ() {
-        return q;
+        return q.getValue();
     }
 
     public void setQ(final double q) {
-        this.q = q;
+        this.q.setValue(q);
     }
 
     public int getMode() {
-        return mode;
+        return mode.getValue();
     }
 
     public void setMode(final int mode) {
-        this.mode = mode;
+        this.mode.setValue(mode);
     }
 }

@@ -93,11 +93,6 @@ public class AlgorithmsTest {
     }
 
     @Test
-    public void testEqPedalVolAlgorithm() throws IntrospectionException {
-        testBean(EqPedalVol.class);
-    }
-
-    @Test
     public void testFlangerMonoAlgorithm() throws IntrospectionException {
         testBean(FlangerMono.class);
 
@@ -122,11 +117,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new OctaBuzz().getParameterName(0));
         assertEquals("%", new OctaBuzz().getParameterUnit(0));
-    }
-
-    @Test
-    public void testOneBandMonoAlgorithm() throws IntrospectionException {
-        testBean(OneBandMono.class);
     }
 
     @Test

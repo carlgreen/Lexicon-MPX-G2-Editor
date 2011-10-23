@@ -17,28 +17,46 @@
 
 package info.carlwithak.mpxg2.model.effects;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
+
 /**
  * Base class for EQ effects.
  *
  * @author Carl Green
  */
 public class Eq {
-    private int mix;
-    private int level;
+    private GenericValue<Integer> mix = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> level = new GenericValue<Integer>("dB", -90, 6);
+
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+                parameter = mix;
+                break;
+            case 1:
+                parameter = level;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
+    }
 
     public int getMix() {
-        return mix;
+        return mix.getValue();
     }
 
     public void setMix(int mix) {
-        this.mix = mix;
+        this.mix.setValue(mix);
     }
 
     public int getLevel() {
-        return level;
+        return level.getValue();
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        this.level.setValue(level);
     }
 }
