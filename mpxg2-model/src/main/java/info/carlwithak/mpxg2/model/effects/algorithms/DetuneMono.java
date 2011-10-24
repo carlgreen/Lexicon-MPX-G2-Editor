@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
 /**
@@ -28,13 +30,10 @@ public class DetuneMono extends Chorus {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Tune", "P Dly"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "", "ms"
-    };
 
-    private int tune;
+    private GenericValue<Integer> tune = new GenericValue<Integer>("", 0, 100);
     private int optimize;
-    private int preDelay;
+    private GenericValue<Integer> preDelay = new GenericValue<Integer>("ms", 0, 35);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -43,15 +42,40 @@ public class DetuneMono extends Chorus {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit += '-';
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = tune;
+                break;
+            case 3:
+                parameter = preDelay;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getTune() {
-        return tune;
+        return tune.getValue();
     }
 
     public void setTune(int tune) {
-        this.tune = tune;
+        this.tune.setValue(tune);
     }
 
     public int getOptimize() {
@@ -63,10 +87,10 @@ public class DetuneMono extends Chorus {
     }
 
     public int getPreDelay() {
-        return preDelay;
+        return preDelay.getValue();
     }
 
     public void setPreDelay(int preDelay) {
-        this.preDelay = preDelay;
+        this.preDelay.setValue(preDelay);
     }
 }

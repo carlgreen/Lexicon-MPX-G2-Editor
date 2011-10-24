@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
@@ -29,16 +31,13 @@ public class FlangerStereo extends Chorus {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Rate", "PW", "Depth", "Phase", "Res", "Blend"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "Hz", "%", "%", "°", "", ""
-    };
 
     private Rate rate;
-    private int pulseWidth;
-    private int depth;
-    private int phase;
-    private int resonance;
-    private int blend;
+    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> depth = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> phase = new GenericValue<Integer>("°", 0, 3);
+    private GenericValue<Integer> resonance = new GenericValue<Integer>("", -100, 100);
+    private GenericValue<Integer> blend = new GenericValue<Integer>("%", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -47,31 +46,44 @@ public class FlangerStereo extends Chorus {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit += '-';
+        }
+        return unit;
     }
 
-    public int getDepth() {
-        return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth = depth;
-    }
-
-    public int getPhase() {
-        return phase;
-    }
-
-    public void setPhase(int phase) {
-        this.phase = phase;
-    }
-
-    public int getPulseWidth() {
-        return pulseWidth;
-    }
-
-    public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth = pulseWidth;
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = rate;
+                break;
+            case 3:
+                parameter = pulseWidth;
+                break;
+            case 4:
+                parameter = depth;
+                break;
+            case 5:
+                parameter = phase;
+                break;
+            case 6:
+                parameter = resonance;
+                break;
+            case 7:
+                parameter = blend;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public Rate getRate() {
@@ -82,19 +94,43 @@ public class FlangerStereo extends Chorus {
         this.rate = rate;
     }
 
+    public int getPulseWidth() {
+        return pulseWidth.getValue();
+    }
+
+    public void setPulseWidth(int pulseWidth) {
+        this.pulseWidth.setValue(pulseWidth);
+    }
+
+    public int getDepth() {
+        return depth.getValue();
+    }
+
+    public void setDepth(int depth) {
+        this.depth.setValue(depth);
+    }
+
+    public int getPhase() {
+        return phase.getValue();
+    }
+
+    public void setPhase(int phase) {
+        this.phase.setValue(phase);
+    }
+
     public int getResonance() {
-        return resonance;
+        return resonance.getValue();
     }
 
     public void setResonance(int resonance) {
-        this.resonance = resonance;
+        this.resonance.setValue(resonance);
     }
 
     public int getBlend() {
-        return blend;
+        return blend.getValue();
     }
 
     public void setBlend(int blend) {
-        this.blend = blend;
+        this.blend.setValue(blend);
     }
 }

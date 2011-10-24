@@ -48,24 +48,6 @@ public class AlgorithmsTest {
     }
 
     @Test
-    public void testCentrifuge1Algorithm() throws IntrospectionException {
-        testBean(Centrifuge1.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new Centrifuge1().getParameterName(0));
-        assertEquals("%", new Centrifuge1().getParameterUnit(0));
-    }
-
-    @Test
-    public void testChorusAlgorithm() throws IntrospectionException {
-        testBean(ChorusAlgorithm.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new ChorusAlgorithm().getParameterName(0));
-        assertEquals("%", new ChorusAlgorithm().getParameterUnit(0));
-    }
-
-    @Test
     public void testDetuneDualAlgorithm() throws IntrospectionException {
         testBean(DetuneDual.class);
 
@@ -75,39 +57,12 @@ public class AlgorithmsTest {
     }
 
     @Test
-    public void testDetuneMonoAlgorithm() throws IntrospectionException {
-        testBean(DetuneMono.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new DetuneMono().getParameterName(0));
-        assertEquals("%", new DetuneMono().getParameterUnit(0));
-    }
-
-    @Test
     public void testDistortionAlgorithm() throws IntrospectionException {
         testBean(Distortion.class);
 
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Lo", new Distortion().getParameterName(0));
         assertEquals("", new Distortion().getParameterUnit(0));
-    }
-
-    @Test
-    public void testFlangerMonoAlgorithm() throws IntrospectionException {
-        testBean(FlangerMono.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new FlangerMono().getParameterName(0));
-        assertEquals("%", new FlangerMono().getParameterUnit(0));
-    }
-
-    @Test
-    public void testFlangerStereoAlgorithm() throws IntrospectionException {
-        testBean(FlangerStereo.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new FlangerStereo().getParameterName(0));
-        assertEquals("%", new FlangerStereo().getParameterUnit(0));
     }
 
     @Test
@@ -147,15 +102,6 @@ public class AlgorithmsTest {
     }
 
     @Test
-    public void testPedalVolAlgorithm() throws IntrospectionException {
-        testBean(PedalVol.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new PedalVol().getParameterName(0));
-        assertEquals("%", new PedalVol().getParameterUnit(0));
-    }
-
-    @Test
     public void testPedalWah1Algorithm() throws IntrospectionException {
         testBean(PedalWah1.class);
 
@@ -189,15 +135,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new RedComp().getParameterName(0));
         assertEquals("%", new RedComp().getParameterUnit(0));
-    }
-
-    @Test
-    public void testRotaryCabAlgorithm() throws IntrospectionException {
-        testBean(RotaryCab.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new RotaryCab().getParameterName(0));
-        assertEquals("%", new RotaryCab().getParameterUnit(0));
     }
 
     @Test
@@ -261,15 +198,6 @@ public class AlgorithmsTest {
         // token test of getParameterName() and getParameterUnit()
         assertEquals("Mix", new VolumeMono().getParameterName(0));
         assertEquals("%", new VolumeMono().getParameterUnit(0));
-    }
-
-    @Test
-    public void testVolumeDualAlgorithm() throws IntrospectionException {
-        testBean(VolumeDual.class);
-
-        // token test of getParameterName() and getParameterUnit()
-        assertEquals("Mix", new VolumeDual().getParameterName(0));
-        assertEquals("%", new VolumeDual().getParameterUnit(0));
     }
 
     @Test

@@ -17,6 +17,9 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
@@ -29,18 +32,15 @@ public class ChorusAlgorithm extends Chorus {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "100Hz", "%", "%", "100Hz", "%", "%", "", ""
-    };
 
     private Rate rate1;
-    private int pulseWidth1;
-    private int depth1;
+    private GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> depth1 = new GenericValue<Integer>("%", 0, 100);
     private Rate rate2;
-    private int pulseWidth2;
-    private int depth2;
-    private int resonance1;
-    private int resonance2;
+    private GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> depth2 = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> resonance1 = new GenericValue<Integer>("", -100, 100);
+    private GenericValue<Integer> resonance2 = new GenericValue<Integer>("", -100, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -49,7 +49,53 @@ public class ChorusAlgorithm extends Chorus {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit += '-';
+        } else if (parameter instanceof FrequencyRate) {
+            // TODO find a better way
+            unit = "100" + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = rate1;
+                break;
+            case 3:
+                parameter = pulseWidth1;
+                break;
+            case 4:
+                parameter = depth1;
+                break;
+            case 5:
+                parameter = rate2;
+                break;
+            case 6:
+                parameter = pulseWidth2;
+                break;
+            case 7:
+                parameter = depth2;
+                break;
+            case 8:
+                parameter = resonance1;
+                break;
+            case 9:
+                parameter = resonance2;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public Rate getRate1() {
@@ -61,19 +107,19 @@ public class ChorusAlgorithm extends Chorus {
     }
 
     public int getPulseWidth1() {
-        return pulseWidth1;
+        return pulseWidth1.getValue();
     }
 
     public void setPulseWidth1(int pulseWidth1) {
-        this.pulseWidth1 = pulseWidth1;
+        this.pulseWidth1.setValue(pulseWidth1);
     }
 
     public int getDepth1() {
-        return depth1;
+        return depth1.getValue();
     }
 
     public void setDepth1(int depth1) {
-        this.depth1 = depth1;
+        this.depth1.setValue(depth1);
     }
 
     public Rate getRate2() {
@@ -85,34 +131,34 @@ public class ChorusAlgorithm extends Chorus {
     }
 
     public int getPulseWidth2() {
-        return pulseWidth2;
+        return pulseWidth2.getValue();
     }
 
     public void setPulseWidth2(int pulseWidth2) {
-        this.pulseWidth2 = pulseWidth2;
+        this.pulseWidth2.setValue(pulseWidth2);
     }
 
     public int getDepth2() {
-        return depth2;
+        return depth2.getValue();
     }
 
     public void setDepth2(int depth2) {
-        this.depth2 = depth2;
+        this.depth2.setValue(depth2);
     }
 
     public int getResonance1() {
-        return resonance1;
+        return resonance1.getValue();
     }
 
     public void setResonance1(int resonance1) {
-        this.resonance1 = resonance1;
+        this.resonance1.setValue(resonance1);
     }
 
     public int getResonance2() {
-        return resonance2;
+        return resonance2.getValue();
     }
 
     public void setResonance2(int resonance2) {
-        this.resonance2 = resonance2;
+        this.resonance2.setValue(resonance2);
     }
 }

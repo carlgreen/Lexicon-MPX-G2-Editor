@@ -17,6 +17,9 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
@@ -29,17 +32,14 @@ public class RotaryCab extends Chorus {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Rate1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res", "Width", "Bal"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "100Hz", "%", "100Hz", "%", "", "", "-"
-    };
 
     private Rate rate1;
-    private int depth1;
+    private GenericValue<Integer> depth1 = new GenericValue<Integer>("%", 0, 100);
     private Rate rate2;
-    private int depth2;
-    private int resonance;
-    private int width;
-    private int balance;
+    private GenericValue<Integer> depth2 = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> resonance = new GenericValue<Integer>("", -100, 100);
+    private GenericValue<Integer> width = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> balance = new GenericValue<Integer>("", -50, 50);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -48,7 +48,50 @@ public class RotaryCab extends Chorus {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit += '-';
+        } else if (parameter instanceof FrequencyRate) {
+            // TODO find a better way
+            unit = "100" + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = rate1;
+                break;
+            case 3:
+                parameter = depth1;
+                break;
+            case 4:
+                parameter = rate2;
+                break;
+            case 5:
+                parameter = depth2;
+                break;
+            case 6:
+                parameter = resonance;
+                break;
+            case 7:
+                parameter = width;
+                break;
+            case 8:
+                parameter = balance;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public Rate getRate1() {
@@ -60,11 +103,11 @@ public class RotaryCab extends Chorus {
     }
 
     public int getDepth1() {
-        return depth1;
+        return depth1.getValue();
     }
 
     public void setDepth1(int depth1) {
-        this.depth1 = depth1;
+        this.depth1.setValue(depth1);
     }
 
     public Rate getRate2() {
@@ -76,34 +119,34 @@ public class RotaryCab extends Chorus {
     }
 
     public int getDepth2() {
-        return depth2;
+        return depth2.getValue();
     }
 
     public void setDepth2(int depth2) {
-        this.depth2 = depth2;
+        this.depth2.setValue(depth2);
     }
 
     public int getResonance() {
-        return resonance;
+        return resonance.getValue();
     }
 
     public void setResonance(int resonance) {
-        this.resonance = resonance;
+        this.resonance.setValue(resonance);
     }
 
     public int getWidth() {
-        return width;
+        return width.getValue();
     }
 
     public void setWidth(int width) {
-        this.width = width;
+        this.width.setValue(width);
     }
 
     public int getBalance() {
-        return balance;
+        return balance.getValue();
     }
 
     public void setBalance(int balance) {
-        this.balance = balance;
+        this.balance.setValue(balance);
     }
 }

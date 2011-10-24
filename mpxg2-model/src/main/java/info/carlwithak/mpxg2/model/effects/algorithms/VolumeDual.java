@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
 /**
@@ -28,12 +30,9 @@ public class VolumeDual extends Chorus {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Vol-L", "Vol-R"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "%", "%"
-    };
 
-    private int volumeLeft;
-    private int volumeRight;
+    private GenericValue<Integer> volumeLeft = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> volumeRight = new GenericValue<Integer>("%", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -42,22 +41,47 @@ public class VolumeDual extends Chorus {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit += '-';
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = volumeLeft;
+                break;
+            case 3:
+                parameter = volumeRight;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getVolumeLeft() {
-        return volumeLeft;
+        return volumeLeft.getValue();
     }
 
     public void setVolumeLeft(int volumeLeft) {
-        this.volumeLeft = volumeLeft;
+        this.volumeLeft.setValue(volumeLeft);
     }
 
     public int getVolumeRight() {
-        return volumeRight;
+        return volumeRight.getValue();
     }
 
     public void setVolumeRight(int volumeRight) {
-        this.volumeRight = volumeRight;
+        this.volumeRight.setValue(volumeRight);
     }
 }
