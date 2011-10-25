@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
@@ -29,13 +31,10 @@ public class TremoloMono extends Effect {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Rate", "PW", "Depth"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", ":", "%", "%"
-    };
 
     private Rate rate;
-    private int pulseWidth;
-    private int depth;
+    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> depth = new GenericValue<Integer>("%", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -44,7 +43,35 @@ public class TremoloMono extends Effect {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit += '-';
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = rate;
+                break;
+            case 3:
+                parameter = pulseWidth;
+                break;
+            case 4:
+                parameter = depth;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public Rate getRate() {
@@ -56,19 +83,19 @@ public class TremoloMono extends Effect {
     }
 
     public int getPulseWidth() {
-        return pulseWidth;
+        return pulseWidth.getValue();
     }
 
     public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth = pulseWidth;
+        this.pulseWidth.setValue(pulseWidth);
     }
 
     public int getDepth() {
-        return depth;
+        return depth.getValue();
     }
 
     public void setDepth(int depth) {
-        this.depth = depth;
+        this.depth.setValue(depth);
     }
 
 }

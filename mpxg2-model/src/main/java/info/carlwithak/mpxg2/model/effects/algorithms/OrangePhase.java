@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
@@ -28,11 +30,8 @@ public class OrangePhase extends Effect {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Rate"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", ""
-    };
 
-    private int rate;
+    private GenericValue<Integer> rate = new GenericValue<Integer>("", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -41,14 +40,36 @@ public class OrangePhase extends Effect {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = rate;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getRate() {
-        return rate;
+        return rate.getValue();
     }
 
     public void setRate(final int rate) {
-        this.rate = rate;
+        this.rate.setValue(rate);
     }
 }

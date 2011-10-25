@@ -17,6 +17,9 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
@@ -29,14 +32,11 @@ public class AutoPan extends Effect {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "100Hz", "%", "%", "Phase"
-    };
 
     private Rate rate;
-    private int pulseWidth;
-    private int depth;
-    private int phase;
+    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> depth = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> phase = new GenericValue<Integer>("°", 0, 3);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -45,31 +45,41 @@ public class AutoPan extends Effect {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        } else if (parameter instanceof FrequencyRate) {
+            // TODO find a better way
+            unit = "100" + unit;
+        }
+        return unit;
     }
 
-    public int getDepth() {
-        return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth = depth;
-    }
-
-    public int getPhase() {
-        return phase;
-    }
-
-    public void setPhase(int phase) {
-        this.phase = phase;
-    }
-
-    public int getPulseWidth() {
-        return pulseWidth;
-    }
-
-    public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth = pulseWidth;
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = rate;
+                break;
+            case 3:
+                parameter = pulseWidth;
+                break;
+            case 4:
+                parameter = depth;
+                break;
+            case 5:
+                parameter = phase;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public Rate getRate() {
@@ -78,5 +88,29 @@ public class AutoPan extends Effect {
 
     public void setRate(Rate rate) {
         this.rate = rate;
+    }
+
+    public int getPulseWidth() {
+        return pulseWidth.getValue();
+    }
+
+    public void setPulseWidth(int pulseWidth) {
+        this.pulseWidth.setValue(pulseWidth);
+    }
+
+    public int getDepth() {
+        return depth.getValue();
+    }
+
+    public void setDepth(int depth) {
+        this.depth.setValue(depth);
+    }
+
+    public int getPhase() {
+        return phase.getValue();
+    }
+
+    public void setPhase(int phase) {
+        this.phase.setValue(phase);
     }
 }

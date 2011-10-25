@@ -16,6 +16,8 @@
  */
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
@@ -27,15 +29,12 @@ public class BlueComp extends Effect {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Sense", "Thrsh", "Gain", "ATime", "RTime"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "dB", "dB", "dB", "ms", "ms"
-    };
 
-    private int sensitivity;
-    private int threshold;
-    private int gain;
-    private int attackTime;
-    private int releaseTime;
+    private GenericValue<Integer> sensitivity = new GenericValue<Integer>("dB", -90, 6);
+    private GenericValue<Integer> threshold = new GenericValue<Integer>("dB", -72, 24);
+    private GenericValue<Integer> gain = new GenericValue<Integer>("dB", -83, 0);
+    private GenericValue<Integer> attackTime = new GenericValue<Integer>("ms", 0, 2000);
+    private GenericValue<Integer> releaseTime = new GenericValue<Integer>("ms", 0, 2000);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -44,46 +43,80 @@ public class BlueComp extends Effect {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = sensitivity;
+                break;
+            case 3:
+                parameter = threshold;
+                break;
+            case 4:
+                parameter = gain;
+                break;
+            case 5:
+                parameter = attackTime;
+                break;
+            case 6:
+                parameter = releaseTime;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getSensitivity() {
-        return sensitivity;
+        return sensitivity.getValue();
     }
 
     public void setSensitivity(final int sensitivity) {
-        this.sensitivity = sensitivity;
+        this.sensitivity.setValue(sensitivity);
     }
 
     public int getThreshold() {
-        return threshold;
+        return threshold.getValue();
     }
 
     public void setThreshold(final int threshold) {
-        this.threshold = threshold;
+        this.threshold.setValue(threshold);
     }
 
     public int getGain() {
-        return gain;
+        return gain.getValue();
     }
 
     public void setGain(final int gain) {
-        this.gain = gain;
+        this.gain.setValue(gain);
     }
 
     public int getAttackTime() {
-        return attackTime;
+        return attackTime.getValue();
     }
 
     public void setAttackTime(final int attackTime) {
-        this.attackTime = attackTime;
+        this.attackTime.setValue(attackTime);
     }
 
     public int getReleaseTime() {
-        return releaseTime;
+        return releaseTime.getValue();
     }
 
     public void setReleaseTime(final int releaseTime) {
-        this.releaseTime = releaseTime;
+        this.releaseTime.setValue(releaseTime);
     }
 }

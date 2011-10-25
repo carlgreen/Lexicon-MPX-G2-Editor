@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
@@ -28,15 +30,12 @@ public class SweepFilter extends Effect {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Fc", "FRes", "Mod", "Scale", "Pan"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "Hz", "", "Hz", "-%", "Pan"
-    };
 
-    private int fc;
-    private int fRes;
-    private int mod;
-    private int scale;
-    private int pan;
+    private GenericValue<Integer> fc = new GenericValue<Integer>("Hz", 20, 20000);
+    private GenericValue<Integer> fRes = new GenericValue<Integer>("", 1, 100);
+    private GenericValue<Integer> mod = new GenericValue<Integer>("Hz", 20, 20000);
+    private GenericValue<Integer> scale = new GenericValue<Integer>("%", -100, 100);
+    private GenericValue<Integer> pan = new GenericValue<Integer>("LCR", -50, 50);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -45,47 +44,81 @@ public class SweepFilter extends Effect {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = fc;
+                break;
+            case 3:
+                parameter = fRes;
+                break;
+            case 4:
+                parameter = mod;
+                break;
+            case 5:
+                parameter = scale;
+                break;
+            case 6:
+                parameter = pan;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getFc() {
-        return fc;
+        return fc.getValue();
     }
 
     public void setFc(final int fc) {
-        this.fc = fc;
+        this.fc.setValue(fc);
     }
 
     public int getFRes() {
-        return fRes;
+        return fRes.getValue();
     }
 
     public void setFRes(final int fRes) {
-        this.fRes = fRes;
+        this.fRes.setValue(fRes);
     }
 
     public int getMod() {
-        return mod;
+        return mod.getValue();
     }
 
     public void setMod(final int mod) {
-        this.mod = mod;
+        this.mod.setValue(mod);
     }
 
     public int getScale() {
-        return scale;
+        return scale.getValue();
     }
 
     public void setScale(final int scale) {
-        this.scale = scale;
+        this.scale.setValue(scale);
     }
 
     public int getPan() {
-        return pan;
+        return pan.getValue();
     }
 
     public void setPan(final int pan) {
-        this.pan = pan;
+        this.pan.setValue(pan);
     }
 
 }

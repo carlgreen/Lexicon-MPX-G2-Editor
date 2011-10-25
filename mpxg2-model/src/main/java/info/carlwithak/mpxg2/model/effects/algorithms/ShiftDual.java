@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
@@ -28,14 +30,11 @@ public class ShiftDual extends Effect {
     private static final String[] PARAMETER_NAMES = {
         "Mix", "Level", "Tune1", "Tune2", "Glide"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "%", "-dB", "-", "-", "Glide"
-    };
 
-    private int tune1;
+    private GenericValue<Integer> tune1 = new GenericValue<Integer>("", -4800, 1900); // cents
     private int optimize;
-    private int tune2;
-    private boolean glide;
+    private GenericValue<Integer> tune2 = new GenericValue<Integer>("", -4800, 1900); // cents
+    private GenericValue<Boolean> glide = new GenericValue<Boolean>("OnOff", false, true);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -44,15 +43,43 @@ public class ShiftDual extends Effect {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit = '-' + unit;
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+            case 1:
+                parameter = super.getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = tune1;
+                break;
+            case 3:
+                parameter = tune2;
+                break;
+            case 4:
+                parameter = glide;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getTune1() {
-        return tune1;
+        return tune1.getValue();
     }
 
     public void setTune1(int tune1) {
-        this.tune1 = tune1;
+        this.tune1.setValue(tune1);
     }
 
     public int getOptimize() {
@@ -64,18 +91,18 @@ public class ShiftDual extends Effect {
     }
 
     public int getTune2() {
-        return tune2;
+        return tune2.getValue();
     }
 
     public void setTune2(int tune2) {
-        this.tune2 = tune2;
+        this.tune2.setValue(tune2);
     }
 
     public boolean isGlide() {
-        return glide;
+        return glide.getValue();
     }
 
     public void setGlide(boolean glide) {
-        this.glide = glide;
+        this.glide.setValue(glide);
     }
 }
