@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Gain;
 
 /**
@@ -28,16 +30,13 @@ public class Screamer extends Gain {
     private static final String[] PARAMETER_NAMES = {
         "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
     };
-    private static final String[] PARAMETER_UNITS = {
-        "", "", "", "", "", ""
-    };
 
-    private int lo;
-    private int mid;
-    private int hi;
-    private int drive;
-    private int tone;
-    private int level;
+    private GenericValue<Integer> lo = new GenericValue<Integer>("dB", -5, 5);
+    private GenericValue<Integer> mid = new GenericValue<Integer>("dB", -5, 5);
+    private GenericValue<Integer> hi = new GenericValue<Integer>("dB", 0, 5);
+    private GenericValue<Integer> drive = new GenericValue<Integer>("", 0, 40);
+    private GenericValue<Integer> tone = new GenericValue<Integer>("", 0, 25);
+    private GenericValue<Integer> level = new GenericValue<Integer>("dB", 0, 64);
 
     @Override
     public String getParameterName(final int destinationParameter) {
@@ -46,54 +45,87 @@ public class Screamer extends Gain {
 
     @Override
     public String getParameterUnit(final int parameterIndex) {
-        return PARAMETER_UNITS[parameterIndex];
+        Parameter parameter = getParameter(parameterIndex);
+        String unit = parameter.getUnit();
+        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            unit += '-';
+        }
+        return unit;
+    }
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+                parameter = lo;
+                break;
+            case 1:
+                parameter = mid;
+                break;
+            case 2:
+                parameter = hi;
+                break;
+            case 3:
+                parameter = drive;
+                break;
+            case 4:
+                parameter = tone;
+                break;
+            case 5:
+                parameter = level;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     public int getLo() {
-        return lo;
+        return lo.getValue();
     }
 
     public void setLo(int lo) {
-        this.lo = lo;
+        this.lo.setValue(lo);
     }
 
     public int getMid() {
-        return mid;
+        return mid.getValue();
     }
 
     public void setMid(int mid) {
-        this.mid = mid;
+        this.mid.setValue(mid);
     }
 
     public int getHi() {
-        return hi;
+        return hi.getValue();
     }
 
     public void setHi(int hi) {
-        this.hi = hi;
+        this.hi.setValue(hi);
     }
 
     public int getDrive() {
-        return drive;
+        return drive.getValue();
     }
 
     public void setDrive(int drive) {
-        this.drive = drive;
+        this.drive.setValue(drive);
     }
 
     public int getTone() {
-        return tone;
+        return tone.getValue();
     }
 
     public void setTone(int tone) {
-        this.tone = tone;
+        this.tone.setValue(tone);
     }
 
     public int getLevel() {
-        return level;
+        return level.getValue();
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        this.level.setValue(level);
     }
 }

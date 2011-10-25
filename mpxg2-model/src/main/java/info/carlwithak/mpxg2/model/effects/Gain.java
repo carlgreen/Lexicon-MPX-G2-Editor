@@ -17,13 +17,19 @@
 
 package info.carlwithak.mpxg2.model.effects;
 
+import info.carlwithak.mpxg2.model.Parameter;
+
 /**
  * Base class for Gain effects.
  *
  * @author Carl Green
  */
 public abstract class Gain {
+    @Deprecated
     public abstract String getParameterName(final int destinationParameter);
 
+    @Deprecated
     public abstract String getParameterUnit(final int parameterIndex);
+
+    public abstract Parameter getParameter(final int parameterIndex);
 }
