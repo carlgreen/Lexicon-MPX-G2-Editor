@@ -17,6 +17,9 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
@@ -482,36 +485,45 @@ public class ProgramPrinter {
         int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffectIndex());
         String patchParameter;
         String patchDestinationUnit;
+        Parameter parameter;
         switch (patch.getDestinationEffectIndex()) {
             case 0:
                 patchParameter = program.getEffect1().getParameterName(patch.getDestinationParameter());
-                patchDestinationUnit = program.getEffect1().getParameterUnit(patch.getDestinationParameter());
+                parameter = program.getEffect1().getParameter(patch.getDestinationParameter());
                 break;
             case 1:
                 patchParameter = program.getEffect2().getParameterName(patch.getDestinationParameter());
-                patchDestinationUnit = program.getEffect2().getParameterUnit(patch.getDestinationParameter());
+                parameter = program.getEffect2().getParameter(patch.getDestinationParameter());
                 break;
             case 2:
                 patchParameter = program.getChorus().getParameterName(patch.getDestinationParameter());
-                patchDestinationUnit = program.getChorus().getParameterUnit(patch.getDestinationParameter());
+                parameter = program.getChorus().getParameter(patch.getDestinationParameter());
                 break;
             case 3:
                 patchParameter = program.getDelay().getParameterName(patch.getDestinationParameter());
-                patchDestinationUnit = program.getDelay().getParameterUnit(patch.getDestinationParameter());
+                parameter = program.getDelay().getParameter(patch.getDestinationParameter());
                 break;
             case 4:
                 patchParameter = program.getReverb().getParameterName(patch.getDestinationParameter());
-                patchDestinationUnit = program.getReverb().getParameterUnit(patch.getDestinationParameter());
+                parameter = program.getReverb().getParameter(patch.getDestinationParameter());
                 break;
             default:
                 patchParameter = null;
-                patchDestinationUnit = null;
+                parameter = null;
         }
         if (patchParameter == null) {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
         }
-        if (patchDestinationUnit == null) {
+        if (parameter == null) {
             patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
+        } else {
+            patchDestinationUnit = ((Parameter) parameter).getUnit();
+            if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+                patchDestinationUnit = '-' + patchDestinationUnit;
+            } else if (parameter instanceof FrequencyRate) {
+                // TODO find a better way
+                patchDestinationUnit = "100" + patchDestinationUnit;
+            }
         }
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
