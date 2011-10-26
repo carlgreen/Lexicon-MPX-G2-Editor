@@ -76,31 +76,20 @@ public class ProgramPrinter {
         "Knob", "LFO1", "LFO2", "Rand", "A/B", "Env", "", "", "Post", "Send",
         "SpkrSim", "NGate", "Tempo"
     };
-    private static final String[][][] EFFECT_PARAMETERS = {
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
+    private static final String[][] EFFECT_PARAMETERS = {
         {},
         {},
         {},
         {},
         {
-            {
-                "", "ARate", "BRate"
-            }
+            "", "ARate", "BRate"
         },
         {},
         {},
         {},
         {},
         {
-            {
-                "Level"
-            }
+            "Level"
         },
         {},
         {},
@@ -110,9 +99,7 @@ public class ProgramPrinter {
         {},
         {},
         {
-            {
-                "FX1  Byp", "FX2  Byp", "Chrs Byp", "Dly  Byp", "Rvb  Byp", "EQ   Byp", "Gain Byp", "Ins  Byp"
-            }
+            "FX1  Byp", "FX2  Byp", "Chrs Byp", "Dly  Byp", "Rvb  Byp", "EQ   Byp", "Gain Byp", "Ins  Byp"
         }
     };
     private static final String[][] EFFECT_PARAMETER_UNITS = {
@@ -424,7 +411,6 @@ public class ProgramPrinter {
         StringBuilder sb = new StringBuilder();
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
-        int algorithm = getAlgorithmForEffectType(program, program.getSoftRowEffectType(i));
         String effectParameter;
         switch (program.getSoftRowEffectType(i)) {
             case 0:
@@ -449,7 +435,7 @@ public class ProgramPrinter {
                 effectParameter = null;
         }
         if (effectParameter == null) {
-            effectParameter = effectParameterToString(program.getSoftRowEffectType(i), algorithm, program.getSoftRowParameter(i));
+            effectParameter = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
         }
         sb.append(effectParameter).append("\n");
         return sb.toString();
@@ -459,7 +445,6 @@ public class ProgramPrinter {
         if (patch.getSourceIndex() == 0) {
             return "";
         }
-        int algorithm = getAlgorithmForEffectType(program, patch.getDestinationEffectIndex());
         String patchParameter;
         String patchDestinationUnit;
         Parameter parameter;
@@ -489,7 +474,7 @@ public class ProgramPrinter {
                 parameter = null;
         }
         if (patchParameter == null) {
-            patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
+            patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         }
         if (parameter == null) {
             patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
@@ -598,36 +583,6 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    private static int getAlgorithmForEffectType(final Program program, final int effectType) {
-        int algorithm;
-        switch (effectType) {
-            case 0:
-                algorithm = program.getEffect1Algorithm();
-                break;
-            case 1:
-                algorithm = program.getEffect2Algorithm();
-                break;
-            case 2:
-                algorithm = program.getChorusAlgorithm();
-                break;
-            case 3:
-                algorithm = program.getDelayAlgorithm();
-                break;
-            case 4:
-                algorithm = program.getReverbAlgorithm();
-                break;
-            case 5:
-                algorithm = program.getEqAlgorithm();
-                break;
-            case 6:
-                algorithm = program.getGainAlgorithm();
-                break;
-            default:
-                algorithm = 0;
-        }
-        return algorithm;
-    }
-
     private static String effect1AlgorithmToString(final int effect1Algorithm) {
         return EFFECT1_ALGORITHM_NAMES[effect1Algorithm];
     }
@@ -678,8 +633,9 @@ public class ProgramPrinter {
         return EFFECT_TYPES[effectType];
     }
 
-    private static String effectParameterToString(final int effectType, final int algorithm, final int effectParameter) {
-        return EFFECT_PARAMETERS[effectType][algorithm][effectParameter];
+    private static String effectParameterToString(final int effectType, final int effectParameter) {
+        // remove 7 from effectType as the 7 algorithm types take care of themselves
+        return EFFECT_PARAMETERS[effectType - 7][effectParameter];
     }
 
     private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
