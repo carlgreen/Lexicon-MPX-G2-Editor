@@ -29,7 +29,7 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  */
 public class AutoPan extends Effect {
     private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Rate1", "PW", "Depth", "Phase"
+        "Mix", "Level", "Rate", "PW", "Depth", "Phase"
     };
 
     private Rate rate;
