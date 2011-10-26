@@ -115,26 +115,7 @@ public class ProgramPrinter {
             }
         }
     };
-    private static final String[][][] EFFECT_PARAMETER_UNITS = {
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {
-            {},
-            {
-                "Lo", "Mid", "Hi", "InLvl", "Level"
-            },
-            {},
-            {
-                "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
-            },
-            {
-                "Lo", "Mid", "Hi", "InLvl", "LoCut", "Feel", "Drive", "Tone", "Level"
-            }
-        },
+    private static final String[][] EFFECT_PARAMETER_UNITS = {
         {},
         {},
         {},
@@ -145,9 +126,7 @@ public class ProgramPrinter {
         {},
         {},
         {
-            {
-                ""
-            }
+            ""
         },
         {},
         {},
@@ -157,9 +136,7 @@ public class ProgramPrinter {
         {},
         {},
         {
-            {
-                "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff"
-            }
+            "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff"
         }
     };
 
@@ -515,7 +492,7 @@ public class ProgramPrinter {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
         }
         if (parameter == null) {
-            patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), algorithm, patch.getDestinationParameter());
+            patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         } else {
             patchDestinationUnit = ((Parameter) parameter).getUnit();
             if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
@@ -705,8 +682,9 @@ public class ProgramPrinter {
         return EFFECT_PARAMETERS[effectType][algorithm][effectParameter];
     }
 
-    private static String getEffectParameterUnits(final int effectType, final int algorithm, final int effectParameter) {
-        return EFFECT_PARAMETER_UNITS[effectType][algorithm][effectParameter];
+    private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
+        // remove 7 from effectType as the 7 algorithm types take care of themselves
+        return EFFECT_PARAMETER_UNITS[effectType - 7][effectParameter];
     }
 
     private static String lfoOnSourceToString(final int lfoOnSource) {
