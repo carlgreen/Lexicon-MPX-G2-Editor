@@ -479,7 +479,7 @@ public class ProgramPrinter {
         if (parameter == null) {
             patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         } else {
-            patchDestinationUnit = ((Parameter) parameter).getUnit();
+            patchDestinationUnit = parameter.getUnit();
             if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
                 patchDestinationUnit = '-' + patchDestinationUnit;
             } else if (parameter instanceof FrequencyRate) {
