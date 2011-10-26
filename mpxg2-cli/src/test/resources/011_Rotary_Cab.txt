@@ -59,9 +59,9 @@ Rotary Cab
     2: Gain Level
     3: Chorus Mix
     4: Chorus Dpth1
-    5: Chorus Dpth2
-    6: Chorus Res
-    7: Chorus Width
+    5: Chorus Res
+    6: Chorus Width
+    7: Chorus Bal
     8: Reverb Mix
     9: Reverb P Dly
     10: Reverb Decay
