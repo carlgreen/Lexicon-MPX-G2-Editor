@@ -39,16 +39,6 @@ public class VolumeMono extends Effect {
     }
 
     @Override
-    public String getParameterUnit(final int parameterIndex) {
-        Parameter parameter = getParameter(parameterIndex);
-        String unit = parameter.getUnit();
-        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
-            unit += '-';
-        }
-        return unit;
-    }
-
-    @Override
     public Parameter getParameter(final int parameterIndex) {
         Parameter parameter;
         switch (parameterIndex) {

@@ -17,7 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
@@ -41,19 +40,6 @@ public class AutoPan extends Effect {
     @Override
     public String getParameterName(final int destinationParameter) {
         return PARAMETER_NAMES[destinationParameter];
-    }
-
-    @Override
-    public String getParameterUnit(final int parameterIndex) {
-        Parameter parameter = getParameter(parameterIndex);
-        String unit = parameter.getUnit();
-        if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
-            unit = '-' + unit;
-        } else if (parameter instanceof FrequencyRate) {
-            // TODO find a better way
-            unit = "100" + unit;
-        }
-        return unit;
     }
 
     @Override

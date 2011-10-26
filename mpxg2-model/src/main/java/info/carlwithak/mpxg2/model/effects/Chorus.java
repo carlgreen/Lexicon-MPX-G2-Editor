@@ -32,9 +32,6 @@ public abstract class Chorus {
     @Deprecated
     public abstract String getParameterName(final int destinationParameter);
 
-    @Deprecated
-    public abstract String getParameterUnit(final int parameterIndex);
-
     public Parameter getParameter(final int parameterIndex) {
         Parameter parameter;
         switch (parameterIndex) {
