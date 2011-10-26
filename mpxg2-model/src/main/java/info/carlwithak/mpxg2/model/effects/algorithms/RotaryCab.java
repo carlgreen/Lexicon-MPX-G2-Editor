@@ -29,7 +29,7 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  */
 public class RotaryCab extends Chorus {
     private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Rate1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res", "Width", "Bal"
+        "Mix", "Level", "Rate1", "Dpth1", "Rate2", "Dpth2", "Res", "Width", "Bal"
     };
 
     private Rate rate1;
