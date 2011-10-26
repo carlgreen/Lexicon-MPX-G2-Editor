@@ -96,7 +96,7 @@ Cordovox
         Min: 0
         Mid: --
         Max: 127
-      Destination: Effect 2 Rate1
+      Destination: Effect 2 Rate
         Min: 0.62Hz
         Mid: 2.00Hz
         Max: 5.16Hz
@@ -105,7 +105,7 @@ Cordovox
         Min: 0
         Mid: --
         Max: 127
-      Destination: Effect 1 Rate1
+      Destination: Effect 1 Rate
         Min: 0.04Hz
         Mid: 5.00Hz
         Max: 6.00Hz
