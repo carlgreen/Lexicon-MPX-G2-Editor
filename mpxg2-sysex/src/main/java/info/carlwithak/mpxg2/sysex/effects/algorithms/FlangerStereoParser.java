@@ -38,7 +38,7 @@ public class FlangerStereoParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         flangerStereo.setLevel(level);
 
-        flangerStereo.setRate(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        flangerStereo.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
         flangerStereo.setPulseWidth(pulseWidth);

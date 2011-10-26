@@ -31,14 +31,14 @@ public class JamMan extends Delay {
         "Mix", "Level", "Size", "Fbk", "Clear", "Layer", "Replc", "Delay", "MuteS"
     };
 
-    private GenericValue<Integer> size = new GenericValue<Integer>("ms", 0, 20000);
-    private GenericValue<Integer> feedback = new GenericValue<Integer>("%", -100, 100);
+    private GenericValue<Integer> size = new GenericValue<Integer>("Size", "ms", 0, 20000);
+    private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
     private int insert;
-    private GenericValue<Boolean> clear = new GenericValue<Boolean>("OnOff", false, true);
-    private GenericValue<Boolean> layer = new GenericValue<Boolean>("OnOff", false, true);
-    private GenericValue<Boolean> replace = new GenericValue<Boolean>("OnOff", false, true);
-    private GenericValue<Boolean> delay = new GenericValue<Boolean>("OnOff", false, true);
-    private GenericValue<Boolean> mute = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
+    private GenericValue<Boolean> layer = new GenericValue<Boolean>("Layer", "OnOff", false, true);
+    private GenericValue<Boolean> replace = new GenericValue<Boolean>("Replc", "OnOff", false, true);
+    private GenericValue<Boolean> delay = new GenericValue<Boolean>("Delay", "OnOff", false, true);
+    private GenericValue<Boolean> mute = new GenericValue<Boolean>("MuteS", "OnOff", false, true);
 
     @Override
     public String getParameterName(final int destinationParameter) {

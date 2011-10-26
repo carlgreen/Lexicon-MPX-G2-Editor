@@ -40,7 +40,7 @@ public class RatePrinterTest {
 
     @Test
     public void testPrintFrequencyRate() throws PrintException {
-        Rate rate = new FrequencyRate(2.3);
+        Rate rate = new FrequencyRate("Rate", 2.3);
 
         String expected = "2.30Hz";
         String actual = RatePrinter.print(rate);
@@ -50,7 +50,7 @@ public class RatePrinterTest {
 
     @Test
     public void testPrintBeatRate() throws PrintException {
-        Rate rate = new BeatRate(3, 7);
+        Rate rate = new BeatRate("Rate", 3, 7);
 
         String expected = "3:7";
         String actual = RatePrinter.print(rate);
@@ -60,7 +60,7 @@ public class RatePrinterTest {
 
     @Test
     public void testPrintTapMsRate() throws PrintException {
-        Rate rate = new TapMsRate(200);
+        Rate rate = new TapMsRate("Rate", 200);
 
         String expected = "200ms";
         String actual = RatePrinter.print(rate);

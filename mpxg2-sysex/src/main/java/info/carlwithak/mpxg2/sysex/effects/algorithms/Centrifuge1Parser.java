@@ -38,7 +38,7 @@ public class Centrifuge1Parser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         centrifuge1.setLevel(level);
 
-        centrifuge1.setRate1(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        centrifuge1.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
         centrifuge1.setPulseWidth1(pulseWidth1);
@@ -49,7 +49,7 @@ public class Centrifuge1Parser {
         int depth1 = (byte) (effectParameters[14] + effectParameters[15] * 16);
         centrifuge1.setDepth1(depth1);
 
-        centrifuge1.setRate2(RateParser.parse(Arrays.copyOfRange(effectParameters, 16, 22)));
+        centrifuge1.setRate2(RateParser.parse("Rate2", Arrays.copyOfRange(effectParameters, 16, 22)));
 
         int pulseWidth2 = (byte) (effectParameters[22] + effectParameters[23] * 16);
         centrifuge1.setPulseWidth2(pulseWidth2);

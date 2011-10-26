@@ -31,8 +31,8 @@ public class VolumeDual extends Chorus {
         "Mix", "Level", "Vol-L", "Vol-R"
     };
 
-    private GenericValue<Integer> volumeLeft = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> volumeRight = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> volumeLeft = new GenericValue<Integer>("Vol-L", "%", 0, 100);
+    private GenericValue<Integer> volumeRight = new GenericValue<Integer>("Vol-R", "%", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {

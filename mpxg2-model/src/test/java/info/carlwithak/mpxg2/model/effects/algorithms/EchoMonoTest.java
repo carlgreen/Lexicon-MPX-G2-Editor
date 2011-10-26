@@ -55,7 +55,8 @@ public class EchoMonoTest {
 
     @Test
     public void testTime() {
-        echoMono.setTime(new FrequencyRate(0.5));
+        echoMono.setTime(new FrequencyRate("Time", 0.5));
+        assertEquals("Time", echoMono.getParameter(2).getName());
         assertEquals("Hz", echoMono.getParameter(2).getUnit());
     }
 

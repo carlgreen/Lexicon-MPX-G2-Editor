@@ -39,7 +39,7 @@ public class DelayMonoParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         delayMono.setLevel(level);
 
-        delayMono.setTime(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        delayMono.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
         delayMono.setFeedback(feedback);

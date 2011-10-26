@@ -55,7 +55,8 @@ public class FlangerMonoTest {
 
     @Test
     public void testRate() {
-        flangerMono.setRate(new FrequencyRate(0.5));
+        flangerMono.setRate(new FrequencyRate("Rate", 0.5));
+        assertEquals("Rate", flangerMono.getParameter(2).getName());
         assertEquals("Hz", flangerMono.getParameter(2).getUnit());
     }
 

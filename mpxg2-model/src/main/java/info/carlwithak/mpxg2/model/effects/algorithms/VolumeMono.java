@@ -31,7 +31,7 @@ public class VolumeMono extends Effect {
         "Mix", "Level", "Volume"
     };
 
-    private GenericValue<Integer> volume = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> volume = new GenericValue<Integer>("Volume", "%", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {

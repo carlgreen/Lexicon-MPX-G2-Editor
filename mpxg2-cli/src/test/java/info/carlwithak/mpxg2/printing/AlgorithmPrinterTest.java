@@ -110,7 +110,7 @@ public class AlgorithmPrinterTest {
         AutoPan autoPan = new AutoPan();
         autoPan.setMix(100);
         autoPan.setLevel(0);
-        autoPan.setRate(new FrequencyRate(1.0));
+        autoPan.setRate(new FrequencyRate("Rate", 1.0));
         autoPan.setPulseWidth(50);
         autoPan.setDepth(100);
         autoPan.setPhase(3);
@@ -126,7 +126,7 @@ public class AlgorithmPrinterTest {
         TremoloMono tremoloMono = new TremoloMono();
         tremoloMono.setMix(100);
         tremoloMono.setLevel(6);
-        tremoloMono.setRate(new BeatRate(7, 4));
+        tremoloMono.setRate(new BeatRate("Rate", 7, 4));
         tremoloMono.setPulseWidth(30);
         tremoloMono.setDepth(100);
 
@@ -331,10 +331,10 @@ public class AlgorithmPrinterTest {
         ChorusAlgorithm chorus = new ChorusAlgorithm();
         chorus.setMix(100);
         chorus.setLevel(0);
-        chorus.setRate1(new FrequencyRate(0.62));
+        chorus.setRate1(new FrequencyRate("Rate1", 0.62));
         chorus.setPulseWidth1(45);
         chorus.setDepth1(30);
-        chorus.setRate2(new FrequencyRate(0.56));
+        chorus.setRate2(new FrequencyRate("Rate2", 0.56));
         chorus.setPulseWidth2(54);
         chorus.setDepth2(0);
         chorus.setResonance1(-19);
@@ -382,7 +382,7 @@ public class AlgorithmPrinterTest {
         FlangerStereo flangerStereo = new FlangerStereo();
         flangerStereo.setMix(67);
         flangerStereo.setLevel(1);
-        flangerStereo.setRate(new BeatRate(1, 4));
+        flangerStereo.setRate(new BeatRate("Rate", 1, 4));
         flangerStereo.setPulseWidth(50);
         flangerStereo.setDepth(62);
         flangerStereo.setPhase(1);
@@ -400,9 +400,9 @@ public class AlgorithmPrinterTest {
         RotaryCab rotaryCab = new RotaryCab();
         rotaryCab.setMix(100);
         rotaryCab.setLevel(4);
-        rotaryCab.setRate1(new FrequencyRate(5.73));
+        rotaryCab.setRate1(new FrequencyRate("Rate1", 5.73));
         rotaryCab.setDepth1(43);
-        rotaryCab.setRate2(new FrequencyRate(5.73));
+        rotaryCab.setRate2(new FrequencyRate("Rate2", 5.73));
         rotaryCab.setDepth2(36);
         rotaryCab.setResonance(0);
         rotaryCab.setWidth(100);
@@ -419,11 +419,11 @@ public class AlgorithmPrinterTest {
         Centrifuge1 centrifuge1 = new Centrifuge1();
         centrifuge1.setMix(100);
         centrifuge1.setLevel(6);
-        centrifuge1.setRate1(new FrequencyRate(0.6));
+        centrifuge1.setRate1(new FrequencyRate("Rate1", 0.6));
         centrifuge1.setPulseWidth1(45);
         centrifuge1.setSync1(120);
         centrifuge1.setDepth1(100);
-        centrifuge1.setRate2(new FrequencyRate(1.0));
+        centrifuge1.setRate2(new FrequencyRate("Rate2", 1.0));
         centrifuge1.setPulseWidth2(100);
         centrifuge1.setSync2(-120);
         centrifuge1.setDepth2(43);
@@ -440,7 +440,7 @@ public class AlgorithmPrinterTest {
         DelayMono delayMono = new DelayMono();
         delayMono.setMix(10);
         delayMono.setLevel(0);
-        delayMono.setTime(new BeatRate(4, 3));
+        delayMono.setTime(new BeatRate("Time", 4, 3));
         delayMono.setFeedback(10);
         delayMono.setInsert(3);
         delayMono.setClear(false);
@@ -456,7 +456,7 @@ public class AlgorithmPrinterTest {
         DelayStereo delayStereo = new DelayStereo();
         delayStereo.setMix(20);
         delayStereo.setLevel(0);
-        delayStereo.setTime(new BeatRate(2, 4));
+        delayStereo.setTime(new BeatRate("Time", 2, 4));
         delayStereo.setFeedback(20);
         delayStereo.setInsert(3);
         delayStereo.setClear(false);
@@ -472,8 +472,8 @@ public class AlgorithmPrinterTest {
         DelayDual delayDual = new DelayDual();
         delayDual.setMix(25);
         delayDual.setLevel(0);
-        delayDual.setTime1(new BeatRate(3, 4));
-        delayDual.setTime2(new BeatRate(4, 3));
+        delayDual.setTime1(new BeatRate("Time1", 3, 4));
+        delayDual.setTime2(new BeatRate("Time2", 4, 3));
         delayDual.setLevel1(0);
         delayDual.setLevel2(0);
         delayDual.setPan1(-50);
@@ -496,7 +496,7 @@ public class AlgorithmPrinterTest {
         EchoMono echoMono = new EchoMono();
         echoMono.setMix(6);
         echoMono.setLevel(1);
-        echoMono.setTime(new BeatRate(4, 4));
+        echoMono.setTime(new BeatRate("Time", 4, 4));
         echoMono.setFeedback(-15);
         echoMono.setInsert(3);
         echoMono.setDamp(20);
@@ -513,8 +513,8 @@ public class AlgorithmPrinterTest {
         EchoDual echoDual = new EchoDual();
         echoDual.setMix(2);
         echoDual.setLevel(1);
-        echoDual.setTime1(new BeatRate(4, 4));
-        echoDual.setTime2(new BeatRate(2, 1));
+        echoDual.setTime1(new BeatRate("Time1", 4, 4));
+        echoDual.setTime2(new BeatRate("Time2", 2, 1));
         echoDual.setLevel1(0);
         echoDual.setLevel2(0);
         echoDual.setFeedback1(1);

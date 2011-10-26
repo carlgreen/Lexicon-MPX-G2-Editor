@@ -31,17 +31,17 @@ public class Preamp extends Gain {
         "Lo", "Mid", "Hi", "InLvL", "LoCut", "Feel", "Drive", "Tone", "Bass", "Trebl", "Level"
     };
 
-    private GenericValue<Integer> lo = new GenericValue<Integer>("dB", -25, 25);
-    private GenericValue<Integer> mid = new GenericValue<Integer>("dB", -25, 25);
-    private GenericValue<Integer> hi = new GenericValue<Integer>("dB", 0, 50);
-    private GenericValue<Integer> inLevel = new GenericValue<Integer>("dB", -64, 0);
-    private GenericValue<Integer> loCut = new GenericValue<Integer>("", 0, 20);
-    private GenericValue<Integer> feel = new GenericValue<Integer>("", 0, 64);
-    private GenericValue<Integer> drive = new GenericValue<Integer>("", 0, 60);
-    private GenericValue<Integer> tone = new GenericValue<Integer>("", 0, 35);
-    private GenericValue<Integer> bass = new GenericValue<Integer>("dB", -25, 25);
-    private GenericValue<Integer> treble = new GenericValue<Integer>("dB", -25, 25);
-    private GenericValue<Integer> level = new GenericValue<Integer>("dB", 0, 64);
+    private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
+    private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 25);
+    private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 50);
+    private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvL", "dB", -64, 0);
+    private GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "", 0, 20);
+    private GenericValue<Integer> feel = new GenericValue<Integer>("Feel", "", 0, 64);
+    private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 60);
+    private GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 35);
+    private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "dB", -25, 25);
+    private GenericValue<Integer> treble = new GenericValue<Integer>("Trebl", "dB", -25, 25);
+    private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
 
     @Override
     public String getParameterName(final int destinationParameter) {

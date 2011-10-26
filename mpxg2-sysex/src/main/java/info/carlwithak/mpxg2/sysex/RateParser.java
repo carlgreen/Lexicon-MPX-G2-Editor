@@ -29,7 +29,7 @@ import info.carlwithak.mpxg2.model.TapMsRate;
  */
 public class RateParser {
 
-    public static Rate parse(byte[] rateBytes) throws ParseException {
+    public static Rate parse(final String name, byte[] rateBytes) throws ParseException {
         Rate rate;
         int rateUnit = rateBytes[4] + rateBytes[5] * 16;
         if (rateUnit == 0) {
@@ -37,17 +37,17 @@ public class RateParser {
             for (int i = 0; i < 4; i++) {
                 frequency += (rateBytes[i] * Math.pow(16, i));
             }
-            rate = new FrequencyRate(frequency / 100.0);
+            rate = new FrequencyRate(name, frequency / 100.0);
         } else if (rateUnit == 1) {
             int cycles = rateBytes[0] + rateBytes[1] * 16;
             int beats = rateBytes[2] + rateBytes[3] * 16;
-            rate = new BeatRate(cycles, beats);
+            rate = new BeatRate(name, cycles, beats);
         } else if (rateUnit == 4) {
             int ms = 0;
             for (int i = 0; i < 4; i++) {
                 ms += (rateBytes[i] * Math.pow(16, i));
             }
-            rate = new TapMsRate(ms);
+            rate = new TapMsRate(name, ms);
         } else {
             throw new ParseException("Unexpected rate unit: " + rateUnit);
         }

@@ -55,7 +55,8 @@ public class FlangerStereoTest {
 
     @Test
     public void testRate() {
-        flangerStereo.setRate(new FrequencyRate(0.5));
+        flangerStereo.setRate(new FrequencyRate("Rate", 0.5));
+        assertEquals("Rate", flangerStereo.getParameter(2).getName());
         assertEquals("Hz", flangerStereo.getParameter(2).getUnit());
     }
 

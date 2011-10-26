@@ -38,7 +38,7 @@ public class FlangerMonoParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         flangerMono.setLevel(level);
 
-        flangerMono.setRate(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        flangerMono.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
         flangerMono.setPulseWidth(pulseWidth);

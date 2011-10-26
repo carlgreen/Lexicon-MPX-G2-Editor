@@ -31,11 +31,11 @@ public class Wah2 extends Effect {
         "Mix", "Level", "Sweep", "Bass", "Resp", "Gain"
     };
 
-    private GenericValue<Integer> sweep = new GenericValue<Integer>("", 0, 100);
-    private GenericValue<Integer> bass = new GenericValue<Integer>("", 0, 100);
+    private GenericValue<Integer> sweep = new GenericValue<Integer>("Sweep", "", 0, 100);
+    private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "", 0, 100);
     private int type;
-    private GenericValue<Integer> response = new GenericValue<Integer>("", 0, 100);
-    private GenericValue<Integer> gain = new GenericValue<Integer>("dB", -72, 24);
+    private GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
+    private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
 
     @Override
     public String getParameterName(final int destinationParameter) {

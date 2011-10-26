@@ -23,12 +23,20 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class BeatRate implements Rate {
+    // TODO surely this has no place here
+    private String name;
     private int measures;
     private int beats;
 
-    public BeatRate(final int measures, final int beats) {
+    public BeatRate(final String name, final int measures, final int beats) {
+        this.name = name;
         this.measures = measures;
         this.beats = beats;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

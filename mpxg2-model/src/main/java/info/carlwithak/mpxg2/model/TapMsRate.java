@@ -22,10 +22,18 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class TapMsRate implements Rate {
+    // TODO surely this has no place here
+    private String name;
     private int ms;
 
-    public TapMsRate(final int ms) {
+    public TapMsRate(final String name, final int ms) {
+        this.name = name;
         this.ms = ms;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

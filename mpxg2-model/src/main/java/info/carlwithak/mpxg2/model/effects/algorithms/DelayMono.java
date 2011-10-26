@@ -33,9 +33,9 @@ public class DelayMono extends Delay {
     };
 
     private Rate time;
-    private GenericValue<Integer> feedback = new GenericValue<Integer>("%", -100, 100);
+    private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
     private int insert;
-    private GenericValue<Boolean> clear = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
 
     @Override
     public String getParameterName(final int destinationParameter) {

@@ -31,8 +31,8 @@ public class Panner extends Effect {
         "Mix", "Level", "Pan1", "Pan2"
     };
 
-    private GenericValue<Integer> pan1 = new GenericValue<Integer>("LCR", -50, 50);
-    private GenericValue<Integer> pan2 = new GenericValue<Integer>("LCR", -50, 50);
+    private GenericValue<Integer> pan1 = new GenericValue<Integer>("Pan1", "LCR", -50, 50);
+    private GenericValue<Integer> pan2 = new GenericValue<Integer>("Pan2", "LCR", -50, 50);
 
     @Override
     public String getParameterName(final int destinationParameter) {

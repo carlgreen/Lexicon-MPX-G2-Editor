@@ -37,9 +37,19 @@ public class TapMsRateTest {
 
     @Before
     public void setup() {
-        tapMsRate = new TapMsRate(100);
-        sameTapMsRate = new TapMsRate(100);
-        differentTapMsRate = new TapMsRate(200);
+        tapMsRate = new TapMsRate("a", 100);
+        sameTapMsRate = new TapMsRate("b", 100);
+        differentTapMsRate = new TapMsRate("c", 200);
+    }
+
+    @Test
+    public void testGetName() {
+        assertEquals("a", tapMsRate.getName());
+    }
+
+    @Test
+    public void testGetUnit() {
+        assertEquals("ms", tapMsRate.getUnit());
     }
 
     @Test

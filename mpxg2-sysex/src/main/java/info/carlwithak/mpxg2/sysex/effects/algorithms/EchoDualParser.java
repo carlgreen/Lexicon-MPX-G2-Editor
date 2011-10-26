@@ -39,9 +39,9 @@ public class EchoDualParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         echoDual.setLevel(level);
 
-        echoDual.setTime1(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        echoDual.setTime1(RateParser.parse("Time1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
-        echoDual.setTime2(RateParser.parse(Arrays.copyOfRange(effectParameters, 10, 16)));
+        echoDual.setTime2(RateParser.parse("Time2", Arrays.copyOfRange(effectParameters, 10, 16)));
 
         int level1 = effectParameters[16] + effectParameters[17] * 16;
         echoDual.setLevel1(level1);

@@ -55,7 +55,8 @@ public class DelayMonoTest {
 
     @Test
     public void testTime() {
-        delayMono.setTime(new FrequencyRate(0.5));
+        delayMono.setTime(new FrequencyRate("Time", 0.5));
+        assertEquals("Time", delayMono.getParameter(2).getName());
         assertEquals("Hz", delayMono.getParameter(2).getUnit());
     }
 

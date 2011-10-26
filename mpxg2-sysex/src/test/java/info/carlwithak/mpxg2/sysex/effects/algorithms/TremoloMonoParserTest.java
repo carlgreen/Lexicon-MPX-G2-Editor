@@ -36,7 +36,7 @@ public class TremoloMonoParserTest {
         TremoloMono tremoloMono = TremoloMonoParser.parse(effectParameters);
         assertEquals(100, tremoloMono.getMix());
         assertEquals(6, tremoloMono.getLevel());
-        assertEquals(new BeatRate(7, 4), tremoloMono.getRate());
+        assertEquals(new BeatRate("Rate", 7, 4), tremoloMono.getRate());
         assertEquals(30, tremoloMono.getPulseWidth());
         assertEquals(100, tremoloMono.getDepth());
     }

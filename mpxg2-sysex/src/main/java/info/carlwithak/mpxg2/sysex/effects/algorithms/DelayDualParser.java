@@ -39,9 +39,9 @@ public class DelayDualParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         delayDual.setLevel(level);
 
-        delayDual.setTime1(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        delayDual.setTime1(RateParser.parse("Time1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
-        delayDual.setTime2(RateParser.parse(Arrays.copyOfRange(effectParameters, 10, 16)));
+        delayDual.setTime2(RateParser.parse("Time2", Arrays.copyOfRange(effectParameters, 10, 16)));
 
         int level1 = effectParameters[16] + effectParameters[17] * 16;
         delayDual.setLevel1(level1);

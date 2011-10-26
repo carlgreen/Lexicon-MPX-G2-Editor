@@ -36,9 +36,19 @@ public class BeatRateTest {
 
     @Before
     public void setup() {
-        beatRate = new BeatRate(1, 2);
-        sameBeatRate = new BeatRate(1, 2);
-        differentBeatRate = new BeatRate(2, 1);
+        beatRate = new BeatRate("a", 1, 2);
+        sameBeatRate = new BeatRate("b", 1, 2);
+        differentBeatRate = new BeatRate("c", 2, 1);
+    }
+
+    @Test
+    public void testGetName() {
+        assertEquals("a", beatRate.getName());
+    }
+
+    @Test
+    public void testGetUnit() {
+        assertEquals(":", beatRate.getUnit());
     }
 
     @Test

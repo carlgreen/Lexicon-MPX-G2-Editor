@@ -38,8 +38,8 @@ public class EchoDualParserTest {
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
         assertEquals(2, echoDual.getMix());
         assertEquals(1, echoDual.getLevel());
-        assertEquals(new BeatRate(4, 4), echoDual.getTime1());
-        assertEquals(new BeatRate(2, 1), echoDual.getTime2());
+        assertEquals(new BeatRate("Time1", 4, 4), echoDual.getTime1());
+        assertEquals(new BeatRate("Time2", 2, 1), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
         assertEquals(0, echoDual.getLevel2());
         assertEquals(1, echoDual.getFeedback1());
@@ -56,8 +56,8 @@ public class EchoDualParserTest {
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
         assertEquals(100, echoDual.getMix());
         assertEquals(5, echoDual.getLevel());
-        assertEquals(new BeatRate(1, 1), echoDual.getTime1());
-        assertEquals(new BeatRate(3, 2), echoDual.getTime2());
+        assertEquals(new BeatRate("Time1", 1, 1), echoDual.getTime1());
+        assertEquals(new BeatRate("Time2", 3, 2), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
         assertEquals(0, echoDual.getLevel2());
         assertEquals(-10, echoDual.getFeedback1());
@@ -74,8 +74,8 @@ public class EchoDualParserTest {
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
         assertEquals(30, echoDual.getMix());
         assertEquals(0, echoDual.getLevel());
-        assertEquals(new BeatRate(1, 1), echoDual.getTime1());
-        assertEquals(new BeatRate(4, 3), echoDual.getTime2());
+        assertEquals(new BeatRate("Time1", 1, 1), echoDual.getTime1());
+        assertEquals(new BeatRate("Time2", 4, 3), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
         assertEquals(0, echoDual.getLevel2());
         assertEquals(-10, echoDual.getFeedback1());
@@ -92,8 +92,8 @@ public class EchoDualParserTest {
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
         assertEquals(18, echoDual.getMix());
         assertEquals(0, echoDual.getLevel());
-        assertEquals(new TapMsRate(200), echoDual.getTime1());
-        assertEquals(new TapMsRate(300), echoDual.getTime2());
+        assertEquals(new TapMsRate("Time1", 200), echoDual.getTime1());
+        assertEquals(new TapMsRate("Time2", 300), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
         assertEquals(0, echoDual.getLevel2());
         assertEquals(-15, echoDual.getFeedback1());

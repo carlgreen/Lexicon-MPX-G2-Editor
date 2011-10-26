@@ -33,11 +33,11 @@ public class FlangerStereo extends Chorus {
     };
 
     private Rate rate;
-    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> depth = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> phase = new GenericValue<Integer>("°", 0, 3);
-    private GenericValue<Integer> resonance = new GenericValue<Integer>("", -100, 100);
-    private GenericValue<Integer> blend = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
+    private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "°", 0, 3);
+    private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    private GenericValue<Integer> blend = new GenericValue<Integer>("Blend", "%", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {

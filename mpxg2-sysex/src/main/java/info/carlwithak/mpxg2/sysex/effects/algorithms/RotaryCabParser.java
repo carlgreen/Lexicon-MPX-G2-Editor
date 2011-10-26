@@ -38,12 +38,12 @@ public class RotaryCabParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         rotaryCab.setLevel(level);
 
-        rotaryCab.setRate1(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        rotaryCab.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int depth1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
         rotaryCab.setDepth1(depth1);
 
-        rotaryCab.setRate2(RateParser.parse(Arrays.copyOfRange(effectParameters, 12, 18)));
+        rotaryCab.setRate2(RateParser.parse("Rate2", Arrays.copyOfRange(effectParameters, 12, 18)));
 
         int depth2 = (byte) (effectParameters[18] + effectParameters[19] * 16);
         rotaryCab.setDepth2(depth2);

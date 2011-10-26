@@ -36,10 +36,10 @@ public class ChorusParserTest {
         ChorusAlgorithm chorus = ChorusParser.parse(effectParameters);
         assertEquals(100, chorus.getMix());
         assertEquals(0, chorus.getLevel());
-        assertEquals(new FrequencyRate(0.62), chorus.getRate1());
+        assertEquals(new FrequencyRate("Rate1", 0.62), chorus.getRate1());
         assertEquals(45, chorus.getPulseWidth1());
         assertEquals(30, chorus.getDepth1());
-        assertEquals(new FrequencyRate(0.56), chorus.getRate2());
+        assertEquals(new FrequencyRate("Rate2", 0.56), chorus.getRate2());
         assertEquals(54, chorus.getPulseWidth2());
         assertEquals(0, chorus.getDepth2());
         assertEquals(-19, chorus.getResonance1());

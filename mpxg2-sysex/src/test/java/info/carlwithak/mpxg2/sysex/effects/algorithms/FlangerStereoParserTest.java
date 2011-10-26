@@ -36,7 +36,7 @@ public class FlangerStereoParserTest {
         FlangerStereo flangerStereo = FlangerStereoParser.parse(effectParameters);
         assertEquals(67, flangerStereo.getMix());
         assertEquals(1, flangerStereo.getLevel());
-        assertEquals(new BeatRate(1, 4), flangerStereo.getRate());
+        assertEquals(new BeatRate("Rate", 1, 4), flangerStereo.getRate());
         assertEquals(50, flangerStereo.getPulseWidth());
         assertEquals(62, flangerStereo.getDepth());
         assertEquals(1, flangerStereo.getPhase()); // 0, 90, 180, 270 degrees

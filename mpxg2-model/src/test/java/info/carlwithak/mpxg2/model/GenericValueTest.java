@@ -32,7 +32,12 @@ public class GenericValueTest {
 
     @Before
     public void setUp() {
-        genericValue = new GenericValue<String>("a unit", "c", "f");
+        genericValue = new GenericValue<String>("some name", "a unit", "c", "f");
+    }
+
+    @Test
+    public void testGetName() {
+        assertEquals("some name", genericValue.getName());
     }
 
     @Test

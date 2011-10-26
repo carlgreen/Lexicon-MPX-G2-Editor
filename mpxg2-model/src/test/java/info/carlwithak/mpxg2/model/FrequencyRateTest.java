@@ -36,9 +36,14 @@ public class FrequencyRateTest {
 
     @Before
     public void setup() {
-        freqRate = new FrequencyRate(1.0);
-        sameFreqRate = new FrequencyRate(1.0);
-        differentFreqRate = new FrequencyRate(2.0);
+        freqRate = new FrequencyRate("a", 1.0);
+        sameFreqRate = new FrequencyRate("b", 1.0);
+        differentFreqRate = new FrequencyRate("c", 2.0);
+    }
+
+    @Test
+    public void testGetName() {
+        assertEquals("a", freqRate.getName());
     }
 
     @Test

@@ -37,7 +37,7 @@ public class DelayStereoParserTest {
         DelayStereo delayStereo = DelayStereoParser.parse(effectParameters);
         assertEquals(20, delayStereo.getMix());
         assertEquals(0, delayStereo.getLevel());
-        assertEquals(new BeatRate(2, 4), delayStereo.getTime());
+        assertEquals(new BeatRate("Time", 2, 4), delayStereo.getTime());
         assertEquals(20, delayStereo.getFeedback());
         assertEquals(3, delayStereo.getInsert());
         assertFalse(delayStereo.isClear());

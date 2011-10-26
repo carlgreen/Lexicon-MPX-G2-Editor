@@ -37,7 +37,7 @@ public class DelayMonoParserTest {
         DelayMono delayMono = DelayMonoParser.parse(effectParameters);
         assertEquals(10, delayMono.getMix());
         assertEquals(0, delayMono.getLevel());
-        assertEquals(new BeatRate(4, 3), delayMono.getTime());
+        assertEquals(new BeatRate("Time", 4, 3), delayMono.getTime());
         assertEquals(10, delayMono.getFeedback());
         assertEquals(3, delayMono.getInsert());
         assertFalse(delayMono.isClear());

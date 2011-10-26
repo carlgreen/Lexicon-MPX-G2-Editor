@@ -31,10 +31,10 @@ public class ShiftDual extends Effect {
         "Mix", "Level", "Tune1", "Tune2", "Glide"
     };
 
-    private GenericValue<Integer> tune1 = new GenericValue<Integer>("", -4800, 1900); // cents
+    private GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", -4800, 1900); // cents
     private int optimize;
-    private GenericValue<Integer> tune2 = new GenericValue<Integer>("", -4800, 1900); // cents
-    private GenericValue<Boolean> glide = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", -4800, 1900); // cents
+    private GenericValue<Boolean> glide = new GenericValue<Boolean>("Glide", "OnOff", false, true);
 
     @Override
     public String getParameterName(final int destinationParameter) {

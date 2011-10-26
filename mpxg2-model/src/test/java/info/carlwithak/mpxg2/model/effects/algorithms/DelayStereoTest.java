@@ -55,7 +55,8 @@ public class DelayStereoTest {
 
     @Test
     public void testTime() {
-        delayStereo.setTime(new FrequencyRate(0.5));
+        delayStereo.setTime(new FrequencyRate("Time", 0.5));
+        assertEquals("Time", delayStereo.getParameter(2).getName());
         assertEquals("Hz", delayStereo.getParameter(2).getUnit());
     }
 

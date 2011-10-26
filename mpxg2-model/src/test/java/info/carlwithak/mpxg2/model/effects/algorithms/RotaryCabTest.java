@@ -55,7 +55,8 @@ public class RotaryCabTest {
 
     @Test
     public void testRate1() {
-        rotaryCab.setRate1(new FrequencyRate(0.5));
+        rotaryCab.setRate1(new FrequencyRate("Rate1", 0.5));
+        assertEquals("Rate1", rotaryCab.getParameter(2).getName());
         assertEquals("Hz", rotaryCab.getParameter(2).getUnit());
     }
 
@@ -66,7 +67,8 @@ public class RotaryCabTest {
 
     @Test
     public void testRate2() {
-        rotaryCab.setRate2(new FrequencyRate(0.5));
+        rotaryCab.setRate2(new FrequencyRate("Rate2", 0.5));
+        assertEquals("Rate2", rotaryCab.getParameter(4).getName());
         assertEquals("Hz", rotaryCab.getParameter(4).getUnit());
     }
 

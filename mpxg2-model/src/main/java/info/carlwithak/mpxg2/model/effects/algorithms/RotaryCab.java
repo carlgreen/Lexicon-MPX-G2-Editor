@@ -33,12 +33,12 @@ public class RotaryCab extends Chorus {
     };
 
     private Rate rate1;
-    private GenericValue<Integer> depth1 = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
     private Rate rate2;
-    private GenericValue<Integer> depth2 = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> resonance = new GenericValue<Integer>("", -100, 100);
-    private GenericValue<Integer> width = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> balance = new GenericValue<Integer>("", -50, 50);
+    private GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
+    private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    private GenericValue<Integer> width = new GenericValue<Integer>("Width", "%", 0, 100);
+    private GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
 
     @Override
     public String getParameterName(final int destinationParameter) {

@@ -31,15 +31,15 @@ public class Overdrive extends Gain {
         "Lo", "Mid", "Hi", "InLvL", "LoCut", "Feel", "Drive", "Tone", "Level"
     };
 
-    private GenericValue<Integer> lo = new GenericValue<Integer>("dB", -15, 15);
-    private GenericValue<Integer> mid = new GenericValue<Integer>("dB", -15, 15);
-    private GenericValue<Integer> hi = new GenericValue<Integer>("dB", 0, 15);
-    private GenericValue<Integer> inLevel = new GenericValue<Integer>("dB", -64, 0);
-    private GenericValue<Integer> loCut = new GenericValue<Integer>("", 0, 20);
-    private GenericValue<Integer> feel = new GenericValue<Integer>("", 0, 64);
-    private GenericValue<Integer> drive = new GenericValue<Integer>("", 0, 40);
-    private GenericValue<Integer> tone = new GenericValue<Integer>("", 0, 25);
-    private GenericValue<Integer> level = new GenericValue<Integer>("dB", 0, 64);
+    private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -15, 15);
+    private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -15, 15);
+    private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 15);
+    private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvL", "dB", -64, 0);
+    private GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "", 0, 20);
+    private GenericValue<Integer> feel = new GenericValue<Integer>("Feel", "", 0, 64);
+    private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 40);
+    private GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
+    private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
 
     @Override
     public String getParameterName(final int destinationParameter) {

@@ -55,13 +55,15 @@ public class EchoDualTest {
 
     @Test
     public void testTime1() {
-        echoDual.setTime1(new FrequencyRate(0.5));
+        echoDual.setTime1(new FrequencyRate("Time1", 0.5));
+        assertEquals("Time1", echoDual.getParameter(2).getName());
         assertEquals("Hz", echoDual.getParameter(2).getUnit());
     }
 
     @Test
     public void testTime2() {
-        echoDual.setTime2(new FrequencyRate(0.5));
+        echoDual.setTime2(new FrequencyRate("Time2", 0.5));
+        assertEquals("Time2", echoDual.getParameter(3).getName());
         assertEquals("Hz", echoDual.getParameter(3).getUnit());
     }
 

@@ -29,18 +29,18 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  */
 public class Centrifuge1 extends Chorus {
     private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Rate1", "PW 1", "Sync", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res"
+        "Mix", "Level", "Rate1", "PW 1", "Sync", "Dpth1", "Rate2", "PW 2", "Sync2", "Dpth2", "Res"
     };
 
     private Rate rate1;
-    private GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> sync1 = new GenericValue<Integer>("", -120, 120);
-    private GenericValue<Integer> depth1 = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("PW 1", "%", 0, 100);
+    private GenericValue<Integer> sync1 = new GenericValue<Integer>("Sync1", "", -120, 120);
+    private GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
     private Rate rate2;
-    private GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> sync2 = new GenericValue<Integer>("", -120, 120);
-    private GenericValue<Integer> depth2 = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> resonance = new GenericValue<Integer>("", -100, 100);
+    private GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 2", "%", 0, 100);
+    private GenericValue<Integer> sync2 = new GenericValue<Integer>("Sync2", "", -120, 120);
+    private GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
+    private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {

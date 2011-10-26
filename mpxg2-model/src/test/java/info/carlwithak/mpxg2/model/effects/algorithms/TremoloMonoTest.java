@@ -55,7 +55,8 @@ public class TremoloMonoTest {
 
     @Test
     public void testRate() {
-        tremoloMono.setRate(new FrequencyRate(0.5));
+        tremoloMono.setRate(new FrequencyRate("Rate", 0.5));
+        assertEquals("Rate", tremoloMono.getParameter(2).getName());
         assertEquals("Hz", tremoloMono.getParameter(2).getUnit());
     }
 

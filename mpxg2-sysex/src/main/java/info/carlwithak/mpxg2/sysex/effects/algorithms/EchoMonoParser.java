@@ -39,7 +39,7 @@ public class EchoMonoParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         echoMono.setLevel(level);
 
-        echoMono.setTime(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        echoMono.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
         echoMono.setFeedback(feedback);

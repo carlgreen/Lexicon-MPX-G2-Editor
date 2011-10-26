@@ -36,11 +36,11 @@ public class Centrifuge1ParserTest {
         Centrifuge1 centrifuge1 = Centrifuge1Parser.parse(effectParameters);
         assertEquals(100, centrifuge1.getMix());
         assertEquals(6, centrifuge1.getLevel());
-        assertEquals(new FrequencyRate(0.60), centrifuge1.getRate1());
+        assertEquals(new FrequencyRate("Rate1", 0.60), centrifuge1.getRate1());
         assertEquals(45, centrifuge1.getPulseWidth1());
         assertEquals(120, centrifuge1.getSync1());
         assertEquals(100, centrifuge1.getDepth1());
-        assertEquals(new FrequencyRate(1.00), centrifuge1.getRate2());
+        assertEquals(new FrequencyRate("Rate2", 1.00), centrifuge1.getRate2());
         assertEquals(100, centrifuge1.getPulseWidth2());
         assertEquals(-120, centrifuge1.getSync2());
         assertEquals(43, centrifuge1.getDepth2());

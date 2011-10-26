@@ -34,14 +34,14 @@ public class EchoDual extends Delay {
 
     private Rate time1;
     private Rate time2;
-    private GenericValue<Integer> level1 = new GenericValue<Integer>("dB", -90, 6);
-    private GenericValue<Integer> level2 = new GenericValue<Integer>("dB", -90, 6);
-    private GenericValue<Integer> feedback1 = new GenericValue<Integer>("%", -100, 100);
+    private GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
+    private GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
+    private GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
     private int insert;
-    private GenericValue<Integer> feedback2 = new GenericValue<Integer>("%", -100, 100);
-    private GenericValue<Integer> damp1 = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> damp2 = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Boolean> clear = new GenericValue<Boolean>("OnOff", false, true);
+    private GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
+    private GenericValue<Integer> damp1 = new GenericValue<Integer>("Damp1", "%", 0, 100);
+    private GenericValue<Integer> damp2 = new GenericValue<Integer>("Damp2", "%", 0, 100);
+    private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
 
     @Override
     public String getParameterName(final int destinationParameter) {

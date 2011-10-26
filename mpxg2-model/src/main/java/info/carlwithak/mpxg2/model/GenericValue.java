@@ -22,15 +22,21 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class GenericValue<T> implements Parameter {
+    private final String name;
     private final String unit;
     private final T minValue;
     private final T maxValue;
     private T value;
 
-    public GenericValue(final String unit, final T minValue, final T maxValue) {
+    public GenericValue(final String name, final String unit, final T minValue, final T maxValue) {
+        this.name = name;
         this.unit = unit;
         this.minValue = minValue;
         this.maxValue = maxValue;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

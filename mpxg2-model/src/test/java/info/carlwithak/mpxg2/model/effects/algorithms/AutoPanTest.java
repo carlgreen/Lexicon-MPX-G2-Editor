@@ -55,7 +55,8 @@ public class AutoPanTest {
 
     @Test
     public void testRate() {
-        autoPan.setRate(new FrequencyRate(0.5));
+        autoPan.setRate(new FrequencyRate("Rate", 0.5));
+        assertEquals("Rate", autoPan.getParameter(2).getName());
         assertEquals("Hz", autoPan.getParameter(2).getUnit());
     }
 

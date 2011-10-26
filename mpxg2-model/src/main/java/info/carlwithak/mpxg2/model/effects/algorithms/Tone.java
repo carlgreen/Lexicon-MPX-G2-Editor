@@ -31,11 +31,11 @@ public class Tone extends Gain {
         "Lo", "Mid", "Hi", "InLvl", "Level"
     };
 
-    private GenericValue<Integer> lo = new GenericValue<Integer>("dB", -25, 25);
-    private GenericValue<Integer> mid = new GenericValue<Integer>("dB", -25, 12);
-    private GenericValue<Integer> hi = new GenericValue<Integer>("dB", -25, -25);
-    private GenericValue<Integer> inLevel = new GenericValue<Integer>("dB", -64, 0);
-    private GenericValue<Integer> level = new GenericValue<Integer>("dB", 0, 64);
+    private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
+    private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 12);
+    private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", -25, -25);
+    private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
+    private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
 
     @Override
     public String getParameterName(final int destinationParameter) {

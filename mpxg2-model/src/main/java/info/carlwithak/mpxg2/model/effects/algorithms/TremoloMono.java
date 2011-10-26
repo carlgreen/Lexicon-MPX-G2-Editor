@@ -33,8 +33,8 @@ public class TremoloMono extends Effect {
     };
 
     private Rate rate;
-    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("%", 0, 100);
-    private GenericValue<Integer> depth = new GenericValue<Integer>("%", 0, 100);
+    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {

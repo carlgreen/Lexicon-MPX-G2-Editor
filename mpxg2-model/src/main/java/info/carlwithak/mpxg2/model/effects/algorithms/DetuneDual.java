@@ -31,10 +31,10 @@ public class DetuneDual extends Effect {
         "Mix", "Level", "Tune1", "Tune2", "P Dly"
     };
 
-    private GenericValue<Integer> tune1 = new GenericValue<Integer>("", 0, 100);
+    private GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", 0, 100);
     private int optimize;
-    private GenericValue<Integer> tune2 = new GenericValue<Integer>("", 0, 100);
-    private GenericValue<Integer> preDelay = new GenericValue<Integer>("ms", 0, 70);
+    private GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", 0, 100);
+    private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 70);
 
     @Override
     public String getParameterName(final int destinationParameter) {

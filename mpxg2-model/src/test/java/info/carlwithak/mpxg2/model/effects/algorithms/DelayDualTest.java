@@ -55,13 +55,15 @@ public class DelayDualTest {
 
     @Test
     public void testTime1() {
-        delayDual.setTime1(new FrequencyRate(0.5));
+        delayDual.setTime1(new FrequencyRate("Time1", 0.5));
+        assertEquals("Time1", delayDual.getParameter(2).getName());
         assertEquals("Hz", delayDual.getParameter(2).getUnit());
     }
 
     @Test
     public void testTime2() {
-        delayDual.setTime2(new FrequencyRate(0.5));
+        delayDual.setTime2(new FrequencyRate("Time2", 0.5));
+        assertEquals("Time2", delayDual.getParameter(3).getName());
         assertEquals("Hz", delayDual.getParameter(3).getUnit());
     }
 

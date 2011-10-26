@@ -31,7 +31,7 @@ public class UniVybe extends Effect {
         "Mix", "Level", "Rate"
     };
 
-    private GenericValue<Integer> rate = new GenericValue<Integer>("", 0, 100);
+    private GenericValue<Integer> rate = new GenericValue<Integer>("Rate", "", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {

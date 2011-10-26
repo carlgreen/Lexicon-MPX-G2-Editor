@@ -37,8 +37,8 @@ public class DelayDualParserTest {
         DelayDual delayDual = DelayDualParser.parse(effectParameters);
         assertEquals(25, delayDual.getMix());
         assertEquals(0, delayDual.getLevel());
-        assertEquals(new BeatRate(3, 4), delayDual.getTime1());
-        assertEquals(new BeatRate(4, 3), delayDual.getTime2());
+        assertEquals(new BeatRate("Time1", 3, 4), delayDual.getTime1());
+        assertEquals(new BeatRate("Time2", 4, 3), delayDual.getTime2());
         assertEquals(0, delayDual.getLevel1());
         assertEquals(0, delayDual.getLevel2());
         assertEquals(-50, delayDual.getPan1());
@@ -57,8 +57,8 @@ public class DelayDualParserTest {
         DelayDual delayDual = DelayDualParser.parse(effectParameters);
         assertEquals(19, delayDual.getMix());
         assertEquals(0, delayDual.getLevel());
-        assertEquals(new BeatRate(1, 1), delayDual.getTime1());
-        assertEquals(new BeatRate(4, 3), delayDual.getTime2());
+        assertEquals(new BeatRate("Time1", 1, 1), delayDual.getTime1());
+        assertEquals(new BeatRate("Time2", 4, 3), delayDual.getTime2());
         assertEquals(0, delayDual.getLevel1());
         assertEquals(0, delayDual.getLevel2());
         assertEquals(-50, delayDual.getPan1());

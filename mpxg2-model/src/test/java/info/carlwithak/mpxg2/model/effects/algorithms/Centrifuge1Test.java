@@ -55,7 +55,8 @@ public class Centrifuge1Test {
 
     @Test
     public void testRate1() {
-        centrifuge1.setRate1(new FrequencyRate(0.5));
+        centrifuge1.setRate1(new FrequencyRate("Rate1", 0.5));
+        assertEquals("Rate1", centrifuge1.getParameter(2).getName());
         assertEquals("Hz", centrifuge1.getParameter(2).getUnit());
     }
 
@@ -76,7 +77,8 @@ public class Centrifuge1Test {
 
     @Test
     public void testRate2() {
-        centrifuge1.setRate2(new FrequencyRate(0.5));
+        centrifuge1.setRate2(new FrequencyRate("Rate2", 0.5));
+        assertEquals("Rate2", centrifuge1.getParameter(6).getName());
         assertEquals("Hz", centrifuge1.getParameter(6).getUnit());
     }
 

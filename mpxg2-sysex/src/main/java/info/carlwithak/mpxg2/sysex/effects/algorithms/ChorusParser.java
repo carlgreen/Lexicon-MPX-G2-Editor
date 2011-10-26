@@ -38,7 +38,7 @@ public class ChorusParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         chorus.setLevel(level);
 
-        chorus.setRate1(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        chorus.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
         chorus.setPulseWidth1(pulseWidth1);
@@ -46,7 +46,7 @@ public class ChorusParser {
         int depth1 = (byte) (effectParameters[12] + effectParameters[13] * 16);
         chorus.setDepth1(depth1);
 
-        chorus.setRate2(RateParser.parse(Arrays.copyOfRange(effectParameters, 14, 20)));
+        chorus.setRate2(RateParser.parse("Rate2", Arrays.copyOfRange(effectParameters, 14, 20)));
 
         int pulseWidth2 = (byte) (effectParameters[20] + effectParameters[21] * 16);
         chorus.setPulseWidth2(pulseWidth2);

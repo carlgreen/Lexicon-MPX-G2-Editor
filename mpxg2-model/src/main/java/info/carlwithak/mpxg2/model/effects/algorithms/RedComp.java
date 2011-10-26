@@ -30,7 +30,7 @@ public class RedComp extends Effect {
         "Mix", "Level", "Sense"
     };
 
-    private GenericValue<Integer> sensitivity = new GenericValue<Integer>("", 0, 100);
+    private GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
 
     @Override
     public String getParameterName(final int destinationParameter) {

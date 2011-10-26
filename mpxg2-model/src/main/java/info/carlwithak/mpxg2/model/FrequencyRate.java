@@ -23,10 +23,18 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class FrequencyRate implements Rate {
+    // TODO surely this has no place here
+    private String name;
     private double frequency;
 
-    public FrequencyRate(final double frequency) {
+    public FrequencyRate(final String name, final double frequency) {
+        this.name = name;
         this.frequency = frequency;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

@@ -23,5 +23,7 @@ package info.carlwithak.mpxg2.model;
  */
 public interface Parameter {
 
+    String getName();
+
     String getUnit();
 }

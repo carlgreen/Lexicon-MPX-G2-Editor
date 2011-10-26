@@ -31,10 +31,10 @@ public class PedalWah1 extends Effect {
         "Mix", "Level", "Bass", "Resp", "Gain"
     };
 
-    private GenericValue<Integer> bass = new GenericValue<Integer>("", 0, 100);
+    private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "", 0, 100);
     private int type;
-    private GenericValue<Integer> response = new GenericValue<Integer>("", 0, 100);
-    private GenericValue<Integer> gain = new GenericValue<Integer>("dB", -72, 24);
+    private GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
+    private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
 
     @Override
     public String getParameterName(final int destinationParameter) {

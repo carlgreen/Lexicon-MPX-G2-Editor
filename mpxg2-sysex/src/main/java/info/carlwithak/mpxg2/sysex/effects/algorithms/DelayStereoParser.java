@@ -39,7 +39,7 @@ public class DelayStereoParser {
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
         delayStereo.setLevel(level);
 
-        delayStereo.setTime(RateParser.parse(Arrays.copyOfRange(effectParameters, 4, 10)));
+        delayStereo.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
         delayStereo.setFeedback(feedback);

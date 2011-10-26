@@ -31,9 +31,9 @@ public class DetuneMono extends Chorus {
         "Mix", "Level", "Tune", "P Dly"
     };
 
-    private GenericValue<Integer> tune = new GenericValue<Integer>("", 0, 100);
+    private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", 0, 100);
     private int optimize;
-    private GenericValue<Integer> preDelay = new GenericValue<Integer>("ms", 0, 35);
+    private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 35);
 
     @Override
     public String getParameterName(final int destinationParameter) {

@@ -36,7 +36,7 @@ public class FlangerMonoParserTest {
         FlangerMono flangerMono = FlangerMonoParser.parse(effectParameters);
         assertEquals(100, flangerMono.getMix());
         assertEquals(0, flangerMono.getLevel());
-        assertEquals(new FrequencyRate(0.05), flangerMono.getRate());
+        assertEquals(new FrequencyRate("Rate", 0.05), flangerMono.getRate());
         assertEquals(20, flangerMono.getPulseWidth());
         assertEquals(30, flangerMono.getDepth());
         assertEquals(-60, flangerMono.getResonance());

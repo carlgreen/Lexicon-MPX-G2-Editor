@@ -55,7 +55,8 @@ public class ChorusAlgorithmTest {
 
     @Test
     public void testRate1() {
-        chorus.setRate1(new FrequencyRate(0.5));
+        chorus.setRate1(new FrequencyRate("Rate1", 0.5));
+        assertEquals("Rate1", chorus.getParameter(2).getName());
         assertEquals("Hz", chorus.getParameter(2).getUnit());
     }
 
@@ -71,7 +72,8 @@ public class ChorusAlgorithmTest {
 
     @Test
     public void testRate2() {
-        chorus.setRate2(new FrequencyRate(0.5));
+        chorus.setRate2(new FrequencyRate("Rate2", 0.5));
+        assertEquals("Rate2", chorus.getParameter(5).getName());
         assertEquals("Hz", chorus.getParameter(5).getUnit());
     }
 
