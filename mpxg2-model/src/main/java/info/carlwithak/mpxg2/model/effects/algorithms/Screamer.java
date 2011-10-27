@@ -27,21 +27,12 @@ import info.carlwithak.mpxg2.model.effects.Gain;
  * @author Carl Green
  */
 public class Screamer extends Gain {
-    private static final String[] PARAMETER_NAMES = {
-        "Lo", "Mid", "Hi", "Drive", "Tone", "Level"
-    };
-
     private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -5, 5);
     private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -5, 5);
     private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 5);
     private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 40);
     private GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
     private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

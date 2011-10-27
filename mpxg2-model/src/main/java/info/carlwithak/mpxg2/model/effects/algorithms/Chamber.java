@@ -27,10 +27,6 @@ import info.carlwithak.mpxg2.model.effects.Reverb;
  * @author Carl Green
  */
 public class Chamber extends Reverb {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Size", "Link", "Diff", "P Dly", "Bass", "Decay", "Xovr", "Rt HC", "Shape", "Spred"
-    };
-
     private GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
     private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
@@ -41,11 +37,6 @@ public class Chamber extends Reverb {
     private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 525 - 24700
     private GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
     private GenericValue<Integer> spred = new GenericValue<Integer>("Spred", "", 0, 255);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

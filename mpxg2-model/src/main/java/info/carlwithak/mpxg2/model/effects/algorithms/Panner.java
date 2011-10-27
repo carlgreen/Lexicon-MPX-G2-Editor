@@ -27,17 +27,8 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class Panner extends Effect {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Pan1", "Pan2"
-    };
-
     private GenericValue<Integer> pan1 = new GenericValue<Integer>("Pan1", "LCR", -50, 50);
     private GenericValue<Integer> pan2 = new GenericValue<Integer>("Pan2", "LCR", -50, 50);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

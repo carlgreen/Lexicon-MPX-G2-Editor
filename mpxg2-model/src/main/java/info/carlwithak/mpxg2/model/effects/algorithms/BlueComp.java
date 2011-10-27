@@ -26,20 +26,11 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class BlueComp extends Effect {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Sense", "Thrsh", "Gain", "ATime", "RTime"
-    };
-
     private GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "dB", -90, 6);
     private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -72, 24);
     private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -83, 0);
     private GenericValue<Integer> attackTime = new GenericValue<Integer>("ATime", "ms", 0, 2000);
     private GenericValue<Integer> releaseTime = new GenericValue<Integer>("RTime", "ms", 0, 2000);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

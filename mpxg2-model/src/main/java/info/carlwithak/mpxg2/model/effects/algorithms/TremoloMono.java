@@ -28,18 +28,9 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class TremoloMono extends Effect {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Rate", "PW", "Depth"
-    };
-
     private Rate rate;
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

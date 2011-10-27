@@ -27,10 +27,6 @@ import info.carlwithak.mpxg2.model.effects.Reverb;
  * @author Carl Green
  */
 public class Ambience extends Reverb {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Size", "Link", "Diff", "P Dly", "DTime", "D Lvl", "Rt HC"
-    };
-
     private GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 76.0);
     private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
@@ -38,11 +34,6 @@ public class Ambience extends Reverb {
     private GenericValue<Integer> delayTime = new GenericValue<Integer>("DTime", "s", 0, 255); // 0.07 - 65.4
     private GenericValue<Integer> delayLevel = new GenericValue<Integer>("D Lvl", "dB", -48, 0);
     private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 500 - 21200
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

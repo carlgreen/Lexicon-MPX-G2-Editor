@@ -27,18 +27,9 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class DetuneMono extends Chorus {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Tune", "P Dly"
-    };
-
     private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", 0, 100);
     private int optimize;
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 35);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

@@ -25,8 +25,5 @@ import info.carlwithak.mpxg2.model.Parameter;
  * @author Carl Green
  */
 public abstract class Gain {
-    @Deprecated
-    public abstract String getParameterName(final int destinationParameter);
-
     public abstract Parameter getParameter(final int parameterIndex);
 }

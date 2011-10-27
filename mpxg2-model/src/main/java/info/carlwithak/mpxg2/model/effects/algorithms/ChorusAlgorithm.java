@@ -28,10 +28,6 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class ChorusAlgorithm extends Chorus {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Rate1", "PW 1", "Dpth1", "Rate2", "PW 2", "Dpth2", "Res 1", "Res 2"
-    };
-
     private Rate rate1;
     private GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("PW 1", "%", 0, 100);
     private GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
@@ -40,11 +36,6 @@ public class ChorusAlgorithm extends Chorus {
     private GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
     private GenericValue<Integer> resonance1 = new GenericValue<Integer>("Res 1", "", -100, 100);
     private GenericValue<Integer> resonance2 = new GenericValue<Integer>("Res 2", "", -100, 100);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

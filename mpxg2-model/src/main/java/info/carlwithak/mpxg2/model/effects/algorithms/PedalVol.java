@@ -25,13 +25,4 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class PedalVol extends Chorus {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level"
-    };
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
-
 }

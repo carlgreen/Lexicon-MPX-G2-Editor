@@ -27,16 +27,7 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class UniVybe extends Effect {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Rate"
-    };
-
     private GenericValue<Integer> rate = new GenericValue<Integer>("Rate", "", 0, 100);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

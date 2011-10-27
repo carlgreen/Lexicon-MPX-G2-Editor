@@ -27,20 +27,11 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class SweepFilter extends Effect {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Fc", "FRes", "Mod", "Scale", "Pan"
-    };
-
     private GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
     private GenericValue<Integer> fRes = new GenericValue<Integer>("FRes", "", 1, 100);
     private GenericValue<Integer> mod = new GenericValue<Integer>("Mod", "Hz", 20, 20000);
     private GenericValue<Integer> scale = new GenericValue<Integer>("Scale", "%", -100, 100);
     private GenericValue<Integer> pan = new GenericValue<Integer>("Pan", "LCR", -50, 50);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

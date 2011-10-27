@@ -27,19 +27,10 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class PedalWah1 extends Effect {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level", "Bass", "Resp", "Gain"
-    };
-
     private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "", 0, 100);
     private int type;
     private GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
     private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

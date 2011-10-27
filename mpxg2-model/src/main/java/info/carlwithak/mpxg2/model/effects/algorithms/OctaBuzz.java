@@ -25,13 +25,4 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class OctaBuzz extends Effect {
-    private static final String[] PARAMETER_NAMES = {
-        "Mix", "Level"
-    };
-
-    @Override
-    public String getParameterName(final int destinationParameter) {
-        return PARAMETER_NAMES[destinationParameter];
-    }
-
 }
