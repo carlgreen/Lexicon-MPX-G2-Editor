@@ -450,35 +450,28 @@ public class ProgramPrinter {
         Parameter parameter;
         switch (patch.getDestinationEffectIndex()) {
             case 0:
-                patchParameter = program.getEffect1().getParameterName(patch.getDestinationParameter());
                 parameter = program.getEffect1().getParameter(patch.getDestinationParameter());
                 break;
             case 1:
-                patchParameter = program.getEffect2().getParameterName(patch.getDestinationParameter());
                 parameter = program.getEffect2().getParameter(patch.getDestinationParameter());
                 break;
             case 2:
-                patchParameter = program.getChorus().getParameterName(patch.getDestinationParameter());
                 parameter = program.getChorus().getParameter(patch.getDestinationParameter());
                 break;
             case 3:
-                patchParameter = program.getDelay().getParameterName(patch.getDestinationParameter());
                 parameter = program.getDelay().getParameter(patch.getDestinationParameter());
                 break;
             case 4:
-                patchParameter = program.getReverb().getParameterName(patch.getDestinationParameter());
                 parameter = program.getReverb().getParameter(patch.getDestinationParameter());
                 break;
             default:
-                patchParameter = null;
                 parameter = null;
         }
-        if (patchParameter == null) {
-            patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
-        }
         if (parameter == null) {
+            patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
             patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         } else {
+            patchParameter = parameter.getName();
             patchDestinationUnit = parameter.getUnit();
             if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
                 patchDestinationUnit = '-' + patchDestinationUnit;
