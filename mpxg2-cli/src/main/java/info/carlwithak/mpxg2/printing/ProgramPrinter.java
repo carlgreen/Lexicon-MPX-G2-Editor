@@ -411,29 +411,7 @@ public class ProgramPrinter {
         StringBuilder sb = new StringBuilder();
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
-        Parameter effectParameter;
-        switch (program.getSoftRowEffectType(i)) {
-            case 0:
-                effectParameter = program.getEffect1().getParameter(program.getSoftRowParameter(i));
-                break;
-            case 1:
-                effectParameter = program.getEffect2().getParameter(program.getSoftRowParameter(i));
-                break;
-            case 2:
-                effectParameter = program.getChorus().getParameter(program.getSoftRowParameter(i));
-                break;
-            case 3:
-                effectParameter = program.getDelay().getParameter(program.getSoftRowParameter(i));
-                break;
-            case 4:
-                effectParameter = program.getReverb().getParameter(program.getSoftRowParameter(i));
-                break;
-            case 6:
-                effectParameter = program.getGain().getParameter(program.getSoftRowParameter(i));
-                break;
-            default:
-                effectParameter = null;
-        }
+        Parameter effectParameter = getEffectParameter(program, program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
         String effectParameterName;
         if (effectParameter == null) {
             effectParameterName = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
@@ -450,26 +428,7 @@ public class ProgramPrinter {
         }
         String patchParameter;
         String patchDestinationUnit;
-        Parameter parameter;
-        switch (patch.getDestinationEffectIndex()) {
-            case 0:
-                parameter = program.getEffect1().getParameter(patch.getDestinationParameter());
-                break;
-            case 1:
-                parameter = program.getEffect2().getParameter(patch.getDestinationParameter());
-                break;
-            case 2:
-                parameter = program.getChorus().getParameter(patch.getDestinationParameter());
-                break;
-            case 3:
-                parameter = program.getDelay().getParameter(patch.getDestinationParameter());
-                break;
-            case 4:
-                parameter = program.getReverb().getParameter(patch.getDestinationParameter());
-                break;
-            default:
-                parameter = null;
-        }
+        Parameter parameter = getEffectParameter(program, patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         if (parameter == null) {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
             patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
@@ -577,6 +536,33 @@ public class ProgramPrinter {
         }
         sb.append("\n");
         return sb.toString();
+    }
+
+    private static Parameter getEffectParameter(final Program program, final int effectIndex, final int parameterIndex) {
+        Parameter parameter;
+        switch (effectIndex) {
+            case 0:
+                parameter = program.getEffect1().getParameter(parameterIndex);
+                break;
+            case 1:
+                parameter = program.getEffect2().getParameter(parameterIndex);
+                break;
+            case 2:
+                parameter = program.getChorus().getParameter(parameterIndex);
+                break;
+            case 3:
+                parameter = program.getDelay().getParameter(parameterIndex);
+                break;
+            case 4:
+                parameter = program.getReverb().getParameter(parameterIndex);
+                break;
+            case 6:
+                parameter = program.getGain().getParameter(parameterIndex);
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
     }
 
     private static String effect1AlgorithmToString(final int effect1Algorithm) {
