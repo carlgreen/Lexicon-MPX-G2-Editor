@@ -25,4 +25,10 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class PedalVol extends Chorus {
+    private static final String NAME = "Pedal Vol";
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 }

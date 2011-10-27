@@ -28,6 +28,8 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class ChorusAlgorithm extends Chorus {
+    private static final String NAME = "Chorus";
+
     private Rate rate1;
     private GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("PW 1", "%", 0, 100);
     private GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
@@ -36,6 +38,11 @@ public class ChorusAlgorithm extends Chorus {
     private GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
     private GenericValue<Integer> resonance1 = new GenericValue<Integer>("Res 1", "", -100, 100);
     private GenericValue<Integer> resonance2 = new GenericValue<Integer>("Res 2", "", -100, 100);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

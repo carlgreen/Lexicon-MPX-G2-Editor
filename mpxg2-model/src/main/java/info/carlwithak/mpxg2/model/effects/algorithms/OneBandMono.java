@@ -27,10 +27,17 @@ import info.carlwithak.mpxg2.model.effects.Eq;
  * @author Carl Green
  */
 public class OneBandMono extends Eq {
+    private static final String NAME = "1-Band (M)";
+
     private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
     private GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
     private GenericValue<Double> q = new GenericValue<Double>("Q", "", 0.1, 10.0);
     private GenericValue<Integer> mode = new GenericValue<Integer>("Mode", "", 0, 2);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

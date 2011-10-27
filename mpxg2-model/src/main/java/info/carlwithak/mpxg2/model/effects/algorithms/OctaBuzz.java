@@ -25,4 +25,10 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class OctaBuzz extends Effect {
+    private static final String NAME = "OctaBuzz";
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 }

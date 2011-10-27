@@ -27,7 +27,14 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class VolumeMono extends Effect {
+    private static final String NAME = "Volume (M)";
+
     private GenericValue<Integer> volume = new GenericValue<Integer>("Volume", "%", 0, 100);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

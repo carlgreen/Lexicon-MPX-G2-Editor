@@ -28,6 +28,8 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  * @author Carl Green
  */
 public class DelayDual extends Delay {
+    private static final String NAME = "Delay (D)";
+
     private Rate time1;
     private Rate time2;
     private GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
@@ -40,6 +42,11 @@ public class DelayDual extends Delay {
     private GenericValue<Integer> xFbk1 = new GenericValue<Integer>("XFbk1", "%", -100, 100);
     private GenericValue<Integer> xFbk2 = new GenericValue<Integer>("XFbk2", "%", -100, 100);
     private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

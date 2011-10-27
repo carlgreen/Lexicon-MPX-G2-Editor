@@ -27,6 +27,8 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  * @author Carl Green
  */
 public class JamMan extends Delay {
+    private static final String NAME = "JamMan";
+
     private GenericValue<Integer> size = new GenericValue<Integer>("Size", "ms", 0, 20000);
     private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
     private int insert;
@@ -35,6 +37,11 @@ public class JamMan extends Delay {
     private GenericValue<Boolean> replace = new GenericValue<Boolean>("Replc", "OnOff", false, true);
     private GenericValue<Boolean> delay = new GenericValue<Boolean>("Delay", "OnOff", false, true);
     private GenericValue<Boolean> mute = new GenericValue<Boolean>("MuteS", "OnOff", false, true);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

@@ -28,6 +28,8 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  * @author Carl Green
  */
 public class RotaryCab extends Chorus {
+    private static final String NAME = "Rotary Cab";
+
     private Rate rate1;
     private GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
     private Rate rate2;
@@ -35,6 +37,11 @@ public class RotaryCab extends Chorus {
     private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
     private GenericValue<Integer> width = new GenericValue<Integer>("Width", "%", 0, 100);
     private GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

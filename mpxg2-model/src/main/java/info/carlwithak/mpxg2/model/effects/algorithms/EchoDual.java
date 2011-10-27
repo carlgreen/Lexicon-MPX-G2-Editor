@@ -28,6 +28,8 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  * @author Carl Green
  */
 public class EchoDual extends Delay {
+    private static final String NAME = "Echo (D)";
+
     private Rate time1;
     private Rate time2;
     private GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
@@ -38,6 +40,11 @@ public class EchoDual extends Delay {
     private GenericValue<Integer> damp1 = new GenericValue<Integer>("Damp1", "%", 0, 100);
     private GenericValue<Integer> damp2 = new GenericValue<Integer>("Damp2", "%", 0, 100);
     private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

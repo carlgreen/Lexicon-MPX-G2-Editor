@@ -27,6 +27,8 @@ import info.carlwithak.mpxg2.model.effects.Gain;
  * @author Carl Green
  */
 public class Overdrive extends Gain {
+    private static final String NAME = "Overdrive";
+
     private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -15, 15);
     private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -15, 15);
     private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 15);
@@ -36,6 +38,11 @@ public class Overdrive extends Gain {
     private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 40);
     private GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
     private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

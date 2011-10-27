@@ -27,7 +27,14 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class OrangePhase extends Effect {
+    private static final String NAME = "OrangePhase";
+
     private GenericValue<Integer> rate = new GenericValue<Integer>("Rate", "", 0, 100);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

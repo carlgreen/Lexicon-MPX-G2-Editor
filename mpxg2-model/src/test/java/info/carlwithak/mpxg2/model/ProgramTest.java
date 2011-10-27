@@ -89,7 +89,7 @@ public class ProgramTest {
      */
     @Test
     public void testEq() {
-        Eq eq = new Eq();
+        Eq eq = mock(Eq.class);
         assertNull(program.getEq());
         program.setEq(eq);
         assertEquals(eq, program.getEq());

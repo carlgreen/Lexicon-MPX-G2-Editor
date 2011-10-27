@@ -28,10 +28,17 @@ import info.carlwithak.mpxg2.model.effects.Delay;
  * @author Carl Green
  */
 public class DelayMono extends Delay {
+    private static final String NAME = "Delay (M)";
+
     private Rate time;
     private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
     private int insert;
     private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

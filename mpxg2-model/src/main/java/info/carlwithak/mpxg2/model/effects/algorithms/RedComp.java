@@ -26,7 +26,14 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class RedComp extends Effect {
+    private static final String NAME = "Red Comp";
+
     private GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

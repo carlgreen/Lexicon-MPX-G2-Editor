@@ -27,6 +27,8 @@ import info.carlwithak.mpxg2.model.effects.Gain;
  * @author Carl Green
  */
 public class Preamp extends Gain {
+    private static final String NAME = "Preamp";
+
     private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
     private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 25);
     private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 50);
@@ -38,6 +40,11 @@ public class Preamp extends Gain {
     private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "dB", -25, 25);
     private GenericValue<Integer> treble = new GenericValue<Integer>("Trebl", "dB", -25, 25);
     private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

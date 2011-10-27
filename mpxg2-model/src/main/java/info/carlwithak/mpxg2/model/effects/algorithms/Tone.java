@@ -27,11 +27,18 @@ import info.carlwithak.mpxg2.model.effects.Gain;
  * @author Carl Green
  */
 public class Tone extends Gain {
+    private static final String NAME = "Tone";
+
     private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
     private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 12);
     private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", -25, -25);
     private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
     private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

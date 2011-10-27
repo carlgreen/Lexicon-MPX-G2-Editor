@@ -25,5 +25,11 @@ import info.carlwithak.mpxg2.model.effects.Eq;
  * @author Carl Green
  */
 public class EqPedalVol extends Eq {
+    private static final String NAME = "Pedal Vol";
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
 }

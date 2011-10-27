@@ -27,10 +27,17 @@ import info.carlwithak.mpxg2.model.effects.Effect;
  * @author Carl Green
  */
 public class ShiftDual extends Effect {
+    private static final String NAME = "Shift (D)";
+
     private GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", -4800, 1900); // cents
     private int optimize;
     private GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", -4800, 1900); // cents
     private GenericValue<Boolean> glide = new GenericValue<Boolean>("Glide", "OnOff", false, true);
+
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
