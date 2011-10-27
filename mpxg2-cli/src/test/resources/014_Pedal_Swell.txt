@@ -67,7 +67,7 @@ Pedal Swell
     1: Gain Drive
     2: Gain Tone
     3: Gain Level
-    4: Effect 1 Rate1
+    4: Effect 1 Rate
     5: Effect 2 Sense
     6: Chorus Mix
     7: Delay Mix
