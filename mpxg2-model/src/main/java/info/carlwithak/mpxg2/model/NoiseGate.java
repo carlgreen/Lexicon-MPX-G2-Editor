@@ -26,7 +26,7 @@ package info.carlwithak.mpxg2.model;
  */
 public class NoiseGate {
     private int enable;
-    private int send;
+    private boolean send;
     private int threshold;
     private int attenuation;
     private int offset;
@@ -43,11 +43,11 @@ public class NoiseGate {
         this.enable = enable;
     }
 
-    public int getSend() {
+    public boolean isSend() {
         return send;
     }
 
-    public void setSend(int send) {
+    public void setSend(boolean send) {
         this.send = send;
     }
 

@@ -709,7 +709,7 @@ public class SysexParser {
         noiseGate.setRTime(noiseGateRTime);
         noiseGate.setAttenuation(-1 * (256 - noiseGateAttenuation));
         noiseGate.setDelay(noiseGateDelay);
-        noiseGate.setSend(noiseGateSend);
+        noiseGate.setSend(Util.parseBoolean(noiseGateSend));
         program.setNoiseGate(noiseGate);
 
         // Bypass State

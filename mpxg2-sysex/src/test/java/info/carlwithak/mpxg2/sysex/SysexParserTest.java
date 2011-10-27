@@ -541,7 +541,7 @@ public class SysexParserTest {
         assertEquals(64, program.getEnvelopeGeneratorResponse());
 
         assertEquals(0, program.getNoiseGate().getEnable());
-        assertEquals(0, program.getNoiseGate().getSend());
+        assertFalse(program.getNoiseGate().isSend());
         assertEquals(-83, program.getNoiseGate().getThreshold());
         assertEquals(-80, program.getNoiseGate().getAttenuation());
         assertEquals(-3, program.getNoiseGate().getOffset());
@@ -773,7 +773,7 @@ public class SysexParserTest {
         assertEquals(64, program.getEnvelopeGeneratorResponse());
 
         assertEquals(0, program.getNoiseGate().getEnable());
-        assertEquals(0, program.getNoiseGate().getSend());
+        assertFalse(program.getNoiseGate().isSend());
         assertEquals(-83, program.getNoiseGate().getThreshold());
         assertEquals(-80, program.getNoiseGate().getAttenuation());
         assertEquals(-3, program.getNoiseGate().getOffset());
@@ -1032,7 +1032,7 @@ public class SysexParserTest {
         assertEquals(64, program.getEnvelopeGeneratorResponse());
 
         assertEquals(1, program.getNoiseGate().getEnable());
-        assertEquals(1, program.getNoiseGate().getSend());
+        assertTrue(program.getNoiseGate().isSend());
         assertEquals(-83, program.getNoiseGate().getThreshold());
         assertEquals(-85, program.getNoiseGate().getAttenuation());
         assertEquals(-3, program.getNoiseGate().getOffset());
@@ -1438,7 +1438,7 @@ public class SysexParserTest {
         NoiseGate noiseGate = SysexParser.parsePrograms(preset).get(0).getNoiseGate();
 
         assertEquals(2, noiseGate.getEnable());
-        assertEquals(1, noiseGate.getSend());
+        assertTrue(noiseGate.isSend());
         assertEquals(-31, noiseGate.getThreshold());
         assertEquals(-7, noiseGate.getAttenuation());
         assertEquals(-11, noiseGate.getOffset());
