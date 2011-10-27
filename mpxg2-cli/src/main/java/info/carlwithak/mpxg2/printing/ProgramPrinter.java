@@ -127,6 +127,10 @@ public class ProgramPrinter {
         }
     };
 
+    private final static String[] LFO_MODES = {
+        "Off", "On", "Latch", "Gate", "Once", "Reset", "RTrig"
+    };
+
     private final static String[] LFO_ON_SOURCES = {
         "none"
     };
@@ -314,7 +318,7 @@ public class ProgramPrinter {
         sb.append("      High: ").append(program.getKnobHigh()).append("\n");
         sb.append("      Name: ").append(program.getKnobName()).append("\n");
         sb.append("    LFO 1:\n");
-        sb.append("      Mode: ").append(onOffToString(program.getLfo1Mode())).append("\n");
+        sb.append("      Mode: ").append(lfoModeToString(program.getLfo1Mode())).append("\n");
         sb.append("      Rate: ").append(RatePrinter.print(program.getLfo1Rate())).append("\n");
         sb.append("      PW: ").append(program.getLfo1PulseWidth()).append("%\n");
         sb.append("      Phase: ").append(program.getLfo1Phase()).append("\n");
@@ -322,7 +326,7 @@ public class ProgramPrinter {
         sb.append("      On Level: ").append(program.getLfo1OnLevel()).append("\n");
         sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo1OnSource())).append("\n");
         sb.append("    LFO 2:\n");
-        sb.append("      Mode: ").append(onOffToString(program.getLfo2Mode())).append("\n");
+        sb.append("      Mode: ").append(lfoModeToString(program.getLfo2Mode())).append("\n");
         sb.append("      Rate: ").append(RatePrinter.print(program.getLfo2Rate())).append("\n");
         sb.append("      PW: ").append(program.getLfo2PulseWidth()).append("%\n");
         sb.append("      Phase: ").append(program.getLfo2Phase()).append("\n");
@@ -623,6 +627,13 @@ public class ProgramPrinter {
     private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
         // remove 7 from effectType as the 7 algorithm types take care of themselves
         return EFFECT_PARAMETER_UNITS[effectType - 7][effectParameter];
+    }
+
+    private static String lfoModeToString(final int lfoMode) throws PrintException {
+        if (lfoMode < 0 || lfoMode >= LFO_MODES.length) {
+            throw new PrintException("LFO Mode out of range");
+        }
+        return LFO_MODES[lfoMode];
     }
 
     private static String lfoOnSourceToString(final int lfoOnSource) {
