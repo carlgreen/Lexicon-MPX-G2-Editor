@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import java.text.DecimalFormat;
@@ -455,90 +456,55 @@ public class ProgramPrinter {
         String patchEffect = patch.getDestinationEffectName();
         sb.append("      Destination: ").append(patchEffect).append(" ").append(patchParameter).append("\n");
         sb.append("        Min: ");
-        if ("Decay".equals(patchParameter)) {
-            boolean link;
-            double size;
-            if (program.getReverb() instanceof Chamber) {
-                Chamber chamber = (Chamber) program.getReverb();
-                link = chamber.isLink();
-                size = chamber.getSize();
-            } else if (program.getReverb() instanceof Plate) {
-                Plate plate = (Plate) program.getReverb();
-                link = plate.isLink();
-                size = plate.getSize();
-            } else {
-                throw new PrintException("Cannot determine reverb decay for class " + program.getReverb().getClass());
-            }
-            String reverbDecay = Util.reverbDecayToString(link, size, patch.getDestinationMin());
-            sb.append(reverbDecay).append("s\n");
-        } else if(":".equals(patchDestinationUnit)) {
-            sb.append(patch.getDestinationMin() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMin() / 0x100).append("\n");
-        } else if ("Hz".equals(patchDestinationUnit)) {
-            sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
-        } else if ("100Hz".equals(patchDestinationUnit)) {
-            sb.append(DECIMAL_2DP.format(patch.getDestinationMin() / 100.0)).append(patchDestinationUnit.substring(3)).append("\n");
-        } else if ("OnOff".equals(patchDestinationUnit)) {
-            sb.append(Util.onOffToString(patch.getDestinationMin())).append("\n");
-        } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
-            sb.append(signInt(patch.getDestinationMin())).append(patchDestinationUnit).append("\n");
-        } else {
-            // TODO better way of determining what sign is necessary
-            if (patchDestinationUnit.indexOf("-") == 0) {
-                String newPatchDestinationUnit = patchDestinationUnit.substring(1);
-                sb.append(signInt(patch.getDestinationMin())).append(newPatchDestinationUnit).append("\n");
-            } else {
-                sb.append(patch.getDestinationMin()).append(patchDestinationUnit).append("\n");
-            }
-        }
+        sb.append(formatPatchParameter(patchDestinationUnit, patch.getDestinationMin(), patchEffect, patchParameter, program.getReverb())).append("\n");
         sb.append("        Mid: ");
         if (patch.getDestinationMid() == 0x8000) {
             sb.append("--\n");
         } else {
-            if ("Hz".equals(patchDestinationUnit)) {
-                sb.append(patch.getDestinationMid()).append(patchDestinationUnit).append("\n");
-            } else if ("100Hz".equals(patchDestinationUnit)) {
-                sb.append(DECIMAL_2DP.format(patch.getDestinationMid() / 100.0)).append(patchDestinationUnit.substring(3)).append("\n");
-            } else {
-                sb.append(patch.getDestinationMid()).append("\n");
-            }
+            sb.append(formatPatchParameter(patchDestinationUnit, patch.getDestinationMid(), patchEffect, patchParameter, program.getReverb())).append("\n");
         }
         sb.append("        Max: ");
+        sb.append(formatPatchParameter(patchDestinationUnit, patch.getDestinationMax(), patchEffect, patchParameter, program.getReverb())).append("\n");
+        return sb.toString();
+    }
+
+    private static String formatPatchParameter(final String patchDestinationUnit, final int parameterValue, final String patchEffect, final String patchParameter, final Reverb reverb) throws PrintException {
+        StringBuilder sb = new StringBuilder();
         if ("Decay".equals(patchParameter)) {
             boolean link;
             double size;
-            if (program.getReverb() instanceof Chamber) {
-                Chamber chamber = (Chamber) program.getReverb();
+            if (reverb instanceof Chamber) {
+                Chamber chamber = (Chamber) reverb;
                 link = chamber.isLink();
                 size = chamber.getSize();
-            } else if (program.getReverb() instanceof Plate) {
-                Plate plate = (Plate) program.getReverb();
+            } else if (reverb instanceof Plate) {
+                Plate plate = (Plate) reverb;
                 link = plate.isLink();
                 size = plate.getSize();
             } else {
-                throw new PrintException("Cannot determine reverb decay for class " + program.getReverb().getClass());
+                throw new PrintException("Cannot determine reverb decay for class " + reverb.getClass());
             }
-            String reverbDecay = Util.reverbDecayToString(link, size, patch.getDestinationMax());
+            String reverbDecay = Util.reverbDecayToString(link, size, parameterValue);
             sb.append(reverbDecay).append("s");
-        } else if (":".equals(patchDestinationUnit)) {
-            sb.append(patch.getDestinationMax() % 0x100).append(patchDestinationUnit).append(patch.getDestinationMax() / 0x100);
+        } else if(":".equals(patchDestinationUnit)) {
+            sb.append(parameterValue % 0x100).append(patchDestinationUnit).append(parameterValue / 0x100);
         } else if ("Hz".equals(patchDestinationUnit)) {
-            sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
+            sb.append(parameterValue).append(patchDestinationUnit);
         } else if ("100Hz".equals(patchDestinationUnit)) {
-            sb.append(DECIMAL_2DP.format(patch.getDestinationMax() / 100.0)).append(patchDestinationUnit.substring(3));
+            sb.append(DECIMAL_2DP.format(parameterValue / 100.0)).append(patchDestinationUnit.substring(3));
         } else if ("OnOff".equals(patchDestinationUnit)) {
-            sb.append(Util.onOffToString(patch.getDestinationMax()));
+            sb.append(Util.onOffToString(parameterValue));
         } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
-            sb.append(signInt(patch.getDestinationMax())).append(patchDestinationUnit);
+            sb.append(signInt(parameterValue)).append(patchDestinationUnit);
         } else {
             // TODO better way of determining what sign is necessary
             if (patchDestinationUnit.indexOf("-") == 0) {
                 String newPatchDestinationUnit = patchDestinationUnit.substring(1);
-                sb.append(signInt(patch.getDestinationMax())).append(newPatchDestinationUnit);
+                sb.append(signInt(parameterValue)).append(newPatchDestinationUnit);
             } else {
-                sb.append(patch.getDestinationMax()).append(patchDestinationUnit);
+                sb.append(parameterValue).append(patchDestinationUnit);
             }
         }
-        sb.append("\n");
         return sb.toString();
     }
 
