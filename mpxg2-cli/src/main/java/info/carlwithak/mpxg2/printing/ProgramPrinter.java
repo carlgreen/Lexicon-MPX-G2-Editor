@@ -493,7 +493,7 @@ public class ProgramPrinter {
         } else if ("100Hz".equals(patchDestinationUnit)) {
             sb.append(DECIMAL_2DP.format(parameterValue / 100.0)).append(patchDestinationUnit.substring(3));
         } else if ("OnOff".equals(patchDestinationUnit)) {
-            sb.append(Util.onOffToString(parameterValue));
+            sb.append(Util.onOffToString(parameterValue == 1));
         } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
             sb.append(signInt(parameterValue)).append(patchDestinationUnit);
         } else {
