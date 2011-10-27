@@ -32,7 +32,7 @@ public class Ambience extends Reverb {
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
     private GenericValue<Integer> delayTime = new GenericValue<Integer>("DTime", "s", 0, 255); // 0.07 - 65.4
-    private GenericValue<Integer> delayLevel = new GenericValue<Integer>("D Lvl", "dB", -48, 0);
+    private GenericValue<Integer> delayLevel = new GenericValue<Integer>("D Lvl", "dB", -48, 0); // Off, -48dB - -1dB, Full
     private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 500 - 21200
 
     @Override

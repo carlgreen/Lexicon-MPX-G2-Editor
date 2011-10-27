@@ -42,6 +42,7 @@ public class AmbiencePrinter implements Printer {
         sb.append("    Diff: ").append(ambience.getDiff()).append("%\n");
         sb.append("    Pre Delay: ").append(ambience.getPreDelay()).append("ms\n");
         sb.append("    Delay Time: ").append(reverbDelayTimeToString(ambience.getDelayTime())).append("s\n");
+        // TODO this is not an On/Off kind of situation
         sb.append("    Delay Level: ").append(onOffToString(ambience.getDelayLevel())).append("\n");
         sb.append("    Rt HC: ").append(reverbAmbienceRtHCToString(ambience.getRtHC())).append("k\n");
         return sb.toString();
