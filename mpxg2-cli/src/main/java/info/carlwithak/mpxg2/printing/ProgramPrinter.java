@@ -411,33 +411,36 @@ public class ProgramPrinter {
         StringBuilder sb = new StringBuilder();
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
-        String effectParameter;
+        Parameter effectParameter;
         switch (program.getSoftRowEffectType(i)) {
             case 0:
-                effectParameter = program.getEffect1().getParameterName(program.getSoftRowParameter(i));
+                effectParameter = program.getEffect1().getParameter(program.getSoftRowParameter(i));
                 break;
             case 1:
-                effectParameter = program.getEffect2().getParameterName(program.getSoftRowParameter(i));
+                effectParameter = program.getEffect2().getParameter(program.getSoftRowParameter(i));
                 break;
             case 2:
-                effectParameter = program.getChorus().getParameterName(program.getSoftRowParameter(i));
+                effectParameter = program.getChorus().getParameter(program.getSoftRowParameter(i));
                 break;
             case 3:
-                effectParameter = program.getDelay().getParameterName(program.getSoftRowParameter(i));
+                effectParameter = program.getDelay().getParameter(program.getSoftRowParameter(i));
                 break;
             case 4:
-                effectParameter = program.getReverb().getParameterName(program.getSoftRowParameter(i));
+                effectParameter = program.getReverb().getParameter(program.getSoftRowParameter(i));
                 break;
             case 6:
-                effectParameter = program.getGain().getParameterName(program.getSoftRowParameter(i));
+                effectParameter = program.getGain().getParameter(program.getSoftRowParameter(i));
                 break;
             default:
                 effectParameter = null;
         }
+        String effectParameterName;
         if (effectParameter == null) {
-            effectParameter = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
+            effectParameterName = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
+        } else {
+            effectParameterName = effectParameter.getName();
         }
-        sb.append(effectParameter).append("\n");
+        sb.append(effectParameterName).append("\n");
         return sb.toString();
     }
 
