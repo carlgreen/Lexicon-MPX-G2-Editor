@@ -540,6 +540,7 @@ public class Program {
         this.gainToePatch = gainToePatch;
     }
 
+    @Deprecated
     public int getEffect1Algorithm() {
         return effect1Algorithm;
     }
@@ -548,6 +549,7 @@ public class Program {
         this.effect1Algorithm = effect1Algorithm;
     }
 
+    @Deprecated
     public int getEffect2Algorithm() {
         return effect2Algorithm;
     }
@@ -556,6 +558,7 @@ public class Program {
         this.effect2Algorithm = effect2Algorithm;
     }
 
+    @Deprecated
     public int getChorusAlgorithm() {
         return chorusAlgorithm;
     }
@@ -564,6 +567,7 @@ public class Program {
         this.chorusAlgorithm = chorusAlgorithm;
     }
 
+    @Deprecated
     public int getDelayAlgorithm() {
         return delayAlgorithm;
     }
@@ -572,6 +576,7 @@ public class Program {
         this.delayAlgorithm = delayAlgorithm;
     }
 
+    @Deprecated
     public int getReverbAlgorithm() {
         return reverbAlgorithm;
     }
@@ -580,6 +585,7 @@ public class Program {
         this.reverbAlgorithm = reverbAlgorithm;
     }
 
+    @Deprecated
     public int getEqAlgorithm() {
         return eqAlgorithm;
     }
@@ -588,6 +594,7 @@ public class Program {
         this.eqAlgorithm = eqAlgorithm;
     }
 
+    @Deprecated
     public int getGainAlgorithm() {
         return gainAlgorithm;
     }
