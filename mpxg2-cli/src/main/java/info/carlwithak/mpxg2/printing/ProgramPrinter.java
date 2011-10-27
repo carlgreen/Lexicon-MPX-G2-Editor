@@ -440,7 +440,7 @@ public class ProgramPrinter {
         } else {
             patchParameter = parameter.getName();
             patchDestinationUnit = parameter.getUnit();
-            if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((GenericValue<Integer>) parameter).getMinValue() < 0) {
+            if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((Integer) ((GenericValue) parameter).getMinValue()) < 0) {
                 patchDestinationUnit = '-' + patchDestinationUnit;
             } else if (parameter instanceof FrequencyRate) {
                 // TODO find a better way
