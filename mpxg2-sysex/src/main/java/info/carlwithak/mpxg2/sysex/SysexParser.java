@@ -302,7 +302,6 @@ public class SysexParser {
             int algorithmNumber = readInt(objectData, 558 + (i * 2), 2);
             switch (i) {
                 case 0:
-                    program.setEffect1Algorithm(algorithmNumber);
                     Effect effect1;
                     switch (algorithmNumber) {
                         case 0:
@@ -350,7 +349,6 @@ public class SysexParser {
                     program.setEffect1(effect1);
                     break;
                 case 1:
-                    program.setEffect2Algorithm(algorithmNumber);
                     Effect effect2;
                     switch (algorithmNumber) {
                         case 0:
@@ -392,7 +390,6 @@ public class SysexParser {
                     program.setEffect2(effect2);
                     break;
                 case 2:
-                    program.setChorusAlgorithm(algorithmNumber);
                     Chorus chorus;
                     switch (algorithmNumber) {
                         case 0:
@@ -428,7 +425,6 @@ public class SysexParser {
                     program.setChorus(chorus);
                     break;
                 case 3:
-                    program.setDelayAlgorithm(algorithmNumber);
                     Delay delay;
                     switch (algorithmNumber) {
                         case 0:
@@ -458,7 +454,6 @@ public class SysexParser {
                     program.setDelay(delay);
                     break;
                 case 4:
-                    program.setReverbAlgorithm(algorithmNumber);
                     Reverb reverb;
                     switch (algorithmNumber) {
                         case 0:
@@ -482,7 +477,6 @@ public class SysexParser {
                     program.setReverb(reverb);
                     break;
                 case 5:
-                    program.setEqAlgorithm(algorithmNumber);
                     Eq eq;
                     switch (algorithmNumber) {
                         case 0:
@@ -500,7 +494,6 @@ public class SysexParser {
                     program.setEq(eq);
                     break;
                 case 6:
-                    program.setGainAlgorithm(algorithmNumber);
                     Gain gain;
                     switch (algorithmNumber) {
                         case 0:
