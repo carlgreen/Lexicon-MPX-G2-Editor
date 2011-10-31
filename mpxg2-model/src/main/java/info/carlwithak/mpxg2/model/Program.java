@@ -84,14 +84,6 @@ public class Program {
     private int eqToePatch;
     private int gainToePatch;
 
-    private int effect1Algorithm;
-    private int effect2Algorithm;
-    private int chorusAlgorithm;
-    private int delayAlgorithm;
-    private int reverbAlgorithm;
-    private int eqAlgorithm;
-    private int gainAlgorithm;
-
     private String programName;
 
     // effects status
@@ -538,69 +530,6 @@ public class Program {
 
     public void setGainToePatch(final int gainToePatch) {
         this.gainToePatch = gainToePatch;
-    }
-
-    @Deprecated
-    public int getEffect1Algorithm() {
-        return effect1Algorithm;
-    }
-
-    public void setEffect1Algorithm(final int effect1Algorithm) {
-        this.effect1Algorithm = effect1Algorithm;
-    }
-
-    @Deprecated
-    public int getEffect2Algorithm() {
-        return effect2Algorithm;
-    }
-
-    public void setEffect2Algorithm(final int effect2Algorithm) {
-        this.effect2Algorithm = effect2Algorithm;
-    }
-
-    @Deprecated
-    public int getChorusAlgorithm() {
-        return chorusAlgorithm;
-    }
-
-    public void setChorusAlgorithm(final int chorusAlgorithm) {
-        this.chorusAlgorithm = chorusAlgorithm;
-    }
-
-    @Deprecated
-    public int getDelayAlgorithm() {
-        return delayAlgorithm;
-    }
-
-    public void setDelayAlgorithm(final int delayAlgorithm) {
-        this.delayAlgorithm = delayAlgorithm;
-    }
-
-    @Deprecated
-    public int getReverbAlgorithm() {
-        return reverbAlgorithm;
-    }
-
-    public void setReverbAlgorithm(final int reverbAlgorithm) {
-        this.reverbAlgorithm = reverbAlgorithm;
-    }
-
-    @Deprecated
-    public int getEqAlgorithm() {
-        return eqAlgorithm;
-    }
-
-    public void setEqAlgorithm(final int eqAlgorithm) {
-        this.eqAlgorithm = eqAlgorithm;
-    }
-
-    @Deprecated
-    public int getGainAlgorithm() {
-        return gainAlgorithm;
-    }
-
-    public void setGainAlgorithm(final int gainAlgorithm) {
-        this.gainAlgorithm = gainAlgorithm;
     }
 
     public String getProgramName() {
