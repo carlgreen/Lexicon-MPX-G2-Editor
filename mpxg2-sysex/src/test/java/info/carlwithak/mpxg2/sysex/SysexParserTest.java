@@ -432,13 +432,13 @@ public class SysexParserTest {
         assertEquals(0, program.getEqToePatch());
         assertEquals(0, program.getGainToePatch());
 
-        assertEquals(0, program.getEffect1Algorithm());
-        assertEquals(0, program.getEffect2Algorithm());
-        assertEquals(0, program.getChorusAlgorithm());
-        assertEquals(0, program.getDelayAlgorithm());
-        assertEquals(0, program.getReverbAlgorithm());
-        assertEquals(0, program.getEqAlgorithm());
-        assertEquals(0, program.getGainAlgorithm());
+        assertNull(program.getEffect1());
+        assertNull(program.getEffect2());
+        assertNull(program.getChorus());
+        assertNull(program.getDelay());
+        assertNull(program.getReverb());
+        assertNull(program.getEq());
+        assertNull(program.getGain());
 
         assertEquals("Clean Slate", program.getProgramName());
 
@@ -664,13 +664,13 @@ public class SysexParserTest {
         assertEquals(0, program.getEqToePatch());
         assertEquals(0, program.getGainToePatch());
 
-        assertEquals(27, program.getEffect1Algorithm());
-        assertEquals(0, program.getEffect2Algorithm());
-        assertEquals(0, program.getChorusAlgorithm());
-        assertEquals(0, program.getDelayAlgorithm());
-        assertEquals(0, program.getReverbAlgorithm());
-        assertEquals(0, program.getEqAlgorithm());
-        assertEquals(0, program.getGainAlgorithm());
+        assertTrue(program.getEffect1() instanceof VolumeMono);
+        assertNull(program.getEffect2());
+        assertNull(program.getChorus());
+        assertNull(program.getDelay());
+        assertNull(program.getReverb());
+        assertNull(program.getEq());
+        assertNull(program.getGain());
 
         assertEquals("Unity Gain", program.getProgramName());
 
@@ -902,13 +902,13 @@ public class SysexParserTest {
         assertEquals(0, program.getEqToePatch());
         assertEquals(0, program.getGainToePatch());
 
-        assertEquals(12, program.getEffect1Algorithm());
-        assertEquals(18, program.getEffect2Algorithm());
-        assertEquals(16, program.getChorusAlgorithm());
-        assertEquals(6, program.getDelayAlgorithm());
-        assertEquals(4, program.getReverbAlgorithm());
-        assertEquals(0, program.getEqAlgorithm());
-        assertEquals(3, program.getGainAlgorithm());
+        assertTrue(program.getEffect1() instanceof UniVybe);
+        assertTrue(program.getEffect2() instanceof PedalWah1);
+        assertTrue(program.getChorus() instanceof PedalVol);
+        assertTrue(program.getDelay() instanceof EchoDual);
+        assertTrue(program.getReverb() instanceof Ambience);
+        assertNull(program.getEq());
+        assertTrue(program.getGain() instanceof Screamer);
 
         assertEquals("G2 Blue", program.getProgramName());
 
