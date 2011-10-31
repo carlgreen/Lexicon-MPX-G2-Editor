@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
@@ -232,16 +233,8 @@ public class ProgramPrinter {
         for (String line : RoutingPrinter.print(program).split("\n")) {
             sb.append("    ").append(line).append("\n");
         }
-        if (program.getEffect1() != null) {
-            sb.append("  Effect 1: ").append(program.getEffect1().getName()).append(" (").append(onOffToString(program.isEffect1On())).append(")").append("\n");
-            sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
-            sb.append(AlgorithmPrinter.print(program.getEffect1()));
-        }
-        if (program.getEffect2() != null) {
-            sb.append("  Effect 2: ").append(program.getEffect2().getName()).append(" (").append(onOffToString(program.isEffect2On())).append(")").append("\n");
-            sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect2ToePatch())).append("\n");
-            sb.append(AlgorithmPrinter.print(program.getEffect2()));
-        }
+        printProgram(sb, "Effect 1", program.getEffect1(), program.isEffect1On(), program.getEffect1ToePatch());
+        printProgram(sb, "Effect 2", program.getEffect2(), program.isEffect2On(), program.getEffect2ToePatch());
         if (program.getChorus() != null) {
             sb.append("  Chorus: ").append(program.getChorus().getName()).append(" (").append(onOffToString(program.isChorusOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getChorusToePatch())).append("\n");
@@ -371,6 +364,15 @@ public class ProgramPrinter {
         sb.append("    RTime: ").append(program.getNoiseGate().getRTime()).append("\n");
         sb.append("    Delay: ").append(program.getNoiseGate().getDelay()).append("\n");
         return sb.toString().trim();
+    }
+
+    private static void printProgram(final StringBuilder sb, final String label, final Effect effect, final boolean effectOn, final int effectToePatch) throws PrintException {
+        if (effect != null) {
+            sb.append("  ").append(label).append(": ");
+            sb.append(effect.getName()).append(" (").append(onOffToString(effectOn)).append(")").append("\n");
+            sb.append("    Toe Switch: ").append(toePatchToString(effectToePatch)).append("\n");
+            sb.append(AlgorithmPrinter.print(effect));
+        }
     }
 
     private static String printSoftRow(final Program program, final int i) throws PrintException {
