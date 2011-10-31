@@ -37,41 +37,6 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
  */
 public class ProgramPrinter {
 
-    private static final String[] EFFECT1_ALGORITHM_NAMES = {
-        "no effect", "Detune (M)", "Detune (S)", "Detune (D)", "Shift (M)", "Shift (S)", "Shift (D)",
-        "DiatonicHmy", "Panner", "Auto Pan", "Tremolo (M)", "Tremolo (S)", "UniVybe", "Custom Vybe",
-        "Phaser", "OrangePhase", "Red Comp", "Blue Comp", "DigiDrive1", "DigiDrive2", "OctaBuzz",
-        "SweepFilter", "1-Band (M)", "Wah  1", "Wah  2", "Pedal Wah 1", "Pedal Wah 2",
-        "Volume (M)", "Volume (S)", "Volume (D)", "Pedal Vol", "ExtPedalVol", "Test Tone", "Click"
-    };
-    private static final String[] EFFECT2_ALGORITHM_NAMES = {
-        "no effect", "Panner", "Auto Pan", "Tremolo (M)", "Tremolo (S)", "UniVybe", "Custom Vybe",
-        "Phaser", "OrangePhase", "Red Comp", "Blue Comp", "DigiDrive1", "DigiDrive2", "OctaBuzz",
-        "SweepFilter", "1-Band (M)", "Wah  1", "Wah  2", "Pedal Wah 1", "Pedal Wah 2",
-        "Volume (M)", "Volume (S)", "Volume (D)", "Pedal Vol", "ExtPedalVol", "Test Tone", "Click"
-    };
-    private static final String[] CHORUS_ALGORITHM_NAMES = {
-        "no effect", "Chorus", "Detune (M)", "Flanger (M)", "Flanger24(M)", "Flanger (S)", "Rotary Cab",
-        "Aerosol", "Orbits", "Centrifuge1", "Centrifuge2", "Comb 1", "Comb 2",
-        "Volume (M)", "Volume (S)", "Volume (D)", "Pedal Vol", "ExtPedalVol"
-    };
-    private static final String[] DELAY_ALGORITHM_NAMES = {
-        "no effect", "Delay (M)", "Delay (S)", "Delay (D)", "Echo (M)", "Echo (S)", "Echo (D)",
-        "Looper", "JamMan", "Ducker"
-    };
-    private static final String[] REVERB_ALGORITHM_NAMES = {
-        "no effect", "Chamber", "Hall", "Plate", "Ambience", "Gate"
-    };
-    private static final String[] EQ_ALGORITHM_NAMES = {
-        "no effect", "1-Band (M)", "2-Band (M)", "3-Band (M)", "4-Band (M)",
-        "1-Band (S)", "2-Band (S)", "1-Band (D)", "2-Band (D)", "Fc Splitter",
-        "Crossover", "Volume (M)", "Volume (S)", "Volume (D)", "Pedal Vol",
-        "ExtPedalVol"
-    };
-    private static final String[] GAIN_ALGORITHM_NAMES = {
-        "no effect", "Tone", "Crunch", "Screamer", "Overdrive", "Distortion", "Preamp", "SplitPreamp"
-    };
-
     private static final String[] EFFECT_TYPES = {
         "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "Equalizer", "Gain",
         "Knob", "LFO1", "LFO2", "Rand", "A/B", "Env", "", "", "Post", "Send",
@@ -267,38 +232,38 @@ public class ProgramPrinter {
         for (String line : RoutingPrinter.print(program).split("\n")) {
             sb.append("    ").append(line).append("\n");
         }
-        if (program.getEffect1Algorithm() > 0) {
-            sb.append("  Effect 1: ").append(effect1AlgorithmToString(program.getEffect1Algorithm())).append(" (").append(onOffToString(program.isEffect1On())).append(")").append("\n");
+        if (program.getEffect1() != null) {
+            sb.append("  Effect 1: ").append(program.getEffect1().getName()).append(" (").append(onOffToString(program.isEffect1On())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect1ToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEffect1()));
         }
-        if (program.getEffect2Algorithm() > 0) {
-            sb.append("  Effect 2: ").append(effect2AlgorithmToString(program.getEffect2Algorithm())).append(" (").append(onOffToString(program.isEffect2On())).append(")").append("\n");
+        if (program.getEffect2() != null) {
+            sb.append("  Effect 2: ").append(program.getEffect2().getName()).append(" (").append(onOffToString(program.isEffect2On())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEffect2ToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEffect2()));
         }
-        if (program.getChorusAlgorithm() > 0) {
-            sb.append("  Chorus: ").append(chorusAlgorithmToString(program.getChorusAlgorithm())).append(" (").append(onOffToString(program.isChorusOn())).append(")").append("\n");
+        if (program.getChorus() != null) {
+            sb.append("  Chorus: ").append(program.getChorus().getName()).append(" (").append(onOffToString(program.isChorusOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getChorusToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getChorus()));
         }
-        if (program.getDelayAlgorithm() > 0) {
-            sb.append("  Delay: ").append(delayAlgorithmToString(program.getDelayAlgorithm())).append(" (").append(onOffToString(program.isDelayOn())).append(")").append("\n");
+        if (program.getDelay() != null) {
+            sb.append("  Delay: ").append(program.getDelay().getName()).append(" (").append(onOffToString(program.isDelayOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getDelayToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getDelay()));
         }
-        if (program.getReverbAlgorithm() > 0) {
-            sb.append("  Reverb: ").append(reverbAlgorithmToString(program.getReverbAlgorithm())).append(" (").append(onOffToString(program.isReverbOn())).append(")").append("\n");
+        if (program.getReverb() != null) {
+            sb.append("  Reverb: ").append(program.getReverb().getName()).append(" (").append(onOffToString(program.isReverbOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getReverbToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getReverb()));
         }
-        if (program.getEqAlgorithm() > 0) {
-            sb.append("  EQ: ").append(eqAlgorithmToString(program.getEqAlgorithm())).append(" (").append(onOffToString(program.isEqOn())).append(")").append("\n");
+        if (program.getEq() != null) {
+            sb.append("  EQ: ").append(program.getEq().getName()).append(" (").append(onOffToString(program.isEqOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getEqToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getEq()));
         }
-        if (program.getGainAlgorithm() > 0) {
-            sb.append("  Gain: ").append(gainAlgorithmToString(program.getGainAlgorithm())).append(" (").append(onOffToString(program.isGainOn())).append(")").append("\n");
+        if (program.getGain() != null) {
+            sb.append("  Gain: ").append(program.getGain().getName()).append(" (").append(onOffToString(program.isGainOn())).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(program.getGainToePatch())).append("\n");
             sb.append(AlgorithmPrinter.print(program.getGain()));
         }
@@ -533,34 +498,6 @@ public class ProgramPrinter {
                 parameter = null;
         }
         return parameter;
-    }
-
-    private static String effect1AlgorithmToString(final int effect1Algorithm) {
-        return EFFECT1_ALGORITHM_NAMES[effect1Algorithm];
-    }
-
-    private static String effect2AlgorithmToString(final int effect2Algorithm) {
-        return EFFECT2_ALGORITHM_NAMES[effect2Algorithm];
-    }
-
-    private static String chorusAlgorithmToString(final int chorusAlgorithm) {
-        return CHORUS_ALGORITHM_NAMES[chorusAlgorithm];
-    }
-
-    private static String delayAlgorithmToString(final int delayAlgorithm) {
-        return DELAY_ALGORITHM_NAMES[delayAlgorithm];
-    }
-
-    private static String reverbAlgorithmToString(final int reverbAlgorithm) {
-        return REVERB_ALGORITHM_NAMES[reverbAlgorithm];
-    }
-
-    private static String eqAlgorithmToString(final int eqAlgorithm) {
-        return EQ_ALGORITHM_NAMES[eqAlgorithm];
-    }
-
-    private static String gainAlgorithmToString(final int gainAlgorithm) {
-        return GAIN_ALGORITHM_NAMES[gainAlgorithm];
     }
 
     private static String toePatchToString(final int toePatch) throws PrintException {
