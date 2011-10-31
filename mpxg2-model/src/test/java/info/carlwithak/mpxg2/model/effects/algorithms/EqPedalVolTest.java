@@ -54,6 +54,6 @@ public class EqPedalVolTest {
 
     @Test
     public void testInvalid() {
-        assertNull(pedalVol.getParameter(3));
+        assertNull(pedalVol.getParameter(2));
     }
 }
