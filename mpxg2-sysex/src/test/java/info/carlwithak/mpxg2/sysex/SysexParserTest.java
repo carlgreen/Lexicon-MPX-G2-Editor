@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
@@ -37,7 +38,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
-import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
@@ -806,7 +806,7 @@ public class SysexParserTest {
 
         assertTrue(program.getEffect1() instanceof UniVybe);
         assertTrue(program.getEffect2() instanceof PedalWah1);
-        assertTrue(program.getChorus() instanceof PedalVol);
+        assertTrue(program.getChorus() instanceof ChorusPedalVol);
         assertTrue(program.getDelay() instanceof EchoDual);
         assertTrue(program.getReverb() instanceof Ambience);
         assertNull(program.getEq()); // no eq
@@ -904,7 +904,7 @@ public class SysexParserTest {
 
         assertTrue(program.getEffect1() instanceof UniVybe);
         assertTrue(program.getEffect2() instanceof PedalWah1);
-        assertTrue(program.getChorus() instanceof PedalVol);
+        assertTrue(program.getChorus() instanceof ChorusPedalVol);
         assertTrue(program.getDelay() instanceof EchoDual);
         assertTrue(program.getReverb() instanceof Ambience);
         assertNull(program.getEq());

@@ -25,6 +25,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
@@ -41,7 +42,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
-import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
@@ -315,18 +315,6 @@ public class AlgorithmPrinterTest {
     }
 
     @Test
-    public void testPrintPedalVol() throws PrintException {
-        PedalVol pedalVol = new PedalVol();
-        pedalVol.setMix(100);
-        pedalVol.setLevel(0);
-
-        String expected = "    Mix: 100%\n    Level: 0dB\n";
-        String actual = AlgorithmPrinter.print(pedalVol);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
     public void testPrintChorus() throws PrintException {
         ChorusAlgorithm chorus = new ChorusAlgorithm();
         chorus.setMix(100);
@@ -431,6 +419,18 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Depth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Depth2: 43%\n    Res: +100%\n";
         String actual = AlgorithmPrinter.print(centrifuge1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintChorusPedalVol() throws PrintException {
+        ChorusPedalVol pedalVol = new ChorusPedalVol();
+        pedalVol.setMix(100);
+        pedalVol.setLevel(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n";
+        String actual = AlgorithmPrinter.print(pedalVol);
 
         assertEquals(expected, actual);
     }

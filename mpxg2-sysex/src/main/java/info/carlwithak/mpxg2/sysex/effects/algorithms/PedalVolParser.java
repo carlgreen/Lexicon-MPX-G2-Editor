@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 
 /**
  * Class to parse parameter data for Pedal Vol effect.
@@ -26,8 +26,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
  */
 public class PedalVolParser {
 
-    public static PedalVol parse(byte[] effectParameters) {
-        PedalVol pedalVol = new PedalVol();
+    public static ChorusPedalVol parse(byte[] effectParameters) {
+        ChorusPedalVol pedalVol = new ChorusPedalVol();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
         pedalVol.setMix(mix);
