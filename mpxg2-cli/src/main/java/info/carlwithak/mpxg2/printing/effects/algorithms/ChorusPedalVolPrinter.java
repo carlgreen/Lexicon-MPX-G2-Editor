@@ -26,7 +26,7 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
  *
  * @author Carl Green
  */
-public class PedalVolPrinter implements Printer {
+public class ChorusPedalVolPrinter implements Printer {
 
     @Override
     public String print(Object algorithm) {

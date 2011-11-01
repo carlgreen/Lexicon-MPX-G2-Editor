@@ -33,6 +33,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.BlueCompParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Centrifuge1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayStereoParser;
@@ -51,7 +52,6 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OrangePhaseParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
-import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
@@ -417,7 +417,7 @@ public class SysexParser {
                             chorus = VolumeDualParser.parse(chorusParameters);
                             break;
                         case 16:
-                            chorus = PedalVolParser.parse(chorusParameters);
+                            chorus = ChorusPedalVolParser.parse(chorusParameters);
                             break;
                         default:
                             throw new ParseException("Invalid Chorus algorithm number: " + algorithmNumber);
