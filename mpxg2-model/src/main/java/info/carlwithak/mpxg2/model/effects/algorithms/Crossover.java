@@ -19,14 +19,14 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
-import info.carlwithak.mpxg2.model.effects.Effect;
+import info.carlwithak.mpxg2.model.effects.Eq;
 
 /**
  * Class for Crossover parameters.
  *
  * @author Carl Green
  */
-public class Crossover extends Effect {
+public class Crossover extends Eq {
     private static final String NAME = "Crossover";
 
     private GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 100, 10000);

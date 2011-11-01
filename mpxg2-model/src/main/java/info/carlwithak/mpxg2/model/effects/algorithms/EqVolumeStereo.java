@@ -19,14 +19,14 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
-import info.carlwithak.mpxg2.model.effects.Effect;
+import info.carlwithak.mpxg2.model.effects.Eq;
 
 /**
  * Class for Volume (S) parameters.
  *
  * @author Carl Green
  */
-public class EqVolumeStereo extends Effect {
+public class EqVolumeStereo extends Eq {
     private static final String NAME = "Volume (S)";
 
     private GenericValue<Integer> volume = new GenericValue<Integer>("Volume", "%", 0, 100);

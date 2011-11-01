@@ -19,14 +19,14 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
-import info.carlwithak.mpxg2.model.effects.Effect;
+import info.carlwithak.mpxg2.model.effects.Eq;
 
 /**
  * Class for Fc Splitter parameters.
  *
  * @author Carl Green
  */
-public class FcSplitter extends Effect {
+public class FcSplitter extends Eq {
     private static final String NAME = "Fc Splitter";
 
     private GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "Hz", 100, 10000);
