@@ -18,23 +18,30 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 /**
+ * Class to parse parameter data for Volume (D) effect.
  *
  * @author Carl Green
  */
-public class VolumeDualParserTest {
+public class ChorusVolumeDualParser {
 
-    @Test
-    public void testParse_TremoWah() {
-        byte[] effectParameters = {4, 6, 0, 0, 4, 6, 4, 6, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        ChorusVolumeDual volumeDual = VolumeDualParser.parse(effectParameters);
-        assertEquals(100, volumeDual.getMix());
-        assertEquals(0, volumeDual.getLevel());
-        assertEquals(100, volumeDual.getVolumeLeft());
-        assertEquals(100, volumeDual.getVolumeRight());
+    public static ChorusVolumeDual parse(byte[] effectParameters) {
+        ChorusVolumeDual volumeDual = new ChorusVolumeDual();
+
+        int mix = effectParameters[0] + effectParameters[1] * 16;
+        volumeDual.setMix(mix);
+
+        int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
+        volumeDual.setLevel(level);
+
+        int volumeLeft = (byte) (effectParameters[4] + effectParameters[5] * 16);
+        volumeDual.setVolumeLeft(volumeLeft);
+
+        int volumeRight = (byte) (effectParameters[6] + effectParameters[7] * 16);
+        volumeDual.setVolumeRight(volumeRight);
+
+        return volumeDual;
     }
+
 }

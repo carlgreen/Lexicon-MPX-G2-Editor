@@ -26,7 +26,7 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
  *
  * @author Carl Green
  */
-public class VolumeDualPrinter implements Printer {
+public class ChorusVolumeDualPrinter implements Printer {
 
     @Override
     public String print(Object algorithm) {

@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.Centrifuge1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusPedalVolParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayStereoParser;
@@ -64,7 +65,6 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TremoloMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
-import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Wah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Wah2Parser;
@@ -414,7 +414,7 @@ public class SysexParser {
                             chorus = Centrifuge1Parser.parse(chorusParameters);
                             break;
                         case 15:
-                            chorus = VolumeDualParser.parse(chorusParameters);
+                            chorus = ChorusVolumeDualParser.parse(chorusParameters);
                             break;
                         case 16:
                             chorus = ChorusPedalVolParser.parse(chorusParameters);
