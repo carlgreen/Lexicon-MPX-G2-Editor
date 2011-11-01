@@ -27,7 +27,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
-import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
@@ -135,7 +135,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(VolumeDual.class, new VolumeDualPrinter());
        PRINTERS.put(PedalVol.class, new PedalVolPrinter());
        PRINTERS.put(ChorusAlgorithm.class, new ChorusPrinter());
-       PRINTERS.put(DetuneMono.class, new DetuneMonoPrinter());
+       PRINTERS.put(ChorusDetuneMono.class, new DetuneMonoPrinter());
        PRINTERS.put(DetuneDual.class, new DetuneDualPrinter());
        PRINTERS.put(FlangerStereo.class, new FlangerStereoPrinter());
        PRINTERS.put(RotaryCab.class, new RotaryCabPrinter());

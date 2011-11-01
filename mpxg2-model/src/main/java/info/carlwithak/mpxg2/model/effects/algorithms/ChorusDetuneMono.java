@@ -26,7 +26,7 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  *
  * @author Carl Green
  */
-public class DetuneMono extends Chorus {
+public class ChorusDetuneMono extends Chorus {
     private static final String NAME = "Detune (M)";
 
     private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", 0, 100);

@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -31,7 +31,7 @@ public class DetuneMonoParserTest {
     @Test
     public void testParse() {
         byte[] effectParameters = {2, 3, 6, 0, 10, 0, 10, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        DetuneMono detuneMono = DetuneMonoParser.parse(effectParameters);
+        ChorusDetuneMono detuneMono = DetuneMonoParser.parse(effectParameters);
         assertEquals(50, detuneMono.getMix());
         assertEquals(6, detuneMono.getLevel());
         assertEquals(10, detuneMono.getTune());

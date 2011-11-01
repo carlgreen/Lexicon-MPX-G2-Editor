@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 
 /**
  * Class to parse parameter data for Detune (M) effect.
@@ -26,8 +26,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
  */
 public class DetuneMonoParser {
 
-    public static DetuneMono parse(byte[] effectParameters) {
-        DetuneMono detuneMono = new DetuneMono();
+    public static ChorusDetuneMono parse(byte[] effectParameters) {
+        ChorusDetuneMono detuneMono = new ChorusDetuneMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
         detuneMono.setMix(mix);

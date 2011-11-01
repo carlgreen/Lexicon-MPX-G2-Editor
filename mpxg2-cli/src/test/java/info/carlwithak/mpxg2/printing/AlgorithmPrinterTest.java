@@ -29,7 +29,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
-import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
@@ -348,7 +348,7 @@ public class AlgorithmPrinterTest {
 
     @Test
     public void testPrintDetuneMono() throws PrintException {
-        DetuneMono detuneMono = new DetuneMono();
+        ChorusDetuneMono detuneMono = new ChorusDetuneMono();
         detuneMono.setMix(100);
         detuneMono.setLevel(3);
         detuneMono.setTune(7);

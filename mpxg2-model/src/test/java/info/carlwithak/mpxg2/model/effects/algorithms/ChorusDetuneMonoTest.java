@@ -29,17 +29,17 @@ import static org.junit.Assert.assertNull;
  *
  * @author Carl Green
  */
-public class DetuneMonoTest {
-    private DetuneMono detuneMono;
+public class ChorusDetuneMonoTest {
+    private ChorusDetuneMono detuneMono;
 
     @Before
     public void setUp() {
-        detuneMono = new DetuneMono();
+        detuneMono = new ChorusDetuneMono();
     }
 
     @Test
     public void testBean() throws IntrospectionException {
-        Util.testBean(DetuneMono.class);
+        Util.testBean(ChorusDetuneMono.class);
     }
 
     @Test
