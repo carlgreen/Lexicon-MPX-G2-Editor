@@ -29,17 +29,17 @@ import static org.junit.Assert.assertNull;
  *
  * @author Carl Green
  */
-public class VolumeDualTest {
-    private VolumeDual volumeDual;
+public class ChorusVolumeDualTest {
+    private ChorusVolumeDual volumeDual;
 
     @Before
     public void setUp() {
-        volumeDual = new VolumeDual();
+        volumeDual = new ChorusVolumeDual();
     }
 
     @Test
     public void testBean() throws IntrospectionException {
-        Util.testBean(VolumeDual.class);
+        Util.testBean(ChorusVolumeDual.class);
     }
 
     @Test

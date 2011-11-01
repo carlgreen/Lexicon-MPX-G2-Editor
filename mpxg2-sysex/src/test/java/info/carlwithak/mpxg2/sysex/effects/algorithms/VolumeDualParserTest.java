@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -31,7 +31,7 @@ public class VolumeDualParserTest {
     @Test
     public void testParse_TremoWah() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 4, 6, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        VolumeDual volumeDual = VolumeDualParser.parse(effectParameters);
+        ChorusVolumeDual volumeDual = VolumeDualParser.parse(effectParameters);
         assertEquals(100, volumeDual.getMix());
         assertEquals(0, volumeDual.getLevel());
         assertEquals(100, volumeDual.getVolumeLeft());

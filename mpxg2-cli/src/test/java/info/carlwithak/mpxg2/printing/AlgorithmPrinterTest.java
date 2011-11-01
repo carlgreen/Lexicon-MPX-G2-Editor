@@ -26,6 +26,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
@@ -54,7 +55,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
-import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
@@ -302,7 +302,7 @@ public class AlgorithmPrinterTest {
 
     @Test
     public void testPrintVolumeDual() throws PrintException {
-        VolumeDual volumeDual = new VolumeDual();
+        ChorusVolumeDual volumeDual = new ChorusVolumeDual();
         volumeDual.setMix(100);
         volumeDual.setLevel(0);
         volumeDual.setVolumeLeft(80);

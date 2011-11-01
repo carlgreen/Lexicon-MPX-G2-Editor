@@ -26,7 +26,7 @@ import info.carlwithak.mpxg2.model.effects.Chorus;
  *
  * @author Carl Green
  */
-public class VolumeDual extends Chorus {
+public class ChorusVolumeDual extends Chorus {
     private static final String NAME = "Volume (D)";
 
     private GenericValue<Integer> volumeLeft = new GenericValue<Integer>("Vol-L", "%", 0, 100);

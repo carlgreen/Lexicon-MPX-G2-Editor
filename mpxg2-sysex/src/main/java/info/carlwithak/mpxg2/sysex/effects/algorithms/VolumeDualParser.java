@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 
 /**
  * Class to parse parameter data for Volume (D) effect.
@@ -26,8 +26,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
  */
 public class VolumeDualParser {
 
-    public static VolumeDual parse(byte[] effectParameters) {
-        VolumeDual volumeDual = new VolumeDual();
+    public static ChorusVolumeDual parse(byte[] effectParameters) {
+        ChorusVolumeDual volumeDual = new ChorusVolumeDual();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
         volumeDual.setMix(mix);

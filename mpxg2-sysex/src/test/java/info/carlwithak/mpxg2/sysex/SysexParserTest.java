@@ -28,6 +28,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
@@ -46,7 +47,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
-import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import java.io.File;
@@ -1265,7 +1265,7 @@ public class SysexParserTest {
 
         assertTrue(program.getEffect1() instanceof TremoloMono);
         assertTrue(program.getEffect2() instanceof Wah2);
-        assertTrue(program.getChorus() instanceof VolumeDual);
+        assertTrue(program.getChorus() instanceof ChorusVolumeDual);
         assertTrue(program.getDelay() instanceof DelayStereo);
         assertTrue(program.getReverb() instanceof Hall);
 
