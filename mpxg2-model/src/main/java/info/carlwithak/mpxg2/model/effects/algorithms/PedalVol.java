@@ -17,14 +17,14 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.effects.Chorus;
+import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
  * Class for Pedal Vol parameters.
  *
  * @author Carl Green
  */
-public class PedalVol extends Chorus {
+public class PedalVol extends Effect {
     private static final String NAME = "Pedal Vol";
 
     @Override
