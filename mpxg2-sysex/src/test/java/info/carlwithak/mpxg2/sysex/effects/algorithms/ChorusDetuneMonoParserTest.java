@@ -18,32 +18,24 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
- * Class to parse parameter data for Detune (M) effect.
  *
  * @author Carl Green
  */
-public class DetuneMonoParser {
+public class ChorusDetuneMonoParserTest {
 
-    public static ChorusDetuneMono parse(byte[] effectParameters) {
-        ChorusDetuneMono detuneMono = new ChorusDetuneMono();
-
-        int mix = effectParameters[0] + effectParameters[1] * 16;
-        detuneMono.setMix(mix);
-
-        int level = effectParameters[2] + effectParameters[3] * 16;
-        detuneMono.setLevel(level);
-
-        int tune = effectParameters[4] + effectParameters[5] * 16;
-        detuneMono.setTune(tune);
-
-        int optimize = effectParameters[6] + effectParameters[7] * 16;
-        detuneMono.setOptimize(optimize);
-
-        int preDelay = effectParameters[8] + effectParameters[9] * 16;
-        detuneMono.setPreDelay(preDelay);
-
-        return detuneMono;
+    @Test
+    public void testParse() {
+        byte[] effectParameters = {2, 3, 6, 0, 10, 0, 10, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        ChorusDetuneMono detuneMono = ChorusDetuneMonoParser.parse(effectParameters);
+        assertEquals(50, detuneMono.getMix());
+        assertEquals(6, detuneMono.getLevel());
+        assertEquals(10, detuneMono.getTune());
+        assertEquals(10, detuneMono.getOptimize());
+        assertEquals(0, detuneMono.getPreDelay());
     }
 }
