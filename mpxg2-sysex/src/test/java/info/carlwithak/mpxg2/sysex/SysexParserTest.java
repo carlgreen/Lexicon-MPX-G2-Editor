@@ -1760,6 +1760,171 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Detune+Trem preset.
+     */
+    @Test
+    public void testParseDetuneTrem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("050_Detune+Trem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Detune+Trem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Square Trem preset.
+     */
+    @Test
+    public void testParseSquareTrem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("051_Square_Trem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Square Trem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Trem~AutoWah preset.
+     */
+    @Test
+    public void testParseTremAutoWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("052_Trem_AutoWah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Trem~AutoWah", program.getProgramName()); // TODO this can't be right
+    }
+
+    /**
+     * Test parsing the Env Trem preset.
+     */
+    @Test
+    public void testParseEnvTrem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("053_Env_Trem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Env Trem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Env AutoWahs preset.
+     */
+    @Test
+    public void testParseEnvAutoWahs() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("054_Env_AutoWahs.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Env AutoWahs", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Chaos Dance preset.
+     */
+    @Test
+    public void testParseChaosDance() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("055_Chaos_Dance.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Chaos Dance", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Round Trem preset.
+     */
+    @Test
+    public void testParseRoundTrem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("056_Round_Trem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Round Trem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Tap AutoWah preset.
+     */
+    @Test
+    public void testParseTapAutoWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("057_Tap_AutoWah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Tap AutoWah", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Verbolo preset.
+     */
+    @Test
+    public void testParseVerbolo() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("058_Verbolo.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Verbolo", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the DynaChrsTrem preset.
+     */
+    @Test
+    public void testParseDynaChrsTrem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("059_DynaChrsTrem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("DynaChrsTrem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Univybe preset.
+     */
+    @Test
+    public void testParseUnivybe() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("060_Univybe.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Univybe", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Octave Fuzz preset.
+     */
+    @Test
+    public void testParseOctaveFuzz() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("061_Octave_Fuzz.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Octave Fuzz", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Phaser preset.
+     */
+    @Test
+    public void testParsePhaser() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("062_Phaser.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Phaser", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the EnvFilter preset.
+     */
+    @Test
+    public void testParseEnvFilter() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("063_EnvFilter.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("EnvFilter", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the C-Wah preset.
+     */
+    @Test
+    public void testParseCWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("064_C-Wah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("C-Wah", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test

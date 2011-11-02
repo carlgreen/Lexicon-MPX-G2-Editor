@@ -38,6 +38,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.CrunchParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CustomVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayMonoParser;
@@ -48,7 +49,10 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.DiatonicHmyParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
@@ -60,15 +64,18 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah2Parser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PhaserParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PlateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PreampParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.RedCompParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.RotaryCabParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TremoloMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.TremoloStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
@@ -319,7 +326,9 @@ public class SysexParser {
                         case 3:
                             effect1 = DetuneDualParser.parse(effect1Parameters);
                             break;
-                        // TODO 4 - Shift (M)
+                        case 4:
+                            effect1 = ShiftMonoParser.parse(effect1Parameters);
+                            break;
                         // TODO 5 - Shift (S)
                         case 6:
                             effect1 = ShiftDualParser.parse(effect1Parameters);
@@ -341,11 +350,15 @@ public class SysexParser {
                         case 13:
                             effect1 = CustomVybeParser.parse(effect1Parameters);
                             break;
-                        // TODO 14 - Phaser
+                        case 14:
+                            effect1 = PhaserParser.parse(effect1Parameters);
+                            break;
                         case 15:
                             effect1 = OrangePhaseParser.parse(effect1Parameters);
                             break;
-                        // TODO 16 - RedComp
+                        case 16:
+                            effect1 = RedCompParser.parse(effect1Parameters);
+                            break;
                         case 17:
                             effect1 = BlueCompParser.parse(effect1Parameters);
                             break;
@@ -361,7 +374,9 @@ public class SysexParser {
                         case 23:
                             effect1 = Wah1Parser.parse(effect1Parameters);
                             break;
-                        // TODO 24 - Wah 2
+                        case 24:
+                            effect1 = Wah2Parser.parse(effect1Parameters);
+                            break;
                         case 25:
                             effect1 = PedalWah1Parser.parse(effect1Parameters);
                             break;
@@ -396,8 +411,12 @@ public class SysexParser {
                         case 2:
                             effect2 = AutoPanParser.parse(effect2Parameters);
                             break;
-                        // TODO 3 - Tremolo (M)
-                        // TODO 4 - Tremolo (S)
+                        case 3:
+                            effect2 = TremoloMonoParser.parse(effect2Parameters);
+                            break;
+                        case 4:
+                            effect2 = TremoloStereoParser.parse(effect2Parameters);
+                            break;
                         // TODO 5 - UniVybe
                         // TODO 6 - CustomVybe
                         // TODO 7 - Phaser
@@ -412,7 +431,9 @@ public class SysexParser {
                             break;
                         // TODO 11 - DigiDrive1
                         // TODO 12 - DigiDrive2
-                        // TODO 13 - OctaBuzz
+                        case 13:
+                            effect2 = OctaBuzzParser.parse(effect2Parameters);
+                            break;
                         case 14:
                             effect2 = SweepFilterParser.parse(effect2Parameters);
                             break;
@@ -515,7 +536,9 @@ public class SysexParser {
                         case 4:
                             delay = EchoMonoParser.parse(delayParameters);
                             break;
-                        // TODO 5 - Echo (S)
+                        case 5:
+                            delay = EchoStereoParser.parse(delayParameters);
+                            break;
                         case 6:
                             delay = EchoDualParser.parse(delayParameters);
                             break;
@@ -572,9 +595,14 @@ public class SysexParser {
                         // TODO 9 - Fc Splitter
                         // TODO 10 - Crossover
                         // TODO 11 - Volume (M)
-                        // TODO 12 - Volume (S)
-                        // TODO 13 - Volume (D)
+                        case 12:
+                            eq = EqVolumeStereoParser.parse(eqParameters);
+                            break;
+                        case 13:
+                            eq = EqVolumeDualParser.parse(eqParameters);
+                            break;
                         case 14:
+
                             eq = EqPedalVolParser.parse(eqParameters);
                             break;
                         // TODO 15 - ExtPedalVol
@@ -592,7 +620,9 @@ public class SysexParser {
                         case 1:
                             gain = ToneParser.parse(gainParameters);
                             break;
-                        // TODO 2 - Crunch
+                        case 2:
+                            gain = CrunchParser.parse(gainParameters);
+                            break;
                         case 3:
                             gain = ScreamerParser.parse(gainParameters);
                             break;
