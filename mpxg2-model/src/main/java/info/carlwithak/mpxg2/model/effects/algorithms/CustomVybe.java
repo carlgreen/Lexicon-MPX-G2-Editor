@@ -23,12 +23,12 @@ import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
- * Class for CustomVybe parameters.
+ * Class for Custom Vybe parameters.
  *
  * @author Carl Green
  */
 public class CustomVybe extends Effect {
-    private static final String NAME = "CustomVybe";
+    private static final String NAME = "Custom Vybe";
 
     private Rate rate;
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
