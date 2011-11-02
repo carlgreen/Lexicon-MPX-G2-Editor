@@ -29,7 +29,8 @@ import info.carlwithak.mpxg2.model.effects.Eq;
 public class EqVolumeDual extends Eq {
     private static final String NAME = "Volume (D)";
 
-    private GenericValue<Integer> volume = new GenericValue<Integer>("Volume", "%", 0, 100);
+    private GenericValue<Integer> volumeLeft = new GenericValue<Integer>("Vol-L", "%", 0, 100);
+    private GenericValue<Integer> volumeRight = new GenericValue<Integer>("Vol-R", "%", 0, 100);
 
     @Override
     public String getName() {
@@ -45,7 +46,10 @@ public class EqVolumeDual extends Eq {
                 parameter = super.getParameter(parameterIndex);
                 break;
             case 2:
-                parameter = volume;
+                parameter = volumeLeft;
+                break;
+            case 3:
+                parameter = volumeRight;
                 break;
             default:
                 parameter = null;
@@ -53,11 +57,19 @@ public class EqVolumeDual extends Eq {
         return parameter;
     }
 
-    public int getVolume() {
-        return volume.getValue();
+    public int getVolumeLeft() {
+        return volumeLeft.getValue();
     }
 
-    public void setVolume(int volume) {
-        this.volume.setValue(volume);
+    public void setVolumeLeft(int volumeLeft) {
+        this.volumeLeft.setValue(volumeLeft);
+    }
+
+    public int getVolumeRight() {
+        return volumeRight.getValue();
+    }
+
+    public void setVolumeRight(int volumeRight) {
+        this.volumeRight.setValue(volumeRight);
     }
 }

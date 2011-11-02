@@ -53,12 +53,17 @@ public class EqVolumeDualTest {
     }
 
     @Test
-    public void testVolume() {
+    public void testVolumeLeft() {
         assertEquals("%", volumeDual.getParameter(2).getUnit());
     }
 
     @Test
+    public void testVolumeRight() {
+        assertEquals("%", volumeDual.getParameter(3).getUnit());
+    }
+
+    @Test
     public void testInvalid() {
-        assertNull(volumeDual.getParameter(3));
+        assertNull(volumeDual.getParameter(4));
     }
 }
