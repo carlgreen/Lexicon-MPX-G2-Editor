@@ -314,42 +314,54 @@ public class SysexParser {
                         case 0:
                             effect1 = null;
                             break;
+                        // TODO 1 - Detune (M)
+                        // TODO 2 - Detune (S)
                         case 3:
                             effect1 = DetuneDualParser.parse(effect1Parameters);
                             break;
+                        // TODO 4 - Shift (M)
+                        // TODO 5 - Shift (S)
                         case 6:
                             effect1 = ShiftDualParser.parse(effect1Parameters);
                             break;
                         case 7:
                             effect1 = DiatonicHmyParser.parse(effect1Parameters);
                             break;
+                        // TODO 8 - Panner
                         case 9:
                             effect1 = AutoPanParser.parse(effect1Parameters);
                             break;
                         case 10:
                             effect1 = TremoloMonoParser.parse(effect1Parameters);
                             break;
+                        // TODO 11 - Tremolo (S)
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
                             break;
                         case 13:
                             effect1 = CustomVybeParser.parse(effect1Parameters);
                             break;
+                        // TODO 14 - Phaser
                         case 15:
                             effect1 = OrangePhaseParser.parse(effect1Parameters);
                             break;
+                        // TODO 16 - RedComp
                         case 17:
                             effect1 = BlueCompParser.parse(effect1Parameters);
                             break;
+                        // TODO 18 - DigiDrive1
+                        // TODO 19 - DigiDrive2
                         case 20:
                             effect1 = OctaBuzzParser.parse(effect1Parameters);
                             break;
                         case 21:
                             effect1 = SweepFilterParser.parse(effect1Parameters);
                             break;
+                        // TODO 22 - 1-Band (M)
                         case 23:
                             effect1 = Wah1Parser.parse(effect1Parameters);
                             break;
+                        // TODO 24 - Wah 2
                         case 25:
                             effect1 = PedalWah1Parser.parse(effect1Parameters);
                             break;
@@ -362,7 +374,11 @@ public class SysexParser {
                         case 28:
                             effect1 = VolumeStereoParser.parse(effect1Parameters);
                             break;
-                        case 14:
+                        // TODO 29 - Volume (D)
+                        // TODO 30 - PedalVol
+                        // TODO 31 - ExtPedalVol
+                        // TODO 32 - Test Tone
+                        // TODO 33 - Click
                         default:
                             throw new ParseException("Invalid Effect 1 algorithm number: " + algorithmNumber);
                     }
@@ -380,6 +396,11 @@ public class SysexParser {
                         case 2:
                             effect2 = AutoPanParser.parse(effect2Parameters);
                             break;
+                        // TODO 3 - Tremolo (M)
+                        // TODO 4 - Tremolo (S)
+                        // TODO 5 - UniVybe
+                        // TODO 6 - CustomVybe
+                        // TODO 7 - Phaser
                         case 8:
                             effect2 = OrangePhaseParser.parse(effect2Parameters);
                             break;
@@ -389,9 +410,13 @@ public class SysexParser {
                         case 10:
                             effect2 = BlueCompParser.parse(effect2Parameters);
                             break;
+                        // TODO 11 - DigiDrive1
+                        // TODO 12 - DigiDrive2
+                        // TODO 13 - OctaBuzz
                         case 14:
                             effect2 = SweepFilterParser.parse(effect2Parameters);
                             break;
+                        // TODO 15 - 1-Band (M)
                         case 16:
                             effect2 = Wah1Parser.parse(effect2Parameters);
                             break;
@@ -413,6 +438,10 @@ public class SysexParser {
                         case 22:
                             effect2 = VolumeDualParser.parse(effect2Parameters);
                             break;
+                        // TODO 23 - PedalVol
+                        // TODO 24 - ExtPedalVol
+                        // TODO 25 - Test Tone
+                        // TODO 26 - Click
                         default:
                             throw new ParseException("Invalid Effect 2 algorithm number: " + algorithmNumber);
                     }
@@ -433,6 +462,7 @@ public class SysexParser {
                         case 3:
                             chorus = FlangerMonoParser.parse(chorusParameters);
                             break;
+                        // TODO 4 - Flanger24 (M)
                         case 5:
                             chorus = FlangerStereoParser.parse(chorusParameters);
                             break;
@@ -442,9 +472,13 @@ public class SysexParser {
                         case 7:
                             chorus = AerosolParser.parse(chorusParameters);
                             break;
+                        // TODO 8 - Orbits
                         case 9:
                             chorus = Centrifuge1Parser.parse(chorusParameters);
                             break;
+                        // TODO 10 - Centrifuge2
+                        // TODO 11 - Comb 1
+                        // TODO 12 - Comb 2
                         case 13:
                             chorus = ChorusVolumeMonoParser.parse(chorusParameters);
                             break;
@@ -457,6 +491,7 @@ public class SysexParser {
                         case 16:
                             chorus = ChorusPedalVolParser.parse(chorusParameters);
                             break;
+                        // TODO 17 - ExtPedalVol
                         default:
                             throw new ParseException("Invalid Chorus algorithm number: " + algorithmNumber);
                     }
@@ -480,12 +515,15 @@ public class SysexParser {
                         case 4:
                             delay = EchoMonoParser.parse(delayParameters);
                             break;
+                        // TODO 5 - Echo (S)
                         case 6:
                             delay = EchoDualParser.parse(delayParameters);
                             break;
+                        // TODO 7 - Looper
                         case 8:
                             delay = JamManParser.parse(delayParameters);
                             break;
+                        // TODO 9 - Ducker
                         default:
                             throw new ParseException("Invalid Delay algorithm number: " + algorithmNumber);
                     }
@@ -509,6 +547,7 @@ public class SysexParser {
                         case 4:
                             reverb = AmbienceParser.parse(reverbParameters);
                             break;
+                        // TODO 5 - Gate
                         default:
                             throw new ParseException("Invalid Reverb algorithm number: " + algorithmNumber);
                     }
@@ -523,9 +562,22 @@ public class SysexParser {
                         case 1:
                             eq = OneBandMonoParser.parse(eqParameters);
                             break;
+                        // TODO 2 - 2-Band (M)
+                        // TODO 3 - 3-Band (M)
+                        // TODO 4 - 4-Band (M)
+                        // TODO 5 - 1-Band (S)
+                        // TODO 6 - 2-Band (S)
+                        // TODO 7 - 1-Band (D)
+                        // TODO 8 - 2-Band (D)
+                        // TODO 9 - Fc Splitter
+                        // TODO 10 - Crossover
+                        // TODO 11 - Volume (M)
+                        // TODO 12 - Volume (S)
+                        // TODO 13 - Volume (D)
                         case 14:
                             eq = EqPedalVolParser.parse(eqParameters);
                             break;
+                        // TODO 15 - ExtPedalVol
                         default:
                             throw new ParseException("Invalid EQ algorithm number: " + algorithmNumber);
                     }
@@ -540,6 +592,7 @@ public class SysexParser {
                         case 1:
                             gain = ToneParser.parse(gainParameters);
                             break;
+                        // TODO 2 - Crunch
                         case 3:
                             gain = ScreamerParser.parse(gainParameters);
                             break;
@@ -552,6 +605,7 @@ public class SysexParser {
                         case 6:
                             gain = PreampParser.parse(gainParameters);
                             break;
+                        // TODO 7 - SplitPreamp
                         default:
                             throw new ParseException("Invalid Gain algorithm number: " + algorithmNumber);
                     }
