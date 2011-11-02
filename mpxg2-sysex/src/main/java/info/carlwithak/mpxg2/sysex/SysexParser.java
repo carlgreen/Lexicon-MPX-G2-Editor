@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.AerosolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AutoPanParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.BlueCompParser;
@@ -35,11 +36,15 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.CustomVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DiatonicHmyParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
@@ -65,7 +70,9 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TremoloMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.VolumeStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Wah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Wah2Parser;
 import java.io.File;
@@ -313,6 +320,9 @@ public class SysexParser {
                         case 6:
                             effect1 = ShiftDualParser.parse(effect1Parameters);
                             break;
+                        case 7:
+                            effect1 = DiatonicHmyParser.parse(effect1Parameters);
+                            break;
                         case 9:
                             effect1 = AutoPanParser.parse(effect1Parameters);
                             break;
@@ -321,6 +331,12 @@ public class SysexParser {
                             break;
                         case 12:
                             effect1 = UniVybeParser.parse(effect1Parameters);
+                            break;
+                        case 13:
+                            effect1 = CustomVybeParser.parse(effect1Parameters);
+                            break;
+                        case 15:
+                            effect1 = OrangePhaseParser.parse(effect1Parameters);
                             break;
                         case 17:
                             effect1 = BlueCompParser.parse(effect1Parameters);
@@ -343,6 +359,10 @@ public class SysexParser {
                         case 27:
                             effect1 = VolumeMonoParser.parse(effect1Parameters);
                             break;
+                        case 28:
+                            effect1 = VolumeStereoParser.parse(effect1Parameters);
+                            break;
+                        case 14:
                         default:
                             throw new ParseException("Invalid Effect 1 algorithm number: " + algorithmNumber);
                     }
@@ -372,6 +392,9 @@ public class SysexParser {
                         case 14:
                             effect2 = SweepFilterParser.parse(effect2Parameters);
                             break;
+                        case 16:
+                            effect2 = Wah1Parser.parse(effect2Parameters);
+                            break;
                         case 17:
                             effect2 = Wah2Parser.parse(effect2Parameters);
                             break;
@@ -383,6 +406,12 @@ public class SysexParser {
                             break;
                         case 20:
                             effect2 = VolumeMonoParser.parse(effect2Parameters);
+                            break;
+                        case 21:
+                            effect2 = VolumeStereoParser.parse(effect2Parameters);
+                            break;
+                        case 22:
+                            effect2 = VolumeDualParser.parse(effect2Parameters);
                             break;
                         default:
                             throw new ParseException("Invalid Effect 2 algorithm number: " + algorithmNumber);
@@ -410,8 +439,17 @@ public class SysexParser {
                         case 6:
                             chorus = RotaryCabParser.parse(chorusParameters);
                             break;
+                        case 7:
+                            chorus = AerosolParser.parse(chorusParameters);
+                            break;
                         case 9:
                             chorus = Centrifuge1Parser.parse(chorusParameters);
+                            break;
+                        case 13:
+                            chorus = ChorusVolumeMonoParser.parse(chorusParameters);
+                            break;
+                        case 14:
+                            chorus = ChorusVolumeStereoParser.parse(chorusParameters);
                             break;
                         case 15:
                             chorus = ChorusVolumeDualParser.parse(chorusParameters);
