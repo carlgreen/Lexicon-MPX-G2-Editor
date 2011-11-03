@@ -2310,6 +2310,116 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the VintageRig preset.
+     */
+    @Test
+    public void testParseVintageRig_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("100_VintageRig.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("VintageRig", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Pdl Octaves preset.
+     */
+    @Test
+    public void testParsePdlOctaves_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("101_Pdl_Octaves.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Pdl Octaves", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the TechnoChords preset.
+     */
+    @Test
+    public void testParseTechnoChords_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("102_TechnoChords.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("TechnoChords", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Cordovox preset.
+     */
+    @Test
+    public void testParseCordovox_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("103_Cordovox.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Cordovox", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Analog  Echo preset.
+     */
+    @Test
+    public void testParseAnalogEcho_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("104_Analog__Echo.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Analog  Echo", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Wah & Uni preset.
+     */
+    @Test
+    public void testParseWahUni_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("105_Wah_&_Uni.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Wah & Uni", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the EnvFilter LP preset.
+     */
+    @Test
+    public void testParseEnvFilterLP_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("106_EnvFilter_LP.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("EnvFilter LP", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the InfiniteEcho preset.
+     */
+    @Test
+    public void testParseInfiniteEcho_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("107_InfiniteEcho.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("InfiniteEcho", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Fuzz Wah preset.
+     */
+    @Test
+    public void testParseFuzzWah_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("108_Fuzz_Wah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Fuzz Wah", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the JamMan preset.
+     */
+    @Test
+    public void testParseJamMan_InputOnly() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("109_JamMan.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("JamMan", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test

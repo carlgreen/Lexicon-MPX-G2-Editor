@@ -53,6 +53,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.Flanger24MonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
@@ -62,6 +63,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OrangePhaseParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalWah2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PhaserParser;
@@ -391,7 +393,9 @@ public class SysexParser {
                             effect1 = VolumeStereoParser.parse(effect1Parameters);
                             break;
                         // TODO 29 - Volume (D)
-                        // TODO 30 - PedalVol
+                        case 30:
+                            effect1 = PedalVolParser.parse(effect1Parameters);
+                            break;
                         // TODO 31 - ExtPedalVol
                         // TODO 32 - Test Tone
                         // TODO 33 - Click
@@ -484,7 +488,9 @@ public class SysexParser {
                         case 3:
                             chorus = FlangerMonoParser.parse(chorusParameters);
                             break;
-                        // TODO 4 - Flanger24 (M)
+                        case 4:
+                            chorus = Flanger24MonoParser.parse(chorusParameters);
+                            break;
                         case 5:
                             chorus = FlangerStereoParser.parse(chorusParameters);
                             break;
