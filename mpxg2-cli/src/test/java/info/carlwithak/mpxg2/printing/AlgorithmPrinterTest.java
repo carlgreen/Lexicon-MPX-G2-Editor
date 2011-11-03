@@ -41,6 +41,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
+import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
@@ -649,6 +650,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: On\n    Diff: 60%\n    Pre Delay: 7ms\n    Delay Time: 1.41s\n    Delay Level: Off\n    Rt HC: 12.8k\n";
         String actual = AlgorithmPrinter.print(ambience);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintOneBandMono() throws PrintException {
+        OneBandMono oneBandMono = new OneBandMono();
+        oneBandMono.setMix(100);
+        oneBandMono.setLevel(0);
+        oneBandMono.setGain(9);
+        oneBandMono.setFc(393);
+        oneBandMono.setQ(0.1);
+        oneBandMono.setMode(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: +9\n    Fc: 393\n    Q: 0.1\n    Mode: LShlf\n";
+        String actual = AlgorithmPrinter.print(oneBandMono);
 
         assertEquals(expected, actual);
     }
