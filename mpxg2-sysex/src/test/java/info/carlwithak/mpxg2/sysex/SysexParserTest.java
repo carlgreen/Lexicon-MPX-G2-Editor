@@ -2200,6 +2200,116 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Jam Chrs+ preset.
+     */
+    @Test
+    public void testParseJamChrs() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("090_Jam_Chrs+.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam Chrs+", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam 1 Uni+ preset.
+     */
+    @Test
+    public void testParseJam1Uni() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("091_Jam_1__Uni+.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam 1  Uni+", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam 1 S&H+ preset.
+     */
+    @Test
+    public void testParseJam1SH() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("092_Jam_1_S&H+.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam 1 S&H+", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam 1 Env+ preset.
+     */
+    @Test
+    public void testParseJam1Env() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("093_Jam_1_Env+.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam 1 Env+", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam1Cordovox preset.
+     */
+    @Test
+    public void testParseJam1Cordovox() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("094_Jam1Cordovox.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam1Cordovox", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam 2 Flange preset.
+     */
+    @Test
+    public void testParseJam2Flange() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("095_Jam_2_Flange.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam 2 Flange", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam 2 Phase preset.
+     */
+    @Test
+    public void testParseJam2Phase() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("096_Jam_2_Phase.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam 2 Phase", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam 2 Pitch+ preset.
+     */
+    @Test
+    public void testParseJam2Pitch() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("097_Jam_2_Pitch+.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam 2 Pitch+", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam 2 Trem preset.
+     */
+    @Test
+    public void testParseJam2Trem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("098_Jam_2_Trem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam 2 Trem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Jam2AutoWah preset.
+     */
+    @Test
+    public void testParseJam2AutoWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("099_Jam2AutoWah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Jam2AutoWah", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
