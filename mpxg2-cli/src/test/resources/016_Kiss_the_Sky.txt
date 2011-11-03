@@ -86,7 +86,7 @@ Kiss the Sky
         Min: 0
         Mid: --
         Max: 127
-      Destination: Bypass FX1  Byp
+      Destination: Byp FX1
         Min: Off
         Mid: --
         Max: On

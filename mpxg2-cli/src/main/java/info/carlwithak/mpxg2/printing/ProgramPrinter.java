@@ -66,7 +66,7 @@ public class ProgramPrinter {
         {},
         {},
         {
-            "FX1  Byp", "FX2  Byp", "Chrs Byp", "Dly  Byp", "Rvb  Byp", "EQ   Byp", "Gain Byp", "Ins  Byp"
+            "FX1", "FX2", "Chrs", "Dly", "Rvb", "EQ", "Gain", "Ins"
         }
     };
     private static final String[][] EFFECT_PARAMETER_UNITS = {

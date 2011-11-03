@@ -93,11 +93,21 @@ public class Patch {
         EFFECT_1, EFFECT_2, CHORUS, DELAY, REVERB, EQ, GAIN,
         CTLS_KNOB, CTLS_LFO1, CTLS_LFO2, CTLS_RAND, CTLS_AB, CTLS_ENV,
         PATCHING, SOFTROW, POST, SEND, MISC, SPKRSIM, NGATE, TEMPO,
-        TOE_PATCHES, AUDIO_ROUTE, ALG_SELECT, BYPASS;
+        TOE_PATCHES, AUDIO_ROUTE, ALG_SELECT, BYPASS("Byp");
+
+        private final String displayName;
+
+        private PatchDestination() {
+            String name = name();
+            this.displayName = name.substring(0, 1) + name.substring(1).toLowerCase(Locale.ENGLISH).replace('_', ' ');
+        }
+
+        private PatchDestination(final String displayName) {
+            this.displayName = displayName;
+        }
 
         private String getDisplayName() {
-            String name = name();
-            return name.substring(0, 1) + name.substring(1).toLowerCase(Locale.ENGLISH).replace('_', ' ');
+            return displayName;
         }
     }
 
