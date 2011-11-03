@@ -2090,6 +2090,116 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Tone Boost preset.
+     */
+    @Test
+    public void testParseToneBoost() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("080_Tone_Boost.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Tone Boost", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Crunch Boost preset.
+     */
+    @Test
+    public void testParseCrunchBoost() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("081_Crunch_Boost.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Crunch Boost", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the TS Lead preset.
+     */
+    @Test
+    public void testParseTSLead() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("082_TS_Lead.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("TS Lead", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the TS Boost preset.
+     */
+    @Test
+    public void testParseTSBoost() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("083_TS_Boost.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("TS Boost", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the OD Lead preset.
+     */
+    @Test
+    public void testParseODLead() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("084_OD_Lead.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("OD Lead", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the OD Boost preset.
+     */
+    @Test
+    public void testParseODBoost() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("085_OD_Boost.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("OD Boost", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Dist Lead preset.
+     */
+    @Test
+    public void testParseDistLead() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("086_Dist_Lead.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Dist Lead", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Dist Boost preset.
+     */
+    @Test
+    public void testParseDistBoost() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("087_Dist_Boost.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Dist Boost", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Fuzz 1 preset.
+     */
+    @Test
+    public void testParseFuzz1() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("088_Fuzz_1.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Fuzz 1", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Fuzz 2 preset.
+     */
+    @Test
+    public void testParseFuzz2() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("089_Fuzz_2.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Fuzz 2", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
