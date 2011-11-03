@@ -278,6 +278,66 @@ public class ProgramPrinterIT {
      * TODO would be good not to use SysexParser.parseProgram()?
      */
     @Test
+    public void testPrintUnchained() throws Exception {
+        File expectedFile = new File(this.getClass().getClassLoader().getResource("017_Unchained.txt").toURI());
+        String expected = readFile(expectedFile);
+        File preset = new File(this.getClass().getClassLoader().getResource("017_Unchained.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+        String actual = ProgramPrinter.print(program);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test printing a textual representation of the program.
+     *
+     * TODO would be good not to use SysexParser.parseProgram()?
+     */
+    @Test
+    public void testPrintStomp() throws Exception {
+        File expectedFile = new File(this.getClass().getClassLoader().getResource("018_Stomp!.txt").toURI());
+        String expected = readFile(expectedFile);
+        File preset = new File(this.getClass().getClassLoader().getResource("018_Stomp!.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+        String actual = ProgramPrinter.print(program);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test printing a textual representation of the program.
+     *
+     * TODO would be good not to use SysexParser.parseProgram()?
+     */
+    @Test
+    public void testPrintOctaWah() throws Exception {
+        File expectedFile = new File(this.getClass().getClassLoader().getResource("019_OctaWah.txt").toURI());
+        String expected = readFile(expectedFile);
+        File preset = new File(this.getClass().getClassLoader().getResource("019_OctaWah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+        String actual = ProgramPrinter.print(program);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test printing a textual representation of the program.
+     *
+     * TODO would be good not to use SysexParser.parseProgram()?
+     */
+    @Test
+    public void testPrintWahUni() throws Exception {
+        File expectedFile = new File(this.getClass().getClassLoader().getResource("020_Wah_&_Uni.txt").toURI());
+        String expected = readFile(expectedFile);
+        File preset = new File(this.getClass().getClassLoader().getResource("020_Wah_&_Uni.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+        String actual = ProgramPrinter.print(program);
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test printing a textual representation of the program.
+     *
+     * TODO would be good not to use SysexParser.parseProgram()?
+     */
+    @Test
     public void testPrintCWah() throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource("064_C-Wah.txt").toURI());
         String expected = readFile(expectedFile);

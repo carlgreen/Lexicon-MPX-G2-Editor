@@ -1,0 +1,177 @@
+OctaWah
+  Guitar Style: Rock
+  Effect Type: Chorus, Delay, Distortion, Gain, Pitch, Reverb, Wah
+  Application Type: Amp Input + FX Loop
+  Effect Routing:
+    I=E=2=1=G=C=D=R=O
+  Effect 1: OctaBuzz (Off)
+    Toe Switch: off=bypass
+    Mix: 100%
+    Level: 0dB
+  Effect 2: Pedal Wah 2 (Off)
+    Toe Switch: off=bypass
+    Mix: 100%
+    Level: 0dB
+    Bass: 10
+    Type: Model V
+    Resp: 100
+    Gain: 0
+  Chorus: Pedal Vol (On)
+    Toe Switch: on=bypass
+    Mix: 100%
+    Level: 0dB
+  Delay: Echo (M) (On)
+    Toe Switch: disabled
+    Mix: 2%
+    Level: 0dB
+    Time: 4:4
+    Feedback: -15%
+    Insert: Delay
+    Damp: 20%
+    Clear: Off
+  Reverb: Plate (On)
+    Toe Switch: disabled
+    Mix: 13%
+    Level: 0dB
+    Size: 30.5m
+    Link: On
+    Diff: 90%
+    Pre Delay: 0ms
+    Bass: 0.8X
+    Decay: 1.15s
+    Xovr: 986
+    Rt HC: 19.4k
+    Shape: 36
+    Spred: 95
+  EQ: 1-Band (M) (Off)
+    Toe Switch: off=bypass
+    Mix: 100%
+    Level: 0dB
+    Gain: +9
+    Fc: 393
+    Q: 0.1
+    Mode: LShlf
+  Gain: Screamer (Off)
+    Toe Switch: off=bypass
+    Lo: 0
+    Mid: 0
+    Hi: 0
+    Drive: 27
+    Tone: 21
+    Level: 46
+  Softrow:
+    1: Gain Drive
+    2: Gain Tone
+    3: Gain Level
+    4: Delay Time
+    7: Reverb P Dly
+    8: Reverb Decay
+  Patching:
+    Patch 1:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Mix
+        Min: 2%
+        Mid: --
+        Max: 33%
+    Patch 2:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Fbk
+        Min: 0%
+        Mid: --
+        Max: +19%
+    Patch 3:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Reverb Mix
+        Min: 13%
+        Mid: --
+        Max: 45%
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 100%
+      Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: 0dB
+    Chorus:
+      Mix: 100%
+      Level: 0dB
+    Delay:
+      Mix: 2%
+      Level: 0dB
+    Reverb:
+      Mix: 13%
+      Level: 0dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: Off
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
