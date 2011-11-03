@@ -36,6 +36,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
@@ -361,6 +362,23 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +3dB\n    Tune1: 7\n    Optimize: 10ms\n    Tune2: 5\n    P Dly: 22ms\n";
         String actual = AlgorithmPrinter.print(detuneDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintFlangerMono() throws PrintException {
+        FlangerMono flangerMono = new FlangerMono();
+        flangerMono.setMix(100);
+        flangerMono.setLevel(0);
+        flangerMono.setRate(new FrequencyRate("Rate", 0.05));
+        flangerMono.setPulseWidth(20);
+        flangerMono.setDepth(30);
+        flangerMono.setResonance(-60);
+        flangerMono.setBlend(30);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.05Hz\n    PW: 20%\n    Depth: 30%\n    Res: -60%\n    Blend: 30\n";
+        String actual = AlgorithmPrinter.print(flangerMono);
 
         assertEquals(expected, actual);
     }
