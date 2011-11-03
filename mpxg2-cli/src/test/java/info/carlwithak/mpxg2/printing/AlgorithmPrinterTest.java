@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
@@ -438,6 +439,19 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Depth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Depth2: 43%\n    Res: +100%\n";
         String actual = AlgorithmPrinter.print(centrifuge1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintChorusVolumeStereo() throws PrintException {
+        ChorusVolumeStereo volumeStereo = new ChorusVolumeStereo();
+        volumeStereo.setMix(100);
+        volumeStereo.setLevel(0);
+        volumeStereo.setVolume(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Vol: 0%\n";
+        String actual = AlgorithmPrinter.print(volumeStereo);
 
         assertEquals(expected, actual);
     }

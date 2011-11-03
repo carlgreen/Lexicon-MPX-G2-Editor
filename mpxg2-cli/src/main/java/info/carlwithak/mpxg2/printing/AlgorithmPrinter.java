@@ -1,16 +1,16 @@
 /*
  *  Copyright (C) 2011 Carl Green
- * 
+ *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
- * 
+ *
  *  This program is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
- * 
+ *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -26,6 +26,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
@@ -66,6 +67,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.ChamberPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusPedalVolPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusVolumeDualPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusVolumeStereoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DelayDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DelayMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DelayStereoPrinter;
@@ -138,6 +140,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(VolumeMono.class, new VolumeMonoPrinter());
        PRINTERS.put(ChorusAlgorithm.class, new ChorusPrinter());
        PRINTERS.put(ChorusDetuneMono.class, new DetuneMonoPrinter());
+       PRINTERS.put(ChorusVolumeStereo.class, new ChorusVolumeStereoPrinter());
        PRINTERS.put(ChorusVolumeDual.class, new ChorusVolumeDualPrinter());
        PRINTERS.put(ChorusPedalVol.class, new ChorusPedalVolPrinter());
        PRINTERS.put(DetuneDual.class, new DetuneDualPrinter());
