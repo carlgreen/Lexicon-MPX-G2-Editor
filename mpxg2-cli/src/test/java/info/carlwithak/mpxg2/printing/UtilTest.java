@@ -189,4 +189,11 @@ public class UtilTest {
         assertEquals("Model C", Util.wahTypeToString(0));
         assertEquals("Model V", Util.wahTypeToString(1));
     }
+
+    @Test
+    public void testEqModeToString() {
+        assertEquals("LShlf", Util.eqModeToString(0));
+        assertEquals("Band", Util.eqModeToString(1));
+        assertEquals("HShlf", Util.eqModeToString(2));
+    }
 }

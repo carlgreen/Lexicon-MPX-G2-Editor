@@ -134,6 +134,8 @@ public class Util {
 
     private static final String[] PHASES = {"0", "90", "180", "270"};
 
+    private static final String[] EQ_MODES = {"LShlf", "Band", "HShlf"};
+
     /**
      * @return String representation of insert position.
      */
@@ -239,5 +241,9 @@ public class Util {
 
     public static String wahTypeToString(final int wahType) {
         return "Model " + (wahType == 0 ? 'C' : 'V');
+    }
+
+    public static String eqModeToString(final int eqMode) {
+        return EQ_MODES[eqMode];
     }
 }
