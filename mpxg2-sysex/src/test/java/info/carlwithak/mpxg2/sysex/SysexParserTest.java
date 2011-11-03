@@ -1925,6 +1925,171 @@ public class SysexParserTest {
     }
 
     /**
+     * Test parsing the Blue Comp preset.
+     */
+    @Test
+    public void testParseBlueComp() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("065_Blue_Comp.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Blue Comp", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Vintage Trem preset.
+     */
+    @Test
+    public void testParseVintageTrem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("066_Vintage_Trem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Vintage Trem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the IPS TapeSlap preset.
+     */
+    @Test
+    public void testParseIPSTapeSlap() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("067_IPS_TapeSlap.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("IPS TapeSlap", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Space Echo preset.
+     */
+    @Test
+    public void testParseSpaceEcho() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("068_Space_Echo.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Space Echo", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Octabuzz preset.
+     */
+    @Test
+    public void testParseOctabuzz() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("069_Octabuzz.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Octabuzz", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the OrangePhase preset.
+     */
+    @Test
+    public void testParseOrangePhase() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("070_OrangePhase.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("OrangePhase", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Gray Flange preset.
+     */
+    @Test
+    public void testParseGrayFlange() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("071_Gray_Flange.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Gray Flange", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Red Comp preset.
+     */
+    @Test
+    public void testParseRedComp() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("072_Red_Comp.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Red Comp", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the S/H Pedal preset.
+     */
+    @Test
+    public void testParseSHPedal() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("073_S_H_Pedal.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("S/H Pedal", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the V-Wah preset.
+     */
+    @Test
+    public void testParseVWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("074_V-Wah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("V-Wah", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Modern Trem preset.
+     */
+    @Test
+    public void testParseModernTrem() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("075_Modern_Trem.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Modern Trem", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Tap Echo preset.
+     */
+    @Test
+    public void testParseTapEcho() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("076_Tap_Echo.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Tap Echo", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the Env Wah preset.
+     */
+    @Test
+    public void testParseEnvWah() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("077_Env_Wah.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("Env Wah", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the StereoChorus preset.
+     */
+    @Test
+    public void testParseStereoChorus() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("078_StereoChorus.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("StereoChorus", program.getProgramName());
+    }
+
+    /**
+     * Test parsing the ClasscDetune preset.
+     */
+    @Test
+    public void testParseClasscDetune() throws Exception {
+        File preset = new File(this.getClass().getClassLoader().getResource("079_ClasscDetune.syx").toURI());
+        Program program = SysexParser.parsePrograms(preset).get(0);
+
+        assertEquals("ClasscDetune", program.getProgramName());
+    }
+
+    /**
      * Test parsing the various noise gate values.
      */
     @Test
