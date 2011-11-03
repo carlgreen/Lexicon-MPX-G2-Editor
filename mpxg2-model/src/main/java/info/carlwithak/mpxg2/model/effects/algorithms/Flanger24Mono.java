@@ -34,6 +34,7 @@ public class Flanger24Mono extends Chorus {
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
     private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    private GenericValue<Integer> glide = new GenericValue<Integer>("Glide", "", 0, 100);
     private GenericValue<Integer> blend = new GenericValue<Integer>("Blend", "%", 0, 100);
 
     @Override
@@ -62,6 +63,9 @@ public class Flanger24Mono extends Chorus {
                 parameter = resonance;
                 break;
             case 6:
+                parameter = glide;
+                break;
+            case 7:
                 parameter = blend;
                 break;
             default:
@@ -100,6 +104,14 @@ public class Flanger24Mono extends Chorus {
 
     public void setResonance(int resonance) {
         this.resonance.setValue(resonance);
+    }
+
+    public int getGlide() {
+        return glide.getValue();
+    }
+
+    public void setGlide(int glide) {
+        this.glide.setValue(glide);
     }
 
     public int getBlend() {

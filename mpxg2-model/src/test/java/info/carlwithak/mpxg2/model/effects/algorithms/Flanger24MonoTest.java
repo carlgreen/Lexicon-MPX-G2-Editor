@@ -76,12 +76,17 @@ public class Flanger24MonoTest {
     }
 
     @Test
+    public void testGlide() {
+        assertEquals("", flanger24Mono.getParameter(6).getUnit());
+    }
+
+    @Test
     public void testBlend() {
-        assertEquals("%", flanger24Mono.getParameter(6).getUnit());
+        assertEquals("%", flanger24Mono.getParameter(7).getUnit());
     }
 
     @Test
     public void testInvalid() {
-        assertNull(flanger24Mono.getParameter(7));
+        assertNull(flanger24Mono.getParameter(8));
     }
 }
