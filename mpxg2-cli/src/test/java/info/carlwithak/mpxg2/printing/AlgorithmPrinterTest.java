@@ -35,6 +35,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
@@ -95,6 +96,24 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Tune1: -1200\n    Optimize: 10\n    Tune2: -500\n    Glide: On\n";
         String actual = AlgorithmPrinter.print(shiftDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDiatonicHmy() throws PrintException {
+        DiatonicHmy diatonicHmy = new DiatonicHmy();
+        diatonicHmy.setMix(100);
+        diatonicHmy.setLevel(0);
+        diatonicHmy.setKey(4);
+        diatonicHmy.setScale(0);
+        diatonicHmy.setInterval(16);
+        diatonicHmy.setOptimize(10);
+        diatonicHmy.setThreshold(-83);
+        diatonicHmy.setSource(1);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Key: E\n    Scale: Major\n    Int: +3rd\n    Optimize: 10\n    Thrsh: -83dB\n    Src: Guitar Input\n";
+        String actual = AlgorithmPrinter.print(diatonicHmy);
 
         assertEquals(expected, actual);
     }

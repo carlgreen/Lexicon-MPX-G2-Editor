@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
@@ -81,6 +82,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.DelayMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DelayStereoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DetuneMonoPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.DiatonicHmyPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.DistortionPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.EchoDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.EchoMonoPrinter;
@@ -134,6 +136,7 @@ public class AlgorithmPrinter {
     private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>();
     static {
        PRINTERS.put(ShiftDual.class, new ShiftDualPrinter());
+       PRINTERS.put(DiatonicHmy.class, new DiatonicHmyPrinter());
        PRINTERS.put(Panner.class, new PannerPrinter());
        PRINTERS.put(AutoPan.class, new AutoPanPrinter());
        PRINTERS.put(TremoloMono.class, new TremoloMonoPrinter());
