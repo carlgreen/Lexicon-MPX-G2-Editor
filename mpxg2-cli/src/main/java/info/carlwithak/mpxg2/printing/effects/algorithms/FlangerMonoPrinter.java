@@ -22,7 +22,6 @@ import info.carlwithak.mpxg2.printing.RatePrinter;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 
-import static info.carlwithak.mpxg2.printing.Util.phaseToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
