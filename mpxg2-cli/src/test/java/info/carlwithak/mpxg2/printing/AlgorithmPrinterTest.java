@@ -335,20 +335,6 @@ public class AlgorithmPrinterTest {
     }
 
     @Test
-    public void testPrintVolumeDual() throws PrintException {
-        ChorusVolumeDual volumeDual = new ChorusVolumeDual();
-        volumeDual.setMix(100);
-        volumeDual.setLevel(0);
-        volumeDual.setVolumeLeft(80);
-        volumeDual.setVolumeRight(90);
-
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Vol-L: 80%\n    Vol-R: 90%\n";
-        String actual = AlgorithmPrinter.print(volumeDual);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
     public void testPrintChorus() throws PrintException {
         ChorusAlgorithm chorus = new ChorusAlgorithm();
         chorus.setMix(100);
@@ -369,7 +355,7 @@ public class AlgorithmPrinterTest {
     }
 
     @Test
-    public void testPrintDetuneMono() throws PrintException {
+    public void testPrintChorusDetuneMono() throws PrintException {
         ChorusDetuneMono detuneMono = new ChorusDetuneMono();
         detuneMono.setMix(100);
         detuneMono.setLevel(3);
@@ -503,6 +489,20 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Vol: 0%\n";
         String actual = AlgorithmPrinter.print(volumeStereo);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintChorusVolumeDual() throws PrintException {
+        ChorusVolumeDual volumeDual = new ChorusVolumeDual();
+        volumeDual.setMix(100);
+        volumeDual.setLevel(0);
+        volumeDual.setVolumeLeft(80);
+        volumeDual.setVolumeRight(90);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Vol-L: 80%\n    Vol-R: 90%\n";
+        String actual = AlgorithmPrinter.print(volumeDual);
 
         assertEquals(expected, actual);
     }
