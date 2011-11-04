@@ -133,27 +133,27 @@ public class ProgramPrinterIT {
     }
 
     @Test
-    public void testPrintTowWahFlng() throws Exception {
+    public void testPrintToeWahFlng() throws Exception {
         testParseAndPrint("021_ToeWah_Flng");
     }
 
     @Test
-    public void testPrintTowWahPhas() throws Exception {
+    public void testPrintToeWahPhas() throws Exception {
         testParseAndPrint("022_ToeWah_Phas");
     }
 
     @Test
-    public void testPrintTowWahChrs() throws Exception {
+    public void testPrintToeWahChrs() throws Exception {
         testParseAndPrint("023_ToeWah_Chrs");
     }
 
     @Test
-    public void testPrintTowWahAero() throws Exception {
+    public void testPrintToeWahAero() throws Exception {
         testParseAndPrint("024_ToeWah_Aero");
     }
 
     @Test
-    public void testPrintTowWahUni() throws Exception {
+    public void testPrintToeWahUni() throws Exception {
         testParseAndPrint("025_ToeWah_Uni");
     }
 
