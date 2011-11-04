@@ -61,6 +61,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import org.junit.Test;
@@ -316,6 +317,19 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 60%\n";
         String actual = AlgorithmPrinter.print(volumeMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintVolumeStereo() throws PrintException {
+        VolumeStereo volumeStereo = new VolumeStereo();
+        volumeStereo.setMix(100);
+        volumeStereo.setLevel(0);
+        volumeStereo.setVolume(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
+        String actual = AlgorithmPrinter.print(volumeStereo);
 
         assertEquals(expected, actual);
     }
