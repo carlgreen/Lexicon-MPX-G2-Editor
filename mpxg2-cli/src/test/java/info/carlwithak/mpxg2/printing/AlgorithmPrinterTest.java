@@ -29,6 +29,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
@@ -149,6 +150,21 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
         String actual = AlgorithmPrinter.print(univybe);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintCustomVybe() throws PrintException {
+        CustomVybe customVybe = new CustomVybe();
+        customVybe.setMix(100);
+        customVybe.setLevel(0);
+        customVybe.setRate(new FrequencyRate("Rate", 0.97));
+        customVybe.setPulseWidth(46);
+        customVybe.setDepth(45);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.97Hz\n    PW: 46%\n    Depth: 45%\n";
+        String actual = AlgorithmPrinter.print(customVybe);
 
         assertEquals(expected, actual);
     }
