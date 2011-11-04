@@ -158,6 +158,26 @@ public class ProgramPrinterIT {
     }
 
     @Test
+    public void testPrintWahFlange() throws Exception {
+        testParseAndPrint("026_Wah_&_Flange");
+    }
+
+    @Test
+    public void testPrintWahPhaser() throws Exception {
+        testParseAndPrint("027_Wah_&_Phaser");
+    }
+
+    @Test
+    public void testPrintWahChorus() throws Exception {
+        testParseAndPrint("028_Wah_&_Chorus");
+    }
+
+    @Test
+    public void testPrintWahAero() throws Exception {
+        testParseAndPrint("029_Wah_&_Aero");
+    }
+
+    @Test
     public void testPrintCWah() throws Exception {
         testParseAndPrint("064_C-Wah");
     }
