@@ -32,331 +32,120 @@ import static org.junit.Assert.assertEquals;
  */
 public class ProgramPrinterIT {
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintG2Blue() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("001_G2_Blue");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintGuitarSolo() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("002_Guitar_Solo.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("002_Guitar_Solo.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("002_Guitar_Solo");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintCordovox() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("003_Cordovox.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("003_Cordovox.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("003_Cordovox");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintPowerChords() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("004_Power_Chords.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("004_Power_Chords.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("004_Power_Chords");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintVybeFlange() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("005_Vybe_Flange");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintAnotherBrick() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("006_AnotherBrick.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("006_AnotherBrick.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("006_AnotherBrick");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintEnvFilterLP() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("007_EnvFilter_LP");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintTremoWah() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("008_TremoWah.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("008_TremoWah.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("008_TremoWah");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintJamMan() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("009_JamMan.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("009_JamMan.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("009_JamMan");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintVHRig() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("010_VH_Rig.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("010_VH_Rig.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("010_VH_Rig");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintRotaryCab() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("011_Rotary_Cab.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("011_Rotary_Cab.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("011_Rotary_Cab");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintLittleWing() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("012_Little_Wing.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("012_Little_Wing.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("012_Little_Wing");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintTechnoChords() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("013_TechnoChords.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("013_TechnoChords.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("013_TechnoChords");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintPedalSwell() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("014_Pedal_Swell.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("014_Pedal_Swell.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("014_Pedal_Swell");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintSlideComp() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("015_Slide_Comp.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("015_Slide_Comp.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("015_Slide_Comp");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintKissTheSky() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("016_Kiss_the_Sky.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("016_Kiss_the_Sky.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("016_Kiss_the_Sky");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintUnchained() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("017_Unchained.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("017_Unchained.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("017_Unchained");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintStomp() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("018_Stomp!.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("018_Stomp!.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("018_Stomp!");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintOctaWah() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("019_OctaWah.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("019_OctaWah.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("019_OctaWah");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintWahUni() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("020_Wah_&_Uni.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("020_Wah_&_Uni.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("020_Wah_&_Uni");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintCWah() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("064_C-Wah.txt").toURI());
-        String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("064_C-Wah.syx").toURI());
-        Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        testParseAndPrint("064_C-Wah");
     }
 
-    /**
-     * Test printing a textual representation of the program.
-     *
-     * TODO would be good not to use SysexParser.parseProgram()?
-     */
     @Test
     public void testPrintVWah() throws Exception {
-        File expectedFile = new File(this.getClass().getClassLoader().getResource("074_V-Wah.txt").toURI());
+        testParseAndPrint("074_V-Wah");
+    }
+
+    private void testParseAndPrint(String filename) throws Exception {
+        File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
-        File preset = new File(this.getClass().getClassLoader().getResource("074_V-Wah.syx").toURI());
+        File preset = new File(this.getClass().getClassLoader().getResource(filename + ".syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
         String actual = ProgramPrinter.print(program);
         assertEquals(expected, actual);
