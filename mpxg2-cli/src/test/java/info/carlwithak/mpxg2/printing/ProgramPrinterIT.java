@@ -228,6 +228,56 @@ public class ProgramPrinterIT {
     }
 
     @Test
+    public void testPrintPitchCascade() throws Exception {
+        testParseAndPrint("040_PitchCascade");
+    }
+
+    @Test
+    public void testPrintPdlOctaves() throws Exception {
+        testParseAndPrint("041_Pdl_Octaves");
+    }
+
+    @Test
+    public void testPrintPdl2nds() throws Exception {
+        testParseAndPrint("042_Pdl_2nds");
+    }
+
+    @Test
+    public void testPrintPdl23_b33() throws Exception {
+        testParseAndPrint("043_Pdl_2-3_b3-3");
+    }
+
+    @Test
+    public void testPrintPdl23_34() throws Exception {
+        testParseAndPrint("044_Pdl_2-3_3-4");
+    }
+
+    @Test
+    public void testPrintPdl45_56() throws Exception {
+        testParseAndPrint("045_Pdl_4-5_5-6");
+    }
+
+    @Test
+    public void testPrintOctaves() throws Exception {
+        testParseAndPrint("046_Octaves");
+    }
+
+    @Test
+    public void testPrint4ths5ths() throws Exception {
+        testParseAndPrint("047_4ths_&_5ths");
+    }
+
+    @Test
+    public void testPrintEMajMin3() throws Exception {
+        testParseAndPrint("048_E_Maj_Min_3");
+    }
+
+    @Test
+    public void testPrintEDorMix3() throws Exception {
+        testParseAndPrint("049_E_Dor_Mix_3");
+    }
+
+    @Test
     public void testPrintCWah() throws Exception {
         testParseAndPrint("064_C-Wah");
     }
