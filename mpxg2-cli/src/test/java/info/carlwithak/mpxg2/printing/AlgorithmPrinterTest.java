@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
@@ -418,6 +419,26 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +4dB\n    Rate1: 5.73Hz\n    Depth1: 43%\n    Rate2: 5.73Hz\n    Depth2: 36%\n    Res: 0\n    Width: 100%\n    Bal: -20\n";
         String actual = AlgorithmPrinter.print(rotaryCab);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintAerosol() throws PrintException {
+        Aerosol aerosol = new Aerosol();
+        aerosol.setMix(100);
+        aerosol.setLevel(0);
+        aerosol.setRate1(new FrequencyRate("Rate1", 0.26));
+        aerosol.setPulseWidth1(45);
+        aerosol.setDepth1(70);
+        aerosol.setRate2(new FrequencyRate("Rate2", 0.26));
+        aerosol.setPulseWidth2(55);
+        aerosol.setDepth2(60);
+        aerosol.setResonance1(-60);
+        aerosol.setResonance2(60);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.26Hz\n    PW 1: 45%\n    Depth1: 70%\n    Rate2: 0.26Hz\n    PW 2: 55%\n    Depth2: 60%\n    Res 1: -60\n    Res 2: +60\n";
+        String actual = AlgorithmPrinter.print(aerosol);
 
         assertEquals(expected, actual);
     }

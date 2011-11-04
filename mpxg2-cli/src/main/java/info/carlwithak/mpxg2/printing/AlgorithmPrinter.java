@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
@@ -59,6 +60,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
+import info.carlwithak.mpxg2.printing.effects.algorithms.AerosolPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AmbiencePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.AutoPanPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.BlueCompPrinter;
@@ -147,6 +149,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(FlangerMono.class, new FlangerMonoPrinter());
        PRINTERS.put(FlangerStereo.class, new FlangerStereoPrinter());
        PRINTERS.put(RotaryCab.class, new RotaryCabPrinter());
+       PRINTERS.put(Aerosol.class, new AerosolPrinter());
        PRINTERS.put(Centrifuge1.class, new Centrifuge1Printer());
        PRINTERS.put(DelayMono.class, new DelayMonoPrinter());
        PRINTERS.put(DelayStereo.class, new DelayStereoPrinter());
