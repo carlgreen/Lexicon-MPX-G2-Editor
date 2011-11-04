@@ -138,6 +138,16 @@ public class ProgramPrinterIT {
     }
 
     @Test
+    public void testPrintTowWahPhas() throws Exception {
+        testParseAndPrint("022_ToeWah_Phas");
+    }
+
+    @Test
+    public void testPrintTowWahChrs() throws Exception {
+        testParseAndPrint("023_ToeWah_Chrs");
+    }
+
+    @Test
     public void testPrintCWah() throws Exception {
         testParseAndPrint("064_C-Wah");
     }
