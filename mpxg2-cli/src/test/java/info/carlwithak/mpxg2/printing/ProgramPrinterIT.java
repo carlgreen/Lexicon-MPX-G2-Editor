@@ -178,6 +178,56 @@ public class ProgramPrinterIT {
     }
 
     @Test
+    public void testPrintChrsDlyRvb() throws Exception {
+        testParseAndPrint("030_ChrsDlyRvb+");
+    }
+
+    @Test
+    public void testPrintTSChorus() throws Exception {
+        testParseAndPrint("031_TS_Chorus+");
+    }
+
+    @Test
+    public void testPrintTSDelay() throws Exception {
+        testParseAndPrint("032_TS_Delay+");
+    }
+
+    @Test
+    public void testPrintTSChrsDly() throws Exception {
+        testParseAndPrint("033_TS_ChrsDly+");
+    }
+
+    @Test
+    public void testPrintTSReverb() throws Exception {
+        testParseAndPrint("034_TS_Reverb+");
+    }
+
+    @Test
+    public void testPrintTSChrsRVB() throws Exception {
+        testParseAndPrint("035_TS_ChrsRvb+");
+    }
+
+    @Test
+    public void testPrintCompChorus() throws Exception {
+        testParseAndPrint("036_CompChorus+");
+    }
+
+    @Test
+    public void testPrintCompDelay() throws Exception {
+        testParseAndPrint("037_CompDelay+");
+    }
+
+    @Test
+    public void testPrintCompChrsDly() throws Exception {
+        testParseAndPrint("038_CompChrsDly+");
+    }
+
+    @Test
+    public void testPrintCompChrsRvb() throws Exception {
+        testParseAndPrint("039_CompChrsRvb+");
+    }
+
+    @Test
     public void testPrintCWah() throws Exception {
         testParseAndPrint("064_C-Wah");
     }
