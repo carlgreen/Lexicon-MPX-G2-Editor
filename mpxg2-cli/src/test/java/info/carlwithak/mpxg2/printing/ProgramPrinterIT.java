@@ -148,6 +148,11 @@ public class ProgramPrinterIT {
     }
 
     @Test
+    public void testPrintTowWahAero() throws Exception {
+        testParseAndPrint("024_ToeWah_Aero");
+    }
+
+    @Test
     public void testPrintCWah() throws Exception {
         testParseAndPrint("064_C-Wah");
     }
