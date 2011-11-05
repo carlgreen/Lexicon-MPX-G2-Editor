@@ -1,0 +1,187 @@
+Jam 1 S&H+
+  Guitar Style: Rock
+  Effect Type: Delay, Gain, Reverb
+  Application Type: Amp Input + FX Loop
+  Effect Routing:
+    I=1=2=E=G=C=D=R=O
+            |=======|
+  Effect 2: SweepFilter (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: +3dB
+    Fc: 20Hz
+    FRes: 36
+    Mod: 2020Hz
+    Scale: +49%
+    Pan: C
+  Delay: JamMan (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Size: 250ms
+    Feedback: 0%
+    Insert: Delay
+    Clear: Off
+    Layer: Off
+    Replace: Off
+    Delay: Off
+    Mute: Off
+  Reverb: Hall (Off)
+    Toe Switch: disabled
+    Mix: 20%
+    Level: +3dB
+    Size: 53.0m
+    Link: On
+    Diff: 80%
+    Pre Delay: 25ms
+    Bass: 1.2X
+    Decay: 1.67s
+    Xovr: 818
+    Rt HC: 7.9k
+    Shape: 110
+    Spred: 89
+  EQ: Pedal Vol (On)
+    Toe Switch: on=bypass
+    Mix: 100%
+    Level: 0dB
+  Gain: Distortion (Off)
+    Toe Switch: disabled
+    Lo: +5
+    Mid: +4
+    Hi: 11
+    Drive: 20
+    Tone: 21
+    Bass: +3
+    Trebl: +6
+    Level: 40
+  Softrow:
+    1: Effect 2 Mix
+    2: Effect 2 Fc
+    3: Effect 2 Pan
+    5: Delay Level
+    6: Reverb Mix
+    7: Reverb Size
+    8: Reverb P Dly
+    9: Reverb Bass
+    10: Reverb Decay
+  Patching:
+    Patch 1:
+      Source: Ctls Env
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Mod
+        Min: 20Hz
+        Mid: --
+        Max: 1320Hz
+    Patch 2:
+      Source: Ctls Rand
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Mod
+        Min: 20Hz
+        Mid: --
+        Max: 20000Hz
+    Patch 3:
+      Source: Ctls Sine1
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 FRes
+        Min: 36
+        Mid: --
+        Max: 70
+    Patch 4:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Layer
+        Min: Off
+        Mid: --
+        Max: On
+    Patch 5:
+      Source: Midi CC42
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Clear
+        Min: On
+        Mid: --
+        Max: Off
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 1:4
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 20
+      Rate: 2.60Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: In
+      Src2: Off
+      A Trim: 17
+      Resp: 100
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +5dB
+      Bypass Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: +3dB
+    Delay:
+      Mix: 100%
+      Level: 0dB
+    Reverb:
+      Mix: 20%
+      Level: +3dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: 16 beats
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: Off
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

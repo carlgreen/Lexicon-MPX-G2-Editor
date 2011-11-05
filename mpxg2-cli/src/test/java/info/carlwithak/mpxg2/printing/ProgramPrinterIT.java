@@ -477,6 +477,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("089_Fuzz_2");
     }
 
+    @Test
+    public void testPrintJamChrs() throws Exception {
+        testParseAndPrint("090_Jam_Chrs+");
+    }
+
+    @Test
+    public void testPrintJam1Uni() throws Exception {
+        testParseAndPrint("091_Jam_1__Uni+");
+    }
+
+    @Test
+    public void testPrintJam1SH() throws Exception {
+        testParseAndPrint("092_Jam_1_S&H+");
+    }
+
+    @Test
+    public void testPrintJam1Env() throws Exception {
+        testParseAndPrint("093_Jam_1_Env+");
+    }
+
+    @Test
+    public void testPrintJam1Cordovox() throws Exception {
+        testParseAndPrint("094_Jam1Cordovox");
+    }
+
+    @Test
+    public void testPrintJam2Flang() throws Exception {
+        testParseAndPrint("095_Jam_2_Flange");
+    }
+
+    @Test
+    public void testPrintJam2Phase() throws Exception {
+        testParseAndPrint("096_Jam_2_Phase");
+    }
+
+    @Test
+    public void testPrintJam2Pitch() throws Exception {
+        testParseAndPrint("097_Jam_2_Pitch+");
+    }
+
+    @Test
+    public void testPrintJam2Trem() throws Exception {
+        testParseAndPrint("098_Jam_2_Trem");
+    }
+
+    @Test
+    public void testPrintJam2AuoWah() throws Exception {
+        testParseAndPrint("099_Jam2AutoWah");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
