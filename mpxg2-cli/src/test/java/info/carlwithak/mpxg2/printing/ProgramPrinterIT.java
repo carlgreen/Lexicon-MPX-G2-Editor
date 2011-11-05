@@ -427,6 +427,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("079_ClasscDetune");
     }
 
+    @Test
+    public void testPrintToneBoost() throws Exception {
+        testParseAndPrint("080_Tone_Boost");
+    }
+
+    @Test
+    public void testPrintCrunchBoost() throws Exception {
+        testParseAndPrint("081_Crunch_Boost");
+    }
+
+    @Test
+    public void testPrintTSLead() throws Exception {
+        testParseAndPrint("082_TS_Lead");
+    }
+
+    @Test
+    public void testPrintTSBoost() throws Exception {
+        testParseAndPrint("083_TS_Boost");
+    }
+
+    @Test
+    public void testPrintODLead() throws Exception {
+        testParseAndPrint("084_OD_Lead");
+    }
+
+    @Test
+    public void testPrintODBoost() throws Exception {
+        testParseAndPrint("085_OD_Boost");
+    }
+
+    @Test
+    public void testPrintDistLead() throws Exception {
+        testParseAndPrint("086_Dist_Lead");
+    }
+
+    @Test
+    public void testPrintDistBoost() throws Exception {
+        testParseAndPrint("087_Dist_Boost");
+    }
+
+    @Test
+    public void testPrintFuzz1() throws Exception {
+        testParseAndPrint("088_Fuzz_1");
+    }
+
+    @Test
+    public void testPrintFuzz2() throws Exception {
+        testParseAndPrint("089_Fuzz_2");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
