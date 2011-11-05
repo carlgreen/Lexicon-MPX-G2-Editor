@@ -30,6 +30,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
@@ -839,6 +840,21 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Lo: +25\n    Mid: +10\n    Hi: +20\n    InLvl: 0\n    Level: 55\n";
         String actual = AlgorithmPrinter.print(tone);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintCrunch() throws PrintException {
+        Crunch crunch = new Crunch();
+        crunch.setLo(6);
+        crunch.setMid(12);
+        crunch.setHi(15);
+        crunch.setInLevel(0);
+        crunch.setLevel(50);
+
+        String expected = "    Lo: +6\n    Mid: +12\n    Hi: 15\n    InLvl: 0\n    Level: 50\n";
+        String actual = AlgorithmPrinter.print(crunch);
 
         assertEquals(expected, actual);
     }
