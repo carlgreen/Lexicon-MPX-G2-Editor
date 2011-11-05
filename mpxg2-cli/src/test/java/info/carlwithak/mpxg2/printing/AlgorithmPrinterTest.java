@@ -45,6 +45,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
@@ -489,6 +490,24 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.05Hz\n    PW: 20%\n    Depth: 30%\n    Res: -60%\n    Blend: 30\n";
         String actual = AlgorithmPrinter.print(flangerMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintFlanger24Mono() throws PrintException {
+        Flanger24Mono flanger24Mono = new Flanger24Mono();
+        flanger24Mono.setMix(100);
+        flanger24Mono.setLevel(0);
+        flanger24Mono.setRate(new FrequencyRate("Rate", 0.31));
+        flanger24Mono.setPulseWidth(50);
+        flanger24Mono.setDepth(36);
+        flanger24Mono.setResonance(-30);
+        flanger24Mono.setGlide(50);
+        flanger24Mono.setBlend(50);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.31Hz\n    PW: 50%\n    Depth: 36%\n    Res: -30%\n    Glide: 50\n    Blend: 50\n";
+        String actual = AlgorithmPrinter.print(flanger24Mono);
 
         assertEquals(expected, actual);
     }
