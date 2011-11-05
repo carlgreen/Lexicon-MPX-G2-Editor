@@ -527,6 +527,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("099_Jam2AutoWah");
     }
 
+    @Test
+    public void testPrintVintageRig_InputOnly() throws Exception {
+        testParseAndPrint("100_VintageRig");
+    }
+
+    @Test
+    public void testPrintPdlOctaves_InputOnly() throws Exception {
+        testParseAndPrint("101_Pdl_Octaves");
+    }
+
+    @Test
+    public void testPrintTechnoChords_InputOnly() throws Exception {
+        testParseAndPrint("102_TechnoChords");
+    }
+
+    @Test
+    public void testPrintCordovox_InputOnly() throws Exception {
+        testParseAndPrint("103_Cordovox");
+    }
+
+    @Test
+    public void testPrintAnalogEcho_InputOnly() throws Exception {
+        testParseAndPrint("104_Analog__Echo");
+    }
+
+    @Test
+    public void testPrintWahUni_InputOnly() throws Exception {
+        testParseAndPrint("105_Wah_&_Uni");
+    }
+
+    @Test
+    public void testPrintEnvFilterLP_InputOnly() throws Exception {
+        testParseAndPrint("106_EnvFilter_LP");
+    }
+
+    @Test
+    public void testPrintInfiniteEcho_InputOnly() throws Exception {
+        testParseAndPrint("107_InfiniteEcho");
+    }
+
+    @Test
+    public void testPrintFuzzWah_InputOnly() throws Exception {
+        testParseAndPrint("108_Fuzz_Wah");
+    }
+
+    @Test
+    public void testPrintJamMan_InputOnly() throws Exception {
+        testParseAndPrint("109_JamMan");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
