@@ -48,8 +48,12 @@ public class ProgramPrinter {
         {
             "Mode", "Rate", "PW", "Phase", "Depth", "OnLvl", "OnSrc"
         },
-        {},
-        {},
+        {
+            "Mode", "Rate", "PW", "Phase", "Depth", "OnLvl", "OnSrc"
+        },
+        {
+            "RndLo", "RndHi", "Rate"
+        },
         {
             "", "ARate", "BRate"
         },
@@ -77,8 +81,13 @@ public class ProgramPrinter {
         {
             "", "?", "%", "", "%", "", ""
         },
-        {},
-        {},
+        // TODO determine rate unit from actual rate in use
+        {
+            "", "?", "%", "", "%", "", ""
+        },
+        {
+            "", "", "Hz"
+        },
         {},
         {},
         {},
