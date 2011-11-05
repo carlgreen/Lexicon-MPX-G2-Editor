@@ -153,7 +153,7 @@ public class ProgramPrinter {
     };
 
     private final static String[] NOISE_GATE_ENABLES = {
-        "", "Guitar Input"
+        "Off", "Guitar Input", "Returns Only"
     };
 
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
