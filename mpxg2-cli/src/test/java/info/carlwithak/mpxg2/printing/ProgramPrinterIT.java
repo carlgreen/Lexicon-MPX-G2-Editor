@@ -278,6 +278,56 @@ public class ProgramPrinterIT {
     }
 
     @Test
+    public void testPrintDetuneTrem() throws Exception {
+        testParseAndPrint("050_Detune+Trem");
+    }
+
+    @Test
+    public void testPrintSquareTrem() throws Exception {
+        testParseAndPrint("051_Square_Trem");
+    }
+
+    @Test
+    public void testPrintTremAutoWah() throws Exception {
+        testParseAndPrint("052_Trem_AutoWah");
+    }
+
+    @Test
+    public void testPrintEnvTrem() throws Exception {
+        testParseAndPrint("053_Env_Trem");
+    }
+
+    @Test
+    public void testPrintEnvAutoWahs() throws Exception {
+        testParseAndPrint("054_Env_AutoWahs");
+    }
+
+    @Test
+    public void testPrintChaosDance() throws Exception {
+        testParseAndPrint("055_Chaos_Dance");
+    }
+
+    @Test
+    public void testPrintRoundTrem() throws Exception {
+        testParseAndPrint("056_Round_Trem");
+    }
+
+    @Test
+    public void testPrintTapAutoWah() throws Exception {
+        testParseAndPrint("057_Tap_AutoWah");
+    }
+
+    @Test
+    public void testPrintVerbolo() throws Exception {
+        testParseAndPrint("058_Verbolo");
+    }
+
+    @Test
+    public void testPrintDynaChrsTrem() throws Exception {
+        testParseAndPrint("059_DynaChrsTrem");
+    }
+
+    @Test
     public void testPrintCWah() throws Exception {
         testParseAndPrint("064_C-Wah");
     }
