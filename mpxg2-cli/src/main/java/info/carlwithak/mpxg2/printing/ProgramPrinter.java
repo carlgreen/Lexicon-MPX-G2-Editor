@@ -395,11 +395,14 @@ public class ProgramPrinter {
         StringBuilder sb = new StringBuilder();
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
-        Parameter effectParameter = getEffectParameter(program, program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
         String effectParameterName;
-        if (effectParameter == null) {
+        if (program.getSoftRowEffectType(i) > 6) {
             effectParameterName = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
         } else {
+            Parameter effectParameter = getEffectParameter(program, program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
+            if (effectParameter == null) {
+                return "";
+            }
             effectParameterName = effectParameter.getName();
         }
         sb.append(effectParameterName).append("\n");
@@ -509,25 +512,25 @@ public class ProgramPrinter {
         Parameter parameter;
         switch (effectIndex) {
             case 0:
-                parameter = program.getEffect1().getParameter(parameterIndex);
+                parameter = program.getEffect1() == null ? null : program.getEffect1().getParameter(parameterIndex);
                 break;
             case 1:
-                parameter = program.getEffect2().getParameter(parameterIndex);
+                parameter = program.getEffect2() == null ? null : program.getEffect2().getParameter(parameterIndex);
                 break;
             case 2:
-                parameter = program.getChorus().getParameter(parameterIndex);
+                parameter = program.getChorus() == null ? null : program.getChorus().getParameter(parameterIndex);
                 break;
             case 3:
-                parameter = program.getDelay().getParameter(parameterIndex);
+                parameter = program.getDelay() == null ? null : program.getDelay().getParameter(parameterIndex);
                 break;
             case 4:
-                parameter = program.getReverb().getParameter(parameterIndex);
+                parameter = program.getReverb() == null ? null : program.getReverb().getParameter(parameterIndex);
                 break;
             case 5:
-                parameter = program.getEq().getParameter(parameterIndex);
+                parameter = program.getEq() == null ? null : program.getEq().getParameter(parameterIndex);
                 break;
             case 6:
-                parameter = program.getGain().getParameter(parameterIndex);
+                parameter = program.getGain() == null ? null : program.getGain().getParameter(parameterIndex);
                 break;
             default:
                 parameter = null;
