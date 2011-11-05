@@ -60,6 +60,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
@@ -113,6 +114,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.RedCompPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.RotaryCabPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ScreamerPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ShiftDualPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.ShiftMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.SweepFilterPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.TonePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.TremoloMonoPrinter;
@@ -146,6 +148,7 @@ public class AlgorithmPrinter {
     private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>();
     static {
        PRINTERS.put(ShiftDual.class, new ShiftDualPrinter());
+       PRINTERS.put(ShiftMono.class, new ShiftMonoPrinter());
        PRINTERS.put(DiatonicHmy.class, new DiatonicHmyPrinter());
        PRINTERS.put(Panner.class, new PannerPrinter());
        PRINTERS.put(AutoPan.class, new AutoPanPrinter());

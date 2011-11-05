@@ -62,6 +62,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
@@ -87,6 +88,22 @@ public class AlgorithmPrinterTest {
     public void testPrintInvalidAlgorithm() throws PrintException {
         String notAnAlgorithm = "Not an algorithm";
         AlgorithmPrinter.print(notAnAlgorithm);
+    }
+
+    @Test
+    public void testPrintShiftMono() throws PrintException {
+        ShiftMono shiftMono = new ShiftMono();
+        shiftMono.setMix(100);
+        shiftMono.setLevel(-90);
+        shiftMono.setTune(-1200);
+        shiftMono.setOptimize(50);
+        shiftMono.setGlide(true);
+
+        // TODO level should be 'Off'
+        String expected = "    Mix: 100%\n    Level: -90dB\n    Tune: -1200\n    Optimize: 50\n    Glide: On\n";
+        String actual = AlgorithmPrinter.print(shiftMono);
+
+        assertEquals(expected, actual);
     }
 
     @Test
