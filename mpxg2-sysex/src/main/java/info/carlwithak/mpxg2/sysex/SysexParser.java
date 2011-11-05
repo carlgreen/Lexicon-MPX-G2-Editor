@@ -725,7 +725,7 @@ public class SysexParser {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
             knobName.append(c);
         }
-        program.setKnobName(knobName.toString());
+        program.setKnobName(knobName.toString().trim());
 
         // lfo 1 controller
         int lfo1Mode = readInt(objectData, 798, 2);
