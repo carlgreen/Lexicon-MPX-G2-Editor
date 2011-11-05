@@ -30,7 +30,7 @@ public class Patch {
     enum PatchSource {
         NONE(null),
         /* Internal Controllers */
-        CTLS_OFF, CTLS_ON, CTLS_KNOB, CTLS_PULS1("Ctls Puls1"), CTLS_TRI1("Ctls Tri1"), CTLS_SINE1("Ctls Sine1"),
+        CTLS_OFF, CTLS_ON, CTLS_KNOB("Ctls Knob"), CTLS_PULS1("Ctls Puls1"), CTLS_TRI1("Ctls Tri1"), CTLS_SINE1("Ctls Sine1"),
         CTLS_COS1("Ctls Cos1"), CTLS_PULS2("Ctls Puls2"), CTLS_TRI2("Ctls Tri2"), CTLS_SINE2("Ctls Sine2"), CTLS_COS2("Ctls Cos2"), CTLS_RAND("Ctls Rand"),
         CTLS_ENV("Ctls Env"), CTLS_INLVL, CTLS_RNLVL, CTLS_AB("Ctls A/B"), CTLS_ATRG,
         CTLS_BTRG, CTLS_ABTRG, CTLS_PEDAL, CTLS_TOG1, CTLS_TOG2, CTLS_TOG3,

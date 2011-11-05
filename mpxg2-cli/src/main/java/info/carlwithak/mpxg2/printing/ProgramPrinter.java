@@ -44,7 +44,9 @@ public class ProgramPrinter {
         "SpkrSim", "NGate", "Tempo"
     };
     private static final String[][] EFFECT_PARAMETERS = {
-        {},
+        {
+            "Value", "Low", "High"
+        },
         {
             "Mode", "Rate", "PW", "Phase", "Depth", "OnLvl", "OnSrc"
         },
@@ -76,7 +78,9 @@ public class ProgramPrinter {
         }
     };
     private static final String[][] EFFECT_PARAMETER_UNITS = {
-        {},
+        {
+            "", "", ""
+        },
         {
             "", null, "%", "", "%", "", ""
         },
