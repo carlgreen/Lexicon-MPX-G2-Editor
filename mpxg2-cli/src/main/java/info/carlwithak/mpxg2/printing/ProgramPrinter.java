@@ -77,13 +77,11 @@ public class ProgramPrinter {
     };
     private static final String[][] EFFECT_PARAMETER_UNITS = {
         {},
-        // TODO determine rate unit from actual rate in use
         {
-            "", "?", "%", "", "%", "", ""
+            "", null, "%", "", "%", "", ""
         },
-        // TODO determine rate unit from actual rate in use
         {
-            "", "?", "%", "", "%", "", ""
+            "", null, "%", "", "%", "", ""
         },
         {
             "", "", "Hz"
@@ -418,6 +416,24 @@ public class ProgramPrinter {
         if (parameter == null) {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
             patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
+            // get unit from LFO if that is the destination
+            // TODO make this more generic
+            if (patch.getDestinationEffectIndex() == 8 && patch.getDestinationParameter() == 1) {
+                parameter = program.getLfo1Rate();
+                patchDestinationUnit = parameter.getUnit();
+                if (parameter instanceof FrequencyRate) {
+                    // TODO find a better way
+                    patchDestinationUnit = "100" + patchDestinationUnit;
+                }
+            }
+            if (patch.getDestinationEffectIndex() == 9 && patch.getDestinationParameter() == 1) {
+                parameter = program.getLfo2Rate();
+                patchDestinationUnit = parameter.getUnit();
+                if (parameter instanceof FrequencyRate) {
+                    // TODO find a better way
+                    patchDestinationUnit = "100" + patchDestinationUnit;
+                }
+            }
         } else {
             patchParameter = parameter.getName();
             patchDestinationUnit = parameter.getUnit();
