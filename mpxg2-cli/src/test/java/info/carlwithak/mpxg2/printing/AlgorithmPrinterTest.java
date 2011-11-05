@@ -43,6 +43,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
@@ -799,6 +800,19 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: +9\n    Fc: 393\n    Q: 0.1\n    Mode: LShlf\n";
         String actual = AlgorithmPrinter.print(oneBandMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintEqVolumeStereo() throws PrintException {
+        EqVolumeStereo volumeStereo = new EqVolumeStereo();
+        volumeStereo.setMix(100);
+        volumeStereo.setLevel(0);
+        volumeStereo.setVolume(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Vol: 0%\n";
+        String actual = AlgorithmPrinter.print(volumeStereo);
 
         assertEquals(expected, actual);
     }
