@@ -523,7 +523,7 @@ public class ProgramPrinterIT {
     }
 
     @Test
-    public void testPrintJam2AuoWah() throws Exception {
+    public void testPrintJam2AutoWah() throws Exception {
         testParseAndPrint("099_Jam2AutoWah");
     }
 
