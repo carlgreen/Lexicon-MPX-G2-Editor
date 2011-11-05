@@ -577,6 +577,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("109_JamMan");
     }
 
+    @Test
+    public void testPrintToneBoost_InputOnly() throws Exception {
+        testParseAndPrint("110_ToneBoost");
+    }
+
+    @Test
+    public void testPrintCrunchBoost_InputOnly() throws Exception {
+        testParseAndPrint("111_CrunchBoost");
+    }
+
+    @Test
+    public void testPrintTSLead_InputOnly() throws Exception {
+        testParseAndPrint("112_TSLead");
+    }
+
+    @Test
+    public void testPrintTSBoost_InputOnly() throws Exception {
+        testParseAndPrint("113_TSBoost");
+    }
+
+    @Test
+    public void testPrintODLead_InputOnly() throws Exception {
+        testParseAndPrint("114_ODLead");
+    }
+
+    @Test
+    public void testPrintODBoost_InputOnly() throws Exception {
+        testParseAndPrint("115_ODBoost");
+    }
+
+    @Test
+    public void testPrintDistLead_InputOnly() throws Exception {
+        testParseAndPrint("116_DistLead");
+    }
+
+    @Test
+    public void testPrintDistBoost_InputOnly() throws Exception {
+        testParseAndPrint("117_DistBoost");
+    }
+
+    @Test
+    public void testPrintFuzz1_InputOnly() throws Exception {
+        testParseAndPrint("118_Fuzz1");
+    }
+
+    @Test
+    public void testPrintFuzz2_InputOnly() throws Exception {
+        testParseAndPrint("119_Fuzz2");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
