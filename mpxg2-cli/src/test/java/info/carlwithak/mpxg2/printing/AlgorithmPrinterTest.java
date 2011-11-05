@@ -40,6 +40,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
@@ -636,6 +637,23 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Feedback: -15%\n    Insert: Delay\n    Damp: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintEchoStereo() throws PrintException {
+        EchoStereo echoStereo = new EchoStereo();
+        echoStereo.setMix(0);
+        echoStereo.setLevel(0);
+        echoStereo.setTime(new BeatRate("Time", 1, 1));
+        echoStereo.setFeedback(0);
+        echoStereo.setInsert(3);
+        echoStereo.setDamp(16);
+        echoStereo.setClear(false);
+
+        String expected = "    Mix: 0%\n    Level: 0dB\n    Time: 1:1\n    Feedback: 0%\n    Insert: Delay\n    Damp: 16%\n    Clear: Off\n";
+        String actual = AlgorithmPrinter.print(echoStereo);
 
         assertEquals(expected, actual);
     }
