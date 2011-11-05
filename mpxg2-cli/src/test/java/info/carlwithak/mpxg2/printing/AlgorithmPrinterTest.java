@@ -65,6 +65,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
@@ -163,6 +164,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Rate: 7:4\n    PW: 30%\n    Depth: 100%\n";
         String actual = AlgorithmPrinter.print(tremoloMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTremoloStereo() throws PrintException {
+        TremoloStereo tremoloStereo = new TremoloStereo();
+        tremoloStereo.setMix(100);
+        tremoloStereo.setLevel(0);
+        tremoloStereo.setRate(new FrequencyRate("Rate", 3.0));
+        tremoloStereo.setPulseWidth(50);
+        tremoloStereo.setDepth(100);
+        tremoloStereo.setPhase(3);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 3.00Hz\n    PW: 50%\n    Depth: 100%\n    Phase: 270°\n";
+        String actual = AlgorithmPrinter.print(tremoloStereo);
 
         assertEquals(expected, actual);
     }
