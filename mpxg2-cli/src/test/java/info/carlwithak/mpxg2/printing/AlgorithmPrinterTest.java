@@ -68,6 +68,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
@@ -851,6 +852,26 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: +9\n    Fc: 393\n    Q: 0.1\n    Mode: LShlf\n";
         String actual = AlgorithmPrinter.print(oneBandMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTwoBandMono() throws PrintException {
+        TwoBandMono twoBandMono = new TwoBandMono();
+        twoBandMono.setMix(100);
+        twoBandMono.setLevel(0);
+        twoBandMono.setGain1(-5);
+        twoBandMono.setFc1(200);
+        twoBandMono.setQ1(0.7);
+        twoBandMono.setMode1(0);
+        twoBandMono.setGain2(-7);
+        twoBandMono.setFc2(5000);
+        twoBandMono.setQ2(0.7);
+        twoBandMono.setMode2(2);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -5\n    Fc 1: 200\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: -7\n    Fc 2: 5000\n    Q 2: 0.7\n    Mode2: HShlf\n";
+        String actual = AlgorithmPrinter.print(twoBandMono);
 
         assertEquals(expected, actual);
     }
