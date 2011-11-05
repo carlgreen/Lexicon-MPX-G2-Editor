@@ -498,6 +498,9 @@ public class ProgramPrinter {
             case 4:
                 parameter = program.getReverb().getParameter(parameterIndex);
                 break;
+            case 5:
+                parameter = program.getEq().getParameter(parameterIndex);
+                break;
             case 6:
                 parameter = program.getGain().getParameter(parameterIndex);
                 break;
