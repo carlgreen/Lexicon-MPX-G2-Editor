@@ -87,7 +87,7 @@ TechnoChords
         Mid: --
         Max: 1320Hz
     Patch 2:
-      Source: CTLS_RAND
+      Source: Ctls Rand
         Min: 0
         Mid: --
         Max: 127
