@@ -68,7 +68,9 @@ public class ProgramPrinter {
         },
         {},
         {},
-        {},
+        {
+            null, "Send", "Thrsh", "Atten", "Offse", "ATime", "HTime", "RTime", "Delay"
+        },
         {},
         {},
         {},
@@ -100,7 +102,9 @@ public class ProgramPrinter {
         },
         {},
         {},
-        {},
+        {
+            null, "OnOff", "dB", "dB", "dB", "", "", "", ""
+        },
         {},
         {},
         {},

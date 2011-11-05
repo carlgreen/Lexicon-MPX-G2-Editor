@@ -92,7 +92,7 @@ public class Patch {
     enum PatchDestination {
         EFFECT_1, EFFECT_2, CHORUS, DELAY, REVERB, EQ, GAIN,
         CTLS_KNOB, CTLS_LFO1("LFO1"), CTLS_LFO2("LFO2"), CTLS_RAND("Rand"), CTLS_AB, CTLS_ENV,
-        PATCHING, SOFTROW, POST, SEND, MISC, SPKRSIM, NGATE, TEMPO,
+        PATCHING, SOFTROW, POST, SEND, MISC, SPKRSIM, NGATE("NGat"), TEMPO,
         TOE_PATCHES, AUDIO_ROUTE, ALG_SELECT, BYPASS("Byp");
 
         private final String displayName;
