@@ -45,7 +45,9 @@ public class ProgramPrinter {
     };
     private static final String[][] EFFECT_PARAMETERS = {
         {},
-        {},
+        {
+            "Mode", "Rate", "PW", "Phase", "Depth", "OnLvl", "OnSrc"
+        },
         {},
         {},
         {
@@ -71,7 +73,10 @@ public class ProgramPrinter {
     };
     private static final String[][] EFFECT_PARAMETER_UNITS = {
         {},
-        {},
+        // TODO determine rate unit from actual rate in use
+        {
+            "", "?", "%", "", "%", "", ""
+        },
         {},
         {},
         {},
