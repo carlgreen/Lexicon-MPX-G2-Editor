@@ -328,13 +328,103 @@ public class ProgramPrinterIT {
     }
 
     @Test
+    public void testPrintUnivybe() throws Exception {
+        testParseAndPrint("060_Univybe");
+    }
+
+    @Test
+    public void testPrintOctaveFuzz() throws Exception {
+        testParseAndPrint("061_Octave_Fuzz");
+    }
+
+    @Test
+    public void testPrintPhaser() throws Exception {
+        testParseAndPrint("062_Phaser");
+    }
+
+    @Test
+    public void testPrintEnvFilter() throws Exception {
+        testParseAndPrint("063_EnvFilter");
+    }
+
+    @Test
     public void testPrintCWah() throws Exception {
         testParseAndPrint("064_C-Wah");
     }
 
     @Test
+    public void testPrintBlueComp() throws Exception {
+        testParseAndPrint("065_Blue_Comp");
+    }
+
+    @Test
+    public void testPrintVintageTrem() throws Exception {
+        testParseAndPrint("066_Vintage_Trem");
+    }
+
+    @Test
+    public void testPrintIPSTapeSlap() throws Exception {
+        testParseAndPrint("067_IPS_TapeSlap");
+    }
+
+    @Test
+    public void testPrintSpaceEcho() throws Exception {
+        testParseAndPrint("068_Space_Echo");
+    }
+
+    @Test
+    public void testPrintOctabuzz() throws Exception {
+        testParseAndPrint("069_Octabuzz");
+    }
+
+    @Test
+    public void testPrintOrangePhase() throws Exception {
+        testParseAndPrint("070_OrangePhase");
+    }
+
+    @Test
+    public void testPrintGrayFlange() throws Exception {
+        testParseAndPrint("071_Gray_Flange");
+    }
+
+    @Test
+    public void testPrintRedComp() throws Exception {
+        testParseAndPrint("072_Red_Comp");
+    }
+
+    @Test
+    public void testPrintSHPedal() throws Exception {
+        testParseAndPrint("073_S_H_Pedal");
+    }
+
+    @Test
     public void testPrintVWah() throws Exception {
         testParseAndPrint("074_V-Wah");
+    }
+
+    @Test
+    public void testPrintModernTrem() throws Exception {
+        testParseAndPrint("075_Modern_Trem");
+    }
+
+    @Test
+    public void testPrintTapEcho() throws Exception {
+        testParseAndPrint("076_Tap_Echo");
+    }
+
+    @Test
+    public void testPrintEnvWah() throws Exception {
+        testParseAndPrint("077_Env_Wah");
+    }
+
+    @Test
+    public void testPrintStereoChorus() throws Exception {
+        testParseAndPrint("078_StereoChorus");
+    }
+
+    @Test
+    public void testPrintClasscDetune() throws Exception {
+        testParseAndPrint("079_ClasscDetune");
     }
 
     private void testParseAndPrint(String filename) throws Exception {

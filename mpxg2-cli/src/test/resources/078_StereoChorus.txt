@@ -1,0 +1,95 @@
+StereoChorus
+  Guitar Style: Acoustic, Bass, Blues, Clean, Country, Jazz, Rock
+  Effect Type: Chorus
+  Application Type: Amp Input + FX Loop
+  Effect Routing:
+    I=1=2=G=E=C=D=R=O
+  Chorus: Chorus (On)
+    Toe Switch: disabled
+    Mix: 64%
+    Level: 0dB
+    Rate1: 0.50Hz
+    PW1: 45%
+    Depth1: 100%
+    Rate2: 0.31Hz
+    PW2: 54%
+    Depth2: 82%
+    Res1: -22
+    Res2: -15
+  Softrow:
+    1: Chorus Mix
+    2: Chorus Level
+    3: Chorus Rate1
+    4: Chorus PW 1
+    5: Chorus Dpth1
+    6: Chorus Rate2
+    7: Chorus PW 2
+    8: Chorus Dpth2
+    9: Chorus Dpth2
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +5dB
+      Bypass Level: 0dB
+    Chorus:
+      Mix: 64%
+      Level: 0dB
+  Tempo:
+    Rate: 170 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: Off
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
