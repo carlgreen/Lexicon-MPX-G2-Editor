@@ -56,6 +56,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
+import info.carlwithak.mpxg2.model.effects.algorithms.Phaser;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
 import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
@@ -225,6 +226,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.97Hz\n    PW: 46%\n    Depth: 45%\n";
         String actual = AlgorithmPrinter.print(customVybe);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintPhaser() throws PrintException {
+        Phaser phaser = new Phaser();
+        phaser.setMix(100);
+        phaser.setLevel(0);
+        phaser.setRate(new FrequencyRate("Rate", 0.83));
+        phaser.setPulseWidth(50);
+        phaser.setDepth(100);
+        phaser.setResonance(30);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.83Hz\n    PW: 50%\n    Depth: 100%\n    Res: +30%\n";
+        String actual = AlgorithmPrinter.print(phaser);
 
         assertEquals(expected, actual);
     }
