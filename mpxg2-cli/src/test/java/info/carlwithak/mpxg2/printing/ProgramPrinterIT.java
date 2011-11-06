@@ -727,6 +727,31 @@ public class ProgramPrinterIT {
         testParseAndPrint("139_ClasscDetune");
     }
 
+    @Test
+    public void testPrintBassComp1_InputOnly() throws Exception {
+        testParseAndPrint("140_BassComp1");
+    }
+
+    @Test
+    public void testPrintBassCompChrs_InputOnly() throws Exception {
+        testParseAndPrint("141_BassCompChrs");
+    }
+
+    @Test
+    public void testPrintBassFuzz_InputOnly() throws Exception {
+        testParseAndPrint("142_BassFuzz");
+    }
+
+    @Test
+    public void testPrintBassPitchPdl_InputOnly() throws Exception {
+        testParseAndPrint("143_BassPitchPdl");
+    }
+
+    @Test
+    public void testPrintBootsyBass_InputOnly() throws Exception {
+        testParseAndPrint("144_BootsyBass");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
