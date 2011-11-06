@@ -119,20 +119,8 @@ public class Program {
     private int knobLow;
     private int knobHigh;
     private String knobName;
-    private int lfo1Mode;
-    private Rate lfo1Rate;
-    private int lfo1PulseWidth;
-    private int lfo1Phase;
-    private int lfo1Depth;
-    private int lfo1OnLevel;
-    private int lfo1OnSource;
-    private int lfo2Mode;
-    private Rate lfo2Rate;
-    private int lfo2PulseWidth;
-    private int lfo2Phase;
-    private int lfo2Depth;
-    private int lfo2OnLevel;
-    private int lfo2OnSource;
+    private Lfo lfo1;
+    private Lfo lfo2;
     private int randomLow;
     private int randomHigh;
     private double randomRate;
@@ -743,116 +731,20 @@ public class Program {
         this.knobName = knobName;
     }
 
-    public int getLfo1Mode() {
-        return lfo1Mode;
+    public Lfo getLfo1() {
+        return lfo1;
     }
 
-    public void setLfo1Mode(final int lfo1Mode) {
-        this.lfo1Mode = lfo1Mode;
+    public void setLfo1(final Lfo lfo1) {
+        this.lfo1 = lfo1;
     }
 
-    public Rate getLfo1Rate() {
-        return lfo1Rate;
+    public Lfo getLfo2() {
+        return lfo2;
     }
 
-    public void setLfo1Rate(final Rate lfo1Rate) {
-        this.lfo1Rate = lfo1Rate;
-    }
-
-    public int getLfo1PulseWidth() {
-        return lfo1PulseWidth;
-    }
-
-    public void setLfo1PulseWidth(final int lfo1PulseWidth) {
-        this.lfo1PulseWidth = lfo1PulseWidth;
-    }
-
-    public int getLfo1Phase() {
-        return lfo1Phase;
-    }
-
-    public void setLfo1Phase(final int lfo1Phase) {
-        this.lfo1Phase = lfo1Phase;
-    }
-
-    public int getLfo1Depth() {
-        return lfo1Depth;
-    }
-
-    public void setLfo1Depth(final int lfo1Depth) {
-        this.lfo1Depth = lfo1Depth;
-    }
-
-    public int getLfo1OnLevel() {
-        return lfo1OnLevel;
-    }
-
-    public void setLfo1OnLevel(final int lfo1OnLevel) {
-        this.lfo1OnLevel = lfo1OnLevel;
-    }
-
-    public int getLfo1OnSource() {
-        return lfo1OnSource;
-    }
-
-    public void setLfo1OnSource(final int lfo1OnSource) {
-        this.lfo1OnSource = lfo1OnSource;
-    }
-
-    public int getLfo2Mode() {
-        return lfo2Mode;
-    }
-
-    public void setLfo2Mode(final int lfo2Mode) {
-        this.lfo2Mode = lfo2Mode;
-    }
-
-    public Rate getLfo2Rate() {
-        return lfo2Rate;
-    }
-
-    public void setLfo2Rate(final Rate lfo2Rate) {
-        this.lfo2Rate = lfo2Rate;
-    }
-
-    public int getLfo2PulseWidth() {
-        return lfo2PulseWidth;
-    }
-
-    public void setLfo2PulseWidth(final int lfo2PulseWidth) {
-        this.lfo2PulseWidth = lfo2PulseWidth;
-    }
-
-    public int getLfo2Phase() {
-        return lfo2Phase;
-    }
-
-    public void setLfo2Phase(final int lfo2Phase) {
-        this.lfo2Phase = lfo2Phase;
-    }
-
-    public int getLfo2Depth() {
-        return lfo2Depth;
-    }
-
-    public void setLfo2Depth(final int lfo2Depth) {
-        this.lfo2Depth = lfo2Depth;
-    }
-
-    public int getLfo2OnLevel() {
-        return lfo2OnLevel;
-    }
-
-    public void setLfo2OnLevel(final int lfo2OnLevel) {
-        this.lfo2OnLevel = lfo2OnLevel;
-    }
-
-    public int getLfo2OnSource() {
-        return lfo2OnSource;
-    }
-
-    public void setLfo2OnSource(final int lfo2OnSource) {
-        this.lfo2OnSource = lfo2OnSource;
+    public void setLfo2(final Lfo lfo2) {
+        this.lfo2 = lfo2;
     }
 
     public int getRandomLow() {

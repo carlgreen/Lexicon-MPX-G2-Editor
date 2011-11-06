@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
@@ -703,48 +704,54 @@ public class SysexParser {
         program.setKnobName(knobName.toString().trim());
 
         // lfo 1 controller
+        Lfo lfo1 = new Lfo();
         int lfo1Mode = readInt(objectData, 798, 2);
-        program.setLfo1Mode(lfo1Mode);
+        lfo1.setMode(lfo1Mode);
 
         bytes = Arrays.copyOfRange(objectData, 800, 806);
-        program.setLfo1Rate(RateParser.parse("LFO1Rate", bytes));
+        lfo1.setRate(RateParser.parse("LFO1Rate", bytes));
 
         int lfo1PulseWidth = readInt(objectData, 806, 2);
-        program.setLfo1PulseWidth(lfo1PulseWidth);
+        lfo1.setPulseWidth(lfo1PulseWidth);
 
         int lfo1Phase = readInt(objectData, 808, 2);
-        program.setLfo1Phase(lfo1Phase);
+        lfo1.setPhase(lfo1Phase);
 
         int lfo1Depth = readInt(objectData, 810, 2);
-        program.setLfo1Depth(lfo1Depth);
+        lfo1.setDepth(lfo1Depth);
 
         int lfo1OnLevel = readInt(objectData, 812, 2);
-        program.setLfo1OnLevel(lfo1OnLevel);
+        lfo1.setOnLevel(lfo1OnLevel);
 
         int lfo1OnSource = readInt(objectData, 814, 2);
-        program.setLfo1OnSource(lfo1OnSource);
+        lfo1.setOnSource(lfo1OnSource);
+
+        program.setLfo1(lfo1);
 
         // lfo 2 controller
+        Lfo lfo2 = new Lfo();
         int lfo2Mode = readInt(objectData, 816, 2);
-        program.setLfo2Mode(lfo2Mode);
+        lfo2.setMode(lfo2Mode);
 
         bytes = Arrays.copyOfRange(objectData, 818, 824);
-        program.setLfo2Rate(RateParser.parse("LFO2Rate", bytes));
+        lfo2.setRate(RateParser.parse("LFO2Rate", bytes));
 
         int lfo2PulseWidth = readInt(objectData, 824, 2);
-        program.setLfo2PulseWidth(lfo2PulseWidth);
+        lfo2.setPulseWidth(lfo2PulseWidth);
 
         int lfo2Phase = readInt(objectData, 826, 2);
-        program.setLfo2Phase(lfo2Phase);
+        lfo2.setPhase(lfo2Phase);
 
         int lfo2Depth = readInt(objectData, 828, 2);
-        program.setLfo2Depth(lfo2Depth);
+        lfo2.setDepth(lfo2Depth);
 
         int lfo2OnLevel = readInt(objectData, 830, 2);
-        program.setLfo2OnLevel(lfo2OnLevel);
+        lfo2.setOnLevel(lfo2OnLevel);
 
         int lfo2OnSource = readInt(objectData, 832, 2);
-        program.setLfo2OnSource(lfo2OnSource);
+        lfo2.setOnSource(lfo2OnSource);
+
+        program.setLfo2(lfo2);
 
         // random controller
         int randomLow = readInt(objectData, 834, 2);

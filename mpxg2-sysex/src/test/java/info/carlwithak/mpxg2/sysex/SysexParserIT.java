@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
@@ -266,21 +267,23 @@ public class SysexParserIT {
         assertEquals(100, program.getKnobHigh());
         assertEquals("Delay Adj", program.getKnobName());
 
-        assertEquals(1, program.getLfo1Mode());
-        assertEquals(new FrequencyRate("LFO1Rate", 0.60), program.getLfo1Rate());
-        assertEquals(50, program.getLfo1PulseWidth());
-        assertEquals(0, program.getLfo1Phase());
-        assertEquals(100, program.getLfo1Depth());
-        assertEquals(64, program.getLfo1OnLevel());
-        assertEquals(0, program.getLfo1OnSource());
+        Lfo lfo1 = program.getLfo1();
+        assertEquals(1, lfo1.getMode());
+        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo1.getRate());
+        assertEquals(50, lfo1.getPulseWidth());
+        assertEquals(0, lfo1.getPhase());
+        assertEquals(100, lfo1.getDepth());
+        assertEquals(64, lfo1.getOnLevel());
+        assertEquals(0, lfo1.getOnSource());
 
-        assertEquals(1, program.getLfo2Mode());
-        assertEquals(new FrequencyRate("LFO2Rate", 0.92), program.getLfo2Rate());
-        assertEquals(50, program.getLfo2PulseWidth());
-        assertEquals(0, program.getLfo2Phase());
-        assertEquals(100, program.getLfo2Depth());
-        assertEquals(64, program.getLfo2OnLevel());
-        assertEquals(0, program.getLfo2OnSource());
+        Lfo lfo2 = program.getLfo2();
+        assertEquals(1, lfo2.getMode());
+        assertEquals(new FrequencyRate("LFO2Rate", 0.92), lfo2.getRate());
+        assertEquals(50, lfo2.getPulseWidth());
+        assertEquals(0, lfo2.getPhase());
+        assertEquals(100, lfo2.getDepth());
+        assertEquals(64, lfo2.getOnLevel());
+        assertEquals(0, lfo2.getOnSource());
 
         assertEquals(0, program.getRandomLow());
         assertEquals(127, program.getRandomHigh());
@@ -542,21 +545,23 @@ public class SysexParserIT {
         assertEquals(100, program.getKnobHigh());
         assertEquals("Delay Adj", program.getKnobName());
 
-        assertEquals(1, program.getLfo1Mode());
-        assertEquals(new BeatRate("LFO1Rate", 1, 4), program.getLfo1Rate());
-        assertEquals(50, program.getLfo1PulseWidth());
-        assertEquals(0, program.getLfo1Phase());
-        assertEquals(100, program.getLfo1Depth());
-        assertEquals(64, program.getLfo1OnLevel());
-        assertEquals(0, program.getLfo1OnSource());
+        Lfo lfo1 = program.getLfo1();
+        assertEquals(1, lfo1.getMode());
+        assertEquals(new BeatRate("LFO1Rate", 1, 4), lfo1.getRate());
+        assertEquals(50, lfo1.getPulseWidth());
+        assertEquals(0, lfo1.getPhase());
+        assertEquals(100, lfo1.getDepth());
+        assertEquals(64, lfo1.getOnLevel());
+        assertEquals(0, lfo1.getOnSource());
 
-        assertEquals(1, program.getLfo2Mode());
-        assertEquals(new BeatRate("LFO2Rate", 1, 4), program.getLfo2Rate());
-        assertEquals(50, program.getLfo2PulseWidth());
-        assertEquals(0, program.getLfo2Phase());
-        assertEquals(100, program.getLfo2Depth());
-        assertEquals(64, program.getLfo2OnLevel());
-        assertEquals(0, program.getLfo2OnSource());
+        Lfo lfo2 = program.getLfo2();
+        assertEquals(1, lfo2.getMode());
+        assertEquals(new BeatRate("LFO2Rate", 1, 4), lfo2.getRate());
+        assertEquals(50, lfo2.getPulseWidth());
+        assertEquals(0, lfo2.getPhase());
+        assertEquals(100, lfo2.getDepth());
+        assertEquals(64, lfo2.getOnLevel());
+        assertEquals(0, lfo2.getOnSource());
 
         assertEquals(0, program.getRandomLow());
         assertEquals(127, program.getRandomHigh());
@@ -1860,21 +1865,23 @@ public class SysexParserIT {
         assertEquals(100, program.getKnobHigh());
         assertEquals("Delay Adj", program.getKnobName());
 
-        assertEquals(1, program.getLfo1Mode());
-        assertEquals(new FrequencyRate("LFO1Rate", 0.60), program.getLfo1Rate());
-        assertEquals(50, program.getLfo1PulseWidth());
-        assertEquals(0, program.getLfo1Phase());
-        assertEquals(100, program.getLfo1Depth());
-        assertEquals(64, program.getLfo1OnLevel());
-        assertEquals(0, program.getLfo1OnSource());
+        Lfo lfo1 = program.getLfo1();
+        assertEquals(1, lfo1.getMode());
+        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo1.getRate());
+        assertEquals(50, lfo1.getPulseWidth());
+        assertEquals(0, lfo1.getPhase());
+        assertEquals(100, lfo1.getDepth());
+        assertEquals(64, lfo1.getOnLevel());
+        assertEquals(0, lfo1.getOnSource());
 
-        assertEquals(1, program.getLfo2Mode());
-        assertEquals(new FrequencyRate("LFO2Rate", 0.92), program.getLfo2Rate());
-        assertEquals(50, program.getLfo2PulseWidth());
-        assertEquals(0, program.getLfo2Phase());
-        assertEquals(100, program.getLfo2Depth());
-        assertEquals(64, program.getLfo2OnLevel());
-        assertEquals(0, program.getLfo2OnSource());
+        Lfo lfo2 = program.getLfo2();
+        assertEquals(1, lfo2.getMode());
+        assertEquals(new FrequencyRate("LFO2Rate", 0.92), lfo2.getRate());
+        assertEquals(50, lfo2.getPulseWidth());
+        assertEquals(0, lfo2.getPhase());
+        assertEquals(100, lfo2.getDepth());
+        assertEquals(64, lfo2.getOnLevel());
+        assertEquals(0, lfo2.getOnSource());
 
         assertEquals(0, program.getRandomLow());
         assertEquals(127, program.getRandomHigh());
@@ -2092,21 +2099,23 @@ public class SysexParserIT {
         assertEquals(100, program.getKnobHigh());
         assertEquals("Delay Adj", program.getKnobName());
 
-        assertEquals(1, program.getLfo1Mode());
-        assertEquals(new FrequencyRate("LFO1Rate", 0.60), program.getLfo1Rate());
-        assertEquals(50, program.getLfo1PulseWidth());
-        assertEquals(0, program.getLfo1Phase());
-        assertEquals(100, program.getLfo1Depth());
-        assertEquals(64, program.getLfo1OnLevel());
-        assertEquals(0, program.getLfo1OnSource());
+        Lfo lfo1 = program.getLfo1();
+        assertEquals(1, lfo1.getMode());
+        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo1.getRate());
+        assertEquals(50, lfo1.getPulseWidth());
+        assertEquals(0, lfo1.getPhase());
+        assertEquals(100, lfo1.getDepth());
+        assertEquals(64, lfo1.getOnLevel());
+        assertEquals(0, lfo1.getOnSource());
 
-        assertEquals(1, program.getLfo2Mode());
-        assertEquals(new FrequencyRate("LFO2Rate", 0.92), program.getLfo2Rate());
-        assertEquals(50, program.getLfo2PulseWidth());
-        assertEquals(0, program.getLfo2Phase());
-        assertEquals(100, program.getLfo2Depth());
-        assertEquals(64, program.getLfo2OnLevel());
-        assertEquals(0, program.getLfo2OnSource());
+        Lfo lfo2 = program.getLfo2();
+        assertEquals(1, lfo2.getMode());
+        assertEquals(new FrequencyRate("LFO2Rate", 0.92), lfo2.getRate());
+        assertEquals(50, lfo2.getPulseWidth());
+        assertEquals(0, lfo2.getPhase());
+        assertEquals(100, lfo2.getDepth());
+        assertEquals(64, lfo2.getOnLevel());
+        assertEquals(0, lfo2.getOnSource());
 
         assertEquals(0, program.getRandomLow());
         assertEquals(127, program.getRandomHigh());

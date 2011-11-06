@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
@@ -300,22 +301,24 @@ public class ProgramPrinter {
         sb.append("      Low: ").append(program.getKnobLow()).append("\n");
         sb.append("      High: ").append(program.getKnobHigh()).append("\n");
         sb.append("      Name: ").append(program.getKnobName()).append("\n");
+        Lfo lfo1 = program.getLfo1();
         sb.append("    LFO 1:\n");
-        sb.append("      Mode: ").append(lfoModeToString(program.getLfo1Mode())).append("\n");
-        sb.append("      Rate: ").append(RatePrinter.print(program.getLfo1Rate())).append("\n");
-        sb.append("      PW: ").append(program.getLfo1PulseWidth()).append("%\n");
-        sb.append("      Phase: ").append(program.getLfo1Phase()).append("\n");
-        sb.append("      Depth: ").append(program.getLfo1Depth()).append("%\n");
-        sb.append("      On Level: ").append(program.getLfo1OnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo1OnSource())).append("\n");
+        sb.append("      Mode: ").append(lfoModeToString(lfo1.getMode())).append("\n");
+        sb.append("      Rate: ").append(RatePrinter.print(lfo1.getRate())).append("\n");
+        sb.append("      PW: ").append(lfo1.getPulseWidth()).append("%\n");
+        sb.append("      Phase: ").append(lfo1.getPhase()).append("\n");
+        sb.append("      Depth: ").append(lfo1.getDepth()).append("%\n");
+        sb.append("      On Level: ").append(lfo1.getOnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(lfo1.getOnSource())).append("\n");
+        Lfo lfo2 = program.getLfo2();
         sb.append("    LFO 2:\n");
-        sb.append("      Mode: ").append(lfoModeToString(program.getLfo2Mode())).append("\n");
-        sb.append("      Rate: ").append(RatePrinter.print(program.getLfo2Rate())).append("\n");
-        sb.append("      PW: ").append(program.getLfo2PulseWidth()).append("%\n");
-        sb.append("      Phase: ").append(program.getLfo2Phase()).append("\n");
-        sb.append("      Depth: ").append(program.getLfo2Depth()).append("%\n");
-        sb.append("      On Level: ").append(program.getLfo2OnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo2OnSource())).append("\n");
+        sb.append("      Mode: ").append(lfoModeToString(lfo2.getMode())).append("\n");
+        sb.append("      Rate: ").append(RatePrinter.print(lfo2.getRate())).append("\n");
+        sb.append("      PW: ").append(lfo2.getPulseWidth()).append("%\n");
+        sb.append("      Phase: ").append(lfo2.getPhase()).append("\n");
+        sb.append("      Depth: ").append(lfo2.getDepth()).append("%\n");
+        sb.append("      On Level: ").append(lfo2.getOnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(lfo2.getOnSource())).append("\n");
         sb.append("    Random:\n");
         sb.append("      Low: ").append(program.getRandomLow()).append("\n");
         sb.append("      High: ").append(program.getRandomHigh()).append("\n");
@@ -434,7 +437,7 @@ public class ProgramPrinter {
             // get unit from LFO if that is the destination
             // TODO make this more generic
             if (patch.getDestinationEffectIndex() == 8 && patch.getDestinationParameter() == 1) {
-                parameter = program.getLfo1Rate();
+                parameter = program.getLfo1().getRate();
                 patchDestinationUnit = parameter.getUnit();
                 if (parameter instanceof FrequencyRate) {
                     // TODO find a better way
@@ -442,7 +445,7 @@ public class ProgramPrinter {
                 }
             }
             if (patch.getDestinationEffectIndex() == 9 && patch.getDestinationParameter() == 1) {
-                parameter = program.getLfo2Rate();
+                parameter = program.getLfo2().getRate();
                 patchDestinationUnit = parameter.getUnit();
                 if (parameter instanceof FrequencyRate) {
                     // TODO find a better way
