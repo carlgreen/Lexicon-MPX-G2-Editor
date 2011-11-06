@@ -59,7 +59,9 @@ public class ProgramPrinter {
         {
             "", "ARate", "BRate"
         },
-        {},
+        {
+            "Src1", "Src2", "ATrim", "Resp"
+        },
         {},
         {},
         {},
@@ -93,7 +95,9 @@ public class ProgramPrinter {
             "", "", "Hz"
         },
         {},
-        {},
+        {
+            "?", "?", "", ""
+        },
         {},
         {},
         {},
