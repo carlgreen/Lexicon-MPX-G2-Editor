@@ -278,6 +278,44 @@ public class SysexParserTest {
     }
 
     @Test
+    public void testReadEffectsStatus() {
+        Program program = new Program();
+        SysexParser.readEffectsStatus(program, 0);
+
+        assertFalse(program.isEffect1On());
+        SysexParser.readEffectsStatus(program, 1);
+        assertTrue(program.isEffect1On());
+
+        assertFalse(program.isEffect2On());
+        SysexParser.readEffectsStatus(program, 2);
+        assertTrue(program.isEffect2On());
+
+        assertFalse(program.isChorusOn());
+        SysexParser.readEffectsStatus(program, 4);
+        assertTrue(program.isChorusOn());
+
+        assertFalse(program.isDelayOn());
+        SysexParser.readEffectsStatus(program, 8);
+        assertTrue(program.isDelayOn());
+
+        assertFalse(program.isReverbOn());
+        SysexParser.readEffectsStatus(program, 16);
+        assertTrue(program.isReverbOn());
+
+        assertFalse(program.isEqOn());
+        SysexParser.readEffectsStatus(program, 32);
+        assertTrue(program.isEqOn());
+
+        assertFalse(program.isGainOn());
+        SysexParser.readEffectsStatus(program, 64);
+        assertTrue(program.isGainOn());
+
+        assertFalse(program.isInsertOn());
+        SysexParser.readEffectsStatus(program, 128);
+        assertTrue(program.isInsertOn());
+    }
+
+    @Test
     public void testInvalidEffect1AlgorithmNumber() throws IOException {
         BLANK_PROGRAM_DATA[558] = 0x22;
         byte[] file = concat(FILE_INTRO, BLANK_PROGRAM_DATA, FILE_OUTRO);

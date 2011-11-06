@@ -645,14 +645,7 @@ public class SysexParser {
         program.setProgramName(sb.toString().trim());
 
         int effectsStatus = readInt(objectData, 596, 2);
-        program.setEffect1On((effectsStatus & 0x01) == 0x01);
-        program.setEffect2On((effectsStatus & 0x02) == 0x02);
-        program.setChorusOn((effectsStatus & 0x04) == 0x04);
-        program.setDelayOn((effectsStatus & 0x08) == 0x08);
-        program.setReverbOn((effectsStatus & 0x10) == 0x10);
-        program.setEqOn((effectsStatus & 0x20) == 0x20);
-        program.setGainOn((effectsStatus & 0x40) == 0x40);
-        program.setInsertOn((effectsStatus & 0x80) == 0x80);
+        readEffectsStatus(program, effectsStatus);
 
         // soft row
         for (int i = 0; i < 10; i++) {
@@ -880,6 +873,17 @@ public class SysexParser {
         program.setIsCountry((guitarStyle & GUITAR_STYLE_COUNTRY) == GUITAR_STYLE_COUNTRY);
         program.setIsJazz((guitarStyle & GUITAR_STYLE_JAZZ) == GUITAR_STYLE_JAZZ);
         program.setIsRock((guitarStyle & GUITAR_STYLE_ROCK) == GUITAR_STYLE_ROCK);
+    }
+
+    static void readEffectsStatus(final Program program, final int effectsStatus) {
+        program.setEffect1On((effectsStatus & 0x01) == 0x01);
+        program.setEffect2On((effectsStatus & 0x02) == 0x02);
+        program.setChorusOn((effectsStatus & 0x04) == 0x04);
+        program.setDelayOn((effectsStatus & 0x08) == 0x08);
+        program.setReverbOn((effectsStatus & 0x10) == 0x10);
+        program.setEqOn((effectsStatus & 0x20) == 0x20);
+        program.setGainOn((effectsStatus & 0x40) == 0x40);
+        program.setInsertOn((effectsStatus & 0x80) == 0x80);
     }
 
     private static Patch readPatch(final byte[] bytes) throws IOException {
