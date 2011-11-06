@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import java.io.File;
@@ -466,5 +468,19 @@ public class SysexParserTest {
         assertEquals(499, noiseGate.getHTime());
         assertEquals(2000, noiseGate.getRTime());
         assertEquals(10, noiseGate.getDelay());
+    }
+
+    @Test
+    public void testReadLfo() throws Exception {
+        byte[] bytes = {1, 0, 12, 3, 0, 0, 0, 0, 2, 3, 0, 0, 4, 6, 0, 4, 0, 0};
+        Lfo lfo = SysexParser.readLfo(bytes);
+
+        assertEquals(1, lfo.getMode());
+        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo.getRate());
+        assertEquals(50, lfo.getPulseWidth());
+        assertEquals(0, lfo.getPhase());
+        assertEquals(100, lfo.getDepth());
+        assertEquals(64, lfo.getOnLevel());
+        assertEquals(0, lfo.getOnSource());
     }
 }

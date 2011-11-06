@@ -704,54 +704,10 @@ public class SysexParser {
         program.setKnobName(knobName.toString().trim());
 
         // lfo 1 controller
-        Lfo lfo1 = new Lfo();
-        int lfo1Mode = readInt(objectData, 798, 2);
-        lfo1.setMode(lfo1Mode);
-
-        bytes = Arrays.copyOfRange(objectData, 800, 806);
-        lfo1.setRate(RateParser.parse("LFO1Rate", bytes));
-
-        int lfo1PulseWidth = readInt(objectData, 806, 2);
-        lfo1.setPulseWidth(lfo1PulseWidth);
-
-        int lfo1Phase = readInt(objectData, 808, 2);
-        lfo1.setPhase(lfo1Phase);
-
-        int lfo1Depth = readInt(objectData, 810, 2);
-        lfo1.setDepth(lfo1Depth);
-
-        int lfo1OnLevel = readInt(objectData, 812, 2);
-        lfo1.setOnLevel(lfo1OnLevel);
-
-        int lfo1OnSource = readInt(objectData, 814, 2);
-        lfo1.setOnSource(lfo1OnSource);
-
-        program.setLfo1(lfo1);
+        program.setLfo1(readLfo(Arrays.copyOfRange(objectData, 798, 816)));
 
         // lfo 2 controller
-        Lfo lfo2 = new Lfo();
-        int lfo2Mode = readInt(objectData, 816, 2);
-        lfo2.setMode(lfo2Mode);
-
-        bytes = Arrays.copyOfRange(objectData, 818, 824);
-        lfo2.setRate(RateParser.parse("LFO2Rate", bytes));
-
-        int lfo2PulseWidth = readInt(objectData, 824, 2);
-        lfo2.setPulseWidth(lfo2PulseWidth);
-
-        int lfo2Phase = readInt(objectData, 826, 2);
-        lfo2.setPhase(lfo2Phase);
-
-        int lfo2Depth = readInt(objectData, 828, 2);
-        lfo2.setDepth(lfo2Depth);
-
-        int lfo2OnLevel = readInt(objectData, 830, 2);
-        lfo2.setOnLevel(lfo2OnLevel);
-
-        int lfo2OnSource = readInt(objectData, 832, 2);
-        lfo2.setOnSource(lfo2OnSource);
-
-        program.setLfo2(lfo2);
+        program.setLfo2(readLfo(Arrays.copyOfRange(objectData, 816, 834)));
 
         // random controller
         int randomLow = readInt(objectData, 834, 2);
@@ -921,6 +877,33 @@ public class SysexParser {
         patch.setDestinationMid(destinationMid);
         patch.setDestinationMax(destinationMax);
         return patch;
+    }
+
+    static Lfo readLfo(final byte[] bytes) throws ParseException {
+        final Lfo lfo = new Lfo();
+
+        int mode = bytes[0] + bytes[1] * 16;
+        lfo.setMode(mode);
+
+        byte[] rateBytes = Arrays.copyOfRange(bytes, 2, 8);
+        lfo.setRate(RateParser.parse("Rate", rateBytes));
+
+        int pulseWidth = bytes[8] + bytes[9] * 16;
+        lfo.setPulseWidth(pulseWidth);
+
+        int phase = bytes[10] + bytes[11] * 16;
+        lfo.setPhase(phase);
+
+        int depth = bytes[12] + bytes[13] * 16;
+        lfo.setDepth(depth);
+
+        int onLevel = bytes[14] + bytes[15] * 16;
+        lfo.setOnLevel(onLevel);
+
+        int onSource = bytes[16] + bytes[17] * 16;
+        lfo.setOnSource(onSource);
+
+        return lfo;
     }
 
     private static int readInt(final InputStream in, final int size) throws IOException, ParseException {
