@@ -29,6 +29,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -166,6 +167,114 @@ public class SysexParserTest {
         File temp = tempFileWithData(files);
         List<Program> programs = SysexParser.parsePrograms(temp);
         assertEquals(2, programs.size());
+    }
+
+    @Test
+    public void testReadEffectTypes() {
+        Program program = new Program();
+        SysexParser.readEffectTypes(program, 0);
+
+        assertFalse(program.isChorus());
+        SysexParser.readEffectTypes(program, 1);
+        assertTrue(program.isChorus());
+
+        assertFalse(program.isDelay());
+        SysexParser.readEffectTypes(program, 2);
+        assertTrue(program.isDelay());
+
+        assertFalse(program.isDistortion());
+        SysexParser.readEffectTypes(program, 4);
+        assertTrue(program.isDistortion());
+
+        assertFalse(program.isEq());
+        SysexParser.readEffectTypes(program, 8);
+        assertTrue(program.isEq());
+
+        assertFalse(program.isFlanger());
+        SysexParser.readEffectTypes(program, 16);
+        assertTrue(program.isFlanger());
+
+        assertFalse(program.isGain());
+        SysexParser.readEffectTypes(program, 32);
+        assertTrue(program.isGain());
+
+        assertFalse(program.isMod());
+        SysexParser.readEffectTypes(program, 64);
+        assertTrue(program.isMod());
+
+        assertFalse(program.isOverdrive());
+        SysexParser.readEffectTypes(program, 128);
+        assertTrue(program.isOverdrive());
+
+        assertFalse(program.isPhaser());
+        SysexParser.readEffectTypes(program, 256);
+        assertTrue(program.isPhaser());
+
+        assertFalse(program.isPitch());
+        SysexParser.readEffectTypes(program, 512);
+        assertTrue(program.isPitch());
+
+        assertFalse(program.isReverb());
+        SysexParser.readEffectTypes(program, 1024);
+        assertTrue(program.isReverb());
+
+        assertFalse(program.isSpeakerSim());
+        SysexParser.readEffectTypes(program, 2048);
+        assertTrue(program.isSpeakerSim());
+
+        assertFalse(program.isWah());
+        SysexParser.readEffectTypes(program, 4096);
+        assertTrue(program.isWah());
+
+        assertFalse(program.isPrePost());
+        SysexParser.readEffectTypes(program, 8192);
+        assertTrue(program.isPrePost());
+
+        assertFalse(program.isStandAlone());
+        SysexParser.readEffectTypes(program, 16384);
+        assertTrue(program.isStandAlone());
+
+        assertFalse(program.isInline());
+        SysexParser.readEffectTypes(program, 32768);
+        assertTrue(program.isInline());
+    }
+
+    @Test
+    public void testReadGuitarStyles() {
+        Program program = new Program();
+
+        SysexParser.readGuitarStyles(program, 0);
+        assertFalse(program.isAcoustic());
+
+        SysexParser.readGuitarStyles(program, 1);
+        assertFalse(program.isAcoustic());
+
+        SysexParser.readGuitarStyles(program, 2);
+        assertTrue(program.isAcoustic());
+
+        assertFalse(program.isBass());
+        SysexParser.readGuitarStyles(program, 4);
+        assertTrue(program.isBass());
+
+        assertFalse(program.isBlues());
+        SysexParser.readGuitarStyles(program, 8);
+        assertTrue(program.isBlues());
+
+        assertFalse(program.isClean());
+        SysexParser.readGuitarStyles(program, 16);
+        assertTrue(program.isClean());
+
+        assertFalse(program.isCountry());
+        SysexParser.readGuitarStyles(program, 32);
+        assertTrue(program.isCountry());
+
+        assertFalse(program.isJazz());
+        SysexParser.readGuitarStyles(program, 64);
+        assertTrue(program.isJazz());
+
+        assertFalse(program.isRock());
+        SysexParser.readGuitarStyles(program, 128);
+        assertTrue(program.isRock());
     }
 
     @Test
