@@ -627,6 +627,106 @@ public class ProgramPrinterIT {
         testParseAndPrint("119_Fuzz2");
     }
 
+    @Test
+    public void testPrintUnivybe_InputOnly() throws Exception {
+        testParseAndPrint("120_Univybe");
+    }
+
+    @Test
+    public void testPrintOctaveFuzz_InputOnly() throws Exception {
+        testParseAndPrint("121_OctaveFuzz");
+    }
+
+    @Test
+    public void testPrintPhaser_InputOnly() throws Exception {
+        testParseAndPrint("122_Phaser");
+    }
+
+    @Test
+    public void testPrintEnvFilter_InputOnly() throws Exception {
+        testParseAndPrint("123_EnvFilter");
+    }
+
+    @Test
+    public void testPrintCWah_InputOnly() throws Exception {
+        testParseAndPrint("124_C-Wah");
+    }
+
+    @Test
+    public void testPrintBlueComp_InputOnly() throws Exception {
+        testParseAndPrint("125_BlueComp");
+    }
+
+    @Test
+    public void testPrintVintageTrem_InputOnly() throws Exception {
+        testParseAndPrint("126_VintageTrem");
+    }
+
+    @Test
+    public void testPrintIPSTapeSlap_InputOnly() throws Exception {
+        testParseAndPrint("127_IPSTapeSlap");
+    }
+
+    @Test
+    public void testPrintSpaceEcho_InputOnly() throws Exception {
+        testParseAndPrint("128_SpaceEcho");
+    }
+
+    @Test
+    public void testPrintOctabuzz_InputOnly() throws Exception {
+        testParseAndPrint("129_Octabuzz");
+    }
+
+    @Test
+    public void testPrintOrangePhase_InputOnly() throws Exception {
+        testParseAndPrint("130_OrangePhase");
+    }
+
+    @Test
+    public void testPrintGrayFlange_InputOnly() throws Exception {
+        testParseAndPrint("131_GrayFlange");
+    }
+
+    @Test
+    public void testPrintRedComp_InputOnly() throws Exception {
+        testParseAndPrint("132_RedComp");
+    }
+
+    @Test
+    public void testPrintSHPedal_InputOnly() throws Exception {
+        testParseAndPrint("133_SHPedal");
+    }
+
+    @Test
+    public void testPrintVWah_InputOnly() throws Exception {
+        testParseAndPrint("134_V-Wah");
+    }
+
+    @Test
+    public void testPrintModernTrem_InputOnly() throws Exception {
+        testParseAndPrint("135_ModernTrem");
+    }
+
+    @Test
+    public void testPrintTapEcho_InputOnly() throws Exception {
+        testParseAndPrint("136_TapEcho");
+    }
+
+    @Test
+    public void testPrintEnvWah_InputOnly() throws Exception {
+        testParseAndPrint("137_EnvWah");
+    }
+
+    @Test
+    public void testPrintStereoChorus_InputOnly() throws Exception {
+        testParseAndPrint("138_StereoChorus");
+    }
+
+    @Test
+    public void testPrintClasscDetune_InputOnly() throws Exception {
+        testParseAndPrint("139_ClasscDetune");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

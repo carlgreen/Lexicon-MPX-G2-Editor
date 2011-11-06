@@ -1,0 +1,97 @@
+IPS TapeSlap
+  Guitar Style: Acoustic, Bass, Blues, Clean, Country, Jazz, Rock
+  Effect Type: Delay
+  Application Type: Amp Input Only
+  Effect Routing:
+    I=1=2=E=C=D=R=G=O
+  Delay: Echo (S) (On)
+    Toe Switch: disabled
+    Mix: 20%
+    Level: 0dB
+    Time: 1.32Hz
+    Feedback: 0%
+    Insert: Delay
+    Damp: 10%
+    Clear: Off
+  Softrow:
+    1: Delay Mix
+    2: Delay Level
+    3: Delay Fbk
+    4: Delay Damp
+    5: Delay Clear
+  Patching:
+    Patch 1:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Time
+        Min: 1.32Hz
+        Mid: --
+        Max: 2.64Hz
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +2dB
+      Bypass Level: 0dB
+    Delay:
+      Mix: 20%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: Off
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

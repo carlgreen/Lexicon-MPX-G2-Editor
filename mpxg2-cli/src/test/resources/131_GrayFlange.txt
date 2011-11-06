@@ -1,0 +1,97 @@
+Gray Flange
+  Guitar Style: Blues, Rock
+  Effect Type: Phaser
+  Application Type: Amp Input Only
+  Effect Routing:
+    I=1=2=C=E=D=R=G=O
+  Chorus: Centrifuge1 (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: +6dB
+    Rate1: 0.60Hz
+    PW 1: 45%
+    Sync1: +120
+    Depth1: 100%
+    Rate2: 1.00Hz
+    PW 2: 100%
+    Sync2: -120
+    Depth2: 43%
+    Res: +100%
+  Softrow:
+    1: Chorus Mix
+    2: Chorus Level
+    3: Chorus Rate1
+    4: Chorus PW 1
+    5: Chorus Sync1
+    6: Chorus Dpth1
+    7: Chorus Rate2
+    8: Chorus PW 2
+    9: Chorus Sync2
+    10: Chorus Dpth2
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    Chorus:
+      Mix: 100%
+      Level: +6dB
+  Tempo:
+    Rate: 295 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: Off
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
