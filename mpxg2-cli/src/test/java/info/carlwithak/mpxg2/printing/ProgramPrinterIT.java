@@ -752,6 +752,31 @@ public class ProgramPrinterIT {
         testParseAndPrint("144_BootsyBass");
     }
 
+    @Test
+    public void testPrintJam1SH_InputOnly() throws Exception {
+        testParseAndPrint("145_Jam_1_S_H+");
+    }
+
+    @Test
+    public void testPrintJam1Cordovox_InputOnly() throws Exception {
+        testParseAndPrint("146_Jam1Cordovox");
+    }
+
+    @Test
+    public void testPrintJam1Uni_InputOnly() throws Exception {
+        testParseAndPrint("147_Jam_1__Uni+");
+    }
+
+    @Test
+    public void testPrintJam2Pitch_InputOnly() throws Exception {
+        testParseAndPrint("148_Jam_2_Pitch+");
+    }
+
+    @Test
+    public void testPrintJam2Flange_InputOnly() throws Exception {
+        testParseAndPrint("149_Jam2_Flange+");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

@@ -1,0 +1,153 @@
+Jam 1  Uni+
+  Guitar Style: Blues, Clean, Rock
+  Effect Type: Delay, Gain
+  Application Type: Amp Input Only
+  Effect Routing:
+    I=E=1=2=C=D=R=G=O
+  Effect 1: UniVybe (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Rate: 20
+  Effect 2: Pedal Wah 2 (Off)
+    Toe Switch: off=bypass
+    Mix: 100%
+    Level: 0dB
+    Bass: 10
+    Type: Model V
+    Resp: 100
+    Gain: 0
+  Delay: JamMan (On)
+    Toe Switch: disabled
+    Mix: 50%
+    Level: 0dB
+    Size: 250ms
+    Feedback: 0%
+    Insert: Delay
+    Clear: Off
+    Layer: Off
+    Replace: Off
+    Delay: Off
+    Mute: Off
+  EQ: Pedal Vol (On)
+    Toe Switch: on=bypass
+    Mix: 100%
+    Level: 0dB
+  Gain: Crunch (Off)
+    Toe Switch: disabled
+    Lo: +6
+    Mid: +12
+    Hi: 15
+    InLvl: 0
+    Level: 42
+  Softrow:
+    1: Gain InLvl
+    2: Gain Level
+    6: A/B ARate
+    7: A/B BRate
+    8: Delay Mix
+    9: Delay Size
+    10: Delay Fbk
+  Patching:
+    Patch 1:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Layer
+        Min: Off
+        Mid: --
+        Max: On
+    Patch 2:
+      Source: Midi CC42
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Clear
+        Min: On
+        Mid: --
+        Max: Off
+    Patch 3:
+      Source: Midi CC42
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: NGat Send
+        Min: On
+        Mid: --
+        Max: Off
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 100%
+      Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: 0dB
+    Delay:
+      Mix: 50%
+      Level: 0dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: 16 beats
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: Off
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: Off
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
