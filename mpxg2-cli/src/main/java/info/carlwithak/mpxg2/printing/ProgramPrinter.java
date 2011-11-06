@@ -324,8 +324,8 @@ public class ProgramPrinter {
         sb.append("      Mode: ").append(abModeToString(program.getABMode())).append("\n");
         sb.append("      A Rate: ").append(program.getARate()).append("\n");
         sb.append("      B Rate: ").append(program.getBRate()).append("\n");
-        sb.append("      On Level: ").append(program.getLfo2OnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(program.getLfo2OnSource())).append("\n");
+        sb.append("      On Level: ").append(program.getABOnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(program.getABOnSource())).append("\n");
         sb.append("    Envelope:\n");
         sb.append("      Src1: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc1())).append("\n");
         sb.append("      Src2: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc2())).append("\n");
