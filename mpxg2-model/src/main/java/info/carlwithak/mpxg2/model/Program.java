@@ -115,20 +115,24 @@ public class Program {
     private Patch patch5;
 
     // controllers
+    // TODO implement Knob class
     private int knobValue;
     private int knobLow;
     private int knobHigh;
     private String knobName;
     private Lfo lfo1;
     private Lfo lfo2;
+    // TODO implement Random class
     private int randomLow;
     private int randomHigh;
     private double randomRate;
+    // TODO implement Ab class
     private int abMode;
     private int aRate;
     private int bRate;
     private int abOnLevel;
     private int abOnSource;
+    // TODO implement EnvelopeGenerator class
     private int envelopeGeneratorSrc1;
     private int envelopeGeneratorSrc2;
     private int envelopeGeneratorATrim;
