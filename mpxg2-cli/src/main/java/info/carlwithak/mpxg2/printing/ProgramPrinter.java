@@ -301,24 +301,8 @@ public class ProgramPrinter {
         sb.append("      Low: ").append(program.getKnobLow()).append("\n");
         sb.append("      High: ").append(program.getKnobHigh()).append("\n");
         sb.append("      Name: ").append(program.getKnobName()).append("\n");
-        Lfo lfo1 = program.getLfo1();
-        sb.append("    LFO 1:\n");
-        sb.append("      Mode: ").append(lfoModeToString(lfo1.getMode())).append("\n");
-        sb.append("      Rate: ").append(RatePrinter.print(lfo1.getRate())).append("\n");
-        sb.append("      PW: ").append(lfo1.getPulseWidth()).append("%\n");
-        sb.append("      Phase: ").append(lfo1.getPhase()).append("\n");
-        sb.append("      Depth: ").append(lfo1.getDepth()).append("%\n");
-        sb.append("      On Level: ").append(lfo1.getOnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(lfo1.getOnSource())).append("\n");
-        Lfo lfo2 = program.getLfo2();
-        sb.append("    LFO 2:\n");
-        sb.append("      Mode: ").append(lfoModeToString(lfo2.getMode())).append("\n");
-        sb.append("      Rate: ").append(RatePrinter.print(lfo2.getRate())).append("\n");
-        sb.append("      PW: ").append(lfo2.getPulseWidth()).append("%\n");
-        sb.append("      Phase: ").append(lfo2.getPhase()).append("\n");
-        sb.append("      Depth: ").append(lfo2.getDepth()).append("%\n");
-        sb.append("      On Level: ").append(lfo2.getOnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(lfo2.getOnSource())).append("\n");
+        sb.append("    LFO 1:\n").append(printLfo(program.getLfo1()));
+        sb.append("    LFO 2:\n").append(printLfo(program.getLfo2()));
         sb.append("    Random:\n");
         sb.append("      Low: ").append(program.getRandomLow()).append("\n");
         sb.append("      High: ").append(program.getRandomHigh()).append("\n");
@@ -551,6 +535,18 @@ public class ProgramPrinter {
                 parameter = null;
         }
         return parameter;
+    }
+
+    private static String printLfo(final Lfo lfo) throws PrintException {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("      Mode: ").append(lfoModeToString(lfo.getMode())).append("\n");
+        sb.append("      Rate: ").append(RatePrinter.print(lfo.getRate())).append("\n");
+        sb.append("      PW: ").append(lfo.getPulseWidth()).append("%\n");
+        sb.append("      Phase: ").append(lfo.getPhase()).append("\n");
+        sb.append("      Depth: ").append(lfo.getDepth()).append("%\n");
+        sb.append("      On Level: ").append(lfo.getOnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(lfo.getOnSource())).append("\n");
+        return sb.toString();
     }
 
     private static String toePatchToString(final int toePatch) throws PrintException {
