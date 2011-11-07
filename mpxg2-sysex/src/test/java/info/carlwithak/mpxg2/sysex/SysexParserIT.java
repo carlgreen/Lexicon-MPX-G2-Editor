@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.RoutingData;
@@ -262,10 +263,11 @@ public class SysexParserIT {
         assertEquals(0x8000, program.getPatch5().getDestinationMid());
         assertEquals(6, program.getPatch5().getDestinationMax());
 
-        assertEquals(50, program.getKnobValue());
-        assertEquals(0, program.getKnobLow());
-        assertEquals(100, program.getKnobHigh());
-        assertEquals("Delay Adj", program.getKnobName());
+        Knob knob = program.getKnob();
+        assertEquals(50, knob.getValue());
+        assertEquals(0, knob.getLow());
+        assertEquals(100, knob.getHigh());
+        assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
         assertEquals(1, lfo1.getMode());
@@ -540,10 +542,11 @@ public class SysexParserIT {
 
         assertEquals("TremoWah", program.getProgramName());
 
-        assertEquals(50, program.getKnobValue());
-        assertEquals(0, program.getKnobLow());
-        assertEquals(100, program.getKnobHigh());
-        assertEquals("Delay Adj", program.getKnobName());
+        Knob knob = program.getKnob();
+        assertEquals(50, knob.getValue());
+        assertEquals(0, knob.getLow());
+        assertEquals(100, knob.getHigh());
+        assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
         assertEquals(1, lfo1.getMode());
@@ -1860,10 +1863,11 @@ public class SysexParserIT {
         assertEquals(0x8000, program.getPatch5().getDestinationMid());
         assertEquals(0, program.getPatch5().getDestinationMax());
 
-        assertEquals(50, program.getKnobValue());
-        assertEquals(0, program.getKnobLow());
-        assertEquals(100, program.getKnobHigh());
-        assertEquals("Delay Adj", program.getKnobName());
+        Knob knob = program.getKnob();
+        assertEquals(50, knob.getValue());
+        assertEquals(0, knob.getLow());
+        assertEquals(100, knob.getHigh());
+        assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
         assertEquals(1, lfo1.getMode());
@@ -2094,10 +2098,11 @@ public class SysexParserIT {
         assertEquals(0x8000, program.getPatch5().getDestinationMid());
         assertEquals(0, program.getPatch5().getDestinationMax());
 
-        assertEquals(50, program.getKnobValue());
-        assertEquals(0, program.getKnobLow());
-        assertEquals(100, program.getKnobHigh());
-        assertEquals("Delay Adj", program.getKnobName());
+        Knob knob = program.getKnob();
+        assertEquals(50, knob.getValue());
+        assertEquals(0, knob.getLow());
+        assertEquals(100, knob.getHigh());
+        assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
         assertEquals(1, lfo1.getMode());

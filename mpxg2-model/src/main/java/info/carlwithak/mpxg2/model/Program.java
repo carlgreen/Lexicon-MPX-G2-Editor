@@ -115,11 +115,7 @@ public class Program {
     private Patch patch5;
 
     // controllers
-    // TODO implement Knob class
-    private int knobValue;
-    private int knobLow;
-    private int knobHigh;
-    private String knobName;
+    private Knob knob;
     private Lfo lfo1;
     private Lfo lfo2;
     // TODO implement Random class
@@ -703,36 +699,12 @@ public class Program {
         this.patch5 = patch5;
     }
 
-    public int getKnobValue() {
-        return knobValue;
+    public Knob getKnob() {
+        return knob;
     }
 
-    public void setKnobValue(final int knobValue) {
-        this.knobValue = knobValue;
-    }
-
-    public int getKnobLow() {
-        return knobLow;
-    }
-
-    public void setKnobLow(final int knobLow) {
-        this.knobLow = knobLow;
-    }
-
-    public int getKnobHigh() {
-        return knobHigh;
-    }
-
-    public void setKnobHigh(final int knobHigh) {
-        this.knobHigh = knobHigh;
-    }
-
-    public String getKnobName() {
-        return knobName;
-    }
-
-    public void setKnobName(final String knobName) {
-        this.knobName = knobName;
+    public void setKnob(final Knob knob) {
+        this.knob = knob;
     }
 
     public Lfo getLfo1() {

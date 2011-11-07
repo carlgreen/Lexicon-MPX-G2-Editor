@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
@@ -297,10 +298,11 @@ public class ProgramPrinter {
         sb.append(printPatch(program, program.getPatch5(), 5));
         sb.append("  Controllers:\n");
         sb.append("    Knob:\n");
-        sb.append("      Value: ").append(program.getKnobValue()).append("\n");
-        sb.append("      Low: ").append(program.getKnobLow()).append("\n");
-        sb.append("      High: ").append(program.getKnobHigh()).append("\n");
-        sb.append("      Name: ").append(program.getKnobName()).append("\n");
+        Knob knob = program.getKnob();
+        sb.append("      Value: ").append(knob.getValue()).append("\n");
+        sb.append("      Low: ").append(knob.getLow()).append("\n");
+        sb.append("      High: ").append(knob.getHigh()).append("\n");
+        sb.append("      Name: ").append(knob.getName()).append("\n");
         sb.append("    LFO 1:\n").append(printLfo(program.getLfo1()));
         sb.append("    LFO 2:\n").append(printLfo(program.getLfo2()));
         sb.append("    Random:\n");

@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
@@ -686,14 +687,15 @@ public class SysexParser {
         program.setPatch5(readPatch(Arrays.copyOfRange(objectData, 750, 774)));
 
         // knob controller
+        Knob knob = new Knob();
         int knobValue = readInt(objectData, 774, 2);
-        program.setKnobValue(knobValue);
+        knob.setValue(knobValue);
 
         int knobLow = readInt(objectData, 776, 2);
-        program.setKnobLow(knobLow);
+        knob.setLow(knobLow);
 
         int knobHigh = readInt(objectData, 778, 2);
-        program.setKnobHigh(knobHigh);
+        knob.setHigh(knobHigh);
 
         bytes = Arrays.copyOfRange(objectData, 780, 798);
         StringBuilder knobName = new StringBuilder(9);
@@ -701,7 +703,9 @@ public class SysexParser {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
             knobName.append(c);
         }
-        program.setKnobName(knobName.toString().trim());
+        knob.setName(knobName.toString().trim());
+
+        program.setKnob(knob);
 
         // lfo 1 controller
         program.setLfo1(readLfo(Arrays.copyOfRange(objectData, 798, 816)));
