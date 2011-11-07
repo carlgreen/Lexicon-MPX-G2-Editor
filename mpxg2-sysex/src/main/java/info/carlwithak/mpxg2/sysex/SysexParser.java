@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -714,14 +715,17 @@ public class SysexParser {
         program.setLfo2(readLfo(Arrays.copyOfRange(objectData, 816, 834)));
 
         // random controller
+        Random random = new Random();
         int randomLow = readInt(objectData, 834, 2);
-        program.setRandomLow(randomLow);
+        random.setLow(randomLow);
 
         int randomHigh = readInt(objectData, 836, 2);
-        program.setRandomHigh(randomHigh);
+        random.setHigh(randomHigh);
 
         int randomRate = readInt(objectData, 838, 4);
-        program.setRandomRate(randomRate / 100.0);
+        random.setRate(randomRate / 100.0);
+
+        program.setRandom(random);
 
         // TODO what is this?
         // skip bytes 842 - 844

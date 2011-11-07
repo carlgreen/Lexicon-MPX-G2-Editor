@@ -17,13 +17,14 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.Knob;
-import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Knob;
+import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
@@ -306,9 +307,10 @@ public class ProgramPrinter {
         sb.append("    LFO 1:\n").append(printLfo(program.getLfo1()));
         sb.append("    LFO 2:\n").append(printLfo(program.getLfo2()));
         sb.append("    Random:\n");
-        sb.append("      Low: ").append(program.getRandomLow()).append("\n");
-        sb.append("      High: ").append(program.getRandomHigh()).append("\n");
-        sb.append("      Rate: ").append(DECIMAL_2DP.format(program.getRandomRate())).append("Hz\n");
+        Random random = program.getRandom();
+        sb.append("      Low: ").append(random.getLow()).append("\n");
+        sb.append("      High: ").append(random.getHigh()).append("\n");
+        sb.append("      Rate: ").append(DECIMAL_2DP.format(random.getRate())).append("Hz\n");
         sb.append("    A/B:\n");
         sb.append("      Mode: ").append(abModeToString(program.getABMode())).append("\n");
         sb.append("      A Rate: ").append(program.getARate()).append("\n");

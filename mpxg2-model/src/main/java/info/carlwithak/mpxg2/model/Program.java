@@ -118,10 +118,7 @@ public class Program {
     private Knob knob;
     private Lfo lfo1;
     private Lfo lfo2;
-    // TODO implement Random class
-    private int randomLow;
-    private int randomHigh;
-    private double randomRate;
+    private Random random;
     // TODO implement Ab class
     private int abMode;
     private int aRate;
@@ -723,28 +720,12 @@ public class Program {
         this.lfo2 = lfo2;
     }
 
-    public int getRandomLow() {
-        return randomLow;
+    public Random getRandom() {
+        return random;
     }
 
-    public void setRandomLow(final int randomLow) {
-        this.randomLow = randomLow;
-    }
-
-    public int getRandomHigh() {
-        return randomHigh;
-    }
-
-    public void setRandomHigh(final int randomHigh) {
-        this.randomHigh = randomHigh;
-    }
-
-    public double getRandomRate() {
-        return randomRate;
-    }
-
-    public void setRandomRate(final double randomRate) {
-        this.randomRate = randomRate;
+    public void setRandom(final Random random) {
+        this.random = random;
     }
 
     public int getABMode() {

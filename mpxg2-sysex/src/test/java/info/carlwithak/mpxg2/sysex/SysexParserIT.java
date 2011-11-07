@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
@@ -287,9 +288,10 @@ public class SysexParserIT {
         assertEquals(64, lfo2.getOnLevel());
         assertEquals(0, lfo2.getOnSource());
 
-        assertEquals(0, program.getRandomLow());
-        assertEquals(127, program.getRandomHigh());
-        assertEquals(1.00, program.getRandomRate(), 0.001);
+        Random random = program.getRandom();
+        assertEquals(0, random.getLow());
+        assertEquals(127, random.getHigh());
+        assertEquals(1.00, random.getRate(), 0.001);
 
         assertEquals(0, program.getABMode());
         assertEquals(100, program.getARate());
@@ -566,9 +568,10 @@ public class SysexParserIT {
         assertEquals(64, lfo2.getOnLevel());
         assertEquals(0, lfo2.getOnSource());
 
-        assertEquals(0, program.getRandomLow());
-        assertEquals(127, program.getRandomHigh());
-        assertEquals(1.00, program.getRandomRate(), 0.001);
+        Random random = program.getRandom();
+        assertEquals(0, random.getLow());
+        assertEquals(127, random.getHigh());
+        assertEquals(1.00, random.getRate(), 0.001);
 
         assertEquals(0, program.getABMode());
         assertEquals(100, program.getARate());
@@ -1887,9 +1890,10 @@ public class SysexParserIT {
         assertEquals(64, lfo2.getOnLevel());
         assertEquals(0, lfo2.getOnSource());
 
-        assertEquals(0, program.getRandomLow());
-        assertEquals(127, program.getRandomHigh());
-        assertEquals(1.00, program.getRandomRate(), 0.001);
+        Random random = program.getRandom();
+        assertEquals(0, random.getLow());
+        assertEquals(127, random.getHigh());
+        assertEquals(1.00, random.getRate(), 0.001);
 
         assertEquals(0, program.getABMode());
         assertEquals(100, program.getARate());
@@ -2122,9 +2126,10 @@ public class SysexParserIT {
         assertEquals(64, lfo2.getOnLevel());
         assertEquals(0, lfo2.getOnSource());
 
-        assertEquals(0, program.getRandomLow());
-        assertEquals(127, program.getRandomHigh());
-        assertEquals(1.00, program.getRandomRate(), 0.001);
+        Random random = program.getRandom();
+        assertEquals(0, random.getLow());
+        assertEquals(127, random.getHigh());
+        assertEquals(1.00, random.getRate(), 0.001);
 
         assertEquals(0, program.getABMode());
         assertEquals(100, program.getARate());
