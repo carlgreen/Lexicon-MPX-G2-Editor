@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
@@ -293,11 +294,12 @@ public class SysexParserIT {
         assertEquals(127, random.getHigh());
         assertEquals(1.00, random.getRate(), 0.001);
 
-        assertEquals(0, program.getABMode());
-        assertEquals(100, program.getARate());
-        assertEquals(100, program.getBRate());
-        assertEquals(64, program.getABOnLevel());
-        assertEquals(0, program.getABOnSource());
+        Ab ab = program.getAb();
+        assertEquals(0, ab.getMode());
+        assertEquals(100, ab.getARate());
+        assertEquals(100, ab.getBRate());
+        assertEquals(64, ab.getOnLevel());
+        assertEquals(0, ab.getOnSource());
 
         assertEquals(0, program.getEnvelopeGeneratorSrc1());
         assertEquals(0, program.getEnvelopeGeneratorSrc2());
@@ -573,11 +575,12 @@ public class SysexParserIT {
         assertEquals(127, random.getHigh());
         assertEquals(1.00, random.getRate(), 0.001);
 
-        assertEquals(0, program.getABMode());
-        assertEquals(100, program.getARate());
-        assertEquals(100, program.getBRate());
-        assertEquals(64, program.getABOnLevel());
-        assertEquals(0, program.getABOnSource());
+        Ab ab = program.getAb();
+        assertEquals(0, ab.getMode());
+        assertEquals(100, ab.getARate());
+        assertEquals(100, ab.getBRate());
+        assertEquals(64, ab.getOnLevel());
+        assertEquals(0, ab.getOnSource());
 
         assertEquals(0, program.getEnvelopeGeneratorSrc1());
         assertEquals(0, program.getEnvelopeGeneratorSrc2());
@@ -1895,11 +1898,12 @@ public class SysexParserIT {
         assertEquals(127, random.getHigh());
         assertEquals(1.00, random.getRate(), 0.001);
 
-        assertEquals(0, program.getABMode());
-        assertEquals(100, program.getARate());
-        assertEquals(100, program.getBRate());
-        assertEquals(64, program.getABOnLevel());
-        assertEquals(0, program.getABOnSource());
+        Ab ab = program.getAb();
+        assertEquals(0, ab.getMode());
+        assertEquals(100, ab.getARate());
+        assertEquals(100, ab.getBRate());
+        assertEquals(64, ab.getOnLevel());
+        assertEquals(0, ab.getOnSource());
 
         assertEquals(0, program.getEnvelopeGeneratorSrc1());
         assertEquals(0, program.getEnvelopeGeneratorSrc2());
@@ -2131,11 +2135,12 @@ public class SysexParserIT {
         assertEquals(127, random.getHigh());
         assertEquals(1.00, random.getRate(), 0.001);
 
-        assertEquals(0, program.getABMode());
-        assertEquals(100, program.getARate());
-        assertEquals(100, program.getBRate());
-        assertEquals(64, program.getABOnLevel());
-        assertEquals(0, program.getABOnSource());
+        Ab ab = program.getAb();
+        assertEquals(0, ab.getMode());
+        assertEquals(100, ab.getARate());
+        assertEquals(100, ab.getBRate());
+        assertEquals(64, ab.getOnLevel());
+        assertEquals(0, ab.getOnSource());
 
         assertEquals(0, program.getEnvelopeGeneratorSrc1());
         assertEquals(0, program.getEnvelopeGeneratorSrc2());

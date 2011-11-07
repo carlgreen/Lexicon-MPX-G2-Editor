@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Knob;
@@ -312,11 +313,12 @@ public class ProgramPrinter {
         sb.append("      High: ").append(random.getHigh()).append("\n");
         sb.append("      Rate: ").append(DECIMAL_2DP.format(random.getRate())).append("Hz\n");
         sb.append("    A/B:\n");
-        sb.append("      Mode: ").append(abModeToString(program.getABMode())).append("\n");
-        sb.append("      A Rate: ").append(program.getARate()).append("\n");
-        sb.append("      B Rate: ").append(program.getBRate()).append("\n");
-        sb.append("      On Level: ").append(program.getABOnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(program.getABOnSource())).append("\n");
+        Ab ab = program.getAb();
+        sb.append("      Mode: ").append(abModeToString(ab.getMode())).append("\n");
+        sb.append("      A Rate: ").append(ab.getARate()).append("\n");
+        sb.append("      B Rate: ").append(ab.getBRate()).append("\n");
+        sb.append("      On Level: ").append(ab.getOnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
         sb.append("    Envelope:\n");
         sb.append("      Src1: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc1())).append("\n");
         sb.append("      Src2: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc2())).append("\n");

@@ -119,12 +119,7 @@ public class Program {
     private Lfo lfo1;
     private Lfo lfo2;
     private Random random;
-    // TODO implement Ab class
-    private int abMode;
-    private int aRate;
-    private int bRate;
-    private int abOnLevel;
-    private int abOnSource;
+    private Ab ab;
     // TODO implement EnvelopeGenerator class
     private int envelopeGeneratorSrc1;
     private int envelopeGeneratorSrc2;
@@ -728,44 +723,12 @@ public class Program {
         this.random = random;
     }
 
-    public int getABMode() {
-        return abMode;
+    public Ab getAb() {
+        return ab;
     }
 
-    public void setABMode(final int abMode) {
-        this.abMode = abMode;
-    }
-
-    public int getARate() {
-        return aRate;
-    }
-
-    public void setARate(final int aRate) {
-        this.aRate = aRate;
-    }
-
-    public int getBRate() {
-        return bRate;
-    }
-
-    public void setBRate(final int bRate) {
-        this.bRate = bRate;
-    }
-
-    public int getABOnLevel() {
-        return abOnLevel;
-    }
-
-    public void setABOnLevel(final int abOnLevel) {
-        this.abOnLevel = abOnLevel;
-    }
-
-    public int getABOnSource() {
-        return abOnSource;
-    }
-
-    public void setABOnSource(final int abOnSource) {
-        this.abOnSource = abOnSource;
+    public void setAb(final Ab ab) {
+        this.ab = ab;
     }
 
     public int getEnvelopeGeneratorSrc1() {

@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
@@ -731,20 +732,23 @@ public class SysexParser {
         // skip bytes 842 - 844
 
         // a/b data
+        Ab ab = new Ab();
         int abMode = readInt(objectData, 844, 2);
-        program.setABMode(abMode);
+        ab.setMode(abMode);
 
         int aRate = readInt(objectData, 846, 2);
-        program.setARate(aRate);
+        ab.setARate(aRate);
 
         int bRate = readInt(objectData, 848, 2);
-        program.setBRate(bRate);
+        ab.setBRate(bRate);
 
         int abOnLevel = readInt(objectData, 850, 2);
-        program.setABOnLevel(abOnLevel);
+        ab.setOnLevel(abOnLevel);
 
         int abOnSource = readInt(objectData, 852, 2);
-        program.setABOnSource(abOnSource);
+        ab.setOnSource(abOnSource);
+
+        program.setAb(ab);
 
         // envelope generator data
         int envGenSrc1 = readInt(objectData, 854, 2);
