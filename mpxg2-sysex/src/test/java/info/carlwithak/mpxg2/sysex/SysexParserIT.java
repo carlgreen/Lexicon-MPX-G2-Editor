@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.BeatRate;
+import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -301,10 +302,11 @@ public class SysexParserIT {
         assertEquals(64, ab.getOnLevel());
         assertEquals(0, ab.getOnSource());
 
-        assertEquals(0, program.getEnvelopeGeneratorSrc1());
-        assertEquals(0, program.getEnvelopeGeneratorSrc2());
-        assertEquals(100, program.getEnvelopeGeneratorATrim());
-        assertEquals(64, program.getEnvelopeGeneratorResponse());
+        EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
+        assertEquals(0, envelopeGenerator.getSrc1());
+        assertEquals(0, envelopeGenerator.getSrc2());
+        assertEquals(100, envelopeGenerator.getATrim());
+        assertEquals(64, envelopeGenerator.getResponse());
 
         assertEquals(1, program.getNoiseGate().getEnable());
         assertTrue(program.getNoiseGate().isSend());
@@ -582,10 +584,11 @@ public class SysexParserIT {
         assertEquals(64, ab.getOnLevel());
         assertEquals(0, ab.getOnSource());
 
-        assertEquals(0, program.getEnvelopeGeneratorSrc1());
-        assertEquals(0, program.getEnvelopeGeneratorSrc2());
-        assertEquals(100, program.getEnvelopeGeneratorATrim());
-        assertEquals(64, program.getEnvelopeGeneratorResponse());
+        EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
+        assertEquals(0, envelopeGenerator.getSrc1());
+        assertEquals(0, envelopeGenerator.getSrc2());
+        assertEquals(100, envelopeGenerator.getATrim());
+        assertEquals(64, envelopeGenerator.getResponse());
     }
 
     /**
@@ -1905,10 +1908,11 @@ public class SysexParserIT {
         assertEquals(64, ab.getOnLevel());
         assertEquals(0, ab.getOnSource());
 
-        assertEquals(0, program.getEnvelopeGeneratorSrc1());
-        assertEquals(0, program.getEnvelopeGeneratorSrc2());
-        assertEquals(100, program.getEnvelopeGeneratorATrim());
-        assertEquals(64, program.getEnvelopeGeneratorResponse());
+        EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
+        assertEquals(0, envelopeGenerator.getSrc1());
+        assertEquals(0, envelopeGenerator.getSrc2());
+        assertEquals(100, envelopeGenerator.getATrim());
+        assertEquals(64, envelopeGenerator.getResponse());
 
         assertEquals(0, program.getNoiseGate().getEnable());
         assertFalse(program.getNoiseGate().isSend());
@@ -2142,10 +2146,11 @@ public class SysexParserIT {
         assertEquals(64, ab.getOnLevel());
         assertEquals(0, ab.getOnSource());
 
-        assertEquals(0, program.getEnvelopeGeneratorSrc1());
-        assertEquals(0, program.getEnvelopeGeneratorSrc2());
-        assertEquals(100, program.getEnvelopeGeneratorATrim());
-        assertEquals(64, program.getEnvelopeGeneratorResponse());
+        EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
+        assertEquals(0, envelopeGenerator.getSrc1());
+        assertEquals(0, envelopeGenerator.getSrc2());
+        assertEquals(100, envelopeGenerator.getATrim());
+        assertEquals(64, envelopeGenerator.getResponse());
 
         assertEquals(0, program.getNoiseGate().getEnable());
         assertFalse(program.getNoiseGate().isSend());

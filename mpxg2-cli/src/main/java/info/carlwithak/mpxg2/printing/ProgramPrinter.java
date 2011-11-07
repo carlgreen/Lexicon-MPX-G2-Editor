@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Knob;
@@ -320,10 +321,11 @@ public class ProgramPrinter {
         sb.append("      On Level: ").append(ab.getOnLevel()).append("\n");
         sb.append("      On Source: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
         sb.append("    Envelope:\n");
-        sb.append("      Src1: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc1())).append("\n");
-        sb.append("      Src2: ").append(envelopeGeneratorSourceToString(program.getEnvelopeGeneratorSrc2())).append("\n");
-        sb.append("      A Trim: ").append(program.getEnvelopeGeneratorATrim()).append("\n");
-        sb.append("      Resp: ").append(program.getEnvelopeGeneratorResponse()).append("\n");
+        EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
+        sb.append("      Src1: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc1())).append("\n");
+        sb.append("      Src2: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc2())).append("\n");
+        sb.append("      A Trim: ").append(envelopeGenerator.getATrim()).append("\n");
+        sb.append("      Resp: ").append(envelopeGenerator.getResponse()).append("\n");
         sb.append("  Mix:\n");
         sb.append("    Send:\n");
         sb.append("      Level: ").append(signInt(program.getSendLevel())).append("\n");

@@ -120,11 +120,7 @@ public class Program {
     private Lfo lfo2;
     private Random random;
     private Ab ab;
-    // TODO implement EnvelopeGenerator class
-    private int envelopeGeneratorSrc1;
-    private int envelopeGeneratorSrc2;
-    private int envelopeGeneratorATrim;
-    private int envelopeGeneratorResponse;
+    private EnvelopeGenerator envelopeGenerator;
 
     // noise gate
     private NoiseGate noiseGate;
@@ -731,36 +727,12 @@ public class Program {
         this.ab = ab;
     }
 
-    public int getEnvelopeGeneratorSrc1() {
-        return envelopeGeneratorSrc1;
+    public EnvelopeGenerator getEnvelopeGenerator() {
+        return envelopeGenerator;
     }
 
-    public void setEnvelopeGeneratorSrc1(final int envelopeGeneratorSrc1) {
-        this.envelopeGeneratorSrc1 = envelopeGeneratorSrc1;
-    }
-
-    public int getEnvelopeGeneratorSrc2() {
-        return envelopeGeneratorSrc2;
-    }
-
-    public void setEnvelopeGeneratorSrc2(final int envelopeGeneratorSrc2) {
-        this.envelopeGeneratorSrc2 = envelopeGeneratorSrc2;
-    }
-
-    public int getEnvelopeGeneratorATrim() {
-        return envelopeGeneratorATrim;
-    }
-
-    public void setEnvelopeGeneratorATrim(final int envelopeGeneratorATrim) {
-        this.envelopeGeneratorATrim = envelopeGeneratorATrim;
-    }
-
-    public int getEnvelopeGeneratorResponse() {
-        return envelopeGeneratorResponse;
-    }
-
-    public void setEnvelopeGeneratorResponse(final int envelopeGeneratorResponse) {
-        this.envelopeGeneratorResponse = envelopeGeneratorResponse;
+    public void setEnvelopeGenerator(final EnvelopeGenerator envelopeGenerator) {
+        this.envelopeGenerator = envelopeGenerator;
     }
 
     public NoiseGate getNoiseGate() {

@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
@@ -751,17 +752,20 @@ public class SysexParser {
         program.setAb(ab);
 
         // envelope generator data
+        EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
         int envGenSrc1 = readInt(objectData, 854, 2);
-        program.setEnvelopeGeneratorSrc1(envGenSrc1);
+        envelopeGenerator.setSrc1(envGenSrc1);
 
         int envGenSrc2 = readInt(objectData, 856, 2);
-        program.setEnvelopeGeneratorSrc2(envGenSrc2);
+        envelopeGenerator.setSrc2(envGenSrc2);
 
         int envGenATrim = readInt(objectData, 858, 2);
-        program.setEnvelopeGeneratorATrim(envGenATrim);
+        envelopeGenerator.setATrim(envGenATrim);
 
         int envGenResponse = readInt(objectData, 860, 2);
-        program.setEnvelopeGeneratorResponse(envGenResponse);
+        envelopeGenerator.setResponse(envGenResponse);
+
+        program.setEnvelopeGenerator(envelopeGenerator);
 
         // noise gate
         int noiseGateEnable = readInt(objectData, 862, 2);
