@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
@@ -71,6 +72,20 @@ public class ProgramPrinterTest {
 
         String expected = "      Low: 0\n      High: 50\n      Rate: 3:1\n";
         String actual = ProgramPrinter.printRandom(random);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintAb() throws PrintException {
+        Ab ab = new Ab();
+        ab.setMode(0);
+        ab.setARate(100);
+        ab.setBRate(10);
+        ab.setOnLevel(64);
+        ab.setOnSource(0);
+
+        String expected = "      Mode: Trigger\n      A Rate: 100\n      B Rate: 10\n      On Level: 64\n      On Source: none\n";
+        String actual = ProgramPrinter.printAb(ab);
         assertEquals(expected, actual);
     }
 

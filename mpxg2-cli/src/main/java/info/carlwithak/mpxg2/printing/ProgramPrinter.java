@@ -304,13 +304,7 @@ public class ProgramPrinter {
         sb.append("    LFO 1:\n").append(printLfo(program.getLfo1()));
         sb.append("    LFO 2:\n").append(printLfo(program.getLfo2()));
         sb.append("    Random:\n").append(printRandom(program.getRandom()));
-        sb.append("    A/B:\n");
-        Ab ab = program.getAb();
-        sb.append("      Mode: ").append(abModeToString(ab.getMode())).append("\n");
-        sb.append("      A Rate: ").append(ab.getARate()).append("\n");
-        sb.append("      B Rate: ").append(ab.getBRate()).append("\n");
-        sb.append("      On Level: ").append(ab.getOnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
+        sb.append("    A/B:\n").append(printAb(program.getAb()));
         sb.append("    Envelope:\n");
         EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
         sb.append("      Src1: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc1())).append("\n");
@@ -562,6 +556,16 @@ public class ProgramPrinter {
         sb.append("      Low: ").append(random.getLow()).append("\n");
         sb.append("      High: ").append(random.getHigh()).append("\n");
         sb.append("      Rate: ").append(RatePrinter.print(random.getRate())).append("\n");
+        return sb.toString();
+    }
+
+    static String printAb(final Ab ab) {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("      Mode: ").append(abModeToString(ab.getMode())).append("\n");
+        sb.append("      A Rate: ").append(ab.getARate()).append("\n");
+        sb.append("      B Rate: ").append(ab.getBRate()).append("\n");
+        sb.append("      On Level: ").append(ab.getOnLevel()).append("\n");
+        sb.append("      On Source: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
         return sb.toString();
     }
 
