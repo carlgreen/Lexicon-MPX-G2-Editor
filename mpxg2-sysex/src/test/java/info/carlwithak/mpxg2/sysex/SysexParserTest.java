@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
@@ -500,13 +501,13 @@ public class SysexParserTest {
     }
 
     @Test
-    public void testReadRandom() {
-        byte[] bytes = {0, 0, 15, 7, 4, 6, 0, 0};
+    public void testReadRandom() throws ParseException {
+        byte[] bytes = {0, 0, 2, 3, 3, 0, 1, 0, 1, 0};
 
         Random random = SysexParser.readRandom(bytes);
         assertEquals(0, random.getLow());
-        assertEquals(127, random.getHigh());
-        assertEquals(1.00, random.getRate(), 0.001);
+        assertEquals(50, random.getHigh());
+        assertEquals(new BeatRate("Rate", 3, 1), random.getRate());
     }
 
     @Test

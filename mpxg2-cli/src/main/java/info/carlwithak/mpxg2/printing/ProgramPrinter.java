@@ -303,11 +303,7 @@ public class ProgramPrinter {
         sb.append("    Knob:\n").append(printKnob(program.getKnob()));
         sb.append("    LFO 1:\n").append(printLfo(program.getLfo1()));
         sb.append("    LFO 2:\n").append(printLfo(program.getLfo2()));
-        sb.append("    Random:\n");
-        Random random = program.getRandom();
-        sb.append("      Low: ").append(random.getLow()).append("\n");
-        sb.append("      High: ").append(random.getHigh()).append("\n");
-        sb.append("      Rate: ").append(DECIMAL_2DP.format(random.getRate())).append("Hz\n");
+        sb.append("    Random:\n").append(printRandom(program.getRandom()));
         sb.append("    A/B:\n");
         Ab ab = program.getAb();
         sb.append("      Mode: ").append(abModeToString(ab.getMode())).append("\n");
@@ -558,6 +554,14 @@ public class ProgramPrinter {
         sb.append("      Depth: ").append(lfo.getDepth()).append("%\n");
         sb.append("      On Level: ").append(lfo.getOnLevel()).append("\n");
         sb.append("      On Source: ").append(lfoOnSourceToString(lfo.getOnSource())).append("\n");
+        return sb.toString();
+    }
+
+    static String printRandom(final Random random) throws PrintException {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("      Low: ").append(random.getLow()).append("\n");
+        sb.append("      High: ").append(random.getHigh()).append("\n");
+        sb.append("      Rate: ").append(RatePrinter.print(random.getRate())).append("\n");
         return sb.toString();
     }
 

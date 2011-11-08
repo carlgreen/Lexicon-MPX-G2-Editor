@@ -63,7 +63,7 @@ S/H Pedal
     Random:
       Low: 0
       High: 50
-      Rate: 2.58Hz
+      Rate: 2:1
     A/B:
       Mode: Trigger
       A Rate: 100

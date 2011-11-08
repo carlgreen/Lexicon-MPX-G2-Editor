@@ -293,7 +293,7 @@ public class SysexParserIT {
         Random random = program.getRandom();
         assertEquals(0, random.getLow());
         assertEquals(127, random.getHigh());
-        assertEquals(1.00, random.getRate(), 0.001);
+        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());
@@ -575,7 +575,7 @@ public class SysexParserIT {
         Random random = program.getRandom();
         assertEquals(0, random.getLow());
         assertEquals(127, random.getHigh());
-        assertEquals(1.00, random.getRate(), 0.001);
+        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());
@@ -1899,7 +1899,7 @@ public class SysexParserIT {
         Random random = program.getRandom();
         assertEquals(0, random.getLow());
         assertEquals(127, random.getHigh());
-        assertEquals(1.00, random.getRate(), 0.001);
+        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());
@@ -2137,7 +2137,7 @@ public class SysexParserIT {
         Random random = program.getRandom();
         assertEquals(0, random.getLow());
         assertEquals(127, random.getHigh());
-        assertEquals(1.00, random.getRate(), 0.001);
+        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());

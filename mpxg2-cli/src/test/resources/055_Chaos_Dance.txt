@@ -128,7 +128,7 @@ Chaos Dance
     Random:
       Low: 0
       High: 50
-      Rate: 2.59Hz
+      Rate: 3:1
     A/B:
       Mode: Trigger
       A Rate: 100

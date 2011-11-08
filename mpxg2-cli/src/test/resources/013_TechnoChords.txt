@@ -147,7 +147,7 @@ TechnoChords
     Random:
       Low: 0
       High: 20
-      Rate: 2.60Hz
+      Rate: 4:1
     A/B:
       Mode: Trigger
       A Rate: 100

@@ -17,9 +17,11 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
+import info.carlwithak.mpxg2.model.Random;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -57,6 +59,18 @@ public class ProgramPrinterTest {
         
         String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      On Level: 64\n      On Source: none\n";
         String actual = ProgramPrinter.printLfo(lfo);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintRandom() throws PrintException {
+        Random random = new Random();
+        random.setLow(0);
+        random.setHigh(50);
+        random.setRate(new BeatRate("Rate", 3, 1));
+
+        String expected = "      Low: 0\n      High: 50\n      Rate: 3:1\n";
+        String actual = ProgramPrinter.printRandom(random);
         assertEquals(expected, actual);
     }
 

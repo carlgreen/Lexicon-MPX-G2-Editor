@@ -25,7 +25,7 @@ package info.carlwithak.mpxg2.model;
 public class Random {
     private int low;
     private int high;
-    private double rate;
+    private Rate rate;
 
     public int getLow() {
         return low;
@@ -43,11 +43,11 @@ public class Random {
         this.high = high;
     }
 
-    public double getRate() {
+    public Rate getRate() {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(Rate rate) {
         this.rate = rate;
     }
 

@@ -699,10 +699,7 @@ public class SysexParser {
         program.setLfo2(readLfo(Arrays.copyOfRange(objectData, 816, 834)));
 
         // random controller
-        program.setRandom(readRandom(Arrays.copyOfRange(objectData, 834, 842)));
-
-        // TODO what is this - could be for RateParser in readRandom?
-        // skip bytes 842 - 844
+        program.setRandom(readRandom(Arrays.copyOfRange(objectData, 834, 844)));
 
         // a/b data
         program.setAb(readAb(Arrays.copyOfRange(objectData, 844, 854)));
@@ -888,7 +885,7 @@ public class SysexParser {
         return lfo;
     }
 
-    static Random readRandom(byte[] bytes) {
+    static Random readRandom(byte[] bytes) throws ParseException {
         final Random random = new Random();
 
         int randomLow = bytes[0] + bytes[1] * 16;
@@ -897,9 +894,8 @@ public class SysexParser {
         int randomHigh = bytes[2] + bytes[3] * 16;
         random.setHigh(randomHigh);
 
-        // TODO could this be a case for RateParser?
-        int randomRate = bytes[4] + bytes[5] * 16;
-        random.setRate(randomRate / 100.0);
+        byte[] rateBytes = Arrays.copyOfRange(bytes, 4, 10);
+        random.setRate(RateParser.parse("Rate", rateBytes));
 
         return random;
     }
