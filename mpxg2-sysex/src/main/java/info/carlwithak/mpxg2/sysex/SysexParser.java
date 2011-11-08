@@ -708,20 +708,7 @@ public class SysexParser {
         program.setAb(readAb(Arrays.copyOfRange(objectData, 844, 854)));
 
         // envelope generator data
-        EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
-        int envGenSrc1 = readInt(objectData, 854, 2);
-        envelopeGenerator.setSrc1(envGenSrc1);
-
-        int envGenSrc2 = readInt(objectData, 856, 2);
-        envelopeGenerator.setSrc2(envGenSrc2);
-
-        int envGenATrim = readInt(objectData, 858, 2);
-        envelopeGenerator.setATrim(envGenATrim);
-
-        int envGenResponse = readInt(objectData, 860, 2);
-        envelopeGenerator.setResponse(envGenResponse);
-
-        program.setEnvelopeGenerator(envelopeGenerator);
+        program.setEnvelopeGenerator(readEnvelopeGenerator(Arrays.copyOfRange(objectData, 854, 862)));
 
         // noise gate
         int noiseGateEnable = readInt(objectData, 862, 2);
@@ -936,6 +923,24 @@ public class SysexParser {
         ab.setOnSource(abOnSource);
 
         return ab;
+    }
+
+    static EnvelopeGenerator readEnvelopeGenerator(byte[] bytes) {
+        EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
+
+        int envGenSrc1 = bytes[0] + bytes[1] * 16;
+        envelopeGenerator.setSrc1(envGenSrc1);
+
+        int envGenSrc2 = bytes[2] + bytes[3] * 16;
+        envelopeGenerator.setSrc2(envGenSrc2);
+
+        int envGenATrim = bytes[4] + bytes[5] * 16;
+        envelopeGenerator.setATrim(envGenATrim);
+
+        int envGenResponse = bytes[6] + bytes[7] * 16;
+        envelopeGenerator.setResponse(envGenResponse);
+
+        return envelopeGenerator;
     }
 
     private static int readInt(final InputStream in, final int size) throws IOException, ParseException {

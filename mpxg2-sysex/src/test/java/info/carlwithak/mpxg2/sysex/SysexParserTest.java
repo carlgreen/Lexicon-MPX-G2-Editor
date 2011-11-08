@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -518,5 +519,16 @@ public class SysexParserTest {
         assertEquals(100, ab.getBRate());
         assertEquals(64, ab.getOnLevel());
         assertEquals(0, ab.getOnSource());
+    }
+
+    @Test
+    public void testReadEnvelopeGenerator() {
+        byte[] bytes = {0, 0, 0, 0, 4, 6, 0, 4};
+
+        EnvelopeGenerator envelopeGenerator = SysexParser.readEnvelopeGenerator(bytes);
+        assertEquals(0, envelopeGenerator.getSrc1());
+        assertEquals(0, envelopeGenerator.getSrc2());
+        assertEquals(100, envelopeGenerator.getATrim());
+        assertEquals(64, envelopeGenerator.getResponse());
     }
 }
