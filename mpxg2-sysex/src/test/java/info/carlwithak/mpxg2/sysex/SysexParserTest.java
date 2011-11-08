@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.Random;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -494,5 +495,15 @@ public class SysexParserTest {
         assertEquals(100, lfo.getDepth());
         assertEquals(64, lfo.getOnLevel());
         assertEquals(0, lfo.getOnSource());
+    }
+
+    @Test
+    public void testReadRandom() {
+        byte[] bytes = {0, 0, 15, 7, 4, 6, 0, 0};
+
+        Random random = SysexParser.readRandom(bytes);
+        assertEquals(0, random.getLow());
+        assertEquals(127, random.getHigh());
+        assertEquals(1.00, random.getRate(), 0.001);
     }
 }
