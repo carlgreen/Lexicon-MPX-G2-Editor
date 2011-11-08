@@ -705,23 +705,7 @@ public class SysexParser {
         // skip bytes 842 - 844
 
         // a/b data
-        Ab ab = new Ab();
-        int abMode = readInt(objectData, 844, 2);
-        ab.setMode(abMode);
-
-        int aRate = readInt(objectData, 846, 2);
-        ab.setARate(aRate);
-
-        int bRate = readInt(objectData, 848, 2);
-        ab.setBRate(bRate);
-
-        int abOnLevel = readInt(objectData, 850, 2);
-        ab.setOnLevel(abOnLevel);
-
-        int abOnSource = readInt(objectData, 852, 2);
-        ab.setOnSource(abOnSource);
-
-        program.setAb(ab);
+        program.setAb(readAb(Arrays.copyOfRange(objectData, 844, 854)));
 
         // envelope generator data
         EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
@@ -931,6 +915,27 @@ public class SysexParser {
         random.setRate(randomRate / 100.0);
 
         return random;
+    }
+
+    static Ab readAb(byte[] bytes) {
+        final Ab ab = new Ab();
+
+        int abMode = bytes[0] + bytes[1] * 16;
+        ab.setMode(abMode);
+
+        int aRate = bytes[2] + bytes[3] * 16;
+        ab.setARate(aRate);
+
+        int bRate = bytes[4] + bytes[5] * 16;
+        ab.setBRate(bRate);
+
+        int abOnLevel = bytes[6] + bytes[7] * 16;
+        ab.setOnLevel(abOnLevel);
+
+        int abOnSource = bytes[8] + bytes[9] * 16;
+        ab.setOnSource(abOnSource);
+
+        return ab;
     }
 
     private static int readInt(final InputStream in, final int size) throws IOException, ParseException {

@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -505,5 +506,17 @@ public class SysexParserTest {
         assertEquals(0, random.getLow());
         assertEquals(127, random.getHigh());
         assertEquals(1.00, random.getRate(), 0.001);
+    }
+
+    @Test
+    public void testReadAb() {
+        byte[] bytes = {0, 0, 4, 6, 4, 6, 0, 4, 0, 0};
+
+        Ab ab = SysexParser.readAb(bytes);
+        assertEquals(0, ab.getMode());
+        assertEquals(100, ab.getARate());
+        assertEquals(100, ab.getBRate());
+        assertEquals(64, ab.getOnLevel());
+        assertEquals(0, ab.getOnSource());
     }
 }
