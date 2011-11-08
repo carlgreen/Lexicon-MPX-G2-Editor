@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.BeatRate;
+import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -86,6 +87,19 @@ public class ProgramPrinterTest {
 
         String expected = "      Mode: Trigger\n      A Rate: 100\n      B Rate: 10\n      On Level: 64\n      On Source: none\n";
         String actual = ProgramPrinter.printAb(ab);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintEnvelopeGenerator() throws PrintException {
+        EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
+        envelopeGenerator.setSrc1(1);
+        envelopeGenerator.setSrc2(0);
+        envelopeGenerator.setATrim(17);
+        envelopeGenerator.setResponse(100);
+
+        String expected = "      Src1: In\n      Src2: Off\n      A Trim: 17\n      Resp: 100\n";
+        String actual = ProgramPrinter.printEnvelopeGenerator(envelopeGenerator);
         assertEquals(expected, actual);
     }
 

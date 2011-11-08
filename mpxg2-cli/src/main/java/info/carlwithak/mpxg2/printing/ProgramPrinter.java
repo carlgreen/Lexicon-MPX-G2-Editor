@@ -305,12 +305,7 @@ public class ProgramPrinter {
         sb.append("    LFO 2:\n").append(printLfo(program.getLfo2()));
         sb.append("    Random:\n").append(printRandom(program.getRandom()));
         sb.append("    A/B:\n").append(printAb(program.getAb()));
-        sb.append("    Envelope:\n");
-        EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
-        sb.append("      Src1: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc1())).append("\n");
-        sb.append("      Src2: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc2())).append("\n");
-        sb.append("      A Trim: ").append(envelopeGenerator.getATrim()).append("\n");
-        sb.append("      Resp: ").append(envelopeGenerator.getResponse()).append("\n");
+        sb.append("    Envelope:\n").append(printEnvelopeGenerator(program.getEnvelopeGenerator()));
         sb.append("  Mix:\n");
         sb.append("    Send:\n");
         sb.append("      Level: ").append(signInt(program.getSendLevel())).append("\n");
@@ -566,6 +561,15 @@ public class ProgramPrinter {
         sb.append("      B Rate: ").append(ab.getBRate()).append("\n");
         sb.append("      On Level: ").append(ab.getOnLevel()).append("\n");
         sb.append("      On Source: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
+        return sb.toString();
+    }
+
+    static String printEnvelopeGenerator(final EnvelopeGenerator envelopeGenerator) throws PrintException {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("      Src1: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc1())).append("\n");
+        sb.append("      Src2: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc2())).append("\n");
+        sb.append("      A Trim: ").append(envelopeGenerator.getATrim()).append("\n");
+        sb.append("      Resp: ").append(envelopeGenerator.getResponse()).append("\n");
         return sb.toString();
     }
 
