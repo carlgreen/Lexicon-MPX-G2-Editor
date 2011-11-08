@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
@@ -468,6 +469,17 @@ public class SysexParserTest {
         assertEquals(499, noiseGate.getHTime());
         assertEquals(2000, noiseGate.getRTime());
         assertEquals(10, noiseGate.getDelay());
+    }
+
+    @Test
+    public void testReadKnob() {
+        byte[] bytes = {2, 3, 0, 0, 4, 6, 4, 4, 5, 6, 12, 6, 1, 6, 9, 7, 0, 2, 1, 4, 4, 6, 10, 6};
+        Knob knob = SysexParser.readKnob(bytes);
+
+        assertEquals(50, knob.getValue());
+        assertEquals(0, knob.getLow());
+        assertEquals(100, knob.getHigh());
+        assertEquals("Delay Adj", knob.getName());
     }
 
     @Test

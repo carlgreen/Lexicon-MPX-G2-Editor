@@ -690,25 +690,7 @@ public class SysexParser {
         program.setPatch5(readPatch(Arrays.copyOfRange(objectData, 750, 774)));
 
         // knob controller
-        Knob knob = new Knob();
-        int knobValue = readInt(objectData, 774, 2);
-        knob.setValue(knobValue);
-
-        int knobLow = readInt(objectData, 776, 2);
-        knob.setLow(knobLow);
-
-        int knobHigh = readInt(objectData, 778, 2);
-        knob.setHigh(knobHigh);
-
-        bytes = Arrays.copyOfRange(objectData, 780, 798);
-        StringBuilder knobName = new StringBuilder(9);
-        for (int i = 0; i < bytes.length; i += 2) {
-            char c = (char) (bytes[i] + (bytes[i + 1] * 16));
-            knobName.append(c);
-        }
-        knob.setName(knobName.toString().trim());
-
-        program.setKnob(knob);
+        program.setKnob(readKnob(Arrays.copyOfRange(objectData, 774, 798)));
 
         // lfo 1 controller
         program.setLfo1(readLfo(Arrays.copyOfRange(objectData, 798, 816)));
@@ -893,6 +875,29 @@ public class SysexParser {
         patch.setDestinationMid(destinationMid);
         patch.setDestinationMax(destinationMax);
         return patch;
+    }
+
+    static Knob readKnob(byte[] bytes) {
+        final Knob knob = new Knob();
+
+        int knobValue = bytes[0] + bytes[1] * 16;
+        knob.setValue(knobValue);
+
+        int knobLow = bytes[2] + bytes[3] * 16;
+        knob.setLow(knobLow);
+
+        int knobHigh = bytes[4] + bytes[5] * 16;
+        knob.setHigh(knobHigh);
+
+        bytes = Arrays.copyOfRange(bytes, 6, 24);
+        StringBuilder knobName = new StringBuilder(9);
+        for (int i = 0; i < bytes.length; i += 2) {
+            char c = (char) (bytes[i] + (bytes[i + 1] * 16));
+            knobName.append(c);
+        }
+        knob.setName(knobName.toString().trim());
+
+        return knob;
     }
 
     static Lfo readLfo(final byte[] bytes) throws ParseException {
