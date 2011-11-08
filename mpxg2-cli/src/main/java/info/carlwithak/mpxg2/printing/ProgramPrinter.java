@@ -300,12 +300,7 @@ public class ProgramPrinter {
         sb.append(printPatch(program, program.getPatch4(), 4));
         sb.append(printPatch(program, program.getPatch5(), 5));
         sb.append("  Controllers:\n");
-        sb.append("    Knob:\n");
-        Knob knob = program.getKnob();
-        sb.append("      Value: ").append(knob.getValue()).append("\n");
-        sb.append("      Low: ").append(knob.getLow()).append("\n");
-        sb.append("      High: ").append(knob.getHigh()).append("\n");
-        sb.append("      Name: ").append(knob.getName()).append("\n");
+        sb.append("    Knob:\n").append(printKnob(program.getKnob()));
         sb.append("    LFO 1:\n").append(printLfo(program.getLfo1()));
         sb.append("    LFO 2:\n").append(printLfo(program.getLfo2()));
         sb.append("    Random:\n");
@@ -543,6 +538,15 @@ public class ProgramPrinter {
                 parameter = null;
         }
         return parameter;
+    }
+
+    static String printKnob(final Knob knob) {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("      Value: ").append(knob.getValue()).append("\n");
+        sb.append("      Low: ").append(knob.getLow()).append("\n");
+        sb.append("      High: ").append(knob.getHigh()).append("\n");
+        sb.append("      Name: ").append(knob.getName()).append("\n");
+        return sb.toString();
     }
 
     static String printLfo(final Lfo lfo) throws PrintException {

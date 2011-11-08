@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import org.junit.Test;
 
@@ -29,6 +30,19 @@ import static org.junit.Assert.assertEquals;
  * @author carl
  */
 public class ProgramPrinterTest {
+
+    @Test
+    public void testPrintKnob() {
+        Knob knob = new Knob();
+        knob.setValue(50);
+        knob.setLow(0);
+        knob.setHigh(100);
+        knob.setName("Delay Adj");
+
+        String expected = "      Value: 50\n      Low: 0\n      High: 100\n      Name: Delay Adj\n";
+        String actual = ProgramPrinter.printKnob(knob);
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void testPrintLfo() throws PrintException {
