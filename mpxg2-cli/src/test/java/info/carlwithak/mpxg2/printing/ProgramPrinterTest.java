@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.Lfo;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -27,6 +29,23 @@ import static org.junit.Assert.assertEquals;
  * @author carl
  */
 public class ProgramPrinterTest {
+
+    @Test
+    public void testPrintLfo() throws PrintException {
+        Lfo lfo = new Lfo();
+        lfo.setMode(1);
+        lfo.setRate(new FrequencyRate("Rate", 0.6));
+        lfo.setPulseWidth(50);
+        lfo.setPhase(0);
+        lfo.setDepth(100);
+        lfo.setOnLevel(64);
+        lfo.setOnSource(0);
+        
+        String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      On Level: 64\n      On Source: none\n";
+        String actual = ProgramPrinter.printLfo(lfo);
+        assertEquals(expected, actual);
+    }
+
     @Test
     public void testBeatValueToString() {
         assertEquals("eighth", ProgramPrinter.beatValueToString(0));

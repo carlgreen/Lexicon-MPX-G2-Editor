@@ -545,7 +545,7 @@ public class ProgramPrinter {
         return parameter;
     }
 
-    private static String printLfo(final Lfo lfo) throws PrintException {
+    static String printLfo(final Lfo lfo) throws PrintException {
         final StringBuilder sb = new StringBuilder();
         sb.append("      Mode: ").append(lfoModeToString(lfo.getMode())).append("\n");
         sb.append("      Rate: ").append(RatePrinter.print(lfo.getRate())).append("\n");
