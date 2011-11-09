@@ -20,6 +20,8 @@ import java.beans.IntrospectionException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Test Lfo using bean tester.
@@ -27,10 +29,43 @@ import static info.carlwithak.mpxg2.model.Util.testBean;
  * @author Carl Green
  */
 public class LfoTest {
+    private Lfo lfo = new Lfo();
 
     @Test
     public void testLfo() throws IntrospectionException {
         testBean(Lfo.class);
+    }
+
+    @Test
+    public void testRate() {
+        lfo.setRate(new FrequencyRate("Rate", 1.0));
+        assertEquals("Hz", lfo.getParameter(1).getUnit());
+    }
+
+    @Test
+    public void testPulseWidth() {
+        assertEquals("%", lfo.getParameter(2).getUnit());
+    }
+
+    @Test
+    public void testPhase() {
+        assertEquals("", lfo.getParameter(3).getUnit());
+    }
+
+    @Test
+    public void testDepth() {
+        assertEquals("%", lfo.getParameter(4).getUnit());
+    }
+
+    @Test
+    public void testOnLevel() {
+        assertEquals("", lfo.getParameter(5).getUnit());
+    }
+
+    @Test
+    public void testInvalid() {
+        assertNull(lfo.getParameter(0));
+        assertNull(lfo.getParameter(6));
     }
 
 }

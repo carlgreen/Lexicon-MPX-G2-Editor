@@ -25,11 +25,35 @@ package info.carlwithak.mpxg2.model;
 public class Lfo {
     private int mode;
     private Rate rate;
-    private int pulseWidth;
-    private int phase;
-    private int depth;
-    private int onLevel;
+    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "", -120, 120);
+    private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
+    private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
     private int onSource;
+
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 1:
+                parameter = rate;
+                break;
+            case 2:
+                parameter = pulseWidth;
+                break;
+            case 3:
+                parameter = phase;
+                break;
+            case 4:
+                parameter = depth;
+                break;
+            case 5:
+                parameter = onLevel;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
+    }
 
     public int getMode() {
         return mode;
@@ -48,35 +72,35 @@ public class Lfo {
     }
 
     public int getPulseWidth() {
-        return pulseWidth;
+        return pulseWidth.getValue();
     }
 
     public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth = pulseWidth;
+        this.pulseWidth.setValue(pulseWidth);
     }
 
     public int getPhase() {
-        return phase;
+        return phase.getValue();
     }
 
     public void setPhase(int phase) {
-        this.phase = phase;
+        this.phase.setValue(phase);
     }
 
     public int getDepth() {
-        return depth;
+        return depth.getValue();
     }
 
     public void setDepth(int depth) {
-        this.depth = depth;
+        this.depth.setValue(depth);
     }
 
     public int getOnLevel() {
-        return onLevel;
+        return onLevel.getValue();
     }
 
     public void setOnLevel(int onLevel) {
-        this.onLevel = onLevel;
+        this.onLevel.setValue(onLevel);
     }
 
     public int getOnSource() {

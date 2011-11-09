@@ -383,7 +383,7 @@ public class ProgramPrinter {
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
         String effectParameterName;
-        if (program.getSoftRowEffectType(i) > 7) {
+        if (program.getSoftRowEffectType(i) > 9) {
             effectParameterName = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
         } else {
             Parameter effectParameter = getEffectParameter(program, program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
@@ -521,6 +521,12 @@ public class ProgramPrinter {
                 break;
             case 7:
                 parameter = program.getKnob() == null ? null : program.getKnob().getParameter(parameterIndex);
+                break;
+            case 8:
+                parameter = program.getLfo1() == null ? null : program.getLfo1().getParameter(parameterIndex);
+                break;
+            case 9:
+                parameter = program.getLfo2() == null ? null : program.getLfo2().getParameter(parameterIndex);
                 break;
             default:
                 parameter = null;
