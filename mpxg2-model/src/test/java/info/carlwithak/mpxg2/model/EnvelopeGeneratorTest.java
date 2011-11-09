@@ -20,6 +20,8 @@ import java.beans.IntrospectionException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Test EnvelopeGenerator using bean tester.
@@ -27,10 +29,28 @@ import static info.carlwithak.mpxg2.model.Util.testBean;
  * @author Carl Green
  */
 public class EnvelopeGeneratorTest {
+    private EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
 
     @Test
     public void testEnvelopeGenerator() throws IntrospectionException {
         testBean(EnvelopeGenerator.class);
+    }
+
+    @Test
+    public void testATrim() {
+        assertEquals("", envelopeGenerator.getParameter(2).getUnit());
+    }
+
+    @Test
+    public void testResponse() {
+        assertEquals("", envelopeGenerator.getParameter(3).getUnit());
+    }
+
+    @Test
+    public void testInvalid() {
+        assertNull(envelopeGenerator.getParameter(0));
+        assertNull(envelopeGenerator.getParameter(1));
+        assertNull(envelopeGenerator.getParameter(4));
     }
 
 }
