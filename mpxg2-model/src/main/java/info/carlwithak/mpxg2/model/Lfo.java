@@ -23,17 +23,20 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Lfo {
-    private int mode;
+    private GenericValue<Integer> mode = new GenericValue<Integer>("Mode", "", 0, 6);
     private Rate rate;
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "", -120, 120);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
     private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
-    private int onSource;
+    private GenericValue<Integer> onSource = new GenericValue<Integer>("OnSrc", "", 0, 127); // TODO not sure what this goes up to
 
     public Parameter getParameter(final int parameterIndex) {
         Parameter parameter;
         switch (parameterIndex) {
+            case 0:
+                parameter = mode;
+                break;
             case 1:
                 parameter = rate;
                 break;
@@ -49,6 +52,9 @@ public class Lfo {
             case 5:
                 parameter = onLevel;
                 break;
+            case 6:
+                parameter = onSource;
+                break;
             default:
                 parameter = null;
         }
@@ -56,11 +62,11 @@ public class Lfo {
     }
 
     public int getMode() {
-        return mode;
+        return mode.getValue();
     }
 
     public void setMode(int mode) {
-        this.mode = mode;
+        this.mode.setValue(mode);
     }
 
     public Rate getRate() {
@@ -104,10 +110,10 @@ public class Lfo {
     }
 
     public int getOnSource() {
-        return onSource;
+        return onSource.getValue();
     }
 
-    public void setOnSource(int onSource) {
-        this.onSource = onSource;
+    public void setOnSource(final int onSource) {
+        this.onSource.setValue(onSource);
     }
 }

@@ -37,6 +37,11 @@ public class LfoTest {
     }
 
     @Test
+    public void testMode() {
+        assertEquals("", lfo.getParameter(0).getUnit());
+    }
+
+    @Test
     public void testRate() {
         lfo.setRate(new FrequencyRate("Rate", 1.0));
         assertEquals("Hz", lfo.getParameter(1).getUnit());
@@ -63,9 +68,13 @@ public class LfoTest {
     }
 
     @Test
+    public void testOnSource() {
+        assertEquals("", lfo.getParameter(6).getUnit());
+    }
+
+    @Test
     public void testInvalid() {
-        assertNull(lfo.getParameter(0));
-        assertNull(lfo.getParameter(6));
+        assertNull(lfo.getParameter(7));
     }
 
 }

@@ -37,6 +37,16 @@ public class EnvelopeGeneratorTest {
     }
 
     @Test
+    public void testSource1() {
+        assertEquals("", envelopeGenerator.getParameter(0).getUnit());
+    }
+
+    @Test
+    public void testSource2() {
+        assertEquals("", envelopeGenerator.getParameter(1).getUnit());
+    }
+
+    @Test
     public void testATrim() {
         assertEquals("", envelopeGenerator.getParameter(2).getUnit());
     }
@@ -48,8 +58,6 @@ public class EnvelopeGeneratorTest {
 
     @Test
     public void testInvalid() {
-        assertNull(envelopeGenerator.getParameter(0));
-        assertNull(envelopeGenerator.getParameter(1));
         assertNull(envelopeGenerator.getParameter(4));
     }
 

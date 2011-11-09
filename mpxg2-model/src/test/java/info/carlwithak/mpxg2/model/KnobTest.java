@@ -42,8 +42,18 @@ public class KnobTest {
     }
 
     @Test
+    public void testLow() {
+        assertEquals("", knob.getParameter(1).getUnit());
+    }
+
+    @Test
+    public void testHigh() {
+        assertEquals("", knob.getParameter(2).getUnit());
+    }
+
+    @Test
     public void testInvalid() {
-        assertNull(knob.getParameter(1));
+        assertNull(knob.getParameter(3));
     }
 
 }

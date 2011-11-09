@@ -37,12 +37,17 @@ public class AbTest {
     }
 
     @Test
-    public void testBRate() {
-        assertEquals("", ab.getParameter(1).getUnit());
+    public void testMode() {
+        assertEquals("", ab.getParameter(0).getUnit());
     }
 
     @Test
     public void testARate() {
+        assertEquals("", ab.getParameter(1).getUnit());
+    }
+
+    @Test
+    public void testBRate() {
         assertEquals("", ab.getParameter(2).getUnit());
     }
 
@@ -52,9 +57,13 @@ public class AbTest {
     }
 
     @Test
+    public void testOnSource() {
+        assertEquals("", ab.getParameter(4).getUnit());
+    }
+
+    @Test
     public void testInvalid() {
-        assertNull(ab.getParameter(0));
-        assertNull(ab.getParameter(4));
+        assertNull(ab.getParameter(5));
     }
 
 }

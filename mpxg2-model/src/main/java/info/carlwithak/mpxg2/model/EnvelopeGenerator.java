@@ -23,14 +23,20 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class EnvelopeGenerator {
-    private int src1;
-    private int src2;
+    private GenericValue<Integer> src1 = new GenericValue<Integer>("Src1", "", 0, 20);
+    private GenericValue<Integer> src2 = new GenericValue<Integer>("Src1", "", 0, 20);
     private GenericValue<Integer> aTrim = new GenericValue<Integer>("ATrim", "", 0, 100);
     private GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
 
     public Parameter getParameter(final int parameterIndex) {
         Parameter parameter;
         switch (parameterIndex) {
+            case 0:
+                parameter = src1;
+                break;
+            case 1:
+                parameter = src2;
+                break;
             case 2:
                 parameter = aTrim;
                 break;
@@ -44,19 +50,19 @@ public class EnvelopeGenerator {
     }
 
     public int getSrc1() {
-        return src1;
+        return src1.getValue();
     }
 
     public void setSrc1(final int src1) {
-        this.src1 = src1;
+        this.src1.setValue(src1);
     }
 
     public int getSrc2() {
-        return src2;
+        return src2.getValue();
     }
 
     public void setSrc2(final int src2) {
-        this.src2 = src2;
+        this.src2.setValue(src2);
     }
 
     public int getATrim() {
