@@ -49,24 +49,6 @@ public class ProgramPrinter {
         "SpkrSim", "NGate", "Tempo"
     };
     private static final String[][] EFFECT_PARAMETERS = {
-        {
-            "Value", "Low", "High"
-        },
-        {
-            "Mode", "Rate", "PW", "Phase", "Depth", "OnLvl", "OnSrc"
-        },
-        {
-            "Mode", "Rate", "PW", "Phase", "Depth", "OnLvl", "OnSrc"
-        },
-        {
-            "RndLo", "RndHi", "Rate"
-        },
-        {
-            "", "ARate", "BRate"
-        },
-        {
-            "Src1", "Src2", "ATrim", "Resp"
-        },
         {},
         {},
         {},
@@ -87,22 +69,6 @@ public class ProgramPrinter {
         }
     };
     private static final String[][] EFFECT_PARAMETER_UNITS = {
-        {
-            "", "", ""
-        },
-        {
-            "", null, "%", "", "%", "", ""
-        },
-        {
-            "", null, "%", "", "%", "", ""
-        },
-        {
-            "", "", "Hz"
-        },
-        {},
-        {
-            "?", "?", "", ""
-        },
         {},
         {},
         {},
@@ -596,13 +562,13 @@ public class ProgramPrinter {
     }
 
     private static String effectParameterToString(final int effectType, final int effectParameter) {
-        // remove 7 from effectType as the 7 algorithm types take care of themselves
-        return EFFECT_PARAMETERS[effectType - 7][effectParameter];
+        // remove 13 from effectType as the 7 algorithm types and 6 controllers take care of themselves
+        return EFFECT_PARAMETERS[effectType - 13][effectParameter];
     }
 
     private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
-        // remove 7 from effectType as the 7 algorithm types take care of themselves
-        return EFFECT_PARAMETER_UNITS[effectType - 7][effectParameter];
+        // remove 13 from effectType as the 7 algorithm types and 6 controllers take care of themselves
+        return EFFECT_PARAMETER_UNITS[effectType - 13][effectParameter];
     }
 
     private static String lfoModeToString(final int lfoMode) throws PrintException {
