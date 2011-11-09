@@ -23,24 +23,42 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Random {
-    private int low;
-    private int high;
+    private GenericValue<Integer> low = new GenericValue<Integer>("RndLo", "", 0, 127);
+    private GenericValue<Integer> high = new GenericValue<Integer>("RndHi", "", 0, 127);
     private Rate rate;
 
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+                parameter = low;
+                break;
+            case 1:
+                parameter = high;
+                break;
+            case 2:
+                parameter = rate;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
+    }
+
     public int getLow() {
-        return low;
+        return low.getValue();
     }
 
     public void setLow(int low) {
-        this.low = low;
+        this.low.setValue(low);
     }
 
     public int getHigh() {
-        return high;
+        return high.getValue();
     }
 
     public void setHigh(int high) {
-        this.high = high;
+        this.high.setValue(high);
     }
 
     public Rate getRate() {

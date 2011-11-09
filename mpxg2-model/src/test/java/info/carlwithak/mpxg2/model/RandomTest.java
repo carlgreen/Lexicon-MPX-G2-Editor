@@ -20,6 +20,8 @@ import java.beans.IntrospectionException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Test Random using bean tester.
@@ -27,10 +29,32 @@ import static info.carlwithak.mpxg2.model.Util.testBean;
  * @author Carl Green
  */
 public class RandomTest {
+    private Random random = new Random();
 
     @Test
     public void testRandom() throws IntrospectionException {
         testBean(Random.class);
+    }
+
+    @Test
+    public void testLow() {
+        assertEquals("", random.getParameter(0).getUnit());
+    }
+
+    @Test
+    public void testHigh() {
+        assertEquals("", random.getParameter(1).getUnit());
+    }
+
+    @Test
+    public void testRate() {
+        random.setRate(new FrequencyRate("Rate", 1.0));
+        assertEquals("Hz", random.getParameter(2).getUnit());
+    }
+
+    @Test
+    public void testInvalid() {
+        assertNull(random.getParameter(3));
     }
 
 }
