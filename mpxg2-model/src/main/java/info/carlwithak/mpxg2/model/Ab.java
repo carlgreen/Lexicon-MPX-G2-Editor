@@ -24,10 +24,28 @@ package info.carlwithak.mpxg2.model;
  */
 public class Ab {
     private int mode;
-    private int aRate;
-    private int bRate;
-    private int onLevel;
+    private GenericValue<Integer> aRate = new GenericValue<Integer>("ARate", "", 0, 100);
+    private GenericValue<Integer> bRate = new GenericValue<Integer>("BRate", "", 0, 100);
+    private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
     private int onSource;
+
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 1:
+                parameter = aRate;
+                break;
+            case 2:
+                parameter = bRate;
+                break;
+            case 3:
+                parameter = onLevel;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
+    }
 
     public int getMode() {
         return mode;
@@ -38,27 +56,27 @@ public class Ab {
     }
 
     public int getARate() {
-        return aRate;
+        return aRate.getValue();
     }
 
     public void setARate(final int aRate) {
-        this.aRate = aRate;
+        this.aRate.setValue(aRate);
     }
 
     public int getBRate() {
-        return bRate;
+        return bRate.getValue();
     }
 
     public void setBRate(final int bRate) {
-        this.bRate = bRate;
+        this.bRate.setValue(bRate);
     }
 
     public int getOnLevel() {
-        return onLevel;
+        return onLevel.getValue();
     }
 
-    public void setOnLevel(final int onLevel) {
-        this.onLevel = onLevel;
+    public void setOnLevel(int onLevel) {
+        this.onLevel.setValue(onLevel);
     }
 
     public int getOnSource() {
