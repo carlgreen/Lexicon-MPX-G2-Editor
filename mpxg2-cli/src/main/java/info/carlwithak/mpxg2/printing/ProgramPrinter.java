@@ -374,7 +374,7 @@ public class ProgramPrinter {
         }
     }
 
-    private static String printSoftRow(final Program program, final int i) throws PrintException {
+    static String printSoftRow(final Program program, final int i) throws PrintException {
         // TODO should be null if it's not used
         if (program.getSoftRowEffectType(i) == 255 || program.getSoftRowParameter(i) == 255) {
             return "";
@@ -383,7 +383,7 @@ public class ProgramPrinter {
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
         String effectParameterName;
-        if (program.getSoftRowEffectType(i) > 6) {
+        if (program.getSoftRowEffectType(i) > 7) {
             effectParameterName = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
         } else {
             Parameter effectParameter = getEffectParameter(program, program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
@@ -396,7 +396,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    private static String printPatch(final Program program, final Patch patch, final int patchNumber) throws PrintException {
+    static String printPatch(final Program program, final Patch patch, final int patchNumber) throws PrintException {
         if (patch.getSourceIndex() == 0) {
             return "";
         }
@@ -518,6 +518,9 @@ public class ProgramPrinter {
                 break;
             case 6:
                 parameter = program.getGain() == null ? null : program.getGain().getParameter(parameterIndex);
+                break;
+            case 7:
+                parameter = program.getKnob() == null ? null : program.getKnob().getParameter(parameterIndex);
                 break;
             default:
                 parameter = null;

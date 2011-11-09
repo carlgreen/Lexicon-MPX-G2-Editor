@@ -23,7 +23,10 @@ import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
+import info.carlwithak.mpxg2.model.Patch;
+import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
+import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -34,6 +37,44 @@ import static org.junit.Assert.assertEquals;
  * @author carl
  */
 public class ProgramPrinterTest {
+    @Test
+    public void testPrintSoftrow_Knob() throws PrintException {
+        Knob knob = new Knob();
+
+        Program program = new Program();
+        program.setSoftRowEffectType(0, 7);
+        program.setSoftRowParameter(0, 0);
+        program.setKnob(knob);
+
+        String expected = "    1: Knob Value\n";
+        String actual = ProgramPrinter.printSoftRow(program, 0);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintPatch_Knob() throws PrintException {
+        OneBandMono oneBandMono = new OneBandMono();
+
+        Patch patch = new Patch();
+        patch.setSource(3);
+        patch.setSourceMin(0);
+        patch.setSourceMax(25);
+        patch.setDestinationEffect(5);
+        patch.setDestinationParameter(2);
+        patch.setDestinationMin(0);
+        patch.setDestinationMid(0x8000);
+        patch.setDestinationMax(24);
+
+        Knob knob = new Knob();
+
+        Program program = new Program();
+        program.setEq(oneBandMono);
+        program.setKnob(knob);
+
+        String expected = "    Patch 1:\n      Source: Ctls Knob\n        Min: 0\n        Mid: --\n        Max: 25\n      Destination: Eq Gain\n        Min: 0dB\n        Mid: --\n        Max: +24dB\n";
+        String actual = ProgramPrinter.printPatch(program, patch, 1);
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void testPrintKnob() {
