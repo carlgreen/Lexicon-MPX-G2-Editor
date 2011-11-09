@@ -20,6 +20,8 @@ import java.beans.IntrospectionException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Test Knob using bean tester.
@@ -27,10 +29,21 @@ import static info.carlwithak.mpxg2.model.Util.testBean;
  * @author Carl Green
  */
 public class KnobTest {
+    private Knob knob = new Knob();
 
     @Test
     public void testKnob() throws IntrospectionException {
         testBean(Knob.class);
+    }
+
+    @Test
+    public void testValue() {
+        assertEquals("", knob.getParameter(0).getUnit());
+    }
+
+    @Test
+    public void testInvalid() {
+        assertNull(knob.getParameter(1));
     }
 
 }

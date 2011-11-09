@@ -22,17 +22,29 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Knob {
-    private int value;
+    private GenericValue<Integer> value = new GenericValue<Integer>("Value", "", 0, 127);
     private int low;
     private int high;
     private String name;
 
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+                parameter = value;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
+    }
+
     public int getValue() {
-        return value;
+        return value.getValue();
     }
 
     public void setValue(int value) {
-        this.value = value;
+        this.value.setValue(value);
     }
 
     public int getLow() {
