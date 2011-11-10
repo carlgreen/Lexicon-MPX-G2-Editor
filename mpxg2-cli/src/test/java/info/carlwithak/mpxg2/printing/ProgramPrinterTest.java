@@ -96,6 +96,60 @@ public class ProgramPrinterTest {
     }
 
     @Test
+    public void testFormatPatchParameter_BeatRate() throws PrintException {
+        String patchDestinationUnit = ":";
+        int parameterValue = 7 + 4 * 256;
+
+        String expected = "7:4";
+        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFormatPatchParameter_Frequency() throws PrintException {
+        String patchDestinationUnit = "Hz";
+
+        int parameterValue = 10;
+        String expected = "10Hz";
+        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+
+        patchDestinationUnit = "100Hz";
+        expected = "0.10Hz";
+        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFormatPatchParameter_Boolean() throws PrintException {
+        String patchDestinationUnit = "OnOff";
+
+        int parameterValue = 0;
+        String expected = "Off";
+        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+
+        parameterValue = 1;
+        expected = "On";
+        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFormatPatchParameter_Normal() throws PrintException {
+        String patchDestinationUnit = "X";
+        int parameterValue = 1;
+        String expected = "1X";
+        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+
+        patchDestinationUnit = "-X";
+        expected = "+1X";
+        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testPrintKnob() {
         Knob knob = new Knob();
         knob.setValue(50);

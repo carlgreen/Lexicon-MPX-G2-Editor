@@ -403,7 +403,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    private static String formatPatchParameter(final String patchDestinationUnit, final int parameterValue, final String patchEffect, final String patchParameter, final Reverb reverb) throws PrintException {
+    static String formatPatchParameter(final String patchDestinationUnit, final int parameterValue, final String patchEffect, final String patchParameter, final Reverb reverb) throws PrintException {
         StringBuilder sb = new StringBuilder();
         if ("Decay".equals(patchParameter)) {
             boolean link;
