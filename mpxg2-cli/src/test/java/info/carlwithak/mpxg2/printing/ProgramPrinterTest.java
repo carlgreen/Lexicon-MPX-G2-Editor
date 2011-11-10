@@ -77,6 +77,25 @@ public class ProgramPrinterTest {
     }
 
     @Test
+    public void testPrintPatch_toSendLevel() throws PrintException {
+        Patch patch = new Patch();
+        patch.setSource(3);
+        patch.setSourceMin(0);
+        patch.setSourceMax(25);
+        patch.setDestinationEffect(16);
+        patch.setDestinationParameter(0);
+        patch.setDestinationMin(0);
+        patch.setDestinationMid(0x8000);
+        patch.setDestinationMax(6);
+
+        Program program = new Program();
+
+        String expected = "    Patch 1:\n      Source: Ctls Knob\n        Min: 0\n        Mid: --\n        Max: 25\n      Destination: Send Level\n        Min: 0\n        Mid: --\n        Max: +6\n";
+        String actual = ProgramPrinter.printPatch(program, patch, 1);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testPrintKnob() {
         Knob knob = new Knob();
         knob.setValue(50);
