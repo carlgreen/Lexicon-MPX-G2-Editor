@@ -43,6 +43,10 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
  */
 public class ProgramPrinter {
 
+    private static final String[] TOE_PATCH_STATES = {
+        "disabled", "off=bypass", "on=bypass"
+    };
+
     private static final String[] EFFECT_TYPES = {
         "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "Equalizer", "Gain",
         "Knob", "LFO1", "LFO2", "Rand", "A/B", "Env", "", "", "Post", "Send",
@@ -540,21 +544,7 @@ public class ProgramPrinter {
     }
 
     private static String toePatchToString(final int toePatch) throws PrintException {
-        String s = null;
-        switch(toePatch) {
-            case 0:
-                s = "disabled";
-                break;
-            case 1:
-                s = "off=bypass";
-                break;
-            case 2:
-                s = "on=bypass";
-                break;
-            default:
-                throw new PrintException("Invalid toe patch index:" + toePatch);
-        }
-        return s;
+        return TOE_PATCH_STATES[toePatch];
     }
 
     private static String effectTypeToString(final int effectType) {
