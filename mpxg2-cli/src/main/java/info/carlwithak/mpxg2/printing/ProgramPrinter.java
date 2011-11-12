@@ -348,7 +348,7 @@ public class ProgramPrinter {
         return trimDelimitedList(sb);
     }
 
-    private static void printProgram(final StringBuilder sb, final String label, final Effect effect, final boolean effectOn, final int effectToePatch) throws PrintException {
+    static void printProgram(final StringBuilder sb, final String label, final Effect effect, final boolean effectOn, final int effectToePatch) throws PrintException {
         if (effect != null) {
             sb.append("  ").append(label).append(": ");
             sb.append(effect.getName()).append(" (").append(onOffToString(effectOn)).append(")").append("\n");

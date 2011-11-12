@@ -27,9 +27,12 @@ import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.matchers.JUnitMatchers.containsString;
 
 /**
  * Tests for ProgramPrinter.
@@ -88,6 +91,21 @@ public class ProgramPrinterTest {
         program.setIsInline(true);
 
         assertEquals("Amp Input + FX Loop, Stand alone, Amp Input Only", ProgramPrinter.printApplicationTypes(program));
+    }
+
+    @Test
+    public void testPrintProgram() throws PrintException {
+        StringBuilder sb = new StringBuilder();
+        ProgramPrinter.printProgram(sb, null, null, false, 0);
+        assertEquals("", sb.toString());
+
+        sb = new StringBuilder();
+        // TODO would be good to mock the effect here
+        PedalVol pedalVol = new PedalVol();
+        pedalVol.setMix(0);
+        pedalVol.setLevel(0);
+        ProgramPrinter.printProgram(sb, "Effect1", pedalVol, true, 2);
+        assertThat(sb.toString(), containsString("  Effect1: Pedal Vol (On)\n    Toe Switch: on=bypass"));
     }
 
     @Test
