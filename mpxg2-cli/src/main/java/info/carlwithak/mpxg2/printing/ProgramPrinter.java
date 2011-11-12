@@ -251,6 +251,16 @@ public class ProgramPrinter {
         return sb.toString().trim();
     }
 
+    private static String trimDelimitedList(final StringBuilder sb) {
+        String result;
+        if (sb.length() > 0) {
+            result = sb.substring(0, sb.length() - 2);
+        } else {
+            result = sb.toString();
+        }
+        return result;
+    }
+
     static String printGuitarStyles(final Program program) {
         StringBuilder sb = new StringBuilder();
         if (program.isAcoustic()) {
@@ -275,13 +285,7 @@ public class ProgramPrinter {
             sb.append("Rock, ");
         }
 
-        String style;
-        if (sb.length() > 0) {
-            style = sb.substring(0, sb.length() - 2);
-        } else {
-            style = sb.toString();
-        }
-        return style;
+        return trimDelimitedList(sb);
     }
 
     static String printEffectTypes(final Program program) {
@@ -326,13 +330,7 @@ public class ProgramPrinter {
             sb.append("Wah, ");
         }
 
-        String type;
-        if (sb.length() > 0) {
-            type = sb.substring(0, sb.length() - 2);
-        } else {
-            type = sb.toString();
-        }
-        return type;
+        return trimDelimitedList(sb);
     }
 
     static String printApplicationTypes(final Program program) {
@@ -347,13 +345,7 @@ public class ProgramPrinter {
             sb.append("Amp Input Only, ");
         }
 
-        String type;
-        if (sb.length() > 0) {
-            type = sb.substring(0, sb.length() - 2);
-        } else {
-            type = sb.toString();
-        }
-        return type;
+        return trimDelimitedList(sb);
     }
 
     private static void printProgram(final StringBuilder sb, final String label, final Effect effect, final boolean effectOn, final int effectToePatch) throws PrintException {
