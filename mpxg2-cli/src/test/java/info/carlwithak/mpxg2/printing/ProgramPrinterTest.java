@@ -44,24 +44,13 @@ public class ProgramPrinterTest {
         assertEquals("", ProgramPrinter.printGuitarStyles(program));
 
         program.setIsAcoustic(true);
-        assertEquals("Acoustic", ProgramPrinter.printGuitarStyles(program));
-
         program.setIsBass(true);
-        assertEquals("Acoustic, Bass", ProgramPrinter.printGuitarStyles(program));
-
         program.setIsBlues(true);
-        assertEquals("Acoustic, Bass, Blues", ProgramPrinter.printGuitarStyles(program));
-
         program.setIsClean(true);
-        assertEquals("Acoustic, Bass, Blues, Clean", ProgramPrinter.printGuitarStyles(program));
-
         program.setIsCountry(true);
-        assertEquals("Acoustic, Bass, Blues, Clean, Country", ProgramPrinter.printGuitarStyles(program));
-
         program.setIsJazz(true);
-        assertEquals("Acoustic, Bass, Blues, Clean, Country, Jazz", ProgramPrinter.printGuitarStyles(program));
-
         program.setIsRock(true);
+
         assertEquals("Acoustic, Bass, Blues, Clean, Country, Jazz, Rock", ProgramPrinter.printGuitarStyles(program));
     }
 
