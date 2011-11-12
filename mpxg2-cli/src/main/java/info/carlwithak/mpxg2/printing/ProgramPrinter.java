@@ -140,33 +140,7 @@ public class ProgramPrinter {
     public static String print(Program program) throws PrintException {
         StringBuilder sb = new StringBuilder();
         sb.append(program.getProgramName()).append("\n");
-        StringBuilder styleSB = new StringBuilder();
-        if (program.isAcoustic()) {
-            styleSB.append("Acoustic, ");
-        }
-        if (program.isBass()) {
-            styleSB.append("Bass, ");
-        }
-        if (program.isBlues()) {
-            styleSB.append("Blues, ");
-        }
-        if (program.isClean()) {
-            styleSB.append("Clean, ");
-        }
-        if (program.isCountry()) {
-            styleSB.append("Country, ");
-        }
-        if (program.isJazz()) {
-            styleSB.append("Jazz, ");
-        }
-        if (program.isRock()) {
-            styleSB.append("Rock, ");
-        }
-        sb.append("  Guitar Style: ");
-        if (styleSB.length() > 0) {
-            sb.append(styleSB.substring(0, styleSB.length() - 2));
-        }
-        sb.append("\n");
+        sb.append("  Guitar Style: ").append(printGuitarStyles(program)).append("\n");
         StringBuilder effectTypeSB = new StringBuilder();
         if (program.isChorus()) {
             effectTypeSB.append("Chorus, ");
@@ -333,6 +307,39 @@ public class ProgramPrinter {
         sb.append("    RTime: ").append(program.getNoiseGate().getRTime()).append("\n");
         sb.append("    Delay: ").append(program.getNoiseGate().getDelay()).append("\n");
         return sb.toString().trim();
+    }
+
+    static String printGuitarStyles(Program program) {
+        StringBuilder sb = new StringBuilder();
+        if (program.isAcoustic()) {
+            sb.append("Acoustic, ");
+        }
+        if (program.isBass()) {
+            sb.append("Bass, ");
+        }
+        if (program.isBlues()) {
+            sb.append("Blues, ");
+        }
+        if (program.isClean()) {
+            sb.append("Clean, ");
+        }
+        if (program.isCountry()) {
+            sb.append("Country, ");
+        }
+        if (program.isJazz()) {
+            sb.append("Jazz, ");
+        }
+        if (program.isRock()) {
+            sb.append("Rock, ");
+        }
+
+        String style;
+        if (sb.length() > 0) {
+            style = sb.substring(0, sb.length() - 2);
+        } else {
+            style = sb.toString();
+        }
+        return style;
     }
 
     private static void printProgram(final StringBuilder sb, final String label, final Effect effect, final boolean effectOn, final int effectToePatch) throws PrintException {
