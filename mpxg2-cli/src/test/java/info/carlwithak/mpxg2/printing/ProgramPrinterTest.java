@@ -89,6 +89,19 @@ public class ProgramPrinterTest {
     }
 
     @Test
+    public void testPrintApplicationTypes() {
+        Program program = new Program();
+
+        assertEquals("", ProgramPrinter.printApplicationTypes(program));
+
+        program.setIsPrePost(true);
+        program.setIsStandAlone(true);
+        program.setIsInline(true);
+
+        assertEquals("Amp Input + FX Loop, Stand alone, Amp Input Only", ProgramPrinter.printApplicationTypes(program));
+    }
+
+    @Test
     public void testPrintSoftrow_Knob() throws PrintException {
         Knob knob = new Knob();
 

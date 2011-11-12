@@ -142,21 +142,7 @@ public class ProgramPrinter {
         sb.append(program.getProgramName()).append("\n");
         sb.append("  Guitar Style: ").append(printGuitarStyles(program)).append("\n");
         sb.append("  Effect Type: ").append(printEffectTypes(program)).append("\n");
-        StringBuilder appTypeSB = new StringBuilder();
-        if (program.isPrePost()) {
-            appTypeSB.append("Amp Input + FX Loop, ");
-        }
-        if (program.isStandAlone()) {
-            appTypeSB.append("Stand alone, ");
-        }
-        if (program.isInline()) {
-            appTypeSB.append("Amp Input Only, ");
-        }
-        sb.append("  Application Type: ");
-        if (appTypeSB.length() > 0) {
-            sb.append(appTypeSB.substring(0, appTypeSB.length() - 2));
-        }
-        sb.append("\n");
+        sb.append("  Application Type: ").append(printApplicationTypes(program)).append("\n");
         // TODO indicate inactive effects
         sb.append("  Effect Routing:\n");
         for (String line : RoutingPrinter.print(program).split("\n")) {
@@ -338,6 +324,27 @@ public class ProgramPrinter {
         }
         if (program.isWah()) {
             sb.append("Wah, ");
+        }
+
+        String type;
+        if (sb.length() > 0) {
+            type = sb.substring(0, sb.length() - 2);
+        } else {
+            type = sb.toString();
+        }
+        return type;
+    }
+
+    static String printApplicationTypes(final Program program) {
+        StringBuilder sb = new StringBuilder();
+        if (program.isPrePost()) {
+            sb.append("Amp Input + FX Loop, ");
+        }
+        if (program.isStandAlone()) {
+            sb.append("Stand alone, ");
+        }
+        if (program.isInline()) {
+            sb.append("Amp Input Only, ");
         }
 
         String type;
