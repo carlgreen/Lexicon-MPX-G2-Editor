@@ -141,51 +141,7 @@ public class ProgramPrinter {
         StringBuilder sb = new StringBuilder();
         sb.append(program.getProgramName()).append("\n");
         sb.append("  Guitar Style: ").append(printGuitarStyles(program)).append("\n");
-        StringBuilder effectTypeSB = new StringBuilder();
-        if (program.isChorus()) {
-            effectTypeSB.append("Chorus, ");
-        }
-        if (program.isDelay()) {
-            effectTypeSB.append("Delay, ");
-        }
-        if (program.isDistortion()) {
-            effectTypeSB.append("Distortion, ");
-        }
-        if (program.isEq()) {
-            effectTypeSB.append("EQ, ");
-        }
-        if (program.isFlanger()) {
-            effectTypeSB.append("Flanger, ");
-        }
-        if (program.isGain()) {
-            effectTypeSB.append("Gain, ");
-        }
-        if (program.isMod()) {
-            effectTypeSB.append("Mod, ");
-        }
-        if (program.isOverdrive()) {
-            effectTypeSB.append("Overdrive, ");
-        }
-        if (program.isPhaser()) {
-            effectTypeSB.append("Phaser, ");
-        }
-        if (program.isPitch()) {
-            effectTypeSB.append("Pitch, ");
-        }
-        if (program.isReverb()) {
-            effectTypeSB.append("Reverb, ");
-        }
-        if (program.isSpeakerSim()) {
-            effectTypeSB.append("Speaker Sim, ");
-        }
-        if (program.isWah()) {
-            effectTypeSB.append("Wah, ");
-        }
-        sb.append("  Effect Type: ");
-        if (effectTypeSB.length() > 0) {
-            sb.append(effectTypeSB.substring(0, effectTypeSB.length() - 2));
-        }
-        sb.append("\n");
+        sb.append("  Effect Type: ").append(printEffectTypes(program)).append("\n");
         StringBuilder appTypeSB = new StringBuilder();
         if (program.isPrePost()) {
             appTypeSB.append("Amp Input + FX Loop, ");
@@ -309,7 +265,7 @@ public class ProgramPrinter {
         return sb.toString().trim();
     }
 
-    static String printGuitarStyles(Program program) {
+    static String printGuitarStyles(final Program program) {
         StringBuilder sb = new StringBuilder();
         if (program.isAcoustic()) {
             sb.append("Acoustic, ");
@@ -340,6 +296,57 @@ public class ProgramPrinter {
             style = sb.toString();
         }
         return style;
+    }
+
+    static String printEffectTypes(final Program program) {
+        StringBuilder sb = new StringBuilder();
+        if (program.isChorus()) {
+            sb.append("Chorus, ");
+        }
+        if (program.isDelay()) {
+            sb.append("Delay, ");
+        }
+        if (program.isDistortion()) {
+            sb.append("Distortion, ");
+        }
+        if (program.isEq()) {
+            sb.append("EQ, ");
+        }
+        if (program.isFlanger()) {
+            sb.append("Flanger, ");
+        }
+        if (program.isGain()) {
+            sb.append("Gain, ");
+        }
+        if (program.isMod()) {
+            sb.append("Mod, ");
+        }
+        if (program.isOverdrive()) {
+            sb.append("Overdrive, ");
+        }
+        if (program.isPhaser()) {
+            sb.append("Phaser, ");
+        }
+        if (program.isPitch()) {
+            sb.append("Pitch, ");
+        }
+        if (program.isReverb()) {
+            sb.append("Reverb, ");
+        }
+        if (program.isSpeakerSim()) {
+            sb.append("Speaker Sim, ");
+        }
+        if (program.isWah()) {
+            sb.append("Wah, ");
+        }
+
+        String type;
+        if (sb.length() > 0) {
+            type = sb.substring(0, sb.length() - 2);
+        } else {
+            type = sb.toString();
+        }
+        return type;
     }
 
     private static void printProgram(final StringBuilder sb, final String label, final Effect effect, final boolean effectOn, final int effectToePatch) throws PrintException {

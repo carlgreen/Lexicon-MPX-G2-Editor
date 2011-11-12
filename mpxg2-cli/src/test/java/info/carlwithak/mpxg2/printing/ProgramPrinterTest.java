@@ -66,6 +66,29 @@ public class ProgramPrinterTest {
     }
 
     @Test
+    public void testPrintEffectTypes() {
+        Program program = new Program();
+
+        assertEquals("", ProgramPrinter.printEffectTypes(program));
+
+        program.setIsChorus(true);
+        program.setIsDelay(true);
+        program.setIsDistortion(true);
+        program.setIsEq(true);
+        program.setIsFlanger(true);
+        program.setIsGain(true);
+        program.setIsMod(true);
+        program.setIsOverdrive(true);
+        program.setIsPhaser(true);
+        program.setIsPitch(true);
+        program.setIsReverb(true);
+        program.setIsSpeakerSim(true);
+        program.setIsWah(true);
+
+        assertEquals("Chorus, Delay, Distortion, EQ, Flanger, Gain, Mod, Overdrive, Phaser, Pitch, Reverb, Speaker Sim, Wah", ProgramPrinter.printEffectTypes(program));
+    }
+
+    @Test
     public void testPrintSoftrow_Knob() throws PrintException {
         Knob knob = new Knob();
 
