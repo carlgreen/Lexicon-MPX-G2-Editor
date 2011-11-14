@@ -32,7 +32,7 @@ import static org.junit.matchers.JUnitMatchers.containsString;
  *
  * @author Carl Green
  */
-public class AppTest {
+public class AppIT {
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
 
     @Before
