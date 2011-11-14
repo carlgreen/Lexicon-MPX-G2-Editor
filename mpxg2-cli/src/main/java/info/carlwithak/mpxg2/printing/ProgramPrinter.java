@@ -460,7 +460,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    private static Parameter getEffectParameter(final Program program, final int effectIndex, final int parameterIndex) {
+    static Parameter getEffectParameter(final Program program, final int effectIndex, final int parameterIndex) {
         Parameter parameter;
         switch (effectIndex) {
             case 0:

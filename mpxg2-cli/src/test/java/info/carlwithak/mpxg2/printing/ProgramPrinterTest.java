@@ -23,16 +23,28 @@ import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
+import info.carlwithak.mpxg2.model.effects.Chorus;
+import info.carlwithak.mpxg2.model.effects.Delay;
+import info.carlwithak.mpxg2.model.effects.Effect;
+import info.carlwithak.mpxg2.model.effects.Eq;
+import info.carlwithak.mpxg2.model.effects.Gain;
+import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests for ProgramPrinter.
@@ -218,6 +230,41 @@ public class ProgramPrinterTest {
         expected = "+1X";
         actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetEffectParameter() {
+        Program program = new Program();
+        for (int i = 0; i <= 13; i++) {
+            assertNull(ProgramPrinter.getEffectParameter(program, i, 0));
+        }
+        Parameter parameter = mock(Parameter.class);
+        program.setEffect1((Effect) when(mock(Effect.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 0, 0));
+        program.setEffect2((Effect) when(mock(Effect.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 1, 0));
+        program.setChorus((Chorus) when(mock(Chorus.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 2, 0));
+        program.setDelay((Delay) when(mock(Delay.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 3, 0));
+        program.setReverb((Reverb) when(mock(Reverb.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 4, 0));
+        program.setEq((Eq) when(mock(Eq.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 5, 0));
+        program.setGain((Gain) when(mock(Gain.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 6, 0));
+        program.setKnob((Knob) when(mock(Knob.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 7, 0));
+        program.setLfo1((Lfo) when(mock(Lfo.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 8, 0));
+        program.setLfo2((Lfo) when(mock(Lfo.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 9, 0));
+        program.setRandom((Random) when(mock(Random.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 10, 0));
+        program.setAb((Ab) when(mock(Ab.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 11, 0));
+        program.setEnvelopeGenerator((EnvelopeGenerator) when(mock(EnvelopeGenerator.class).getParameter(any(Integer.class))).thenReturn(parameter).getMock());
+        assertNotNull(ProgramPrinter.getEffectParameter(program, 12, 0));
     }
 
     @Test
