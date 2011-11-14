@@ -22,11 +22,12 @@ package info.carlwithak.mpxg2.model;
  *
  * @author Carl Green
  */
-public class Random {
+public class Random implements DataObject {
     private GenericValue<Integer> low = new GenericValue<Integer>("RndLo", "", 0, 127);
     private GenericValue<Integer> high = new GenericValue<Integer>("RndHi", "", 0, 127);
     private Rate rate;
 
+    @Override
     public Parameter getParameter(final int parameterIndex) {
         Parameter parameter;
         switch (parameterIndex) {

@@ -15,15 +15,14 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package info.carlwithak.mpxg2.model.effects;
-
-import info.carlwithak.mpxg2.model.DataObject;
+package info.carlwithak.mpxg2.model;
 
 /**
- * Base class for Gain effects.
+ * Used for complex data objects which contain various parameters that can be
+ * manipulated.
  *
  * @author Carl Green
  */
-public abstract class Gain implements DataObject {
-    public abstract String getName();
+public interface DataObject {
+    Parameter getParameter(final int parameterIndex);
 }

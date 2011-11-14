@@ -22,7 +22,7 @@ package info.carlwithak.mpxg2.model;
  *
  * @author Carl Green
  */
-public class Lfo {
+public class Lfo implements DataObject {
     private GenericValue<Integer> mode = new GenericValue<Integer>("Mode", "", 0, 6);
     private Rate rate;
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
@@ -31,6 +31,7 @@ public class Lfo {
     private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
     private GenericValue<Integer> onSource = new GenericValue<Integer>("OnSrc", "", 0, 127); // TODO not sure what this goes up to
 
+    @Override
     public Parameter getParameter(final int parameterIndex) {
         Parameter parameter;
         switch (parameterIndex) {

@@ -22,12 +22,13 @@ package info.carlwithak.mpxg2.model;
  *
  * @author Carl Green
  */
-public class EnvelopeGenerator {
+public class EnvelopeGenerator implements DataObject {
     private GenericValue<Integer> src1 = new GenericValue<Integer>("Src1", "", 0, 20);
     private GenericValue<Integer> src2 = new GenericValue<Integer>("Src1", "", 0, 20);
     private GenericValue<Integer> aTrim = new GenericValue<Integer>("ATrim", "", 0, 100);
     private GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
 
+    @Override
     public Parameter getParameter(final int parameterIndex) {
         Parameter parameter;
         switch (parameterIndex) {
