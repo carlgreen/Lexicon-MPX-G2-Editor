@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.DataObject;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
@@ -461,51 +462,51 @@ public class ProgramPrinter {
     }
 
     static Parameter getEffectParameter(final Program program, final int effectIndex, final int parameterIndex) {
-        Parameter parameter;
+        DataObject dataObject;
         switch (effectIndex) {
             case 0:
-                parameter = program.getEffect1() == null ? null : program.getEffect1().getParameter(parameterIndex);
+                dataObject = program.getEffect1();
                 break;
             case 1:
-                parameter = program.getEffect2() == null ? null : program.getEffect2().getParameter(parameterIndex);
+                dataObject = program.getEffect2();
                 break;
             case 2:
-                parameter = program.getChorus() == null ? null : program.getChorus().getParameter(parameterIndex);
+                dataObject = program.getChorus();
                 break;
             case 3:
-                parameter = program.getDelay() == null ? null : program.getDelay().getParameter(parameterIndex);
+                dataObject = program.getDelay();
                 break;
             case 4:
-                parameter = program.getReverb() == null ? null : program.getReverb().getParameter(parameterIndex);
+                dataObject = program.getReverb();
                 break;
             case 5:
-                parameter = program.getEq() == null ? null : program.getEq().getParameter(parameterIndex);
+                dataObject = program.getEq();
                 break;
             case 6:
-                parameter = program.getGain() == null ? null : program.getGain().getParameter(parameterIndex);
+                dataObject = program.getGain();
                 break;
             case 7:
-                parameter = program.getKnob() == null ? null : program.getKnob().getParameter(parameterIndex);
+                dataObject = program.getKnob();
                 break;
             case 8:
-                parameter = program.getLfo1() == null ? null : program.getLfo1().getParameter(parameterIndex);
+                dataObject = program.getLfo1();
                 break;
             case 9:
-                parameter = program.getLfo2() == null ? null : program.getLfo2().getParameter(parameterIndex);
+                dataObject = program.getLfo2();
                 break;
             case 10:
-                parameter = program.getRandom() == null ? null : program.getRandom().getParameter(parameterIndex);
+                dataObject = program.getRandom();
                 break;
             case 11:
-                parameter = program.getAb() == null ? null : program.getAb().getParameter(parameterIndex);
+                dataObject = program.getAb();
                 break;
             case 12:
-                parameter = program.getEnvelopeGenerator() == null ? null : program.getEnvelopeGenerator().getParameter(parameterIndex);
+                dataObject = program.getEnvelopeGenerator();
                 break;
             default:
-                parameter = null;
+                dataObject = null;
         }
-        return parameter;
+        return dataObject == null ? null : dataObject.getParameter(parameterIndex);
     }
 
     static String printKnob(final Knob knob) {
