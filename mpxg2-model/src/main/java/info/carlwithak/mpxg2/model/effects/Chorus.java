@@ -17,7 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects;
 
-import info.carlwithak.mpxg2.model.DataObject;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
 
@@ -26,11 +25,9 @@ import info.carlwithak.mpxg2.model.Parameter;
  *
  * @author Carl Green
  */
-public abstract class Chorus implements DataObject {
+public abstract class Chorus implements EffectObject {
     private GenericValue<Integer> mix = new GenericValue<Integer>("Mix", "%", 0, 100);
     private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", -90, 6);
-
-    public abstract String getName();
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

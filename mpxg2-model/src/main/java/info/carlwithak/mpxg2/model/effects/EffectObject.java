@@ -17,10 +17,12 @@
 
 package info.carlwithak.mpxg2.model.effects;
 
+import info.carlwithak.mpxg2.model.DataObject;
+
 /**
- * Base class for Gain effects.
  *
  * @author Carl Green
  */
-public abstract class Gain implements EffectObject {
+public interface EffectObject extends DataObject {
+    String getName();
 }
