@@ -777,6 +777,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("149_Jam2_Flange+");
     }
 
+    @Test
+    public void testPrintBigBlue_StandAlone() throws Exception {
+        testParseAndPrint("150_Big_Blue");
+    }
+
+    @Test
+    public void testPrintBluesClub_StandAlone() throws Exception {
+        testParseAndPrint("151_Blues_Club");
+    }
+
+    @Test
+    public void testPrintAcoustifier_StandAlone() throws Exception {
+        testParseAndPrint("152_Acoustifier");
+    }
+
+    @Test
+    public void testPrintBritishStack_StandAlone() throws Exception {
+        testParseAndPrint("153_BritishStack");
+    }
+
+    @Test
+    public void testPrintPedalSwell_StandAlone() throws Exception {
+        testParseAndPrint("154_Pedal_Swell");
+    }
+
+    @Test
+    public void testPrintCleanJimi_StandAlone() throws Exception {
+        testParseAndPrint("155_Clean_Jimi");
+    }
+
+    @Test
+    public void testPrintMetalStack_StandAlone() throws Exception {
+        testParseAndPrint("156_Metal_Stack");
+    }
+
+    @Test
+    public void testPrintPdlOctaves_StandAlone() throws Exception {
+        testParseAndPrint("157_Pdl_Octaves");
+    }
+
+    @Test
+    public void testPrintGuitarSolo_StandAlone() throws Exception {
+        testParseAndPrint("158_GuitarSolo");
+    }
+
+    @Test
+    public void testPrintJamMan_StandAlone() throws Exception {
+        testParseAndPrint("159_JamMan");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
