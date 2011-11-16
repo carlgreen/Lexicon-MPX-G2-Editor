@@ -224,8 +224,25 @@ public class SysexParser {
         program.setProgramNumber(programNumber);
 
         b = in.read();
-        @SuppressWarnings("unused")
-        int checksum = b;
+
+        int sum = 0;
+        sum += sumBytes(objectSize);
+        for (byte data : objectData) {
+            sum += data;
+        }
+        sum += sumBytes(controlLevels);
+        sum += sumBytes(controlLevel0);
+        sum += sumBytes(controlLevel1);
+        sum += sumBytes(controlLevel2);
+        sum += sumBytes(controlLevel3);
+
+        // seem to only match on last four bits
+        int checksumBits = b % 16;
+        int sumBits = --sum % 16; // why do i subtract 1 from sum?
+        boolean validateChecksum = false;
+        if (validateChecksum && checksumBits != sumBits) {
+            throw new ParseException("checksum doesn't match: got " + sumBits + ", expected " + checksumBits);
+        }
 
         if (in.read() != SYSEX_ID_END) {
             throw new ParseException("Invalid Sysex ID (end)");
@@ -954,5 +971,17 @@ public class SysexParser {
             result += (bytes[i + offset] * Math.pow(16, i));
         }
         return result;
+    }
+
+    private static int sumBytes(final int i) {
+        int sum = 0;
+        int a = i;
+        int x = 256;
+        while (x > 0) {
+            sum += (a / x);
+            a = a - (a / x * x);
+            x = x / 16;
+        }
+        return sum;
     }
 }
