@@ -189,9 +189,9 @@ public class SysexParser {
         if ((b = in.read()) != MPXG2_PRODUCT_ID) {
             throw new ParseException("Invalid Product ID");
         }
-        b = in.read();
-        @SuppressWarnings("unused")
-        int deviceId = b;
+
+        // ignore device ID
+        in.read();
 
         if ((b = in.read()) != DATA_MESSAGE_TYPE) {
             throw new ParseException("Invalid Message Type");
