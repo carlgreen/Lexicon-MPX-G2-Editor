@@ -31,6 +31,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
@@ -926,6 +927,20 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: -2dB\n    Gain1: +5\n    Fc 1: 5050\n    Q 1: 0.1\n    Mode1: LShlf\n    Gain2: +8\n    Fc 2: 20\n    Q 2: 0.1\n    Mode2: Band\n";
         String actual = AlgorithmPrinter.print(twoBandStereo);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintCrossover() throws PrintException {
+        Crossover crossover = new Crossover();
+        crossover.setMix(100);
+        crossover.setLevel(0);
+        crossover.setFc(3000);
+        crossover.setBalance(4);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Fc: 3000Hz\n    Bal: +4\n";
+        String actual = AlgorithmPrinter.print(crossover);
 
         assertEquals(expected, actual);
     }

@@ -44,6 +44,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.CrossoverParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CrunchParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CustomVybeParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
@@ -607,7 +608,9 @@ public class SysexParser {
                         // TODO 7 - 1-Band (D)
                         // TODO 8 - 2-Band (D)
                         // TODO 9 - Fc Splitter
-                        // TODO 10 - Crossover
+                        case 10:
+                            eq = CrossoverParser.parse(eqParameters);
+                            break;
                         case 11:
                             eq = EqVolumeMonoParser.parse(eqParameters);
                             break;
