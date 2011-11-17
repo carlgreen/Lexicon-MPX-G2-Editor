@@ -827,6 +827,106 @@ public class ProgramPrinterIT {
         testParseAndPrint("159_JamMan");
     }
 
+    @Test
+    public void testPrintJimmyP_StandAlone() throws Exception {
+        testParseAndPrint("160_Jimmy_P___");
+    }
+
+    @Test
+    public void testPrintSatch_StandAlone() throws Exception {
+        testParseAndPrint("161_Satch___");
+    }
+
+    @Test
+    public void testPrintKissTheSky_StandAlone() throws Exception {
+        testParseAndPrint("162_Kiss_the_Sky");
+    }
+
+    @Test
+    public void testPrintAngus_StandAlone() throws Exception {
+        testParseAndPrint("163_Angus___");
+    }
+
+    @Test
+    public void testPrintTheEdge_StandAlone() throws Exception {
+        testParseAndPrint("164_The_Edge___");
+    }
+
+    @Test
+    public void testPrintSandman_StandAlone() throws Exception {
+        testParseAndPrint("165_Sandman");
+    }
+
+    @Test
+    public void testPrintBrianM_StandAlone() throws Exception {
+        testParseAndPrint("166_Brian_M___");
+    }
+
+    @Test
+    public void testPrintBlowBy_StandAlone() throws Exception {
+        testParseAndPrint("167_Blow_By___");
+    }
+
+    @Test
+    public void testPrintOldEddie_StandAlone() throws Exception {
+        testParseAndPrint("168_Old_Eddie");
+    }
+
+    @Test
+    public void testPrintNewEddie_StandAlone() throws Exception {
+        testParseAndPrint("169_New_Eddie");
+    }
+
+    @Test
+    public void testPrintLiveJimi_StandAlone() throws Exception {
+        testParseAndPrint("170_Live_Jimi");
+    }
+
+    @Test
+    public void testPrintCliffsOf_StandAlone() throws Exception {
+        testParseAndPrint("171_Cliffs_of___");
+    }
+
+    @Test
+    public void testPrintColdShot_StandAlone() throws Exception {
+        testParseAndPrint("172_Cold_Shot");
+    }
+
+    @Test
+    public void testPrintCarlosS_StandAlone() throws Exception {
+        testParseAndPrint("173_Carlos_S___");
+    }
+
+    @Test
+    public void testPrintJazzman_StandAlone() throws Exception {
+        testParseAndPrint("174_Jazzman");
+    }
+
+    @Test
+    public void testPrintBoston_StandAlone() throws Exception {
+        testParseAndPrint("175_Boston___");
+    }
+
+    @Test
+    public void testPrintPurpleReign_StandAlone() throws Exception {
+        testParseAndPrint("176_Purple_Reign");
+    }
+
+    @Test
+    public void testPrintAnotherBrick_StandAlone() throws Exception {
+        testParseAndPrint("177_AnotherBrick");
+    }
+
+    @Test
+    public void testPrintChinaGrove_StandAlone() throws Exception {
+        testParseAndPrint("178_China_Grove");
+    }
+
+    @Test
+    public void testPrintTush_StandAlone() throws Exception {
+        testParseAndPrint("179_Tush");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

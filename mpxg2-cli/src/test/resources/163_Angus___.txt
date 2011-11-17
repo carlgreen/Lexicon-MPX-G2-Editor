@@ -1,0 +1,107 @@
+Angus...
+  Guitar Style: Rock
+  Effect Type: Distortion, Gain, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=E=1=2=G=D=C=R=O
+  Reverb: Ambience (On)
+    Toe Switch: disabled
+    Mix: 40%
+    Level: +6dB
+    Size: 10.0m
+    Link: On
+    Diff: 100%
+    Pre Delay: 0ms
+    Delay Time: 0.0s
+    Delay Level: Off
+    Rt HC: 12.8k
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +10
+    Mid: +2
+    Hi: 15
+    InLvl: 0
+    LoCut: 5
+    Feel: 20
+    Drive: 30
+    Tone: 17
+    Bass: +15
+    Trebl: +12
+    Level: 45
+  Softrow:
+    1: Gain InLvL
+    2: Gain LoCut
+    3: Gain Feel
+    4: Gain Drive
+    5: Gain Tone
+    6: Gain Bass
+    7: Gain Trebl
+    8: Gain Level
+    9: Reverb Mix
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    Reverb:
+      Mix: 40%
+      Level: +6dB
+  Tempo:
+    Rate: 170 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

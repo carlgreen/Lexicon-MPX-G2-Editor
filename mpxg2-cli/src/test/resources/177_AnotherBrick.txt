@@ -1,0 +1,166 @@
+AnotherBrick
+  Guitar Style: 
+  Effect Type: 
+  Application Type: 
+  Effect Routing:
+    I=E=1-2=G-D=C=R=O
+            |===|
+  Chorus: Detune (M) (On)
+    Toe Switch: disabled
+    Mix: 50%
+    Level: +6dB
+    Tune: 10
+    Optimize: 10ms
+    P Dly: 0ms
+  Delay: Delay (D) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: -5dB
+    Time1: 4:3
+    Time2: 4:3
+    Level1: 0dB
+    Level2: 0dB
+    Pan1: 50L
+    Pan2: 50R
+    Feedback1: 0%
+    Insert: Delay
+    Feedback2: 0%
+    XFbk1: +100%
+    XFbk2: +23%
+    Clear: Off
+  Reverb: Plate (On)
+    Toe Switch: disabled
+    Mix: 23%
+    Level: +6dB
+    Size: 30.5m
+    Link: On
+    Diff: 90%
+    Pre Delay: 133ms
+    Bass: 0.8X
+    Decay: 1.15s
+    Xovr: 986
+    Rt HC: 19.4k
+    Shape: 36
+    Spred: 95
+  EQ: Pedal Vol (On)
+    Toe Switch: off=bypass
+    Mix: 100%
+    Level: 0dB
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +1
+    Mid: +5
+    Hi: 12
+    InLvl: -9
+    LoCut: 0
+    Feel: 32
+    Drive: 22
+    Tone: 26
+    Bass: +15
+    Trebl: +9
+    Level: 51
+  Softrow:
+    1: Gain InLvL
+    2: Gain LoCut
+    3: Gain Feel
+    4: Gain Drive
+    5: Gain Tone
+    6: Gain Bass
+    7: Gain Trebl
+    8: Gain Level
+    9: Chorus Mix
+    10: Delay Mix
+  Patching:
+    Patch 1:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Time1
+        Min: 4:3
+        Mid: --
+        Max: 8:3
+    Patch 2:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Delay Time2
+        Min: 4:3
+        Mid: --
+        Max: 8:3
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    Chorus:
+      Mix: 50%
+      Level: +6dB
+    Delay:
+      Mix: 100%
+      Level: -5dB
+    Reverb:
+      Mix: 23%
+      Level: +6dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 85 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

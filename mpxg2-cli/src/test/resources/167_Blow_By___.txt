@@ -1,0 +1,129 @@
+Blow By...
+  Guitar Style: Blues, Clean, Jazz, Rock
+  Effect Type: Delay, Gain, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=2=G=C=E=D=R=O
+  Effect 2: Pedal Wah 2 (Off)
+    Toe Switch: off=bypass
+    Mix: 100%
+    Level: 0dB
+    Bass: 10
+    Type: Model V
+    Resp: 100
+    Gain: 0
+  Delay: Echo (M) (On)
+    Toe Switch: disabled
+    Mix: 15%
+    Level: 0dB
+    Time: 169ms
+    Feedback: 0%
+    Insert: Delay
+    Damp: 20%
+    Clear: Off
+  Reverb: Ambience (On)
+    Toe Switch: disabled
+    Mix: 30%
+    Level: 0dB
+    Size: 24.5m
+    Link: On
+    Diff: 60%
+    Pre Delay: 7ms
+    Delay Time: 1.41s
+    Delay Level: Off
+    Rt HC: 12.8k
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +12
+    Mid: +5
+    Hi: 12
+    InLvl: -8
+    LoCut: 0
+    Feel: 32
+    Drive: 31
+    Tone: 25
+    Bass: +25
+    Trebl: +9
+    Level: 45
+  Softrow:
+    1: Gain Feel
+    2: Gain Drive
+    3: Gain Tone
+    4: Gain Bass
+    5: Gain Trebl
+    6: Gain Level
+    7: Delay Mix
+    8: Reverb Mix
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      On Level: 64
+      On Source: none
+    Random:
+      Low: 0
+      High: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      A Rate: 100
+      B Rate: 100
+      On Level: 64
+      On Source: none
+    Envelope:
+      Src1: Off
+      Src2: Off
+      A Trim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: 0dB
+    Delay:
+      Mix: 15%
+      Level: 0dB
+    Reverb:
+      Mix: 30%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
