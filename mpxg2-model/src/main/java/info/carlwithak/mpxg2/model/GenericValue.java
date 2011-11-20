@@ -35,6 +35,7 @@ public class GenericValue<T> implements Parameter {
         this.maxValue = maxValue;
     }
 
+    @Override
     public String getName() {
         return name;
     }
