@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import java.text.DecimalFormat;
@@ -32,19 +34,26 @@ public class ParameterPrinter {
 
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
-    public static String print(Rate rate) throws PrintException {
+    public static String print(Parameter parameter) throws PrintException {
         String result;
-        if (rate instanceof FrequencyRate) {
-            FrequencyRate frequencyRate = (FrequencyRate) rate;
-            result = DECIMAL_2DP.format(frequencyRate.getFrequency()) + "Hz";
-        } else if (rate instanceof BeatRate) {
-            BeatRate beatRate = (BeatRate) rate;
-            result = beatRate.getMeasures() + ":" + beatRate.getBeats();
-        } else if (rate instanceof TapMsRate) {
-            TapMsRate tapMsRate = (TapMsRate) rate;
-            result = tapMsRate.getMs() + "ms";
+        if (parameter instanceof Rate) {
+            if (parameter instanceof FrequencyRate) {
+                FrequencyRate frequencyRate = (FrequencyRate) parameter;
+                result = DECIMAL_2DP.format(frequencyRate.getFrequency()) + "Hz";
+            } else if (parameter instanceof BeatRate) {
+                BeatRate beatRate = (BeatRate) parameter;
+                result = beatRate.getMeasures() + ":" + beatRate.getBeats();
+            } else if (parameter instanceof TapMsRate) {
+                TapMsRate tapMsRate = (TapMsRate) parameter;
+                result = tapMsRate.getMs() + "ms";
+            } else {
+                throw new PrintException("Invalid rate type: " + parameter.getClass());
+            }
+        } else if (parameter instanceof GenericValue) {
+            GenericValue value = (GenericValue) parameter;
+            result = value.getValue() + value.getUnit();
         } else {
-            throw new PrintException("Invalid rate type: " + rate.getClass());
+            throw new PrintException("Invalid parameter type: " + parameter.getClass());
         }
         return result;
     }

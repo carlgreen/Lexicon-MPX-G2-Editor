@@ -18,6 +18,7 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
+import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import org.junit.Test;
@@ -64,6 +65,17 @@ public class ParameterPrinterTest {
 
         String expected = "200ms";
         String actual = ParameterPrinter.print(rate);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintGenericValue() throws PrintException {
+        GenericValue<Integer> value = new GenericValue<Integer>("PW 1", "%", 0, 100);
+        value.setValue(45);
+
+        String expected = "45%";
+        String actual = ParameterPrinter.print(value);
 
         assertEquals(expected, actual);
     }
