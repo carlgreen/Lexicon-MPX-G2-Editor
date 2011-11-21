@@ -35,8 +35,8 @@ public class EchoStereoParserTest {
     public void testParse_DetuneTrem() throws ParseException {
         byte[] effectParameters = {0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoStereo echoStereo = EchoStereoParser.parse(effectParameters);
-        assertEquals(0, echoStereo.getMix());
-        assertEquals(0, echoStereo.getLevel());
+        assertEquals(0, (int) echoStereo.getMix().getValue());
+        assertEquals(0, (int) echoStereo.getLevel().getValue());
         assertEquals(new BeatRate("Time", 1, 1), echoStereo.getTime());
         assertEquals(0, echoStereo.getFeedback());
         assertEquals(3, echoStereo.getInsert());
@@ -48,8 +48,8 @@ public class EchoStereoParserTest {
     public void testParse_RoundTrem() throws ParseException {
         byte[] effectParameters = {4, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 13, 13, 3, 0, 9, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoStereo echoStereo = EchoStereoParser.parse(effectParameters);
-        assertEquals(20, echoStereo.getMix());
-        assertEquals(0, echoStereo.getLevel());
+        assertEquals(20, (int) echoStereo.getMix().getValue());
+        assertEquals(0, (int) echoStereo.getLevel().getValue());
         assertEquals(new BeatRate("Time", 1, 1), echoStereo.getTime());
         assertEquals(0, echoStereo.getFeedback());
         assertEquals(3, echoStereo.getInsert());

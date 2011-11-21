@@ -36,8 +36,8 @@ public class DelayMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DelayMono delayMono = (DelayMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(delayMono.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(delayMono.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(delayMono.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(delayMono.getLevel())).append("\n");
         sb.append("    Time: ").append(ParameterPrinter.print(delayMono.getTime())).append("\n");
         sb.append("    Feedback: ").append(signInt(delayMono.getFeedback())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(delayMono.getInsert())).append("\n");

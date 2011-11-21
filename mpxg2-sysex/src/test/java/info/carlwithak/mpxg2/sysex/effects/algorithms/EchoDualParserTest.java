@@ -36,8 +36,8 @@ public class EchoDualParserTest {
     public void testParse_G2Blue() throws ParseException {
         byte[] effectParameters = {2, 0, 1, 0, 4, 0, 4, 0, 1, 0, 2, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 3, 0, 1, 0, 4, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
-        assertEquals(2, echoDual.getMix());
-        assertEquals(1, echoDual.getLevel());
+        assertEquals(2, (int) echoDual.getMix().getValue());
+        assertEquals(1, (int) echoDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 4, 4), echoDual.getTime1());
         assertEquals(new BeatRate("Time2", 2, 1), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
@@ -54,8 +54,8 @@ public class EchoDualParserTest {
     public void testParse_GuitarSolo() throws ParseException {
         byte[] effectParameters = {4, 6, 5, 0, 1, 0, 1, 0, 1, 0, 3, 0, 2, 0, 1, 0, 0, 0, 0, 0, 6, 15, 3, 0, 15, 0, 9, 1, 9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
-        assertEquals(100, echoDual.getMix());
-        assertEquals(5, echoDual.getLevel());
+        assertEquals(100, (int) echoDual.getMix().getValue());
+        assertEquals(5, (int) echoDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 1, 1), echoDual.getTime1());
         assertEquals(new BeatRate("Time2", 3, 2), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
@@ -72,8 +72,8 @@ public class EchoDualParserTest {
     public void testParse_Cordovox() throws ParseException {
         byte[] effectParameters = {14, 1, 0, 0, 1, 0, 1, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 6, 15, 3, 0, 12, 14, 4, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
-        assertEquals(30, echoDual.getMix());
-        assertEquals(0, echoDual.getLevel());
+        assertEquals(30, (int) echoDual.getMix().getValue());
+        assertEquals(0, (int) echoDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 1, 1), echoDual.getTime1());
         assertEquals(new BeatRate("Time2", 4, 3), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());
@@ -90,8 +90,8 @@ public class EchoDualParserTest {
     public void testParse_SlideComp() throws ParseException {
         byte[] effectParameters = {2, 1, 0, 0, 8, 12, 0, 0, 4, 0, 12, 2, 1, 0, 4, 0, 0, 0, 0, 0, 1, 15, 3, 0, 12, 14, 4, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoDual echoDual = EchoDualParser.parse(effectParameters);
-        assertEquals(18, echoDual.getMix());
-        assertEquals(0, echoDual.getLevel());
+        assertEquals(18, (int) echoDual.getMix().getValue());
+        assertEquals(0, (int) echoDual.getLevel().getValue());
         assertEquals(new TapMsRate("Time1", 200), echoDual.getTime1());
         assertEquals(new TapMsRate("Time2", 300), echoDual.getTime2());
         assertEquals(0, echoDual.getLevel1());

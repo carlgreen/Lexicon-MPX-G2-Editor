@@ -35,8 +35,8 @@ public class DelayMonoParserTest {
     public void testParse_TremoWah() throws ParseException {
         byte[] effectParameters = {10, 0, 0, 0, 4, 0, 3, 0, 1, 0, 10, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayMono delayMono = DelayMonoParser.parse(effectParameters);
-        assertEquals(10, delayMono.getMix());
-        assertEquals(0, delayMono.getLevel());
+        assertEquals(10, (int) delayMono.getMix().getValue());
+        assertEquals(0, (int) delayMono.getLevel().getValue());
         assertEquals(new BeatRate("Time", 4, 3), delayMono.getTime());
         assertEquals(10, delayMono.getFeedback());
         assertEquals(3, delayMono.getInsert());

@@ -36,8 +36,8 @@ public class DelayStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DelayStereo delayStereo = (DelayStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(delayStereo.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(delayStereo.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(delayStereo.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(delayStereo.getLevel())).append("\n");
         sb.append("    Time: ").append(ParameterPrinter.print(delayStereo.getTime())).append("\n");
         sb.append("    Feedback: ").append(signInt(delayStereo.getFeedback())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(delayStereo.getInsert())).append("\n");

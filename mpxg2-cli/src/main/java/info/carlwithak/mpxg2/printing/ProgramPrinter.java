@@ -198,8 +198,8 @@ public class ProgramPrinter {
         }
         if (program.getDelay() != null) {
             sb.append("    Delay:\n");
-            sb.append("      Mix: ").append(program.getDelay().getMix()).append("%\n");
-            sb.append("      Level: ").append(signInt(program.getDelay().getLevel())).append("dB\n");
+            sb.append("      Mix: ").append(ParameterPrinter.print(program.getDelay().getMix())).append("\n");
+            sb.append("      Level: ").append(ParameterPrinter.print(program.getDelay().getLevel())).append("\n");
         }
         if (program.getReverb() != null) {
             sb.append("    Reverb:\n");

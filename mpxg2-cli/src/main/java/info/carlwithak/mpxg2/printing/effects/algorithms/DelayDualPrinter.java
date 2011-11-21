@@ -37,8 +37,8 @@ public class DelayDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DelayDual delayDual = (DelayDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(delayDual.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(delayDual.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(delayDual.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(delayDual.getLevel())).append("\n");
         sb.append("    Time1: ").append(ParameterPrinter.print(delayDual.getTime1())).append("\n");
         sb.append("    Time2: ").append(ParameterPrinter.print(delayDual.getTime2())).append("\n");
         sb.append("    Level1: ").append(signInt(delayDual.getLevel1())).append("dB\n");
