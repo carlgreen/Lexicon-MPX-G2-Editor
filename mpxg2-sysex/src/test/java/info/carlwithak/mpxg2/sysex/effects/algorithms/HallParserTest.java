@@ -33,8 +33,8 @@ public class HallParserTest {
     public void testParse_TremoWah() {
         byte[] effectParameters = {4, 1, 0, 0, 2, 6, 1, 0, 8, 2, 9, 1, 5, 0, 9, 2, 15, 0, 15, 1, 14, 6, 13, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Hall hall = HallParser.parse(effectParameters);
-        assertEquals(20, hall.getMix());
-        assertEquals(0, hall.getLevel());
+        assertEquals(20, (int) hall.getMix().getValue());
+        assertEquals(0, (int) hall.getLevel().getValue());
         assertEquals(53.0, hall.getSize(), 0.01);
         assertTrue(hall.isLink());
         assertEquals(80, hall.getDiff());

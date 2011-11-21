@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
@@ -26,7 +28,6 @@ import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbXovrToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -35,11 +36,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class HallPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Hall hall = (Hall) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(hall.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(hall.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(hall.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(hall.getLevel())).append("\n");
         sb.append("    Size: ").append(hall.getSize()).append("m\n");
         sb.append("    Link: ").append(onOffToString(hall.isLink())).append("\n");
         sb.append("    Diff: ").append(hall.getDiff()).append("%\n");

@@ -33,8 +33,8 @@ public class PlateParserTest {
     public void testParse_GuitarSolo() {
         byte[] effectParameters = {4, 6, 6, 0, 5, 2, 1, 0, 1, 2, 9, 10, 5, 0, 2, 3, 0, 1, 13, 2, 4, 2, 14, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Plate plate = PlateParser.parse(effectParameters);
-        assertEquals(100, plate.getMix());
-        assertEquals(6, plate.getLevel());
+        assertEquals(100, (int) plate.getMix().getValue());
+        assertEquals(6, (int) plate.getLevel().getValue());
         assertEquals(22.5, plate.getSize(), 0.01);
         assertTrue(plate.isLink());
         assertEquals(66, plate.getDiff());
@@ -51,8 +51,8 @@ public class PlateParserTest {
     public void testParse_VybeFlange() {
         byte[] effectParameters = {12, 1, 0, 0, 9, 1, 1, 0, 13, 2, 10, 0, 0, 0, 0, 0, 0, 1, 1, 2, 10, 3, 14, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Plate plate = PlateParser.parse(effectParameters);
-        assertEquals(28, plate.getMix());
-        assertEquals(0, plate.getLevel());
+        assertEquals(28, (int) plate.getMix().getValue());
+        assertEquals(0, (int) plate.getLevel().getValue());
         assertEquals(16.5, plate.getSize(), 0.01);
         assertTrue(plate.isLink());
         assertEquals(90, plate.getDiff());

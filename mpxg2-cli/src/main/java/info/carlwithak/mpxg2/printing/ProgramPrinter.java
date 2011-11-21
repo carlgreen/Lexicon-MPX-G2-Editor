@@ -203,8 +203,8 @@ public class ProgramPrinter {
         }
         if (program.getReverb() != null) {
             sb.append("    Reverb:\n");
-            sb.append("      Mix: ").append(program.getReverb().getMix()).append("%\n");
-            sb.append("      Level: ").append(signInt(program.getReverb().getLevel())).append("dB\n");
+            sb.append("      Mix: ").append(ParameterPrinter.print(program.getReverb().getMix())).append("\n");
+            sb.append("      Level: ").append(ParameterPrinter.print(program.getReverb().getLevel())).append("\n");
         }
         if (program.getEq() != null) {
             sb.append("    Eq:\n");

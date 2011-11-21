@@ -19,11 +19,12 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDelayTimeToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbAmbienceRtHCToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -32,11 +33,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class AmbiencePrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Ambience ambience = (Ambience) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ambience.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(ambience.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(ambience.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(ambience.getLevel())).append("\n");
         sb.append("    Size: ").append(ambience.getSize()).append("m\n");
         sb.append("    Link: ").append(onOffToString(ambience.isLink())).append("\n");
         sb.append("    Diff: ").append(ambience.getDiff()).append("%\n");
