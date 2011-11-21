@@ -25,6 +25,8 @@ import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import java.text.DecimalFormat;
 
+import static info.carlwithak.mpxg2.printing.Util.signInt;
+
 /**
  * Class to print out a parameter correctly depending on the type.
  *
@@ -51,7 +53,12 @@ public class ParameterPrinter {
             }
         } else if (parameter instanceof GenericValue) {
             GenericValue value = (GenericValue) parameter;
-            result = value.getValue() + value.getUnit();
+            if (value.getMinValue() instanceof Integer && ((Integer) value.getMinValue()) < 0) {
+                result = signInt((Integer) value.getValue());
+            } else {
+                result = value.getValue().toString();
+            }
+            result += value.getUnit();
         } else {
             throw new PrintException("Invalid parameter type: " + parameter.getClass());
         }

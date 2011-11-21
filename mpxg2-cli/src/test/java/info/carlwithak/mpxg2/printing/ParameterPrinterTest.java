@@ -79,4 +79,15 @@ public class ParameterPrinterTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testPrintSignedGenericValue() throws PrintException {
+        GenericValue<Integer> value = new GenericValue<Integer>("Level", "dB", -90, 6);
+        value.setValue(6);
+
+        String expected = "+6dB";
+        String actual = ParameterPrinter.print(value);
+
+        assertEquals(expected, actual);
+    }
 }
