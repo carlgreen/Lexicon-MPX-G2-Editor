@@ -34,8 +34,8 @@ public class AerosolPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Aerosol aerosol = (Aerosol) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(aerosol.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(aerosol.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(aerosol.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(aerosol.getLevel())).append("\n");
         sb.append("    Rate1: ").append(ParameterPrinter.print(aerosol.getRate1())).append("\n");
         sb.append("    PW 1: ").append(aerosol.getPulseWidth1()).append("%\n");
         sb.append("    Depth1: ").append(aerosol.getDepth1()).append("%\n");

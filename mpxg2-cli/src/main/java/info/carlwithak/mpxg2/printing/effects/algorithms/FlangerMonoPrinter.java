@@ -34,8 +34,8 @@ public class FlangerMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         FlangerMono flangerMono = (FlangerMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(flangerMono.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(flangerMono.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(flangerMono.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(flangerMono.getLevel())).append("\n");
         sb.append("    Rate: ").append(ParameterPrinter.print(flangerMono.getRate())).append("\n");
         sb.append("    PW: ").append(flangerMono.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(flangerMono.getDepth()).append("%\n");

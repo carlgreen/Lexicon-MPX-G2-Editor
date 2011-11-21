@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.signInt;
-
 /**
  *
  * @author Carl Green
@@ -34,8 +32,8 @@ public class ChorusPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ChorusAlgorithm chorus = (ChorusAlgorithm) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(chorus.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(chorus.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(chorus.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(chorus.getLevel())).append("\n");
         sb.append("    Rate1: ").append(ParameterPrinter.print(chorus.getRate1())).append("\n");
         sb.append("    PW1: ").append(chorus.getPulseWidth1()).append("%\n");
         sb.append("    Depth1: ").append(chorus.getDepth1()).append("%\n");

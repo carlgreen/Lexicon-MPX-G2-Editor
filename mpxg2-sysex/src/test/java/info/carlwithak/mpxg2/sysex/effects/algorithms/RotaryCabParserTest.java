@@ -34,8 +34,8 @@ public class RotaryCabParserTest {
     public void testParse_RotaryCab() throws ParseException {
         byte[] effectParameters = {4, 6, 4, 0, 13, 3, 2, 0, 0, 0, 11, 2, 13, 3, 2, 0, 0, 0, 4, 2, 0, 0, 4, 6, 12, 14, 11, 2, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         RotaryCab rotaryCab = RotaryCabParser.parse(effectParameters);
-        assertEquals(100, rotaryCab.getMix());
-        assertEquals(4, rotaryCab.getLevel());
+        assertEquals(100, (int) rotaryCab.getMix().getValue());
+        assertEquals(4, (int) rotaryCab.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate1", 5.73), rotaryCab.getRate1());
         assertEquals(43, rotaryCab.getDepth1());
         assertEquals(new FrequencyRate("Rate2", 5.73), rotaryCab.getRate2());

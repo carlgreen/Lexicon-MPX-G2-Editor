@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,11 +29,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class DetuneMonoPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         ChorusDetuneMono detuneMono = (ChorusDetuneMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(detuneMono.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(detuneMono.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(detuneMono.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(detuneMono.getLevel())).append("\n");
         sb.append("    Tune: ").append(detuneMono.getTune()).append("\n");
         sb.append("    Optimize: ").append(detuneMono.getOptimize()).append("ms\n");
         sb.append("    P Dly: ").append(detuneMono.getPreDelay()).append("ms\n");

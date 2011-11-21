@@ -34,8 +34,8 @@ public class AerosolParserTest {
     public void testParse_ToeWahAero() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 10, 1, 0, 0, 0, 0, 13, 2, 6, 4, 10, 1, 0, 0, 0, 0, 7, 3, 12, 3, 4, 12, 12, 3, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Aerosol aerosol = AerosolParser.parse(effectParameters);
-        assertEquals(100, aerosol.getMix());
-        assertEquals(0, aerosol.getLevel());
+        assertEquals(100, (int) aerosol.getMix().getValue());
+        assertEquals(0, (int) aerosol.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate1", 0.26), aerosol.getRate1());
         assertEquals(45, aerosol.getPulseWidth1());
         assertEquals(70, aerosol.getDepth1());

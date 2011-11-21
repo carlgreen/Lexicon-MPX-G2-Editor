@@ -34,8 +34,8 @@ public class Centrifuge1ParserTest {
     public void testParse_VHRig() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 12, 3, 0, 0, 0, 0, 13, 2, 8, 7, 4, 6, 4, 6, 0, 0, 0, 0, 4, 6, 8, 8, 11, 2, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Centrifuge1 centrifuge1 = Centrifuge1Parser.parse(effectParameters);
-        assertEquals(100, centrifuge1.getMix());
-        assertEquals(6, centrifuge1.getLevel());
+        assertEquals(100, (int) centrifuge1.getMix().getValue());
+        assertEquals(6, (int) centrifuge1.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate1", 0.60), centrifuge1.getRate1());
         assertEquals(45, centrifuge1.getPulseWidth1());
         assertEquals(120, centrifuge1.getSync1());

@@ -34,8 +34,8 @@ public class FlangerStereoParserTest {
     public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {3, 4, 1, 0, 1, 0, 4, 0, 1, 0, 2, 3, 14, 3, 1, 0, 4, 1, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         FlangerStereo flangerStereo = FlangerStereoParser.parse(effectParameters);
-        assertEquals(67, flangerStereo.getMix());
-        assertEquals(1, flangerStereo.getLevel());
+        assertEquals(67, (int) flangerStereo.getMix().getValue());
+        assertEquals(1, (int) flangerStereo.getLevel().getValue());
         assertEquals(new BeatRate("Rate", 1, 4), flangerStereo.getRate());
         assertEquals(50, flangerStereo.getPulseWidth());
         assertEquals(62, flangerStereo.getDepth());

@@ -32,8 +32,8 @@ public class ChorusVolumeMonoParserTest {
     public void testParse_Octaves() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 10, 0, 3, 2, 2, 3, 8, 2, 2, 0, 4, 12, 2, 3, 6, 3, 2, 5, 10, 14, 1, 15, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusVolumeMono volumeMono = ChorusVolumeMonoParser.parse(effectParameters);
-        assertEquals(100, volumeMono.getMix());
-        assertEquals(0, volumeMono.getLevel());
+        assertEquals(100, (int) volumeMono.getMix().getValue());
+        assertEquals(0, (int) volumeMono.getLevel().getValue());
         assertEquals(100, volumeMono.getVolume());
     }
 }

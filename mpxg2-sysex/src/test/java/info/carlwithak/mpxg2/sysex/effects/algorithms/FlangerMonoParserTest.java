@@ -34,8 +34,8 @@ public class FlangerMonoParserTest {
     public void testParse_Stomp() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 5, 0, 0, 0, 0, 0, 4, 1, 14, 1, 4, 12, 14, 1, 0, 0, 0, 0, 4, 6, 8, 8, 11, 2, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         FlangerMono flangerMono = FlangerMonoParser.parse(effectParameters);
-        assertEquals(100, flangerMono.getMix());
-        assertEquals(0, flangerMono.getLevel());
+        assertEquals(100, (int) flangerMono.getMix().getValue());
+        assertEquals(0, (int) flangerMono.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 0.05), flangerMono.getRate());
         assertEquals(20, flangerMono.getPulseWidth());
         assertEquals(30, flangerMono.getDepth());

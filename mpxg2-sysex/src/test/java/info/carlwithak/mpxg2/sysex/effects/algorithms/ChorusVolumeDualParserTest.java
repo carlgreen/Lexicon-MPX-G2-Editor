@@ -32,8 +32,8 @@ public class ChorusVolumeDualParserTest {
     public void testParse_TremoWah() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 4, 6, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusVolumeDual volumeDual = ChorusVolumeDualParser.parse(effectParameters);
-        assertEquals(100, volumeDual.getMix());
-        assertEquals(0, volumeDual.getLevel());
+        assertEquals(100, (int) volumeDual.getMix().getValue());
+        assertEquals(0, (int) volumeDual.getLevel().getValue());
         assertEquals(100, volumeDual.getVolumeLeft());
         assertEquals(100, volumeDual.getVolumeRight());
     }
