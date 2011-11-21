@@ -26,16 +26,16 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 
 /**
- * Tests for RatePrinter.
+ * Tests for ParameterPrinter.
  *
  * @author Carl Green
  */
-public class RatePrinterTest {
+public class ParameterPrinterTest {
 
     @Test(expected = PrintException.class)
     public void testPrintInvalidRateType() throws PrintException {
         Rate rate = mock(Rate.class);
-        RatePrinter.print(rate);
+        ParameterPrinter.print(rate);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class RatePrinterTest {
         Rate rate = new FrequencyRate("Rate", 2.3);
 
         String expected = "2.30Hz";
-        String actual = RatePrinter.print(rate);
+        String actual = ParameterPrinter.print(rate);
 
         assertEquals(expected, actual);
     }
@@ -53,7 +53,7 @@ public class RatePrinterTest {
         Rate rate = new BeatRate("Rate", 3, 7);
 
         String expected = "3:7";
-        String actual = RatePrinter.print(rate);
+        String actual = ParameterPrinter.print(rate);
 
         assertEquals(expected, actual);
     }
@@ -63,7 +63,7 @@ public class RatePrinterTest {
         Rate rate = new TapMsRate("Rate", 200);
 
         String expected = "200ms";
-        String actual = RatePrinter.print(rate);
+        String actual = ParameterPrinter.print(rate);
 
         assertEquals(expected, actual);
     }

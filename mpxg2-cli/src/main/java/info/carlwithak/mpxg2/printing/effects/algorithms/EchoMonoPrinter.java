@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
@@ -38,7 +38,7 @@ public class EchoMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(echoMono.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(echoMono.getLevel())).append("dB\n");
-        sb.append("    Time: ").append(RatePrinter.print(echoMono.getTime())).append("\n");
+        sb.append("    Time: ").append(ParameterPrinter.print(echoMono.getTime())).append("\n");
         sb.append("    Feedback: ").append(signInt(echoMono.getFeedback())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(echoMono.getInsert())).append("\n");
         sb.append("    Damp: ").append(echoMono.getDamp()).append("%\n");

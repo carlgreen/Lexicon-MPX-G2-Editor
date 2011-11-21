@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
@@ -38,7 +38,7 @@ public class EchoStereoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(echoStereo.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(echoStereo.getLevel())).append("dB\n");
-        sb.append("    Time: ").append(RatePrinter.print(echoStereo.getTime())).append("\n");
+        sb.append("    Time: ").append(ParameterPrinter.print(echoStereo.getTime())).append("\n");
         sb.append("    Feedback: ").append(signInt(echoStereo.getFeedback())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(echoStereo.getInsert())).append("\n");
         sb.append("    Damp: ").append(echoStereo.getDamp()).append("%\n");

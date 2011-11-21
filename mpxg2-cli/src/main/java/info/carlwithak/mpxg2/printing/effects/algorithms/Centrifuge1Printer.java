@@ -17,10 +17,10 @@
 
 package info.carlwithak.mpxg2.printing.effects.algorithms;
 
-import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -36,11 +36,11 @@ public class Centrifuge1Printer implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(centrifuge1.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(centrifuge1.getLevel())).append("dB\n");
-        sb.append("    Rate1: ").append(RatePrinter.print(centrifuge1.getRate1())).append("\n");
+        sb.append("    Rate1: ").append(ParameterPrinter.print(centrifuge1.getRate1())).append("\n");
         sb.append("    PW 1: ").append(centrifuge1.getPulseWidth1()).append("%\n");
         sb.append("    Sync1: ").append(signInt(centrifuge1.getSync1())).append("\n");
         sb.append("    Depth1: ").append(centrifuge1.getDepth1()).append("%\n");
-        sb.append("    Rate2: ").append(RatePrinter.print(centrifuge1.getRate2())).append("\n");
+        sb.append("    Rate2: ").append(ParameterPrinter.print(centrifuge1.getRate2())).append("\n");
         sb.append("    PW 2: ").append(centrifuge1.getPulseWidth2()).append("%\n");
         sb.append("    Sync2: ").append(signInt(centrifuge1.getSync2())).append("\n");
         sb.append("    Depth2: ").append(centrifuge1.getDepth2()).append("%\n");

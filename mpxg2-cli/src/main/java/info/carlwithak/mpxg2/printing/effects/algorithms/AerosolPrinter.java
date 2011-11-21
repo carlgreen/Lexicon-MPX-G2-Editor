@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -36,10 +36,10 @@ public class AerosolPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(aerosol.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(aerosol.getLevel())).append("dB\n");
-        sb.append("    Rate1: ").append(RatePrinter.print(aerosol.getRate1())).append("\n");
+        sb.append("    Rate1: ").append(ParameterPrinter.print(aerosol.getRate1())).append("\n");
         sb.append("    PW 1: ").append(aerosol.getPulseWidth1()).append("%\n");
         sb.append("    Depth1: ").append(aerosol.getDepth1()).append("%\n");
-        sb.append("    Rate2: ").append(RatePrinter.print(aerosol.getRate2())).append("\n");
+        sb.append("    Rate2: ").append(ParameterPrinter.print(aerosol.getRate2())).append("\n");
         sb.append("    PW 2: ").append(aerosol.getPulseWidth2()).append("%\n");
         sb.append("    Depth2: ").append(aerosol.getDepth2()).append("%\n");
         sb.append("    Res 1: ").append(signInt(aerosol.getResonance1())).append("\n");

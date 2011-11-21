@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
@@ -38,7 +38,7 @@ public class DelayStereoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(delayStereo.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(delayStereo.getLevel())).append("dB\n");
-        sb.append("    Time: ").append(RatePrinter.print(delayStereo.getTime())).append("\n");
+        sb.append("    Time: ").append(ParameterPrinter.print(delayStereo.getTime())).append("\n");
         sb.append("    Feedback: ").append(signInt(delayStereo.getFeedback())).append("%\n");
         sb.append("    Insert: ").append(delayInsertToString(delayStereo.getInsert())).append("\n");
         sb.append("    Clear: ").append(onOffToString(delayStereo.isClear())).append("\n");

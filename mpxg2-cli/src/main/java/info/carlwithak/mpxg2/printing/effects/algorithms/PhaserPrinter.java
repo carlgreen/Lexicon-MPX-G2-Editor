@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Phaser;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -36,7 +36,7 @@ public class PhaserPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(phaser.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(phaser.getLevel())).append("dB\n");
-        sb.append("    Rate: ").append(RatePrinter.print(phaser.getRate())).append("\n");
+        sb.append("    Rate: ").append(ParameterPrinter.print(phaser.getRate())).append("\n");
         sb.append("    PW: ").append(phaser.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(phaser.getDepth()).append("%\n");
         sb.append("    Res: ").append(signInt(phaser.getResonance())).append("%\n");

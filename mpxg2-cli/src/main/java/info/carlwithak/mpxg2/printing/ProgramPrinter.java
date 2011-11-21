@@ -501,7 +501,7 @@ public class ProgramPrinter {
     static String printLfo(final Lfo lfo) throws PrintException {
         final StringBuilder sb = new StringBuilder();
         sb.append("      Mode: ").append(lfoModeToString(lfo.getMode())).append("\n");
-        sb.append("      Rate: ").append(RatePrinter.print(lfo.getRate())).append("\n");
+        sb.append("      Rate: ").append(ParameterPrinter.print(lfo.getRate())).append("\n");
         sb.append("      PW: ").append(lfo.getPulseWidth()).append("%\n");
         sb.append("      Phase: ").append(lfo.getPhase()).append("\n");
         sb.append("      Depth: ").append(lfo.getDepth()).append("%\n");
@@ -514,7 +514,7 @@ public class ProgramPrinter {
         final StringBuilder sb = new StringBuilder();
         sb.append("      Low: ").append(random.getLow()).append("\n");
         sb.append("      High: ").append(random.getHigh()).append("\n");
-        sb.append("      Rate: ").append(RatePrinter.print(random.getRate())).append("\n");
+        sb.append("      Rate: ").append(ParameterPrinter.print(random.getRate())).append("\n");
         return sb.toString();
     }
 

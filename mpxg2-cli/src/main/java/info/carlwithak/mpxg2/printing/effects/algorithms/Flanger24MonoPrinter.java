@@ -17,10 +17,10 @@
 
 package info.carlwithak.mpxg2.printing.effects.algorithms;
 
-import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -36,7 +36,7 @@ public class Flanger24MonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(flanger24Mono.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(flanger24Mono.getLevel())).append("dB\n");
-        sb.append("    Rate: ").append(RatePrinter.print(flanger24Mono.getRate())).append("\n");
+        sb.append("    Rate: ").append(ParameterPrinter.print(flanger24Mono.getRate())).append("\n");
         sb.append("    PW: ").append(flanger24Mono.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(flanger24Mono.getDepth()).append("%\n");
         sb.append("    Res: ").append(signInt(flanger24Mono.getResonance())).append("%\n");

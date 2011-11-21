@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -36,10 +36,10 @@ public class ChorusPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(chorus.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(chorus.getLevel())).append("dB\n");
-        sb.append("    Rate1: ").append(RatePrinter.print(chorus.getRate1())).append("\n");
+        sb.append("    Rate1: ").append(ParameterPrinter.print(chorus.getRate1())).append("\n");
         sb.append("    PW1: ").append(chorus.getPulseWidth1()).append("%\n");
         sb.append("    Depth1: ").append(chorus.getDepth1()).append("%\n");
-        sb.append("    Rate2: ").append(RatePrinter.print(chorus.getRate2())).append("\n");
+        sb.append("    Rate2: ").append(ParameterPrinter.print(chorus.getRate2())).append("\n");
         sb.append("    PW2: ").append(chorus.getPulseWidth2()).append("%\n");
         sb.append("    Depth2: ").append(chorus.getDepth2()).append("%\n");
         sb.append("    Res1: ").append(chorus.getResonance1()).append("\n");

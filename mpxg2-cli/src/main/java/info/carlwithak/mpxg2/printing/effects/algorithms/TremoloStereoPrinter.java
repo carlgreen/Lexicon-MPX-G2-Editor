@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.phaseToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
@@ -37,7 +37,7 @@ public class TremoloStereoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(tremoloStereo.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(tremoloStereo.getLevel())).append("dB\n");
-        sb.append("    Rate: ").append(RatePrinter.print(tremoloStereo.getRate())).append("\n");
+        sb.append("    Rate: ").append(ParameterPrinter.print(tremoloStereo.getRate())).append("\n");
         sb.append("    PW: ").append(tremoloStereo.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(tremoloStereo.getDepth()).append("%\n");
         sb.append("    Phase: ").append(phaseToString(tremoloStereo.getPhase())).append("\n");

@@ -24,11 +24,11 @@ import info.carlwithak.mpxg2.model.TapMsRate;
 import java.text.DecimalFormat;
 
 /**
- * Class to print out a rate correctly depending on the type.
+ * Class to print out a parameter correctly depending on the type.
  *
  * @author Carl Green
  */
-public class RatePrinter {
+public class ParameterPrinter {
 
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
@@ -48,5 +48,4 @@ public class RatePrinter {
         }
         return result;
     }
-
 }

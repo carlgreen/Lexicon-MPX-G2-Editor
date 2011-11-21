@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -36,9 +36,9 @@ public class RotaryCabPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(rotaryCab.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(rotaryCab.getLevel())).append("dB\n");
-        sb.append("    Rate1: ").append(RatePrinter.print(rotaryCab.getRate1())).append("\n");
+        sb.append("    Rate1: ").append(ParameterPrinter.print(rotaryCab.getRate1())).append("\n");
         sb.append("    Depth1: ").append(rotaryCab.getDepth1()).append("%\n");
-        sb.append("    Rate2: ").append(RatePrinter.print(rotaryCab.getRate2())).append("\n");
+        sb.append("    Rate2: ").append(ParameterPrinter.print(rotaryCab.getRate2())).append("\n");
         sb.append("    Depth2: ").append(rotaryCab.getDepth2()).append("%\n");
         sb.append("    Res: ").append(signInt(rotaryCab.getResonance())).append("\n");
         sb.append("    Width: ").append(rotaryCab.getWidth()).append("%\n");

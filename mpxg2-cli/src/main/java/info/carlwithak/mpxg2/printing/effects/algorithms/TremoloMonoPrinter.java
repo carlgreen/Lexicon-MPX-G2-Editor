@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.RatePrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -36,7 +36,7 @@ public class TremoloMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(tremoloMono.getMix()).append("%\n");
         sb.append("    Level: ").append(signInt(tremoloMono.getLevel())).append("dB\n");
-        sb.append("    Rate: ").append(RatePrinter.print(tremoloMono.getRate())).append("\n");
+        sb.append("    Rate: ").append(ParameterPrinter.print(tremoloMono.getRate())).append("\n");
         sb.append("    PW: ").append(tremoloMono.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(tremoloMono.getDepth()).append("%\n");
         return sb.toString();
