@@ -34,8 +34,8 @@ public class TremoloStereoParserTest {
     public void testParse_Verbolo() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 12, 2, 1, 0, 0, 0, 2, 3, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TremoloStereo tremoloStereo = TremoloStereoParser.parse(effectParameters);
-        assertEquals(100, tremoloStereo.getMix());
-        assertEquals(0, tremoloStereo.getLevel());
+        assertEquals(100, (int) tremoloStereo.getMix().getValue());
+        assertEquals(0, (int) tremoloStereo.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 3.0), tremoloStereo.getRate());
         assertEquals(50, tremoloStereo.getPulseWidth());
         assertEquals(100, tremoloStereo.getDepth());

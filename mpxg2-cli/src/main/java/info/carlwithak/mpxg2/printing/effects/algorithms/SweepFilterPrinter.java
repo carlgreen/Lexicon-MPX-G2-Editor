@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.panToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
@@ -30,11 +32,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class SweepFilterPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         SweepFilter sweepFilter = (SweepFilter) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(sweepFilter.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(sweepFilter.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(sweepFilter.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(sweepFilter.getLevel())).append("\n");
         sb.append("    Fc: ").append(sweepFilter.getFc()).append("Hz\n");
         sb.append("    FRes: ").append(sweepFilter.getFRes()).append("\n");
         sb.append("    Mod: ").append(sweepFilter.getMod()).append("Hz\n");

@@ -34,8 +34,8 @@ public class TremoloMonoParserTest {
     public void testParse_TremoWah() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 7, 0, 4, 0, 1, 0, 14, 1, 4, 6, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TremoloMono tremoloMono = TremoloMonoParser.parse(effectParameters);
-        assertEquals(100, tremoloMono.getMix());
-        assertEquals(6, tremoloMono.getLevel());
+        assertEquals(100, (int) tremoloMono.getMix().getValue());
+        assertEquals(6, (int) tremoloMono.getLevel().getValue());
         assertEquals(new BeatRate("Rate", 7, 4), tremoloMono.getRate());
         assertEquals(30, tremoloMono.getPulseWidth());
         assertEquals(100, tremoloMono.getDepth());

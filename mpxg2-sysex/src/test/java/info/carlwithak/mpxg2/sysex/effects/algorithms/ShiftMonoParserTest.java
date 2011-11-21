@@ -33,8 +33,8 @@ public class ShiftMonoParserTest {
     public void testParse_OctaveFuzz() {
         byte[] effectParameters = {4, 6, 6, 10, 0, 5, 11, 15, 2, 3, 1, 0, 15, 15, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ShiftMono shiftMono = ShiftMonoParser.parse(effectParameters);
-        assertEquals(100, shiftMono.getMix());
-        assertEquals(-90, shiftMono.getLevel()); // Off
+        assertEquals(100, (int) shiftMono.getMix().getValue());
+        assertEquals(-90, (int) shiftMono.getLevel().getValue()); // Off
         assertEquals(-1200, shiftMono.getTune());
         assertEquals(50, shiftMono.getOptimize());
         assertTrue(shiftMono.isGlide());

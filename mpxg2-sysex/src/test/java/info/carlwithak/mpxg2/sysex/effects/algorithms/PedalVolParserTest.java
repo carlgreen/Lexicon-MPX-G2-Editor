@@ -32,7 +32,7 @@ public class PedalVolParserTest {
     public void testParse_AnalogEcho() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 0, 0, 0, 0, 2, 3, 4, 6, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         PedalVol pedalVol = PedalVolParser.parse(effectParameters);
-        assertEquals(100, pedalVol.getMix());
-        assertEquals(0, pedalVol.getLevel());
+        assertEquals(100, (int) pedalVol.getMix().getValue());
+        assertEquals(0, (int) pedalVol.getLevel().getValue());
     }
 }

@@ -22,7 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -34,8 +33,8 @@ public class CustomVybePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         CustomVybe customVybe = (CustomVybe) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(customVybe.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(customVybe.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(customVybe.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(customVybe.getLevel())).append("\n");
         sb.append("    Rate: ").append(ParameterPrinter.print(customVybe.getRate())).append("\n");
         sb.append("    PW: ").append(customVybe.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(customVybe.getDepth()).append("%\n");

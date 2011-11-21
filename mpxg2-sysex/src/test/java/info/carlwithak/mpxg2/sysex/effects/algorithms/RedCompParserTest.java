@@ -33,8 +33,8 @@ public class RedCompParserTest {
     public void testParse_PedalSwell() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 6, 4, 0, 0, 4, 2, 4, 14, 7, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         RedComp redComp = RedCompParser.parse(effectParameters);
-        assertEquals(100, redComp.getMix());
-        assertEquals(6, redComp.getLevel());
+        assertEquals(100, (int) redComp.getMix().getValue());
+        assertEquals(6, (int) redComp.getLevel().getValue());
         assertEquals(70, redComp.getSensitivity());
     }
 }

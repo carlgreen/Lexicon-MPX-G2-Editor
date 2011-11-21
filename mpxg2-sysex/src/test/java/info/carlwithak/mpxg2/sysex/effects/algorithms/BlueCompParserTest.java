@@ -33,8 +33,8 @@ public class BlueCompParserTest {
     public void testParse_AnotherBrick() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 5, 0, 4, 14, 5, 0, 4, 1, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
-        assertEquals(100, blueComp.getMix());
-        assertEquals(6, blueComp.getLevel());
+        assertEquals(100, (int) blueComp.getMix().getValue());
+        assertEquals(6, (int) blueComp.getLevel().getValue());
         assertEquals(5, blueComp.getSensitivity());
         assertEquals(-28, blueComp.getThreshold());
         assertEquals(5, blueComp.getGain());
@@ -46,8 +46,8 @@ public class BlueCompParserTest {
     public void testParse_SlideComp() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 10, 0, 13, 13, 0, 0, 4, 4, 0, 0, 14, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
-        assertEquals(100, blueComp.getMix());
-        assertEquals(0, blueComp.getLevel());
+        assertEquals(100, (int) blueComp.getMix().getValue());
+        assertEquals(0, (int) blueComp.getLevel().getValue());
         assertEquals(10, blueComp.getSensitivity());
         assertEquals(-35, blueComp.getThreshold());
         assertEquals(0, blueComp.getGain());

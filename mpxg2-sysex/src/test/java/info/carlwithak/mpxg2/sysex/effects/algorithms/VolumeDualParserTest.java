@@ -32,8 +32,8 @@ public class VolumeDualParserTest {
     public void testParse_PitchCascade() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 4, 6, 4, 6, 14, 0, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         VolumeDual volumeDual = VolumeDualParser.parse(effectParameters);
-        assertEquals(100, volumeDual.getMix());
-        assertEquals(0, volumeDual.getLevel());
+        assertEquals(100, (int) volumeDual.getMix().getValue());
+        assertEquals(0, (int) volumeDual.getLevel().getValue());
         assertEquals(100, volumeDual.getVolumeLeft());
         assertEquals(100, volumeDual.getVolumeRight());
     }

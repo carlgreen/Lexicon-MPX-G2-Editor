@@ -32,7 +32,7 @@ public class OctaBuzzParserTest {
     public void testParse_KissTheSky() {
         byte[] effectParameters = {4, 6, 3, 0, 10, 0, 13, 13, 0, 0, 4, 4, 0, 0, 14, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         OctaBuzz octaBuzz = OctaBuzzParser.parse(effectParameters);
-        assertEquals(100, octaBuzz.getMix());
-        assertEquals(3, octaBuzz.getLevel());
+        assertEquals(100, (int) octaBuzz.getMix().getValue());
+        assertEquals(3, (int) octaBuzz.getLevel().getValue());
     }
 }

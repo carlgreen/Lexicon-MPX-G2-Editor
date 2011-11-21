@@ -32,8 +32,8 @@ public class PedalWah1ParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {4, 6, 0, 0, 3, 1, 0, 0, 4, 6, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         PedalWah1 pedalWah1 = PedalWah1Parser.parse(effectParameters);
-        assertEquals(100, pedalWah1.getMix());
-        assertEquals(0, pedalWah1.getLevel());
+        assertEquals(100, (int) pedalWah1.getMix().getValue());
+        assertEquals(0, (int) pedalWah1.getLevel().getValue());
         assertEquals(19, pedalWah1.getBass());
         assertEquals(0, pedalWah1.getType());
         assertEquals(100, pedalWah1.getResponse());

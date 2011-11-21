@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,11 +29,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class OrangePhasePrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         OrangePhase orangePhase = (OrangePhase) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(orangePhase.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(orangePhase.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(orangePhase.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(orangePhase.getLevel())).append("\n");
         sb.append("    Rate: ").append(orangePhase.getRate()).append("\n");
         return sb.toString();
     }

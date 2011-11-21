@@ -32,8 +32,8 @@ public class Wah2ParserTest {
     public void testParse_TremoWah() {
         byte[] effectParameters = {4, 6, 6, 0, 2, 3, 0, 0, 0, 0, 4, 6, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Wah2 wah2 = Wah2Parser.parse(effectParameters);
-        assertEquals(100, wah2.getMix());
-        assertEquals(6, wah2.getLevel());
+        assertEquals(100, (int) wah2.getMix().getValue());
+        assertEquals(6, (int) wah2.getLevel().getValue());
         assertEquals(50, wah2.getSweep());
         assertEquals(0, wah2.getBass());
         assertEquals(0, wah2.getType());

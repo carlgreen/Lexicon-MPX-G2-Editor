@@ -32,8 +32,8 @@ public class PannerParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 8, 14, 14, 12, 2, 3, 4, 6, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Panner panner = PannerParser.parse(effectParameters);
-        assertEquals(100, panner.getMix());
-        assertEquals(-24, panner.getLevel());
+        assertEquals(100, (int) panner.getMix().getValue());
+        assertEquals(-24, (int) panner.getLevel().getValue());
         assertEquals(-50, panner.getPan1());
         assertEquals(50, panner.getPan2());
     }

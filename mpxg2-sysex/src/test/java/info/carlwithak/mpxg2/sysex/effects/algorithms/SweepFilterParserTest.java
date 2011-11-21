@@ -32,8 +32,8 @@ public class SweepFilterParserTest {
     public void testParse_EnvFilterLP() {
         byte[] effectParameters = {4, 6, 6, 0, 8, 5, 0, 0, 2, 2, 8, 4, 8, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
-        assertEquals(100, sweepFilter.getMix());
-        assertEquals(6, sweepFilter.getLevel());
+        assertEquals(100, (int) sweepFilter.getMix().getValue());
+        assertEquals(6, (int) sweepFilter.getLevel().getValue());
         assertEquals(88, sweepFilter.getFc());
         assertEquals(34, sweepFilter.getFRes());
         assertEquals(2120, sweepFilter.getMod());
@@ -45,8 +45,8 @@ public class SweepFilterParserTest {
     public void testParse_TechnoChords() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 4, 2, 4, 14, 7, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
-        assertEquals(100, sweepFilter.getMix());
-        assertEquals(0, sweepFilter.getLevel());
+        assertEquals(100, (int) sweepFilter.getMix().getValue());
+        assertEquals(0, (int) sweepFilter.getLevel().getValue());
         assertEquals(20, sweepFilter.getFc());
         assertEquals(36, sweepFilter.getFRes());
         assertEquals(2020, sweepFilter.getMod());

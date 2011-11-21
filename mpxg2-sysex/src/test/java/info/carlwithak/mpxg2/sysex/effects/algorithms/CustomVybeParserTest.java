@@ -34,8 +34,8 @@ public class CustomVybeParserTest {
     public void testParse() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 1, 6, 0, 0, 0, 0, 14, 2, 13, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         CustomVybe customVybe = CustomVybeParser.parse(effectParameters);
-        assertEquals(100, customVybe.getMix());
-        assertEquals(0, customVybe.getLevel());
+        assertEquals(100, (int) customVybe.getMix().getValue());
+        assertEquals(0, (int) customVybe.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 0.97), customVybe.getRate());
         assertEquals(46, customVybe.getPulseWidth());
         assertEquals(45, customVybe.getDepth());

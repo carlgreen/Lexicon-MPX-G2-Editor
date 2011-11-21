@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,11 +29,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class VolumeDualPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         VolumeDual volumeDual = (VolumeDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(volumeDual.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(volumeDual.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(volumeDual.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(volumeDual.getLevel())).append("\n");
         sb.append("    Vol-L: ").append(volumeDual.getVolumeLeft()).append("%\n");
         sb.append("    Vol-R: ").append(volumeDual.getVolumeRight()).append("%\n");
         return sb.toString();

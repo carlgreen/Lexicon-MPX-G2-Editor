@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
@@ -30,11 +32,11 @@ import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
 public class Wah2Printer implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Wah2 wah2 = (Wah2) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(wah2.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(wah2.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(wah2.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(wah2.getLevel())).append("\n");
         sb.append("    Sweep: ").append(wah2.getSweep()).append("\n");
         sb.append("    Bass: ").append(wah2.getBass()).append("\n");
         sb.append("    Type: ").append(wahTypeToString(wah2.getType())).append("\n");

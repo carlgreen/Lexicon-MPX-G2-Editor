@@ -19,9 +19,10 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -30,11 +31,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class ShiftDualPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         ShiftDual shiftDual = (ShiftDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(shiftDual.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(shiftDual.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(shiftDual.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(shiftDual.getLevel())).append("\n");
         sb.append("    Tune1: ").append(shiftDual.getTune1()).append("\n");
         sb.append("    Optimize: ").append(shiftDual.getOptimize()).append("\n");
         sb.append("    Tune2: ").append(shiftDual.getTune2()).append("\n");

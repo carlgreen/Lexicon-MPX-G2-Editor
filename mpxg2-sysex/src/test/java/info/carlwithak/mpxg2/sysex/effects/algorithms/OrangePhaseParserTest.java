@@ -33,8 +33,8 @@ public class OrangePhaseParserTest {
     public void testParse_VHRig() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 0, 0, 4, 6, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         OrangePhase orangePhase = OrangePhaseParser.parse(effectParameters);
-        assertEquals(100, orangePhase.getMix());
-        assertEquals(0, orangePhase.getLevel());
+        assertEquals(100, (int) orangePhase.getMix().getValue());
+        assertEquals(0, (int) orangePhase.getLevel().getValue());
         assertEquals(20, orangePhase.getRate());
     }
 }

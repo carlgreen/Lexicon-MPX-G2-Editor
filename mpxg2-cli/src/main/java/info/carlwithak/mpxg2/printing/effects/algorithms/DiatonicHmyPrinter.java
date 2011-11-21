@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -47,11 +47,11 @@ public class DiatonicHmyPrinter implements Printer {
     };
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         DiatonicHmy diatonicHmy = (DiatonicHmy) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(diatonicHmy.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(diatonicHmy.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(diatonicHmy.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(diatonicHmy.getLevel())).append("\n");
         sb.append("    Key: ").append(keyToString(diatonicHmy.getKey())).append("\n");
         sb.append("    Scale: ").append(scaleToString(diatonicHmy.getScale())).append("\n");
         sb.append("    Int: ").append(intervalToString(diatonicHmy.getInterval())).append("\n");

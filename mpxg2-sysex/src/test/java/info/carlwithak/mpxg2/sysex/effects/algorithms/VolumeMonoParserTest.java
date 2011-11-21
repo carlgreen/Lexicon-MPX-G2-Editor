@@ -32,8 +32,8 @@ public class VolumeMonoParserTest {
     public void testParse_UnityGain() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         VolumeMono volumeMono = VolumeMonoParser.parse(effectParameters);
-        assertEquals(100, volumeMono.getMix());
-        assertEquals(0, volumeMono.getLevel());
+        assertEquals(100, (int) volumeMono.getMix().getValue());
+        assertEquals(0, (int) volumeMono.getLevel().getValue());
         assertEquals(100, volumeMono.getVolume());
     }
 }

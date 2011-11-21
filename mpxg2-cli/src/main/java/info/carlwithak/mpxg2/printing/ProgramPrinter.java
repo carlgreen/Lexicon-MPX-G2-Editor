@@ -183,13 +183,13 @@ public class ProgramPrinter {
         sb.append("      Bypass Level: ").append(program.getPostBypassLevel()).append("dB\n");
         if (program.getEffect1() != null) {
             sb.append("    FX1:\n");
-            sb.append("      Mix: ").append(program.getEffect1().getMix()).append("%\n");
-            sb.append("      Level: ").append(signInt(program.getEffect1().getLevel())).append("dB\n");
+            sb.append("      Mix: ").append(ParameterPrinter.print(program.getEffect1().getMix())).append("\n");
+            sb.append("      Level: ").append(ParameterPrinter.print(program.getEffect1().getLevel())).append("\n");
         }
         if (program.getEffect2() != null) {
             sb.append("    FX2:\n");
-            sb.append("      Mix: ").append(program.getEffect2().getMix()).append("%\n");
-            sb.append("      Level: ").append(signInt(program.getEffect2().getLevel())).append("dB\n");
+            sb.append("      Mix: ").append(ParameterPrinter.print(program.getEffect2().getMix())).append("\n");
+            sb.append("      Level: ").append(ParameterPrinter.print(program.getEffect2().getLevel())).append("\n");
         }
         if (program.getChorus() != null) {
             sb.append("    Chorus:\n");

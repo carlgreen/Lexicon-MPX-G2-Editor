@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -29,11 +31,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class BlueCompPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         BlueComp blueComp = (BlueComp) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(blueComp.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(blueComp.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(blueComp.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(blueComp.getLevel())).append("\n");
         sb.append("    Sense: ").append(signInt(blueComp.getSensitivity())).append("dB\n");
         sb.append("    Thrsh: ").append(signInt(blueComp.getThreshold())).append("dB\n");
         sb.append("    Gain: ").append(signInt(blueComp.getGain())).append("\n");

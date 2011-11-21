@@ -19,9 +19,10 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -30,11 +31,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class ShiftMonoPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         ShiftMono shiftMono = (ShiftMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(shiftMono.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(shiftMono.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(shiftMono.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(shiftMono.getLevel())).append("\n");
         sb.append("    Tune: ").append(shiftMono.getTune()).append("\n");
         sb.append("    Optimize: ").append(shiftMono.getOptimize()).append("\n");
         sb.append("    Glide: ").append(onOffToString(shiftMono.isGlide())).append("\n");

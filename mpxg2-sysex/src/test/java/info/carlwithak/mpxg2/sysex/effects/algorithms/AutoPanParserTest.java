@@ -35,8 +35,8 @@ public class AutoPanParserTest {
     public void testParse_Cordovox1() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 0, 0, 0, 0, 2, 3, 4, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         AutoPan autoPan = AutoPanParser.parse(effectParameters);
-        assertEquals(100, autoPan.getMix());
-        assertEquals(0, autoPan.getLevel());
+        assertEquals(100, (int) autoPan.getMix().getValue());
+        assertEquals(0, (int) autoPan.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 0.04), autoPan.getRate());
         assertEquals(50, autoPan.getPulseWidth());
         assertEquals(100, autoPan.getDepth());
@@ -47,8 +47,8 @@ public class AutoPanParserTest {
     public void testParse_Cordovox2() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 0, 0, 0, 0, 2, 3, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         AutoPan autoPan = AutoPanParser.parse(effectParameters);
-        assertEquals(100, autoPan.getMix());
-        assertEquals(0, autoPan.getLevel());
+        assertEquals(100, (int) autoPan.getMix().getValue());
+        assertEquals(0, (int) autoPan.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 1.00), autoPan.getRate());
         assertEquals(50, autoPan.getPulseWidth());
         assertEquals(100, autoPan.getDepth());
@@ -59,8 +59,8 @@ public class AutoPanParserTest {
     public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {4, 6, 3, 0, 1, 0, 2, 0, 1, 0, 2, 3, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         AutoPan autoPan = AutoPanParser.parse(effectParameters);
-        assertEquals(100, autoPan.getMix());
-        assertEquals(3, autoPan.getLevel());
+        assertEquals(100, (int) autoPan.getMix().getValue());
+        assertEquals(3, (int) autoPan.getLevel().getValue());
         assertEquals(new BeatRate("Rate", 1, 2), autoPan.getRate());
         assertEquals(50, autoPan.getPulseWidth());
         assertEquals(100, autoPan.getDepth());

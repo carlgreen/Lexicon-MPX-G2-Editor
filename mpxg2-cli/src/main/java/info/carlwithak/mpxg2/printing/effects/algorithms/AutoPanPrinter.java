@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.phaseToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -35,8 +34,8 @@ public class AutoPanPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         AutoPan autoPan = (AutoPan) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(autoPan.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(autoPan.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(autoPan.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(autoPan.getLevel())).append("\n");
         sb.append("    Rate: ").append(ParameterPrinter.print(autoPan.getRate())).append("\n");
         sb.append("    PW: ").append(autoPan.getPulseWidth()).append("%\n");
         sb.append("    Depth: ").append(autoPan.getDepth()).append("%\n");

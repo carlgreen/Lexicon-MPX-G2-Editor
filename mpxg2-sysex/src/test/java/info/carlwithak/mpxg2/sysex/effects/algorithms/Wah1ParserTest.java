@@ -32,8 +32,8 @@ public class Wah1ParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 6, 0, 2, 3, 0, 0, 0, 0, 4, 6, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Wah1 wah1 = Wah1Parser.parse(effectParameters);
-        assertEquals(100, wah1.getMix());
-        assertEquals(6, wah1.getLevel());
+        assertEquals(100, (int) wah1.getMix().getValue());
+        assertEquals(6, (int) wah1.getLevel().getValue());
         assertEquals(50, wah1.getSweep());
         assertEquals(0, wah1.getBass());
         assertEquals(0, wah1.getType());

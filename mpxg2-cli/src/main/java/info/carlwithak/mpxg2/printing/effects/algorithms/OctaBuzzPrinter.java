@@ -20,8 +20,7 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.PrintException;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
 
 /**
  *
@@ -33,8 +32,8 @@ public class OctaBuzzPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         OctaBuzz octaBuzz = (OctaBuzz) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(octaBuzz.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(octaBuzz.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(octaBuzz.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(octaBuzz.getLevel())).append("\n");
         return sb.toString();
     }
 }

@@ -45,16 +45,16 @@ public abstract class Effect implements EffectObject {
         return parameter;
     }
 
-    public int getMix() {
-        return mix.getValue();
+    public GenericValue<Integer> getMix() {
+        return mix;
     }
 
     public void setMix(int mix) {
         this.mix.setValue(mix);
     }
 
-    public int getLevel() {
-        return level.getValue();
+    public GenericValue<Integer> getLevel() {
+        return level;
     }
 
     public void setLevel(int level) {
