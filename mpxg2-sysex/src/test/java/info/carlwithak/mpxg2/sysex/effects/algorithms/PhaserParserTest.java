@@ -37,8 +37,8 @@ public class PhaserParserTest {
         assertEquals(100, (int) phaser.getMix().getValue());
         assertEquals(0, (int) phaser.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 0.83), phaser.getRate());
-        assertEquals(50, phaser.getPulseWidth());
-        assertEquals(100, phaser.getDepth());
-        assertEquals(30, phaser.getResonance());
+        assertEquals(50, (int) phaser.getPulseWidth().getValue());
+        assertEquals(100, (int) phaser.getDepth().getValue());
+        assertEquals(30, (int) phaser.getResonance().getValue());
     }
 }
