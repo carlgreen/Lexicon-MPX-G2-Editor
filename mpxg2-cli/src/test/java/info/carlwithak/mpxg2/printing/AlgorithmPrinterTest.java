@@ -276,7 +276,7 @@ public class AlgorithmPrinterTest {
         blueComp.setAttackTime(20);
         blueComp.setReleaseTime(100);
 
-        String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +5dB\n    Thrsh: -28dB\n    Gain: +5\n    ATime: 20ms\n    RTime: 100ms\n";
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +5dB\n    Thrsh: -28dB\n    Gain: +5dB\n    ATime: 20ms\n    RTime: 100ms\n";
         String actual = AlgorithmPrinter.print(blueComp);
 
         assertEquals(expected, actual);

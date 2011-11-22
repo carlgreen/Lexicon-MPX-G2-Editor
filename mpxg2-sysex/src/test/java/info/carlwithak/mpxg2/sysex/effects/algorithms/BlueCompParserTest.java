@@ -35,11 +35,11 @@ public class BlueCompParserTest {
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
         assertEquals(100, (int) blueComp.getMix().getValue());
         assertEquals(6, (int) blueComp.getLevel().getValue());
-        assertEquals(5, blueComp.getSensitivity());
-        assertEquals(-28, blueComp.getThreshold());
-        assertEquals(5, blueComp.getGain());
-        assertEquals(20, blueComp.getAttackTime());
-        assertEquals(100, blueComp.getReleaseTime());
+        assertEquals(5, (int) blueComp.getSensitivity().getValue());
+        assertEquals(-28, (int) blueComp.getThreshold().getValue());
+        assertEquals(5, (int) blueComp.getGain().getValue());
+        assertEquals(20, (int) blueComp.getAttackTime().getValue());
+        assertEquals(100, (int) blueComp.getReleaseTime().getValue());
     }
 
     @Test
@@ -48,10 +48,10 @@ public class BlueCompParserTest {
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
         assertEquals(100, (int) blueComp.getMix().getValue());
         assertEquals(0, (int) blueComp.getLevel().getValue());
-        assertEquals(10, blueComp.getSensitivity());
-        assertEquals(-35, blueComp.getThreshold());
-        assertEquals(0, blueComp.getGain());
-        assertEquals(68, blueComp.getAttackTime());
-        assertEquals(190, blueComp.getReleaseTime());
+        assertEquals(10, (int) blueComp.getSensitivity().getValue());
+        assertEquals(-35, (int) blueComp.getThreshold().getValue());
+        assertEquals(0, (int) blueComp.getGain().getValue());
+        assertEquals(68, (int) blueComp.getAttackTime().getValue());
+        assertEquals(190, (int) blueComp.getReleaseTime().getValue());
     }
 }

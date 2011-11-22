@@ -10,7 +10,7 @@ Blue Comp
     Level: 0dB
     Sense: +10dB
     Thrsh: -30dB
-    Gain: +1
+    Gain: +1dB
     ATime: 0ms
     RTime: 100ms
   Softrow:

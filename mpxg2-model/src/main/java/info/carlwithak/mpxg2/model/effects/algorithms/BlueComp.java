@@ -68,40 +68,40 @@ public class BlueComp extends Effect {
         return parameter;
     }
 
-    public int getSensitivity() {
-        return sensitivity.getValue();
+    public GenericValue<Integer> getSensitivity() {
+        return sensitivity;
     }
 
     public void setSensitivity(final int sensitivity) {
         this.sensitivity.setValue(sensitivity);
     }
 
-    public int getThreshold() {
-        return threshold.getValue();
+    public GenericValue<Integer> getThreshold() {
+        return threshold;
     }
 
     public void setThreshold(final int threshold) {
         this.threshold.setValue(threshold);
     }
 
-    public int getGain() {
-        return gain.getValue();
+    public GenericValue<Integer> getGain() {
+        return gain;
     }
 
     public void setGain(final int gain) {
         this.gain.setValue(gain);
     }
 
-    public int getAttackTime() {
-        return attackTime.getValue();
+    public GenericValue<Integer> getAttackTime() {
+        return attackTime;
     }
 
     public void setAttackTime(final int attackTime) {
         this.attackTime.setValue(attackTime);
     }
 
-    public int getReleaseTime() {
-        return releaseTime.getValue();
+    public GenericValue<Integer> getReleaseTime() {
+        return releaseTime;
     }
 
     public void setReleaseTime(final int releaseTime) {

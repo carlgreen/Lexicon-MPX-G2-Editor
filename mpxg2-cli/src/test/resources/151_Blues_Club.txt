@@ -11,7 +11,7 @@ Blues Club
     Level: 0dB
     Sense: +7dB
     Thrsh: -18dB
-    Gain: +1
+    Gain: +1dB
     ATime: 1ms
     RTime: 100ms
   Effect 2: Pedal Wah 2 (Off)

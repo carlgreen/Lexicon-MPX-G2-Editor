@@ -19,7 +19,7 @@ BootsyBass
     Level: 0dB
     Sense: +10dB
     Thrsh: -30dB
-    Gain: +5
+    Gain: +5dB
     ATime: 1ms
     RTime: 100ms
   Gain: Preamp (On)

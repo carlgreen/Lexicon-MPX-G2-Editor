@@ -10,7 +10,7 @@ Fuzz 1
     Level: 0dB
     Sense: +5dB
     Thrsh: -29dB
-    Gain: 0
+    Gain: 0dB
     ATime: 0ms
     RTime: 700ms
   Gain: Overdrive (On)

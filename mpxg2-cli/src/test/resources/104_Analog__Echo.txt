@@ -15,7 +15,7 @@ Analog  Echo
     Level: 0dB
     Sense: +6dB
     Thrsh: -28dB
-    Gain: 0
+    Gain: 0dB
     ATime: 24ms
     RTime: 300ms
   Chorus: Chorus (On)

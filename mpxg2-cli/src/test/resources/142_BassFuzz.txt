@@ -10,7 +10,7 @@ Bass Fuzz
     Level: 0dB
     Sense: +10dB
     Thrsh: -30dB
-    Gain: +4
+    Gain: +4dB
     ATime: 1ms
     RTime: 100ms
   Gain: Preamp (On)

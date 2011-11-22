@@ -11,7 +11,7 @@ ChrsDlyRvb+
     Level: 0dB
     Sense: +5dB
     Thrsh: -20dB
-    Gain: 0
+    Gain: 0dB
     ATime: 1ms
     RTime: 500ms
   Effect 2: Pedal Wah 1 (Off)

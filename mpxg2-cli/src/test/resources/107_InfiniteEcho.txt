@@ -15,7 +15,7 @@ InfiniteEcho
     Level: 0dB
     Sense: +10dB
     Thrsh: -33dB
-    Gain: -5
+    Gain: -5dB
     ATime: 62ms
     RTime: 500ms
   Chorus: Detune (M) (On)

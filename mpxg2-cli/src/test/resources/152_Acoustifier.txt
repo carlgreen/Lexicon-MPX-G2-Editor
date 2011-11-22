@@ -10,7 +10,7 @@ Acoustifier
     Level: 0dB
     Sense: +8dB
     Thrsh: -7dB
-    Gain: +6
+    Gain: +6dB
     ATime: 180ms
     RTime: 432ms
   Chorus: Chorus (On)

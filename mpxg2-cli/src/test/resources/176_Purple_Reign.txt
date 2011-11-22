@@ -10,7 +10,7 @@ Purple Reign
     Level: 0dB
     Sense: +10dB
     Thrsh: -15dB
-    Gain: 0
+    Gain: 0dB
     ATime: 20ms
     RTime: 100ms
   Effect 2: Pedal Wah 1 (Off)

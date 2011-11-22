@@ -10,7 +10,7 @@ Slide Comp
     Level: 0dB
     Sense: +10dB
     Thrsh: -35dB
-    Gain: 0
+    Gain: 0dB
     ATime: 68ms
     RTime: 190ms
   Effect 2: Red Comp (On)

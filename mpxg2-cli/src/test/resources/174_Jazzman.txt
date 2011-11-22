@@ -10,7 +10,7 @@ Jazzman
     Level: 0dB
     Sense: +10dB
     Thrsh: -15dB
-    Gain: +3
+    Gain: +3dB
     ATime: 20ms
     RTime: 100ms
   Chorus: Chorus (On)

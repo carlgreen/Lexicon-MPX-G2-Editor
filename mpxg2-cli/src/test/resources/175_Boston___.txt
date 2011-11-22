@@ -10,7 +10,7 @@ Boston...
     Level: 0dB
     Sense: +4dB
     Thrsh: -17dB
-    Gain: 0
+    Gain: 0dB
     ATime: 1ms
     RTime: 100ms
   Chorus: Chorus (On)

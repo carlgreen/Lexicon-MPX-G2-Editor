@@ -11,7 +11,7 @@ AnotherBrick
     Level: +6dB
     Sense: +5dB
     Thrsh: -28dB
-    Gain: +5
+    Gain: +5dB
     ATime: 20ms
     RTime: 100ms
   Chorus: Detune (M) (On)
