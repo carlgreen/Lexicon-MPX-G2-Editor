@@ -70,6 +70,17 @@ public class ParameterPrinterTest {
     }
 
     @Test
+    public void testPrintOnOffValue() throws PrintException {
+        GenericValue<Boolean> value = new GenericValue<Boolean>("Glide", "OnOff", false, true);
+        value.setValue(true);
+
+        String expected = "On";
+        String actual = ParameterPrinter.print(value);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testPrintGenericValue() throws PrintException {
         GenericValue<Integer> value = new GenericValue<Integer>("PW 1", "%", 0, 100);
         value.setValue(45);

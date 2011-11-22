@@ -51,6 +51,10 @@ public class ParameterPrinter {
             } else {
                 throw new PrintException("Invalid rate type: " + parameter.getClass());
             }
+        } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
+            // could surely do better than this
+            GenericValue value = (GenericValue) parameter;
+            result = Util.onOffToString((Boolean) value.getValue());
         } else if (parameter instanceof GenericValue) {
             GenericValue value = (GenericValue) parameter;
             if (value.getMinValue() instanceof Integer && ((Integer) value.getMinValue()) < 0) {
