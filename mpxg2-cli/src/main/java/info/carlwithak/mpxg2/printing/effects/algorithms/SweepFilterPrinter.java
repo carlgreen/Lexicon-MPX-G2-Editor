@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.panToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -37,11 +36,11 @@ public class SweepFilterPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(sweepFilter.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(sweepFilter.getLevel())).append("\n");
-        sb.append("    Fc: ").append(sweepFilter.getFc()).append("Hz\n");
-        sb.append("    FRes: ").append(sweepFilter.getFRes()).append("\n");
-        sb.append("    Mod: ").append(sweepFilter.getMod()).append("Hz\n");
-        sb.append("    Scale: ").append(signInt(sweepFilter.getScale())).append("%\n");
-        sb.append("    Pan: ").append(panToString(sweepFilter.getPan())).append("\n");
+        sb.append("    Fc: ").append(ParameterPrinter.print(sweepFilter.getFc())).append("\n");
+        sb.append("    FRes: ").append(ParameterPrinter.print(sweepFilter.getFRes())).append("\n");
+        sb.append("    Mod: ").append(ParameterPrinter.print(sweepFilter.getMod())).append("\n");
+        sb.append("    Scale: ").append(ParameterPrinter.print(sweepFilter.getScale())).append("\n");
+        sb.append("    Pan: ").append(panToString(sweepFilter.getPan().getValue())).append("\n");
         return sb.toString();
     }
 

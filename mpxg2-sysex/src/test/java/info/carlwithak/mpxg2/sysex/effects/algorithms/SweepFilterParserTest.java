@@ -34,11 +34,11 @@ public class SweepFilterParserTest {
         SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
         assertEquals(100, (int) sweepFilter.getMix().getValue());
         assertEquals(6, (int) sweepFilter.getLevel().getValue());
-        assertEquals(88, sweepFilter.getFc());
-        assertEquals(34, sweepFilter.getFRes());
-        assertEquals(2120, sweepFilter.getMod());
-        assertEquals(50, sweepFilter.getScale());
-        assertEquals(0, sweepFilter.getPan());
+        assertEquals(88, (int) sweepFilter.getFc().getValue());
+        assertEquals(34, (int) sweepFilter.getFRes().getValue());
+        assertEquals(2120, (int) sweepFilter.getMod().getValue());
+        assertEquals(50, (int) sweepFilter.getScale().getValue());
+        assertEquals(0, (int) sweepFilter.getPan().getValue());
     }
 
     @Test
@@ -47,10 +47,10 @@ public class SweepFilterParserTest {
         SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
         assertEquals(100, (int) sweepFilter.getMix().getValue());
         assertEquals(0, (int) sweepFilter.getLevel().getValue());
-        assertEquals(20, sweepFilter.getFc());
-        assertEquals(36, sweepFilter.getFRes());
-        assertEquals(2020, sweepFilter.getMod());
-        assertEquals(49, sweepFilter.getScale());
-        assertEquals(0, sweepFilter.getPan());
+        assertEquals(20, (int) sweepFilter.getFc().getValue());
+        assertEquals(36, (int) sweepFilter.getFRes().getValue());
+        assertEquals(2020, (int) sweepFilter.getMod().getValue());
+        assertEquals(49, (int) sweepFilter.getScale().getValue());
+        assertEquals(0, (int) sweepFilter.getPan().getValue());
     }
 }

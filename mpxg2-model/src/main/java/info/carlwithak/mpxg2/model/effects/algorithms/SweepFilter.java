@@ -69,40 +69,40 @@ public class SweepFilter extends Effect {
         return parameter;
     }
 
-    public int getFc() {
-        return fc.getValue();
+    public GenericValue<Integer> getFc() {
+        return fc;
     }
 
     public void setFc(final int fc) {
         this.fc.setValue(fc);
     }
 
-    public int getFRes() {
-        return fRes.getValue();
+    public GenericValue<Integer> getFRes() {
+        return fRes;
     }
 
     public void setFRes(final int fRes) {
         this.fRes.setValue(fRes);
     }
 
-    public int getMod() {
-        return mod.getValue();
+    public GenericValue<Integer> getMod() {
+        return mod;
     }
 
     public void setMod(final int mod) {
         this.mod.setValue(mod);
     }
 
-    public int getScale() {
-        return scale.getValue();
+    public GenericValue<Integer> getScale() {
+        return scale;
     }
 
     public void setScale(final int scale) {
         this.scale.setValue(scale);
     }
 
-    public int getPan() {
-        return pan.getValue();
+    public GenericValue<Integer> getPan() {
+        return pan;
     }
 
     public void setPan(final int pan) {
