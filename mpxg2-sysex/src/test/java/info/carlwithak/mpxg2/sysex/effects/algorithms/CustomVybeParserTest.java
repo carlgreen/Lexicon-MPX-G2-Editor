@@ -37,7 +37,7 @@ public class CustomVybeParserTest {
         assertEquals(100, (int) customVybe.getMix().getValue());
         assertEquals(0, (int) customVybe.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 0.97), customVybe.getRate());
-        assertEquals(46, customVybe.getPulseWidth());
-        assertEquals(45, customVybe.getDepth());
+        assertEquals(46, (int) customVybe.getPulseWidth().getValue());
+        assertEquals(45, (int) customVybe.getDepth().getValue());
     }
 }
