@@ -208,8 +208,8 @@ public class ProgramPrinter {
         }
         if (program.getEq() != null) {
             sb.append("    Eq:\n");
-            sb.append("      Mix: ").append(program.getEq().getMix()).append("%\n");
-            sb.append("      Level: ").append(signInt(program.getEq().getLevel())).append("dB\n");
+            sb.append("      Mix: ").append(ParameterPrinter.print(program.getEq().getMix())).append("\n");
+            sb.append("      Level: ").append(ParameterPrinter.print(program.getEq().getLevel())).append("\n");
         }
         sb.append("  Tempo:\n");
         sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");

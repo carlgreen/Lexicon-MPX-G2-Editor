@@ -32,7 +32,7 @@ public class EqPedalVolParserTest {
     public void testParse_Cordovox() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EqPedalVol eqPedalVol = EqPedalVolParser.parse(effectParameters);
-        assertEquals(100, eqPedalVol.getMix());
-        assertEquals(0, eqPedalVol.getLevel());
+        assertEquals(100, (int) eqPedalVol.getMix().getValue());
+        assertEquals(0, (int) eqPedalVol.getLevel().getValue());
     }
 }

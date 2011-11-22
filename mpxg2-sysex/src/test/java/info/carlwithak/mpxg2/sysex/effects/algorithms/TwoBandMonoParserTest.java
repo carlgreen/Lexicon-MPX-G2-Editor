@@ -32,8 +32,8 @@ public class TwoBandMonoParserTest {
     public void testParse_SpaceEcho() {
         byte[] effectParameters = {4, 6, 0, 0, 11, 15, 8, 12, 0, 0, 7, 0, 0, 0, 9, 15, 8, 8, 3, 1, 7, 0, 2, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TwoBandMono twoBandMono = TwoBandMonoParser.parse(effectParameters);
-        assertEquals(100, twoBandMono.getMix());
-        assertEquals(0, twoBandMono.getLevel());
+        assertEquals(100, (int) twoBandMono.getMix().getValue());
+        assertEquals(0, (int) twoBandMono.getLevel().getValue());
         assertEquals(-5, twoBandMono.getGain1());
         assertEquals(200, twoBandMono.getFc1());
         assertEquals(0.7, twoBandMono.getQ1(), 0.01);

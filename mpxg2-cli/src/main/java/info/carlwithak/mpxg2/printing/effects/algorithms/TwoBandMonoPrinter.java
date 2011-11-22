@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.eqModeToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
@@ -30,11 +32,11 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class TwoBandMonoPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         TwoBandMono twoBandMono = (TwoBandMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(twoBandMono.getMix()).append("%\n");
-        sb.append("    Level: ").append(signInt(twoBandMono.getLevel())).append("dB\n");
+        sb.append("    Mix: ").append(ParameterPrinter.print(twoBandMono.getMix())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(twoBandMono.getLevel())).append("\n");
         sb.append("    Gain1: ").append(signInt(twoBandMono.getGain1())).append("\n");
         sb.append("    Fc 1: ").append(twoBandMono.getFc1()).append("\n");
         sb.append("    Q 1: ").append(twoBandMono.getQ1()).append("\n");

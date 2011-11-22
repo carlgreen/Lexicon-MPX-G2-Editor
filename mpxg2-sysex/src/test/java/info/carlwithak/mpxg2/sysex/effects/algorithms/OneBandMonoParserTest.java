@@ -32,8 +32,8 @@ public class OneBandMonoParserTest {
     public void testParse_OctaWah() {
         byte[] effectParameters = {4, 6, 0, 0, 9, 0, 9, 8, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         OneBandMono oneBandMono = OneBandMonoParser.parse(effectParameters);
-        assertEquals(100, oneBandMono.getMix());
-        assertEquals(0, oneBandMono.getLevel());
+        assertEquals(100, (int) oneBandMono.getMix().getValue());
+        assertEquals(0, (int) oneBandMono.getLevel().getValue());
         assertEquals(9, oneBandMono.getGain());
         assertEquals(393, oneBandMono.getFc());
         assertEquals(0.1, oneBandMono.getQ(), 0.01);

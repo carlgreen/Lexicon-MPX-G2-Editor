@@ -32,8 +32,8 @@ public class EqVolumeStereoParserTest {
     public void testParse_RoundTrem() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 4, 6, 14, 4, 15, 4, 0, 0, 6, 0, 0, 11, 4, 0, 9, 1, 0, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EqVolumeStereo volumeStereo = EqVolumeStereoParser.parse(effectParameters);
-        assertEquals(100, volumeStereo.getMix());
-        assertEquals(0, volumeStereo.getLevel());
+        assertEquals(100, (int) volumeStereo.getMix().getValue());
+        assertEquals(0, (int) volumeStereo.getLevel().getValue());
         assertEquals(0, volumeStereo.getVolume());
     }
 }

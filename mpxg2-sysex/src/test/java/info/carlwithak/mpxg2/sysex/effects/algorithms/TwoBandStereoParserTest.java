@@ -32,8 +32,8 @@ public class TwoBandStereoParserTest {
     public void testParse_SpaceEcho() {
         byte[] effectParameters = {4, 6, 14, 15, 5, 0, 10, 11, 3, 1, 1, 0, 0, 0, 8, 0, 4, 1, 0, 0, 1, 0, 1, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TwoBandStereo twoBandStereo = TwoBandStereoParser.parse(effectParameters);
-        assertEquals(100, twoBandStereo.getMix());
-        assertEquals(-2, twoBandStereo.getLevel());
+        assertEquals(100, (int) twoBandStereo.getMix().getValue());
+        assertEquals(-2, (int) twoBandStereo.getLevel().getValue());
         assertEquals(5, twoBandStereo.getGain1());
         assertEquals(5050, twoBandStereo.getFc1());
         assertEquals(0.1, twoBandStereo.getQ1(), 0.01);
