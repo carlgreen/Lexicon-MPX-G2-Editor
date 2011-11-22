@@ -9,7 +9,7 @@ Jam 2 Pitch+
     Toe Switch: on=bypass
     Mix: 100%
     Level: 0dB
-    Tune: 1200
+    Tune: +1200
     Optimize: 50
     Glide: On
   Delay: JamMan (On)

@@ -35,8 +35,8 @@ public class ShiftMonoParserTest {
         ShiftMono shiftMono = ShiftMonoParser.parse(effectParameters);
         assertEquals(100, (int) shiftMono.getMix().getValue());
         assertEquals(-90, (int) shiftMono.getLevel().getValue()); // Off
-        assertEquals(-1200, shiftMono.getTune());
+        assertEquals(-1200, (int) shiftMono.getTune().getValue());
         assertEquals(50, shiftMono.getOptimize());
-        assertTrue(shiftMono.isGlide());
+        assertTrue(shiftMono.isGlide().getValue());
     }
 }

@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-
 /**
  *
  * @author Carl Green
@@ -36,9 +34,9 @@ public class ShiftMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(shiftMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(shiftMono.getLevel())).append("\n");
-        sb.append("    Tune: ").append(shiftMono.getTune()).append("\n");
+        sb.append("    Tune: ").append(ParameterPrinter.print(shiftMono.getTune())).append("\n");
         sb.append("    Optimize: ").append(shiftMono.getOptimize()).append("\n");
-        sb.append("    Glide: ").append(onOffToString(shiftMono.isGlide())).append("\n");
+        sb.append("    Glide: ").append(ParameterPrinter.print(shiftMono.isGlide())).append("\n");
         return sb.toString();
     }
 
