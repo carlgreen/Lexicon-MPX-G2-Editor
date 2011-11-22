@@ -34,12 +34,12 @@ public class DiatonicHmyParserTest {
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
         assertEquals(100, (int) diatonicHmy.getMix().getValue());
         assertEquals(0, (int) diatonicHmy.getLevel().getValue());
-        assertEquals(4, diatonicHmy.getKey()); // E
-        assertEquals(0, diatonicHmy.getScale()); // Major
-        assertEquals(16, diatonicHmy.getInterval()); // +3rd
-        assertEquals(10, diatonicHmy.getOptimize());
-        assertEquals(-83, diatonicHmy.getThreshold());
-        assertEquals(1, diatonicHmy.getSource()); // Guitar Input
+        assertEquals(4, (int) diatonicHmy.getKey().getValue()); // E
+        assertEquals(0, (int) diatonicHmy.getScale().getValue()); // Major
+        assertEquals(16, (int) diatonicHmy.getInterval().getValue()); // +3rd
+        assertEquals(10, (int) diatonicHmy.getOptimize().getValue());
+        assertEquals(-83, (int) diatonicHmy.getThreshold().getValue());
+        assertEquals(1, (int) diatonicHmy.getSource().getValue()); // Guitar Input
     }
 
     @Test
@@ -48,11 +48,11 @@ public class DiatonicHmyParserTest {
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
         assertEquals(100, (int) diatonicHmy.getMix().getValue());
         assertEquals(0, (int) diatonicHmy.getLevel().getValue());
-        assertEquals(4, diatonicHmy.getKey()); // E
-        assertEquals(4, diatonicHmy.getScale()); // Mixo
-        assertEquals(16, diatonicHmy.getInterval()); // +3rd
-        assertEquals(10, diatonicHmy.getOptimize());
-        assertEquals(-83, diatonicHmy.getThreshold());
-        assertEquals(1, diatonicHmy.getSource()); // Guitar Input
+        assertEquals(4, (int) diatonicHmy.getKey().getValue()); // E
+        assertEquals(4, (int) diatonicHmy.getScale().getValue()); // Mixo
+        assertEquals(16, (int) diatonicHmy.getInterval().getValue()); // +3rd
+        assertEquals(10, (int) diatonicHmy.getOptimize().getValue());
+        assertEquals(-83, (int) diatonicHmy.getThreshold().getValue());
+        assertEquals(1, (int) diatonicHmy.getSource().getValue()); // Guitar Input
     }
 }

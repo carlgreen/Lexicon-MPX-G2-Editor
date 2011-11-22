@@ -67,48 +67,48 @@ public class DiatonicHmy extends Effect {
         return parameter;
     }
 
-    public int getKey() {
-        return key.getValue();
+    public GenericValue<Integer> getKey() {
+        return key;
     }
 
     public void setKey(int key) {
         this.key.setValue(key);
     }
 
-    public int getScale() {
-        return scale.getValue();
+    public GenericValue<Integer> getScale() {
+        return scale;
     }
 
     public void setScale(int scale) {
         this.scale.setValue(scale);
     }
 
-    public int getInterval() {
-        return interval.getValue();
+    public GenericValue<Integer> getInterval() {
+        return interval;
     }
 
     public void setInterval(int interval) {
         this.interval.setValue(interval);
     }
 
-    public int getOptimize() {
-        return optimize.getValue();
+    public GenericValue<Integer> getOptimize() {
+        return optimize;
     }
 
     public void setOptimize(int optimize) {
         this.optimize.setValue(optimize);
     }
 
-    public int getThreshold() {
-        return threshold.getValue();
+    public GenericValue<Integer> getThreshold() {
+        return threshold;
     }
 
     public void setThreshold(int threshold) {
         this.threshold.setValue(threshold);
     }
 
-    public int getSource() {
-        return source.getValue();
+    public GenericValue<Integer> getSource() {
+        return source;
     }
 
     public void setSource(int source) {

@@ -52,12 +52,12 @@ public class DiatonicHmyPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(diatonicHmy.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(diatonicHmy.getLevel())).append("\n");
-        sb.append("    Key: ").append(keyToString(diatonicHmy.getKey())).append("\n");
-        sb.append("    Scale: ").append(scaleToString(diatonicHmy.getScale())).append("\n");
-        sb.append("    Int: ").append(intervalToString(diatonicHmy.getInterval())).append("\n");
-        sb.append("    Optimize: ").append(diatonicHmy.getOptimize()).append("\n");
-        sb.append("    Thrsh: ").append(diatonicHmy.getThreshold()).append("dB\n");
-        sb.append("    Src: ").append(sourceToString(diatonicHmy.getSource())).append("\n");
+        sb.append("    Key: ").append(keyToString(diatonicHmy.getKey().getValue())).append("\n");
+        sb.append("    Scale: ").append(scaleToString(diatonicHmy.getScale().getValue())).append("\n");
+        sb.append("    Int: ").append(intervalToString(diatonicHmy.getInterval().getValue())).append("\n");
+        sb.append("    Optimize: ").append(ParameterPrinter.print(diatonicHmy.getOptimize())).append("\n");
+        sb.append("    Thrsh: ").append(ParameterPrinter.print(diatonicHmy.getThreshold())).append("\n");
+        sb.append("    Src: ").append(sourceToString(diatonicHmy.getSource().getValue())).append("\n");
         return sb.toString();
     }
 
