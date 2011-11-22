@@ -34,9 +34,9 @@ public class DetuneDualParserTest {
         DetuneDual detuneDual = DetuneDualParser.parse(effectParameters);
         assertEquals(100, (int) detuneDual.getMix().getValue());
         assertEquals(3, (int) detuneDual.getLevel().getValue());
-        assertEquals(7, detuneDual.getTune1());
+        assertEquals(7, (int) detuneDual.getTune1().getValue());
         assertEquals(10, detuneDual.getOptimize());
-        assertEquals(5, detuneDual.getTune2());
-        assertEquals(22, detuneDual.getPreDelay());
+        assertEquals(5, (int) detuneDual.getTune2().getValue());
+        assertEquals(22, (int) detuneDual.getPreDelay().getValue());
     }
 }

@@ -62,8 +62,8 @@ public class DetuneDual extends Effect {
         return parameter;
     }
 
-    public int getTune1() {
-        return tune1.getValue();
+    public GenericValue<Integer> getTune1() {
+        return tune1;
     }
 
     public void setTune1(int tune1) {
@@ -78,16 +78,16 @@ public class DetuneDual extends Effect {
         this.optimize = optimize;
     }
 
-    public int getTune2() {
-        return tune2.getValue();
+    public GenericValue<Integer> getTune2() {
+        return tune2;
     }
 
     public void setTune2(int tune2) {
         this.tune2.setValue(tune2);
     }
 
-    public int getPreDelay() {
-        return preDelay.getValue();
+    public GenericValue<Integer> getPreDelay() {
+        return preDelay;
     }
 
     public void setPreDelay(int preDelay) {
