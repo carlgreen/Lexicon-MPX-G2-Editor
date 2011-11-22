@@ -53,8 +53,8 @@ public class OrangePhase extends Effect {
         return parameter;
     }
 
-    public int getRate() {
-        return rate.getValue();
+    public GenericValue<Integer> getRate() {
+        return rate;
     }
 
     public void setRate(final int rate) {

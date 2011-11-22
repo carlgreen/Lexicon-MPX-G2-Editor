@@ -35,6 +35,6 @@ public class OrangePhaseParserTest {
         OrangePhase orangePhase = OrangePhaseParser.parse(effectParameters);
         assertEquals(100, (int) orangePhase.getMix().getValue());
         assertEquals(0, (int) orangePhase.getLevel().getValue());
-        assertEquals(20, orangePhase.getRate());
+        assertEquals(20, (int) orangePhase.getRate().getValue());
     }
 }
