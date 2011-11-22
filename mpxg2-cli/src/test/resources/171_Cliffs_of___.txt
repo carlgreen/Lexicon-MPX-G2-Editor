@@ -8,7 +8,7 @@ Cliffs of...
     Toe Switch: disabled
     Mix: 100%
     Level: +3dB
-    Sense: +47
+    Sense: 47
   Effect 2: Pedal Wah 1 (Off)
     Toe Switch: off=bypass
     Mix: 100%

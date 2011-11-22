@@ -52,8 +52,8 @@ public class RedComp extends Effect {
         return parameter;
     }
 
-    public int getSensitivity() {
-        return sensitivity.getValue();
+    public GenericValue<Integer> getSensitivity() {
+        return sensitivity;
     }
 
     public void setSensitivity(final int sensitivity) {

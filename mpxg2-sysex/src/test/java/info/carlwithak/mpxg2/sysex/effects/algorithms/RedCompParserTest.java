@@ -35,6 +35,6 @@ public class RedCompParserTest {
         RedComp redComp = RedCompParser.parse(effectParameters);
         assertEquals(100, (int) redComp.getMix().getValue());
         assertEquals(6, (int) redComp.getLevel().getValue());
-        assertEquals(70, redComp.getSensitivity());
+        assertEquals(70, (int) redComp.getSensitivity().getValue());
     }
 }

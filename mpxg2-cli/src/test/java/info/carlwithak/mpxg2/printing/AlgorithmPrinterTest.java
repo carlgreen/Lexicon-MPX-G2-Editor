@@ -259,7 +259,7 @@ public class AlgorithmPrinterTest {
         redComp.setLevel(6);
         redComp.setSensitivity(70);
 
-        String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +70\n";
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: 70\n";
         String actual = AlgorithmPrinter.print(redComp);
 
         assertEquals(expected, actual);

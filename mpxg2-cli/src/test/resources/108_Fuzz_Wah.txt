@@ -8,7 +8,7 @@ Fuzz Wah
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-    Sense: +24
+    Sense: 24
   Effect 2: Pedal Wah 2 (On)
     Toe Switch: off=bypass
     Mix: 100%

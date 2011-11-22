@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.signInt;
-
 /**
  *
  * @author Carl Green
@@ -36,7 +34,7 @@ public class RedCompPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(redComp.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(redComp.getLevel())).append("\n");
-        sb.append("    Sense: ").append(signInt(redComp.getSensitivity())).append("\n");
+        sb.append("    Sense: ").append(ParameterPrinter.print(redComp.getSensitivity())).append("\n");
         return sb.toString();
     }
 

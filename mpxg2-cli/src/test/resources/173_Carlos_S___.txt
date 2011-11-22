@@ -8,7 +8,7 @@ Carlos S...
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-    Sense: +24
+    Sense: 24
   Reverb: Plate (On)
     Toe Switch: disabled
     Mix: 5%

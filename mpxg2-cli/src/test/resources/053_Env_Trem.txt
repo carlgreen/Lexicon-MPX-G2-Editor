@@ -8,7 +8,7 @@ Env Trem
     Toe Switch: disabled
     Mix: 100%
     Level: -6dB
-    Sense: +6
+    Sense: 6
   Effect 2: Auto Pan (On)
     Toe Switch: on=bypass
     Mix: 100%
