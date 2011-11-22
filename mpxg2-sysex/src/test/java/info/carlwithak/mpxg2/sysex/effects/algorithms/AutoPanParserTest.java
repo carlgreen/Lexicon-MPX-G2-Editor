@@ -38,9 +38,9 @@ public class AutoPanParserTest {
         assertEquals(100, (int) autoPan.getMix().getValue());
         assertEquals(0, (int) autoPan.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 0.04), autoPan.getRate());
-        assertEquals(50, autoPan.getPulseWidth());
-        assertEquals(100, autoPan.getDepth());
-        assertEquals(1, autoPan.getPhase()); // 0, 90, 180, 270 degrees
+        assertEquals(50, (int) autoPan.getPulseWidth().getValue());
+        assertEquals(100, (int) autoPan.getDepth().getValue());
+        assertEquals(1, (int) autoPan.getPhase().getValue()); // 0, 90, 180, 270 degrees
     }
 
     @Test
@@ -50,9 +50,9 @@ public class AutoPanParserTest {
         assertEquals(100, (int) autoPan.getMix().getValue());
         assertEquals(0, (int) autoPan.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 1.00), autoPan.getRate());
-        assertEquals(50, autoPan.getPulseWidth());
-        assertEquals(100, autoPan.getDepth());
-        assertEquals(3, autoPan.getPhase()); // 0, 90, 180, 270 degrees
+        assertEquals(50, (int) autoPan.getPulseWidth().getValue());
+        assertEquals(100, (int) autoPan.getDepth().getValue());
+        assertEquals(3, (int) autoPan.getPhase().getValue()); // 0, 90, 180, 270 degrees
     }
 
     @Test
@@ -62,8 +62,8 @@ public class AutoPanParserTest {
         assertEquals(100, (int) autoPan.getMix().getValue());
         assertEquals(3, (int) autoPan.getLevel().getValue());
         assertEquals(new BeatRate("Rate", 1, 2), autoPan.getRate());
-        assertEquals(50, autoPan.getPulseWidth());
-        assertEquals(100, autoPan.getDepth());
-        assertEquals(0, autoPan.getPhase()); // 0, 90, 180, 270 degrees
+        assertEquals(50, (int) autoPan.getPulseWidth().getValue());
+        assertEquals(100, (int) autoPan.getDepth().getValue());
+        assertEquals(0, (int) autoPan.getPhase().getValue()); // 0, 90, 180, 270 degrees
     }
 }

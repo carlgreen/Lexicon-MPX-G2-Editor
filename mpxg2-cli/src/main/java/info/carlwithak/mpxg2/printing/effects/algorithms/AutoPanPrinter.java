@@ -37,9 +37,9 @@ public class AutoPanPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(autoPan.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(autoPan.getLevel())).append("\n");
         sb.append("    Rate: ").append(ParameterPrinter.print(autoPan.getRate())).append("\n");
-        sb.append("    PW: ").append(autoPan.getPulseWidth()).append("%\n");
-        sb.append("    Depth: ").append(autoPan.getDepth()).append("%\n");
-        sb.append("    Phase: ").append(phaseToString(autoPan.getPhase())).append("\n");
+        sb.append("    PW: ").append(ParameterPrinter.print(autoPan.getPulseWidth())).append("\n");
+        sb.append("    Depth: ").append(ParameterPrinter.print(autoPan.getDepth())).append("\n");
+        sb.append("    Phase: ").append(phaseToString(autoPan.getPhase().getValue())).append("\n");
         return sb.toString();
     }
 }
