@@ -9,7 +9,7 @@ Round Trem
     Toe Switch: disabled
     Mix: 60%
     Level: +6dB
-    Tune1: 8
+    Tune1: +8
     Optimize: 50
     Tune2: -8
     Glide: On

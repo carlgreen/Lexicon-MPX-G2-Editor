@@ -8,7 +8,7 @@ BassPitchPdl
     Toe Switch: on=bypass
     Mix: 100%
     Level: 0dB
-    Tune1: 1200
+    Tune1: +1200
     Optimize: 10
     Tune2: -1200
     Glide: On

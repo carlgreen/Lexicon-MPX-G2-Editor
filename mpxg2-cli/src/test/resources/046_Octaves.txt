@@ -9,9 +9,9 @@ Octaves
     Toe Switch: on=bypass
     Mix: 100%
     Level: 0dB
-    Tune1: 1200
+    Tune1: +1200
     Optimize: 10
-    Tune2: 1206
+    Tune2: +1206
     Glide: On
   Effect 2: Volume (D) (On)
     Toe Switch: disabled

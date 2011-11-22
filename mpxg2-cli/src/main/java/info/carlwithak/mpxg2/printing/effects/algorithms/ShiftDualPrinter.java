@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-
 /**
  *
  * @author Carl Green
@@ -36,10 +34,10 @@ public class ShiftDualPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(shiftDual.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(shiftDual.getLevel())).append("\n");
-        sb.append("    Tune1: ").append(shiftDual.getTune1()).append("\n");
+        sb.append("    Tune1: ").append(ParameterPrinter.print(shiftDual.getTune1())).append("\n");
         sb.append("    Optimize: ").append(shiftDual.getOptimize()).append("\n");
-        sb.append("    Tune2: ").append(shiftDual.getTune2()).append("\n");
-        sb.append("    Glide: ").append(onOffToString(shiftDual.isGlide())).append("\n");
+        sb.append("    Tune2: ").append(ParameterPrinter.print(shiftDual.getTune2())).append("\n");
+        sb.append("    Glide: ").append(ParameterPrinter.print(shiftDual.isGlide())).append("\n");
         return sb.toString();
     }
 

@@ -8,9 +8,9 @@ Pdl 2~3  3~4
     Toe Switch: on=bypass
     Mix: 60%
     Level: +6dB
-    Tune1: 400
+    Tune1: +400
     Optimize: 10
-    Tune2: 500
+    Tune2: +500
     Glide: On
   Effect 2: Volume (D) (On)
     Toe Switch: on=bypass

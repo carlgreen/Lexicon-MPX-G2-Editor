@@ -8,7 +8,7 @@ New Eddie
     Toe Switch: disabled
     Mix: 30%
     Level: 0dB
-    Tune1: 8
+    Tune1: +8
     Optimize: 50
     Tune2: -8
     Glide: On
