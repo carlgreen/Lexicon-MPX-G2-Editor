@@ -335,7 +335,7 @@ public class AlgorithmPrinterTest {
         wah1.setResponse(100);
         wah1.setGain(10);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Sweep: 50\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Sweep: 50\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10dB\n";
         String actual = AlgorithmPrinter.print(wah1);
 
         assertEquals(expected, actual);
