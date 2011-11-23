@@ -34,9 +34,9 @@ public class PedalWah2ParserTest {
         PedalWah2 pedalWah2 = PedalWah2Parser.parse(effectParameters);
         assertEquals(100, (int) pedalWah2.getMix().getValue());
         assertEquals(0, (int) pedalWah2.getLevel().getValue());
-        assertEquals(10, pedalWah2.getBass());
+        assertEquals(10, (int) pedalWah2.getBass().getValue());
         assertEquals(1, pedalWah2.getType());
-        assertEquals(100, pedalWah2.getResponse());
-        assertEquals(0, pedalWah2.getGain());
+        assertEquals(100, (int) pedalWah2.getResponse().getValue());
+        assertEquals(0, (int) pedalWah2.getGain().getValue());
     }
 }

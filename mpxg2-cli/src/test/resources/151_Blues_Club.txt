@@ -21,7 +21,7 @@ Blues Club
     Bass: 10
     Type: Model V
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Delay: Delay (S) (Off)
     Toe Switch: disabled
     Mix: 30%

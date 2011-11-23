@@ -11,7 +11,7 @@ Tush
     Bass: 10
     Type: Model V
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Reverb: Ambience (On)
     Toe Switch: disabled
     Mix: 40%

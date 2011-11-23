@@ -11,7 +11,7 @@ Rotary Cab
     Bass: 10
     Type: Model V
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Chorus: Rotary Cab (On)
     Toe Switch: disabled
     Mix: 100%

@@ -16,7 +16,7 @@ Jam 1  Uni+
     Bass: 10
     Type: Model V
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Delay: JamMan (On)
     Toe Switch: disabled
     Mix: 50%

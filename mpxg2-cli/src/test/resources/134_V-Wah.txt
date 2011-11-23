@@ -11,7 +11,7 @@ V-Wah
     Bass: 10
     Type: Model V
     Resp: 100
-    Gain: +5
+    Gain: +5dB
   Softrow:
     1: Effect 1 Mix
     2: Effect 1 Level

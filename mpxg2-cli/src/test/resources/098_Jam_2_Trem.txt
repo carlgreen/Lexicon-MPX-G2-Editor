@@ -19,7 +19,7 @@ Jam 2 Trem
     Bass: 10
     Type: Model V
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Chorus: Detune (M) (On)
     Toe Switch: disabled
     Mix: 50%

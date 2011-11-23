@@ -20,7 +20,7 @@ Cold Shot
     Bass: 10
     Type: Model V
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 100%
