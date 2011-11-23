@@ -57,16 +57,16 @@ public class VolumeDual extends Effect {
         return parameter;
     }
 
-    public int getVolumeLeft() {
-        return volumeLeft.getValue();
+    public GenericValue<Integer> getVolumeLeft() {
+        return volumeLeft;
     }
 
     public void setVolumeLeft(int volumeLeft) {
         this.volumeLeft.setValue(volumeLeft);
     }
 
-    public int getVolumeRight() {
-        return volumeRight.getValue();
+    public GenericValue<Integer> getVolumeRight() {
+        return volumeRight;
     }
 
     public void setVolumeRight(int volumeRight) {

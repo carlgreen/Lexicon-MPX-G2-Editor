@@ -34,7 +34,7 @@ public class VolumeDualParserTest {
         VolumeDual volumeDual = VolumeDualParser.parse(effectParameters);
         assertEquals(100, (int) volumeDual.getMix().getValue());
         assertEquals(0, (int) volumeDual.getLevel().getValue());
-        assertEquals(100, volumeDual.getVolumeLeft());
-        assertEquals(100, volumeDual.getVolumeRight());
+        assertEquals(100, (int) volumeDual.getVolumeLeft().getValue());
+        assertEquals(100, (int) volumeDual.getVolumeRight().getValue());
     }
 }
