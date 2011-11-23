@@ -53,8 +53,8 @@ public class VolumeMono extends Effect {
         return parameter;
     }
 
-    public int getVolume() {
-        return volume.getValue();
+    public GenericValue<Integer> getVolume() {
+        return volume;
     }
 
     public void setVolume(int volume) {
