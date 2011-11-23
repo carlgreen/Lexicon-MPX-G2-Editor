@@ -34,7 +34,7 @@ public class VolumeStereoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(volumeStereo.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(volumeStereo.getLevel())).append("\n");
-        sb.append("    Volume: ").append(volumeStereo.getVolume()).append("%\n");
+        sb.append("    Volume: ").append(ParameterPrinter.print(volumeStereo.getVolume())).append("\n");
         return sb.toString();
     }
 
