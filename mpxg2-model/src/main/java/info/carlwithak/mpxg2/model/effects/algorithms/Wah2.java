@@ -66,16 +66,16 @@ public class Wah2 extends Effect {
         return parameter;
     }
 
-    public int getSweep() {
-        return sweep.getValue();
+    public GenericValue<Integer> getSweep() {
+        return sweep;
     }
 
     public void setSweep(int sweep) {
         this.sweep.setValue(sweep);
     }
 
-    public int getBass() {
-        return bass.getValue();
+    public GenericValue<Integer> getBass() {
+        return bass;
     }
 
     public void setBass(int bass) {
@@ -90,16 +90,16 @@ public class Wah2 extends Effect {
         this.type = type;
     }
 
-    public int getResponse() {
-        return response.getValue();
+    public GenericValue<Integer> getResponse() {
+        return response;
     }
 
     public void setResponse(int response) {
         this.response.setValue(response);
     }
 
-    public int getGain() {
-        return gain.getValue();
+    public GenericValue<Integer> getGain() {
+        return gain;
     }
 
     public void setGain(int gain) {

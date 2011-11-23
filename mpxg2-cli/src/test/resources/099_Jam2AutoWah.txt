@@ -13,7 +13,7 @@ Jam2AutoWah
     Bass: 0
     Type: Model C
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Delay: JamMan (On)
     Toe Switch: disabled
     Mix: 100%

@@ -13,7 +13,7 @@ Env Wah
     Bass: 20
     Type: Model C
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Effect 2: Volume (M) (On)
     Toe Switch: disabled
     Mix: 100%

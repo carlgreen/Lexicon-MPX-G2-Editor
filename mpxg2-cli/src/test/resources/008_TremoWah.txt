@@ -19,7 +19,7 @@ TremoWah
     Bass: 0
     Type: Model C
     Resp: 100
-    Gain: +10
+    Gain: +10dB
   Chorus: Volume (D) (On)
     Toe Switch: disabled
     Mix: 100%

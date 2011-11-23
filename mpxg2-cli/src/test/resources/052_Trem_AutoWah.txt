@@ -13,7 +13,7 @@ Trem~AutoWah
     Bass: 0
     Type: Model V
     Resp: 100
-    Gain: +9
+    Gain: +9dB
   Effect 2: Wah  2 (On)
     Toe Switch: on=bypass
     Mix: 100%
@@ -22,7 +22,7 @@ Trem~AutoWah
     Bass: 8
     Type: Model C
     Resp: 100
-    Gain: +9
+    Gain: +9dB
   Reverb: Plate (Off)
     Toe Switch: disabled
     Mix: 24%

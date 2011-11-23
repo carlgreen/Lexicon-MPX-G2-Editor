@@ -13,7 +13,7 @@ Env AutoWahs
     Bass: 20
     Type: Model V
     Resp: 100
-    Gain: +12
+    Gain: +12dB
   Effect 2: Wah  2 (On)
     Toe Switch: on=bypass
     Mix: 100%
@@ -22,7 +22,7 @@ Env AutoWahs
     Bass: 25
     Type: Model C
     Resp: 100
-    Gain: +13
+    Gain: +13dB
   Delay: Echo (S) (On)
     Toe Switch: disabled
     Mix: 4%

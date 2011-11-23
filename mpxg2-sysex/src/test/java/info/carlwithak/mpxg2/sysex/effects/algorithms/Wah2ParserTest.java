@@ -34,10 +34,10 @@ public class Wah2ParserTest {
         Wah2 wah2 = Wah2Parser.parse(effectParameters);
         assertEquals(100, (int) wah2.getMix().getValue());
         assertEquals(6, (int) wah2.getLevel().getValue());
-        assertEquals(50, wah2.getSweep());
-        assertEquals(0, wah2.getBass());
+        assertEquals(50, (int) wah2.getSweep().getValue());
+        assertEquals(0, (int) wah2.getBass().getValue());
         assertEquals(0, wah2.getType());
-        assertEquals(100, wah2.getResponse());
-        assertEquals(10, wah2.getGain());
+        assertEquals(100, (int) wah2.getResponse().getValue());
+        assertEquals(10, (int) wah2.getGain().getValue());
     }
 }

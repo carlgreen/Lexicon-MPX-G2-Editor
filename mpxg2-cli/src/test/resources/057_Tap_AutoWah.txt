@@ -13,7 +13,7 @@ Tap AutoWah
     Bass: 20
     Type: Model V
     Resp: 100
-    Gain: +9
+    Gain: +9dB
   Effect 2: Wah  2 (On)
     Toe Switch: on=bypass
     Mix: 100%
@@ -22,7 +22,7 @@ Tap AutoWah
     Bass: 20
     Type: Model C
     Resp: 100
-    Gain: +9
+    Gain: +9dB
   Delay: Echo (S) (On)
     Toe Switch: disabled
     Mix: 20%
