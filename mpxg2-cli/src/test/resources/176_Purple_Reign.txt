@@ -20,7 +20,7 @@ Purple Reign
     Bass: 10
     Type: Model C
     Resp: 100
-    Gain: 0
+    Gain: 0dB
   Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 40%

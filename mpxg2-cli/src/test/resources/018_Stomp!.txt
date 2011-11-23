@@ -16,7 +16,7 @@ Stomp!
     Bass: 10
     Type: Model C
     Resp: 100
-    Gain: +20
+    Gain: +20dB
   Chorus: Flanger (M) (Off)
     Toe Switch: disabled
     Mix: 100%

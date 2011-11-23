@@ -17,7 +17,7 @@ Wah & Phaser
     Bass: 19
     Type: Model C
     Resp: 100
-    Gain: +14
+    Gain: +14dB
   Chorus: Volume (S) (On)
     Toe Switch: disabled
     Mix: 100%

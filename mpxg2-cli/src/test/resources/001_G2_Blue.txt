@@ -16,7 +16,7 @@ G2 Blue
     Bass: 19
     Type: Model C
     Resp: 100
-    Gain: +10
+    Gain: +10dB
   Chorus: Pedal Vol (On)
     Toe Switch: on=bypass
     Mix: 100%

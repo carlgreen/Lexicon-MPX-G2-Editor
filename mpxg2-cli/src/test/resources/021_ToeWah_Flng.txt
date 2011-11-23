@@ -11,7 +11,7 @@ ToeWah/Flng
     Bass: 19
     Type: Model C
     Resp: 100
-    Gain: +14
+    Gain: +14dB
   Chorus: Flanger (S) (On)
     Toe Switch: on=bypass
     Mix: 100%

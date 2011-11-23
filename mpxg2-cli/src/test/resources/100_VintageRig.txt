@@ -16,7 +16,7 @@ VintageRig
     Bass: 10
     Type: Model C
     Resp: 100
-    Gain: +7
+    Gain: +7dB
   Chorus: Flanger24 (M) (Off)
     Toe Switch: disabled
     Mix: 100%

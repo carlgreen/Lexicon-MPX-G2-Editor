@@ -16,7 +16,7 @@ ToeWah/Phas
     Bass: 20
     Type: Model C
     Resp: 100
-    Gain: +14
+    Gain: +14dB
   Delay: Echo (D) (On)
     Toe Switch: disabled
     Mix: 2%

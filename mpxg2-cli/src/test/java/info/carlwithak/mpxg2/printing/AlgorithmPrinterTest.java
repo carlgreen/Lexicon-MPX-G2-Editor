@@ -368,7 +368,7 @@ public class AlgorithmPrinterTest {
         pedalWah1.setResponse(100);
         pedalWah1.setGain(10);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10dB\n";
         String actual = AlgorithmPrinter.print(pedalWah1);
 
         assertEquals(expected, actual);

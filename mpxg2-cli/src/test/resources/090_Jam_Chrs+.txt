@@ -12,7 +12,7 @@ Jam Chrs+
     Bass: 10
     Type: Model C
     Resp: 100
-    Gain: +10
+    Gain: +10dB
   Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 20%

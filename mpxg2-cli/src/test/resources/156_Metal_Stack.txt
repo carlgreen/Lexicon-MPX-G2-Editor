@@ -17,7 +17,7 @@ Metal Stack
     Bass: 10
     Type: Model C
     Resp: 100
-    Gain: +5
+    Gain: +5dB
   Delay: Delay (S) (Off)
     Toe Switch: disabled
     Mix: 15%

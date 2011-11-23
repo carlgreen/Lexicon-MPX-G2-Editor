@@ -21,7 +21,7 @@ CompChrsRvb+
     Bass: 10
     Type: Model C
     Resp: 100
-    Gain: +20
+    Gain: +20dB
   Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 70%
