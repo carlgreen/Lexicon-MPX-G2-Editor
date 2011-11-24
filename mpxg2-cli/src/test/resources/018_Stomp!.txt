@@ -25,7 +25,7 @@ Stomp!
     PW: 20%
     Depth: 30%
     Res: -60%
-    Blend: 30
+    Blend: 30%
   Delay: Echo (M) (On)
     Toe Switch: disabled
     Mix: 20%

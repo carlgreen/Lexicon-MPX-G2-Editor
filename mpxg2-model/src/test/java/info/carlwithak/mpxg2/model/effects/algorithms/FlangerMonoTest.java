@@ -72,7 +72,7 @@ public class FlangerMonoTest {
 
     @Test
     public void testRes() {
-        assertEquals("", flangerMono.getParameter(5).getUnit());
+        assertEquals("%", flangerMono.getParameter(5).getUnit());
     }
 
     @Test

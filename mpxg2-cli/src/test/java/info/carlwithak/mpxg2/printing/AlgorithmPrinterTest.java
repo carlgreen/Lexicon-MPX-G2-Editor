@@ -504,7 +504,7 @@ public class AlgorithmPrinterTest {
         flangerMono.setResonance(-60);
         flangerMono.setBlend(30);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.05Hz\n    PW: 20%\n    Depth: 30%\n    Res: -60%\n    Blend: 30\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.05Hz\n    PW: 20%\n    Depth: 30%\n    Res: -60%\n    Blend: 30%\n";
         String actual = AlgorithmPrinter.print(flangerMono);
 
         assertEquals(expected, actual);

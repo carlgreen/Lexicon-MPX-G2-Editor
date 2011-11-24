@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.signInt;
-
 /**
  *
  * @author Carl Green
@@ -37,10 +35,10 @@ public class FlangerMonoPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(flangerMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(flangerMono.getLevel())).append("\n");
         sb.append("    Rate: ").append(ParameterPrinter.print(flangerMono.getRate())).append("\n");
-        sb.append("    PW: ").append(flangerMono.getPulseWidth()).append("%\n");
-        sb.append("    Depth: ").append(flangerMono.getDepth()).append("%\n");
-        sb.append("    Res: ").append(signInt(flangerMono.getResonance())).append("%\n");
-        sb.append("    Blend: ").append(flangerMono.getBlend()).append("\n");
+        sb.append("    PW: ").append(ParameterPrinter.print(flangerMono.getPulseWidth())).append("\n");
+        sb.append("    Depth: ").append(ParameterPrinter.print(flangerMono.getDepth())).append("\n");
+        sb.append("    Res: ").append(ParameterPrinter.print(flangerMono.getResonance())).append("\n");
+        sb.append("    Blend: ").append(ParameterPrinter.print(flangerMono.getBlend())).append("\n");
         return sb.toString();
     }
 
