@@ -37,8 +37,8 @@ public class TremoloStereoParserTest {
         assertEquals(100, (int) tremoloStereo.getMix().getValue());
         assertEquals(0, (int) tremoloStereo.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate", 3.0), tremoloStereo.getRate());
-        assertEquals(50, tremoloStereo.getPulseWidth());
-        assertEquals(100, tremoloStereo.getDepth());
-        assertEquals(3, tremoloStereo.getPhase()); // 270°
+        assertEquals(50, (int) tremoloStereo.getPulseWidth().getValue());
+        assertEquals(100, (int) tremoloStereo.getDepth().getValue());
+        assertEquals(3, (int) tremoloStereo.getPhase().getValue()); // 270°
     }
 }
