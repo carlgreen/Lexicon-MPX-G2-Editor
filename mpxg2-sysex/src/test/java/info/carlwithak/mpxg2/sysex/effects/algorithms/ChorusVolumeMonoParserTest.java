@@ -34,6 +34,6 @@ public class ChorusVolumeMonoParserTest {
         ChorusVolumeMono volumeMono = ChorusVolumeMonoParser.parse(effectParameters);
         assertEquals(100, (int) volumeMono.getMix().getValue());
         assertEquals(0, (int) volumeMono.getLevel().getValue());
-        assertEquals(100, volumeMono.getVolume());
+        assertEquals(100, (int) volumeMono.getVolume().getValue());
     }
 }

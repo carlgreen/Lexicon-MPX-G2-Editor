@@ -53,8 +53,8 @@ public class ChorusVolumeMono extends Chorus {
         return parameter;
     }
 
-    public int getVolume() {
-        return volume.getValue();
+    public GenericValue<Integer> getVolume() {
+        return volume;
     }
 
     public void setVolume(int volume) {
