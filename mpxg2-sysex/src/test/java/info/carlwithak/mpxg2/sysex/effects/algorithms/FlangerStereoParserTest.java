@@ -37,10 +37,10 @@ public class FlangerStereoParserTest {
         assertEquals(67, (int) flangerStereo.getMix().getValue());
         assertEquals(1, (int) flangerStereo.getLevel().getValue());
         assertEquals(new BeatRate("Rate", 1, 4), flangerStereo.getRate());
-        assertEquals(50, flangerStereo.getPulseWidth());
-        assertEquals(62, flangerStereo.getDepth());
-        assertEquals(1, flangerStereo.getPhase()); // 0, 90, 180, 270 degrees
-        assertEquals(20, flangerStereo.getResonance());
-        assertEquals(0, flangerStereo.getBlend());
+        assertEquals(50, (int) flangerStereo.getPulseWidth().getValue());
+        assertEquals(62, (int) flangerStereo.getDepth().getValue());
+        assertEquals(1, (int) flangerStereo.getPhase().getValue()); // 0, 90, 180, 270 degrees
+        assertEquals(20, (int) flangerStereo.getResonance().getValue());
+        assertEquals(0, (int) flangerStereo.getBlend().getValue());
     }
 }

@@ -38,11 +38,11 @@ public class FlangerStereoPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(flangerStereo.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(flangerStereo.getLevel())).append("\n");
         sb.append("    Rate: ").append(ParameterPrinter.print(flangerStereo.getRate())).append("\n");
-        sb.append("    PW: ").append(flangerStereo.getPulseWidth()).append("%\n");
-        sb.append("    Depth: ").append(flangerStereo.getDepth()).append("%\n");
-        sb.append("    Phase: ").append(phaseToString(flangerStereo.getPhase())).append("\n");
-        sb.append("    Res: ").append(signInt(flangerStereo.getResonance())).append("%\n");
-        sb.append("    Blend: ").append(flangerStereo.getBlend()).append("\n");
+        sb.append("    PW: ").append(ParameterPrinter.print(flangerStereo.getPulseWidth())).append("\n");
+        sb.append("    Depth: ").append(ParameterPrinter.print(flangerStereo.getDepth())).append("\n");
+        sb.append("    Phase: ").append(phaseToString(flangerStereo.getPhase().getValue())).append("\n");
+        sb.append("    Res: ").append(ParameterPrinter.print(flangerStereo.getResonance())).append("\n");
+        sb.append("    Blend: ").append(ParameterPrinter.print(flangerStereo.getBlend())).append("\n");
         return sb.toString();
     }
 

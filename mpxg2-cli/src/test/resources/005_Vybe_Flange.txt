@@ -26,7 +26,7 @@ Vybe/Flange
     Depth: 62%
     Phase: 90°
     Res: +20%
-    Blend: 0
+    Blend: 0%
   Delay: Echo (M) (Off)
     Toe Switch: off=bypass
     Mix: 6%

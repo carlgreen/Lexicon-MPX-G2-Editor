@@ -34,7 +34,7 @@ public class FlangerStereo extends Chorus {
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
     private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "°", 0, 3);
-    private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
     private GenericValue<Integer> blend = new GenericValue<Integer>("Blend", "%", 0, 100);
 
     @Override
@@ -82,40 +82,40 @@ public class FlangerStereo extends Chorus {
         this.rate = rate;
     }
 
-    public int getPulseWidth() {
-        return pulseWidth.getValue();
+    public GenericValue<Integer> getPulseWidth() {
+        return pulseWidth;
     }
 
     public void setPulseWidth(int pulseWidth) {
         this.pulseWidth.setValue(pulseWidth);
     }
 
-    public int getDepth() {
-        return depth.getValue();
+    public GenericValue<Integer> getDepth() {
+        return depth;
     }
 
     public void setDepth(int depth) {
         this.depth.setValue(depth);
     }
 
-    public int getPhase() {
-        return phase.getValue();
+    public GenericValue<Integer> getPhase() {
+        return phase;
     }
 
     public void setPhase(int phase) {
         this.phase.setValue(phase);
     }
 
-    public int getResonance() {
-        return resonance.getValue();
+    public GenericValue<Integer> getResonance() {
+        return resonance;
     }
 
     public void setResonance(int resonance) {
         this.resonance.setValue(resonance);
     }
 
-    public int getBlend() {
-        return blend.getValue();
+    public GenericValue<Integer> getBlend() {
+        return blend;
     }
 
     public void setBlend(int blend) {

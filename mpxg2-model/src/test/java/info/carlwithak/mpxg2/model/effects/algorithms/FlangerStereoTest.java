@@ -77,7 +77,7 @@ public class FlangerStereoTest {
 
     @Test
     public void testRes() {
-        assertEquals("", flangerStereo.getParameter(6).getUnit());
+        assertEquals("%", flangerStereo.getParameter(6).getUnit());
     }
 
     @Test

@@ -21,7 +21,7 @@ ToeWah/Flng
     Depth: 40%
     Phase: 180°
     Res: -60%
-    Blend: 50
+    Blend: 50%
   Delay: Echo (D) (On)
     Toe Switch: disabled
     Mix: 2%
