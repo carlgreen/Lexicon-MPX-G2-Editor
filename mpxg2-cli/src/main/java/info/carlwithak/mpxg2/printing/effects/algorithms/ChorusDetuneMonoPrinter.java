@@ -26,7 +26,7 @@ import info.carlwithak.mpxg2.printing.PrintException;
  *
  * @author Carl Green
  */
-public class DetuneMonoPrinter implements Printer {
+public class ChorusDetuneMonoPrinter implements Printer {
 
     @Override
     public String print(Object algorithm) throws PrintException {
