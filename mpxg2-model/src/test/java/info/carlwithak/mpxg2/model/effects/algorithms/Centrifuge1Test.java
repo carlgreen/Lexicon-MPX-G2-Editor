@@ -99,7 +99,7 @@ public class Centrifuge1Test {
 
     @Test
     public void testRes() {
-        assertEquals("", centrifuge1.getParameter(10).getUnit());
+        assertEquals("%", centrifuge1.getParameter(10).getUnit());
     }
 
     @Test

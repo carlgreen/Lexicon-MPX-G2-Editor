@@ -37,13 +37,13 @@ public class Centrifuge1ParserTest {
         assertEquals(100, (int) centrifuge1.getMix().getValue());
         assertEquals(6, (int) centrifuge1.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate1", 0.60), centrifuge1.getRate1());
-        assertEquals(45, centrifuge1.getPulseWidth1());
-        assertEquals(120, centrifuge1.getSync1());
-        assertEquals(100, centrifuge1.getDepth1());
+        assertEquals(45, (int) centrifuge1.getPulseWidth1().getValue());
+        assertEquals(120, (int) centrifuge1.getSync1().getValue());
+        assertEquals(100, (int) centrifuge1.getDepth1().getValue());
         assertEquals(new FrequencyRate("Rate2", 1.00), centrifuge1.getRate2());
-        assertEquals(100, centrifuge1.getPulseWidth2());
-        assertEquals(-120, centrifuge1.getSync2());
-        assertEquals(43, centrifuge1.getDepth2());
-        assertEquals(100, centrifuge1.getResonance());
+        assertEquals(100, (int) centrifuge1.getPulseWidth2().getValue());
+        assertEquals(-120, (int) centrifuge1.getSync2().getValue());
+        assertEquals(43, (int) centrifuge1.getDepth2().getValue());
+        assertEquals(100, (int) centrifuge1.getResonance().getValue());
     }
 }
