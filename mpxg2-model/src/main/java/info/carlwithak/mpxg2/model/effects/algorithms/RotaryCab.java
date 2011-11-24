@@ -86,8 +86,8 @@ public class RotaryCab extends Chorus {
         this.rate1 = rate1;
     }
 
-    public int getDepth1() {
-        return depth1.getValue();
+    public GenericValue<Integer> getDepth1() {
+        return depth1;
     }
 
     public void setDepth1(int depth1) {
@@ -102,32 +102,32 @@ public class RotaryCab extends Chorus {
         this.rate2 = rate2;
     }
 
-    public int getDepth2() {
-        return depth2.getValue();
+    public GenericValue<Integer> getDepth2() {
+        return depth2;
     }
 
     public void setDepth2(int depth2) {
         this.depth2.setValue(depth2);
     }
 
-    public int getResonance() {
-        return resonance.getValue();
+    public GenericValue<Integer> getResonance() {
+        return resonance;
     }
 
     public void setResonance(int resonance) {
         this.resonance.setValue(resonance);
     }
 
-    public int getWidth() {
-        return width.getValue();
+    public GenericValue<Integer> getWidth() {
+        return width;
     }
 
     public void setWidth(int width) {
         this.width.setValue(width);
     }
 
-    public int getBalance() {
-        return balance.getValue();
+    public GenericValue<Integer> getBalance() {
+        return balance;
     }
 
     public void setBalance(int balance) {

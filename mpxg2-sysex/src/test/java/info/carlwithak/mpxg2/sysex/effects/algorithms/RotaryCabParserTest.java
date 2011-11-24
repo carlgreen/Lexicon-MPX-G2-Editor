@@ -37,11 +37,11 @@ public class RotaryCabParserTest {
         assertEquals(100, (int) rotaryCab.getMix().getValue());
         assertEquals(4, (int) rotaryCab.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate1", 5.73), rotaryCab.getRate1());
-        assertEquals(43, rotaryCab.getDepth1());
+        assertEquals(43, (int) rotaryCab.getDepth1().getValue());
         assertEquals(new FrequencyRate("Rate2", 5.73), rotaryCab.getRate2());
-        assertEquals(36, rotaryCab.getDepth2());
-        assertEquals(0, rotaryCab.getResonance());
-        assertEquals(100, rotaryCab.getWidth());
-        assertEquals(-20, rotaryCab.getBalance());
+        assertEquals(36, (int) rotaryCab.getDepth2().getValue());
+        assertEquals(0, (int) rotaryCab.getResonance().getValue());
+        assertEquals(100, (int) rotaryCab.getWidth().getValue());
+        assertEquals(-20, (int) rotaryCab.getBalance().getValue());
     }
 }

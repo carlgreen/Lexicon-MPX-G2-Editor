@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.signInt;
-
 /**
  *
  * @author Carl Green
@@ -37,12 +35,12 @@ public class RotaryCabPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(rotaryCab.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(rotaryCab.getLevel())).append("\n");
         sb.append("    Rate1: ").append(ParameterPrinter.print(rotaryCab.getRate1())).append("\n");
-        sb.append("    Depth1: ").append(rotaryCab.getDepth1()).append("%\n");
+        sb.append("    Depth1: ").append(ParameterPrinter.print(rotaryCab.getDepth1())).append("\n");
         sb.append("    Rate2: ").append(ParameterPrinter.print(rotaryCab.getRate2())).append("\n");
-        sb.append("    Depth2: ").append(rotaryCab.getDepth2()).append("%\n");
-        sb.append("    Res: ").append(signInt(rotaryCab.getResonance())).append("\n");
-        sb.append("    Width: ").append(rotaryCab.getWidth()).append("%\n");
-        sb.append("    Bal: ").append(signInt(rotaryCab.getBalance())).append("\n");
+        sb.append("    Depth2: ").append(ParameterPrinter.print(rotaryCab.getDepth2())).append("\n");
+        sb.append("    Res: ").append(ParameterPrinter.print(rotaryCab.getResonance())).append("\n");
+        sb.append("    Width: ").append(ParameterPrinter.print(rotaryCab.getWidth())).append("\n");
+        sb.append("    Bal: ").append(ParameterPrinter.print(rotaryCab.getBalance())).append("\n");
         return sb.toString();
     }
 
