@@ -34,8 +34,8 @@ public class ChorusDetuneMonoParserTest {
         ChorusDetuneMono detuneMono = ChorusDetuneMonoParser.parse(effectParameters);
         assertEquals(50, (int) detuneMono.getMix().getValue());
         assertEquals(6, (int) detuneMono.getLevel().getValue());
-        assertEquals(10, detuneMono.getTune());
+        assertEquals(10, (int) detuneMono.getTune().getValue());
         assertEquals(10, detuneMono.getOptimize());
-        assertEquals(0, detuneMono.getPreDelay());
+        assertEquals(0, (int) detuneMono.getPreDelay().getValue());
     }
 }

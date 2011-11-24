@@ -58,8 +58,8 @@ public class ChorusDetuneMono extends Chorus {
         return parameter;
     }
 
-    public int getTune() {
-        return tune.getValue();
+    public GenericValue<Integer> getTune() {
+        return tune;
     }
 
     public void setTune(int tune) {
@@ -74,8 +74,8 @@ public class ChorusDetuneMono extends Chorus {
         this.optimize = optimize;
     }
 
-    public int getPreDelay() {
-        return preDelay.getValue();
+    public GenericValue<Integer> getPreDelay() {
+        return preDelay;
     }
 
     public void setPreDelay(int preDelay) {
