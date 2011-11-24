@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.phaseToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
