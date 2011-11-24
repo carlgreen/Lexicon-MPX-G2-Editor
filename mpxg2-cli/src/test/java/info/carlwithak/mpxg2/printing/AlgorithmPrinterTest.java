@@ -522,7 +522,7 @@ public class AlgorithmPrinterTest {
         flanger24Mono.setGlide(50);
         flanger24Mono.setBlend(50);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.31Hz\n    PW: 50%\n    Depth: 36%\n    Res: -30%\n    Glide: 50\n    Blend: 50\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.31Hz\n    PW: 50%\n    Depth: 36%\n    Res: -30%\n    Glide: 50\n    Blend: 50%\n";
         String actual = AlgorithmPrinter.print(flanger24Mono);
 
         assertEquals(expected, actual);

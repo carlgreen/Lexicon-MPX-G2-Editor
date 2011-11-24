@@ -26,7 +26,7 @@ VintageRig
     Depth: 36%
     Res: -30%
     Glide: 50
-    Blend: 50
+    Blend: 50%
   Delay: Echo (M) (Off)
     Toe Switch: disabled
     Mix: 10%
