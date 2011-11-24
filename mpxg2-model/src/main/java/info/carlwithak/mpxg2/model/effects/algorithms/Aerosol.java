@@ -90,16 +90,16 @@ public class Aerosol extends Chorus {
         this.rate1 = rate1;
     }
 
-    public int getPulseWidth1() {
-        return pulseWidth1.getValue();
+    public GenericValue<Integer> getPulseWidth1() {
+        return pulseWidth1;
     }
 
     public void setPulseWidth1(int pulseWidth1) {
         this.pulseWidth1.setValue(pulseWidth1);
     }
 
-    public int getDepth1() {
-        return depth1.getValue();
+    public GenericValue<Integer> getDepth1() {
+        return depth1;
     }
 
     public void setDepth1(int depth1) {
@@ -114,32 +114,32 @@ public class Aerosol extends Chorus {
         this.rate2 = rate2;
     }
 
-    public int getPulseWidth2() {
-        return pulseWidth2.getValue();
+    public GenericValue<Integer> getPulseWidth2() {
+        return pulseWidth2;
     }
 
     public void setPulseWidth2(int pulseWidth2) {
         this.pulseWidth2.setValue(pulseWidth2);
     }
 
-    public int getDepth2() {
-        return depth2.getValue();
+    public GenericValue<Integer> getDepth2() {
+        return depth2;
     }
 
     public void setDepth2(int depth2) {
         this.depth2.setValue(depth2);
     }
 
-    public int getResonance1() {
-        return resonance1.getValue();
+    public GenericValue<Integer> getResonance1() {
+        return resonance1;
     }
 
     public void setResonance1(int resonance1) {
         this.resonance1.setValue(resonance1);
     }
 
-    public int getResonance2() {
-        return resonance2.getValue();
+    public GenericValue<Integer> getResonance2() {
+        return resonance2;
     }
 
     public void setResonance2(int resonance2) {

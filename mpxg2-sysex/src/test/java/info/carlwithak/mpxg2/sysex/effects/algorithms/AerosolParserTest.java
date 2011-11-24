@@ -37,12 +37,12 @@ public class AerosolParserTest {
         assertEquals(100, (int) aerosol.getMix().getValue());
         assertEquals(0, (int) aerosol.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate1", 0.26), aerosol.getRate1());
-        assertEquals(45, aerosol.getPulseWidth1());
-        assertEquals(70, aerosol.getDepth1());
+        assertEquals(45, (int) aerosol.getPulseWidth1().getValue());
+        assertEquals(70, (int) aerosol.getDepth1().getValue());
         assertEquals(new FrequencyRate("Rate2", 0.26), aerosol.getRate2());
-        assertEquals(55, aerosol.getPulseWidth2());
-        assertEquals(60, aerosol.getDepth2());
-        assertEquals(-60, aerosol.getResonance1());
-        assertEquals(60, aerosol.getResonance2());
+        assertEquals(55, (int) aerosol.getPulseWidth2().getValue());
+        assertEquals(60, (int) aerosol.getDepth2().getValue());
+        assertEquals(-60, (int) aerosol.getResonance1().getValue());
+        assertEquals(60, (int) aerosol.getResonance2().getValue());
     }
 }
