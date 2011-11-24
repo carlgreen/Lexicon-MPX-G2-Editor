@@ -29,7 +29,7 @@ Analog  Echo
     PW2: 54%
     Depth2: 64%
     Res1: -4
-    Res2: 4
+    Res2: +4
   Delay: Echo (M) (On)
     Toe Switch: disabled
     Mix: 50%

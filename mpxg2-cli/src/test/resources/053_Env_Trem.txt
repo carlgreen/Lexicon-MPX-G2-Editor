@@ -27,7 +27,7 @@ Env Trem
     Rate2: 2.31Hz
     PW2: 54%
     Depth2: 45%
-    Res1: 4
+    Res1: +4
     Res2: -4
   Delay: Echo (S) (Off)
     Toe Switch: disabled

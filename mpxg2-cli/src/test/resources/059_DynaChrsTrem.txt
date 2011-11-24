@@ -28,7 +28,7 @@ DynaChrsTrem
     PW2: 54%
     Depth2: 37%
     Res1: -2
-    Res2: 3
+    Res2: +3
   Delay: Echo (S) (On)
     Toe Switch: disabled
     Mix: 20%

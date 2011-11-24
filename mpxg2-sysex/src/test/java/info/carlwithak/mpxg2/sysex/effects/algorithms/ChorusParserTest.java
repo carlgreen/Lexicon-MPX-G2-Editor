@@ -37,12 +37,12 @@ public class ChorusParserTest {
         assertEquals(100, (int) chorus.getMix().getValue());
         assertEquals(0, (int) chorus.getLevel().getValue());
         assertEquals(new FrequencyRate("Rate1", 0.62), chorus.getRate1());
-        assertEquals(45, chorus.getPulseWidth1());
-        assertEquals(30, chorus.getDepth1());
+        assertEquals(45, (int) chorus.getPulseWidth1().getValue());
+        assertEquals(30, (int) chorus.getDepth1().getValue());
         assertEquals(new FrequencyRate("Rate2", 0.56), chorus.getRate2());
-        assertEquals(54, chorus.getPulseWidth2());
-        assertEquals(0, chorus.getDepth2());
-        assertEquals(-19, chorus.getResonance1());
-        assertEquals(0, chorus.getResonance2());
+        assertEquals(54, (int) chorus.getPulseWidth2().getValue());
+        assertEquals(0, (int) chorus.getDepth2().getValue());
+        assertEquals(-19, (int) chorus.getResonance1().getValue());
+        assertEquals(0, (int) chorus.getResonance2().getValue());
     }
 }
