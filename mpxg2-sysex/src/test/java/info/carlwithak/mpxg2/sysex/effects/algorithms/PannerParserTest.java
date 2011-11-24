@@ -34,7 +34,7 @@ public class PannerParserTest {
         Panner panner = PannerParser.parse(effectParameters);
         assertEquals(100, (int) panner.getMix().getValue());
         assertEquals(-24, (int) panner.getLevel().getValue());
-        assertEquals(-50, panner.getPan1());
-        assertEquals(50, panner.getPan2());
+        assertEquals(-50, (int) panner.getPan1().getValue());
+        assertEquals(50, (int) panner.getPan2().getValue());
     }
 }
