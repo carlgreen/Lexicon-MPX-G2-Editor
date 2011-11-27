@@ -6,11 +6,11 @@ Crunch Boost
     I=1=2=G=E=C=D=R=O
   Gain: Crunch (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +14
-    Hi: 11
-    InLvl: 0
-    Level: 45
+    Lo: +10dB
+    Mid: +14dB
+    Hi: 11dB
+    InLvl: 0dB
+    Level: 45dB
   Softrow:
     1: Gain InLvl
     2: Gain Level

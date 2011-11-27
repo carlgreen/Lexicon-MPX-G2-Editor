@@ -48,11 +48,11 @@ Tap AutoWah
     Spred: 143
   Gain: Crunch (Off)
     Toe Switch: disabled
-    Lo: +6
-    Mid: +12
-    Hi: 15
-    InLvl: 0
-    Level: 50
+    Lo: +6dB
+    Mid: +12dB
+    Hi: 15dB
+    InLvl: 0dB
+    Level: 50dB
   Softrow:
     1: Gain InLvl
     2: Gain Level

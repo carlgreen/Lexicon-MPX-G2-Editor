@@ -1021,7 +1021,7 @@ public class AlgorithmPrinterTest {
         crunch.setInLevel(0);
         crunch.setLevel(50);
 
-        String expected = "    Lo: +6\n    Mid: +12\n    Hi: 15\n    InLvl: 0\n    Level: 50\n";
+        String expected = "    Lo: +6dB\n    Mid: +12dB\n    Hi: 15dB\n    InLvl: 0dB\n    Level: 50dB\n";
         String actual = AlgorithmPrinter.print(crunch);
 
         assertEquals(expected, actual);

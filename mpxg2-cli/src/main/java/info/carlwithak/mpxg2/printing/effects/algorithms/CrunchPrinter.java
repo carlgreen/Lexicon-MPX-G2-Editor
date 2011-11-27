@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,14 +29,14 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class CrunchPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Crunch crunch = (Crunch) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(signInt(crunch.getLo())).append("\n");
-        sb.append("    Mid: ").append(signInt(crunch.getMid())).append("\n");
-        sb.append("    Hi: ").append(crunch.getHi()).append("\n");
-        sb.append("    InLvl: ").append(crunch.getInLevel()).append("\n");
-        sb.append("    Level: ").append(crunch.getLevel()).append("\n");
+        sb.append("    Lo: ").append(ParameterPrinter.print(crunch.getLo())).append("\n");
+        sb.append("    Mid: ").append(ParameterPrinter.print(crunch.getMid())).append("\n");
+        sb.append("    Hi: ").append(ParameterPrinter.print(crunch.getHi())).append("\n");
+        sb.append("    InLvl: ").append(ParameterPrinter.print(crunch.getInLevel())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(crunch.getLevel())).append("\n");
         return sb.toString();
     }
 
