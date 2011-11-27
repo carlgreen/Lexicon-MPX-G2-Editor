@@ -38,10 +38,10 @@ public class EchoStereoParserTest {
         assertEquals(0, (int) echoStereo.getMix().getValue());
         assertEquals(0, (int) echoStereo.getLevel().getValue());
         assertEquals(new BeatRate("Time", 1, 1), echoStereo.getTime());
-        assertEquals(0, echoStereo.getFeedback());
+        assertEquals(0, (int) echoStereo.getFeedback().getValue());
         assertEquals(3, echoStereo.getInsert());
-        assertEquals(16, echoStereo.getDamp());
-        assertFalse(echoStereo.isClear());
+        assertEquals(16, (int) echoStereo.getDamp().getValue());
+        assertFalse(echoStereo.isClear().getValue());
     }
 
     @Test
@@ -51,9 +51,9 @@ public class EchoStereoParserTest {
         assertEquals(20, (int) echoStereo.getMix().getValue());
         assertEquals(0, (int) echoStereo.getLevel().getValue());
         assertEquals(new BeatRate("Time", 1, 1), echoStereo.getTime());
-        assertEquals(0, echoStereo.getFeedback());
+        assertEquals(0, (int) echoStereo.getFeedback().getValue());
         assertEquals(3, echoStereo.getInsert());
-        assertEquals(16, echoStereo.getDamp());
-        assertFalse(echoStereo.isClear());
+        assertEquals(16, (int) echoStereo.getDamp().getValue());
+        assertFalse(echoStereo.isClear().getValue());
     }
 }

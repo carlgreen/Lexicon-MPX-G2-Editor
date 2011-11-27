@@ -75,8 +75,8 @@ public class EchoStereo extends Delay {
         this.time = time;
     }
 
-    public int getFeedback() {
-        return feedback.getValue();
+    public GenericValue<Integer> getFeedback() {
+        return feedback;
     }
 
     public void setFeedback(int feedback) {
@@ -91,16 +91,16 @@ public class EchoStereo extends Delay {
         this.insert = insert;
     }
 
-    public int getDamp() {
-        return damp.getValue();
+    public GenericValue<Integer> getDamp() {
+        return damp;
     }
 
     public void setDamp(int damp) {
         this.damp.setValue(damp);
     }
 
-    public boolean isClear() {
-        return clear.getValue();
+    public GenericValue<Boolean> isClear() {
+        return clear;
     }
 
     public void setClear(boolean clear) {

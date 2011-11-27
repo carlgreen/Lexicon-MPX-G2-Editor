@@ -23,8 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -39,10 +37,10 @@ public class EchoStereoPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(echoStereo.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(echoStereo.getLevel())).append("\n");
         sb.append("    Time: ").append(ParameterPrinter.print(echoStereo.getTime())).append("\n");
-        sb.append("    Feedback: ").append(signInt(echoStereo.getFeedback())).append("%\n");
+        sb.append("    Feedback: ").append(ParameterPrinter.print(echoStereo.getFeedback())).append("\n");
         sb.append("    Insert: ").append(delayInsertToString(echoStereo.getInsert())).append("\n");
-        sb.append("    Damp: ").append(echoStereo.getDamp()).append("%\n");
-        sb.append("    Clear: ").append(onOffToString(echoStereo.isClear())).append("\n");
+        sb.append("    Damp: ").append(ParameterPrinter.print(echoStereo.getDamp())).append("\n");
+        sb.append("    Clear: ").append(ParameterPrinter.print(echoStereo.isClear())).append("\n");
         return sb.toString();
     }
 
