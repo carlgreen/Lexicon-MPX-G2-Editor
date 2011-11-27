@@ -23,9 +23,7 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.panToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -41,16 +39,16 @@ public class DelayDualPrinter implements Printer {
         sb.append("    Level: ").append(ParameterPrinter.print(delayDual.getLevel())).append("\n");
         sb.append("    Time1: ").append(ParameterPrinter.print(delayDual.getTime1())).append("\n");
         sb.append("    Time2: ").append(ParameterPrinter.print(delayDual.getTime2())).append("\n");
-        sb.append("    Level1: ").append(signInt(delayDual.getLevel1())).append("dB\n");
-        sb.append("    Level2: ").append(signInt(delayDual.getLevel2())).append("dB\n");
-        sb.append("    Pan1: ").append(panToString(delayDual.getPan1())).append("\n");
-        sb.append("    Pan2: ").append(panToString(delayDual.getPan2())).append("\n");
-        sb.append("    Feedback1: ").append(signInt(delayDual.getFeedback1())).append("%\n");
+        sb.append("    Level1: ").append(ParameterPrinter.print(delayDual.getLevel1())).append("\n");
+        sb.append("    Level2: ").append(ParameterPrinter.print(delayDual.getLevel2())).append("\n");
+        sb.append("    Pan1: ").append(panToString(delayDual.getPan1().getValue())).append("\n");
+        sb.append("    Pan2: ").append(panToString(delayDual.getPan2().getValue())).append("\n");
+        sb.append("    Feedback1: ").append(ParameterPrinter.print(delayDual.getFeedback1())).append("\n");
         sb.append("    Insert: ").append(delayInsertToString(delayDual.getInsert())).append("\n");
-        sb.append("    Feedback2: ").append(signInt(delayDual.getFeedback2())).append("%\n");
-        sb.append("    XFbk1: ").append(signInt(delayDual.getXFbk1())).append("%\n");
-        sb.append("    XFbk2: ").append(signInt(delayDual.getXFbk2())).append("%\n");
-        sb.append("    Clear: ").append(onOffToString(delayDual.isClear())).append("\n");
+        sb.append("    Feedback2: ").append(ParameterPrinter.print(delayDual.getFeedback2())).append("\n");
+        sb.append("    XFbk1: ").append(ParameterPrinter.print(delayDual.getXFbk1())).append("\n");
+        sb.append("    XFbk2: ").append(ParameterPrinter.print(delayDual.getXFbk2())).append("\n");
+        sb.append("    Clear: ").append(ParameterPrinter.print(delayDual.isClear())).append("\n");
         return sb.toString();
     }
 }

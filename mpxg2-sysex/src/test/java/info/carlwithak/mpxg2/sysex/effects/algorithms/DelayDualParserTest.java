@@ -39,16 +39,16 @@ public class DelayDualParserTest {
         assertEquals(0, (int) delayDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 3, 4), delayDual.getTime1());
         assertEquals(new BeatRate("Time2", 4, 3), delayDual.getTime2());
-        assertEquals(0, delayDual.getLevel1());
-        assertEquals(0, delayDual.getLevel2());
-        assertEquals(-50, delayDual.getPan1());
-        assertEquals(50, delayDual.getPan2());
-        assertEquals(10, delayDual.getFeedback1());
+        assertEquals(0, (int) delayDual.getLevel1().getValue());
+        assertEquals(0, (int) delayDual.getLevel2().getValue());
+        assertEquals(-50, (int) delayDual.getPan1().getValue());
+        assertEquals(50, (int) delayDual.getPan2().getValue());
+        assertEquals(10, (int) delayDual.getFeedback1().getValue());
         assertEquals(3, delayDual.getInsert());
-        assertEquals(10, delayDual.getFeedback2());
-        assertEquals(0, delayDual.getXFbk1());
-        assertEquals(0, delayDual.getXFbk2());
-        assertFalse(delayDual.isClear());
+        assertEquals(10, (int) delayDual.getFeedback2().getValue());
+        assertEquals(0, (int) delayDual.getXFbk1().getValue());
+        assertEquals(0, (int) delayDual.getXFbk2().getValue());
+        assertFalse(delayDual.isClear().getValue());
     }
 
     @Test
@@ -59,15 +59,15 @@ public class DelayDualParserTest {
         assertEquals(0, (int) delayDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 1, 1), delayDual.getTime1());
         assertEquals(new BeatRate("Time2", 4, 3), delayDual.getTime2());
-        assertEquals(0, delayDual.getLevel1());
-        assertEquals(0, delayDual.getLevel2());
-        assertEquals(-50, delayDual.getPan1());
-        assertEquals(50, delayDual.getPan2());
-        assertEquals(0, delayDual.getFeedback1());
+        assertEquals(0, (int) delayDual.getLevel1().getValue());
+        assertEquals(0, (int) delayDual.getLevel2().getValue());
+        assertEquals(-50, (int) delayDual.getPan1().getValue());
+        assertEquals(50, (int) delayDual.getPan2().getValue());
+        assertEquals(0, (int) delayDual.getFeedback1().getValue());
         assertEquals(3, delayDual.getInsert());
-        assertEquals(0, delayDual.getFeedback2());
-        assertEquals(0, delayDual.getXFbk1());
-        assertEquals(0, delayDual.getXFbk2());
-        assertFalse(delayDual.isClear());
+        assertEquals(0, (int) delayDual.getFeedback2().getValue());
+        assertEquals(0, (int) delayDual.getXFbk1().getValue());
+        assertEquals(0, (int) delayDual.getXFbk2().getValue());
+        assertFalse(delayDual.isClear().getValue());
     }
 }

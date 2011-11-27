@@ -111,40 +111,40 @@ public class DelayDual extends Delay {
         this.time2 = time2;
     }
 
-    public int getLevel1() {
-        return level1.getValue();
+    public GenericValue<Integer> getLevel1() {
+        return level1;
     }
 
     public void setLevel1(int level1) {
         this.level1.setValue(level1);
     }
 
-    public int getLevel2() {
-        return level2.getValue();
+    public GenericValue<Integer> getLevel2() {
+        return level2;
     }
 
     public void setLevel2(int level2) {
         this.level2.setValue(level2);
     }
 
-    public int getPan1() {
-        return pan1.getValue();
+    public GenericValue<Integer> getPan1() {
+        return pan1;
     }
 
     public void setPan1(int pan1) {
         this.pan1.setValue(pan1);
     }
 
-    public int getPan2() {
-        return pan2.getValue();
+    public GenericValue<Integer> getPan2() {
+        return pan2;
     }
 
     public void setPan2(int pan2) {
         this.pan2.setValue(pan2);
     }
 
-    public int getFeedback1() {
-        return feedback1.getValue();
+    public GenericValue<Integer> getFeedback1() {
+        return feedback1;
     }
 
     public void setFeedback1(int feedback1) {
@@ -159,32 +159,32 @@ public class DelayDual extends Delay {
         this.insert = insert;
     }
 
-    public int getFeedback2() {
-        return feedback2.getValue();
+    public GenericValue<Integer> getFeedback2() {
+        return feedback2;
     }
 
     public void setFeedback2(int feedback2) {
         this.feedback2.setValue(feedback2);
     }
 
-    public int getXFbk1() {
-        return xFbk1.getValue();
+    public GenericValue<Integer> getXFbk1() {
+        return xFbk1;
     }
 
     public void setXFbk1(int xFbk1) {
         this.xFbk1.setValue(xFbk1);
     }
 
-    public int getXFbk2() {
-        return xFbk2.getValue();
+    public GenericValue<Integer> getXFbk2() {
+        return xFbk2;
     }
 
     public void setXFbk2(int xFbk2) {
         this.xFbk2.setValue(xFbk2);
     }
 
-    public boolean isClear() {
-        return clear.getValue();
+    public GenericValue<Boolean> isClear() {
+        return clear;
     }
 
     public void setClear(boolean clear) {
