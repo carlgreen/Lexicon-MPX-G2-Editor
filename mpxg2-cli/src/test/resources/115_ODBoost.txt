@@ -6,15 +6,15 @@ OD Boost
     I=1=2=E=C=D=R=G=O
   Gain: Overdrive (On)
     Toe Switch: disabled
-    Lo: 0
-    Mid: 0
-    Hi: 0
-    InLvl: 0
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 64
     Drive: 27
     Tone: 10
-    Level: 55
+    Level: 55dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

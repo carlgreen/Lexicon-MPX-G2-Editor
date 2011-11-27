@@ -81,72 +81,72 @@ public class Overdrive extends Gain {
         return parameter;
     }
 
-    public int getLo() {
-        return lo.getValue();
+    public GenericValue<Integer> getLo() {
+        return lo;
     }
 
     public void setLo(int lo) {
         this.lo.setValue(lo);
     }
 
-    public int getMid() {
-        return mid.getValue();
+    public GenericValue<Integer> getMid() {
+        return mid;
     }
 
     public void setMid(int mid) {
         this.mid.setValue(mid);
     }
 
-    public int getHi() {
-        return hi.getValue();
+    public GenericValue<Integer> getHi() {
+        return hi;
     }
 
     public void setHi(int hi) {
         this.hi.setValue(hi);
     }
 
-    public int getInLevel() {
-        return inLevel.getValue();
+    public GenericValue<Integer> getInLevel() {
+        return inLevel;
     }
 
     public void setInLevel(int inLevel) {
         this.inLevel.setValue(inLevel);
     }
 
-    public int getLoCut() {
-        return loCut.getValue();
+    public GenericValue<Integer> getLoCut() {
+        return loCut;
     }
 
     public void setLoCut(int loCut) {
         this.loCut.setValue(loCut);
     }
 
-    public int getFeel() {
-        return feel.getValue();
+    public GenericValue<Integer> getFeel() {
+        return feel;
     }
 
     public void setFeel(int feel) {
         this.feel.setValue(feel);
     }
 
-    public int getDrive() {
-        return drive.getValue();
+    public GenericValue<Integer> getDrive() {
+        return drive;
     }
 
     public void setDrive(int drive) {
         this.drive.setValue(drive);
     }
 
-    public int getTone() {
-        return tone.getValue();
+    public GenericValue<Integer> getTone() {
+        return tone;
     }
 
     public void setTone(int tone) {
         this.tone.setValue(tone);
     }
 
-    public int getLevel() {
-        return level.getValue();
+    public GenericValue<Integer> getLevel() {
+        return level;
     }
 
     public void setLevel(int level) {

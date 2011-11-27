@@ -60,15 +60,15 @@ Analog  Echo
     Vol: 100%
   Gain: Overdrive (On)
     Toe Switch: disabled
-    Lo: +5
-    Mid: +12
-    Hi: +10
-    InLvl: 0
+    Lo: +5dB
+    Mid: +12dB
+    Hi: 10dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 32
     Drive: 0
     Tone: 25
-    Level: 42
+    Level: 42dB
   Softrow:
     1: Delay Mix
     2: Delay Time

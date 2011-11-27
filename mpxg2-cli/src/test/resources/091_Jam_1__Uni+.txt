@@ -50,15 +50,15 @@ Jam 1  Uni+
     Level: 0dB
   Gain: Overdrive (On)
     Toe Switch: disabled
-    Lo: 0
-    Mid: 0
-    Hi: 0
-    InLvl: 0
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
+    InLvl: 0dB
     LoCut: 10
     Feel: 32
     Drive: 27
     Tone: 21
-    Level: 46
+    Level: 46dB
   Softrow:
     6: A/B ARate
     7: A/B BRate

@@ -15,15 +15,15 @@ Fuzz 1
     RTime: 700ms
   Gain: Overdrive (On)
     Toe Switch: disabled
-    Lo: +11
-    Mid: +10
-    Hi: +10
-    InLvl: 0
+    Lo: +11dB
+    Mid: +10dB
+    Hi: 10dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 32
     Drive: 34
     Tone: 25
-    Level: 45
+    Level: 45dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

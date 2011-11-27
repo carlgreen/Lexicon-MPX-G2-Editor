@@ -19,15 +19,15 @@ Fuzz Wah
     Gain: 0dB
   Gain: Overdrive (On)
     Toe Switch: off=bypass
-    Lo: +15
-    Mid: 0
-    Hi: 0
-    InLvl: 0
+    Lo: +15dB
+    Mid: 0dB
+    Hi: 0dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 32
     Drive: 40
     Tone: 25
-    Level: 50
+    Level: 50dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

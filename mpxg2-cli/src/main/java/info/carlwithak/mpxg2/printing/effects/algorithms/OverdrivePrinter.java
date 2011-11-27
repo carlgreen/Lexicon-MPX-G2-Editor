@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,18 +29,18 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class OverdrivePrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Overdrive overdrive = (Overdrive) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(signInt(overdrive.getLo())).append("\n");
-        sb.append("    Mid: ").append(signInt(overdrive.getMid())).append("\n");
-        sb.append("    Hi: ").append(signInt(overdrive.getHi())).append("\n");
-        sb.append("    InLvl: ").append(signInt(overdrive.getInLevel())).append("\n");
-        sb.append("    LoCut: ").append(overdrive.getLoCut()).append("\n");
-        sb.append("    Feel: ").append(overdrive.getFeel()).append("\n");
-        sb.append("    Drive: ").append(overdrive.getDrive()).append("\n");
-        sb.append("    Tone: ").append(overdrive.getTone()).append("\n");
-        sb.append("    Level: ").append(overdrive.getLevel()).append("\n");
+        sb.append("    Lo: ").append(ParameterPrinter.print(overdrive.getLo())).append("\n");
+        sb.append("    Mid: ").append(ParameterPrinter.print(overdrive.getMid())).append("\n");
+        sb.append("    Hi: ").append(ParameterPrinter.print(overdrive.getHi())).append("\n");
+        sb.append("    InLvl: ").append(ParameterPrinter.print(overdrive.getInLevel())).append("\n");
+        sb.append("    LoCut: ").append(ParameterPrinter.print(overdrive.getLoCut())).append("\n");
+        sb.append("    Feel: ").append(ParameterPrinter.print(overdrive.getFeel())).append("\n");
+        sb.append("    Drive: ").append(ParameterPrinter.print(overdrive.getDrive())).append("\n");
+        sb.append("    Tone: ").append(ParameterPrinter.print(overdrive.getTone())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(overdrive.getLevel())).append("\n");
         return sb.toString();
     }
 

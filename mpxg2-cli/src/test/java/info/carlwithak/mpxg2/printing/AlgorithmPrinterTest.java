@@ -1056,7 +1056,7 @@ public class AlgorithmPrinterTest {
         overdrive.setTone(21);
         overdrive.setLevel(44);
 
-        String expected = "    Lo: +4\n    Mid: +8\n    Hi: 0\n    InLvl: -8\n    LoCut: 0\n    Feel: 32\n    Drive: 40\n    Tone: 21\n    Level: 44\n";
+        String expected = "    Lo: +4dB\n    Mid: +8dB\n    Hi: 0dB\n    InLvl: -8dB\n    LoCut: 0\n    Feel: 32\n    Drive: 40\n    Tone: 21\n    Level: 44dB\n";
         String actual = AlgorithmPrinter.print(overdrive);
 
         assertEquals(expected, actual);

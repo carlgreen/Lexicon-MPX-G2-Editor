@@ -6,15 +6,15 @@ Fuzz 2
     I=2=G=1=E=D=C=R=O
   Gain: Overdrive (On)
     Toe Switch: disabled
-    Lo: +11
-    Mid: +10
-    Hi: 0
-    InLvl: 0
+    Lo: +11dB
+    Mid: +10dB
+    Hi: 0dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 32
     Drive: 40
     Tone: 25
-    Level: 46
+    Level: 46dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

@@ -55,15 +55,15 @@ InfiniteEcho
     Vol: 100%
   Gain: Overdrive (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +9
-    Hi: +9
-    InLvl: -10
+    Lo: +10dB
+    Mid: +9dB
+    Hi: 9dB
+    InLvl: -10dB
     LoCut: 9
     Feel: 32
     Drive: 19
     Tone: 25
-    Level: 39
+    Level: 39dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

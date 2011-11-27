@@ -32,14 +32,14 @@ public class OverdriveParserTest {
     public void testParse_PowerChords() {
         byte[] effectParameters = {4, 0, 8, 0, 0, 0, 8, 15, 0, 0, 0, 2, 8, 2, 5, 1, 12, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Overdrive overdrive = OverdriveParser.parse(effectParameters);
-        assertEquals(4, overdrive.getLo());
-        assertEquals(8, overdrive.getMid());
-        assertEquals(0, overdrive.getHi());
-        assertEquals(-8, overdrive.getInLevel());
-        assertEquals(0, overdrive.getLoCut());
-        assertEquals(32, overdrive.getFeel());
-        assertEquals(40, overdrive.getDrive());
-        assertEquals(21, overdrive.getTone());
-        assertEquals(44, overdrive.getLevel());
+        assertEquals(4, (int) overdrive.getLo().getValue());
+        assertEquals(8, (int) overdrive.getMid().getValue());
+        assertEquals(0, (int) overdrive.getHi().getValue());
+        assertEquals(-8, (int) overdrive.getInLevel().getValue());
+        assertEquals(0, (int) overdrive.getLoCut().getValue());
+        assertEquals(32, (int) overdrive.getFeel().getValue());
+        assertEquals(40, (int) overdrive.getDrive().getValue());
+        assertEquals(21, (int) overdrive.getTone().getValue());
+        assertEquals(44, (int) overdrive.getLevel().getValue());
     }
 }

@@ -56,15 +56,15 @@ E Dor/Mix 3
     Level: 0dB
   Gain: Overdrive (Off)
     Toe Switch: disabled
-    Lo: +4
-    Mid: +8
-    Hi: 0
-    InLvl: -8
+    Lo: +4dB
+    Mid: +8dB
+    Hi: 0dB
+    InLvl: -8dB
     LoCut: 0
     Feel: 32
     Drive: 40
     Tone: 21
-    Level: 41
+    Level: 41dB
   Softrow:
     1: Gain Drive
     2: Gain Tone
