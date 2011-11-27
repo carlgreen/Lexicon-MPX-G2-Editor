@@ -38,8 +38,8 @@ public class DelayStereoParserTest {
         assertEquals(20, (int) delayStereo.getMix().getValue());
         assertEquals(0, (int) delayStereo.getLevel().getValue());
         assertEquals(new BeatRate("Time", 2, 4), delayStereo.getTime());
-        assertEquals(20, delayStereo.getFeedback());
+        assertEquals(20, (int) delayStereo.getFeedback().getValue());
         assertEquals(3, delayStereo.getInsert());
-        assertFalse(delayStereo.isClear());
+        assertFalse(delayStereo.isClear().getValue());
     }
 }
