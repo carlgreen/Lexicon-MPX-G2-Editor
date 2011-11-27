@@ -34,7 +34,7 @@ public class CrossoverParserTest {
         Crossover crossover = CrossoverParser.parse(effectParameters);
         assertEquals(100, (int) crossover.getMix().getValue());
         assertEquals(0, (int) crossover.getLevel().getValue());
-        assertEquals(3000, crossover.getFc());
-        assertEquals(4, crossover.getBalance());
+        assertEquals(3000, (int) crossover.getFc().getValue());
+        assertEquals(4, (int) crossover.getBalance().getValue());
     }
 }

@@ -57,16 +57,16 @@ public class Crossover extends Eq {
         return parameter;
     }
 
-    public int getFc() {
-        return fc.getValue();
+    public GenericValue<Integer> getFc() {
+        return fc;
     }
 
     public void setFc(int fc) {
         this.fc.setValue(fc);
     }
 
-    public int getBalance() {
-        return balance.getValue();
+    public GenericValue<Integer> getBalance() {
+        return balance;
     }
 
     public void setBalance(int balance) {

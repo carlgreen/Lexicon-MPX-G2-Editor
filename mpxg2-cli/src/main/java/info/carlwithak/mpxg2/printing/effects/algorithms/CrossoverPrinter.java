@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.signInt;
-
 /**
  *
  * @author Carl Green
@@ -36,8 +34,8 @@ public class CrossoverPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(crossover.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(crossover.getLevel())).append("\n");
-        sb.append("    Fc: ").append(crossover.getFc()).append("Hz\n");
-        sb.append("    Bal: ").append(signInt(crossover.getBalance())).append("\n");
+        sb.append("    Fc: ").append(ParameterPrinter.print(crossover.getFc())).append("\n");
+        sb.append("    Bal: ").append(ParameterPrinter.print(crossover.getBalance())).append("\n");
         return sb.toString();
     }
 
