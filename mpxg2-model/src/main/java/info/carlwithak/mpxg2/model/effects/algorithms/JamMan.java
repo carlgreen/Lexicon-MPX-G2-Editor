@@ -78,16 +78,16 @@ public class JamMan extends Delay {
         return parameter;
     }
 
-    public int getSize() {
-        return size.getValue();
+    public GenericValue<Integer> getSize() {
+        return size;
     }
 
     public void setSize(int size) {
         this.size.setValue(size);
     }
 
-    public int getFeedback() {
-        return feedback.getValue();
+    public GenericValue<Integer> getFeedback() {
+        return feedback;
     }
 
     public void setFeedback(int feedback) {
@@ -102,40 +102,40 @@ public class JamMan extends Delay {
         this.insert = insert;
     }
 
-    public boolean isClear() {
-        return clear.getValue();
+    public GenericValue<Boolean> isClear() {
+        return clear;
     }
 
     public void setClear(boolean clear) {
         this.clear.setValue(clear);
     }
 
-    public boolean isLayer() {
-        return layer.getValue();
+    public GenericValue<Boolean> isLayer() {
+        return layer;
     }
 
     public void setLayer(boolean layer) {
         this.layer.setValue(layer);
     }
 
-    public boolean isReplace() {
-        return replace.getValue();
+    public GenericValue<Boolean> isReplace() {
+        return replace;
     }
 
     public void setReplace(boolean replace) {
         this.replace.setValue(replace);
     }
 
-    public boolean isDelay() {
-        return delay.getValue();
+    public GenericValue<Boolean> isDelay() {
+        return delay;
     }
 
     public void setDelay(boolean delay) {
         this.delay.setValue(delay);
     }
 
-    public boolean isMute() {
-        return mute.getValue();
+    public GenericValue<Boolean> isMute() {
+        return mute;
     }
 
     public void setMute(boolean mute) {

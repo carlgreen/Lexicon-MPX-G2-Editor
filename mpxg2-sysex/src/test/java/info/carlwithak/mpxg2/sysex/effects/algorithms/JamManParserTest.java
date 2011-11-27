@@ -35,13 +35,13 @@ public class JamManParserTest {
         JamMan jamMan = JamManParser.parse(effectParameters);
         assertEquals(100, (int) jamMan.getMix().getValue());
         assertEquals(0, (int) jamMan.getLevel().getValue());
-        assertEquals(250, jamMan.getSize());
-        assertEquals(0, jamMan.getFeedback());
+        assertEquals(250, (int) jamMan.getSize().getValue());
+        assertEquals(0, (int) jamMan.getFeedback().getValue());
         assertEquals(3, jamMan.getInsert());
-        assertFalse(jamMan.isClear());
-        assertFalse(jamMan.isLayer());
-        assertFalse(jamMan.isReplace());
-        assertFalse(jamMan.isDelay());
-        assertFalse(jamMan.isMute());
+        assertFalse(jamMan.isClear().getValue());
+        assertFalse(jamMan.isLayer().getValue());
+        assertFalse(jamMan.isReplace().getValue());
+        assertFalse(jamMan.isDelay().getValue());
+        assertFalse(jamMan.isMute().getValue());
     }
 }

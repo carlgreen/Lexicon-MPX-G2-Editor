@@ -23,8 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -38,14 +36,14 @@ public class JamManPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(jamMan.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(jamMan.getLevel())).append("\n");
-        sb.append("    Size: ").append(jamMan.getSize()).append("ms\n");
-        sb.append("    Feedback: ").append(signInt(jamMan.getFeedback())).append("%\n");
+        sb.append("    Size: ").append(ParameterPrinter.print(jamMan.getSize())).append("\n");
+        sb.append("    Feedback: ").append(ParameterPrinter.print(jamMan.getFeedback())).append("\n");
         sb.append("    Insert: ").append(delayInsertToString(jamMan.getInsert())).append("\n");
-        sb.append("    Clear: ").append(onOffToString(jamMan.isClear())).append("\n");
-        sb.append("    Layer: ").append(onOffToString(jamMan.isLayer())).append("\n");
-        sb.append("    Replace: ").append(onOffToString(jamMan.isReplace())).append("\n");
-        sb.append("    Delay: ").append(onOffToString(jamMan.isDelay())).append("\n");
-        sb.append("    Mute: ").append(onOffToString(jamMan.isMute())).append("\n");
+        sb.append("    Clear: ").append(ParameterPrinter.print(jamMan.isClear())).append("\n");
+        sb.append("    Layer: ").append(ParameterPrinter.print(jamMan.isLayer())).append("\n");
+        sb.append("    Replace: ").append(ParameterPrinter.print(jamMan.isReplace())).append("\n");
+        sb.append("    Delay: ").append(ParameterPrinter.print(jamMan.isDelay())).append("\n");
+        sb.append("    Mute: ").append(ParameterPrinter.print(jamMan.isMute())).append("\n");
         return sb.toString();
     }
 
