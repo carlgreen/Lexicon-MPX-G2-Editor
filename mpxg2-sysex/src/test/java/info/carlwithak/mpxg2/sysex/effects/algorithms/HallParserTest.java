@@ -35,15 +35,15 @@ public class HallParserTest {
         Hall hall = HallParser.parse(effectParameters);
         assertEquals(20, (int) hall.getMix().getValue());
         assertEquals(0, (int) hall.getLevel().getValue());
-        assertEquals(53.0, hall.getSize(), 0.01);
-        assertTrue(hall.isLink());
-        assertEquals(80, hall.getDiff());
-        assertEquals(25, hall.getPreDelay());
-        assertEquals(5, hall.getBass()); // 1.2X is number 5 in list
-        assertEquals(41, hall.getDecay()); // 1.67s is number 41 in list
-        assertEquals(15, hall.getXovr()); // 818 is number 15 in list
-        assertEquals(31, hall.getRtHC()); // 7.9k is number 31 in list for this size
-        assertEquals(110, hall.getShape());
-        assertEquals(125, hall.getSpred()); // 89 is number 125 in list for this size
+        assertEquals(53.0, hall.getSize().getValue(), 0.01);
+        assertTrue(hall.isLink().getValue());
+        assertEquals(80, (int) hall.getDiff().getValue());
+        assertEquals(25, (int) hall.getPreDelay().getValue());
+        assertEquals(5, (int) hall.getBass().getValue()); // 1.2X is number 5 in list
+        assertEquals(41, (int) hall.getDecay().getValue()); // 1.67s is number 41 in list
+        assertEquals(15, (int) hall.getXovr().getValue()); // 818 is number 15 in list
+        assertEquals(31, (int) hall.getRtHC().getValue()); // 7.9k is number 31 in list for this size
+        assertEquals(110, (int) hall.getShape().getValue());
+        assertEquals(125, (int) hall.getSpred().getValue()); // 89 is number 125 in list for this size
     }
 }

@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
@@ -41,16 +40,16 @@ public class HallPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(hall.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(hall.getLevel())).append("\n");
-        sb.append("    Size: ").append(hall.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToString(hall.isLink())).append("\n");
-        sb.append("    Diff: ").append(hall.getDiff()).append("%\n");
-        sb.append("    Pre Delay: ").append(hall.getPreDelay()).append("ms\n");
-        sb.append("    Bass: ").append(reverbBassToString(hall.getBass())).append("X\n");
-        sb.append("    Decay: ").append(reverbDecayToString(hall.isLink(), hall.getSize(), hall.getDecay())).append("s\n");
-        sb.append("    Xovr: ").append(reverbXovrToString(hall.getXovr())).append("\n");
-        sb.append("    Rt HC: ").append(reverbRtHCToString(hall.getRtHC())).append("\n");
-        sb.append("    Shape: ").append(hall.getShape()).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(hall.isLink(), hall.getSize(), hall.getSpred())).append("\n");
+        sb.append("    Size: ").append(ParameterPrinter.print(hall.getSize())).append("\n");
+        sb.append("    Link: ").append(ParameterPrinter.print(hall.isLink())).append("\n");
+        sb.append("    Diff: ").append(ParameterPrinter.print(hall.getDiff())).append("\n");
+        sb.append("    Pre Delay: ").append(ParameterPrinter.print(hall.getPreDelay())).append("\n");
+        sb.append("    Bass: ").append(reverbBassToString(hall.getBass().getValue())).append("X\n");
+        sb.append("    Decay: ").append(reverbDecayToString(hall.isLink().getValue(), hall.getSize().getValue(), hall.getDecay().getValue())).append("s\n");
+        sb.append("    Xovr: ").append(reverbXovrToString(hall.getXovr().getValue())).append("\n");
+        sb.append("    Rt HC: ").append(reverbRtHCToString(hall.getRtHC().getValue())).append("\n");
+        sb.append("    Shape: ").append(ParameterPrinter.print(hall.getShape())).append("\n");
+        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(hall.isLink().getValue(), hall.getSize().getValue(), hall.getSpred().getValue())).append("\n");
         return sb.toString();
     }
 }
