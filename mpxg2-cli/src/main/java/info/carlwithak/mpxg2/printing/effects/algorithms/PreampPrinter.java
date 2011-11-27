@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,20 +29,20 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class PreampPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Preamp preamp = (Preamp) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(signInt(preamp.getLo())).append("\n");
-        sb.append("    Mid: ").append(signInt(preamp.getMid())).append("\n");
-        sb.append("    Hi: ").append(preamp.getHi()).append("\n");
-        sb.append("    InLvl: ").append(preamp.getInLevel()).append("\n");
-        sb.append("    LoCut: ").append(preamp.getLoCut()).append("\n");
-        sb.append("    Feel: ").append(preamp.getFeel()).append("\n");
-        sb.append("    Drive: ").append(preamp.getDrive()).append("\n");
-        sb.append("    Tone: ").append(preamp.getTone()).append("\n");
-        sb.append("    Bass: ").append(signInt(preamp.getBass())).append("\n");
-        sb.append("    Trebl: ").append(signInt(preamp.getTreble())).append("\n");
-        sb.append("    Level: ").append(preamp.getLevel()).append("\n");
+        sb.append("    Lo: ").append(ParameterPrinter.print(preamp.getLo())).append("\n");
+        sb.append("    Mid: ").append(ParameterPrinter.print(preamp.getMid())).append("\n");
+        sb.append("    Hi: ").append(ParameterPrinter.print(preamp.getHi())).append("\n");
+        sb.append("    InLvl: ").append(ParameterPrinter.print(preamp.getInLevel())).append("\n");
+        sb.append("    LoCut: ").append(ParameterPrinter.print(preamp.getLoCut())).append("\n");
+        sb.append("    Feel: ").append(ParameterPrinter.print(preamp.getFeel())).append("\n");
+        sb.append("    Drive: ").append(ParameterPrinter.print(preamp.getDrive())).append("\n");
+        sb.append("    Tone: ").append(ParameterPrinter.print(preamp.getTone())).append("\n");
+        sb.append("    Bass: ").append(ParameterPrinter.print(preamp.getBass())).append("\n");
+        sb.append("    Trebl: ").append(ParameterPrinter.print(preamp.getTreble())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(preamp.getLevel())).append("\n");
         return sb.toString();
     }
 

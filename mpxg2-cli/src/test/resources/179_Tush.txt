@@ -25,17 +25,17 @@ Tush
     Rt HC: 12.8k
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +15
-    Hi: 5
-    InLvl: 0
+    Lo: +10dB
+    Mid: +15dB
+    Hi: 5dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 25
     Tone: 20
-    Bass: +20
-    Trebl: +10
-    Level: 47
+    Bass: +20dB
+    Trebl: +10dB
+    Level: 47dB
   Softrow:
     1: Gain InLvL
     2: Gain Feel

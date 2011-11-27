@@ -25,17 +25,17 @@ BritishStack
     Rt HC: 12.8k
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +5
-    Mid: +10
-    Hi: 5
-    InLvl: 0
+    Lo: +5dB
+    Mid: +10dB
+    Hi: 5dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 34
     Tone: 20
-    Bass: +15
-    Trebl: +5
-    Level: 50
+    Bass: +15dB
+    Trebl: +5dB
+    Level: 50dB
   Softrow:
     1: Gain LoCut
     2: Gain Feel

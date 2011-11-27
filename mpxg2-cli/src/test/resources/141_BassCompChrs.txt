@@ -27,17 +27,17 @@ BassCompChrs
     Res2: -15
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +20
-    Mid: +10
-    Hi: 10
-    InLvl: -30
+    Lo: +20dB
+    Mid: +10dB
+    Hi: 10dB
+    InLvl: -30dB
     LoCut: 2
     Feel: 32
     Drive: 20
     Tone: 20
-    Bass: +20
-    Trebl: +12
-    Level: 45
+    Bass: +20dB
+    Trebl: +12dB
+    Level: 45dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

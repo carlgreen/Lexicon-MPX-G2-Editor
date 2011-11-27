@@ -58,17 +58,17 @@ Big Blue
     Level: 0dB
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +5
-    Mid: +10
-    Hi: 15
-    InLvl: 0
+    Lo: +5dB
+    Mid: +10dB
+    Hi: 15dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 30
     Tone: 17
-    Bass: +25
-    Trebl: +8
-    Level: 47
+    Bass: +25dB
+    Trebl: +8dB
+    Level: 47dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

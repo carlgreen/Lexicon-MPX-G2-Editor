@@ -58,17 +58,17 @@ Boston...
     Level: 0dB
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +20
-    Hi: 10
-    InLvl: 0
+    Lo: +10dB
+    Mid: +20dB
+    Hi: 10dB
+    InLvl: 0dB
     LoCut: 10
     Feel: 0
     Drive: 30
     Tone: 17
-    Bass: +25
-    Trebl: +10
-    Level: 45
+    Bass: +25dB
+    Trebl: +10dB
+    Level: 45dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

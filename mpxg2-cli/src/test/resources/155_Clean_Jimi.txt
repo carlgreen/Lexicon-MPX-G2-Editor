@@ -33,17 +33,17 @@ Clean Jimi
     Spred: 73
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: -20
-    Hi: 25
-    InLvl: -15
+    Lo: +10dB
+    Mid: -20dB
+    Hi: 25dB
+    InLvl: -15dB
     LoCut: 0
     Feel: 32
     Drive: 25
     Tone: 15
-    Bass: +15
-    Trebl: +24
-    Level: 48
+    Bass: +15dB
+    Trebl: +24dB
+    Level: 48dB
   Softrow:
     2: Gain Tone
     3: Gain Bass

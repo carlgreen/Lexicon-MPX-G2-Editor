@@ -34,17 +34,17 @@ Blow By...
     Rt HC: 12.8k
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +12
-    Mid: +5
-    Hi: 12
-    InLvl: -8
+    Lo: +12dB
+    Mid: +5dB
+    Hi: 12dB
+    InLvl: -8dB
     LoCut: 0
     Feel: 32
     Drive: 31
     Tone: 25
-    Bass: +25
-    Trebl: +9
-    Level: 45
+    Bass: +25dB
+    Trebl: +9dB
+    Level: 45dB
   Softrow:
     1: Gain Feel
     2: Gain Drive

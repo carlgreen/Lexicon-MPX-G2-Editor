@@ -51,17 +51,17 @@ Metal Stack
     Mode2: Band
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +3
-    Mid: +10
-    Hi: 30
-    InLvl: 0
+    Lo: +3dB
+    Mid: +10dB
+    Hi: 30dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 35
     Tone: 30
-    Bass: +25
-    Trebl: +17
-    Level: 33
+    Bass: +25dB
+    Trebl: +17dB
+    Level: 33dB
   Softrow:
     2: Gain Tone
     3: Gain Bass

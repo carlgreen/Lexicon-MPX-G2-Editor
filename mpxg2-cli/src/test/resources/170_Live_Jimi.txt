@@ -42,17 +42,17 @@ Live Jimi
     Level: 0dB
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +6
-    Mid: 0
-    Hi: 13
-    InLvl: -5
+    Lo: +6dB
+    Mid: 0dB
+    Hi: 13dB
+    InLvl: -5dB
     LoCut: 5
     Feel: 32
     Drive: 35
     Tone: 15
-    Bass: +25
-    Trebl: +17
-    Level: 42
+    Bass: +25dB
+    Trebl: +17dB
+    Level: 42dB
   Softrow:
     1: Gain LoCut
     2: Gain Feel

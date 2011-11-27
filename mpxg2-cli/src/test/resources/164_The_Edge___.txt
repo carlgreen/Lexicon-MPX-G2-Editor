@@ -33,17 +33,17 @@ The Edge...
     Spred: 89
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: -14
-    Hi: 25
-    InLvl: -15
+    Lo: +10dB
+    Mid: -14dB
+    Hi: 25dB
+    InLvl: -15dB
     LoCut: 0
     Feel: 32
     Drive: 30
     Tone: 20
-    Bass: +12
-    Trebl: +20
-    Level: 45
+    Bass: +12dB
+    Trebl: +20dB
+    Level: 45dB
   Softrow:
     9: Delay Mix
     10: Reverb Mix

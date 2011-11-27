@@ -47,17 +47,17 @@ Kiss the Sky
     Level: 0dB
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +8
-    Mid: +2
-    Hi: 10
-    InLvl: 0
+    Lo: +8dB
+    Mid: +2dB
+    Hi: 10dB
+    InLvl: 0dB
     LoCut: 2
     Feel: 32
     Drive: 35
     Tone: 27
-    Bass: +15
-    Trebl: +12
-    Level: 39
+    Bass: +15dB
+    Trebl: +12dB
+    Level: 39dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

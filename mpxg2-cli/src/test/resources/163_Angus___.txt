@@ -17,17 +17,17 @@ Angus...
     Rt HC: 12.8k
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +2
-    Hi: 15
-    InLvl: 0
+    Lo: +10dB
+    Mid: +2dB
+    Hi: 15dB
+    InLvl: 0dB
     LoCut: 5
     Feel: 20
     Drive: 30
     Tone: 17
-    Bass: +15
-    Trebl: +12
-    Level: 45
+    Bass: +15dB
+    Trebl: +12dB
+    Level: 45dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

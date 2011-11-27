@@ -1095,7 +1095,7 @@ public class AlgorithmPrinterTest {
         preamp.setTreble(0);
         preamp.setLevel(45);
 
-        String expected = "    Lo: +7\n    Mid: +3\n    Hi: 0\n    InLvl: -5\n    LoCut: 0\n    Feel: 32\n    Drive: 23\n    Tone: 22\n    Bass: 0\n    Trebl: 0\n    Level: 45\n";
+        String expected = "    Lo: +7dB\n    Mid: +3dB\n    Hi: 0dB\n    InLvl: -5dB\n    LoCut: 0\n    Feel: 32\n    Drive: 23\n    Tone: 22\n    Bass: 0dB\n    Trebl: 0dB\n    Level: 45dB\n";
         String actual = AlgorithmPrinter.print(preamp);
 
         assertEquals(expected, actual);

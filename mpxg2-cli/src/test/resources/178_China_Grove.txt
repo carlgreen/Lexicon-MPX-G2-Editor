@@ -23,17 +23,17 @@ China Grove
     Clear: Off
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +15
-    Mid: 0
-    Hi: 3
-    InLvl: 0
+    Lo: +15dB
+    Mid: 0dB
+    Hi: 3dB
+    InLvl: 0dB
     LoCut: 10
     Feel: 0
     Drive: 35
     Tone: 24
-    Bass: +20
-    Trebl: +10
-    Level: 44
+    Bass: +20dB
+    Trebl: +10dB
+    Level: 44dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

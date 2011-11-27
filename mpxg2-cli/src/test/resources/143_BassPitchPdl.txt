@@ -20,17 +20,17 @@ BassPitchPdl
     Vol-R: 0%
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +5
-    Mid: 0
-    Hi: 10
-    InLvl: 0
+    Lo: +5dB
+    Mid: 0dB
+    Hi: 10dB
+    InLvl: 0dB
     LoCut: 5
     Feel: 0
     Drive: 37
     Tone: 20
-    Bass: +20
-    Trebl: +10
-    Level: 40
+    Bass: +20dB
+    Trebl: +10dB
+    Level: 40dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

@@ -43,17 +43,17 @@ Satch...
     Clear: Off
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +6
-    Mid: +15
-    Hi: 15
-    InLvl: 0
+    Lo: +6dB
+    Mid: +15dB
+    Hi: 15dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 37
     Tone: 20
-    Bass: +15
-    Trebl: +7
-    Level: 44
+    Bass: +15dB
+    Trebl: +7dB
+    Level: 44dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

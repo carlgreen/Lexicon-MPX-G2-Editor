@@ -50,17 +50,17 @@ Blues Club
     Level: 0dB
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +5
-    Hi: 12
-    InLvl: -14
+    Lo: +10dB
+    Mid: +5dB
+    Hi: 12dB
+    InLvl: -14dB
     LoCut: 0
     Feel: 32
     Drive: 22
     Tone: 26
-    Bass: +15
-    Trebl: +9
-    Level: 45
+    Bass: +15dB
+    Trebl: +9dB
+    Level: 45dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

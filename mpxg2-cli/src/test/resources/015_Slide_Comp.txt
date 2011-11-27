@@ -55,17 +55,17 @@ Slide Comp
     Spred: 117
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +4
-    Mid: +9
-    Hi: 12
-    InLvl: -16
+    Lo: +4dB
+    Mid: +9dB
+    Hi: 12dB
+    InLvl: -16dB
     LoCut: 0
     Feel: 30
     Drive: 14
     Tone: 26
-    Bass: +8
-    Trebl: +3
-    Level: 41
+    Bass: +8dB
+    Trebl: +3dB
+    Level: 41dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

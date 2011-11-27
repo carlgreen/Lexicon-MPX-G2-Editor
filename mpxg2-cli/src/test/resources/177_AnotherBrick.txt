@@ -48,17 +48,17 @@ AnotherBrick
     Level: 0dB
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +1
-    Mid: +5
-    Hi: 12
-    InLvl: -9
+    Lo: +1dB
+    Mid: +5dB
+    Hi: 12dB
+    InLvl: -9dB
     LoCut: 0
     Feel: 32
     Drive: 22
     Tone: 26
-    Bass: +15
-    Trebl: +9
-    Level: 51
+    Bass: +15dB
+    Trebl: +9dB
+    Level: 51dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

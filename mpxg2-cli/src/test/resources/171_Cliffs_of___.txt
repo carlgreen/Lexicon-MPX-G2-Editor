@@ -54,17 +54,17 @@ Cliffs of...
     Spred: 95
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +5
-    Hi: 10
-    InLvl: 0
+    Lo: +10dB
+    Mid: +5dB
+    Hi: 10dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 28
     Tone: 15
-    Bass: +25
-    Trebl: +12
-    Level: 45
+    Bass: +25dB
+    Trebl: +12dB
+    Level: 45dB
   Softrow:
     1: Gain LoCut
     2: Gain Feel

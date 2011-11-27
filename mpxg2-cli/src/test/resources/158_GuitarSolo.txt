@@ -47,17 +47,17 @@ GuitarSolo
     Level: 0dB
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +5
-    Hi: 10
-    InLvl: 0
+    Lo: +10dB
+    Mid: +5dB
+    Hi: 10dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 28
     Tone: 20
-    Bass: +15
-    Trebl: +8
-    Level: 45
+    Bass: +15dB
+    Trebl: +8dB
+    Level: 45dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

@@ -37,17 +37,17 @@ Carlos S...
     Mode2: Band
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +25
-    Hi: 15
-    InLvl: 0
+    Lo: +10dB
+    Mid: +25dB
+    Hi: 15dB
+    InLvl: 0dB
     LoCut: 20
     Feel: 0
     Drive: 10
     Tone: 35
-    Bass: +15
-    Trebl: +8
-    Level: 45
+    Bass: +15dB
+    Trebl: +8dB
+    Level: 45dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

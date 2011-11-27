@@ -32,16 +32,16 @@ public class PreampParserTest {
     public void testParse_RotaryCab() {
         byte[] effectParameters = {7, 0, 3, 0, 0, 0, 11, 15, 0, 0, 0, 2, 7, 1, 6, 1, 0, 0, 0, 0, 13, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Preamp preamp = PreampParser.parse(effectParameters);
-        assertEquals(7, preamp.getLo());
-        assertEquals(3, preamp.getMid());
-        assertEquals(0, preamp.getHi());
-        assertEquals(-5, preamp.getInLevel());
-        assertEquals(0, preamp.getLoCut());
-        assertEquals(32, preamp.getFeel());
-        assertEquals(23, preamp.getDrive());
-        assertEquals(22, preamp.getTone());
-        assertEquals(0, preamp.getBass());
-        assertEquals(0, preamp.getTreble());
-        assertEquals(45, preamp.getLevel());
+        assertEquals(7, (int) preamp.getLo().getValue());
+        assertEquals(3, (int) preamp.getMid().getValue());
+        assertEquals(0, (int) preamp.getHi().getValue());
+        assertEquals(-5, (int) preamp.getInLevel().getValue());
+        assertEquals(0, (int) preamp.getLoCut().getValue());
+        assertEquals(32, (int) preamp.getFeel().getValue());
+        assertEquals(23, (int) preamp.getDrive().getValue());
+        assertEquals(22, (int) preamp.getTone().getValue());
+        assertEquals(0, (int) preamp.getBass().getValue());
+        assertEquals(0, (int) preamp.getTreble().getValue());
+        assertEquals(45, (int) preamp.getLevel().getValue());
     }
 }

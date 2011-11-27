@@ -41,17 +41,17 @@ New Eddie
     Rt HC: 0.0k
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +10
-    Mid: +11
-    Hi: 15
-    InLvl: 0
+    Lo: +10dB
+    Mid: +11dB
+    Hi: 15dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 35
     Tone: 30
-    Bass: +24
-    Trebl: +7
-    Level: 45
+    Bass: +24dB
+    Trebl: +7dB
+    Level: 45dB
   Softrow:
     1: Gain LoCut
     2: Gain Drive

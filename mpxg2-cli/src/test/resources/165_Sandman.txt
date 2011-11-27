@@ -45,17 +45,17 @@ Sandman
     Mode2: Band
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +3
-    Mid: +10
-    Hi: 30
-    InLvl: 0
+    Lo: +3dB
+    Mid: +10dB
+    Hi: 30dB
+    InLvl: 0dB
     LoCut: 0
     Feel: 0
     Drive: 35
     Tone: 30
-    Bass: +25
-    Trebl: +20
-    Level: 30
+    Bass: +25dB
+    Trebl: +20dB
+    Level: 30dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut

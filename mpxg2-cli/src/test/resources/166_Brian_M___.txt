@@ -33,17 +33,17 @@ Brian M...
     Rt HC: 0.0k
   Gain: Preamp (On)
     Toe Switch: disabled
-    Lo: +5
-    Mid: +10
-    Hi: 4
-    InLvl: -10
+    Lo: +5dB
+    Mid: +10dB
+    Hi: 4dB
+    InLvl: -10dB
     LoCut: 4
     Feel: 0
     Drive: 44
     Tone: 10
-    Bass: +20
-    Trebl: +15
-    Level: 51
+    Bass: +20dB
+    Trebl: +15dB
+    Level: 51dB
   Softrow:
     1: Gain InLvL
     2: Gain LoCut
