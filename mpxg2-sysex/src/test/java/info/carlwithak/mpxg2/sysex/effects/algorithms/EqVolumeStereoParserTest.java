@@ -34,6 +34,6 @@ public class EqVolumeStereoParserTest {
         EqVolumeStereo volumeStereo = EqVolumeStereoParser.parse(effectParameters);
         assertEquals(100, (int) volumeStereo.getMix().getValue());
         assertEquals(0, (int) volumeStereo.getLevel().getValue());
-        assertEquals(0, volumeStereo.getVolume());
+        assertEquals(0, (int) volumeStereo.getVolume().getValue());
     }
 }
