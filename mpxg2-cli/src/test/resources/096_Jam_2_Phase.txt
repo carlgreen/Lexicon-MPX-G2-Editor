@@ -50,14 +50,14 @@ Jam 2 Phase
     Level: 0dB
   Gain: Distortion (Off)
     Toe Switch: disabled
-    Lo: +250
-    Mid: +4
-    Hi: 11
+    Lo: +250dB
+    Mid: +4dB
+    Hi: 11dB
     Drive: 20
     Tone: 21
-    Bass: +3
-    Trebl: +6
-    Level: 40
+    Bass: +3dB
+    Trebl: +6dB
+    Level: 40dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

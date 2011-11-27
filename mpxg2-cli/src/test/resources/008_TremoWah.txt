@@ -54,14 +54,14 @@ TremoWah
     Level: 0dB
   Gain: Distortion (Off)
     Toe Switch: disabled
-    Lo: 0
-    Mid: +4
-    Hi: 11
+    Lo: 0dB
+    Mid: +4dB
+    Hi: 11dB
     Drive: 25
     Tone: 21
-    Bass: +7
-    Trebl: +6
-    Level: 40
+    Bass: +7dB
+    Trebl: +6dB
+    Level: 40dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

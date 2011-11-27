@@ -1074,7 +1074,7 @@ public class AlgorithmPrinterTest {
         distortion.setTreble(6);
         distortion.setLevel(40);
 
-        String expected = "    Lo: 0\n    Mid: +4\n    Hi: 11\n    Drive: 25\n    Tone: 21\n    Bass: +7\n    Trebl: +6\n    Level: 40\n";
+        String expected = "    Lo: 0dB\n    Mid: +4dB\n    Hi: 11dB\n    Drive: 25\n    Tone: 21\n    Bass: +7dB\n    Trebl: +6dB\n    Level: 40dB\n";
         String actual = AlgorithmPrinter.print(distortion);
 
         assertEquals(expected, actual);

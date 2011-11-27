@@ -23,14 +23,14 @@ Octave Fuzz
     Vol: 100%
   Gain: Distortion (Off)
     Toe Switch: off=bypass
-    Lo: 0
-    Mid: 0
-    Hi: 0
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
     Drive: 20
     Tone: 25
-    Bass: 0
-    Trebl: +7
-    Level: 57
+    Bass: 0dB
+    Trebl: +7dB
+    Level: 57dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

@@ -46,14 +46,14 @@ Jam 1 S&H+
     Level: 0dB
   Gain: Distortion (Off)
     Toe Switch: disabled
-    Lo: +5
-    Mid: +4
-    Hi: 11
+    Lo: +5dB
+    Mid: +4dB
+    Hi: 11dB
     Drive: 20
     Tone: 21
-    Bass: +3
-    Trebl: +6
-    Level: 40
+    Bass: +3dB
+    Trebl: +6dB
+    Level: 40dB
   Softrow:
     1: Effect 2 Mix
     2: Effect 2 Fc

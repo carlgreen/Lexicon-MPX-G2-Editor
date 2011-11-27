@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,17 +29,17 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class DistortionPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Distortion distortion = (Distortion) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(signInt(distortion.getLo())).append("\n");
-        sb.append("    Mid: ").append(signInt(distortion.getMid())).append("\n");
-        sb.append("    Hi: ").append(distortion.getHi()).append("\n");
-        sb.append("    Drive: ").append(distortion.getDrive()).append("\n");
-        sb.append("    Tone: ").append(distortion.getTone()).append("\n");
-        sb.append("    Bass: ").append(signInt(distortion.getBass())).append("\n");
-        sb.append("    Trebl: ").append(signInt(distortion.getTreble())).append("\n");
-        sb.append("    Level: ").append(distortion.getLevel()).append("\n");
+        sb.append("    Lo: ").append(ParameterPrinter.print(distortion.getLo())).append("\n");
+        sb.append("    Mid: ").append(ParameterPrinter.print(distortion.getMid())).append("\n");
+        sb.append("    Hi: ").append(ParameterPrinter.print(distortion.getHi())).append("\n");
+        sb.append("    Drive: ").append(ParameterPrinter.print(distortion.getDrive())).append("\n");
+        sb.append("    Tone: ").append(ParameterPrinter.print(distortion.getTone())).append("\n");
+        sb.append("    Bass: ").append(ParameterPrinter.print(distortion.getBass())).append("\n");
+        sb.append("    Trebl: ").append(ParameterPrinter.print(distortion.getTreble())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(distortion.getLevel())).append("\n");
         return sb.toString();
     }
 

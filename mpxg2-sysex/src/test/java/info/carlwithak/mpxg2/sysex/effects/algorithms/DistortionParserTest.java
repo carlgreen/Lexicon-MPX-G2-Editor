@@ -32,13 +32,13 @@ public class DistortionParserTest {
     public void testParse() {
         byte[] effectParameters = {0, 0, 4, 0, 11, 0, 9, 1, 5, 1, 7, 0, 6, 0, 8, 2, 14, 2, 12, 0, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Distortion distortion = DistortionParser.parse(effectParameters);
-        assertEquals(0, distortion.getLo());
-        assertEquals(4, distortion.getMid());
-        assertEquals(11, distortion.getHi());
-        assertEquals(25, distortion.getDrive());
-        assertEquals(21, distortion.getTone());
-        assertEquals(7, distortion.getBass());
-        assertEquals(6, distortion.getTreble());
-        assertEquals(40, distortion.getLevel());
+        assertEquals(0, (int) distortion.getLo().getValue());
+        assertEquals(4, (int) distortion.getMid().getValue());
+        assertEquals(11, (int) distortion.getHi().getValue());
+        assertEquals(25, (int) distortion.getDrive().getValue());
+        assertEquals(21, (int) distortion.getTone().getValue());
+        assertEquals(7, (int) distortion.getBass().getValue());
+        assertEquals(6, (int) distortion.getTreble().getValue());
+        assertEquals(40, (int) distortion.getLevel().getValue());
     }
 }

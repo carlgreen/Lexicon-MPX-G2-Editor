@@ -6,14 +6,14 @@ Dist Lead
     I=2=1=E=C=D=R=G=O
   Gain: Distortion (On)
     Toe Switch: disabled
-    Lo: +5
-    Mid: +4
-    Hi: 11
+    Lo: +5dB
+    Mid: +4dB
+    Hi: 11dB
     Drive: 40
     Tone: 10
-    Bass: +5
-    Trebl: +5
-    Level: 37
+    Bass: +5dB
+    Trebl: +5dB
+    Level: 37dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

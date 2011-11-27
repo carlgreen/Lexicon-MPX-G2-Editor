@@ -6,14 +6,14 @@ Dist Boost
     I=2=G=1=E=D=C=R=O
   Gain: Distortion (On)
     Toe Switch: disabled
-    Lo: 0
-    Mid: +4
-    Hi: 11
+    Lo: 0dB
+    Mid: +4dB
+    Hi: 11dB
     Drive: 20
     Tone: 21
-    Bass: +3
-    Trebl: +6
-    Level: 50
+    Bass: +3dB
+    Trebl: +6dB
+    Level: 50dB
   Softrow:
     1: Gain Drive
     2: Gain Tone
