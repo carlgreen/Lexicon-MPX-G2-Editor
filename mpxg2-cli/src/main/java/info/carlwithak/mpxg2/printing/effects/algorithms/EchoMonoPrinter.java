@@ -23,8 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -39,10 +37,10 @@ public class EchoMonoPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(echoMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(echoMono.getLevel())).append("\n");
         sb.append("    Time: ").append(ParameterPrinter.print(echoMono.getTime())).append("\n");
-        sb.append("    Feedback: ").append(signInt(echoMono.getFeedback())).append("%\n");
+        sb.append("    Feedback: ").append(ParameterPrinter.print(echoMono.getFeedback())).append("\n");
         sb.append("    Insert: ").append(delayInsertToString(echoMono.getInsert())).append("\n");
-        sb.append("    Damp: ").append(echoMono.getDamp()).append("%\n");
-        sb.append("    Clear: ").append(onOffToString(echoMono.isClear())).append("\n");
+        sb.append("    Damp: ").append(ParameterPrinter.print(echoMono.getDamp())).append("\n");
+        sb.append("    Clear: ").append(ParameterPrinter.print(echoMono.isClear())).append("\n");
         return sb.toString();
     }
 

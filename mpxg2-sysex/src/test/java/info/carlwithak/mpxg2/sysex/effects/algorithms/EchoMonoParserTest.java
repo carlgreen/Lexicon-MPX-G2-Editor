@@ -38,9 +38,9 @@ public class EchoMonoParserTest {
         assertEquals(6, (int) echoMono.getMix().getValue());
         assertEquals(1, (int) echoMono.getLevel().getValue());
         assertEquals(new BeatRate("Time", 4, 4), echoMono.getTime());
-        assertEquals(-15, echoMono.getFeedback());
+        assertEquals(-15, (int) echoMono.getFeedback().getValue());
         assertEquals(3, echoMono.getInsert());
-        assertEquals(20, echoMono.getDamp());
-        assertFalse(echoMono.isClear());
+        assertEquals(20, (int) echoMono.getDamp().getValue());
+        assertFalse(echoMono.isClear().getValue());
     }
 }
