@@ -65,32 +65,32 @@ public class OneBandMono extends Eq {
         return parameter;
     }
 
-    public int getGain() {
-        return gain.getValue();
+    public GenericValue<Integer> getGain() {
+        return gain;
     }
 
     public void setGain(final int gain) {
         this.gain.setValue(gain);
     }
 
-    public int getFc() {
-        return fc.getValue();
+    public GenericValue<Integer> getFc() {
+        return fc;
     }
 
     public void setFc(final int fc) {
         this.fc.setValue(fc);
     }
 
-    public double getQ() {
-        return q.getValue();
+    public GenericValue<Double> getQ() {
+        return q;
     }
 
     public void setQ(final double q) {
         this.q.setValue(q);
     }
 
-    public int getMode() {
-        return mode.getValue();
+    public GenericValue<Integer> getMode() {
+        return mode;
     }
 
     public void setMode(final int mode) {

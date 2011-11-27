@@ -23,8 +23,8 @@ Env Wah
     Toe Switch: disabled
     Mix: 100%
     Level: +6dB
-    Gain: +23
-    Fc: 500
+    Gain: +23dB
+    Fc: 500Hz
     Q: 1.5
     Mode: Band
   Softrow:

@@ -47,8 +47,8 @@ OctaWah
     Toe Switch: off=bypass
     Mix: 100%
     Level: 0dB
-    Gain: +9
-    Fc: 393
+    Gain: +9dB
+    Fc: 393Hz
     Q: 0.1
     Mode: LShlf
   Gain: Screamer (Off)

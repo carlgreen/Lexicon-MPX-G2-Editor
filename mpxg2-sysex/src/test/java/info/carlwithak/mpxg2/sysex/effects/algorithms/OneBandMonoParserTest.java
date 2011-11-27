@@ -34,9 +34,9 @@ public class OneBandMonoParserTest {
         OneBandMono oneBandMono = OneBandMonoParser.parse(effectParameters);
         assertEquals(100, (int) oneBandMono.getMix().getValue());
         assertEquals(0, (int) oneBandMono.getLevel().getValue());
-        assertEquals(9, oneBandMono.getGain());
-        assertEquals(393, oneBandMono.getFc());
-        assertEquals(0.1, oneBandMono.getQ(), 0.01);
-        assertEquals(0, oneBandMono.getMode());
+        assertEquals(9, (int) oneBandMono.getGain().getValue());
+        assertEquals(393, (int) oneBandMono.getFc().getValue());
+        assertEquals(0.1, oneBandMono.getQ().getValue(), 0.01);
+        assertEquals(0, (int) oneBandMono.getMode().getValue());
     }
 }

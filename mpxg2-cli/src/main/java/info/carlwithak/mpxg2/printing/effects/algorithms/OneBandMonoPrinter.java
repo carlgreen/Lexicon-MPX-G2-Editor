@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.eqModeToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -37,10 +36,10 @@ public class OneBandMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(oneBandMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(oneBandMono.getLevel())).append("\n");
-        sb.append("    Gain: ").append(signInt(oneBandMono.getGain())).append("\n");
-        sb.append("    Fc: ").append(oneBandMono.getFc()).append("\n");
-        sb.append("    Q: ").append(oneBandMono.getQ()).append("\n");
-        sb.append("    Mode: ").append(eqModeToString(oneBandMono.getMode())).append("\n");
+        sb.append("    Gain: ").append(ParameterPrinter.print(oneBandMono.getGain())).append("\n");
+        sb.append("    Fc: ").append(ParameterPrinter.print(oneBandMono.getFc())).append("\n");
+        sb.append("    Q: ").append(ParameterPrinter.print(oneBandMono.getQ())).append("\n");
+        sb.append("    Mode: ").append(eqModeToString(oneBandMono.getMode().getValue())).append("\n");
         return sb.toString();
     }
 

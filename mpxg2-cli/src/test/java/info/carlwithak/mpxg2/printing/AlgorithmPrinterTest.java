@@ -885,7 +885,7 @@ public class AlgorithmPrinterTest {
         oneBandMono.setQ(0.1);
         oneBandMono.setMode(0);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: +9\n    Fc: 393\n    Q: 0.1\n    Mode: LShlf\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: +9dB\n    Fc: 393Hz\n    Q: 0.1\n    Mode: LShlf\n";
         String actual = AlgorithmPrinter.print(oneBandMono);
 
         assertEquals(expected, actual);
