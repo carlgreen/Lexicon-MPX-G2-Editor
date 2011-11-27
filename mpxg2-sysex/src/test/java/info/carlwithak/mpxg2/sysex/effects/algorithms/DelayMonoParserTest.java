@@ -38,8 +38,8 @@ public class DelayMonoParserTest {
         assertEquals(10, (int) delayMono.getMix().getValue());
         assertEquals(0, (int) delayMono.getLevel().getValue());
         assertEquals(new BeatRate("Time", 4, 3), delayMono.getTime());
-        assertEquals(10, delayMono.getFeedback());
+        assertEquals(10, (int) delayMono.getFeedback().getValue());
         assertEquals(3, delayMono.getInsert());
-        assertFalse(delayMono.isClear());
+        assertFalse(delayMono.isClear().getValue());
     }
 }

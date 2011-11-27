@@ -71,8 +71,8 @@ public class DelayMono extends Delay {
         this.time = time;
     }
 
-    public int getFeedback() {
-        return feedback.getValue();
+    public GenericValue<Integer> getFeedback() {
+        return feedback;
     }
 
     public void setFeedback(int feedback) {
@@ -87,8 +87,8 @@ public class DelayMono extends Delay {
         this.insert = insert;
     }
 
-    public boolean isClear() {
-        return clear.getValue();
+    public GenericValue<Boolean> isClear() {
+        return clear;
     }
 
     public void setClear(boolean clear) {

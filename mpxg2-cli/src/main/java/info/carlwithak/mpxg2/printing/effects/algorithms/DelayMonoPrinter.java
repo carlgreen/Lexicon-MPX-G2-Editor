@@ -23,8 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -39,9 +37,9 @@ public class DelayMonoPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(delayMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(delayMono.getLevel())).append("\n");
         sb.append("    Time: ").append(ParameterPrinter.print(delayMono.getTime())).append("\n");
-        sb.append("    Feedback: ").append(signInt(delayMono.getFeedback())).append("%\n");
+        sb.append("    Feedback: ").append(ParameterPrinter.print(delayMono.getFeedback())).append("\n");
         sb.append("    Insert: ").append(delayInsertToString(delayMono.getInsert())).append("\n");
-        sb.append("    Clear: ").append(onOffToString(delayMono.isClear())).append("\n");
+        sb.append("    Clear: ").append(ParameterPrinter.print(delayMono.isClear())).append("\n");
         return sb.toString();
     }
 }
