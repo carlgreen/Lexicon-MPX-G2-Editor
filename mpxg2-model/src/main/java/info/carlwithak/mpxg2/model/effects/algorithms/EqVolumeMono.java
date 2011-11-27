@@ -53,8 +53,8 @@ public class EqVolumeMono extends Eq {
         return parameter;
     }
 
-    public int getVolume() {
-        return volume.getValue();
+    public GenericValue<Integer> getVolume() {
+        return volume;
     }
 
     public void setVolume(int volume) {
