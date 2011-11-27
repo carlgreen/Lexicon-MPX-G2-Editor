@@ -77,56 +77,56 @@ public class Ambience extends Reverb {
         return parameter;
     }
 
-    public double getSize() {
-        return size.getValue();
+    public GenericValue<Double> getSize() {
+        return size;
     }
 
     public void setSize(double size) {
         this.size.setValue(size);
     }
 
-    public boolean isLink() {
-        return link.getValue();
+    public GenericValue<Boolean> isLink() {
+        return link;
     }
 
     public void setLink(boolean link) {
         this.link.setValue(link);
     }
 
-    public int getDiff() {
-        return diff.getValue();
+    public GenericValue<Integer> getDiff() {
+        return diff;
     }
 
     public void setDiff(int diff) {
         this.diff.setValue(diff);
     }
 
-    public int getPreDelay() {
-        return preDelay.getValue();
+    public GenericValue<Integer> getPreDelay() {
+        return preDelay;
     }
 
     public void setPreDelay(int preDelay) {
         this.preDelay.setValue(preDelay);
     }
 
-    public int getDelayTime() {
-        return delayTime.getValue();
+    public GenericValue<Integer> getDelayTime() {
+        return delayTime;
     }
 
     public void setDelayTime(int delayTime) {
         this.delayTime.setValue(delayTime);
     }
 
-    public int getDelayLevel() {
-        return delayLevel.getValue();
+    public GenericValue<Integer> getDelayLevel() {
+        return delayLevel;
     }
 
     public void setDelayLevel(int delayLevel) {
         this.delayLevel.setValue(delayLevel);
     }
 
-    public int getRtHC() {
-        return rtHC.getValue();
+    public GenericValue<Integer> getRtHC() {
+        return rtHC;
     }
 
     public void setRtHC(int rtHC) {

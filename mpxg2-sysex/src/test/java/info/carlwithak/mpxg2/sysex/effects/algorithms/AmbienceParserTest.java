@@ -35,12 +35,12 @@ public class AmbienceParserTest {
         Ambience ambience = AmbienceParser.parse(effectParameters);
         assertEquals(18, (int) ambience.getMix().getValue());
         assertEquals(0, (int) ambience.getLevel().getValue());
-        assertEquals(24.5, ambience.getSize(), 0.01);
-        assertTrue(ambience.isLink());
-        assertEquals(60, ambience.getDiff());
-        assertEquals(7, ambience.getPreDelay());
-        assertEquals(51, ambience.getDelayTime()); // 1.41s is number 51 in list
-        assertEquals(0, ambience.getDelayLevel());
-        assertEquals(12, ambience.getRtHC()); // 12.8k is number 12 in list
+        assertEquals(24.5, ambience.getSize().getValue(), 0.01);
+        assertTrue(ambience.isLink().getValue());
+        assertEquals(60, (int) ambience.getDiff().getValue());
+        assertEquals(7, (int) ambience.getPreDelay().getValue());
+        assertEquals(51, (int) ambience.getDelayTime().getValue()); // 1.41s is number 51 in list
+        assertEquals(0, (int) ambience.getDelayLevel().getValue());
+        assertEquals(12, (int) ambience.getRtHC().getValue()); // 12.8k is number 12 in list
     }
 }

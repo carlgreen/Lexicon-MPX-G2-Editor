@@ -38,14 +38,14 @@ public class AmbiencePrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(ambience.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(ambience.getLevel())).append("\n");
-        sb.append("    Size: ").append(ambience.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToString(ambience.isLink())).append("\n");
-        sb.append("    Diff: ").append(ambience.getDiff()).append("%\n");
-        sb.append("    Pre Delay: ").append(ambience.getPreDelay()).append("ms\n");
-        sb.append("    Delay Time: ").append(reverbDelayTimeToString(ambience.getDelayTime())).append("s\n");
+        sb.append("    Size: ").append(ParameterPrinter.print(ambience.getSize())).append("\n");
+        sb.append("    Link: ").append(ParameterPrinter.print(ambience.isLink())).append("\n");
+        sb.append("    Diff: ").append(ParameterPrinter.print(ambience.getDiff())).append("\n");
+        sb.append("    Pre Delay: ").append(ParameterPrinter.print(ambience.getPreDelay())).append("\n");
+        sb.append("    Delay Time: ").append(reverbDelayTimeToString(ambience.getDelayTime().getValue())).append("s\n");
         // TODO this is not an On/Off kind of situation
-        sb.append("    Delay Level: ").append(onOffToString(ambience.getDelayLevel())).append("\n");
-        sb.append("    Rt HC: ").append(reverbAmbienceRtHCToString(ambience.getRtHC())).append("k\n");
+        sb.append("    Delay Level: ").append(onOffToString(ambience.getDelayLevel().getValue())).append("\n");
+        sb.append("    Rt HC: ").append(reverbAmbienceRtHCToString(ambience.getRtHC().getValue())).append("k\n");
         return sb.toString();
     }
 
