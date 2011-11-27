@@ -27,12 +27,12 @@ Carlos S...
     Toe Switch: disabled
     Mix: 100%
     Level: -4dB
-    Gain1: +5
-    Fc 1: 7620
+    Gain1: +5dB
+    Fc 1: 7620Hz
     Q 1: 2.2
     Mode1: LShlf
-    Gain2: +8
-    Fc 2: 20
+    Gain2: +8dB
+    Fc 2: 20Hz
     Q 2: 0.1
     Mode2: Band
   Gain: Preamp (On)

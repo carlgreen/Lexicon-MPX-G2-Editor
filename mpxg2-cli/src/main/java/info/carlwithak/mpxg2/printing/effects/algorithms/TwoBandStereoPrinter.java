@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.eqModeToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -37,14 +36,14 @@ public class TwoBandStereoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(twoBandStereo.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(twoBandStereo.getLevel())).append("\n");
-        sb.append("    Gain1: ").append(signInt(twoBandStereo.getGain1())).append("\n");
-        sb.append("    Fc 1: ").append(twoBandStereo.getFc1()).append("\n");
-        sb.append("    Q 1: ").append(twoBandStereo.getQ1()).append("\n");
-        sb.append("    Mode1: ").append(eqModeToString(twoBandStereo.getMode1())).append("\n");
-        sb.append("    Gain2: ").append(signInt(twoBandStereo.getGain2())).append("\n");
-        sb.append("    Fc 2: ").append(twoBandStereo.getFc2()).append("\n");
-        sb.append("    Q 2: ").append(twoBandStereo.getQ2()).append("\n");
-        sb.append("    Mode2: ").append(eqModeToString(twoBandStereo.getMode2())).append("\n");
+        sb.append("    Gain1: ").append(ParameterPrinter.print(twoBandStereo.getGain1())).append("\n");
+        sb.append("    Fc 1: ").append(ParameterPrinter.print(twoBandStereo.getFc1())).append("\n");
+        sb.append("    Q 1: ").append(ParameterPrinter.print(twoBandStereo.getQ1())).append("\n");
+        sb.append("    Mode1: ").append(eqModeToString(twoBandStereo.getMode1().getValue())).append("\n");
+        sb.append("    Gain2: ").append(ParameterPrinter.print(twoBandStereo.getGain2())).append("\n");
+        sb.append("    Fc 2: ").append(ParameterPrinter.print(twoBandStereo.getFc2())).append("\n");
+        sb.append("    Q 2: ").append(ParameterPrinter.print(twoBandStereo.getQ2())).append("\n");
+        sb.append("    Mode2: ").append(eqModeToString(twoBandStereo.getMode2().getValue())).append("\n");
         return sb.toString();
     }
 
