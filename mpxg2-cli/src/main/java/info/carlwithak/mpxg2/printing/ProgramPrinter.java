@@ -408,8 +408,8 @@ public class ProgramPrinter {
             double size;
             if (reverb instanceof Chamber) {
                 Chamber chamber = (Chamber) reverb;
-                link = chamber.isLink();
-                size = chamber.getSize();
+                link = chamber.isLink().getValue();
+                size = chamber.getSize().getValue();
             } else if (reverb instanceof Plate) {
                 Plate plate = (Plate) reverb;
                 link = plate.isLink();

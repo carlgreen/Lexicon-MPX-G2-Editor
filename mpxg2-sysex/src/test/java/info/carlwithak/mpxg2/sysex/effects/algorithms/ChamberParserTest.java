@@ -35,16 +35,16 @@ public class ChamberParserTest {
         Chamber chamber = ChamberParser.parse(effectParameters);
         assertEquals(28, (int) chamber.getMix().getValue());
         assertEquals(0, (int) chamber.getLevel().getValue());
-        assertEquals(24.0, chamber.getSize(), 0.01);
-        assertTrue(chamber.isLink());
-        assertEquals(22, chamber.getDiff());
-        assertEquals(0, chamber.getPreDelay());
-        assertEquals(6, chamber.getBass()); // 1.5X is number 6 in list
-        assertEquals(47, chamber.getDecay()); // 1.05s is number 47 in list for this size
-        assertEquals(16, chamber.getXovr()); // 986 is number 16 in list
-        assertEquals(34, chamber.getRtHC()); // 9.3k is number 34 in list
-        assertEquals(62, chamber.getShape());
-        assertEquals(120, chamber.getSpred()); // 42 is number 120 in list for this size
+        assertEquals(24.0, chamber.getSize().getValue(), 0.01);
+        assertTrue(chamber.isLink().getValue());
+        assertEquals(22, (int) chamber.getDiff().getValue());
+        assertEquals(0, (int) chamber.getPreDelay().getValue());
+        assertEquals(6, (int) chamber.getBass().getValue()); // 1.5X is number 6 in list
+        assertEquals(47, (int) chamber.getDecay().getValue()); // 1.05s is number 47 in list for this size
+        assertEquals(16, (int) chamber.getXovr().getValue()); // 986 is number 16 in list
+        assertEquals(34, (int) chamber.getRtHC().getValue()); // 9.3k is number 34 in list
+        assertEquals(62, (int) chamber.getShape().getValue());
+        assertEquals(120, (int) chamber.getSpred().getValue()); // 42 is number 120 in list for this size
     }
 
     @Test
@@ -53,15 +53,15 @@ public class ChamberParserTest {
         Chamber chamber = ChamberParser.parse(effectParameters);
         assertEquals(35, (int) chamber.getMix().getValue());
         assertEquals(0, (int) chamber.getLevel().getValue());
-        assertEquals(28.0, chamber.getSize(), 0.01);
-        assertTrue(chamber.isLink());
-        assertEquals(90, chamber.getDiff());
-        assertEquals(82, chamber.getPreDelay());
-        assertEquals(5, chamber.getBass()); // 1.2X is number 5 in list
-        assertEquals(35, chamber.getDecay()); // 0.73s is number 35 in list
-        assertEquals(15, chamber.getXovr()); // 818 is number 15 in list
-        assertEquals(36, chamber.getRtHC()); // 10.4k is number 36 in list
-        assertEquals(62, chamber.getShape());
-        assertEquals(120, chamber.getSpred()); // 48 is number 120 in list for this size
+        assertEquals(28.0, chamber.getSize().getValue(), 0.01);
+        assertTrue(chamber.isLink().getValue());
+        assertEquals(90, (int) chamber.getDiff().getValue());
+        assertEquals(82, (int) chamber.getPreDelay().getValue());
+        assertEquals(5, (int) chamber.getBass().getValue()); // 1.2X is number 5 in list
+        assertEquals(35, (int) chamber.getDecay().getValue()); // 0.73s is number 35 in list
+        assertEquals(15, (int) chamber.getXovr().getValue()); // 818 is number 15 in list
+        assertEquals(36, (int) chamber.getRtHC().getValue()); // 10.4k is number 36 in list
+        assertEquals(62, (int) chamber.getShape().getValue());
+        assertEquals(120, (int) chamber.getSpred().getValue()); // 48 is number 120 in list for this size
     }
 }

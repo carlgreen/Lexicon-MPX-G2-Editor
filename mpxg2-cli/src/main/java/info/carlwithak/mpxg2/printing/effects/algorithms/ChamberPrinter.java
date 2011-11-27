@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
@@ -41,16 +40,16 @@ public class ChamberPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(chamber.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(chamber.getLevel())).append("\n");
-        sb.append("    Size: ").append(chamber.getSize()).append("m\n");
-        sb.append("    Link: ").append(onOffToString(chamber.isLink())).append("\n");
-        sb.append("    Diff: ").append(chamber.getDiff()).append("%\n");
-        sb.append("    Pre Delay: ").append(chamber.getPreDelay()).append("ms\n");
-        sb.append("    Bass: ").append(reverbBassToString(chamber.getBass())).append("X\n");
-        sb.append("    Decay: ").append(reverbDecayToString(chamber.isLink(), chamber.getSize(), chamber.getDecay())).append("s\n");
-        sb.append("    Xovr: ").append(reverbXovrToString(chamber.getXovr())).append("\n");
-        sb.append("    Rt HC: ").append(reverbRtHCToString(chamber.getRtHC())).append("\n");
-        sb.append("    Shape: ").append(chamber.getShape()).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(chamber.isLink(), chamber.getSize(), chamber.getSpred())).append("\n");
+        sb.append("    Size: ").append(ParameterPrinter.print(chamber.getSize())).append("\n");
+        sb.append("    Link: ").append(ParameterPrinter.print(chamber.isLink())).append("\n");
+        sb.append("    Diff: ").append(ParameterPrinter.print(chamber.getDiff())).append("\n");
+        sb.append("    Pre Delay: ").append(ParameterPrinter.print(chamber.getPreDelay())).append("\n");
+        sb.append("    Bass: ").append(reverbBassToString(chamber.getBass().getValue())).append("X\n");
+        sb.append("    Decay: ").append(reverbDecayToString(chamber.isLink().getValue(), chamber.getSize().getValue(), chamber.getDecay().getValue())).append("s\n");
+        sb.append("    Xovr: ").append(reverbXovrToString(chamber.getXovr().getValue())).append("\n");
+        sb.append("    Rt HC: ").append(reverbRtHCToString(chamber.getRtHC().getValue())).append("\n");
+        sb.append("    Shape: ").append(ParameterPrinter.print(chamber.getShape())).append("\n");
+        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(chamber.isLink().getValue(), chamber.getSize().getValue(), chamber.getSpred().getValue())).append("\n");
         return sb.toString();
     }
 }
