@@ -40,14 +40,14 @@ public class EchoDualParserTest {
         assertEquals(1, (int) echoDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 4, 4), echoDual.getTime1());
         assertEquals(new BeatRate("Time2", 2, 1), echoDual.getTime2());
-        assertEquals(0, echoDual.getLevel1());
-        assertEquals(0, echoDual.getLevel2());
-        assertEquals(1, echoDual.getFeedback1());
+        assertEquals(0, (int) echoDual.getLevel1().getValue());
+        assertEquals(0, (int) echoDual.getLevel2().getValue());
+        assertEquals(1, (int) echoDual.getFeedback1().getValue());
         assertEquals(3, echoDual.getInsert());
-        assertEquals(1, echoDual.getFeedback2());
-        assertEquals(20, echoDual.getDamp1());
-        assertEquals(20, echoDual.getDamp2());
-        assertFalse(echoDual.isClear());
+        assertEquals(1, (int) echoDual.getFeedback2().getValue());
+        assertEquals(20, (int) echoDual.getDamp1().getValue());
+        assertEquals(20, (int) echoDual.getDamp2().getValue());
+        assertFalse(echoDual.isClear().getValue());
     }
 
     @Test
@@ -58,14 +58,14 @@ public class EchoDualParserTest {
         assertEquals(5, (int) echoDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 1, 1), echoDual.getTime1());
         assertEquals(new BeatRate("Time2", 3, 2), echoDual.getTime2());
-        assertEquals(0, echoDual.getLevel1());
-        assertEquals(0, echoDual.getLevel2());
-        assertEquals(-10, echoDual.getFeedback1());
+        assertEquals(0, (int) echoDual.getLevel1().getValue());
+        assertEquals(0, (int) echoDual.getLevel2().getValue());
+        assertEquals(-10, (int) echoDual.getFeedback1().getValue());
         assertEquals(3, echoDual.getInsert());
-        assertEquals(15, echoDual.getFeedback2());
-        assertEquals(25, echoDual.getDamp1());
-        assertEquals(25, echoDual.getDamp2());
-        assertFalse(echoDual.isClear());
+        assertEquals(15, (int) echoDual.getFeedback2().getValue());
+        assertEquals(25, (int) echoDual.getDamp1().getValue());
+        assertEquals(25, (int) echoDual.getDamp2().getValue());
+        assertFalse(echoDual.isClear().getValue());
     }
 
     @Test
@@ -76,14 +76,14 @@ public class EchoDualParserTest {
         assertEquals(0, (int) echoDual.getLevel().getValue());
         assertEquals(new BeatRate("Time1", 1, 1), echoDual.getTime1());
         assertEquals(new BeatRate("Time2", 4, 3), echoDual.getTime2());
-        assertEquals(0, echoDual.getLevel1());
-        assertEquals(0, echoDual.getLevel2());
-        assertEquals(-10, echoDual.getFeedback1());
+        assertEquals(0, (int) echoDual.getLevel1().getValue());
+        assertEquals(0, (int) echoDual.getLevel2().getValue());
+        assertEquals(-10, (int) echoDual.getFeedback1().getValue());
         assertEquals(3, echoDual.getInsert());
-        assertEquals(-20, echoDual.getFeedback2());
-        assertEquals(20, echoDual.getDamp1());
-        assertEquals(20, echoDual.getDamp2());
-        assertFalse(echoDual.isClear());
+        assertEquals(-20, (int) echoDual.getFeedback2().getValue());
+        assertEquals(20, (int) echoDual.getDamp1().getValue());
+        assertEquals(20, (int) echoDual.getDamp2().getValue());
+        assertFalse(echoDual.isClear().getValue());
     }
 
     @Test
@@ -94,13 +94,13 @@ public class EchoDualParserTest {
         assertEquals(0, (int) echoDual.getLevel().getValue());
         assertEquals(new TapMsRate("Time1", 200), echoDual.getTime1());
         assertEquals(new TapMsRate("Time2", 300), echoDual.getTime2());
-        assertEquals(0, echoDual.getLevel1());
-        assertEquals(0, echoDual.getLevel2());
-        assertEquals(-15, echoDual.getFeedback1());
+        assertEquals(0, (int) echoDual.getLevel1().getValue());
+        assertEquals(0, (int) echoDual.getLevel2().getValue());
+        assertEquals(-15, (int) echoDual.getFeedback1().getValue());
         assertEquals(3, echoDual.getInsert());
-        assertEquals(-20, echoDual.getFeedback2());
-        assertEquals(20, echoDual.getDamp1());
-        assertEquals(20, echoDual.getDamp2());
-        assertFalse(echoDual.isClear());
+        assertEquals(-20, (int) echoDual.getFeedback2().getValue());
+        assertEquals(20, (int) echoDual.getDamp1().getValue());
+        assertEquals(20, (int) echoDual.getDamp2().getValue());
+        assertFalse(echoDual.isClear().getValue());
     }
 }

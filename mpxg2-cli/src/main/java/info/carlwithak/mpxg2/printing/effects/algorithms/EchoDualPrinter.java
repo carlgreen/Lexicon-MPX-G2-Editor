@@ -23,8 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -40,14 +38,14 @@ public class EchoDualPrinter implements Printer {
         sb.append("    Level: ").append(ParameterPrinter.print(echoDual.getLevel())).append("\n");
         sb.append("    Time1: ").append(ParameterPrinter.print(echoDual.getTime1())).append("\n");
         sb.append("    Time2: ").append(ParameterPrinter.print(echoDual.getTime2())).append("\n");
-        sb.append("    Level1: ").append(signInt(echoDual.getLevel1())).append("dB\n");
-        sb.append("    Level2: ").append(signInt(echoDual.getLevel2())).append("dB\n");
-        sb.append("    Feedback1: ").append(signInt(echoDual.getFeedback1())).append("%\n");
+        sb.append("    Level1: ").append(ParameterPrinter.print(echoDual.getLevel1())).append("\n");
+        sb.append("    Level2: ").append(ParameterPrinter.print(echoDual.getLevel2())).append("\n");
+        sb.append("    Feedback1: ").append(ParameterPrinter.print(echoDual.getFeedback1())).append("\n");
         sb.append("    Insert: ").append(delayInsertToString(echoDual.getInsert())).append("\n");
-        sb.append("    Feedback2: ").append(signInt(echoDual.getFeedback2())).append("%\n");
-        sb.append("    Damp1: ").append(echoDual.getDamp1()).append("%\n");
-        sb.append("    Damp2: ").append(echoDual.getDamp2()).append("%\n");
-        sb.append("    Clear: ").append(onOffToString(echoDual.isClear())).append("\n");
+        sb.append("    Feedback2: ").append(ParameterPrinter.print(echoDual.getFeedback2())).append("\n");
+        sb.append("    Damp1: ").append(ParameterPrinter.print(echoDual.getDamp1())).append("\n");
+        sb.append("    Damp2: ").append(ParameterPrinter.print(echoDual.getDamp2())).append("\n");
+        sb.append("    Clear: ").append(ParameterPrinter.print(echoDual.isClear())).append("\n");
         return sb.toString();
     }
 

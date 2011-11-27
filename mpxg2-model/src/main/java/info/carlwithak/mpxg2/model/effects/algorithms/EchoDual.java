@@ -103,24 +103,24 @@ public class EchoDual extends Delay {
         this.time2 = time2;
     }
 
-    public int getLevel1() {
-        return level1.getValue();
+    public GenericValue<Integer> getLevel1() {
+        return level1;
     }
 
     public void setLevel1(int level1) {
         this.level1.setValue(level1);
     }
 
-    public int getLevel2() {
-        return level2.getValue();
+    public GenericValue<Integer> getLevel2() {
+        return level2;
     }
 
     public void setLevel2(int level2) {
         this.level2.setValue(level2);
     }
 
-    public int getFeedback1() {
-        return feedback1.getValue();
+    public GenericValue<Integer> getFeedback1() {
+        return feedback1;
     }
 
     public void setFeedback1(int feedback1) {
@@ -135,32 +135,32 @@ public class EchoDual extends Delay {
         this.insert = insert;
     }
 
-    public int getFeedback2() {
-        return feedback2.getValue();
+    public GenericValue<Integer> getFeedback2() {
+        return feedback2;
     }
 
     public void setFeedback2(int feedback2) {
         this.feedback2.setValue(feedback2);
     }
 
-    public int getDamp1() {
-        return damp1.getValue();
+    public GenericValue<Integer> getDamp1() {
+        return damp1;
     }
 
     public void setDamp1(int damp1) {
         this.damp1.setValue(damp1);
     }
 
-    public int getDamp2() {
-        return damp2.getValue();
+    public GenericValue<Integer> getDamp2() {
+        return damp2;
     }
 
     public void setDamp2(int damp2) {
         this.damp2.setValue(damp2);
     }
 
-    public boolean isClear() {
-        return clear.getValue();
+    public GenericValue<Boolean> isClear() {
+        return clear;
     }
 
     public void setClear(boolean clear) {
