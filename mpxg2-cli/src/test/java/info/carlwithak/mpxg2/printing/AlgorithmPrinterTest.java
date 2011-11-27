@@ -905,7 +905,7 @@ public class AlgorithmPrinterTest {
         twoBandMono.setQ2(0.7);
         twoBandMono.setMode2(2);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -5\n    Fc 1: 200\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: -7\n    Fc 2: 5000\n    Q 2: 0.7\n    Mode2: HShlf\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -5dB\n    Fc 1: 200Hz\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: -7dB\n    Fc 2: 5000Hz\n    Q 2: 0.7\n    Mode2: HShlf\n";
         String actual = AlgorithmPrinter.print(twoBandMono);
 
         assertEquals(expected, actual);

@@ -34,13 +34,13 @@ public class TwoBandMonoParserTest {
         TwoBandMono twoBandMono = TwoBandMonoParser.parse(effectParameters);
         assertEquals(100, (int) twoBandMono.getMix().getValue());
         assertEquals(0, (int) twoBandMono.getLevel().getValue());
-        assertEquals(-5, twoBandMono.getGain1());
-        assertEquals(200, twoBandMono.getFc1());
-        assertEquals(0.7, twoBandMono.getQ1(), 0.01);
-        assertEquals(0, twoBandMono.getMode1()); // LShlf
-        assertEquals(-7, twoBandMono.getGain2());
-        assertEquals(5000, twoBandMono.getFc2());
-        assertEquals(0.7, twoBandMono.getQ2(), 0.01);
-        assertEquals(2, twoBandMono.getMode2()); // HShlf
+        assertEquals(-5, (int) twoBandMono.getGain1().getValue());
+        assertEquals(200, (int) twoBandMono.getFc1().getValue());
+        assertEquals(0.7, twoBandMono.getQ1().getValue(), 0.01);
+        assertEquals(0, (int) twoBandMono.getMode1().getValue()); // LShlf
+        assertEquals(-7, (int) twoBandMono.getGain2().getValue());
+        assertEquals(5000, (int) twoBandMono.getFc2().getValue());
+        assertEquals(0.7, twoBandMono.getQ2().getValue(), 0.01);
+        assertEquals(2, (int) twoBandMono.getMode2().getValue()); // HShlf
     }
 }

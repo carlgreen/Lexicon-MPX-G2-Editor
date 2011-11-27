@@ -34,12 +34,12 @@ Space Echo
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-    Gain1: -5
-    Fc 1: 200
+    Gain1: -5dB
+    Fc 1: 200Hz
     Q 1: 0.7
     Mode1: LShlf
-    Gain2: -7
-    Fc 2: 5000
+    Gain2: -7dB
+    Fc 2: 5000Hz
     Q 2: 0.7
     Mode2: HShlf
   Gain: Tone (Off)

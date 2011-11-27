@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.eqModeToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  *
@@ -37,14 +36,14 @@ public class TwoBandMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(twoBandMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(twoBandMono.getLevel())).append("\n");
-        sb.append("    Gain1: ").append(signInt(twoBandMono.getGain1())).append("\n");
-        sb.append("    Fc 1: ").append(twoBandMono.getFc1()).append("\n");
-        sb.append("    Q 1: ").append(twoBandMono.getQ1()).append("\n");
-        sb.append("    Mode1: ").append(eqModeToString(twoBandMono.getMode1())).append("\n");
-        sb.append("    Gain2: ").append(signInt(twoBandMono.getGain2())).append("\n");
-        sb.append("    Fc 2: ").append(twoBandMono.getFc2()).append("\n");
-        sb.append("    Q 2: ").append(twoBandMono.getQ2()).append("\n");
-        sb.append("    Mode2: ").append(eqModeToString(twoBandMono.getMode2())).append("\n");
+        sb.append("    Gain1: ").append(ParameterPrinter.print(twoBandMono.getGain1())).append("\n");
+        sb.append("    Fc 1: ").append(ParameterPrinter.print(twoBandMono.getFc1())).append("\n");
+        sb.append("    Q 1: ").append(ParameterPrinter.print(twoBandMono.getQ1())).append("\n");
+        sb.append("    Mode1: ").append(eqModeToString(twoBandMono.getMode1().getValue())).append("\n");
+        sb.append("    Gain2: ").append(ParameterPrinter.print(twoBandMono.getGain2())).append("\n");
+        sb.append("    Fc 2: ").append(ParameterPrinter.print(twoBandMono.getFc2())).append("\n");
+        sb.append("    Q 2: ").append(ParameterPrinter.print(twoBandMono.getQ2())).append("\n");
+        sb.append("    Mode2: ").append(eqModeToString(twoBandMono.getMode2().getValue())).append("\n");
         return sb.toString();
     }
 
