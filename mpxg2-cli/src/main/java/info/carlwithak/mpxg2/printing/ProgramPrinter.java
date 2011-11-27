@@ -412,8 +412,8 @@ public class ProgramPrinter {
                 size = chamber.getSize().getValue();
             } else if (reverb instanceof Plate) {
                 Plate plate = (Plate) reverb;
-                link = plate.isLink();
-                size = plate.getSize();
+                link = plate.isLink().getValue();
+                size = plate.getSize().getValue();
             } else {
                 throw new PrintException("Cannot determine reverb decay for class " + reverb.getClass());
             }

@@ -35,16 +35,16 @@ public class PlateParserTest {
         Plate plate = PlateParser.parse(effectParameters);
         assertEquals(100, (int) plate.getMix().getValue());
         assertEquals(6, (int) plate.getLevel().getValue());
-        assertEquals(22.5, plate.getSize(), 0.01);
-        assertTrue(plate.isLink());
-        assertEquals(66, plate.getDiff());
-        assertEquals(169, plate.getPreDelay());
-        assertEquals(5, plate.getBass()); // 1.2X is number 5 in list
-        assertEquals(50, plate.getDecay()); // 1.30s is number 50 in list
-        assertEquals(16, plate.getXovr()); // 986 is number 16 in list
-        assertEquals(45, plate.getRtHC()); // 19.4k is number 45 in list for this size
-        assertEquals(36, plate.getShape());
-        assertEquals(222, plate.getSpred()); // 73 is number 222 in list for this size
+        assertEquals(22.5, plate.getSize().getValue(), 0.01);
+        assertTrue(plate.isLink().getValue());
+        assertEquals(66, (int) plate.getDiff().getValue());
+        assertEquals(169, (int) plate.getPreDelay().getValue());
+        assertEquals(5, (int) plate.getBass().getValue()); // 1.2X is number 5 in list
+        assertEquals(50, (int) plate.getDecay().getValue()); // 1.30s is number 50 in list
+        assertEquals(16, (int) plate.getXovr().getValue()); // 986 is number 16 in list
+        assertEquals(45, (int) plate.getRtHC().getValue()); // 19.4k is number 45 in list for this size
+        assertEquals(36, (int) plate.getShape().getValue());
+        assertEquals(222, (int) plate.getSpred().getValue()); // 73 is number 222 in list for this size
     }
 
     @Test
@@ -53,15 +53,15 @@ public class PlateParserTest {
         Plate plate = PlateParser.parse(effectParameters);
         assertEquals(28, (int) plate.getMix().getValue());
         assertEquals(0, (int) plate.getLevel().getValue());
-        assertEquals(16.5, plate.getSize(), 0.01);
-        assertTrue(plate.isLink());
-        assertEquals(90, plate.getDiff());
-        assertEquals(10, plate.getPreDelay());
-        assertEquals(0, plate.getBass()); // 0.2X is number 0 in list
-        assertEquals(0, plate.getDecay()); // 0.09s is number 0 in list for this size
-        assertEquals(16, plate.getXovr()); // 986 is number 16 in list
-        assertEquals(33, plate.getRtHC()); // 8.8k is number 33 in list
-        assertEquals(58, plate.getShape());
-        assertEquals(254, plate.getSpred()); // 65 is number 254 in list for this size
+        assertEquals(16.5, plate.getSize().getValue(), 0.01);
+        assertTrue(plate.isLink().getValue());
+        assertEquals(90, (int) plate.getDiff().getValue());
+        assertEquals(10, (int) plate.getPreDelay().getValue());
+        assertEquals(0, (int) plate.getBass().getValue()); // 0.2X is number 0 in list
+        assertEquals(0, (int) plate.getDecay().getValue()); // 0.09s is number 0 in list for this size
+        assertEquals(16, (int) plate.getXovr().getValue()); // 986 is number 16 in list
+        assertEquals(33, (int) plate.getRtHC().getValue()); // 8.8k is number 33 in list
+        assertEquals(58, (int) plate.getShape().getValue());
+        assertEquals(254, (int) plate.getSpred().getValue()); // 65 is number 254 in list for this size
     }
 }
