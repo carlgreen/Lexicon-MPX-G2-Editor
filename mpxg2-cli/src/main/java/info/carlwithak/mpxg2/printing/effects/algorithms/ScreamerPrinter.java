@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-
-import static info.carlwithak.mpxg2.printing.Util.signInt;
+import info.carlwithak.mpxg2.printing.ParameterPrinter;
+import info.carlwithak.mpxg2.printing.PrintException;
 
 /**
  *
@@ -29,15 +29,15 @@ import static info.carlwithak.mpxg2.printing.Util.signInt;
 public class ScreamerPrinter implements Printer {
 
     @Override
-    public String print(Object algorithm) {
+    public String print(Object algorithm) throws PrintException {
         Screamer screamer = (Screamer) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(signInt(screamer.getLo())).append("\n");
-        sb.append("    Mid: ").append(signInt(screamer.getMid())).append("\n");
-        sb.append("    Hi: ").append(signInt(screamer.getHi())).append("\n");
-        sb.append("    Drive: ").append(screamer.getDrive()).append("\n");
-        sb.append("    Tone: ").append(screamer.getTone()).append("\n");
-        sb.append("    Level: ").append(screamer.getLevel()).append("\n");
+        sb.append("    Lo: ").append(ParameterPrinter.print(screamer.getLo())).append("\n");
+        sb.append("    Mid: ").append(ParameterPrinter.print(screamer.getMid())).append("\n");
+        sb.append("    Hi: ").append(ParameterPrinter.print(screamer.getHi())).append("\n");
+        sb.append("    Drive: ").append(ParameterPrinter.print(screamer.getDrive())).append("\n");
+        sb.append("    Tone: ").append(ParameterPrinter.print(screamer.getTone())).append("\n");
+        sb.append("    Level: ").append(ParameterPrinter.print(screamer.getLevel())).append("\n");
         return sb.toString();
     }
 

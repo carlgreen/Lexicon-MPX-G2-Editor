@@ -56,12 +56,12 @@ Vybe/Flange
     Level: 0dB
   Gain: Screamer (Off)
     Toe Switch: disabled
-    Lo: 0
-    Mid: +1
-    Hi: 0
+    Lo: 0dB
+    Mid: +1dB
+    Hi: 0dB
     Drive: 29
     Tone: 19
-    Level: 53
+    Level: 53dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

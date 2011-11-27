@@ -53,12 +53,12 @@ OctaWah
     Mode: LShlf
   Gain: Screamer (Off)
     Toe Switch: off=bypass
-    Lo: 0
-    Mid: 0
-    Hi: 0
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
     Drive: 27
     Tone: 21
-    Level: 46
+    Level: 46dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

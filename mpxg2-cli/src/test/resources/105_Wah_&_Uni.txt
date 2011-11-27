@@ -37,12 +37,12 @@ Wah & Uni
     Clear: Off
   Gain: Screamer (Off)
     Toe Switch: disabled
-    Lo: +2
-    Mid: +1
-    Hi: +3
+    Lo: +2dB
+    Mid: +1dB
+    Hi: 3dB
     Drive: 22
     Tone: 25
-    Level: 57
+    Level: 57dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

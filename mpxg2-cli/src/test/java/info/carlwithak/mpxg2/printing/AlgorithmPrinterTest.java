@@ -1037,7 +1037,7 @@ public class AlgorithmPrinterTest {
         screamer.setTone(25);
         screamer.setLevel(57);
 
-        String expected = "    Lo: +2\n    Mid: +1\n    Hi: +3\n    Drive: 22\n    Tone: 25\n    Level: 57\n";
+        String expected = "    Lo: +2dB\n    Mid: +1dB\n    Hi: 3dB\n    Drive: 22\n    Tone: 25\n    Level: 57dB\n";
         String actual = AlgorithmPrinter.print(screamer);
 
         assertEquals(expected, actual);

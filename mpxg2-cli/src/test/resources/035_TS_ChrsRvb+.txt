@@ -62,12 +62,12 @@ TS ChrsRvb+
     Level: +3dB
   Gain: Screamer (On)
     Toe Switch: disabled
-    Lo: 0
-    Mid: 0
-    Hi: 0
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
     Drive: 33
     Tone: 21
-    Level: 55
+    Level: 55dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

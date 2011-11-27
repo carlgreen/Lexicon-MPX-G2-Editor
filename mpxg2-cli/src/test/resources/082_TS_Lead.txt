@@ -6,12 +6,12 @@ TS Lead
     I=1=2=G=E=C=D=R=O
   Gain: Screamer (On)
     Toe Switch: disabled
-    Lo: 0
-    Mid: 0
-    Hi: 0
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
     Drive: 35
     Tone: 5
-    Level: 50
+    Level: 50dB
   Softrow:
     1: Gain Drive
     2: Gain Tone

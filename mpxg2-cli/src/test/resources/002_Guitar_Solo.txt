@@ -49,12 +49,12 @@ Guitar Solo
     Spred: 73
   Gain: Screamer (Off)
     Toe Switch: disabled
-    Lo: +5
-    Mid: 0
-    Hi: 0
+    Lo: +5dB
+    Mid: 0dB
+    Hi: 0dB
     Drive: 40
     Tone: 21
-    Level: 39
+    Level: 39dB
   Softrow:
     1: Gain Drive
     2: Gain Tone
