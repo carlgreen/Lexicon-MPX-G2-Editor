@@ -53,11 +53,11 @@ Acoustifier
     Level: 0dB
   Gain: Tone (On)
     Toe Switch: disabled
-    Lo: +25
-    Mid: -12
-    Hi: +20
-    InLvl: 0
-    Level: 64
+    Lo: +25dB
+    Mid: -12dB
+    Hi: +20dB
+    InLvl: 0dB
+    Level: 64dB
   Softrow:
     1: Gain Level
     4: Chorus Rate1

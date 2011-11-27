@@ -1006,7 +1006,7 @@ public class AlgorithmPrinterTest {
         tone.setInLevel(0);
         tone.setLevel(55);
 
-        String expected = "    Lo: +25\n    Mid: +10\n    Hi: +20\n    InLvl: 0\n    Level: 55\n";
+        String expected = "    Lo: +25dB\n    Mid: +10dB\n    Hi: +20dB\n    InLvl: 0dB\n    Level: 55dB\n";
         String actual = AlgorithmPrinter.print(tone);
 
         assertEquals(expected, actual);

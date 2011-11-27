@@ -45,11 +45,11 @@ Detune+Trem
     Spred: 143
   Gain: Tone (Off)
     Toe Switch: disabled
-    Lo: +6
-    Mid: 0
-    Hi: +6
-    InLvl: 0
-    Level: 64
+    Lo: +6dB
+    Mid: 0dB
+    Hi: +6dB
+    InLvl: 0dB
+    Level: 64dB
   Softrow:
     1: Gain InLvl
     2: Gain Level

@@ -44,11 +44,11 @@ Space Echo
     Mode2: HShlf
   Gain: Tone (Off)
     Toe Switch: disabled
-    Lo: 0
-    Mid: +7
-    Hi: +3
-    InLvl: 0
-    Level: 64
+    Lo: 0dB
+    Mid: +7dB
+    Hi: +3dB
+    InLvl: 0dB
+    Level: 64dB
   Softrow:
     1: Effect 2 Volume
     2: Delay Time

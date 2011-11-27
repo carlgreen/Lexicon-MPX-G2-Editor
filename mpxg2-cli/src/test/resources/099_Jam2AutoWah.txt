@@ -46,11 +46,11 @@ Jam2AutoWah
     Level: 0dB
   Gain: Tone (Off)
     Toe Switch: disabled
-    Lo: 0
-    Mid: 0
-    Hi: 0
-    InLvl: -5
-    Level: 64
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
+    InLvl: -5dB
+    Level: 64dB
   Softrow:
     2: Effect 2 Mix
     3: Effect 2 Bass

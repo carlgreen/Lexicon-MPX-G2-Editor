@@ -53,11 +53,11 @@ Jazzman
     Level: 0dB
   Gain: Tone (On)
     Toe Switch: disabled
-    Lo: +25
-    Mid: -8
-    Hi: +5
-    InLvl: 0
-    Level: 64
+    Lo: +25dB
+    Mid: -8dB
+    Hi: +5dB
+    InLvl: 0dB
+    Level: 64dB
   Softrow:
     1: Gain InLvl
     2: Gain Level

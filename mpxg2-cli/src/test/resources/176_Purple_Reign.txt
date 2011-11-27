@@ -61,11 +61,11 @@ Purple Reign
     Level: 0dB
   Gain: Tone (On)
     Toe Switch: disabled
-    Lo: +25
-    Mid: -4
-    Hi: +25
-    InLvl: 0
-    Level: 60
+    Lo: +25dB
+    Mid: -4dB
+    Hi: +25dB
+    InLvl: 0dB
+    Level: 60dB
   Softrow:
     1: Gain InLvl
     2: Gain Level

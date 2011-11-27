@@ -30,11 +30,11 @@ Cordovox
     Level: 0dB
   Gain: Tone (Off)
     Toe Switch: disabled
-    Lo: 0
-    Mid: +5
-    Hi: 0
-    InLvl: 0
-    Level: 64
+    Lo: 0dB
+    Mid: +5dB
+    Hi: 0dB
+    InLvl: 0dB
+    Level: 64dB
   Softrow:
     1: Gain InLvl
     2: Gain Level

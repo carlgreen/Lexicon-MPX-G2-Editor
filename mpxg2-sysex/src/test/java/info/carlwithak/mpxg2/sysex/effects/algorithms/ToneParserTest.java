@@ -33,10 +33,10 @@ public class ToneParserTest {
     public void testParse_Cordovox() throws ParseException {
         byte[] effectParameters = {9, 1, 10, 0, 4, 1, 0, 0, 7, 3, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Tone tone = ToneParser.parse(effectParameters);
-        assertEquals(25, tone.getLo());
-        assertEquals(10, tone.getMid());
-        assertEquals(20, tone.getHi());
-        assertEquals(0, tone.getInLevel());
-        assertEquals(55, tone.getLevel());
+        assertEquals(25, (int) tone.getLo().getValue());
+        assertEquals(10, (int) tone.getMid().getValue());
+        assertEquals(20, (int) tone.getHi().getValue());
+        assertEquals(0, (int) tone.getInLevel().getValue());
+        assertEquals(55, (int) tone.getLevel().getValue());
     }
 }
