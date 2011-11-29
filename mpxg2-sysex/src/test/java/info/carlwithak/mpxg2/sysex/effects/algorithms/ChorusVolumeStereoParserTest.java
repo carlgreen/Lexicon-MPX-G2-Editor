@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,8 +34,8 @@ public class ChorusVolumeStereoParserTest {
     public void testParse_WahUni() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusVolumeStereo volumeStereo = ChorusVolumeStereoParser.parse(effectParameters);
-        assertEquals(100, (int) volumeStereo.getMix().getValue());
-        assertEquals(0, (int) volumeStereo.getLevel().getValue());
-        assertEquals(0, (int) volumeStereo.getVolume().getValue());
+        assertThat(volumeStereo.getMix(), is(value(100)));
+        assertThat(volumeStereo.getLevel(), is(value(0)));
+        assertThat(volumeStereo.getVolume(), is(value(0)));
     }
 }

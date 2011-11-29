@@ -17,13 +17,15 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -35,11 +37,11 @@ public class DelayMonoParserTest {
     public void testParse_TremoWah() throws ParseException {
         byte[] effectParameters = {10, 0, 0, 0, 4, 0, 3, 0, 1, 0, 10, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayMono delayMono = DelayMonoParser.parse(effectParameters);
-        assertEquals(10, (int) delayMono.getMix().getValue());
-        assertEquals(0, (int) delayMono.getLevel().getValue());
-        assertEquals(new BeatRate("Time", 4, 3), delayMono.getTime());
-        assertEquals(10, (int) delayMono.getFeedback().getValue());
+        assertThat(delayMono.getMix(), is(value(10)));
+        assertThat(delayMono.getLevel(), is(value(0)));
+        assertThat(delayMono.getTime(), is(beat(4, 3)));
+        assertThat(delayMono.getFeedback(), is(value(10)));
         assertEquals(3, delayMono.getInsert());
-        assertFalse(delayMono.isClear().getValue());
+        assertThat(delayMono.isClear(), is(value(false)));
     }
 }

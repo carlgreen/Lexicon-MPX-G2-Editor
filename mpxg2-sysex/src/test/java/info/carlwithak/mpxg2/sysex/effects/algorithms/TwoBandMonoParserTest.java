@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandMono;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,15 +34,15 @@ public class TwoBandMonoParserTest {
     public void testParse_SpaceEcho() {
         byte[] effectParameters = {4, 6, 0, 0, 11, 15, 8, 12, 0, 0, 7, 0, 0, 0, 9, 15, 8, 8, 3, 1, 7, 0, 2, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TwoBandMono twoBandMono = TwoBandMonoParser.parse(effectParameters);
-        assertEquals(100, (int) twoBandMono.getMix().getValue());
-        assertEquals(0, (int) twoBandMono.getLevel().getValue());
-        assertEquals(-5, (int) twoBandMono.getGain1().getValue());
-        assertEquals(200, (int) twoBandMono.getFc1().getValue());
-        assertEquals(0.7, twoBandMono.getQ1().getValue(), 0.01);
-        assertEquals(0, (int) twoBandMono.getMode1().getValue()); // LShlf
-        assertEquals(-7, (int) twoBandMono.getGain2().getValue());
-        assertEquals(5000, (int) twoBandMono.getFc2().getValue());
-        assertEquals(0.7, twoBandMono.getQ2().getValue(), 0.01);
-        assertEquals(2, (int) twoBandMono.getMode2().getValue()); // HShlf
+        assertThat(twoBandMono.getMix(), is(value(100)));
+        assertThat(twoBandMono.getLevel(), is(value(0)));
+        assertThat(twoBandMono.getGain1(), is(value(-5)));
+        assertThat(twoBandMono.getFc1(), is(value(200)));
+        assertThat(twoBandMono.getQ1(), is(value(0.7)));
+        assertThat(twoBandMono.getMode1(), is(value(0))); // LShlf
+        assertThat(twoBandMono.getGain2(), is(value(-7)));
+        assertThat(twoBandMono.getFc2(), is(value(5000)));
+        assertThat(twoBandMono.getQ2(), is(value(0.7)));
+        assertThat(twoBandMono.getMode2(), is(value(2))); // HShlf
     }
 }

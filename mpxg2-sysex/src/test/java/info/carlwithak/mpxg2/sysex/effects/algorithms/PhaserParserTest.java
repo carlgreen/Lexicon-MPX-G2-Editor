@@ -22,7 +22,11 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Phaser;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,11 +38,11 @@ public class PhaserParserTest {
     public void testParse_Phaser() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 3, 5, 0, 0, 0, 0, 2, 3, 4, 6, 14, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Phaser phaser = PhaserParser.parse(effectParameters);
-        assertEquals(100, (int) phaser.getMix().getValue());
-        assertEquals(0, (int) phaser.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate", 0.83), phaser.getRate());
-        assertEquals(50, (int) phaser.getPulseWidth().getValue());
-        assertEquals(100, (int) phaser.getDepth().getValue());
-        assertEquals(30, (int) phaser.getResonance().getValue());
+        assertThat(phaser.getMix(), is(value(100)));
+        assertThat(phaser.getLevel(), is(value(0)));
+        assertThat(phaser.getRate(), is(frequency(0.83)));
+        assertThat(phaser.getPulseWidth(), is(value(50)));
+        assertThat(phaser.getDepth(), is(value(100)));
+        assertThat(phaser.getResonance(), is(value(30)));
     }
 }

@@ -17,13 +17,15 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -35,39 +37,39 @@ public class DelayDualParserTest {
     public void testParse_PowerChords() throws ParseException {
         byte[] effectParameters = {9, 1, 0, 0, 3, 0, 4, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 14, 12, 2, 3, 10, 0, 3, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayDual delayDual = DelayDualParser.parse(effectParameters);
-        assertEquals(25, (int) delayDual.getMix().getValue());
-        assertEquals(0, (int) delayDual.getLevel().getValue());
-        assertEquals(new BeatRate("Time1", 3, 4), delayDual.getTime1());
-        assertEquals(new BeatRate("Time2", 4, 3), delayDual.getTime2());
-        assertEquals(0, (int) delayDual.getLevel1().getValue());
-        assertEquals(0, (int) delayDual.getLevel2().getValue());
-        assertEquals(-50, (int) delayDual.getPan1().getValue());
-        assertEquals(50, (int) delayDual.getPan2().getValue());
-        assertEquals(10, (int) delayDual.getFeedback1().getValue());
+        assertThat(delayDual.getMix(), is(value(25)));
+        assertThat(delayDual.getLevel(), is(value(0)));
+        assertThat(delayDual.getTime1(), is(beat(3, 4)));
+        assertThat(delayDual.getTime2(), is(beat(4, 3)));
+        assertThat(delayDual.getLevel1(), is(value(0)));
+        assertThat(delayDual.getLevel2(), is(value(0)));
+        assertThat(delayDual.getPan1(), is(value(-50)));
+        assertThat(delayDual.getPan2(), is(value(50)));
+        assertThat(delayDual.getFeedback1(), is(value(10)));
         assertEquals(3, delayDual.getInsert());
-        assertEquals(10, (int) delayDual.getFeedback2().getValue());
-        assertEquals(0, (int) delayDual.getXFbk1().getValue());
-        assertEquals(0, (int) delayDual.getXFbk2().getValue());
-        assertFalse(delayDual.isClear().getValue());
+        assertThat(delayDual.getFeedback2(), is(value(10)));
+        assertThat(delayDual.getXFbk1(), is(value(0)));
+        assertThat(delayDual.getXFbk2(), is(value(0)));
+        assertThat(delayDual.isClear(), is(value(false)));
     }
 
     @Test
     public void testParse() throws ParseException {
         byte[] effectParameters = {3, 1, 0, 0, 1, 0, 1, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayDual delayDual = DelayDualParser.parse(effectParameters);
-        assertEquals(19, (int) delayDual.getMix().getValue());
-        assertEquals(0, (int) delayDual.getLevel().getValue());
-        assertEquals(new BeatRate("Time1", 1, 1), delayDual.getTime1());
-        assertEquals(new BeatRate("Time2", 4, 3), delayDual.getTime2());
-        assertEquals(0, (int) delayDual.getLevel1().getValue());
-        assertEquals(0, (int) delayDual.getLevel2().getValue());
-        assertEquals(-50, (int) delayDual.getPan1().getValue());
-        assertEquals(50, (int) delayDual.getPan2().getValue());
-        assertEquals(0, (int) delayDual.getFeedback1().getValue());
+        assertThat(delayDual.getMix(), is(value(19)));
+        assertThat( delayDual.getLevel(), is(value(0)));
+        assertThat(delayDual.getTime1(), is(beat(1, 1)));
+        assertThat(delayDual.getTime2(), is(beat(4, 3)));
+        assertThat(delayDual.getLevel1(), is(value(0)));
+        assertThat(delayDual.getLevel2(), is(value(0)));
+        assertThat(delayDual.getPan1(), is(value(-50)));
+        assertThat(delayDual.getPan2(), is(value(50)));
+        assertThat(delayDual.getFeedback1(), is(value(0)));
         assertEquals(3, delayDual.getInsert());
-        assertEquals(0, (int) delayDual.getFeedback2().getValue());
-        assertEquals(0, (int) delayDual.getXFbk1().getValue());
-        assertEquals(0, (int) delayDual.getXFbk2().getValue());
-        assertFalse(delayDual.isClear().getValue());
+        assertThat(delayDual.getFeedback2(), is(value(0)));
+        assertThat(delayDual.getXFbk1(), is(value(0)));
+        assertThat(delayDual.getXFbk2(), is(value(0)));
+        assertThat(delayDual.isClear(), is(value(false)));
     }
 }

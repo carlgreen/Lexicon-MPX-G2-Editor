@@ -20,8 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,14 +34,14 @@ public class AmbienceParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {2, 1, 0, 0, 9, 2, 1, 0, 14, 1, 7, 0, 3, 3, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Ambience ambience = AmbienceParser.parse(effectParameters);
-        assertEquals(18, (int) ambience.getMix().getValue());
-        assertEquals(0, (int) ambience.getLevel().getValue());
-        assertEquals(24.5, ambience.getSize().getValue(), 0.01);
-        assertTrue(ambience.isLink().getValue());
-        assertEquals(60, (int) ambience.getDiff().getValue());
-        assertEquals(7, (int) ambience.getPreDelay().getValue());
-        assertEquals(51, (int) ambience.getDelayTime().getValue()); // 1.41s is number 51 in list
-        assertEquals(0, (int) ambience.getDelayLevel().getValue());
-        assertEquals(12, (int) ambience.getRtHC().getValue()); // 12.8k is number 12 in list
+        assertThat(ambience.getMix(), is(value(18)));
+        assertThat(ambience.getLevel(), is(value(0)));
+        assertThat(ambience.getSize(), is(value(24.5)));
+        assertThat(ambience.isLink(), is(value(true)));
+        assertThat(ambience.getDiff(), is(value(60)));
+        assertThat(ambience.getPreDelay(), is(value(7)));
+        assertThat(ambience.getDelayTime(), is(value(51))); // 1.41s is number 51 in list
+        assertThat(ambience.getDelayLevel(), is(value(0)));
+        assertThat(ambience.getRtHC(), is(value(12))); // 12.8k is number 12 in list
     }
 }

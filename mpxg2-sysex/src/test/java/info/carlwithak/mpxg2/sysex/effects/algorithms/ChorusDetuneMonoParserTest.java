@@ -20,7 +20,10 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,10 +35,10 @@ public class ChorusDetuneMonoParserTest {
     public void testParse() {
         byte[] effectParameters = {2, 3, 6, 0, 10, 0, 10, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusDetuneMono detuneMono = ChorusDetuneMonoParser.parse(effectParameters);
-        assertEquals(50, (int) detuneMono.getMix().getValue());
-        assertEquals(6, (int) detuneMono.getLevel().getValue());
-        assertEquals(10, (int) detuneMono.getTune().getValue());
+        assertThat(detuneMono.getMix(), is(value(50)));
+        assertThat(detuneMono.getLevel(), is(value(6)));
+        assertThat(detuneMono.getTune(), is(value(10)));
         assertEquals(10, detuneMono.getOptimize());
-        assertEquals(0, (int) detuneMono.getPreDelay().getValue());
+        assertThat(detuneMono.getPreDelay(), is(value(0)));
     }
 }

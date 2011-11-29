@@ -20,8 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,17 +34,17 @@ public class HallParserTest {
     public void testParse_TremoWah() {
         byte[] effectParameters = {4, 1, 0, 0, 2, 6, 1, 0, 8, 2, 9, 1, 5, 0, 9, 2, 15, 0, 15, 1, 14, 6, 13, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Hall hall = HallParser.parse(effectParameters);
-        assertEquals(20, (int) hall.getMix().getValue());
-        assertEquals(0, (int) hall.getLevel().getValue());
-        assertEquals(53.0, hall.getSize().getValue(), 0.01);
-        assertTrue(hall.isLink().getValue());
-        assertEquals(80, (int) hall.getDiff().getValue());
-        assertEquals(25, (int) hall.getPreDelay().getValue());
-        assertEquals(5, (int) hall.getBass().getValue()); // 1.2X is number 5 in list
-        assertEquals(41, (int) hall.getDecay().getValue()); // 1.67s is number 41 in list
-        assertEquals(15, (int) hall.getXovr().getValue()); // 818 is number 15 in list
-        assertEquals(31, (int) hall.getRtHC().getValue()); // 7.9k is number 31 in list for this size
-        assertEquals(110, (int) hall.getShape().getValue());
-        assertEquals(125, (int) hall.getSpred().getValue()); // 89 is number 125 in list for this size
+        assertThat(hall.getMix(), is(value(20)));
+        assertThat(hall.getLevel(), is(value(0)));
+        assertThat(hall.getSize(), is(value(53.0)));
+        assertThat(hall.isLink(), is(value(true)));
+        assertThat(hall.getDiff(), is(value(80)));
+        assertThat(hall.getPreDelay(), is(value(25)));
+        assertThat(hall.getBass(), is(value(5))); // 1.2X is number 5 in list
+        assertThat(hall.getDecay(), is(value(41))); // 1.67s is number 41 in list
+        assertThat(hall.getXovr(), is(value(15))); // 818 is number 15 in list
+        assertThat(hall.getRtHC(), is(value(31))); // 7.9k is number 31 in list for this size
+        assertThat(hall.getShape(), is(value(110)));
+        assertThat(hall.getSpred(), is(value(125))); // 89 is number 125 in list for this size
     }
 }

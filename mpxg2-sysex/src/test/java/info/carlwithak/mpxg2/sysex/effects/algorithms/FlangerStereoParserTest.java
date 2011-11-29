@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,13 +36,13 @@ public class FlangerStereoParserTest {
     public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {3, 4, 1, 0, 1, 0, 4, 0, 1, 0, 2, 3, 14, 3, 1, 0, 4, 1, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         FlangerStereo flangerStereo = FlangerStereoParser.parse(effectParameters);
-        assertEquals(67, (int) flangerStereo.getMix().getValue());
-        assertEquals(1, (int) flangerStereo.getLevel().getValue());
-        assertEquals(new BeatRate("Rate", 1, 4), flangerStereo.getRate());
-        assertEquals(50, (int) flangerStereo.getPulseWidth().getValue());
-        assertEquals(62, (int) flangerStereo.getDepth().getValue());
-        assertEquals(1, (int) flangerStereo.getPhase().getValue()); // 0, 90, 180, 270 degrees
-        assertEquals(20, (int) flangerStereo.getResonance().getValue());
-        assertEquals(0, (int) flangerStereo.getBlend().getValue());
+        assertThat(flangerStereo.getMix(), is(value(67)));
+        assertThat(flangerStereo.getLevel(), is(value(1)));
+        assertThat(flangerStereo.getRate(), is(beat(1, 4)));
+        assertThat(flangerStereo.getPulseWidth(), is(value(50)));
+        assertThat(flangerStereo.getDepth(), is(value(62)));
+        assertThat(flangerStereo.getPhase(), is(value(1))); // 0, 90, 180, 270 degrees
+        assertThat(flangerStereo.getResonance(), is(value(20)));
+        assertThat(flangerStereo.getBlend(), is(value(0)));
     }
 }

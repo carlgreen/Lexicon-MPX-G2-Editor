@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,10 +36,10 @@ public class TremoloMonoParserTest {
     public void testParse_TremoWah() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 7, 0, 4, 0, 1, 0, 14, 1, 4, 6, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TremoloMono tremoloMono = TremoloMonoParser.parse(effectParameters);
-        assertEquals(100, (int) tremoloMono.getMix().getValue());
-        assertEquals(6, (int) tremoloMono.getLevel().getValue());
-        assertEquals(new BeatRate("Rate", 7, 4), tremoloMono.getRate());
-        assertEquals(30, (int) tremoloMono.getPulseWidth().getValue());
-        assertEquals(100, (int) tremoloMono.getDepth().getValue());
+        assertThat(tremoloMono.getMix(), is(value(100)));
+        assertThat(tremoloMono.getLevel(), is(value(6)));
+        assertThat(tremoloMono.getRate(), is(beat(7, 4)));
+        assertThat(tremoloMono.getPulseWidth(), is(value(30)));
+        assertThat(tremoloMono.getDepth(), is(value(100)));
     }
 }

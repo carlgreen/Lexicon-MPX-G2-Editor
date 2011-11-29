@@ -20,8 +20,10 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,15 +35,15 @@ public class JamManParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 0, 0, 10, 15, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         JamMan jamMan = JamManParser.parse(effectParameters);
-        assertEquals(100, (int) jamMan.getMix().getValue());
-        assertEquals(0, (int) jamMan.getLevel().getValue());
-        assertEquals(250, (int) jamMan.getSize().getValue());
-        assertEquals(0, (int) jamMan.getFeedback().getValue());
+        assertThat(jamMan.getMix(), is(value(100)));
+        assertThat(jamMan.getLevel(), is(value(0)));
+        assertThat(jamMan.getSize(), is(value(250)));
+        assertThat(jamMan.getFeedback(), is(value(0)));
         assertEquals(3, jamMan.getInsert());
-        assertFalse(jamMan.isClear().getValue());
-        assertFalse(jamMan.isLayer().getValue());
-        assertFalse(jamMan.isReplace().getValue());
-        assertFalse(jamMan.isDelay().getValue());
-        assertFalse(jamMan.isMute().getValue());
+        assertThat(jamMan.isClear(), is(value(false)));
+        assertThat(jamMan.isLayer(), is(value(false)));
+        assertThat(jamMan.isReplace(), is(value(false)));
+        assertThat(jamMan.isDelay(), is(value(false)));
+        assertThat(jamMan.isMute(), is(value(false)));
     }
 }

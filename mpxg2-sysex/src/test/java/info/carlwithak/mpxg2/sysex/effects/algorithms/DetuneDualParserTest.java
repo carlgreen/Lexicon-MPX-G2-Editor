@@ -21,6 +21,9 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,11 +35,11 @@ public class DetuneDualParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 3, 0, 7, 0, 10, 0, 5, 0, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DetuneDual detuneDual = DetuneDualParser.parse(effectParameters);
-        assertEquals(100, (int) detuneDual.getMix().getValue());
-        assertEquals(3, (int) detuneDual.getLevel().getValue());
-        assertEquals(7, (int) detuneDual.getTune1().getValue());
+        assertThat(detuneDual.getMix(), is(value(100)));
+        assertThat(detuneDual.getLevel(), is(value(3)));
+        assertThat(detuneDual.getTune1(), is(value(7)));
         assertEquals(10, detuneDual.getOptimize());
-        assertEquals(5, (int) detuneDual.getTune2().getValue());
-        assertEquals(22, (int) detuneDual.getPreDelay().getValue());
+        assertThat(detuneDual.getTune2(), is(value(5)));
+        assertThat(detuneDual.getPreDelay(), is(value(22)));
     }
 }

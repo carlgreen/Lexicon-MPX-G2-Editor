@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,16 +34,16 @@ public class PreampParserTest {
     public void testParse_RotaryCab() {
         byte[] effectParameters = {7, 0, 3, 0, 0, 0, 11, 15, 0, 0, 0, 2, 7, 1, 6, 1, 0, 0, 0, 0, 13, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Preamp preamp = PreampParser.parse(effectParameters);
-        assertEquals(7, (int) preamp.getLo().getValue());
-        assertEquals(3, (int) preamp.getMid().getValue());
-        assertEquals(0, (int) preamp.getHi().getValue());
-        assertEquals(-5, (int) preamp.getInLevel().getValue());
-        assertEquals(0, (int) preamp.getLoCut().getValue());
-        assertEquals(32, (int) preamp.getFeel().getValue());
-        assertEquals(23, (int) preamp.getDrive().getValue());
-        assertEquals(22, (int) preamp.getTone().getValue());
-        assertEquals(0, (int) preamp.getBass().getValue());
-        assertEquals(0, (int) preamp.getTreble().getValue());
-        assertEquals(45, (int) preamp.getLevel().getValue());
+        assertThat(preamp.getLo(), is(value(7)));
+        assertThat(preamp.getMid(), is(value(3)));
+        assertThat(preamp.getHi(), is(value(0)));
+        assertThat(preamp.getInLevel(), is(value(-5)));
+        assertThat(preamp.getLoCut(), is(value(0)));
+        assertThat(preamp.getFeel(), is(value(32)));
+        assertThat(preamp.getDrive(), is(value(23)));
+        assertThat(preamp.getTone(), is(value(22)));
+        assertThat(preamp.getBass(), is(value(0)));
+        assertThat(preamp.getTreble(), is(value(0)));
+        assertThat(preamp.getLevel(), is(value(45)));
     }
 }

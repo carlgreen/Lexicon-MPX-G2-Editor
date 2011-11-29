@@ -17,13 +17,15 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -35,25 +37,25 @@ public class EchoStereoParserTest {
     public void testParse_DetuneTrem() throws ParseException {
         byte[] effectParameters = {0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoStereo echoStereo = EchoStereoParser.parse(effectParameters);
-        assertEquals(0, (int) echoStereo.getMix().getValue());
-        assertEquals(0, (int) echoStereo.getLevel().getValue());
-        assertEquals(new BeatRate("Time", 1, 1), echoStereo.getTime());
-        assertEquals(0, (int) echoStereo.getFeedback().getValue());
+        assertThat(echoStereo.getMix(), is(value(0)));
+        assertThat(echoStereo.getLevel(), is(value(0)));
+        assertThat(echoStereo.getTime(), is(beat(1, 1)));
+        assertThat(echoStereo.getFeedback(), is(value(0)));
         assertEquals(3, echoStereo.getInsert());
-        assertEquals(16, (int) echoStereo.getDamp().getValue());
-        assertFalse(echoStereo.isClear().getValue());
+        assertThat(echoStereo.getDamp(), is(value(16)));
+        assertThat(echoStereo.isClear(), is(value(false)));
     }
 
     @Test
     public void testParse_RoundTrem() throws ParseException {
         byte[] effectParameters = {4, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 13, 13, 3, 0, 9, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoStereo echoStereo = EchoStereoParser.parse(effectParameters);
-        assertEquals(20, (int) echoStereo.getMix().getValue());
-        assertEquals(0, (int) echoStereo.getLevel().getValue());
-        assertEquals(new BeatRate("Time", 1, 1), echoStereo.getTime());
-        assertEquals(0, (int) echoStereo.getFeedback().getValue());
+        assertThat(echoStereo.getMix(), is(value(20)));
+        assertThat(echoStereo.getLevel(), is(value(0)));
+        assertThat(echoStereo.getTime(), is(beat(1, 1)));
+        assertThat(echoStereo.getFeedback(), is(value(0)));
         assertEquals(3, echoStereo.getInsert());
-        assertEquals(16, (int) echoStereo.getDamp().getValue());
-        assertFalse(echoStereo.isClear().getValue());
+        assertThat(echoStereo.getDamp(), is(value(16)));
+        assertThat(echoStereo.isClear(), is(value(false)));
     }
 }

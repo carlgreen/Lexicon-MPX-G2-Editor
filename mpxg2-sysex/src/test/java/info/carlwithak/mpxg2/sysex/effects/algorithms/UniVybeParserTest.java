@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,8 +34,8 @@ public class UniVybeParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         UniVybe uniVybe = UniVybeParser.parse(effectParameters);
-        assertEquals(100, (int) uniVybe.getMix().getValue());
-        assertEquals(0, (int) uniVybe.getLevel().getValue());
-        assertEquals(20, (int) uniVybe.getRate().getValue());
+        assertThat(uniVybe.getMix(), is(value(100)));
+        assertThat(uniVybe.getLevel(), is(value(0)));
+        assertThat(uniVybe.getRate(), is(value(20)));
     }
 }

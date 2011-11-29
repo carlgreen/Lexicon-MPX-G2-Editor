@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,7 +34,7 @@ public class OctaBuzzParserTest {
     public void testParse_KissTheSky() {
         byte[] effectParameters = {4, 6, 3, 0, 10, 0, 13, 13, 0, 0, 4, 4, 0, 0, 14, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         OctaBuzz octaBuzz = OctaBuzzParser.parse(effectParameters);
-        assertEquals(100, (int) octaBuzz.getMix().getValue());
-        assertEquals(3, (int) octaBuzz.getLevel().getValue());
+        assertThat(octaBuzz.getMix(), is(value(100)));
+        assertThat(octaBuzz.getLevel(), is(value(3)));
     }
 }

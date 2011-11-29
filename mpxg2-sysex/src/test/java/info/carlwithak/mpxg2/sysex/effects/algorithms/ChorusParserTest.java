@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,15 +36,15 @@ public class ChorusParserTest {
     public void testParse_Cordovox() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 14, 3, 0, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusAlgorithm chorus = ChorusParser.parse(effectParameters);
-        assertEquals(100, (int) chorus.getMix().getValue());
-        assertEquals(0, (int) chorus.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate1", 0.62), chorus.getRate1());
-        assertEquals(45, (int) chorus.getPulseWidth1().getValue());
-        assertEquals(30, (int) chorus.getDepth1().getValue());
-        assertEquals(new FrequencyRate("Rate2", 0.56), chorus.getRate2());
-        assertEquals(54, (int) chorus.getPulseWidth2().getValue());
-        assertEquals(0, (int) chorus.getDepth2().getValue());
-        assertEquals(-19, (int) chorus.getResonance1().getValue());
-        assertEquals(0, (int) chorus.getResonance2().getValue());
+        assertThat(chorus.getMix(), is(value(100)));
+        assertThat(chorus.getLevel(), is(value(0)));
+        assertThat(chorus.getRate1(), is(frequency(0.62)));
+        assertThat(chorus.getPulseWidth1(), is(value(45)));
+        assertThat(chorus.getDepth1(), is(value(30)));
+        assertThat(chorus.getRate2(), is(frequency(0.56)));
+        assertThat(chorus.getPulseWidth2(), is(value(54)));
+        assertThat(chorus.getDepth2(), is(value(0)));
+        assertThat(chorus.getResonance1(), is(value(-19)));
+        assertThat(chorus.getResonance2(), is(value(0)));
     }
 }

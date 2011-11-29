@@ -17,13 +17,15 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -35,12 +37,12 @@ public class EchoMonoParserTest {
     public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {6, 0, 1, 0, 4, 0, 4, 0, 1, 0, 1, 15, 3, 0, 4, 1, 0, 0, 0, 0, 6, 15, 3, 0, 15, 0, 9, 1, 9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoMono echoMono = EchoMonoParser.parse(effectParameters);
-        assertEquals(6, (int) echoMono.getMix().getValue());
-        assertEquals(1, (int) echoMono.getLevel().getValue());
-        assertEquals(new BeatRate("Time", 4, 4), echoMono.getTime());
-        assertEquals(-15, (int) echoMono.getFeedback().getValue());
+        assertThat(echoMono.getMix(), is(value(6)));
+        assertThat(echoMono.getLevel(), is(value(1)));
+        assertThat(echoMono.getTime(), is(beat(4, 4)));
+        assertThat(echoMono.getFeedback(), is(value(-15)));
         assertEquals(3, echoMono.getInsert());
-        assertEquals(20, (int) echoMono.getDamp().getValue());
-        assertFalse(echoMono.isClear().getValue());
+        assertThat(echoMono.getDamp(), is(value(20)));
+        assertThat(echoMono.isClear(), is(value(false)));
     }
 }

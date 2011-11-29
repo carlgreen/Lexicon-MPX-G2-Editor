@@ -21,7 +21,9 @@ import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,8 +35,8 @@ public class OrangePhaseParserTest {
     public void testParse_VHRig() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 0, 0, 4, 6, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         OrangePhase orangePhase = OrangePhaseParser.parse(effectParameters);
-        assertEquals(100, (int) orangePhase.getMix().getValue());
-        assertEquals(0, (int) orangePhase.getLevel().getValue());
-        assertEquals(20, (int) orangePhase.getRate().getValue());
+        assertThat(orangePhase.getMix(), is(value(100)));
+        assertThat(orangePhase.getLevel(), is(value(0)));
+        assertThat(orangePhase.getRate(), is(value(20)));
     }
 }

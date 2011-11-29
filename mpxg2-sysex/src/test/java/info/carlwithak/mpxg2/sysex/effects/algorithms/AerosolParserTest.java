@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,15 +36,15 @@ public class AerosolParserTest {
     public void testParse_ToeWahAero() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 10, 1, 0, 0, 0, 0, 13, 2, 6, 4, 10, 1, 0, 0, 0, 0, 7, 3, 12, 3, 4, 12, 12, 3, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Aerosol aerosol = AerosolParser.parse(effectParameters);
-        assertEquals(100, (int) aerosol.getMix().getValue());
-        assertEquals(0, (int) aerosol.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate1", 0.26), aerosol.getRate1());
-        assertEquals(45, (int) aerosol.getPulseWidth1().getValue());
-        assertEquals(70, (int) aerosol.getDepth1().getValue());
-        assertEquals(new FrequencyRate("Rate2", 0.26), aerosol.getRate2());
-        assertEquals(55, (int) aerosol.getPulseWidth2().getValue());
-        assertEquals(60, (int) aerosol.getDepth2().getValue());
-        assertEquals(-60, (int) aerosol.getResonance1().getValue());
-        assertEquals(60, (int) aerosol.getResonance2().getValue());
+        assertThat(aerosol.getMix(), is(value(100)));
+        assertThat(aerosol.getLevel(), is(value(0)));
+        assertThat(aerosol.getRate1(), is(frequency(0.26)));
+        assertThat(aerosol.getPulseWidth1(), is(value(45)));
+        assertThat(aerosol.getDepth1(), is(value(70)));
+        assertThat(aerosol.getRate2(), is(frequency(0.26)));
+        assertThat(aerosol.getPulseWidth2(), is(value(55)));
+        assertThat(aerosol.getDepth2(), is(value(60)));
+        assertThat(aerosol.getResonance1(), is(value(-60)));
+        assertThat(aerosol.getResonance2(), is(value(60)));
     }
 }

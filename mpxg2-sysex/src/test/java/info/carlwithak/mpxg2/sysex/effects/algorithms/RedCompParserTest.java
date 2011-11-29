@@ -21,7 +21,9 @@ import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,8 +35,8 @@ public class RedCompParserTest {
     public void testParse_PedalSwell() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 6, 4, 0, 0, 4, 2, 4, 14, 7, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         RedComp redComp = RedCompParser.parse(effectParameters);
-        assertEquals(100, (int) redComp.getMix().getValue());
-        assertEquals(6, (int) redComp.getLevel().getValue());
-        assertEquals(70, (int) redComp.getSensitivity().getValue());
+        assertThat(redComp.getMix(), is(value(100)));
+        assertThat(redComp.getLevel(), is(value(6)));
+        assertThat(redComp.getSensitivity(), is(value(70)));
     }
 }

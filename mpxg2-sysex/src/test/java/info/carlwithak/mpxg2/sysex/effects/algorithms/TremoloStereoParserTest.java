@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,11 +36,11 @@ public class TremoloStereoParserTest {
     public void testParse_Verbolo() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 12, 2, 1, 0, 0, 0, 2, 3, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TremoloStereo tremoloStereo = TremoloStereoParser.parse(effectParameters);
-        assertEquals(100, (int) tremoloStereo.getMix().getValue());
-        assertEquals(0, (int) tremoloStereo.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate", 3.0), tremoloStereo.getRate());
-        assertEquals(50, (int) tremoloStereo.getPulseWidth().getValue());
-        assertEquals(100, (int) tremoloStereo.getDepth().getValue());
-        assertEquals(3, (int) tremoloStereo.getPhase().getValue()); // 270°
+        assertThat(tremoloStereo.getMix(), is(value(100)));
+        assertThat(tremoloStereo.getLevel(), is(value(0)));
+        assertThat(tremoloStereo.getRate(), is(frequency(3.0)));
+        assertThat(tremoloStereo.getPulseWidth(), is(value(50)));
+        assertThat(tremoloStereo.getDepth(), is(value(100)));
+        assertThat(tremoloStereo.getPhase(), is(value(3))); // 270°
     }
 }

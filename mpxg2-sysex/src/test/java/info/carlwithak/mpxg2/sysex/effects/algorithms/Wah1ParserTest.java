@@ -20,7 +20,10 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,12 +35,12 @@ public class Wah1ParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 6, 0, 2, 3, 0, 0, 0, 0, 4, 6, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Wah1 wah1 = Wah1Parser.parse(effectParameters);
-        assertEquals(100, (int) wah1.getMix().getValue());
-        assertEquals(6, (int) wah1.getLevel().getValue());
-        assertEquals(50, (int) wah1.getSweep().getValue());
-        assertEquals(0, (int) wah1.getBass().getValue());
+        assertThat(wah1.getMix(), is(value(100)));
+        assertThat(wah1.getLevel(), is(value(6)));
+        assertThat(wah1.getSweep(), is(value(50)));
+        assertThat(wah1.getBass(), is(value(0)));
         assertEquals(0, wah1.getType());
-        assertEquals(100, (int) wah1.getResponse().getValue());
-        assertEquals(10, (int) wah1.getGain().getValue());
+        assertThat(wah1.getResponse(), is(value(100)));
+        assertThat(wah1.getGain(), is(value(10)));
     }
 }

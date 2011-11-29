@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,7 +34,7 @@ public class EqPedalVolParserTest {
     public void testParse_Cordovox() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EqPedalVol eqPedalVol = EqPedalVolParser.parse(effectParameters);
-        assertEquals(100, (int) eqPedalVol.getMix().getValue());
-        assertEquals(0, (int) eqPedalVol.getLevel().getValue());
+        assertThat(eqPedalVol.getMix(), is(value(100)));
+        assertThat(eqPedalVol.getLevel(), is(value(0)));
     }
 }

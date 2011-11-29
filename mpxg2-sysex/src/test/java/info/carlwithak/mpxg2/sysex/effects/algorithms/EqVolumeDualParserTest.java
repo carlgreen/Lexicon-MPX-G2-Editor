@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,9 +34,9 @@ public class EqVolumeDualParserTest {
     public void testParse_TremAutoWah() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 4, 6, 14, 4, 15, 4, 0, 0, 6, 0, 0, 11, 4, 0, 9, 1, 0, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EqVolumeDual volumeDual = EqVolumeDualParser.parse(effectParameters);
-        assertEquals(100, (int) volumeDual.getMix().getValue());
-        assertEquals(0, (int) volumeDual.getLevel().getValue());
-        assertEquals(100, (int) volumeDual.getVolumeLeft().getValue());
-        assertEquals(100, (int) volumeDual.getVolumeRight().getValue());
+        assertThat(volumeDual.getMix(), is(value(100)));
+        assertThat(volumeDual.getLevel(), is(value(0)));
+        assertThat(volumeDual.getVolumeLeft(), is(value(100)));
+        assertThat(volumeDual.getVolumeRight(), is(value(100)));
     }
 }

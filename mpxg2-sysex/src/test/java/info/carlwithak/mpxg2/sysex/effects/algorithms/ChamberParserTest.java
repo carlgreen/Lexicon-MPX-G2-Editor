@@ -20,8 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,35 +34,35 @@ public class ChamberParserTest {
     public void testParse_Cordovox() {
         byte[] effectParameters = {12, 1, 0, 0, 8, 2, 1, 0, 11, 0, 0, 0, 6, 0, 15, 2, 0, 1, 2, 2, 14, 3, 8, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Chamber chamber = ChamberParser.parse(effectParameters);
-        assertEquals(28, (int) chamber.getMix().getValue());
-        assertEquals(0, (int) chamber.getLevel().getValue());
-        assertEquals(24.0, chamber.getSize().getValue(), 0.01);
-        assertTrue(chamber.isLink().getValue());
-        assertEquals(22, (int) chamber.getDiff().getValue());
-        assertEquals(0, (int) chamber.getPreDelay().getValue());
-        assertEquals(6, (int) chamber.getBass().getValue()); // 1.5X is number 6 in list
-        assertEquals(47, (int) chamber.getDecay().getValue()); // 1.05s is number 47 in list for this size
-        assertEquals(16, (int) chamber.getXovr().getValue()); // 986 is number 16 in list
-        assertEquals(34, (int) chamber.getRtHC().getValue()); // 9.3k is number 34 in list
-        assertEquals(62, (int) chamber.getShape().getValue());
-        assertEquals(120, (int) chamber.getSpred().getValue()); // 42 is number 120 in list for this size
+        assertThat(chamber.getMix(), is(value(28)));
+        assertThat(chamber.getLevel(), is(value(0)));
+        assertThat(chamber.getSize(), is(value(24.0)));
+        assertThat(chamber.isLink(), is(value(true)));
+        assertThat(chamber.getDiff(), is(value(22)));
+        assertThat(chamber.getPreDelay(), is(value(0)));
+        assertThat(chamber.getBass(), is(value(6))); // 1.5X is number 6 in list
+        assertThat(chamber.getDecay(), is(value(47))); // 1.05s is number 47 in list for this size
+        assertThat(chamber.getXovr(), is(value(16))); // 986 is number 16 in list
+        assertThat(chamber.getRtHC(), is(value(34))); // 9.3k is number 34 in list
+        assertThat(chamber.getShape(), is(value(62)));
+        assertThat(chamber.getSpred(), is(value(120))); // 42 is number 120 in list for this size
     }
 
     @Test
     public void testParse_PowerChords() {
         byte[] effectParameters = {3, 2, 0, 0, 0, 3, 1, 0, 13, 2, 2, 5, 5, 0, 3, 2, 15, 0, 4, 2, 14, 3, 8, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Chamber chamber = ChamberParser.parse(effectParameters);
-        assertEquals(35, (int) chamber.getMix().getValue());
-        assertEquals(0, (int) chamber.getLevel().getValue());
-        assertEquals(28.0, chamber.getSize().getValue(), 0.01);
-        assertTrue(chamber.isLink().getValue());
-        assertEquals(90, (int) chamber.getDiff().getValue());
-        assertEquals(82, (int) chamber.getPreDelay().getValue());
-        assertEquals(5, (int) chamber.getBass().getValue()); // 1.2X is number 5 in list
-        assertEquals(35, (int) chamber.getDecay().getValue()); // 0.73s is number 35 in list
-        assertEquals(15, (int) chamber.getXovr().getValue()); // 818 is number 15 in list
-        assertEquals(36, (int) chamber.getRtHC().getValue()); // 10.4k is number 36 in list
-        assertEquals(62, (int) chamber.getShape().getValue());
-        assertEquals(120, (int) chamber.getSpred().getValue()); // 48 is number 120 in list for this size
+        assertThat(chamber.getMix(), is(value(35)));
+        assertThat(chamber.getLevel(), is(value(0)));
+        assertThat(chamber.getSize(), is(value(28.0)));
+        assertThat(chamber.isLink(), is(value(true)));
+        assertThat(chamber.getDiff(), is(value(90)));
+        assertThat(chamber.getPreDelay(), is(value(82)));
+        assertThat(chamber.getBass(), is(value(5))); // 1.2X is number 5 in list
+        assertThat(chamber.getDecay(), is(value(35))); // 0.73s is number 35 in list
+        assertThat(chamber.getXovr(), is(value(15))); // 818 is number 15 in list
+        assertThat(chamber.getRtHC(), is(value(36))); // 10.4k is number 36 in list
+        assertThat(chamber.getShape(), is(value(62)));
+        assertThat(chamber.getSpred(), is(value(120))); // 48 is number 120 in list for this size
     }
 }

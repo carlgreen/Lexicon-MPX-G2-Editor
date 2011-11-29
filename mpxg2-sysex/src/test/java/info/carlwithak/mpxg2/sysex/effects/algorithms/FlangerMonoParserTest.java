@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,12 +36,12 @@ public class FlangerMonoParserTest {
     public void testParse_Stomp() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 5, 0, 0, 0, 0, 0, 4, 1, 14, 1, 4, 12, 14, 1, 0, 0, 0, 0, 4, 6, 8, 8, 11, 2, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         FlangerMono flangerMono = FlangerMonoParser.parse(effectParameters);
-        assertEquals(100, (int) flangerMono.getMix().getValue());
-        assertEquals(0, (int) flangerMono.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate", 0.05), flangerMono.getRate());
-        assertEquals(20, (int) flangerMono.getPulseWidth().getValue());
-        assertEquals(30, (int) flangerMono.getDepth().getValue());
-        assertEquals(-60, (int) flangerMono.getResonance().getValue());
-        assertEquals(30, (int) flangerMono.getBlend().getValue());
+        assertThat(flangerMono.getMix(), is(value(100)));
+        assertThat(flangerMono.getLevel(), is(value(0)));
+        assertThat(flangerMono.getRate(), is(frequency(0.05)));
+        assertThat(flangerMono.getPulseWidth(), is(value(20)));
+        assertThat(flangerMono.getDepth(), is(value(30)));
+        assertThat(flangerMono.getResonance(), is(value(-60)));
+        assertThat(flangerMono.getBlend(), is(value(30)));
     }
 }

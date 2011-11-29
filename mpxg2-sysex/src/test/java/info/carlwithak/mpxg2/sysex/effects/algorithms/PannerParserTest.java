@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,9 +34,9 @@ public class PannerParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 8, 14, 14, 12, 2, 3, 4, 6, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Panner panner = PannerParser.parse(effectParameters);
-        assertEquals(100, (int) panner.getMix().getValue());
-        assertEquals(-24, (int) panner.getLevel().getValue());
-        assertEquals(-50, (int) panner.getPan1().getValue());
-        assertEquals(50, (int) panner.getPan2().getValue());
+        assertThat(panner.getMix(), is(value(100)));
+        assertThat(panner.getLevel(), is(value(-24)));
+        assertThat(panner.getPan1(), is(value(-50)));
+        assertThat(panner.getPan2(), is(value(50)));
     }
 }

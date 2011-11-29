@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,27 +34,27 @@ public class DiatonicHmyParserTest {
     public void testParse_EMajMin3() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 0, 0, 0, 1, 10, 0, 13, 10, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
-        assertEquals(100, (int) diatonicHmy.getMix().getValue());
-        assertEquals(0, (int) diatonicHmy.getLevel().getValue());
-        assertEquals(4, (int) diatonicHmy.getKey().getValue()); // E
-        assertEquals(0, (int) diatonicHmy.getScale().getValue()); // Major
-        assertEquals(16, (int) diatonicHmy.getInterval().getValue()); // +3rd
-        assertEquals(10, (int) diatonicHmy.getOptimize().getValue());
-        assertEquals(-83, (int) diatonicHmy.getThreshold().getValue());
-        assertEquals(1, (int) diatonicHmy.getSource().getValue()); // Guitar Input
+        assertThat(diatonicHmy.getMix(), is(value(100)));
+        assertThat(diatonicHmy.getLevel(), is(value(0)));
+        assertThat(diatonicHmy.getKey(), is(value(4))); // E
+        assertThat(diatonicHmy.getScale(), is(value(0))); // Major
+        assertThat(diatonicHmy.getInterval(), is(value(16))); // +3rd
+        assertThat(diatonicHmy.getOptimize(), is(value(10)));
+        assertThat(diatonicHmy.getThreshold(), is(value(-83)));
+        assertThat(diatonicHmy.getSource(), is(value(1))); // Guitar Input
     }
 
     @Test
     public void testParse_EDorMix3() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 4, 0, 0, 1, 10, 0, 13, 10, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
-        assertEquals(100, (int) diatonicHmy.getMix().getValue());
-        assertEquals(0, (int) diatonicHmy.getLevel().getValue());
-        assertEquals(4, (int) diatonicHmy.getKey().getValue()); // E
-        assertEquals(4, (int) diatonicHmy.getScale().getValue()); // Mixo
-        assertEquals(16, (int) diatonicHmy.getInterval().getValue()); // +3rd
-        assertEquals(10, (int) diatonicHmy.getOptimize().getValue());
-        assertEquals(-83, (int) diatonicHmy.getThreshold().getValue());
-        assertEquals(1, (int) diatonicHmy.getSource().getValue()); // Guitar Input
+        assertThat(diatonicHmy.getMix(), is(value(100)));
+        assertThat(diatonicHmy.getLevel(), is(value(0)));
+        assertThat(diatonicHmy.getKey(), is(value(4))); // E
+        assertThat(diatonicHmy.getScale(), is(value(4))); // Mixo
+        assertThat(diatonicHmy.getInterval(), is(value(16))); // +3rd
+        assertThat(diatonicHmy.getOptimize(), is(value(10)));
+        assertThat(diatonicHmy.getThreshold(), is(value(-83)));
+        assertThat(diatonicHmy.getSource(), is(value(1))); // Guitar Input
     }
 }

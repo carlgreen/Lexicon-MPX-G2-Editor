@@ -20,8 +20,10 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,11 +35,11 @@ public class ShiftDualParserTest {
     public void testParse_PowerChords() {
         byte[] effectParameters = {4, 6, 6, 0, 0, 5, 11, 15, 10, 0, 12, 0, 14, 15, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ShiftDual shiftDual = ShiftDualParser.parse(effectParameters);
-        assertEquals(100, (int) shiftDual.getMix().getValue());
-        assertEquals(6, (int) shiftDual.getLevel().getValue());
-        assertEquals(-1200, (int) shiftDual.getTune1().getValue());
+        assertThat(shiftDual.getMix(), is(value(100)));
+        assertThat(shiftDual.getLevel(), is(value(6)));
+        assertThat(shiftDual.getTune1(), is(value(-1200)));
         assertEquals(10, shiftDual.getOptimize());
-        assertEquals(-500, (int) shiftDual.getTune2().getValue());
-        assertTrue(shiftDual.isGlide().getValue());
+        assertThat(shiftDual.getTune2(), is(value(-500)));
+        assertThat(shiftDual.isGlide(), is(value(true)));
     }
 }

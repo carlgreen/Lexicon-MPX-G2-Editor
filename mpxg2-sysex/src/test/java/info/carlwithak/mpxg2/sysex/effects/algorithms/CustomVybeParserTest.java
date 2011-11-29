@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,10 +36,10 @@ public class CustomVybeParserTest {
     public void testParse() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 1, 6, 0, 0, 0, 0, 14, 2, 13, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         CustomVybe customVybe = CustomVybeParser.parse(effectParameters);
-        assertEquals(100, (int) customVybe.getMix().getValue());
-        assertEquals(0, (int) customVybe.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate", 0.97), customVybe.getRate());
-        assertEquals(46, (int) customVybe.getPulseWidth().getValue());
-        assertEquals(45, (int) customVybe.getDepth().getValue());
+        assertThat(customVybe.getMix(), is(value(100)));
+        assertThat(customVybe.getLevel(), is(value(0)));
+        assertThat(customVybe.getRate(), is(frequency(0.97)));
+        assertThat(customVybe.getPulseWidth(), is(value(46)));
+        assertThat(customVybe.getDepth(), is(value(45)));
     }
 }

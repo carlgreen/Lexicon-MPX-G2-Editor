@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,13 +34,13 @@ public class DistortionParserTest {
     public void testParse() {
         byte[] effectParameters = {0, 0, 4, 0, 11, 0, 9, 1, 5, 1, 7, 0, 6, 0, 8, 2, 14, 2, 12, 0, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Distortion distortion = DistortionParser.parse(effectParameters);
-        assertEquals(0, (int) distortion.getLo().getValue());
-        assertEquals(4, (int) distortion.getMid().getValue());
-        assertEquals(11, (int) distortion.getHi().getValue());
-        assertEquals(25, (int) distortion.getDrive().getValue());
-        assertEquals(21, (int) distortion.getTone().getValue());
-        assertEquals(7, (int) distortion.getBass().getValue());
-        assertEquals(6, (int) distortion.getTreble().getValue());
-        assertEquals(40, (int) distortion.getLevel().getValue());
+        assertThat(distortion.getLo(), is(value(0)));
+        assertThat(distortion.getMid(), is(value(4)));
+        assertThat(distortion.getHi(), is(value(11)));
+        assertThat(distortion.getDrive(), is(value(25)));
+        assertThat(distortion.getTone(), is(value(21)));
+        assertThat(distortion.getBass(), is(value(7)));
+        assertThat(distortion.getTreble(), is(value(6)));
+        assertThat(distortion.getLevel(), is(value(40)));
     }
 }

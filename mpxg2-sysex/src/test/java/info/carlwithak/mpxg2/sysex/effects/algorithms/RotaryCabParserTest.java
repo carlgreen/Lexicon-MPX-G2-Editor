@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,14 +36,14 @@ public class RotaryCabParserTest {
     public void testParse_RotaryCab() throws ParseException {
         byte[] effectParameters = {4, 6, 4, 0, 13, 3, 2, 0, 0, 0, 11, 2, 13, 3, 2, 0, 0, 0, 4, 2, 0, 0, 4, 6, 12, 14, 11, 2, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         RotaryCab rotaryCab = RotaryCabParser.parse(effectParameters);
-        assertEquals(100, (int) rotaryCab.getMix().getValue());
-        assertEquals(4, (int) rotaryCab.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate1", 5.73), rotaryCab.getRate1());
-        assertEquals(43, (int) rotaryCab.getDepth1().getValue());
-        assertEquals(new FrequencyRate("Rate2", 5.73), rotaryCab.getRate2());
-        assertEquals(36, (int) rotaryCab.getDepth2().getValue());
-        assertEquals(0, (int) rotaryCab.getResonance().getValue());
-        assertEquals(100, (int) rotaryCab.getWidth().getValue());
-        assertEquals(-20, (int) rotaryCab.getBalance().getValue());
+        assertThat(rotaryCab.getMix(), is(value(100)));
+        assertThat(rotaryCab.getLevel(), is(value(4)));
+        assertThat(rotaryCab.getRate1(), is(frequency(5.73)));
+        assertThat(rotaryCab.getDepth1(), is(value(43)));
+        assertThat(rotaryCab.getRate2(), is(frequency(5.73)));
+        assertThat(rotaryCab.getDepth2(), is(value(36)));
+        assertThat(rotaryCab.getResonance(), is(value(0)));
+        assertThat(rotaryCab.getWidth(), is(value(100)));
+        assertThat(rotaryCab.getBalance(), is(value(-20)));
     }
 }

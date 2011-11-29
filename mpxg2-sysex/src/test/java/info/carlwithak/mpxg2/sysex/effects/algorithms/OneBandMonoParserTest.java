@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,11 +34,11 @@ public class OneBandMonoParserTest {
     public void testParse_OctaWah() {
         byte[] effectParameters = {4, 6, 0, 0, 9, 0, 9, 8, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         OneBandMono oneBandMono = OneBandMonoParser.parse(effectParameters);
-        assertEquals(100, (int) oneBandMono.getMix().getValue());
-        assertEquals(0, (int) oneBandMono.getLevel().getValue());
-        assertEquals(9, (int) oneBandMono.getGain().getValue());
-        assertEquals(393, (int) oneBandMono.getFc().getValue());
-        assertEquals(0.1, oneBandMono.getQ().getValue(), 0.01);
-        assertEquals(0, (int) oneBandMono.getMode().getValue());
+        assertThat(oneBandMono.getMix(), is(value(100)));
+        assertThat(oneBandMono.getLevel(), is(value(0)));
+        assertThat(oneBandMono.getGain(), is(value(9)));
+        assertThat(oneBandMono.getFc(), is(value(393)));
+        assertThat(oneBandMono.getQ(), is(value(0.1)));
+        assertThat(oneBandMono.getMode(), is(value(0)));
     }
 }

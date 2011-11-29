@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,7 +34,7 @@ public class ChorusPedalVolParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusPedalVol pedalVol = ChorusPedalVolParser.parse(effectParameters);
-        assertEquals(100, (int) pedalVol.getMix().getValue());
-        assertEquals(0, (int) pedalVol.getLevel().getValue());
+        assertThat(pedalVol.getMix(), is(value(100)));
+        assertThat(pedalVol.getLevel(), is(value(0)));
     }
 }

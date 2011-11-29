@@ -21,7 +21,9 @@ import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,25 +35,25 @@ public class BlueCompParserTest {
     public void testParse_AnotherBrick() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 5, 0, 4, 14, 5, 0, 4, 1, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
-        assertEquals(100, (int) blueComp.getMix().getValue());
-        assertEquals(6, (int) blueComp.getLevel().getValue());
-        assertEquals(5, (int) blueComp.getSensitivity().getValue());
-        assertEquals(-28, (int) blueComp.getThreshold().getValue());
-        assertEquals(5, (int) blueComp.getGain().getValue());
-        assertEquals(20, (int) blueComp.getAttackTime().getValue());
-        assertEquals(100, (int) blueComp.getReleaseTime().getValue());
+        assertThat(blueComp.getMix(), is(value(100)));
+        assertThat(blueComp.getLevel(), is(value(6)));
+        assertThat(blueComp.getSensitivity(), is(value(5)));
+        assertThat(blueComp.getThreshold(), is(value(-28)));
+        assertThat(blueComp.getGain(), is(value(5)));
+        assertThat(blueComp.getAttackTime(), is(value(20)));
+        assertThat(blueComp.getReleaseTime(), is(value(100)));
     }
 
     @Test
     public void testParse_SlideComp() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 10, 0, 13, 13, 0, 0, 4, 4, 0, 0, 14, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
-        assertEquals(100, (int) blueComp.getMix().getValue());
-        assertEquals(0, (int) blueComp.getLevel().getValue());
-        assertEquals(10, (int) blueComp.getSensitivity().getValue());
-        assertEquals(-35, (int) blueComp.getThreshold().getValue());
-        assertEquals(0, (int) blueComp.getGain().getValue());
-        assertEquals(68, (int) blueComp.getAttackTime().getValue());
-        assertEquals(190, (int) blueComp.getReleaseTime().getValue());
+        assertThat(blueComp.getMix(), is(value(100)));
+        assertThat(blueComp.getLevel(), is(value(0)));
+        assertThat(blueComp.getSensitivity(), is(value(10)));
+        assertThat(blueComp.getThreshold(), is(value(-35)));
+        assertThat(blueComp.getGain(), is(value(0)));
+        assertThat(blueComp.getAttackTime(), is(value(68)));
+        assertThat(blueComp.getReleaseTime(), is(value(190)));
     }
 }

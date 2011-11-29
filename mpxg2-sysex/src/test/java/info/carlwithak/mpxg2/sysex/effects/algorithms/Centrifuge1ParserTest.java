@@ -17,12 +17,14 @@
 
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -34,16 +36,16 @@ public class Centrifuge1ParserTest {
     public void testParse_VHRig() throws ParseException {
         byte[] effectParameters = {4, 6, 6, 0, 12, 3, 0, 0, 0, 0, 13, 2, 8, 7, 4, 6, 4, 6, 0, 0, 0, 0, 4, 6, 8, 8, 11, 2, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Centrifuge1 centrifuge1 = Centrifuge1Parser.parse(effectParameters);
-        assertEquals(100, (int) centrifuge1.getMix().getValue());
-        assertEquals(6, (int) centrifuge1.getLevel().getValue());
-        assertEquals(new FrequencyRate("Rate1", 0.60), centrifuge1.getRate1());
-        assertEquals(45, (int) centrifuge1.getPulseWidth1().getValue());
-        assertEquals(120, (int) centrifuge1.getSync1().getValue());
-        assertEquals(100, (int) centrifuge1.getDepth1().getValue());
-        assertEquals(new FrequencyRate("Rate2", 1.00), centrifuge1.getRate2());
-        assertEquals(100, (int) centrifuge1.getPulseWidth2().getValue());
-        assertEquals(-120, (int) centrifuge1.getSync2().getValue());
-        assertEquals(43, (int) centrifuge1.getDepth2().getValue());
-        assertEquals(100, (int) centrifuge1.getResonance().getValue());
+        assertThat(centrifuge1.getMix(), is(value(100)));
+        assertThat(centrifuge1.getLevel(), is(value(6)));
+        assertThat(centrifuge1.getRate1(), is(frequency(0.60)));
+        assertThat(centrifuge1.getPulseWidth1(), is(value(45)));
+        assertThat(centrifuge1.getSync1(), is(value(120)));
+        assertThat(centrifuge1.getDepth1(), is(value(100)));
+        assertThat(centrifuge1.getRate2(), is(frequency(1.00)));
+        assertThat(centrifuge1.getPulseWidth2(), is(value(100)));
+        assertThat(centrifuge1.getSync2(), is(value(-120)));
+        assertThat(centrifuge1.getDepth2(), is(value(43)));
+        assertThat(centrifuge1.getResonance(), is(value(100)));
     }
 }

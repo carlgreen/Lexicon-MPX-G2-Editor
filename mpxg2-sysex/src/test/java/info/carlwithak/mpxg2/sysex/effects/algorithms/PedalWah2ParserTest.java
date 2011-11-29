@@ -20,7 +20,10 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,11 +35,11 @@ public class PedalWah2ParserTest {
     public void testParse_RotaryCab() {
         byte[] effectParameters = {4, 6, 0, 0, 10, 0, 1, 0, 4, 6, 0, 0, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         PedalWah2 pedalWah2 = PedalWah2Parser.parse(effectParameters);
-        assertEquals(100, (int) pedalWah2.getMix().getValue());
-        assertEquals(0, (int) pedalWah2.getLevel().getValue());
-        assertEquals(10, (int) pedalWah2.getBass().getValue());
+        assertThat(pedalWah2.getMix(), is(value(100)));
+        assertThat(pedalWah2.getLevel(), is(value(0)));
+        assertThat(pedalWah2.getBass(), is(value(10)));
         assertEquals(1, pedalWah2.getType());
-        assertEquals(100, (int) pedalWah2.getResponse().getValue());
-        assertEquals(0, (int) pedalWah2.getGain().getValue());
+        assertThat(pedalWah2.getResponse(), is(value(100)));
+        assertThat(pedalWah2.getGain(), is(value(0)));
     }
 }

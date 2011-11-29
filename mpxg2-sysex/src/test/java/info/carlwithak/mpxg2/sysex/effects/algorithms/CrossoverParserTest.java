@@ -20,7 +20,9 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -32,9 +34,9 @@ public class CrossoverParserTest {
     public void testParse_OctaWah() {
         byte[] effectParameters = {4, 6, 0, 0, 8, 11, 11, 0, 4, 0, 1, 0, 0, 0, 8, 0, 4, 1, 0, 0, 1, 0, 1, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Crossover crossover = CrossoverParser.parse(effectParameters);
-        assertEquals(100, (int) crossover.getMix().getValue());
-        assertEquals(0, (int) crossover.getLevel().getValue());
-        assertEquals(3000, (int) crossover.getFc().getValue());
-        assertEquals(4, (int) crossover.getBalance().getValue());
+        assertThat(crossover.getMix(), is(value(100)));
+        assertThat(crossover.getLevel(), is(value(0)));
+        assertThat(crossover.getFc(), is(value(3000)));
+        assertThat(crossover.getBalance(), is(value(4)));
     }
 }

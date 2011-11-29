@@ -22,6 +22,9 @@ import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -33,10 +36,10 @@ public class CrunchParserTest {
     public void testParse_TremAutoWah() throws ParseException {
         byte[] effectParameters = {6, 0, 12, 0, 15, 0, 0, 0, 2, 3, 0, 2, 8, 2, 5, 1, 9, 2, 0, 0, 13, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Crunch crunch = CrunchParser.parse(effectParameters);
-        assertEquals(6, (int) crunch.getLo().getValue());
-        assertEquals(12, (int) crunch.getMid().getValue());
-        assertEquals(15, (int) crunch.getHi().getValue());
-        assertEquals(0, (int) crunch.getInLevel().getValue());
-        assertEquals(50, (int) crunch.getLevel().getValue());
+        assertThat(crunch.getLo(), is(value(6)));
+        assertThat(crunch.getMid(), is(value(12)));
+        assertThat(crunch.getHi(), is(value(15)));
+        assertThat(crunch.getInLevel(), is(value(0)));
+        assertThat(crunch.getLevel(), is(value(50)));
     }
 }
