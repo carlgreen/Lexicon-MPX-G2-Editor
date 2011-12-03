@@ -113,128 +113,128 @@ public class TwoBandDual extends Eq {
         return parameter;
     }
 
-    public int getGainLeft1() {
-        return gainLeft1.getValue();
+    public GenericValue<Integer> getGainLeft1() {
+        return gainLeft1;
     }
 
     public void setGainLeft1(final int gainLeft1) {
         this.gainLeft1.setValue(gainLeft1);
     }
 
-    public int getGainLeft2() {
-        return gainLeft2.getValue();
+    public GenericValue<Integer> getGainLeft2() {
+        return gainLeft2;
     }
 
     public void setGainLeft2(final int gainLeft2) {
         this.gainLeft2.setValue(gainLeft2);
     }
 
-    public int getFcLeft1() {
-        return fcLeft1.getValue();
+    public GenericValue<Integer> getFcLeft1() {
+        return fcLeft1;
     }
 
     public void setFcLeft1(final int fcLeft1) {
         this.fcLeft1.setValue(fcLeft1);
     }
 
-    public int getFcLeft2() {
-        return fcLeft2.getValue();
+    public GenericValue<Integer> getFcLeft2() {
+        return fcLeft2;
     }
 
     public void setFcLeft2(final int fcLeft2) {
         this.fcLeft2.setValue(fcLeft2);
     }
 
-    public double getQLeft1() {
-        return qLeft1.getValue();
+    public GenericValue<Double> getQLeft1() {
+        return qLeft1;
     }
 
     public void setQLeft1(final double qLeft1) {
         this.qLeft1.setValue(qLeft1);
     }
 
-    public double getQLeft2() {
-        return qLeft2.getValue();
+    public GenericValue<Double> getQLeft2() {
+        return qLeft2;
     }
 
     public void setQLeft2(final double qLeft2) {
         this.qLeft2.setValue(qLeft2);
     }
 
-    public int getModeLeft1() {
-        return modeLeft1.getValue();
+    public GenericValue<Integer> getModeLeft1() {
+        return modeLeft1;
     }
 
     public void setModeLeft1(final int modeLeft1) {
         this.modeLeft1.setValue(modeLeft1);
     }
 
-    public int getModeLeft2() {
-        return modeLeft2.getValue();
+    public GenericValue<Integer> getModeLeft2() {
+        return modeLeft2;
     }
 
     public void setModeLeft2(final int modeLeft2) {
         this.modeLeft2.setValue(modeLeft2);
     }
 
-    public int getGainRight1() {
-        return gainRight1.getValue();
+    public GenericValue<Integer> getGainRight1() {
+        return gainRight1;
     }
 
     public void setGainRight1(final int gainRight1) {
         this.gainRight1.setValue(gainRight1);
     }
 
-    public int getGainRight2() {
-        return gainRight2.getValue();
+    public GenericValue<Integer> getGainRight2() {
+        return gainRight2;
     }
 
     public void setGainRight2(final int gainRight2) {
         this.gainRight2.setValue(gainRight2);
     }
 
-    public int getFcRight1() {
-        return fcRight1.getValue();
+    public GenericValue<Integer> getFcRight1() {
+        return fcRight1;
     }
 
     public void setFcRight1(final int fcRight1) {
         this.fcRight1.setValue(fcRight1);
     }
 
-    public int getFcRight2() {
-        return fcRight2.getValue();
+    public GenericValue<Integer> getFcRight2() {
+        return fcRight2;
     }
 
     public void setFcRight2(final int fcRight2) {
         this.fcRight2.setValue(fcRight2);
     }
 
-    public double getQRight1() {
-        return qRight1.getValue();
+    public GenericValue<Double> getQRight1() {
+        return qRight1;
     }
 
     public void setQRight1(final double qRight1) {
         this.qRight1.setValue(qRight1);
     }
 
-    public double getQRight2() {
-        return qRight2.getValue();
+    public GenericValue<Double> getQRight2() {
+        return qRight2;
     }
 
     public void setQRight2(final double qRight2) {
         this.qRight2.setValue(qRight2);
     }
 
-    public int getModeRight1() {
-        return modeRight1.getValue();
+    public GenericValue<Integer> getModeRight1() {
+        return modeRight1;
     }
 
     public void setModeRight1(final int modeRight1) {
         this.modeRight1.setValue(modeRight1);
     }
 
-    public int getModeRight2() {
-        return modeRight2.getValue();
+    public GenericValue<Integer> getModeRight2() {
+        return modeRight2;
     }
 
     public void setModeRight2(final int modeRight2) {

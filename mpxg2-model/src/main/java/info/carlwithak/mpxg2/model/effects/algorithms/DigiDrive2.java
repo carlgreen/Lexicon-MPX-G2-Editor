@@ -65,32 +65,32 @@ public class DigiDrive2 extends Effect {
         return parameter;
     }
 
-    public int getDrive() {
-        return drive.getValue();
+    public GenericValue<Integer> getDrive() {
+        return drive;
     }
 
     public void setDrive(int drive) {
         this.drive.setValue(drive);
     }
 
-    public int getLow() {
-        return low.getValue();
+    public GenericValue<Integer> getLow() {
+        return low;
     }
 
     public void setLow(int low) {
         this.low.setValue(low);
     }
 
-    public int getMid() {
-        return mid.getValue();
+    public GenericValue<Integer> getMid() {
+        return mid;
     }
 
     public void setMid(int mid) {
         this.mid.setValue(mid);
     }
 
-    public int getHigh() {
-        return high.getValue();
+    public GenericValue<Integer> getHigh() {
+        return high;
     }
 
     public void setHigh(int high) {

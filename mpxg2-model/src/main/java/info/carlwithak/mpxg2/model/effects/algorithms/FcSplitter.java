@@ -61,24 +61,24 @@ public class FcSplitter extends Eq {
         return parameter;
     }
 
-    public int getLoCut() {
-        return loCut.getValue();
+    public GenericValue<Integer> getLoCut() {
+        return loCut;
     }
 
     public void setLoCut(int loCut) {
         this.loCut.setValue(loCut);
     }
 
-    public int getHiCut() {
-        return hiCut.getValue();
+    public GenericValue<Integer> getHiCut() {
+        return hiCut;
     }
 
     public void setHiCut(int hiCut) {
         this.hiCut.setValue(hiCut);
     }
 
-    public int getBalance() {
-        return balance.getValue();
+    public GenericValue<Integer> getBalance() {
+        return balance;
     }
 
     public void setBalance(int balance) {

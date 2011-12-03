@@ -57,16 +57,16 @@ public class TestTone extends Effect {
         return parameter;
     }
 
-    public int getNote() {
-        return note.getValue();
+    public GenericValue<Integer> getNote() {
+        return note;
     }
 
     public void setNote(int note) {
         this.note.setValue(note);
     }
 
-    public int getBalance() {
-        return balance.getValue();
+    public GenericValue<Integer> getBalance() {
+        return balance;
     }
 
     public void setBalance(int balance) {

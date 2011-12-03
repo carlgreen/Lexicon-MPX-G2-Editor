@@ -58,8 +58,8 @@ public class ShiftStereo extends Effect {
         return parameter;
     }
 
-    public int getTune() {
-        return tune.getValue();
+    public GenericValue<Integer> getTune() {
+        return tune;
     }
 
     public void setTune(int tune) {
@@ -74,8 +74,8 @@ public class ShiftStereo extends Effect {
         this.optimize = optimize;
     }
 
-    public boolean isGlide() {
-        return glide.getValue();
+    public GenericValue<Boolean> isGlide() {
+        return glide;
     }
 
     public void setGlide(boolean glide) {

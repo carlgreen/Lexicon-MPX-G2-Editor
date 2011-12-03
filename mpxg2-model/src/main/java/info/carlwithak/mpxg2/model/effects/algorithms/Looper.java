@@ -87,8 +87,8 @@ public class Looper extends Delay {
         this.time = time;
     }
 
-    public int getInMix() {
-        return inMix.getValue();
+    public GenericValue<Integer> getInMix() {
+        return inMix;
     }
 
     public void setInMix(int inMix) {
@@ -103,40 +103,40 @@ public class Looper extends Delay {
         this.feedbackInsert = feedbackInsert;
     }
 
-    public int getSensitivity() {
-        return sensitivity.getValue();
+    public GenericValue<Integer> getSensitivity() {
+        return sensitivity;
     }
 
     public void setSensitivity(int sensitivity) {
         this.sensitivity.setValue(sensitivity);
     }
 
-    public int getPan() {
-        return pan.getValue();
+    public GenericValue<Integer> getPan() {
+        return pan;
     }
 
     public void setPan(int pan) {
         this.pan.setValue(pan);
     }
 
-    public int getRelease() {
-        return release.getValue();
+    public GenericValue<Integer> getRelease() {
+        return release;
     }
 
     public void setRelease(int release) {
         this.release.setValue(release);
     }
 
-    public int getAttack() {
-        return attack.getValue();
+    public GenericValue<Integer> getAttack() {
+        return attack;
     }
 
     public void setAttack(int attack) {
         this.attack.setValue(attack);
     }
 
-    public boolean isClear() {
-        return clear.getValue();
+    public GenericValue<Boolean> isClear() {
+        return clear;
     }
 
     public void setClear(boolean clear) {

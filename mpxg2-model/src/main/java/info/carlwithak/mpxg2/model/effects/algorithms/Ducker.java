@@ -79,8 +79,8 @@ public class Ducker extends Delay {
         this.time = time;
     }
 
-    public int getFeedback() {
-        return feedback.getValue();
+    public GenericValue<Integer> getFeedback() {
+        return feedback;
     }
 
     public void setFeedback(int feedback) {
@@ -95,24 +95,24 @@ public class Ducker extends Delay {
         this.feedbackInsert = feedbackInsert;
     }
 
-    public int getSensitivity() {
-        return sensitivity.getValue();
+    public GenericValue<Integer> getSensitivity() {
+        return sensitivity;
     }
 
     public void setSensitivity(int sensitivity) {
         this.sensitivity.setValue(sensitivity);
     }
 
-    public int getRelease() {
-        return release.getValue();
+    public GenericValue<Integer> getRelease() {
+        return release;
     }
 
     public void setRelease(int release) {
         this.release.setValue(release);
     }
 
-    public boolean isClear() {
-        return clear.getValue();
+    public GenericValue<Boolean> isClear() {
+        return clear;
     }
 
     public void setClear(boolean clear) {

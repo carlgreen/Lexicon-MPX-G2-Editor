@@ -81,64 +81,64 @@ public class OneBandDual extends Eq {
         return parameter;
     }
 
-    public int getGainLeft() {
-        return gainLeft.getValue();
+    public GenericValue<Integer> getGainLeft() {
+        return gainLeft;
     }
 
     public void setGainLeft(final int gainLeft) {
         this.gainLeft.setValue(gainLeft);
     }
 
-    public int getFcLeft() {
-        return fcLeft.getValue();
+    public GenericValue<Integer> getFcLeft() {
+        return fcLeft;
     }
 
     public void setFcLeft(final int fcLeft) {
         this.fcLeft.setValue(fcLeft);
     }
 
-    public double getQLeft() {
-        return qLeft.getValue();
+    public GenericValue<Double> getQLeft() {
+        return qLeft;
     }
 
     public void setQLeft(final double qLeft) {
         this.qLeft.setValue(qLeft);
     }
 
-    public int getModeLeft() {
-        return modeLeft.getValue();
+    public GenericValue<Integer> getModeLeft() {
+        return modeLeft;
     }
 
     public void setModeLeft(final int modeLeft) {
         this.modeLeft.setValue(modeLeft);
     }
 
-    public int getGainRight() {
-        return gainRight.getValue();
+    public GenericValue<Integer> getGainRight() {
+        return gainRight;
     }
 
     public void setGainRight(final int gainRight) {
         this.gainRight.setValue(gainRight);
     }
 
-    public int getFcRight() {
-        return fcRight.getValue();
+    public GenericValue<Integer> getFcRight() {
+        return fcRight;
     }
 
     public void setFcRight(final int fcRight) {
         this.fcRight.setValue(fcRight);
     }
 
-    public double getQRight() {
-        return qRight.getValue();
+    public GenericValue<Double> getQRight() {
+        return qRight;
     }
 
     public void setQRight(final double qRight) {
         this.qRight.setValue(qRight);
     }
 
-    public int getModeRight() {
-        return modeRight.getValue();
+    public GenericValue<Integer> getModeRight() {
+        return modeRight;
     }
 
     public void setModeRight(final int modeRight) {

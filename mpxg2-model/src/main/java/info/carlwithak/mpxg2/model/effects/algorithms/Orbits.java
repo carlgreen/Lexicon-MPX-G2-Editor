@@ -98,24 +98,24 @@ public class Orbits extends Chorus {
         this.rate1 = rate1;
     }
 
-    public int getPulseWidth1() {
-        return pulseWidth1.getValue();
+    public GenericValue<Integer> getPulseWidth1() {
+        return pulseWidth1;
     }
 
     public void setPulseWidth1(int pulseWidth1) {
         this.pulseWidth1.setValue(pulseWidth1);
     }
 
-    public int getSync1() {
-        return sync1.getValue();
+    public GenericValue<Integer> getSync1() {
+        return sync1;
     }
 
     public void setSync1(int sync1) {
         this.sync1.setValue(sync1);
     }
 
-    public int getDepth1() {
-        return depth1.getValue();
+    public GenericValue<Integer> getDepth1() {
+        return depth1;
     }
 
     public void setDepth1(int depth1) {
@@ -130,40 +130,40 @@ public class Orbits extends Chorus {
         this.rate2 = rate2;
     }
 
-    public int getPulseWidth2() {
-        return pulseWidth2.getValue();
+    public GenericValue<Integer> getPulseWidth2() {
+        return pulseWidth2;
     }
 
     public void setPulseWidth2(int pulseWidth2) {
         this.pulseWidth2.setValue(pulseWidth2);
     }
 
-    public int getSync2() {
-        return sync2.getValue();
+    public GenericValue<Integer> getSync2() {
+        return sync2;
     }
 
     public void setSync2(int sync2) {
         this.sync2.setValue(sync2);
     }
 
-    public int getDepth2() {
-        return depth2.getValue();
+    public GenericValue<Integer> getDepth2() {
+        return depth2;
     }
 
     public void setDepth2(int depth2) {
         this.depth2.setValue(depth2);
     }
 
-    public int getResonance() {
-        return resonance.getValue();
+    public GenericValue<Integer> getResonance() {
+        return resonance;
     }
 
     public void setResonance(int resonance) {
         this.resonance.setValue(resonance);
     }
 
-    public int getWidth() {
-        return width.getValue();
+    public GenericValue<Integer> getWidth() {
+        return width;
     }
 
     public void setWidth(int width) {
