@@ -22,7 +22,6 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -39,7 +38,7 @@ public class Wah1ParserTest {
         assertThat(wah1.getLevel(), is(value(6)));
         assertThat(wah1.getSweep(), is(value(50)));
         assertThat(wah1.getBass(), is(value(0)));
-        assertEquals(0, wah1.getType());
+        assertThat(wah1.getType(), is(value(0)));
         assertThat(wah1.getResponse(), is(value(100)));
         assertThat(wah1.getGain(), is(value(10)));
     }

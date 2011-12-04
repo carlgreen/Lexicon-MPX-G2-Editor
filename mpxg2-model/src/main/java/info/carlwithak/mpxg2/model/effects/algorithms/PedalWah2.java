@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.WahType;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
@@ -30,7 +31,7 @@ public class PedalWah2 extends Effect {
     private static final String NAME = "Pedal Wah 2";
 
     private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "", 0, 100);
-    private int type;
+    private WahType type = new WahType();
     private GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
     private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
 
@@ -70,12 +71,12 @@ public class PedalWah2 extends Effect {
         this.bass.setValue(bass);
     }
 
-    public int getType() {
+    public WahType getType() {
         return type;
     }
 
     public void setType(int type) {
-        this.type = type;
+        this.type.setValue(type);
     }
 
     public GenericValue<Integer> getResponse() {

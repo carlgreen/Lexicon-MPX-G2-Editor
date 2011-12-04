@@ -22,7 +22,6 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -38,7 +37,7 @@ public class PedalWah1ParserTest {
         assertThat(pedalWah1.getMix(), is(value(100)));
         assertThat(pedalWah1.getLevel(), is(value(0)));
         assertThat(pedalWah1.getBass(), is(value(19)));
-        assertEquals(0, pedalWah1.getType());
+        assertThat(pedalWah1.getType(), is(value(0)));
         assertThat(pedalWah1.getResponse(), is(value(100)));
         assertThat(pedalWah1.getGain(), is(value(10)));
     }

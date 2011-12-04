@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
-
 /**
  *
  * @author Carl Green
@@ -38,7 +36,7 @@ public class Wah1Printer implements Printer {
         sb.append("    Level: ").append(ParameterPrinter.print(wah1.getLevel())).append("\n");
         sb.append("    Sweep: ").append(ParameterPrinter.print(wah1.getSweep())).append("\n");
         sb.append("    Bass: ").append(ParameterPrinter.print(wah1.getBass())).append("\n");
-        sb.append("    Type: ").append(wahTypeToString(wah1.getType())).append("\n");
+        sb.append("    Type: ").append(ParameterPrinter.print(wah1.getType())).append("\n");
         sb.append("    Resp: ").append(ParameterPrinter.print(wah1.getResponse())).append("\n");
         sb.append("    Gain: ").append(ParameterPrinter.print(wah1.getGain())).append("\n");
         return sb.toString();
