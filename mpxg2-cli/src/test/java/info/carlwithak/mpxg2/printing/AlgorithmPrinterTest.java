@@ -579,7 +579,7 @@ public class AlgorithmPrinterTest {
         aerosol.setResonance1(-60);
         aerosol.setResonance2(60);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.26Hz\n    PW 1: 45%\n    Depth1: 70%\n    Rate2: 0.26Hz\n    PW 2: 55%\n    Depth2: 60%\n    Res 1: -60\n    Res 2: +60\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.26Hz\n    PW 1: 45%\n    Dpth1: 70%\n    Rate2: 0.26Hz\n    PW 2: 55%\n    Dpth2: 60%\n    Res 1: -60\n    Res 2: +60\n";
         String actual = AlgorithmPrinter.print(aerosol);
 
         assertEquals(expected, actual);

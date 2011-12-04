@@ -19,10 +19,10 @@ Jam 2 Flange
     Level: 0dB
     Rate1: 0.26Hz
     PW 1: 45%
-    Depth1: 70%
+    Dpth1: 70%
     Rate2: 0.26Hz
     PW 2: 55%
-    Depth2: 60%
+    Dpth2: 60%
     Res 1: -60
     Res 2: +60
   Delay: JamMan (On)
