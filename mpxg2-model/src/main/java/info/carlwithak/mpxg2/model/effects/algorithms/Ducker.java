@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -32,7 +33,7 @@ public class Ducker extends Delay {
 
     private Rate time;
     private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
-    private int feedbackInsert;
+    private InsertPosition feedbackInsert = new InsertPosition("Fbk insert");
     private GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
     private GenericValue<Integer> release = new GenericValue<Integer>("Rls", "", 0, 100);
     private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
@@ -87,12 +88,12 @@ public class Ducker extends Delay {
         this.feedback.setValue(feedback);
     }
 
-    public int getFeedbackInsert() {
+    public InsertPosition getFeedbackInsert() {
         return feedbackInsert;
     }
 
     public void setFeedbackInsert(int feedbackInsert) {
-        this.feedbackInsert = feedbackInsert;
+        this.feedbackInsert.setValue(feedbackInsert);
     }
 
     public GenericValue<Integer> getSensitivity() {

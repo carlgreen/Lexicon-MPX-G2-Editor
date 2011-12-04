@@ -44,7 +44,7 @@ public class DelayDualPrinter implements Printer {
         sb.append("    Pan1: ").append(panToString(delayDual.getPan1().getValue())).append("\n");
         sb.append("    Pan2: ").append(panToString(delayDual.getPan2().getValue())).append("\n");
         sb.append("    Feedback1: ").append(ParameterPrinter.print(delayDual.getFeedback1())).append("\n");
-        sb.append("    Insert: ").append(delayInsertToString(delayDual.getInsert())).append("\n");
+        sb.append("    Insert: ").append(delayInsertToString(delayDual.getInsert().getValue())).append("\n");
         sb.append("    Feedback2: ").append(ParameterPrinter.print(delayDual.getFeedback2())).append("\n");
         sb.append("    XFbk1: ").append(ParameterPrinter.print(delayDual.getXFbk1())).append("\n");
         sb.append("    XFbk2: ").append(ParameterPrinter.print(delayDual.getXFbk2())).append("\n");

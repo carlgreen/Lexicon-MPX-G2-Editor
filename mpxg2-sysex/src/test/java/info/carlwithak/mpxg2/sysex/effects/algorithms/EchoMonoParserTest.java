@@ -24,7 +24,6 @@ import org.junit.Test;
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -41,7 +40,7 @@ public class EchoMonoParserTest {
         assertThat(echoMono.getLevel(), is(value(1)));
         assertThat(echoMono.getTime(), is(beat(4, 4)));
         assertThat(echoMono.getFeedback(), is(value(-15)));
-        assertEquals(3, echoMono.getInsert());
+        assertThat(echoMono.getInsert(), is(value(3)));
         assertThat(echoMono.getDamp(), is(value(20)));
         assertThat(echoMono.isClear(), is(value(false)));
     }

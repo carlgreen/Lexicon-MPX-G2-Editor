@@ -22,7 +22,6 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -39,7 +38,7 @@ public class JamManParserTest {
         assertThat(jamMan.getLevel(), is(value(0)));
         assertThat(jamMan.getSize(), is(value(250)));
         assertThat(jamMan.getFeedback(), is(value(0)));
-        assertEquals(3, jamMan.getInsert());
+        assertThat(jamMan.getInsert(), is(value(3)));
         assertThat(jamMan.isClear(), is(value(false)));
         assertThat(jamMan.isLayer(), is(value(false)));
         assertThat(jamMan.isReplace(), is(value(false)));

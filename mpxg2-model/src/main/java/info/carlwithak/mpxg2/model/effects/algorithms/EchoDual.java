@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -35,7 +36,7 @@ public class EchoDual extends Delay {
     private GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
     private GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
     private GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
-    private int insert;
+    private InsertPosition insert = new InsertPosition("Fbk insert");
     private GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
     private GenericValue<Integer> damp1 = new GenericValue<Integer>("Damp1", "%", 0, 100);
     private GenericValue<Integer> damp2 = new GenericValue<Integer>("Damp2", "%", 0, 100);
@@ -127,12 +128,12 @@ public class EchoDual extends Delay {
         this.feedback1.setValue(feedback1);
     }
 
-    public int getInsert() {
+    public InsertPosition getInsert() {
         return insert;
     }
 
     public void setInsert(int insert) {
-        this.insert = insert;
+        this.insert.setValue(insert);
     }
 
     public GenericValue<Integer> getFeedback2() {

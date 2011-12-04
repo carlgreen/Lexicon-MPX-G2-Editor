@@ -24,7 +24,6 @@ import org.junit.Test;
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -41,7 +40,7 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.getLevel(), is(value(0)));
         assertThat(echoStereo.getTime(), is(beat(1, 1)));
         assertThat(echoStereo.getFeedback(), is(value(0)));
-        assertEquals(3, echoStereo.getInsert());
+        assertThat(echoStereo.getInsert(), is(value(3)));
         assertThat(echoStereo.getDamp(), is(value(16)));
         assertThat(echoStereo.isClear(), is(value(false)));
     }
@@ -54,7 +53,7 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.getLevel(), is(value(0)));
         assertThat(echoStereo.getTime(), is(beat(1, 1)));
         assertThat(echoStereo.getFeedback(), is(value(0)));
-        assertEquals(3, echoStereo.getInsert());
+        assertThat(echoStereo.getInsert(), is(value(3)));
         assertThat(echoStereo.getDamp(), is(value(16)));
         assertThat(echoStereo.isClear(), is(value(false)));
     }

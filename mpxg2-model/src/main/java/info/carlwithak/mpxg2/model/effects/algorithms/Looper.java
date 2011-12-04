@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -32,7 +33,7 @@ public class Looper extends Delay {
 
     private Rate time;
     private GenericValue<Integer> inMix = new GenericValue<Integer>("InMix", "%", 0, 100);
-    private int feedbackInsert;
+    private InsertPosition feedbackInsert = new InsertPosition("Fbk insert");
     private GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
     private GenericValue<Integer> pan = new GenericValue<Integer>("Pan", "LCR", -50, 50);
     private GenericValue<Integer> release = new GenericValue<Integer>("Rls", "", 0, 100);
@@ -95,12 +96,12 @@ public class Looper extends Delay {
         this.inMix.setValue(inMix);
     }
 
-    public int getFeedbackInsert() {
+    public InsertPosition getFeedbackInsert() {
         return feedbackInsert;
     }
 
     public void setFeedbackInsert(int feedbackInsert) {
-        this.feedbackInsert = feedbackInsert;
+        this.feedbackInsert.setValue(feedbackInsert);
     }
 
     public GenericValue<Integer> getSensitivity() {

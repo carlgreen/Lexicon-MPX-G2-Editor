@@ -24,7 +24,6 @@ import org.junit.Test;
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -41,7 +40,7 @@ public class DelayMonoParserTest {
         assertThat(delayMono.getLevel(), is(value(0)));
         assertThat(delayMono.getTime(), is(beat(4, 3)));
         assertThat(delayMono.getFeedback(), is(value(10)));
-        assertEquals(3, delayMono.getInsert());
+        assertThat(delayMono.getInsert(), is(value(3)));
         assertThat(delayMono.isClear(), is(value(false)));
     }
 }

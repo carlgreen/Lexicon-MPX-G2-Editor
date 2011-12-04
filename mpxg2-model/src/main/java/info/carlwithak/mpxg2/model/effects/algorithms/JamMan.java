@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Delay;
 
@@ -31,7 +32,7 @@ public class JamMan extends Delay {
 
     private GenericValue<Integer> size = new GenericValue<Integer>("Size", "ms", 0, 20000);
     private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
-    private int insert;
+    private InsertPosition insert = new InsertPosition("Fbk insert");
     private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
     private GenericValue<Boolean> layer = new GenericValue<Boolean>("Layer", "OnOff", false, true);
     private GenericValue<Boolean> replace = new GenericValue<Boolean>("Replc", "OnOff", false, true);
@@ -94,12 +95,12 @@ public class JamMan extends Delay {
         this.feedback.setValue(feedback);
     }
 
-    public int getInsert() {
+    public InsertPosition getInsert() {
         return insert;
     }
 
     public void setInsert(int insert) {
-        this.insert = insert;
+        this.insert.setValue(insert);
     }
 
     public GenericValue<Boolean> isClear() {

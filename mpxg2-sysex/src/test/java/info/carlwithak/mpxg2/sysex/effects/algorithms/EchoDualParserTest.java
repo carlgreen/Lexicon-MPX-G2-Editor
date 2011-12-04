@@ -25,7 +25,6 @@ import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsTapMs.tapMs;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -45,7 +44,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.getLevel1(), is(value(0)));
         assertThat(echoDual.getLevel2(), is(value(0)));
         assertThat(echoDual.getFeedback1(), is(value(1)));
-        assertEquals(3, echoDual.getInsert());
+        assertThat(echoDual.getInsert(), is(value(3)));
         assertThat(echoDual.getFeedback2(), is(value(1)));
         assertThat(echoDual.getDamp1(), is(value(20)));
         assertThat(echoDual.getDamp2(), is(value(20)));
@@ -63,7 +62,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.getLevel1(), is(value(0)));
         assertThat(echoDual.getLevel2(), is(value(0)));
         assertThat(echoDual.getFeedback1(), is(value(-10)));
-        assertEquals(3, echoDual.getInsert());
+        assertThat(echoDual.getInsert(), is(value(3)));
         assertThat(echoDual.getFeedback2(), is(value(15)));
         assertThat(echoDual.getDamp1(), is(value(25)));
         assertThat(echoDual.getDamp2(), is(value(25)));
@@ -81,7 +80,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.getLevel1(), is(value(0)));
         assertThat(echoDual.getLevel2(), is(value(0)));
         assertThat(echoDual.getFeedback1(), is(value(-10)));
-        assertEquals(3, echoDual.getInsert());
+        assertThat(echoDual.getInsert(), is(value(3)));
         assertThat(echoDual.getFeedback2(), is(value(-20)));
         assertThat(echoDual.getDamp1(), is(value(20)));
         assertThat(echoDual.getDamp2(), is(value(20)));
@@ -99,7 +98,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.getLevel1(), is(value(0)));
         assertThat(echoDual.getLevel2(), is(value(0)));
         assertThat(echoDual.getFeedback1(), is(value(-15)));
-        assertEquals(3, echoDual.getInsert());
+        assertThat(echoDual.getInsert(), is(value(3)));
         assertThat(echoDual.getFeedback2(), is(value(-20)));
         assertThat(echoDual.getDamp1(), is(value(20)));
         assertThat(echoDual.getDamp2(), is(value(20)));

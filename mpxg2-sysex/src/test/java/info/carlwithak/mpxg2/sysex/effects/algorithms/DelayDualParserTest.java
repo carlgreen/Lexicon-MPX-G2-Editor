@@ -24,7 +24,6 @@ import org.junit.Test;
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -46,7 +45,7 @@ public class DelayDualParserTest {
         assertThat(delayDual.getPan1(), is(value(-50)));
         assertThat(delayDual.getPan2(), is(value(50)));
         assertThat(delayDual.getFeedback1(), is(value(10)));
-        assertEquals(3, delayDual.getInsert());
+        assertThat(delayDual.getInsert(), is(value(3)));
         assertThat(delayDual.getFeedback2(), is(value(10)));
         assertThat(delayDual.getXFbk1(), is(value(0)));
         assertThat(delayDual.getXFbk2(), is(value(0)));
@@ -66,7 +65,7 @@ public class DelayDualParserTest {
         assertThat(delayDual.getPan1(), is(value(-50)));
         assertThat(delayDual.getPan2(), is(value(50)));
         assertThat(delayDual.getFeedback1(), is(value(0)));
-        assertEquals(3, delayDual.getInsert());
+        assertThat(delayDual.getInsert(), is(value(3)));
         assertThat(delayDual.getFeedback2(), is(value(0)));
         assertThat(delayDual.getXFbk1(), is(value(0)));
         assertThat(delayDual.getXFbk2(), is(value(0)));

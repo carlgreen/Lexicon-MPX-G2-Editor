@@ -41,7 +41,7 @@ public class EchoDualPrinter implements Printer {
         sb.append("    Level1: ").append(ParameterPrinter.print(echoDual.getLevel1())).append("\n");
         sb.append("    Level2: ").append(ParameterPrinter.print(echoDual.getLevel2())).append("\n");
         sb.append("    Feedback1: ").append(ParameterPrinter.print(echoDual.getFeedback1())).append("\n");
-        sb.append("    Insert: ").append(delayInsertToString(echoDual.getInsert())).append("\n");
+        sb.append("    Insert: ").append(delayInsertToString(echoDual.getInsert().getValue())).append("\n");
         sb.append("    Feedback2: ").append(ParameterPrinter.print(echoDual.getFeedback2())).append("\n");
         sb.append("    Damp1: ").append(ParameterPrinter.print(echoDual.getDamp1())).append("\n");
         sb.append("    Damp2: ").append(ParameterPrinter.print(echoDual.getDamp2())).append("\n");
