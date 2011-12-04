@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.printing;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import org.junit.Test;
@@ -65,6 +66,17 @@ public class ParameterPrinterTest {
 
         String expected = "200ms";
         String actual = ParameterPrinter.print(rate);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintInsertPosition() throws PrintException {
+        InsertPosition insert = new InsertPosition("Fbk");
+        insert.setValue(3);
+
+        String expected = "Delay";
+        String actual = ParameterPrinter.print(insert);
 
         assertEquals(expected, actual);
     }
