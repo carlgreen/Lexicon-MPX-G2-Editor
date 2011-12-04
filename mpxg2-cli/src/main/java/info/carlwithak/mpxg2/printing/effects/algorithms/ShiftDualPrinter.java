@@ -35,7 +35,7 @@ public class ShiftDualPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(shiftDual.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(shiftDual.getLevel())).append("\n");
         sb.append("    Tune1: ").append(ParameterPrinter.print(shiftDual.getTune1())).append("\n");
-        sb.append("    Optimize: ").append(shiftDual.getOptimize()).append("\n");
+        sb.append("    Optimize: ").append(ParameterPrinter.print(shiftDual.getOptimize())).append("\n");
         sb.append("    Tune2: ").append(ParameterPrinter.print(shiftDual.getTune2())).append("\n");
         sb.append("    Glide: ").append(ParameterPrinter.print(shiftDual.isGlide())).append("\n");
         return sb.toString();

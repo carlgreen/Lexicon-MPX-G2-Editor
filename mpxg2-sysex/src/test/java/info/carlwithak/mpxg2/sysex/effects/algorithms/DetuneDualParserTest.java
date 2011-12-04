@@ -20,7 +20,6 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -38,7 +37,7 @@ public class DetuneDualParserTest {
         assertThat(detuneDual.getMix(), is(value(100)));
         assertThat(detuneDual.getLevel(), is(value(3)));
         assertThat(detuneDual.getTune1(), is(value(7)));
-        assertEquals(10, detuneDual.getOptimize());
+        assertThat(detuneDual.getOptimize(), is(value(10)));
         assertThat(detuneDual.getTune2(), is(value(5)));
         assertThat(detuneDual.getPreDelay(), is(value(22)));
     }

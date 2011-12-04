@@ -30,7 +30,7 @@ public class ShiftMono extends Effect {
     private static final String NAME = "Shift (M)";
 
     private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", -4800, 1900); // cents
-    private int optimize;
+    private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
     private GenericValue<Boolean> glide = new GenericValue<Boolean>("Glide", "OnOff", false, true);
 
     @Override
@@ -66,12 +66,12 @@ public class ShiftMono extends Effect {
         this.tune.setValue(tune);
     }
 
-    public int getOptimize() {
+    public GenericValue<Integer> getOptimize() {
         return optimize;
     }
 
     public void setOptimize(int optimize) {
-        this.optimize = optimize;
+        this.optimize.setValue(optimize);
     }
 
     public GenericValue<Boolean> isGlide() {

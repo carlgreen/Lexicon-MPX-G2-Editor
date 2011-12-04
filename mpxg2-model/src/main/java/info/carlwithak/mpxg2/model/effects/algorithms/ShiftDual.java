@@ -30,7 +30,7 @@ public class ShiftDual extends Effect {
     private static final String NAME = "Shift (D)";
 
     private GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", -4800, 1900); // cents
-    private int optimize;
+    private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
     private GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", -4800, 1900); // cents
     private GenericValue<Boolean> glide = new GenericValue<Boolean>("Glide", "OnOff", false, true);
 
@@ -70,12 +70,12 @@ public class ShiftDual extends Effect {
         this.tune1.setValue(tune1);
     }
 
-    public int getOptimize() {
+    public GenericValue<Integer> getOptimize() {
         return optimize;
     }
 
     public void setOptimize(int optimize) {
-        this.optimize = optimize;
+        this.optimize.setValue(optimize);
     }
 
     public GenericValue<Integer> getTune2() {

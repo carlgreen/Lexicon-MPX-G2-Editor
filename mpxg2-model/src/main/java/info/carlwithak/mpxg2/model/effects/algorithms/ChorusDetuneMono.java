@@ -30,7 +30,7 @@ public class ChorusDetuneMono extends Chorus {
     private static final String NAME = "Detune (M)";
 
     private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", 0, 100);
-    private int optimize;
+    private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "ms", 10, 35);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 35);
 
     @Override
@@ -66,12 +66,12 @@ public class ChorusDetuneMono extends Chorus {
         this.tune.setValue(tune);
     }
 
-    public int getOptimize() {
+    public GenericValue<Integer> getOptimize() {
         return optimize;
     }
 
     public void setOptimize(int optimize) {
-        this.optimize = optimize;
+        this.optimize.setValue(optimize);
     }
 
     public GenericValue<Integer> getPreDelay() {

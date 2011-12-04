@@ -22,7 +22,6 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -38,7 +37,7 @@ public class ChorusDetuneMonoParserTest {
         assertThat(detuneMono.getMix(), is(value(50)));
         assertThat(detuneMono.getLevel(), is(value(6)));
         assertThat(detuneMono.getTune(), is(value(10)));
-        assertEquals(10, detuneMono.getOptimize());
+        assertThat(detuneMono.getOptimize(), is(value(10)));
         assertThat(detuneMono.getPreDelay(), is(value(0)));
     }
 }

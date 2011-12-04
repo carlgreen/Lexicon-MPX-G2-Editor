@@ -30,7 +30,7 @@ public class DetuneMono extends Effect {
     private static final String NAME = "Detune (M)";
 
     private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", 0, 100);
-    private int optimize; // 10-60ms
+    private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "ms", 10, 60);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 70);
 
     @Override
@@ -66,12 +66,12 @@ public class DetuneMono extends Effect {
         this.tune.setValue(tune);
     }
 
-    public int getOptimize() {
+    public GenericValue<Integer> getOptimize() {
         return optimize;
     }
 
     public void setOptimize(int optimize) {
-        this.optimize = optimize;
+        this.optimize.setValue(optimize);
     }
 
     public GenericValue<Integer> getPreDelay() {

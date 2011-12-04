@@ -35,7 +35,7 @@ public class ShiftMonoPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(shiftMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(shiftMono.getLevel())).append("\n");
         sb.append("    Tune: ").append(ParameterPrinter.print(shiftMono.getTune())).append("\n");
-        sb.append("    Optimize: ").append(shiftMono.getOptimize()).append("\n");
+        sb.append("    Optimize: ").append(ParameterPrinter.print(shiftMono.getOptimize())).append("\n");
         sb.append("    Glide: ").append(ParameterPrinter.print(shiftMono.isGlide())).append("\n");
         return sb.toString();
     }

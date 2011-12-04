@@ -22,7 +22,6 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -38,7 +37,7 @@ public class ShiftDualParserTest {
         assertThat(shiftDual.getMix(), is(value(100)));
         assertThat(shiftDual.getLevel(), is(value(6)));
         assertThat(shiftDual.getTune1(), is(value(-1200)));
-        assertEquals(10, shiftDual.getOptimize());
+        assertThat(shiftDual.getOptimize(), is(value(10)));
         assertThat(shiftDual.getTune2(), is(value(-500)));
         assertThat(shiftDual.isGlide(), is(value(true)));
     }

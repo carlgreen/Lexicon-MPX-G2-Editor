@@ -36,7 +36,7 @@ public class DetuneDualPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(detuneDual.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(detuneDual.getLevel())).append("\n");
         sb.append("    Tune1: ").append(ParameterPrinter.print(detuneDual.getTune1())).append("\n");
-        sb.append("    Optimize: ").append(detuneDual.getOptimize()).append("ms\n");
+        sb.append("    Optimize: ").append(ParameterPrinter.print(detuneDual.getOptimize())).append("\n");
         sb.append("    Tune2: ").append(ParameterPrinter.print(detuneDual.getTune2())).append("\n");
         sb.append("    P Dly: ").append(ParameterPrinter.print(detuneDual.getPreDelay())).append("\n");
         return sb.toString();
