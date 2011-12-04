@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
+import info.carlwithak.mpxg2.model.WahType;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -77,6 +78,17 @@ public class ParameterPrinterTest {
 
         String expected = "Delay";
         String actual = ParameterPrinter.print(insert);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintWahType() throws PrintException {
+        WahType type = new WahType();
+        type.setValue(1);
+
+        String expected = "Model V";
+        String actual = ParameterPrinter.print(type);
 
         assertEquals(expected, actual);
     }

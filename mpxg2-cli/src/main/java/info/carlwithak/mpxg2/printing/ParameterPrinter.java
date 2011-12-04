@@ -24,10 +24,12 @@ import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
+import info.carlwithak.mpxg2.model.WahType;
 import java.text.DecimalFormat;
 
 import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
+import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
 
 /**
  * Class to print out a parameter correctly depending on the type.
@@ -56,6 +58,9 @@ public class ParameterPrinter {
         } else if (parameter instanceof InsertPosition) {
             InsertPosition insert = (InsertPosition) parameter;
             result = delayInsertToString(insert.getValue());
+        } else if (parameter instanceof WahType) {
+            WahType type = (WahType) parameter;
+            result = wahTypeToString(type.getValue());
         } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
             // could surely do better than this
             GenericValue value = (GenericValue) parameter;
