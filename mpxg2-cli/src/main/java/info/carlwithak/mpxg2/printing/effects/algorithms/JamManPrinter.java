@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-
 /**
  *
  * @author Carl Green
@@ -38,7 +36,7 @@ public class JamManPrinter implements Printer {
         sb.append("    Level: ").append(ParameterPrinter.print(jamMan.getLevel())).append("\n");
         sb.append("    Size: ").append(ParameterPrinter.print(jamMan.getSize())).append("\n");
         sb.append("    Feedback: ").append(ParameterPrinter.print(jamMan.getFeedback())).append("\n");
-        sb.append("    Insert: ").append(delayInsertToString(jamMan.getInsert().getValue())).append("\n");
+        sb.append("    Insert: ").append(ParameterPrinter.print(jamMan.getInsert())).append("\n");
         sb.append("    Clear: ").append(ParameterPrinter.print(jamMan.isClear())).append("\n");
         sb.append("    Layer: ").append(ParameterPrinter.print(jamMan.isLayer())).append("\n");
         sb.append("    Replace: ").append(ParameterPrinter.print(jamMan.isReplace())).append("\n");

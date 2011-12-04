@@ -22,8 +22,6 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-
 /**
  *
  * @author Carl Green
@@ -38,7 +36,7 @@ public class DelayStereoPrinter implements Printer {
         sb.append("    Level: ").append(ParameterPrinter.print(delayStereo.getLevel())).append("\n");
         sb.append("    Time: ").append(ParameterPrinter.print(delayStereo.getTime())).append("\n");
         sb.append("    Feedback: ").append(ParameterPrinter.print(delayStereo.getFeedback())).append("\n");
-        sb.append("    Insert: ").append(delayInsertToString(delayStereo.getInsert().getValue())).append("\n");
+        sb.append("    Insert: ").append(ParameterPrinter.print(delayStereo.getInsert())).append("\n");
         sb.append("    Clear: ").append(ParameterPrinter.print(delayStereo.isClear())).append("\n");
         return sb.toString();
     }
