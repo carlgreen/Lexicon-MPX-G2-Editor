@@ -48,9 +48,9 @@ Boston...
     Size: 10.0m
     Link: On
     Diff: 100%
-    Pre Delay: 0ms
-    Delay Time: 0.0s
-    Delay Level: Off
+    P Dly: 0ms
+    DTime: 0.0s
+    D Lvl: Off
     Rt HC: 12.8k
   EQ: Pedal Vol (On)
     Toe Switch: off=bypass

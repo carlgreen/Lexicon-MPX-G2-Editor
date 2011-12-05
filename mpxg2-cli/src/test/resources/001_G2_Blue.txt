@@ -42,9 +42,9 @@ G2 Blue
     Size: 24.5m
     Link: On
     Diff: 60%
-    Pre Delay: 7ms
-    Delay Time: 1.41s
-    Delay Level: Off
+    P Dly: 7ms
+    DTime: 1.41s
+    D Lvl: Off
     Rt HC: 12.8k
   Gain: Screamer (Off)
     Toe Switch: disabled

@@ -42,9 +42,9 @@ PitchCascade
     Size: 22.5m
     Link: On
     Diff: 60%
-    Pre Delay: 0ms
-    Delay Time: 1.41s
-    Delay Level: Off
+    P Dly: 0ms
+    DTime: 1.41s
+    D Lvl: Off
     Rt HC: 0.0k
   EQ: Pedal Vol (On)
     Toe Switch: disabled

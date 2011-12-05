@@ -41,10 +41,10 @@ public class AmbiencePrinter implements Printer {
         sb.append("    Size: ").append(ParameterPrinter.print(ambience.getSize())).append("\n");
         sb.append("    Link: ").append(ParameterPrinter.print(ambience.isLink())).append("\n");
         sb.append("    Diff: ").append(ParameterPrinter.print(ambience.getDiff())).append("\n");
-        sb.append("    Pre Delay: ").append(ParameterPrinter.print(ambience.getPreDelay())).append("\n");
-        sb.append("    Delay Time: ").append(reverbDelayTimeToString(ambience.getDelayTime().getValue())).append("s\n");
+        sb.append("    P Dly: ").append(ParameterPrinter.print(ambience.getPreDelay())).append("\n");
+        sb.append("    DTime: ").append(reverbDelayTimeToString(ambience.getDelayTime().getValue())).append("s\n");
         // TODO this is not an On/Off kind of situation
-        sb.append("    Delay Level: ").append(onOffToString(ambience.getDelayLevel().getValue())).append("\n");
+        sb.append("    D Lvl: ").append(onOffToString(ambience.getDelayLevel().getValue())).append("\n");
         sb.append("    Rt HC: ").append(reverbAmbienceRtHCToString(ambience.getRtHC().getValue())).append("k\n");
         return sb.toString();
     }

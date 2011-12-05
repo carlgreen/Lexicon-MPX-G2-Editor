@@ -35,9 +35,9 @@ New Eddie
     Size: 8.0m
     Link: On
     Diff: 66%
-    Pre Delay: 23ms
-    Delay Time: 0.0s
-    Delay Level: Off
+    P Dly: 23ms
+    DTime: 0.0s
+    D Lvl: Off
     Rt HC: 0.0k
   Gain: Preamp (On)
     Toe Switch: disabled
