@@ -21,7 +21,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
