@@ -725,7 +725,7 @@ public class AlgorithmPrinterTest {
         echoMono.setDamp(20);
         echoMono.setClear(false);
 
-        String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Feedback: -15%\n    Insert: Delay\n    Damp: 20%\n    Clear: Off\n";
+        String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Fbk: -15%\n    Fbk insert: Delay\n    Damp: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoMono);
 
         assertEquals(expected, actual);

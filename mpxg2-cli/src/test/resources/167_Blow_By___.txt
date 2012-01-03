@@ -17,8 +17,8 @@ Blow By...
     Mix: 15%
     Level: 0dB
     Time: 169ms
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Damp: 20%
     Clear: Off
   Reverb: Ambience (On)

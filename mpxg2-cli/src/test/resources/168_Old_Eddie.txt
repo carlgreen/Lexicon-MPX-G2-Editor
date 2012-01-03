@@ -28,8 +28,8 @@ Old Eddie
     Mix: 5%
     Level: 0dB
     Time: 4:3
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Damp: 20%
     Clear: Off
   Reverb: Plate (On)

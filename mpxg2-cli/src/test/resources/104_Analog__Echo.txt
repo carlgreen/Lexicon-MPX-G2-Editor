@@ -35,8 +35,8 @@ Analog  Echo
     Mix: 50%
     Level: 0dB
     Time: 1:1
-    Feedback: +40%
-    Insert: Effect 2
+    Fbk: +40%
+    Fbk insert: Effect 2
     Damp: 6%
     Clear: Off
   Reverb: Hall (Off)

@@ -35,8 +35,8 @@ Wah & Chorus
     Mix: 19%
     Level: 0dB
     Time: 2:1
-    Feedback: +22%
-    Insert: Delay
+    Fbk: +22%
+    Fbk insert: Delay
     Damp: 17%
     Clear: Off
   Reverb: Plate (On)

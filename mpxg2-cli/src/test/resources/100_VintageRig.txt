@@ -32,8 +32,8 @@ VintageRig
     Mix: 10%
     Level: 0dB
     Time: 4:4
-    Feedback: -15%
-    Insert: Delay
+    Fbk: -15%
+    Fbk insert: Delay
     Damp: 20%
     Clear: Off
   EQ: Pedal Vol (On)

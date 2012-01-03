@@ -33,8 +33,8 @@ Wah & Flange
     Mix: 30%
     Level: 0dB
     Time: 2:1
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Damp: 17%
     Clear: Off
   Reverb: Plate (On)

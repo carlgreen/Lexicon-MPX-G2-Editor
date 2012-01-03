@@ -35,8 +35,8 @@ public class EchoMonoPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(echoMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(echoMono.getLevel())).append("\n");
         sb.append("    Time: ").append(ParameterPrinter.print(echoMono.getTime())).append("\n");
-        sb.append("    Feedback: ").append(ParameterPrinter.print(echoMono.getFeedback())).append("\n");
-        sb.append("    Insert: ").append(ParameterPrinter.print(echoMono.getInsert())).append("\n");
+        sb.append("    Fbk: ").append(ParameterPrinter.print(echoMono.getFeedback())).append("\n");
+        sb.append("    Fbk insert: ").append(ParameterPrinter.print(echoMono.getInsert())).append("\n");
         sb.append("    Damp: ").append(ParameterPrinter.print(echoMono.getDamp())).append("\n");
         sb.append("    Clear: ").append(ParameterPrinter.print(echoMono.isClear())).append("\n");
         return sb.toString();

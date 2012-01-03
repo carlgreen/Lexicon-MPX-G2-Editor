@@ -17,8 +17,8 @@ China Grove
     Mix: 37%
     Level: 0dB
     Time: 1:1
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Damp: 15%
     Clear: Off
   Gain: Preamp (On)
