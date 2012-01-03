@@ -34,7 +34,7 @@ Chaos Dance
     Size: 33.0m
     Link: On
     Diff: 76%
-    Pre Delay: 7ms
+    P Dly: 7ms
     Bass: 0.8X
     Decay: 0.97s
     Xovr: 1.1k

@@ -43,7 +43,7 @@ E Dor/Mix 3
     Size: 29.5m
     Link: On
     Diff: 76%
-    Pre Delay: 100ms
+    P Dly: 100ms
     Bass: 0.8X
     Decay: 1.59s
     Xovr: 654

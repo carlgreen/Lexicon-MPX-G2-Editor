@@ -35,7 +35,7 @@ Power Chords
     Size: 28.0m
     Link: On
     Diff: 90%
-    Pre Delay: 82ms
+    P Dly: 82ms
     Bass: 1.2X
     Decay: 0.73s
     Xovr: 818

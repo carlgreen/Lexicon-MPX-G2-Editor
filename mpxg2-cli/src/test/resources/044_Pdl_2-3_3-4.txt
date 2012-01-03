@@ -40,7 +40,7 @@ Pdl 2~3  3~4
     Size: 24.0m
     Link: On
     Diff: 76%
-    Pre Delay: 0ms
+    P Dly: 0ms
     Bass: 1.2X
     Decay: 2.08s
     Xovr: 589

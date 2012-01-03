@@ -33,7 +33,7 @@ Jam2AutoWah
     Size: 20.0m
     Link: On
     Diff: 76%
-    Pre Delay: 17ms
+    P Dly: 17ms
     Bass: 1.2X
     Decay: 0.74s
     Xovr: 589
