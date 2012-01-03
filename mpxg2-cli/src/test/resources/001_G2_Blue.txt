@@ -27,11 +27,11 @@ G2 Blue
     Level: +1dB
     Time1: 4:4
     Time2: 2:1
-    Level1: 0dB
-    Level2: 0dB
-    Feedback1: +1%
-    Insert: Delay
-    Feedback2: +1%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Fbk 1: +1%
+    Fbk insert: Delay
+    Fbk 2: +1%
     Damp1: 20%
     Damp2: 20%
     Clear: Off

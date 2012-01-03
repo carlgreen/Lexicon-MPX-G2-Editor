@@ -19,11 +19,11 @@ Kiss the Sky
     Level: 0dB
     Time1: 132ms
     Time2: 132ms
-    Level1: 0dB
-    Level2: 0dB
-    Feedback1: -20%
-    Insert: Delay
-    Feedback2: -20%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Fbk 1: -20%
+    Fbk insert: Delay
+    Fbk 2: -20%
     Damp1: 20%
     Damp2: 20%
     Clear: Off

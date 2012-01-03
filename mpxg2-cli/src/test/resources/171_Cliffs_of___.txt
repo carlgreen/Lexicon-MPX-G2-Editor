@@ -30,11 +30,11 @@ Cliffs of...
     Level: +3dB
     Time1: 1:1
     Time2: 3:2
-    Level1: 0dB
-    Level2: 0dB
-    Feedback1: +20%
-    Insert: Delay
-    Feedback2: +20%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Fbk 1: +20%
+    Fbk insert: Delay
+    Fbk 2: +20%
     Damp1: 25%
     Damp2: 25%
     Clear: Off

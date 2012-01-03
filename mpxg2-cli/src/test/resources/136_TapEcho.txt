@@ -11,11 +11,11 @@ Tap Echo
     Level: -3dB
     Time1: 2:2
     Time2: 2:2
-    Level1: 0dB
-    Level2: 0dB
-    Feedback1: -20%
-    Insert: Delay
-    Feedback2: -20%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Fbk 1: -20%
+    Fbk insert: Delay
+    Fbk 2: -20%
     Damp1: 14%
     Damp2: 14%
     Clear: Off

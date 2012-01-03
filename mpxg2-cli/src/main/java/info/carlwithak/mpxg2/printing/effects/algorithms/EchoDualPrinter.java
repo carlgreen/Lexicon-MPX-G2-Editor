@@ -36,11 +36,11 @@ public class EchoDualPrinter implements Printer {
         sb.append("    Level: ").append(ParameterPrinter.print(echoDual.getLevel())).append("\n");
         sb.append("    Time1: ").append(ParameterPrinter.print(echoDual.getTime1())).append("\n");
         sb.append("    Time2: ").append(ParameterPrinter.print(echoDual.getTime2())).append("\n");
-        sb.append("    Level1: ").append(ParameterPrinter.print(echoDual.getLevel1())).append("\n");
-        sb.append("    Level2: ").append(ParameterPrinter.print(echoDual.getLevel2())).append("\n");
-        sb.append("    Feedback1: ").append(ParameterPrinter.print(echoDual.getFeedback1())).append("\n");
-        sb.append("    Insert: ").append(ParameterPrinter.print(echoDual.getInsert())).append("\n");
-        sb.append("    Feedback2: ").append(ParameterPrinter.print(echoDual.getFeedback2())).append("\n");
+        sb.append("    Lvl 1: ").append(ParameterPrinter.print(echoDual.getLevel1())).append("\n");
+        sb.append("    Lvl 2: ").append(ParameterPrinter.print(echoDual.getLevel2())).append("\n");
+        sb.append("    Fbk 1: ").append(ParameterPrinter.print(echoDual.getFeedback1())).append("\n");
+        sb.append("    Fbk insert: ").append(ParameterPrinter.print(echoDual.getInsert())).append("\n");
+        sb.append("    Fbk 2: ").append(ParameterPrinter.print(echoDual.getFeedback2())).append("\n");
         sb.append("    Damp1: ").append(ParameterPrinter.print(echoDual.getDamp1())).append("\n");
         sb.append("    Damp2: ").append(ParameterPrinter.print(echoDual.getDamp2())).append("\n");
         sb.append("    Clear: ").append(ParameterPrinter.print(echoDual.isClear())).append("\n");

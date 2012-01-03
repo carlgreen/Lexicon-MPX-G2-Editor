@@ -31,11 +31,11 @@ Slide Comp
     Level: 0dB
     Time1: 200ms
     Time2: 300ms
-    Level1: 0dB
-    Level2: 0dB
-    Feedback1: -15%
-    Insert: Delay
-    Feedback2: -20%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Fbk 1: -15%
+    Fbk insert: Delay
+    Fbk 2: -20%
     Damp1: 20%
     Damp2: 20%
     Clear: Off
