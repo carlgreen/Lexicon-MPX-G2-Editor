@@ -18,8 +18,8 @@ Live Jimi
     Mix: 20%
     Level: 0dB
     Time: 132ms
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Damp: 15%
     Clear: Off
   Reverb: Plate (On)

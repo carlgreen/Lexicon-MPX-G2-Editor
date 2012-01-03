@@ -34,8 +34,8 @@ Env Trem
     Mix: 20%
     Level: 0dB
     Time: 1:1
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Damp: 16%
     Clear: Off
   Reverb: Plate (On)

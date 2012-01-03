@@ -742,7 +742,7 @@ public class AlgorithmPrinterTest {
         echoStereo.setDamp(16);
         echoStereo.setClear(false);
 
-        String expected = "    Mix: 0%\n    Level: 0dB\n    Time: 1:1\n    Feedback: 0%\n    Insert: Delay\n    Damp: 16%\n    Clear: Off\n";
+        String expected = "    Mix: 0%\n    Level: 0dB\n    Time: 1:1\n    Fbk: 0%\n    Fbk insert: Delay\n    Damp: 16%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoStereo);
 
         assertEquals(expected, actual);

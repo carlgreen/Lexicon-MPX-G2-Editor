@@ -9,8 +9,8 @@ IPS TapeSlap
     Mix: 20%
     Level: 0dB
     Time: 1.32Hz
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Damp: 10%
     Clear: Off
   Softrow:
