@@ -22,7 +22,7 @@ Wah & Phaser
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-    Vol: 0%
+    Volume: 0%
   Delay: Echo (M) (Off)
     Toe Switch: disabled
     Mix: 30%
