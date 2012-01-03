@@ -708,7 +708,7 @@ public class AlgorithmPrinterTest {
         delayDual.setXFbk2(0);
         delayDual.setClear(false);
 
-        String expected = "    Mix: 25%\n    Level: 0dB\n    Time1: 3:4\n    Time2: 4:3\n    Level1: 0dB\n    Level2: 0dB\n    Pan1: 50L\n    Pan2: 50R\n    Feedback1: +10%\n    Insert: Delay\n    Feedback2: +10%\n    XFbk1: 0%\n    XFbk2: 0%\n    Clear: Off\n";
+        String expected = "    Mix: 25%\n    Level: 0dB\n    Time1: 3:4\n    Time2: 4:3\n    Lvl 1: 0dB\n    Lvl 2: 0dB\n    Pan 1: 50L\n    Pan 2: 50R\n    Fbk 1: +10%\n    Fbk insert: Delay\n    Fbk 2: +10%\n    XFbk1: 0%\n    XFbk2: 0%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayDual);
 
         assertEquals(expected, actual);

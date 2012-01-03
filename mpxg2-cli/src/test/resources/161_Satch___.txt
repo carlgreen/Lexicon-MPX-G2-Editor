@@ -31,13 +31,13 @@ Satch...
     Level: +6dB
     Time1: 3:4
     Time2: 3:4
-    Level1: 0dB
-    Level2: 0dB
-    Pan1: 50L
-    Pan2: 50R
-    Feedback1: +7%
-    Insert: Delay
-    Feedback2: +7%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Pan 1: 50L
+    Pan 2: 50R
+    Fbk 1: +7%
+    Fbk insert: Delay
+    Fbk 2: +7%
     XFbk1: 0%
     XFbk2: 0%
     Clear: Off

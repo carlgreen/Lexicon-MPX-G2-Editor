@@ -18,13 +18,13 @@ AnotherBrick
     Level: -5dB
     Time1: 4:3
     Time2: 4:3
-    Level1: 0dB
-    Level2: 0dB
-    Pan1: 50L
-    Pan2: 50R
-    Feedback1: 0%
-    Insert: Delay
-    Feedback2: 0%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Pan 1: 50L
+    Pan 2: 50R
+    Fbk 1: 0%
+    Fbk insert: Delay
+    Fbk 2: 0%
     XFbk1: +100%
     XFbk2: +23%
     Clear: Off

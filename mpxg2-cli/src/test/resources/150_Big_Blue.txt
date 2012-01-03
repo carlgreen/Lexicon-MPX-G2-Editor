@@ -28,13 +28,13 @@ Big Blue
     Level: 0dB
     Time1: 2:4
     Time2: 4:4
-    Level1: 0dB
-    Level2: 0dB
-    Pan1: 50L
-    Pan2: 50R
-    Feedback1: +10%
-    Insert: Delay
-    Feedback2: +10%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Pan 1: 50L
+    Pan 2: 50R
+    Fbk 1: +10%
+    Fbk insert: Delay
+    Fbk 2: +10%
     XFbk1: +10%
     XFbk2: +10%
     Clear: Off

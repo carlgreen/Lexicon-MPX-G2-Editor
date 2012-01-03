@@ -30,13 +30,13 @@ Octaves
     Level: 0dB
     Time1: 2:1
     Time2: 3:2
-    Level1: 0dB
-    Level2: 0dB
-    Pan1: 50L
-    Pan2: 50R
-    Feedback1: 0%
-    Insert: Delay
-    Feedback2: 0%
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Pan 1: 50L
+    Pan 2: 50R
+    Fbk 1: 0%
+    Fbk insert: Delay
+    Fbk 2: 0%
     XFbk1: 0%
     XFbk2: 0%
     Clear: Off
