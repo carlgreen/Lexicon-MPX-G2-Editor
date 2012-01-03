@@ -23,7 +23,7 @@
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-    Vol: 100%
+    Volume: 100%
   Delay: Delay (D) (On)
     Toe Switch: disabled
     Mix: 11%
