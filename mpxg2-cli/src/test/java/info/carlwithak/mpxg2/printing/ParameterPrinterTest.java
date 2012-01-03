@@ -20,12 +20,15 @@ import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import info.carlwithak.mpxg2.model.WahType;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.mock;
 
 /**
@@ -102,6 +105,20 @@ public class ParameterPrinterTest {
         String actual = ParameterPrinter.print(value);
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintPanValue() throws PrintException {
+        PanValue value = new PanValue("Pan", -5, 5);
+
+        value.setValue(-5);
+        assertThat(ParameterPrinter.print(value), is("5L"));
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("C"));
+
+        value.setValue(5);
+        assertThat(ParameterPrinter.print(value), is("5R"));
     }
 
     @Test
