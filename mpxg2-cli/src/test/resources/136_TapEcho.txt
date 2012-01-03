@@ -23,7 +23,7 @@ Tap Echo
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-    Vol: 100%
+    Volume: 100%
   Softrow:
     1: Delay Level
     2: Delay Time1

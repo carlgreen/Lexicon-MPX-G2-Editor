@@ -952,7 +952,7 @@ public class AlgorithmPrinterTest {
         volumeMono.setLevel(0);
         volumeMono.setVolume(100);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Vol: 100%\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 100%\n";
         String actual = AlgorithmPrinter.print(volumeMono);
 
         assertEquals(expected, actual);

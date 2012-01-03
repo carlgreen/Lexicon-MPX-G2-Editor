@@ -34,7 +34,7 @@ public class EqVolumeMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(volumeMono.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(volumeMono.getLevel())).append("\n");
-        sb.append("    Vol: ").append(ParameterPrinter.print(volumeMono.getVolume())).append("\n");
+        sb.append("    Volume: ").append(ParameterPrinter.print(volumeMono.getVolume())).append("\n");
         return sb.toString();
     }
 
