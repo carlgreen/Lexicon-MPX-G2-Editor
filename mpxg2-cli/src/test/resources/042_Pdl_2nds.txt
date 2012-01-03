@@ -30,8 +30,8 @@ Pdl 2nds
     Mix: 10%
     Level: 0dB
     Time: 1:1
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Chamber (Off)
     Toe Switch: disabled

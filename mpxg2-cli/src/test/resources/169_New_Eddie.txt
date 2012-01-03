@@ -25,8 +25,8 @@ New Eddie
     Mix: 15%
     Level: +6dB
     Time: 4:3
-    Feedback: +10%
-    Insert: Delay
+    Fbk: +10%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Ambience (On)
     Toe Switch: disabled

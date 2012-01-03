@@ -34,8 +34,8 @@ Pedal Swell
     Mix: 30%
     Level: 0dB
     Time: 4:3
-    Feedback: +20%
-    Insert: Delay
+    Fbk: +20%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Hall (On)
     Toe Switch: disabled

@@ -684,7 +684,7 @@ public class AlgorithmPrinterTest {
         delayStereo.setInsert(3);
         delayStereo.setClear(false);
 
-        String expected = "    Mix: 20%\n    Level: 0dB\n    Time: 2:4\n    Feedback: +20%\n    Insert: Delay\n    Clear: Off\n";
+        String expected = "    Mix: 20%\n    Level: 0dB\n    Time: 2:4\n    Fbk: +20%\n    Fbk insert: Delay\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayStereo);
 
         assertEquals(expected, actual);

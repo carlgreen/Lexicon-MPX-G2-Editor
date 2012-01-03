@@ -39,8 +39,8 @@ TS ChrsRvb+
     Mix: 20%
     Level: +3dB
     Time: 4:3
-    Feedback: +10%
-    Insert: Delay
+    Fbk: +10%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Hall (On)
     Toe Switch: disabled

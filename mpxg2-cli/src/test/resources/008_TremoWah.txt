@@ -31,8 +31,8 @@ TremoWah
     Mix: 20%
     Level: 0dB
     Time: 2:4
-    Feedback: +20%
-    Insert: Delay
+    Fbk: +20%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Hall (Off)
     Toe Switch: disabled

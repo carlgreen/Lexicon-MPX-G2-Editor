@@ -38,8 +38,8 @@ Purple Reign
     Mix: 10%
     Level: +6dB
     Time: 4.00Hz
-    Feedback: +10%
-    Insert: Delay
+    Fbk: +10%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Plate (On)
     Toe Switch: disabled

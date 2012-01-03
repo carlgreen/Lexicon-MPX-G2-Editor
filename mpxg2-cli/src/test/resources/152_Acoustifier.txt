@@ -30,8 +30,8 @@ Acoustifier
     Mix: 20%
     Level: 0dB
     Time: 4:3
-    Feedback: +15%
-    Insert: Delay
+    Fbk: +15%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Hall (On)
     Toe Switch: disabled

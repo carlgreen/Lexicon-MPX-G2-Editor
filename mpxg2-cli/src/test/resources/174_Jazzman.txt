@@ -30,8 +30,8 @@ Jazzman
     Mix: 5%
     Level: 0dB
     Time: 4:4
-    Feedback: +10%
-    Insert: Delay
+    Fbk: +10%
+    Fbk insert: Delay
     Clear: Off
   Reverb: Plate (On)
     Toe Switch: disabled
