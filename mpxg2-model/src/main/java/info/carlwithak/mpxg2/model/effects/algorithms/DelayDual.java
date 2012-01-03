@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -35,8 +36,8 @@ public class DelayDual extends Delay {
     private Rate time2;
     private GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
     private GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
-    private GenericValue<Integer> pan1 = new GenericValue<Integer>("Pan 1", "LCR", -50, 50);
-    private GenericValue<Integer> pan2 = new GenericValue<Integer>("Pan 2", "LCR", -50, 50);
+    private PanValue pan1 = new PanValue("Pan 1", -50, 50);
+    private PanValue pan2 = new PanValue("Pan 2", -50, 50);
     private GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
     private InsertPosition insert = new InsertPosition("Fbk insert");
     private GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
@@ -128,7 +129,7 @@ public class DelayDual extends Delay {
         this.level2.setValue(level2);
     }
 
-    public GenericValue<Integer> getPan1() {
+    public PanValue getPan1() {
         return pan1;
     }
 
@@ -136,7 +137,7 @@ public class DelayDual extends Delay {
         this.pan1.setValue(pan1);
     }
 
-    public GenericValue<Integer> getPan2() {
+    public PanValue getPan2() {
         return pan2;
     }
 
