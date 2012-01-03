@@ -57,7 +57,7 @@ Analog  Echo
     Toe Switch: disabled
     Mix: 100%
     Level: -90dB
-    Vol: 100%
+    Volume: 100%
   Gain: Overdrive (On)
     Toe Switch: disabled
     Lo: +5dB

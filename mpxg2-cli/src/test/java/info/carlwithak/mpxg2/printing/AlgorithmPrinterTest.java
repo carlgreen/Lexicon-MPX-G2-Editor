@@ -965,7 +965,7 @@ public class AlgorithmPrinterTest {
         volumeStereo.setLevel(0);
         volumeStereo.setVolume(0);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Vol: 0%\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
         String actual = AlgorithmPrinter.print(volumeStereo);
 
         assertEquals(expected, actual);

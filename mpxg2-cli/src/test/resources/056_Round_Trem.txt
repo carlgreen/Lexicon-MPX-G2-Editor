@@ -47,7 +47,7 @@ Round Trem
     Toe Switch: disabled
     Mix: 100%
     Level: 0dB
-    Vol: 0%
+    Volume: 0%
   Gain: Tone (Off)
     Toe Switch: disabled
     Lo: +6dB
