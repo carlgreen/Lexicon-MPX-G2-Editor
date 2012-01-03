@@ -146,6 +146,29 @@ public class UtilTest {
     }
 
     @Test
+    public void testReverbDelayLevelToString() {
+        int delayLevel = 0;
+        String expected = "Off";
+        String actual = Util.reverbDelayLevelToString(delayLevel);
+        assertEquals(expected, actual);
+
+        delayLevel = 1;
+        expected = "-48dB";
+        actual = Util.reverbDelayLevelToString(delayLevel);
+        assertEquals(expected, actual);
+
+        delayLevel = 24;
+        expected = "-1dB";
+        actual = Util.reverbDelayLevelToString(delayLevel);
+        assertEquals(expected, actual);
+
+        delayLevel = 25;
+        expected = "Full";
+        actual = Util.reverbDelayLevelToString(delayLevel);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testSignInt() {
         // standard stuff
         assertEquals("+1", Util.signInt(1));

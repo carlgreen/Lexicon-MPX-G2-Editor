@@ -159,6 +159,13 @@ public class Util {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.8
     };
 
+    private static final String[] REVERB_DELAY_LEVEL = {
+        "Off", "-48dB", "-42db", "-39dB", "-36dB", "-33dB", "-30dB", "-27dB",
+        "-24dB", "-22dB", "-20dB", "-18dB", "-16dB", "-14dB", "-12dB", "-10dB",
+        "-9dB", "-8dB", "-7dB", "-6dB", "-5dB", "-4dB", "-3dB", "-2dB", "-1dB",
+        "Full"
+    };
+
     private static final String[] PHASES = {"0", "90", "180", "270"};
 
     private static final String[] EQ_MODES = {"LShlf", "Band", "HShlf"};
@@ -219,6 +226,13 @@ public class Util {
      */
     public static double reverbAmbienceRtHCToString(final int reverbRtHC) {
         return REVERB_AMBIENCE_RT_HC[reverbRtHC];
+    }
+
+    /**
+     * @return String representation of Delay Level index for Ambience algorithm.
+     */
+    public static String reverbDelayLevelToString(final int delayLevel) {
+        return REVERB_DELAY_LEVEL[delayLevel];
     }
 
     /**
