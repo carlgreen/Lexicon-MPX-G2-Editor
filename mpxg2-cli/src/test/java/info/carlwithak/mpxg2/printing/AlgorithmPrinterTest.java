@@ -600,7 +600,7 @@ public class AlgorithmPrinterTest {
         centrifuge1.setDepth2(43);
         centrifuge1.setResonance(100);
 
-        String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Depth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Depth2: 43%\n    Res: +100%\n";
+        String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Dpth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Dpth2: 43%\n    Res: +100%\n";
         String actual = AlgorithmPrinter.print(centrifuge1);
 
         assertEquals(expected, actual);

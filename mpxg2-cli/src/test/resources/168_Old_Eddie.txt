@@ -17,11 +17,11 @@ Old Eddie
     Rate1: 0.60Hz
     PW 1: 45%
     Sync1: +120
-    Depth1: 100%
+    Dpth1: 100%
     Rate2: 1.00Hz
     PW 2: 100%
     Sync2: -120
-    Depth2: 43%
+    Dpth2: 43%
     Res: +100%
   Delay: Echo (M) (Off)
     Toe Switch: disabled
