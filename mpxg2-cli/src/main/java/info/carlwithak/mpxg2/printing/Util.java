@@ -269,6 +269,7 @@ public class Util {
      * @return String 'On' or 'Off' depending on value of ind
      * @deprecated Should be a boolean value already
      */
+    @Deprecated
     public static String onOffToString(final int ind) {
         return ind == 0 ? "Off" : "On";
     }
