@@ -668,7 +668,7 @@ public class AlgorithmPrinterTest {
         delayMono.setInsert(3);
         delayMono.setClear(false);
 
-        String expected = "    Mix: 10%\n    Level: 0dB\n    Time: 4:3\n    Feedback: +10%\n    Insert: Delay\n    Clear: Off\n";
+        String expected = "    Mix: 10%\n    Level: 0dB\n    Time: 4:3\n    Fbk: +10%\n    Fbk insert: Delay\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayMono);
 
         assertEquals(expected, actual);

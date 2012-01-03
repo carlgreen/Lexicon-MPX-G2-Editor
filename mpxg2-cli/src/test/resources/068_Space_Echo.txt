@@ -27,8 +27,8 @@ Space Echo
     Mix: 100%
     Level: 0dB
     Time: 1:1
-    Feedback: +36%
-    Insert: EQ
+    Fbk: +36%
+    Fbk insert: EQ
     Clear: Off
   EQ: 2-Band (M) (On)
     Toe Switch: disabled
