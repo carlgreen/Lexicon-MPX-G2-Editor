@@ -35,13 +35,13 @@ public class ChorusPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(chorus.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(chorus.getLevel())).append("\n");
         sb.append("    Rate1: ").append(ParameterPrinter.print(chorus.getRate1())).append("\n");
-        sb.append("    PW1: ").append(ParameterPrinter.print(chorus.getPulseWidth1())).append("\n");
-        sb.append("    Depth1: ").append(ParameterPrinter.print(chorus.getDepth1())).append("\n");
+        sb.append("    PW 1: ").append(ParameterPrinter.print(chorus.getPulseWidth1())).append("\n");
+        sb.append("    Dpth1: ").append(ParameterPrinter.print(chorus.getDepth1())).append("\n");
         sb.append("    Rate2: ").append(ParameterPrinter.print(chorus.getRate2())).append("\n");
-        sb.append("    PW2: ").append(ParameterPrinter.print(chorus.getPulseWidth2())).append("\n");
-        sb.append("    Depth2: ").append(ParameterPrinter.print(chorus.getDepth2())).append("\n");
-        sb.append("    Res1: ").append(ParameterPrinter.print(chorus.getResonance1())).append("\n");
-        sb.append("    Res2: ").append(ParameterPrinter.print(chorus.getResonance2())).append("\n");
+        sb.append("    PW 2: ").append(ParameterPrinter.print(chorus.getPulseWidth2())).append("\n");
+        sb.append("    Dpth2: ").append(ParameterPrinter.print(chorus.getDepth2())).append("\n");
+        sb.append("    Res 1: ").append(ParameterPrinter.print(chorus.getResonance1())).append("\n");
+        sb.append("    Res 2: ").append(ParameterPrinter.print(chorus.getResonance2())).append("\n");
         return sb.toString();
     }
 

@@ -17,13 +17,13 @@ Cordovox
     Mix: 100%
     Level: 0dB
     Rate1: 0.62Hz
-    PW1: 45%
-    Depth1: 30%
+    PW 1: 45%
+    Dpth1: 30%
     Rate2: 0.56Hz
-    PW2: 54%
-    Depth2: 0%
-    Res1: -19
-    Res2: 0
+    PW 2: 54%
+    Dpth2: 0%
+    Res 1: -19
+    Res 2: 0
   EQ: Pedal Vol (On)
     Toe Switch: off=bypass
     Mix: 100%

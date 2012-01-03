@@ -456,7 +456,7 @@ public class AlgorithmPrinterTest {
         chorus.setResonance1(-19);
         chorus.setResonance2(0);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.62Hz\n    PW1: 45%\n    Depth1: 30%\n    Rate2: 0.56Hz\n    PW2: 54%\n    Depth2: 0%\n    Res1: -19\n    Res2: 0\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.62Hz\n    PW 1: 45%\n    Dpth1: 30%\n    Rate2: 0.56Hz\n    PW 2: 54%\n    Dpth2: 0%\n    Res 1: -19\n    Res 2: 0\n";
         String actual = AlgorithmPrinter.print(chorus);
 
         assertEquals(expected, actual);

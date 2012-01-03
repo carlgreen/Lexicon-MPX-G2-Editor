@@ -27,13 +27,13 @@ TS Chorus+
     Mix: 70%
     Level: +6dB
     Rate1: 0.50Hz
-    PW1: 45%
-    Depth1: 100%
+    PW 1: 45%
+    Dpth1: 100%
     Rate2: 0.31Hz
-    PW2: 54%
-    Depth2: 82%
-    Res1: -22
-    Res2: -15
+    PW 2: 54%
+    Dpth2: 82%
+    Res 1: -22
+    Res 2: -15
   Delay: Delay (S) (Off)
     Toe Switch: disabled
     Mix: 20%

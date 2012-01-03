@@ -22,13 +22,13 @@ Pedal Swell
     Mix: 64%
     Level: 0dB
     Rate1: 0.41Hz
-    PW1: 45%
-    Depth1: 100%
+    PW 1: 45%
+    Dpth1: 100%
     Rate2: 0.46Hz
-    PW2: 82%
-    Depth2: 100%
-    Res1: -15
-    Res2: 0
+    PW 2: 82%
+    Dpth2: 100%
+    Res 1: -15
+    Res 2: 0
   Delay: Delay (S) (On)
     Toe Switch: disabled
     Mix: 40%
