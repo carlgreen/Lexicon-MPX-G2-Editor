@@ -29,14 +29,14 @@ import info.carlwithak.mpxg2.model.effects.Eq;
 public class TwoBandStereo extends Eq {
     private static final String NAME = "2-Band (S)";
 
-    private GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Double> q1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> q2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Integer> mode1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> mode2 = new GenericValue<Integer>("Mode", "", 0, 2);
+    private GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
+    private GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
+    private GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
+    private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
+    private GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
+    private GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
+    private GenericValue<Integer> mode1 = new GenericValue<Integer>("Mode1", "", 0, 2);
+    private GenericValue<Integer> mode2 = new GenericValue<Integer>("Mode2", "", 0, 2);
 
     @Override
     public String getName() {
