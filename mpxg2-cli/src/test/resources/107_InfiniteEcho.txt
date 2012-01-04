@@ -41,7 +41,7 @@ InfiniteEcho
     Size: 70.0m
     Link: On
     Diff: 100%
-    Pre Delay: 0ms
+    P Dly: 0ms
     Bass: 1.2X
     Decay: 2.53s
     Xovr: 818

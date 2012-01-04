@@ -49,7 +49,7 @@ TS Chorus+
     Size: 53.0m
     Link: On
     Diff: 100%
-    Pre Delay: 25ms
+    P Dly: 25ms
     Bass: 1.2X
     Decay: 1.67s
     Xovr: 818

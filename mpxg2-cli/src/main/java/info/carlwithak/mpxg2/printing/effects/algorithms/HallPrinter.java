@@ -43,7 +43,7 @@ public class HallPrinter implements Printer {
         sb.append("    Size: ").append(ParameterPrinter.print(hall.getSize())).append("\n");
         sb.append("    Link: ").append(ParameterPrinter.print(hall.isLink())).append("\n");
         sb.append("    Diff: ").append(ParameterPrinter.print(hall.getDiff())).append("\n");
-        sb.append("    Pre Delay: ").append(ParameterPrinter.print(hall.getPreDelay())).append("\n");
+        sb.append("    P Dly: ").append(ParameterPrinter.print(hall.getPreDelay())).append("\n");
         sb.append("    Bass: ").append(reverbBassToString(hall.getBass().getValue())).append("X\n");
         sb.append("    Decay: ").append(reverbDecayToString(hall.isLink().getValue(), hall.getSize().getValue(), hall.getDecay().getValue())).append("s\n");
         sb.append("    Xovr: ").append(reverbXovrToString(hall.getXovr().getValue())).append("\n");

@@ -40,7 +40,7 @@ Acoustifier
     Size: 35.5m
     Link: On
     Diff: 100%
-    Pre Delay: 0ms
+    P Dly: 0ms
     Bass: 2.0X
     Decay: 1.29s
     Xovr: 818

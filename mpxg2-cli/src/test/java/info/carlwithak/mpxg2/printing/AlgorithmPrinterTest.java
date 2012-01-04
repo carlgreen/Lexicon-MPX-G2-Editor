@@ -828,7 +828,7 @@ public class AlgorithmPrinterTest {
         hall.setShape(110);
         hall.setSpred(125);
 
-        String expected = "    Mix: 20%\n    Level: 0dB\n    Size: 53.0m\n    Link: On\n    Diff: 80%\n    Pre Delay: 25ms\n    Bass: 1.2X\n    Decay: 1.67s\n    Xovr: 818\n    Rt HC: 7.9k\n    Shape: 110\n    Spred: 89\n";
+        String expected = "    Mix: 20%\n    Level: 0dB\n    Size: 53.0m\n    Link: On\n    Diff: 80%\n    P Dly: 25ms\n    Bass: 1.2X\n    Decay: 1.67s\n    Xovr: 818\n    Rt HC: 7.9k\n    Shape: 110\n    Spred: 89\n";
         String actual = AlgorithmPrinter.print(hall);
 
         assertEquals(expected, actual);

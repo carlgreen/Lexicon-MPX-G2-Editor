@@ -37,7 +37,7 @@ Blues Club
     Size: 28.5m
     Link: On
     Diff: 100%
-    Pre Delay: 0ms
+    P Dly: 0ms
     Bass: 2.0X
     Decay: 0.49s
     Xovr: 818

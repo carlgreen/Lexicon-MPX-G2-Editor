@@ -44,7 +44,7 @@ Pedal Swell
     Size: 53.0m
     Link: On
     Diff: 100%
-    Pre Delay: 169ms
+    P Dly: 169ms
     Bass: 1.2X
     Decay: 1.97s
     Xovr: 818
