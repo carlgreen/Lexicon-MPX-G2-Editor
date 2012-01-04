@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
@@ -33,7 +34,7 @@ public class SweepFilter extends Effect {
     private GenericValue<Integer> fRes = new GenericValue<Integer>("FRes", "", 1, 100);
     private GenericValue<Integer> mod = new GenericValue<Integer>("Mod", "Hz", 20, 20000);
     private GenericValue<Integer> scale = new GenericValue<Integer>("Scale", "%", -100, 100);
-    private GenericValue<Integer> pan = new GenericValue<Integer>("Pan", "LCR", -50, 50);
+    private PanValue pan = new PanValue("Pan", -50, 50);
 
     @Override
     public String getName() {
@@ -101,7 +102,7 @@ public class SweepFilter extends Effect {
         this.scale.setValue(scale);
     }
 
-    public GenericValue<Integer> getPan() {
+    public PanValue getPan() {
         return pan;
     }
 
