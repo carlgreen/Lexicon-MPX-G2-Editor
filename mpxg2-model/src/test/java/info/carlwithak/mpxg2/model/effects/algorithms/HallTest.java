@@ -74,7 +74,7 @@ public class HallTest {
 
     @Test
     public void testBass() {
-        assertEquals("x", hall.getParameter(6).getUnit());
+        assertEquals("X", hall.getParameter(6).getUnit());
     }
 
     @Test

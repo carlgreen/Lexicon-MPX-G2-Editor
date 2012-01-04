@@ -74,7 +74,7 @@ public class PlateTest {
 
     @Test
     public void testBass() {
-        assertEquals("x", plate.getParameter(6).getUnit());
+        assertEquals("X", plate.getParameter(6).getUnit());
     }
 
     @Test

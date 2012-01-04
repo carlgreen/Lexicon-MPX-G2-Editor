@@ -33,7 +33,7 @@ public class Hall extends Reverb {
     private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
-    private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "x", 0, 255); // 0.2 - 4.0
+    private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "X", 0, 255); // 0.2 - 4.0
     private GenericValue<Integer> decay = new GenericValue<Integer>("Decay", "s", 0, 255); // 0.12 - 65.4
     private GenericValue<Integer> xovr = new GenericValue<Integer>("Xovr", "Hz", 0, 255); // 30 - 24700
     private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 525 - 24700

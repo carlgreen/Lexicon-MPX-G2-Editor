@@ -74,7 +74,7 @@ public class ChamberTest {
 
     @Test
     public void testBass() {
-        assertEquals("x", chamber.getParameter(6).getUnit());
+        assertEquals("X", chamber.getParameter(6).getUnit());
     }
 
     @Test
