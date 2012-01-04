@@ -25,7 +25,6 @@ import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
-import static info.carlwithak.mpxg2.printing.Util.reverbXovrToString;
 
 /**
  *
@@ -45,7 +44,7 @@ public class HallPrinter implements Printer {
         sb.append("    P Dly: ").append(ParameterPrinter.print(hall.getPreDelay())).append("\n");
         sb.append("    Bass: ").append(ParameterPrinter.print(hall.getBass())).append("\n");
         sb.append("    Decay: ").append(reverbDecayToString(hall.isLink().getValue(), hall.getSize().getValue(), hall.getDecay().getValue())).append("s\n");
-        sb.append("    Xovr: ").append(reverbXovrToString(hall.getXovr().getValue())).append("\n");
+        sb.append("    Xovr: ").append(ParameterPrinter.print(hall.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(hall.getRtHC().getValue())).append("\n");
         sb.append("    Shape: ").append(ParameterPrinter.print(hall.getShape())).append("\n");
         sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(hall.isLink().getValue(), hall.getSize().getValue(), hall.getSpred().getValue())).append("\n");

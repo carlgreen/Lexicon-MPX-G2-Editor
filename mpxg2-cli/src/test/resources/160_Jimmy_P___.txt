@@ -22,7 +22,7 @@ Jimmy P...
     P Dly: 250ms
     Bass: 1.2X
     Decay: 1.30s
-    Xovr: 986
+    Xovr: 986Hz
     Rt HC: 5.4k
     Shape: 36
     Spred: 73

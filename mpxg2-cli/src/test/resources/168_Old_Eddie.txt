@@ -42,7 +42,7 @@ Old Eddie
     P Dly: 0ms
     Bass: 1.2X
     Decay: 0.84s
-    Xovr: 986
+    Xovr: 986Hz
     Rt HC: 10.4k
     Shape: 36
     Spred: 95

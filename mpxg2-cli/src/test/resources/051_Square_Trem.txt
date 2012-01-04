@@ -37,7 +37,7 @@ Square Trem
     P Dly: 120ms
     Bass: 1.5X
     Decay: 0.79s
-    Xovr: 589
+    Xovr: 589Hz
     Rt HC: 7.9k
     Shape: 88
     Spred: 143

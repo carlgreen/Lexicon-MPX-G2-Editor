@@ -49,7 +49,7 @@ Wah & Aero
     P Dly: 120ms
     Bass: 1.5X
     Decay: 2.05s
-    Xovr: 986
+    Xovr: 986Hz
     Rt HC: 8.4k
     Shape: 110
     Spred: 138

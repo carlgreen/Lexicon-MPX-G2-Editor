@@ -44,7 +44,7 @@ InfiniteEcho
     P Dly: 0ms
     Bass: 1.2X
     Decay: 2.53s
-    Xovr: 818
+    Xovr: 818Hz
     Rt HC: 14.1k
     Shape: 110
     Spred: 115

@@ -39,7 +39,7 @@ Verbolo
     P Dly: 120ms
     Bass: 1.5X
     Decay: 0.65s
-    Xovr: 1.8k
+    Xovr: 1.8kHz
     Rt HC: 7.1k
     Shape: 47
     Spred: 143

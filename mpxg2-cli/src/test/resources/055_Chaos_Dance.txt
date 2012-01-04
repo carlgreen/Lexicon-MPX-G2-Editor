@@ -37,7 +37,7 @@ Chaos Dance
     P Dly: 7ms
     Bass: 0.8X
     Decay: 0.97s
-    Xovr: 1.1k
+    Xovr: 1.1kHz
     Rt HC: 8.8k
     Shape: 62
     Spred: 55

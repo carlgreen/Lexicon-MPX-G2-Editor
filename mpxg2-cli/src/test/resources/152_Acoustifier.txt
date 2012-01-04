@@ -43,7 +43,7 @@ Acoustifier
     P Dly: 0ms
     Bass: 2.0X
     Decay: 1.29s
-    Xovr: 818
+    Xovr: 818Hz
     Rt HC: 10.4k
     Shape: 164
     Spred: 98

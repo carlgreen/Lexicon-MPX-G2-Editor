@@ -49,7 +49,7 @@ Slide Comp
     P Dly: 200ms
     Bass: 1.2X
     Decay: 1.51s
-    Xovr: 818
+    Xovr: 818Hz
     Rt HC: 12.4k
     Shape: 10
     Spred: 117

@@ -46,7 +46,7 @@ Vybe/Flange
     P Dly: 10ms
     Bass: 0.2X
     Decay: 0.09s
-    Xovr: 986
+    Xovr: 986Hz
     Rt HC: 8.8k
     Shape: 58
     Spred: 65

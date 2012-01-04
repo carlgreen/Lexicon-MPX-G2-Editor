@@ -36,7 +36,7 @@ Jam2AutoWah
     P Dly: 17ms
     Bass: 1.2X
     Decay: 0.74s
-    Xovr: 589
+    Xovr: 589Hz
     Rt HC: 15.2k
     Shape: 62
     Spred: 36

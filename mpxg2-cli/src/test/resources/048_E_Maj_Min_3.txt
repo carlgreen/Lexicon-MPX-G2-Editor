@@ -46,7 +46,7 @@ E Maj/Min 3
     P Dly: 100ms
     Bass: 0.8X
     Decay: 1.59s
-    Xovr: 654
+    Xovr: 654Hz
     Rt HC: 8.8k
     Shape: 62
     Spred: 50

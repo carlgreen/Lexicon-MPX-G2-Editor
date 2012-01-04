@@ -40,7 +40,7 @@ Blues Club
     P Dly: 0ms
     Bass: 2.0X
     Decay: 0.49s
-    Xovr: 818
+    Xovr: 818Hz
     Rt HC: 14.1k
     Shape: 110
     Spred: 50

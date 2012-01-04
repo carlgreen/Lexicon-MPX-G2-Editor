@@ -49,7 +49,7 @@ Analog  Echo
     P Dly: 0ms
     Bass: 1.2X
     Decay: 1.70s
-    Xovr: 818
+    Xovr: 818Hz
     Rt HC: 14.1k
     Shape: 110
     Spred: 77

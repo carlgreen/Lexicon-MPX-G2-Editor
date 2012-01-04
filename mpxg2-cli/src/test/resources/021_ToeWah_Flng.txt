@@ -46,7 +46,7 @@ ToeWah/Flng
     P Dly: 120ms
     Bass: 0.8X
     Decay: 1.42s
-    Xovr: 1.1k
+    Xovr: 1.1kHz
     Rt HC: 8.4k
     Shape: 110
     Spred: 109

@@ -43,7 +43,7 @@ Pdl 4~5 5~6
     P Dly: 0ms
     Bass: 1.2X
     Decay: 2.08s
-    Xovr: 589
+    Xovr: 589Hz
     Rt HC: 15.2k
     Shape: 62
     Spred: 42

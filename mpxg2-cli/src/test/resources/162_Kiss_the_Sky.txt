@@ -37,7 +37,7 @@ Kiss the Sky
     P Dly: 0ms
     Bass: 0.8X
     Decay: 1.15s
-    Xovr: 986
+    Xovr: 986Hz
     Rt HC: 19.4k
     Shape: 36
     Spred: 95

@@ -37,7 +37,7 @@ GuitarSolo
     P Dly: 169ms
     Bass: 1.2X
     Decay: 1.30s
-    Xovr: 986
+    Xovr: 986Hz
     Rt HC: 19.4k
     Shape: 36
     Spred: 73
