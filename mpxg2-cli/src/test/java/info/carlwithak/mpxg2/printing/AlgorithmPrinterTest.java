@@ -784,7 +784,7 @@ public class AlgorithmPrinterTest {
         jamMan.setDelay(false);
         jamMan.setMute(false);
 
-        String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Feedback: 0%\n    Insert: Delay\n    Clear: Off\n    Layer: Off\n    Replace: Off\n    Delay: Off\n    Mute: Off\n";
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Fbk: 0%\n    Fbk insert: Delay\n    Clear: Off\n    Layer: Off\n    Replc: Off\n    Delay: Off\n    MuteS: Off\n";
         String actual = AlgorithmPrinter.print(jamMan);
 
         assertEquals(expected, actual);

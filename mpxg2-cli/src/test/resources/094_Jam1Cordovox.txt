@@ -38,13 +38,13 @@ Jam1Cordovox
     Mix: 50%
     Level: 0dB
     Size: 250ms
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Clear: Off
     Layer: Off
-    Replace: Off
+    Replc: Off
     Delay: Off
-    Mute: Off
+    MuteS: Off
   Reverb: Chamber (On)
     Toe Switch: disabled
     Mix: 28%

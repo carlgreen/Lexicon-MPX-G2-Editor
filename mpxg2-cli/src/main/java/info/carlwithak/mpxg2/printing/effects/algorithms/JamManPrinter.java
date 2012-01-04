@@ -35,13 +35,13 @@ public class JamManPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(jamMan.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(jamMan.getLevel())).append("\n");
         sb.append("    Size: ").append(ParameterPrinter.print(jamMan.getSize())).append("\n");
-        sb.append("    Feedback: ").append(ParameterPrinter.print(jamMan.getFeedback())).append("\n");
-        sb.append("    Insert: ").append(ParameterPrinter.print(jamMan.getInsert())).append("\n");
+        sb.append("    Fbk: ").append(ParameterPrinter.print(jamMan.getFeedback())).append("\n");
+        sb.append("    Fbk insert: ").append(ParameterPrinter.print(jamMan.getInsert())).append("\n");
         sb.append("    Clear: ").append(ParameterPrinter.print(jamMan.isClear())).append("\n");
         sb.append("    Layer: ").append(ParameterPrinter.print(jamMan.isLayer())).append("\n");
-        sb.append("    Replace: ").append(ParameterPrinter.print(jamMan.isReplace())).append("\n");
+        sb.append("    Replc: ").append(ParameterPrinter.print(jamMan.isReplace())).append("\n");
         sb.append("    Delay: ").append(ParameterPrinter.print(jamMan.isDelay())).append("\n");
-        sb.append("    Mute: ").append(ParameterPrinter.print(jamMan.isMute())).append("\n");
+        sb.append("    MuteS: ").append(ParameterPrinter.print(jamMan.isMute())).append("\n");
         return sb.toString();
     }
 

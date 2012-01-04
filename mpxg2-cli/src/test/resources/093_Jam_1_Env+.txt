@@ -26,13 +26,13 @@ Jam 1 Env+
     Mix: 100%
     Level: 0dB
     Size: 250ms
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Clear: Off
     Layer: Off
-    Replace: Off
+    Replc: Off
     Delay: Off
-    Mute: Off
+    MuteS: Off
   Reverb: Ambience (On)
     Toe Switch: disabled
     Mix: 20%

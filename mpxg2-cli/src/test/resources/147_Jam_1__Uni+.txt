@@ -22,13 +22,13 @@ Jam 1  Uni+
     Mix: 50%
     Level: 0dB
     Size: 250ms
-    Feedback: 0%
-    Insert: Delay
+    Fbk: 0%
+    Fbk insert: Delay
     Clear: Off
     Layer: Off
-    Replace: Off
+    Replc: Off
     Delay: Off
-    Mute: Off
+    MuteS: Off
   EQ: Pedal Vol (On)
     Toe Switch: on=bypass
     Mix: 100%
