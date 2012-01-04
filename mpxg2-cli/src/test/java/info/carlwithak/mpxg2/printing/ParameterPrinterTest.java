@@ -25,6 +25,7 @@ import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.ScaleValue;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import info.carlwithak.mpxg2.model.WahType;
 import org.junit.Test;
@@ -158,6 +159,17 @@ public class ParameterPrinterTest {
 
         value.setValue(11);
         assertThat(ParameterPrinter.print(value), is("B"));
+    }
+
+    @Test
+    public void testPrintScaleValue() throws PrintException {
+        ScaleValue value = new ScaleValue("Scale");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("Major"));
+
+        value.setValue(6);
+        assertThat(ParameterPrinter.print(value), is("Loc"));
     }
 
     @Test

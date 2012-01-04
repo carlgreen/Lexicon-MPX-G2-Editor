@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.ScaleValue;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import info.carlwithak.mpxg2.model.WahType;
 import java.text.DecimalFormat;
@@ -76,6 +77,9 @@ public class ParameterPrinter {
             result = Util.eqModeToString(value.getValue());
         } else if (parameter instanceof KeyValue) {
             KeyValue value = (KeyValue) parameter;
+            result = value.toString();
+        } else if (parameter instanceof ScaleValue) {
+            ScaleValue value = (ScaleValue) parameter;
             result = value.toString();
         } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
             // could surely do better than this
