@@ -17,6 +17,7 @@
 package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.BeatRate;
+import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
@@ -131,6 +132,20 @@ public class ParameterPrinterTest {
 
         value.setValue(3);
         assertThat(ParameterPrinter.print(value), is("270°"));
+    }
+
+    @Test
+    public void testPrintEqModeValue() throws PrintException {
+        EqModeValue value = new EqModeValue("Mode");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("LShlf"));
+
+        value.setValue(1);
+        assertThat(ParameterPrinter.print(value), is("Band"));
+
+        value.setValue(2);
+        assertThat(ParameterPrinter.print(value), is("HShlf"));
     }
 
     @Test
