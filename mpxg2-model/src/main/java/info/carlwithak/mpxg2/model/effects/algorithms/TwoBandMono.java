@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Eq;
@@ -35,8 +36,8 @@ public class TwoBandMono extends Eq {
     private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
     private GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
     private GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
-    private GenericValue<Integer> mode1 = new GenericValue<Integer>("Mode1", "", 0, 2);
-    private GenericValue<Integer> mode2 = new GenericValue<Integer>("Mode2", "", 0, 2);
+    private EqModeValue mode1 = new EqModeValue("Mode1");
+    private EqModeValue mode2 = new EqModeValue("Mode2");
 
     @Override
     public String getName() {
@@ -129,7 +130,7 @@ public class TwoBandMono extends Eq {
         this.q2.setValue(q2);
     }
 
-    public GenericValue<Integer> getMode1() {
+    public EqModeValue getMode1() {
         return mode1;
     }
 
@@ -137,7 +138,7 @@ public class TwoBandMono extends Eq {
         this.mode1.setValue(mode1);
     }
 
-    public GenericValue<Integer> getMode2() {
+    public EqModeValue getMode2() {
         return mode2;
     }
 
