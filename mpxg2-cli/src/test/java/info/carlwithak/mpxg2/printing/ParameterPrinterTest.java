@@ -16,6 +16,7 @@
  */
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
@@ -194,6 +195,17 @@ public class ParameterPrinterTest {
 
         value.setValue(2);
         assertThat(ParameterPrinter.print(value), is("Returns Only"));
+    }
+
+    @Test
+    public void testPrintBassValue() throws PrintException {
+        BassValue value = new BassValue("Bass");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("0.2X"));
+
+        value.setValue(9);
+        assertThat(ParameterPrinter.print(value), is("4.0X"));
     }
 
     @Test

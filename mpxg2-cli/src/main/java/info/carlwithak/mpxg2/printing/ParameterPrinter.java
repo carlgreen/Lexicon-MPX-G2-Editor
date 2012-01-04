@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
@@ -88,6 +89,9 @@ public class ParameterPrinter {
             result = value.toString();
         } else if (parameter instanceof SourceValue) {
             SourceValue value = (SourceValue) parameter;
+            result = value.toString();
+        } else if (parameter instanceof BassValue) {
+            BassValue value = (BassValue) parameter;
             result = value.toString();
         } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
             // could surely do better than this
