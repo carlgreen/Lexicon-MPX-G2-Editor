@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.CrossoverValue;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.HighCutValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.IntervalValue;
 import info.carlwithak.mpxg2.model.KeyValue;
@@ -218,6 +219,17 @@ public class ParameterPrinterTest {
 
         value.setValue(60);
         assertThat(ParameterPrinter.print(value), is("Full"));
+    }
+
+    @Test
+    public void testPrintHighCutValue() throws PrintException {
+        HighCutValue value = new HighCutValue("Rt HC");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("525Hz"));
+
+        value.setValue(48);
+        assertThat(ParameterPrinter.print(value), is("Flat"));
     }
 
     @Test
