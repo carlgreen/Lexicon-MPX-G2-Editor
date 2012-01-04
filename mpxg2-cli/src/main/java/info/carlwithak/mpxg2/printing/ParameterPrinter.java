@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Parameter;
@@ -73,6 +74,9 @@ public class ParameterPrinter {
         } else if (parameter instanceof EqModeValue) {
             EqModeValue value = (EqModeValue) parameter;
             result = Util.eqModeToString(value.getValue());
+        } else if (parameter instanceof KeyValue) {
+            KeyValue value = (KeyValue) parameter;
+            result = value.toString();
         } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
             // could surely do better than this
             GenericValue value = (GenericValue) parameter;

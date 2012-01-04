@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
@@ -146,6 +147,17 @@ public class ParameterPrinterTest {
 
         value.setValue(2);
         assertThat(ParameterPrinter.print(value), is("HShlf"));
+    }
+
+    @Test
+    public void testPrintKeyValue() throws PrintException {
+        KeyValue value = new KeyValue("Key");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("C"));
+
+        value.setValue(11);
+        assertThat(ParameterPrinter.print(value), is("B"));
     }
 
     @Test
