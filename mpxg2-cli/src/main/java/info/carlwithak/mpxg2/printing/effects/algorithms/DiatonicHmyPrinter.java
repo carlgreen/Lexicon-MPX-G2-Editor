@@ -27,12 +27,6 @@ import info.carlwithak.mpxg2.printing.PrintException;
  * @author Carl Green
  */
 public class DiatonicHmyPrinter implements Printer {
-    private static final String[] INTERVALS = {
-        "@Oct", "@7th", "@6th", "@5th", "@4th", "@3rd", "@2nd",
-        "-oct", "-7th", "-6th", "-5th", "-4th", "-3rd", "-2nd",
-        "uni", "+2nd", "+3rd", "+4th", "+5th", "+6th", "+7th",
-        "+oct", "*2nd", "*3rd", "*4th", "*5th"
-    };
     /**
      * TODO could probably combine with noise gate inputs
      */
@@ -48,15 +42,11 @@ public class DiatonicHmyPrinter implements Printer {
         sb.append("    Level: ").append(ParameterPrinter.print(diatonicHmy.getLevel())).append("\n");
         sb.append("    Key: ").append(ParameterPrinter.print(diatonicHmy.getKey())).append("\n");
         sb.append("    Scale: ").append(ParameterPrinter.print(diatonicHmy.getScale())).append("\n");
-        sb.append("    Int: ").append(intervalToString(diatonicHmy.getInterval().getValue())).append("\n");
+        sb.append("    Int: ").append(ParameterPrinter.print(diatonicHmy.getInterval())).append("\n");
         sb.append("    Optimize: ").append(ParameterPrinter.print(diatonicHmy.getOptimize())).append("\n");
         sb.append("    Thrsh: ").append(ParameterPrinter.print(diatonicHmy.getThreshold())).append("\n");
         sb.append("    Src: ").append(sourceToString(diatonicHmy.getSource().getValue())).append("\n");
         return sb.toString();
-    }
-
-    private static String intervalToString(final int interval) {
-        return INTERVALS[interval];
     }
 
     private static String sourceToString(final int source) {

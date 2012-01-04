@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.IntervalValue;
 import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.ScaleValue;
@@ -33,7 +34,7 @@ public class DiatonicHmy extends Effect {
 
     private KeyValue key = new KeyValue("Key");
     private ScaleValue scale = new ScaleValue("Scale");
-    private GenericValue<Integer> interval = new GenericValue<Integer>("Int", "", 0, 25); // -2Oct to Oct+ 5th
+    private IntervalValue interval = new IntervalValue("Int");
     private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
     private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -83, 0);
     private GenericValue<Integer> source = new GenericValue<Integer>("Src", "", 0, 1); // Guitar In, Returns Input
@@ -85,7 +86,7 @@ public class DiatonicHmy extends Effect {
         this.scale.setValue(scale);
     }
 
-    public GenericValue<Integer> getInterval() {
+    public IntervalValue getInterval() {
         return interval;
     }
 
