@@ -27,9 +27,6 @@ import info.carlwithak.mpxg2.printing.PrintException;
  * @author Carl Green
  */
 public class DiatonicHmyPrinter implements Printer {
-    private static final String[] KEYS = {
-        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
-    };
     private static final String[] SCALES = {
         "Major", "Dor", "Phry", "Lyd", "Mixo", "Minor", "Loc"
     };
@@ -52,17 +49,13 @@ public class DiatonicHmyPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append("    Mix: ").append(ParameterPrinter.print(diatonicHmy.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(diatonicHmy.getLevel())).append("\n");
-        sb.append("    Key: ").append(keyToString(diatonicHmy.getKey().getValue())).append("\n");
+        sb.append("    Key: ").append(ParameterPrinter.print(diatonicHmy.getKey())).append("\n");
         sb.append("    Scale: ").append(scaleToString(diatonicHmy.getScale().getValue())).append("\n");
         sb.append("    Int: ").append(intervalToString(diatonicHmy.getInterval().getValue())).append("\n");
         sb.append("    Optimize: ").append(ParameterPrinter.print(diatonicHmy.getOptimize())).append("\n");
         sb.append("    Thrsh: ").append(ParameterPrinter.print(diatonicHmy.getThreshold())).append("\n");
         sb.append("    Src: ").append(sourceToString(diatonicHmy.getSource().getValue())).append("\n");
         return sb.toString();
-    }
-
-    private static String keyToString(final int key) {
-        return KEYS[key];
     }
 
     private static String scaleToString(final int scale) {
