@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
@@ -29,8 +29,8 @@ import info.carlwithak.mpxg2.model.effects.Effect;
 public class Panner extends Effect {
     private static final String NAME = "Panner";
 
-    private GenericValue<Integer> pan1 = new GenericValue<Integer>("Pan1", "LCR", -50, 50);
-    private GenericValue<Integer> pan2 = new GenericValue<Integer>("Pan2", "LCR", -50, 50);
+    private PanValue pan1 = new PanValue("Pan1", -50, 50);
+    private PanValue pan2 = new PanValue("Pan2", -50, 50);
 
     @Override
     public String getName() {
@@ -57,7 +57,7 @@ public class Panner extends Effect {
         return parameter;
     }
 
-    public GenericValue<Integer> getPan1() {
+    public PanValue getPan1() {
         return pan1;
     }
 
@@ -65,7 +65,7 @@ public class Panner extends Effect {
         this.pan1.setValue(pan1);
     }
 
-    public GenericValue<Integer> getPan2() {
+    public PanValue getPan2() {
         return pan2;
     }
 
