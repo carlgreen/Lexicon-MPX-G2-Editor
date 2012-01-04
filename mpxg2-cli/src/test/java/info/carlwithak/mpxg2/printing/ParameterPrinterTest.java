@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.IntervalValue;
 import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
@@ -170,6 +171,17 @@ public class ParameterPrinterTest {
 
         value.setValue(6);
         assertThat(ParameterPrinter.print(value), is("Loc"));
+    }
+
+    @Test
+    public void testPrintIntervalValue() throws PrintException {
+        IntervalValue value = new IntervalValue("Int");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("@Oct"));
+
+        value.setValue(25);
+        assertThat(ParameterPrinter.print(value), is("*5th"));
     }
 
     @Test

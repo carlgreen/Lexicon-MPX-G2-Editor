@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.IntervalValue;
 import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
@@ -80,6 +81,9 @@ public class ParameterPrinter {
             result = value.toString();
         } else if (parameter instanceof ScaleValue) {
             ScaleValue value = (ScaleValue) parameter;
+            result = value.toString();
+        } else if (parameter instanceof IntervalValue) {
+            IntervalValue value = (IntervalValue) parameter;
             result = value.toString();
         } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
             // could surely do better than this
