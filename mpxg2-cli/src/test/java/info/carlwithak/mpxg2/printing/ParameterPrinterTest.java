@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.ScaleValue;
+import info.carlwithak.mpxg2.model.SourceValue;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import info.carlwithak.mpxg2.model.WahType;
 import org.junit.Test;
@@ -182,6 +183,17 @@ public class ParameterPrinterTest {
 
         value.setValue(25);
         assertThat(ParameterPrinter.print(value), is("*5th"));
+    }
+
+    @Test
+    public void testPrintSourceValue() throws PrintException {
+        SourceValue value = new SourceValue("Src");
+
+        value.setValue(1);
+        assertThat(ParameterPrinter.print(value), is("Guitar Input"));
+
+        value.setValue(2);
+        assertThat(ParameterPrinter.print(value), is("Returns Only"));
     }
 
     @Test

@@ -29,6 +29,7 @@ import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.ScaleValue;
+import info.carlwithak.mpxg2.model.SourceValue;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import info.carlwithak.mpxg2.model.WahType;
 import java.text.DecimalFormat;
@@ -84,6 +85,9 @@ public class ParameterPrinter {
             result = value.toString();
         } else if (parameter instanceof IntervalValue) {
             IntervalValue value = (IntervalValue) parameter;
+            result = value.toString();
+        } else if (parameter instanceof SourceValue) {
+            SourceValue value = (SourceValue) parameter;
             result = value.toString();
         } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
             // could surely do better than this
