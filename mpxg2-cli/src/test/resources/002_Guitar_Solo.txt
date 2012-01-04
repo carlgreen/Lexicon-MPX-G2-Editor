@@ -17,8 +17,8 @@ Guitar Solo
     Toe Switch: off=bypass
     Mix: 100%
     Level: -24dB
-    Pan1: 50L
-    Pan2: 50R
+    Pan 1: 50L
+    Pan 2: 50R
   Delay: Echo (D) (On)
     Toe Switch: disabled
     Mix: 100%

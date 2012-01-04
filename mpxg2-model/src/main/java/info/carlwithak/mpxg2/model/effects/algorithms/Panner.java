@@ -29,8 +29,8 @@ import info.carlwithak.mpxg2.model.effects.Effect;
 public class Panner extends Effect {
     private static final String NAME = "Panner";
 
-    private PanValue pan1 = new PanValue("Pan1", -50, 50);
-    private PanValue pan2 = new PanValue("Pan2", -50, 50);
+    private PanValue pan1 = new PanValue("Pan 1", -50, 50);
+    private PanValue pan2 = new PanValue("Pan 2", -50, 50);
 
     @Override
     public String getName() {

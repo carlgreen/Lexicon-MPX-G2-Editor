@@ -155,7 +155,7 @@ public class AlgorithmPrinterTest {
         panner.setPan1(-50);
         panner.setPan2(50);
 
-        String expected = "    Mix: 100%\n    Level: -24dB\n    Pan1: 50L\n    Pan2: 50R\n";
+        String expected = "    Mix: 100%\n    Level: -24dB\n    Pan 1: 50L\n    Pan 2: 50R\n";
         String actual = AlgorithmPrinter.print(panner);
 
         assertEquals(expected, actual);
