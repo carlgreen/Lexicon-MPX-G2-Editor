@@ -37,7 +37,7 @@ Tush
     Trebl: +10dB
     Level: 47dB
   Softrow:
-    1: Gain InLvL
+    1: Gain InLvl
     2: Gain Feel
     3: Gain Drive
     4: Gain Tone

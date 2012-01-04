@@ -57,7 +57,7 @@ Sandman
     Trebl: +20dB
     Level: 30dB
   Softrow:
-    1: Gain InLvL
+    1: Gain InLvl
     2: Gain LoCut
     3: Gain Feel
     5: Gain Tone

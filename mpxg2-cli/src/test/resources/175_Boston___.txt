@@ -70,7 +70,7 @@ Boston...
     Trebl: +10dB
     Level: 45dB
   Softrow:
-    1: Gain InLvL
+    1: Gain InLvl
     2: Gain LoCut
     3: Gain Feel
     4: Gain Drive
