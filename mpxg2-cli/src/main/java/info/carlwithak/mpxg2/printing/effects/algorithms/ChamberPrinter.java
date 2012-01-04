@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
-import static info.carlwithak.mpxg2.printing.Util.reverbBassToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbRtHCToString;
 import static info.carlwithak.mpxg2.printing.Util.reverbXovrToString;
@@ -44,7 +43,7 @@ public class ChamberPrinter implements Printer {
         sb.append("    Link: ").append(ParameterPrinter.print(chamber.isLink())).append("\n");
         sb.append("    Diff: ").append(ParameterPrinter.print(chamber.getDiff())).append("\n");
         sb.append("    P Dly: ").append(ParameterPrinter.print(chamber.getPreDelay())).append("\n");
-        sb.append("    Bass: ").append(reverbBassToString(chamber.getBass().getValue())).append("X\n");
+        sb.append("    Bass: ").append(ParameterPrinter.print(chamber.getBass())).append("\n");
         sb.append("    Decay: ").append(reverbDecayToString(chamber.isLink().getValue(), chamber.getSize().getValue(), chamber.getDecay().getValue())).append("s\n");
         sb.append("    Xovr: ").append(reverbXovrToString(chamber.getXovr().getValue())).append("\n");
         sb.append("    Rt HC: ").append(reverbRtHCToString(chamber.getRtHC().getValue())).append("\n");

@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Reverb;
@@ -33,7 +34,7 @@ public class Plate extends Reverb {
     private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
-    private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "X", 0, 255); // 0.2 - 4.0
+    private BassValue bass = new BassValue("Bass");
     private GenericValue<Integer> decay = new GenericValue<Integer>("Decay", "s", 0, 255); // 0.07 - 65.4
     private GenericValue<Integer> xovr = new GenericValue<Integer>("Xovr", "Hz", 0, 255); // 30 - 24700
     private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 525 - 24700
@@ -121,7 +122,7 @@ public class Plate extends Reverb {
         this.preDelay.setValue(preDelay);
     }
 
-    public GenericValue<Integer> getBass() {
+    public BassValue getBass() {
         return bass;
     }
 
