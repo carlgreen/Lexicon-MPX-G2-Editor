@@ -18,6 +18,7 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
+import info.carlwithak.mpxg2.model.CrossoverValue;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
@@ -206,6 +207,17 @@ public class ParameterPrinterTest {
 
         value.setValue(9);
         assertThat(ParameterPrinter.print(value), is("4.0X"));
+    }
+
+    @Test
+    public void testPrintCrossoverValue() throws PrintException {
+        CrossoverValue value = new CrossoverValue("Xovr");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("30Hz"));
+
+        value.setValue(60);
+        assertThat(ParameterPrinter.print(value), is("Full"));
     }
 
     @Test
