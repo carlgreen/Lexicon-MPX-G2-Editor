@@ -559,7 +559,7 @@ public class AlgorithmPrinterTest {
         rotaryCab.setWidth(100);
         rotaryCab.setBalance(-20);
 
-        String expected = "    Mix: 100%\n    Level: +4dB\n    Rate1: 5.73Hz\n    Depth1: 43%\n    Rate2: 5.73Hz\n    Depth2: 36%\n    Res: 0\n    Width: 100%\n    Bal: -20\n";
+        String expected = "    Mix: 100%\n    Level: +4dB\n    Rate1: 5.73Hz\n    Dpth1: 43%\n    Rate2: 5.73Hz\n    Dpth2: 36%\n    Res: 0\n    Width: 100%\n    Bal: -20\n";
         String actual = AlgorithmPrinter.print(rotaryCab);
 
         assertEquals(expected, actual);

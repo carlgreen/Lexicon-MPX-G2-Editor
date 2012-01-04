@@ -17,9 +17,9 @@ Rotary Cab
     Mix: 100%
     Level: +4dB
     Rate1: 5.73Hz
-    Depth1: 43%
+    Dpth1: 43%
     Rate2: 5.73Hz
-    Depth2: 36%
+    Dpth2: 36%
     Res: 0
     Width: 100%
     Bal: -20
