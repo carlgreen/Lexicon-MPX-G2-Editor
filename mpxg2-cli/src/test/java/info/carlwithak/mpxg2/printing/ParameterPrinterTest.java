@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.PanValue;
+import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.TapMsRate;
 import info.carlwithak.mpxg2.model.WahType;
@@ -119,6 +120,17 @@ public class ParameterPrinterTest {
 
         value.setValue(5);
         assertThat(ParameterPrinter.print(value), is("5R"));
+    }
+
+    @Test
+    public void testPrintPhaseValue() throws PrintException {
+        PhaseValue value = new PhaseValue("Phase");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("0°"));
+
+        value.setValue(3);
+        assertThat(ParameterPrinter.print(value), is("270°"));
     }
 
     @Test
