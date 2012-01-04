@@ -32,7 +32,7 @@ public class Overdrive extends Gain {
     private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -15, 15);
     private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -15, 15);
     private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 15);
-    private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvL", "dB", -64, 0);
+    private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
     private GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "", 0, 20);
     private GenericValue<Integer> feel = new GenericValue<Integer>("Feel", "", 0, 64);
     private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 40);
