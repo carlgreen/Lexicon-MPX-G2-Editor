@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.ScaleValue;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
 /**
@@ -31,7 +32,7 @@ public class DiatonicHmy extends Effect {
     private static final String NAME = "Diatonic Hmy";
 
     private KeyValue key = new KeyValue("Key");
-    private GenericValue<Integer> scale = new GenericValue<Integer>("Scale", "", 0, 6); // Major, Dorian, Phyrgian, Lydian, Mixolydian, Minor, Locrian
+    private ScaleValue scale = new ScaleValue("Scale");
     private GenericValue<Integer> interval = new GenericValue<Integer>("Int", "", 0, 25); // -2Oct to Oct+ 5th
     private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
     private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -83, 0);
@@ -76,7 +77,7 @@ public class DiatonicHmy extends Effect {
         this.key.setValue(key);
     }
 
-    public GenericValue<Integer> getScale() {
+    public ScaleValue getScale() {
         return scale;
     }
 

@@ -27,9 +27,6 @@ import info.carlwithak.mpxg2.printing.PrintException;
  * @author Carl Green
  */
 public class DiatonicHmyPrinter implements Printer {
-    private static final String[] SCALES = {
-        "Major", "Dor", "Phry", "Lyd", "Mixo", "Minor", "Loc"
-    };
     private static final String[] INTERVALS = {
         "@Oct", "@7th", "@6th", "@5th", "@4th", "@3rd", "@2nd",
         "-oct", "-7th", "-6th", "-5th", "-4th", "-3rd", "-2nd",
@@ -50,16 +47,12 @@ public class DiatonicHmyPrinter implements Printer {
         sb.append("    Mix: ").append(ParameterPrinter.print(diatonicHmy.getMix())).append("\n");
         sb.append("    Level: ").append(ParameterPrinter.print(diatonicHmy.getLevel())).append("\n");
         sb.append("    Key: ").append(ParameterPrinter.print(diatonicHmy.getKey())).append("\n");
-        sb.append("    Scale: ").append(scaleToString(diatonicHmy.getScale().getValue())).append("\n");
+        sb.append("    Scale: ").append(ParameterPrinter.print(diatonicHmy.getScale())).append("\n");
         sb.append("    Int: ").append(intervalToString(diatonicHmy.getInterval().getValue())).append("\n");
         sb.append("    Optimize: ").append(ParameterPrinter.print(diatonicHmy.getOptimize())).append("\n");
         sb.append("    Thrsh: ").append(ParameterPrinter.print(diatonicHmy.getThreshold())).append("\n");
         sb.append("    Src: ").append(sourceToString(diatonicHmy.getSource().getValue())).append("\n");
         return sb.toString();
-    }
-
-    private static String scaleToString(final int scale) {
-        return SCALES[scale];
     }
 
     private static String intervalToString(final int interval) {
