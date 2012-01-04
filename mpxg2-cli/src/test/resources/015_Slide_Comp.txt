@@ -46,7 +46,7 @@ Slide Comp
     Size: 53.5m
     Link: On
     Diff: 64%
-    Pre Delay: 200ms
+    P Dly: 200ms
     Bass: 1.2X
     Decay: 1.51s
     Xovr: 818

@@ -43,7 +43,7 @@ Vybe/Flange
     Size: 16.5m
     Link: On
     Diff: 90%
-    Pre Delay: 10ms
+    P Dly: 10ms
     Bass: 0.2X
     Decay: 0.09s
     Xovr: 986

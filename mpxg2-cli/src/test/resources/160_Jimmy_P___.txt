@@ -19,7 +19,7 @@ Jimmy P...
     Size: 22.5m
     Link: On
     Diff: 66%
-    Pre Delay: 250ms
+    P Dly: 250ms
     Bass: 1.2X
     Decay: 1.30s
     Xovr: 986

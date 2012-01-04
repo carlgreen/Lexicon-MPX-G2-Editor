@@ -36,7 +36,7 @@ Verbolo
     Size: 42.0m
     Link: On
     Diff: 68%
-    Pre Delay: 120ms
+    P Dly: 120ms
     Bass: 1.5X
     Decay: 0.65s
     Xovr: 1.8k

@@ -44,7 +44,7 @@ AnotherBrick
     Size: 30.5m
     Link: On
     Diff: 90%
-    Pre Delay: 133ms
+    P Dly: 133ms
     Bass: 0.8X
     Decay: 1.15s
     Xovr: 986

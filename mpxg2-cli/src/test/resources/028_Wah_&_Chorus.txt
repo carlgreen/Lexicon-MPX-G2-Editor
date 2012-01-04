@@ -46,7 +46,7 @@ Wah & Chorus
     Size: 48.5m
     Link: On
     Diff: 72%
-    Pre Delay: 120ms
+    P Dly: 120ms
     Bass: 1.5X
     Decay: 2.05s
     Xovr: 986

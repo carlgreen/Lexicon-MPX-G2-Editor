@@ -42,7 +42,7 @@ Stomp!
     Size: 22.5m
     Link: On
     Diff: 66%
-    Pre Delay: 169ms
+    P Dly: 169ms
     Bass: 1.2X
     Decay: 1.30s
     Xovr: 986
