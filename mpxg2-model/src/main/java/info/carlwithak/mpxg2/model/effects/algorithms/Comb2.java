@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
@@ -38,7 +39,7 @@ public class Comb2 extends Chorus {
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Dpth", "%", 0, 100);
     private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
-    private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "°", 0, 3);
+    private PhaseValue phase = new PhaseValue("Phase");
 
     @Override
     public String getName() {
@@ -150,7 +151,7 @@ public class Comb2 extends Chorus {
         this.resonance.setValue(resonance);
     }
 
-    public GenericValue<Integer> getPhase() {
+    public PhaseValue getPhase() {
         return phase;
     }
 

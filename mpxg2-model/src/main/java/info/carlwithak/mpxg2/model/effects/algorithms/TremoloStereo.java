@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
@@ -33,7 +34,7 @@ public class TremoloStereo extends Effect {
     private Rate rate;
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
-    private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "°", 0, 3);
+    private PhaseValue phase = new PhaseValue("Phase");
 
     @Override
     public String getName() {
@@ -90,7 +91,7 @@ public class TremoloStereo extends Effect {
         this.depth.setValue(depth);
     }
 
-    public GenericValue<Integer> getPhase() {
+    public PhaseValue getPhase() {
         return phase;
     }
 

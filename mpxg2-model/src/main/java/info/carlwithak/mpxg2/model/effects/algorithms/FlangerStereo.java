@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 
@@ -33,7 +34,7 @@ public class FlangerStereo extends Chorus {
     private Rate rate;
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
-    private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "°", 0, 3);
+    private PhaseValue phase = new PhaseValue("Phase");
     private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
     private GenericValue<Integer> blend = new GenericValue<Integer>("Blend", "%", 0, 100);
 
@@ -98,7 +99,7 @@ public class FlangerStereo extends Chorus {
         this.depth.setValue(depth);
     }
 
-    public GenericValue<Integer> getPhase() {
+    public PhaseValue getPhase() {
         return phase;
     }
 
