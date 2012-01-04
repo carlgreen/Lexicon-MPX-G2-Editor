@@ -27,12 +27,6 @@ import info.carlwithak.mpxg2.printing.PrintException;
  * @author Carl Green
  */
 public class DiatonicHmyPrinter implements Printer {
-    /**
-     * TODO could probably combine with noise gate inputs
-     */
-    private final static String[] SOURCES = {
-        "", "Guitar Input", "Returns Only"
-    };
 
     @Override
     public String print(Object algorithm) throws PrintException {
@@ -45,11 +39,7 @@ public class DiatonicHmyPrinter implements Printer {
         sb.append("    Int: ").append(ParameterPrinter.print(diatonicHmy.getInterval())).append("\n");
         sb.append("    Optimize: ").append(ParameterPrinter.print(diatonicHmy.getOptimize())).append("\n");
         sb.append("    Thrsh: ").append(ParameterPrinter.print(diatonicHmy.getThreshold())).append("\n");
-        sb.append("    Src: ").append(sourceToString(diatonicHmy.getSource().getValue())).append("\n");
+        sb.append("    Src: ").append(ParameterPrinter.print(diatonicHmy.getSource())).append("\n");
         return sb.toString();
-    }
-
-    private static String sourceToString(final int source) {
-        return SOURCES[source];
     }
 }
