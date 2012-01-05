@@ -28,12 +28,6 @@ public class Util {
         "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "EQ", "Gain"
     };
 
-    private static final double[] REVERB_DELAY_TIMES = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.41
-    };
-
     private static final String[] REVERB_BASS = {
         "0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.5", "2.0", "3.0", "4.0"
     };
@@ -175,13 +169,6 @@ public class Util {
      */
     public static String delayInsertToString(final int delayInsert) {
         return DELAY_INSERTS[delayInsert];
-    }
-
-    /**
-     * @return String representation of delay time index.
-     */
-    public static double reverbDelayTimeToString(final int reverbDelayTime) {
-        return REVERB_DELAY_TIMES[reverbDelayTime];
     }
 
     /**
