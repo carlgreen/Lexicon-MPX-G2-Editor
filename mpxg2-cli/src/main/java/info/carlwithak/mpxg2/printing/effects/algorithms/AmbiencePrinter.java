@@ -22,7 +22,7 @@ import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.reverbDelayTimeToString;
+import static info.carlwithak.mpxg2.printing.Util.reverbDecayToString;
 
 /**
  *
@@ -40,7 +40,7 @@ public class AmbiencePrinter implements Printer {
         sb.append("    Link: ").append(ParameterPrinter.print(ambience.isLink())).append("\n");
         sb.append("    Diff: ").append(ParameterPrinter.print(ambience.getDiff())).append("\n");
         sb.append("    P Dly: ").append(ParameterPrinter.print(ambience.getPreDelay())).append("\n");
-        sb.append("    DTime: ").append(reverbDelayTimeToString(ambience.getDecayTime().getValue())).append("s\n");
+        sb.append("    DTime: ").append(reverbDecayToString(ambience.isLink().getValue(), ambience.getSize().getValue(), ambience.getDecayTime().getValue())).append("s\n");
         sb.append("    D Lvl: ").append(ParameterPrinter.print(ambience.getDecayLevel())).append("\n");
         sb.append("    Rt HC: ").append(ParameterPrinter.print(ambience.getRtHC())).append("\n");
         return sb.toString();

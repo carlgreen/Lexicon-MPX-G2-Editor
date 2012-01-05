@@ -41,7 +41,7 @@ Cold Shot
     Link: On
     Diff: 60%
     P Dly: 0ms
-    DTime: 0.0s
+    DTime: 1.61s
     D Lvl: Off
     Rt HC: 12.8kHz
   EQ: Crossover (On)

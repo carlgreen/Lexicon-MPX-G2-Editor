@@ -36,7 +36,7 @@ New Eddie
     Link: On
     Diff: 66%
     P Dly: 23ms
-    DTime: 0.0s
+    DTime: 0.22s
     D Lvl: Off
     Rt HC: 6.3kHz
   Gain: Preamp (On)

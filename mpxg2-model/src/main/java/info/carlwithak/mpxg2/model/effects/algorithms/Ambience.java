@@ -35,7 +35,7 @@ public class Ambience extends Reverb {
     private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
-    private GenericValue<Integer> decayTime = new GenericValue<Integer>("DTime", "s", 0, 255);
+    private GenericValue<Integer> decayTime = new GenericValue<Integer>("DTime", "s", 0, 255); // 0.07 - 65.4
     private DecayLevelValue decayLevel = new DecayLevelValue("D Lvl");
     private AmbienceHighCutValue rtHC = new AmbienceHighCutValue("Rt HC");
 

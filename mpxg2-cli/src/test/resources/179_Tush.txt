@@ -20,7 +20,7 @@ Tush
     Link: On
     Diff: 100%
     P Dly: 0ms
-    DTime: 0.0s
+    DTime: 0.34s
     D Lvl: Off
     Rt HC: 12.8kHz
   Gain: Preamp (On)
