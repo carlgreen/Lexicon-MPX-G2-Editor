@@ -156,7 +156,7 @@ public class Util {
     };
 
     private static final double[] REVERB_AMBIENCE_RT_HC = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.8
+        0.5, 1.0, 1.6, 2.2, 2.9, 3.6, 4.4, 5.5, 6.3, 7.5, 8.9, 10.6, 12.8, 15.9, 21.2
     };
 
     private static final String[] REVERB_DELAY_LEVEL = {

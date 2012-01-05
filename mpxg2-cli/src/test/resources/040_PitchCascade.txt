@@ -45,7 +45,7 @@ PitchCascade
     P Dly: 0ms
     DTime: 1.41s
     D Lvl: Off
-    Rt HC: 0.0k
+    Rt HC: 6.3k
   EQ: Pedal Vol (On)
     Toe Switch: disabled
     Mix: 100%
