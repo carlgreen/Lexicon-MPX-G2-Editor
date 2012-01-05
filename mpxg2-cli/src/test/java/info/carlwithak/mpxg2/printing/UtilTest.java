@@ -17,9 +17,12 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.GenericValue;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Test some of the more complex methods in Util.
@@ -196,4 +199,12 @@ public class UtilTest {
         assertEquals("Band", Util.eqModeToString(1));
         assertEquals("HShlf", Util.eqModeToString(2));
     }
+
+    @Test
+    public void testPrintParameter() throws PrintException {
+        GenericValue<Integer> parameter = new GenericValue<Integer>("Name", "u", 0, 1);
+        parameter.setValue(1);
+        assertThat(Util.printParameter(parameter), is("    Name: 1u\n"));
+    }
+
 }

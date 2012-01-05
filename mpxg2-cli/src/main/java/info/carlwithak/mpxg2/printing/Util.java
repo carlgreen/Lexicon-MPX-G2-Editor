@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.Parameter;
+
 /**
  * Various helper methods for printing.
  *
@@ -206,4 +208,15 @@ public class Util {
     public static String eqModeToString(final int eqMode) {
         return EQ_MODES[eqMode];
     }
+
+    public static String printParameter(final Parameter parameter) throws PrintException {
+        StringBuilder sb = new StringBuilder();
+        sb.append("    ");
+        sb.append(parameter.getName());
+        sb.append(": ");
+        sb.append(ParameterPrinter.print(parameter));
+        sb.append("\n");
+        return sb.toString();
+    }
+
 }
