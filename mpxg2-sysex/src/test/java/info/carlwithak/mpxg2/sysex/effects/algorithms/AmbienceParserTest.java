@@ -40,8 +40,8 @@ public class AmbienceParserTest {
         assertThat(ambience.isLink(), is(value(true)));
         assertThat(ambience.getDiff(), is(value(60)));
         assertThat(ambience.getPreDelay(), is(value(7)));
-        assertThat(ambience.getDelayTime(), is(value(51))); // 1.41s is number 51 in list
-        assertThat(ambience.getDelayLevel(), is(value(0)));
+        assertThat(ambience.getDecayTime(), is(value(51))); // 1.41s is number 51 in list
+        assertThat(ambience.getDecayLevel(), is(value(0)));
         assertThat(ambience.getRtHC(), is(value(12))); // 12.8k is number 12 in list
     }
 }

@@ -35,8 +35,8 @@ public class Ambience extends Reverb {
     private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
-    private GenericValue<Integer> delayTime = new GenericValue<Integer>("DTime", "s", 0, 255); // 0.07 - 65.4
-    private DecayLevelValue delayLevel = new DecayLevelValue("D Lvl");
+    private GenericValue<Integer> decayTime = new GenericValue<Integer>("DTime", "s", 0, 255);
+    private DecayLevelValue decayLevel = new DecayLevelValue("D Lvl");
     private AmbienceHighCutValue rtHC = new AmbienceHighCutValue("Rt HC");
 
     @Override
@@ -65,10 +65,10 @@ public class Ambience extends Reverb {
                 parameter = preDelay;
                 break;
             case 6:
-                parameter = delayTime;
+                parameter = decayTime;
                 break;
             case 7:
-                parameter = delayLevel;
+                parameter = decayLevel;
                 break;
             case 8:
                 parameter = rtHC;
@@ -111,20 +111,20 @@ public class Ambience extends Reverb {
         this.preDelay.setValue(preDelay);
     }
 
-    public GenericValue<Integer> getDelayTime() {
-        return delayTime;
+    public GenericValue<Integer> getDecayTime() {
+        return decayTime;
     }
 
-    public void setDelayTime(int delayTime) {
-        this.delayTime.setValue(delayTime);
+    public void setDecayTime(int decayTime) {
+        this.decayTime.setValue(decayTime);
     }
 
-    public DecayLevelValue getDelayLevel() {
-        return delayLevel;
+    public DecayLevelValue getDecayLevel() {
+        return decayLevel;
     }
 
-    public void setDelayLevel(int delayLevel) {
-        this.delayLevel.setValue(delayLevel);
+    public void setDecayLevel(int decayLevel) {
+        this.decayLevel.setValue(decayLevel);
     }
 
     public AmbienceHighCutValue getRtHC() {

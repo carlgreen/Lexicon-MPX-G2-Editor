@@ -48,11 +48,11 @@ public class AmbienceParser {
         int preDelay = effectParameters[10] + effectParameters[11] * 16;
         ambience.setPreDelay(preDelay);
 
-        int delayTime = effectParameters[12] + effectParameters[13] * 16;
-        ambience.setDelayTime(delayTime);
+        int decayTime = effectParameters[12] + effectParameters[13] * 16;
+        ambience.setDecayTime(decayTime);
 
-        int delayLevel = effectParameters[14] + effectParameters[15] * 16;
-        ambience.setDelayLevel(delayLevel);
+        int decayLevel = effectParameters[14] + effectParameters[15] * 16;
+        ambience.setDecayLevel(decayLevel);
 
         int rtHC = effectParameters[16] + effectParameters[17] * 16;
         ambience.setRtHC(rtHC);
