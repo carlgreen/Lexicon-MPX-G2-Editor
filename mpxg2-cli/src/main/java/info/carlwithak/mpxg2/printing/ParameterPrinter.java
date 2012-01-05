@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.printing;
 import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.CrossoverValue;
+import info.carlwithak.mpxg2.model.DelayLevelValue;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
@@ -100,6 +101,9 @@ public class ParameterPrinter {
             result = value.toString();
         } else if (parameter instanceof HighCutValue) {
             HighCutValue value = (HighCutValue) parameter;
+            result = value.toString();
+        } else if (parameter instanceof DelayLevelValue) {
+            DelayLevelValue value = (DelayLevelValue) parameter;
             result = value.toString();
         } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
             // could surely do better than this
