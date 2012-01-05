@@ -26,6 +26,8 @@ public class ReverbSpredValue extends GenericValue<Integer> {
 
     /**
      * Arrays of spred display values for each size.
+     *
+     * TODO fill in missing values.
      */
     private static final int[][] REVERB_SPRED = {
         {
