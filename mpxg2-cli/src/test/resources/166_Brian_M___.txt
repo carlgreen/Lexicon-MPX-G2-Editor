@@ -30,7 +30,7 @@ Brian M...
     P Dly: 23ms
     DTime: 0.0s
     D Lvl: Off
-    Rt HC: 6.3k
+    Rt HC: 6.3kHz
   Gain: Preamp (On)
     Toe Switch: disabled
     Lo: +5dB

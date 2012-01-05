@@ -84,7 +84,7 @@ public class AmbienceTest {
 
     @Test
     public void testRtHC() {
-        assertEquals("Hz", ambience.getParameter(8).getUnit());
+        assertEquals("kHz", ambience.getParameter(8).getUnit());
     }
 
     @Test

@@ -51,7 +51,7 @@ Boston...
     P Dly: 0ms
     DTime: 0.0s
     D Lvl: Off
-    Rt HC: 12.8k
+    Rt HC: 12.8kHz
   EQ: Pedal Vol (On)
     Toe Switch: off=bypass
     Mix: 100%

@@ -23,7 +23,6 @@ import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
 import static info.carlwithak.mpxg2.printing.Util.reverbDelayTimeToString;
-import static info.carlwithak.mpxg2.printing.Util.reverbAmbienceRtHCToString;
 
 /**
  *
@@ -43,7 +42,7 @@ public class AmbiencePrinter implements Printer {
         sb.append("    P Dly: ").append(ParameterPrinter.print(ambience.getPreDelay())).append("\n");
         sb.append("    DTime: ").append(reverbDelayTimeToString(ambience.getDelayTime().getValue())).append("s\n");
         sb.append("    D Lvl: ").append(ParameterPrinter.print(ambience.getDelayLevel())).append("\n");
-        sb.append("    Rt HC: ").append(reverbAmbienceRtHCToString(ambience.getRtHC().getValue())).append("k\n");
+        sb.append("    Rt HC: ").append(ParameterPrinter.print(ambience.getRtHC())).append("\n");
         return sb.toString();
     }
 

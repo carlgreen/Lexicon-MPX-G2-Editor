@@ -30,7 +30,7 @@ Sandman
     P Dly: 0ms
     DTime: 0.0s
     D Lvl: Off
-    Rt HC: 12.8k
+    Rt HC: 12.8kHz
   EQ: 2-Band (S) (On)
     Toe Switch: disabled
     Mix: 100%

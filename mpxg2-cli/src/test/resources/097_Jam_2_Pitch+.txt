@@ -34,7 +34,7 @@ Jam 2 Pitch+
     P Dly: 7ms
     DTime: 1.41s
     D Lvl: Off
-    Rt HC: 12.8k
+    Rt HC: 12.8kHz
   EQ: Pedal Vol (Off)
     Toe Switch: off=bypass
     Mix: 100%

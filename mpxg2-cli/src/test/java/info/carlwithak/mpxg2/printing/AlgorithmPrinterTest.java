@@ -869,7 +869,7 @@ public class AlgorithmPrinterTest {
         ambience.setDelayLevel(0);
         ambience.setRtHC(12);
 
-        String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: On\n    Diff: 60%\n    P Dly: 7ms\n    DTime: 1.41s\n    D Lvl: Off\n    Rt HC: 12.8k\n";
+        String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: On\n    Diff: 60%\n    P Dly: 7ms\n    DTime: 1.41s\n    D Lvl: Off\n    Rt HC: 12.8kHz\n";
         String actual = AlgorithmPrinter.print(ambience);
 
         assertEquals(expected, actual);

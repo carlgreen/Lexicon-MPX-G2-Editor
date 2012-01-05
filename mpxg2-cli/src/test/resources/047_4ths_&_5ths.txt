@@ -50,7 +50,7 @@
     P Dly: 0ms
     DTime: 1.41s
     D Lvl: Off
-    Rt HC: 6.3k
+    Rt HC: 6.3kHz
   EQ: Pedal Vol (On)
     Toe Switch: on=bypass
     Mix: 100%
