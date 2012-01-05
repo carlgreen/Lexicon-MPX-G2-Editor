@@ -16,6 +16,7 @@
  */
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.AmbienceHighCutValue;
 import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.CrossoverValue;
@@ -242,6 +243,17 @@ public class ParameterPrinterTest {
 
         value.setValue(25);
         assertThat(ParameterPrinter.print(value), is("Full"));
+    }
+
+    @Test
+    public void testPrintAmbienceHighCutValue() throws PrintException {
+        AmbienceHighCutValue value = new AmbienceHighCutValue("Rt HC");
+
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("0.5kHz"));
+
+        value.setValue(14);
+        assertThat(ParameterPrinter.print(value), is("21.2kHz"));
     }
 
     @Test
