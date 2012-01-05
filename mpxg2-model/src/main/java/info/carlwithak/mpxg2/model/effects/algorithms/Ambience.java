@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
+import info.carlwithak.mpxg2.model.DelayLevelValue;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Reverb;
@@ -34,7 +35,7 @@ public class Ambience extends Reverb {
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
     private GenericValue<Integer> delayTime = new GenericValue<Integer>("DTime", "s", 0, 255); // 0.07 - 65.4
-    private GenericValue<Integer> delayLevel = new GenericValue<Integer>("D Lvl", "dB", 0, 25); // Off, -48dB - -1dB, Full
+    private DelayLevelValue delayLevel = new DelayLevelValue("D Lvl");
     private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 500 - 21200
 
     @Override
@@ -117,7 +118,7 @@ public class Ambience extends Reverb {
         this.delayTime.setValue(delayTime);
     }
 
-    public GenericValue<Integer> getDelayLevel() {
+    public DelayLevelValue getDelayLevel() {
         return delayLevel;
     }
 
