@@ -37,7 +37,7 @@ Jam2AutoWah
     Bass: 1.2X
     Decay: 0.74s
     Xovr: 589Hz
-    Rt HC: 15.2k
+    Rt HC: 15.2kHz
     Shape: 62
     Spred: 36
   EQ: Pedal Vol (Off)

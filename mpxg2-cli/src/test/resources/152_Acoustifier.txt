@@ -44,7 +44,7 @@ Acoustifier
     Bass: 2.0X
     Decay: 1.29s
     Xovr: 818Hz
-    Rt HC: 10.4k
+    Rt HC: 10.4kHz
     Shape: 164
     Spred: 98
   EQ: Pedal Vol (On)

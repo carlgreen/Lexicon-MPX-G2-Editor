@@ -50,7 +50,7 @@ Slide Comp
     Bass: 1.2X
     Decay: 1.51s
     Xovr: 818Hz
-    Rt HC: 12.4k
+    Rt HC: 12.4kHz
     Shape: 10
     Spred: 117
   Gain: Preamp (On)

@@ -44,7 +44,7 @@ Pdl 2nds
     Bass: 1.2X
     Decay: 2.08s
     Xovr: 589Hz
-    Rt HC: 15.2k
+    Rt HC: 15.2kHz
     Shape: 62
     Spred: 42
   Gain: Overdrive (Off)

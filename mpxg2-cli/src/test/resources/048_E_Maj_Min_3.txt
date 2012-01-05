@@ -47,7 +47,7 @@ E Maj/Min 3
     Bass: 0.8X
     Decay: 1.59s
     Xovr: 654Hz
-    Rt HC: 8.8k
+    Rt HC: 8.8kHz
     Shape: 62
     Spred: 50
   EQ: Pedal Vol (On)

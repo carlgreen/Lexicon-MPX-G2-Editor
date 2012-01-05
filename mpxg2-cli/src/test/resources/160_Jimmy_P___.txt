@@ -23,7 +23,7 @@ Jimmy P...
     Bass: 1.2X
     Decay: 1.30s
     Xovr: 986Hz
-    Rt HC: 5.4k
+    Rt HC: 5.4kHz
     Shape: 36
     Spred: 73
   Gain: Preamp (On)

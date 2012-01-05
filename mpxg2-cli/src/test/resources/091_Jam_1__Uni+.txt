@@ -41,7 +41,7 @@ Jam 1  Uni+
     Bass: 1.5X
     Decay: 2.05s
     Xovr: 986Hz
-    Rt HC: 8.4k
+    Rt HC: 8.4kHz
     Shape: 110
     Spred: 138
   EQ: Pedal Vol (On)

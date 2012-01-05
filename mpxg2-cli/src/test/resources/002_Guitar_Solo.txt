@@ -44,7 +44,7 @@ Guitar Solo
     Bass: 1.2X
     Decay: 1.30s
     Xovr: 986Hz
-    Rt HC: 19.4k
+    Rt HC: 19.4kHz
     Shape: 36
     Spred: 73
   Gain: Screamer (Off)

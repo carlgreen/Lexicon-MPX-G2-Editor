@@ -50,7 +50,7 @@ Analog  Echo
     Bass: 1.2X
     Decay: 1.70s
     Xovr: 818Hz
-    Rt HC: 14.1k
+    Rt HC: 14.1kHz
     Shape: 110
     Spred: 77
   EQ: Volume (S) (On)

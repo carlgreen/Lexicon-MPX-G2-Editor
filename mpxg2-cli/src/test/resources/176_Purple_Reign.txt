@@ -52,7 +52,7 @@ Purple Reign
     Bass: 1.2X
     Decay: 1.15s
     Xovr: 2.4kHz
-    Rt HC: 6.8k
+    Rt HC: 6.8kHz
     Shape: 36
     Spred: 106
   EQ: Pedal Vol (On)

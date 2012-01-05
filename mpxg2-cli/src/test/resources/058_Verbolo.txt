@@ -40,7 +40,7 @@ Verbolo
     Bass: 1.5X
     Decay: 0.65s
     Xovr: 1.8kHz
-    Rt HC: 7.1k
+    Rt HC: 7.1kHz
     Shape: 47
     Spred: 143
   Gain: Tone (Off)

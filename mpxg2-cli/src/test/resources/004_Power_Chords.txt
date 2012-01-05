@@ -39,7 +39,7 @@ Power Chords
     Bass: 1.2X
     Decay: 0.73s
     Xovr: 818Hz
-    Rt HC: 10.4k
+    Rt HC: 10.4kHz
     Shape: 62
     Spred: 48
   Gain: Overdrive (Off)

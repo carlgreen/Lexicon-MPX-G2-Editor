@@ -43,7 +43,7 @@ Tap AutoWah
     Bass: 1.5X
     Decay: 1.14s
     Xovr: 589Hz
-    Rt HC: 7.9k
+    Rt HC: 7.9kHz
     Shape: 88
     Spred: 143
   Gain: Crunch (Off)

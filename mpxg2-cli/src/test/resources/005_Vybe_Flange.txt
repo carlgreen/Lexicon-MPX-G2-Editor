@@ -47,7 +47,7 @@ Vybe/Flange
     Bass: 0.2X
     Decay: 0.09s
     Xovr: 986Hz
-    Rt HC: 8.8k
+    Rt HC: 8.8kHz
     Shape: 58
     Spred: 65
   EQ: Pedal Vol (On)

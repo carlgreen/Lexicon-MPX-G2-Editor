@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.CrossoverValue;
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.HighCutValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 
@@ -38,7 +39,7 @@ public class Hall extends Reverb {
     private BassValue bass = new BassValue("Bass");
     private GenericValue<Integer> decay = new GenericValue<Integer>("Decay", "s", 0, 255); // 0.12 - 65.4
     private CrossoverValue xovr = new CrossoverValue("Xovr");
-    private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 525 - 24700
+    private HighCutValue rtHC = new HighCutValue("Rt HC");
     private GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
     private GenericValue<Integer> spred = new GenericValue<Integer>("Spred", "", 0, 255);
 
@@ -147,7 +148,7 @@ public class Hall extends Reverb {
         this.xovr.setValue(xovr);
     }
 
-    public GenericValue<Integer> getRtHC() {
+    public HighCutValue getRtHC() {
         return rtHC;
     }
 

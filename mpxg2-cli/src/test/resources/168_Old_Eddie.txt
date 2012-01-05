@@ -43,7 +43,7 @@ Old Eddie
     Bass: 1.2X
     Decay: 0.84s
     Xovr: 986Hz
-    Rt HC: 10.4k
+    Rt HC: 10.4kHz
     Shape: 36
     Spred: 95
   EQ: Pedal Vol (On)

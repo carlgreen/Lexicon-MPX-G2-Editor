@@ -48,7 +48,7 @@ Pedal Swell
     Bass: 1.2X
     Decay: 1.97s
     Xovr: 818Hz
-    Rt HC: 14.1k
+    Rt HC: 14.1kHz
     Shape: 110
     Spred: 89
   EQ: Pedal Vol (On)

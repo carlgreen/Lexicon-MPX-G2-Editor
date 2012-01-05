@@ -42,7 +42,7 @@ ToeWah/Phas
     Bass: 0.8X
     Decay: 1.42s
     Xovr: 1.1kHz
-    Rt HC: 8.4k
+    Rt HC: 8.4kHz
     Shape: 110
     Spred: 109
   EQ: Pedal Vol (On)

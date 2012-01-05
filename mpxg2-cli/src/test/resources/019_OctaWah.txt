@@ -40,7 +40,7 @@ OctaWah
     Bass: 0.8X
     Decay: 1.15s
     Xovr: 986Hz
-    Rt HC: 19.4k
+    Rt HC: 19.4kHz
     Shape: 36
     Spred: 95
   EQ: 1-Band (M) (Off)

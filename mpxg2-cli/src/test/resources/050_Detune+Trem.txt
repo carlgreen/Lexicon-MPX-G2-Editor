@@ -40,7 +40,7 @@ Detune+Trem
     Bass: 1.5X
     Decay: 1.61s
     Xovr: 589Hz
-    Rt HC: 7.9k
+    Rt HC: 7.9kHz
     Shape: 88
     Spred: 143
   Gain: Tone (Off)

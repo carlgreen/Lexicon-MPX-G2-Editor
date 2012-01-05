@@ -53,7 +53,7 @@ CompChorus+
     Bass: 1.2X
     Decay: 1.67s
     Xovr: 818Hz
-    Rt HC: 7.9k
+    Rt HC: 7.9kHz
     Shape: 110
     Spred: 89
   EQ: Pedal Vol (On)
