@@ -28,10 +28,6 @@ public class Util {
         "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "EQ", "Gain"
     };
 
-    private static final String[] REVERB_BASS = {
-        "0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.5", "2.0", "3.0", "4.0"
-    };
-
     private static final double[] REVERB_LINK_SIZES = {
         12.0, 20.0, 28.0, 36.0, 44.0, 52.0, 60.0, 68.0, 76.0, 76.5
     };
@@ -130,36 +126,6 @@ public class Util {
         }
     };
 
-    private static final String[] REVERB_XOVR = {
-        "30", "60", "90", "120", "151", "181", "212", "243", "273", "336", "398",
-        "461", "525", "589", "654", "818", "986", "1.1k", "1.3k", "1.5k", "1.6k",
-        "1.8k", "2.0k", "2.2k", "2.4k", "2.6k", "2.9k", "3.1k", "3.3k", "3.5k",
-        "3.8k", "4.0k", "4.3k", "4.6k", "4.8k", "5.1k", "5.4k", "5.7k", "6.1k",
-        "6.4k", "6.8k", "7.1k", "7.5k", "7.9k", "8.4k", "8.8k", "9.3k", "9.9k",
-        "10.4k", "11.0k", "11.7k", "12.4k", "13.2k", "14.1k", "15.2k", "16.3k",
-        "17.7k", "19.4k", "21.6k", "24.7k", "Full"
-    };
-
-    private static final String[] REVERB_RT_HC = {
-        "525", "589", "654", "818", "986", "1.1k", "1.3k", "1.5k", "1.6k",
-        "1.8k", "2.0k", "2.2k", "2.4k", "2.6k", "2.9k", "3.1k", "3.3k", "3.5k",
-        "3.8k", "4.0k", "4.3k", "4.6k", "4.8k", "5.1k", "5.4k", "5.7k", "6.1k",
-        "6.4k", "6.8k", "7.1k", "7.5k", "7.9k", "8.4k", "8.8k", "9.3k", "9.9k",
-        "10.4k", "11.0k", "11.7k", "12.4k", "13.2k", "14.1k", "15.2k", "16.3k",
-        "17.7k", "19.4k", "21.6k", "24.7k", "Flat"
-    };
-
-    private static final double[] REVERB_AMBIENCE_RT_HC = {
-        0.5, 1.0, 1.6, 2.2, 2.9, 3.6, 4.4, 5.5, 6.3, 7.5, 8.9, 10.6, 12.8, 15.9, 21.2
-    };
-
-    private static final String[] REVERB_DELAY_LEVEL = {
-        "Off", "-48dB", "-42db", "-39dB", "-36dB", "-33dB", "-30dB", "-27dB",
-        "-24dB", "-22dB", "-20dB", "-18dB", "-16dB", "-14dB", "-12dB", "-10dB",
-        "-9dB", "-8dB", "-7dB", "-6dB", "-5dB", "-4dB", "-3dB", "-2dB", "-1dB",
-        "Full"
-    };
-
     private static final String[] PHASES = {"0", "90", "180", "270"};
 
     private static final String[] EQ_MODES = {"LShlf", "Band", "HShlf"};
@@ -169,13 +135,6 @@ public class Util {
      */
     public static String delayInsertToString(final int delayInsert) {
         return DELAY_INSERTS[delayInsert];
-    }
-
-    /**
-     * @return String representation of reverb bass index.
-     */
-    public static String reverbBassToString(final int reverbBass) {
-        return REVERB_BASS[reverbBass];
     }
 
     /**
@@ -192,34 +151,6 @@ public class Util {
             decayIndex = REVERB_LINK_SIZES.length - 1;
         }
         return REVERB_DECAY[decayIndex][reverbDecay];
-    }
-
-    /**
-     * @return String representation of reverb xovr index.
-     */
-    public static String reverbXovrToString(final int reverbXovr) {
-        return REVERB_XOVR[reverbXovr];
-    }
-
-    /**
-     * @return String representation of Rt HC index.
-     */
-    public static String reverbRtHCToString(final int reverbRtHC) {
-        return REVERB_RT_HC[reverbRtHC];
-    }
-
-    /**
-     * @return String representation of Rt HC index for Ambience algorithm.
-     */
-    public static double reverbAmbienceRtHCToString(final int reverbRtHC) {
-        return REVERB_AMBIENCE_RT_HC[reverbRtHC];
-    }
-
-    /**
-     * @return String representation of Delay Level index for Ambience algorithm.
-     */
-    public static String reverbDelayLevelToString(final int delayLevel) {
-        return REVERB_DELAY_LEVEL[delayLevel];
     }
 
     /**
