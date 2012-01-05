@@ -20,7 +20,7 @@ import info.carlwithak.mpxg2.model.AmbienceHighCutValue;
 import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.CrossoverValue;
-import info.carlwithak.mpxg2.model.DelayLevelValue;
+import info.carlwithak.mpxg2.model.DecayLevelValue;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
@@ -235,8 +235,8 @@ public class ParameterPrinterTest {
     }
 
     @Test
-    public void testPrintDelayLevelValue() throws PrintException {
-        DelayLevelValue value = new DelayLevelValue("D Lvl");
+    public void testPrintDecayLevelValue() throws PrintException {
+        DecayLevelValue value = new DecayLevelValue("D Lvl");
 
         value.setValue(0);
         assertThat(ParameterPrinter.print(value), is("Off"));

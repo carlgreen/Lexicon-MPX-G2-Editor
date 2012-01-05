@@ -21,7 +21,7 @@ import info.carlwithak.mpxg2.model.AmbienceHighCutValue;
 import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.CrossoverValue;
-import info.carlwithak.mpxg2.model.DelayLevelValue;
+import info.carlwithak.mpxg2.model.DecayLevelValue;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
@@ -103,8 +103,8 @@ public class ParameterPrinter {
         } else if (parameter instanceof HighCutValue) {
             HighCutValue value = (HighCutValue) parameter;
             result = value.toString();
-        } else if (parameter instanceof DelayLevelValue) {
-            DelayLevelValue value = (DelayLevelValue) parameter;
+        } else if (parameter instanceof DecayLevelValue) {
+            DecayLevelValue value = (DecayLevelValue) parameter;
             result = value.toString();
         } else if (parameter instanceof AmbienceHighCutValue) {
             AmbienceHighCutValue value = (AmbienceHighCutValue) parameter;

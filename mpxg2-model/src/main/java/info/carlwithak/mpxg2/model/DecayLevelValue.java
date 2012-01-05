@@ -21,15 +21,15 @@ package info.carlwithak.mpxg2.model;
  *
  * @author Carl Green
  */
-public class DelayLevelValue extends GenericValue<Integer> {
+public class DecayLevelValue extends GenericValue<Integer> {
 
-    private static final int[] REVERB_DELAY_LEVEL = {
+    private static final int[] REVERB_DECAY_LEVEL = {
         -48, -42, -39, -36, -33, -30, -27,
         -24, -22, -20, -18, -16, -14, -12, -10,
         -9, -8, -7, -6, -5, -4, -3, -2, -1
     };
 
-    public DelayLevelValue(final String name) {
+    public DecayLevelValue(final String name) {
         super(name, "dB", 0, 25);
     }
 
@@ -38,10 +38,10 @@ public class DelayLevelValue extends GenericValue<Integer> {
         final int val = getValue() - 1; // remove 1 as 'Off' is the first value
         if (val == -1) {
             return "Off";
-        } else if (val == REVERB_DELAY_LEVEL.length) {
+        } else if (val == REVERB_DECAY_LEVEL.length) {
             return "Full";
         } else {
-            return REVERB_DELAY_LEVEL[val] + getUnit();
+            return REVERB_DECAY_LEVEL[val] + getUnit();
         }
     }
 

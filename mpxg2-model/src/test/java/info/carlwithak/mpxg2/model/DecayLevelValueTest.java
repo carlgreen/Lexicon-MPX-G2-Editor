@@ -26,11 +26,11 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
-public class DelayLevelValueTest {
+public class DecayLevelValueTest {
 
     @Test
-    public void testDelayLevelValueToString() {
-        DelayLevelValue value = new DelayLevelValue("D Lvl");
+    public void testDecayLevelValueToString() {
+        DecayLevelValue value = new DecayLevelValue("D Lvl");
 
         value.setValue(0);
         assertThat(value.toString(), is("Off"));
