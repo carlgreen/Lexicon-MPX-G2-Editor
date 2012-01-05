@@ -510,7 +510,7 @@ public class ReverbSpredValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         String spred;
         if (link.getValue()) {
             int sizeIndex = (int) ((size.getValue() - 4) * 2);

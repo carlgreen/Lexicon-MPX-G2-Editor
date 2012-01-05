@@ -29,14 +29,14 @@ import static org.junit.Assert.assertThat;
 public class SourceValueTest {
 
     @Test
-    public void testSourceValueToString() {
+    public void testGetDisplayString() {
         SourceValue value = new SourceValue("Src");
 
         value.setValue(1);
-        assertThat(value.toString(), is("Guitar Input"));
+        assertThat(value.getDisplayString(), is("Guitar Input"));
 
         value.setValue(2);
-        assertThat(value.toString(), is("Returns Only"));
+        assertThat(value.getDisplayString(), is("Returns Only"));
     }
 
 }

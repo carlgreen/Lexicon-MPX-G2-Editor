@@ -19,9 +19,11 @@ package info.carlwithak.mpxg2.model;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -52,6 +54,11 @@ public class FrequencyRateTest {
 
         freqRate.setFrequency(3.0);
         assertEquals(3.0, freqRate.getFrequency(), 0.01);
+    }
+
+    @Test
+    public void testGetDisplayString() {
+        assertThat(freqRate.getDisplayString(), is("1.00Hz"));
     }
 
     @Test

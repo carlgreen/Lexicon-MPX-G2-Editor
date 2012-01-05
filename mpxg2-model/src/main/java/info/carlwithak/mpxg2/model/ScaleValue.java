@@ -31,7 +31,7 @@ public class ScaleValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return SCALES[getValue()];
     }
 

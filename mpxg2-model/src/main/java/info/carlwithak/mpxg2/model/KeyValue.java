@@ -32,7 +32,7 @@ public class KeyValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return KEYS[getValue()];
     }
 

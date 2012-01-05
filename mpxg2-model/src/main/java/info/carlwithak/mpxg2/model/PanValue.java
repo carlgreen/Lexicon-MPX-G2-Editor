@@ -27,4 +27,21 @@ public class PanValue extends GenericValue<Integer> {
         super(name, "LCR", minValue, maxValue);
     }
 
+    /**
+     * @return number with trailing 'L' or 'R', or just 'C' for zero.
+     */
+    @Override
+    public String getDisplayString() {
+        final int pan = getValue();
+        String suffix;
+        if (pan < 0) {
+            suffix = "L";
+        } else if (pan > 0) {
+            suffix = "R";
+        } else {
+            return "C";
+        }
+        return Integer.toString(Math.abs(pan)) + suffix;
+    }
+
 }

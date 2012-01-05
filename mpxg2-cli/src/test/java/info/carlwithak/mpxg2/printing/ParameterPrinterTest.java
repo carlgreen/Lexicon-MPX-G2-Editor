@@ -42,7 +42,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.mockito.Mockito.mock;
 
 /**
  * Tests for ParameterPrinter.
@@ -50,12 +49,6 @@ import static org.mockito.Mockito.mock;
  * @author Carl Green
  */
 public class ParameterPrinterTest {
-
-    @Test(expected = PrintException.class)
-    public void testPrintInvalidRateType() throws PrintException {
-        Rate rate = mock(Rate.class);
-        ParameterPrinter.print(rate);
-    }
 
     @Test
     public void testPrintFrequencyRate() throws PrintException {

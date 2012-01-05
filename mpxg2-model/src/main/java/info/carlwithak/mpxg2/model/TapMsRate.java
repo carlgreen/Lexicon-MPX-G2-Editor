@@ -22,7 +22,7 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class TapMsRate implements Rate {
-    // TODO surely this has no place here
+
     private String name;
     private int ms;
 
@@ -47,6 +47,11 @@ public class TapMsRate implements Rate {
 
     public void setMs(final int ms) {
         this.ms = ms;
+    }
+
+    @Override
+    public String getDisplayString() {
+        return getMs() + "ms";
     }
 
     @Override

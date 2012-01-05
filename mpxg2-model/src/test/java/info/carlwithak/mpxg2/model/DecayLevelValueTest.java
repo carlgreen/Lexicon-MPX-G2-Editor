@@ -29,20 +29,20 @@ import static org.junit.Assert.assertThat;
 public class DecayLevelValueTest {
 
     @Test
-    public void testDecayLevelValueToString() {
+    public void testGetDisplayString() {
         DecayLevelValue value = new DecayLevelValue("D Lvl");
 
         value.setValue(0);
-        assertThat(value.toString(), is("Off"));
+        assertThat(value.getDisplayString(), is("Off"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("-48dB"));
+        assertThat(value.getDisplayString(), is("-48dB"));
 
         value.setValue(24);
-        assertThat(value.toString(), is("-1dB"));
+        assertThat(value.getDisplayString(), is("-1dB"));
 
         value.setValue(25);
-        assertThat(value.toString(), is("Full"));
+        assertThat(value.getDisplayString(), is("Full"));
     }
 
 }

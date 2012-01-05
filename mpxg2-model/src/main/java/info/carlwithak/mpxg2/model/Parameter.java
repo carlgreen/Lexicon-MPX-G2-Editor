@@ -26,4 +26,6 @@ public interface Parameter {
     String getName();
 
     String getUnit();
+
+    String getDisplayString();
 }

@@ -32,90 +32,90 @@ public class DecayTimeValueTest {
     private final DecayTimeValue value = new DecayTimeValue("Decay", link, size);
 
     @Test
-    public void testDecayLevelValueToString_noLink() {
+    public void testGetDisplayString_noLink() {
         link.setValue(false);
         value.setValue(0);
 
         size.setValue(5.0);
-        assertThat(value.toString(), is("0.29s"));
+        assertThat(value.getDisplayString(), is("0.29s"));
 
         size.setValue(17.0);
-        assertThat(value.toString(), is("0.29s"));
+        assertThat(value.getDisplayString(), is("0.29s"));
     }
 
     @Test
-    public void testDecayLevelValueToString_Link0() {
+    public void testGetDisplayString_Link0() {
         link.setValue(true);
         size.setValue(5.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.07s"));
+        assertThat(value.getDisplayString(), is("0.07s"));
 
         value.setValue(63);
-        assertThat(value.toString(), is("6.58s"));
+        assertThat(value.getDisplayString(), is("6.58s"));
     }
 
     @Test
-    public void testDecayLevelValueToString_Link1() {
+    public void testGetDisplayString_Link1() {
         link.setValue(true);
         size.setValue(12.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.09s"));
+        assertThat(value.getDisplayString(), is("0.09s"));
 
         value.setValue(63);
-        assertThat(value.toString(), is("13.1s"));
+        assertThat(value.getDisplayString(), is("13.1s"));
     }
 
     @Test
-    public void testDecayLevelValueToString_Link2() {
+    public void testGetDisplayString_Link2() {
         link.setValue(true);
         size.setValue(27.5);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.12s"));
+        assertThat(value.getDisplayString(), is("0.12s"));
 
         value.setValue(63);
-        assertThat(value.toString(), is("19.6s"));
+        assertThat(value.getDisplayString(), is("19.6s"));
     }
 
     @Test
-    public void testDecayLevelValueToString_Link3() {
+    public void testGetDisplayString_Link3() {
         link.setValue(true);
         size.setValue(35.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.14s"));
+        assertThat(value.getDisplayString(), is("0.14s"));
 
         value.setValue(63);
-        assertThat(value.toString(), is("26.2s"));
+        assertThat(value.getDisplayString(), is("26.2s"));
     }
 
     @Test
-    public void testDecayLevelValueToString_Link6() {
+    public void testGetDisplayString_Link6() {
         link.setValue(true);
         size.setValue(53.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.21s"));
+        assertThat(value.getDisplayString(), is("0.21s"));
 
         value.setValue(41);
-        assertThat(value.toString(), is("1.67s"));
+        assertThat(value.getDisplayString(), is("1.67s"));
 
         value.setValue(63);
-        assertThat(value.toString(), is("45.8s"));
+        assertThat(value.getDisplayString(), is("45.8s"));
     }
 
     @Test
-    public void testDecayLevelValueToString_Link9() {
+    public void testGetDisplayString_Link9() {
         link.setValue(true);
         size.setValue(76.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.29s"));
+        assertThat(value.getDisplayString(), is("0.29s"));
 
         value.setValue(63);
-        assertThat(value.toString(), is("65.4s"));
+        assertThat(value.getDisplayString(), is("65.4s"));
     }
 
 }

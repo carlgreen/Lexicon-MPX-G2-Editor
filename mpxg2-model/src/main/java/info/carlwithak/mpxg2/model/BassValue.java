@@ -32,7 +32,7 @@ public class BassValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return REVERB_BASS[getValue()] + getUnit();
     }
 

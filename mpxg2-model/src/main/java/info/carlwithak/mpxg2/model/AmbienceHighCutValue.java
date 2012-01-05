@@ -32,7 +32,7 @@ public class AmbienceHighCutValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return REVERB_AMBIENCE_RT_HC[getValue()] + getUnit();
     }
 

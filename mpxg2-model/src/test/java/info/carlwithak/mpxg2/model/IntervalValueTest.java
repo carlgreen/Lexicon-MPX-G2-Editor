@@ -29,17 +29,17 @@ import static org.junit.Assert.assertThat;
 public class IntervalValueTest {
 
     @Test
-    public void testIntervalValueToString() {
+    public void testGetDisplayString() {
         IntervalValue value = new IntervalValue("Int");
 
         value.setValue(0);
-        assertThat(value.toString(), is("@Oct"));
+        assertThat(value.getDisplayString(), is("@Oct"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("@7th"));
+        assertThat(value.getDisplayString(), is("@7th"));
 
         value.setValue(25);
-        assertThat(value.toString(), is("*5th"));
+        assertThat(value.getDisplayString(), is("*5th"));
     }
 
 }

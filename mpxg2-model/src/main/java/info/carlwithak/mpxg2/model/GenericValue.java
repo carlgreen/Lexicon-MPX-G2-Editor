@@ -61,4 +61,30 @@ public class GenericValue<T> implements Parameter {
         this.value = value;
     }
 
+    /**
+     * @return postive numbers prefixed with '+' and negative numbers prefixed with '-'.
+     */
+    private static String signInt(final int i) {
+        int shifted = i > 32768 ? i - 65536 : i;
+        return shifted > 0 ? "+" + Integer.toString(shifted) : Integer.toString(shifted);
+    }
+
+    @Override
+    public String getDisplayString() {
+        StringBuilder sb = new StringBuilder();
+
+        // TODO this should have its own 'OnOff' class.
+        if ("OnOff".equals(getUnit())) {
+            return (Boolean) getValue() ? "On" : "Off";
+        }
+
+        if (getMinValue() instanceof Integer && ((Integer) getMinValue()) < 0) {
+            sb.append(signInt((Integer) getValue()));
+        } else {
+            sb.append(getValue().toString());
+        }
+        sb.append(getUnit());
+        return sb.toString();
+    }
+
 }

@@ -27,4 +27,9 @@ public class WahType extends GenericValue<Integer> {
         super("Type", "", 0, 1);
     }
 
+    @Override
+    public String getDisplayString() {
+        return "Model " + (getValue() == 0 ? 'C' : 'V');
+    }
+
 }

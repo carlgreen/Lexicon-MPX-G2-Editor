@@ -29,20 +29,20 @@ import static org.junit.Assert.assertThat;
 public class CrossoverValueTest {
 
     @Test
-    public void testCrossoverValueToString() {
+    public void testGetDisplayString() {
         CrossoverValue value = new CrossoverValue("Xovr");
 
         value.setValue(0);
-        assertThat(value.toString(), is("30Hz"));
+        assertThat(value.getDisplayString(), is("30Hz"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("60Hz"));
+        assertThat(value.getDisplayString(), is("60Hz"));
 
         value.setValue(59);
-        assertThat(value.toString(), is("24.7kHz"));
+        assertThat(value.getDisplayString(), is("24.7kHz"));
 
         value.setValue(60);
-        assertThat(value.toString(), is("Full"));
+        assertThat(value.getDisplayString(), is("Full"));
     }
 
 }

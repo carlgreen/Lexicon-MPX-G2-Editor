@@ -29,17 +29,17 @@ import static org.junit.Assert.assertThat;
 public class ScaleValueTest {
 
     @Test
-    public void testScaleValueToString() {
+    public void testGetDisplayString() {
         ScaleValue value = new ScaleValue("Scale");
 
         value.setValue(0);
-        assertThat(value.toString(), is("Major"));
+        assertThat(value.getDisplayString(), is("Major"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("Dor"));
+        assertThat(value.getDisplayString(), is("Dor"));
 
         value.setValue(6);
-        assertThat(value.toString(), is("Loc"));
+        assertThat(value.getDisplayString(), is("Loc"));
     }
 
 }

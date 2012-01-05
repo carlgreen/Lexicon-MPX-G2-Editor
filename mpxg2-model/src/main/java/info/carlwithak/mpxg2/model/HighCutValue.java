@@ -37,7 +37,7 @@ public class HighCutValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return getValue() == REVERB_RT_HC.length ? "Flat" : REVERB_RT_HC[getValue()] + getUnit();
     }
 

@@ -35,196 +35,196 @@ public class ReverbSpredValueTest {
      * Test spred conversion when link is off. Size shouldn't matter.
      */
     @Test
-    public void testReverbSpredValueToString_noLink() {
+    public void testGetDisplayString_noLink() {
         link.setValue(false);
         value.setValue(0);
 
         size.setValue(5.0);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         // check size doesn't matter
         size.setValue(17.0);
         value.setValue(127);
-        assertThat(value.toString(), is("127"));
+        assertThat(value.getDisplayString(), is("127"));
 
         value.setValue(255);
-        assertThat(value.toString(), is("255"));
+        assertThat(value.getDisplayString(), is("255"));
     }
 
     /**
      * Test spred conversion when link is on and size is 4.0.
      */
     @Test
-    public void testReverbSpredValueToString_size4() {
+    public void testGetDisplayString_size4() {
         link.setValue(true);
         size.setValue(4.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(9);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(10);
-        assertThat(value.toString(), is("1"));
+        assertThat(value.getDisplayString(), is("1"));
 
         value.setValue(249);
-        assertThat(value.toString(), is("24"));
+        assertThat(value.getDisplayString(), is("24"));
 
         value.setValue(255);
-        assertThat(value.toString(), is("25"));
+        assertThat(value.getDisplayString(), is("25"));
     }
 
     /**
      * Test spred conversion when link is on and size is 22.5.
      */
     @Test
-    public void testReverbSpredValueToString_size22_5() {
+    public void testGetDisplayString_size22_5() {
         link.setValue(true);
         size.setValue(22.5);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(3);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(4);
-        assertThat(value.toString(), is("1"));
+        assertThat(value.getDisplayString(), is("1"));
 
         value.setValue(222);
-        assertThat(value.toString(), is("73"));
+        assertThat(value.getDisplayString(), is("73"));
 
         value.setValue(253);
-        assertThat(value.toString(), is("83"));
+        assertThat(value.getDisplayString(), is("83"));
 
         value.setValue(254);
-        assertThat(value.toString(), is("84"));
+        assertThat(value.getDisplayString(), is("84"));
 
         value.setValue(255);
-        assertThat(value.toString(), is("84"));
+        assertThat(value.getDisplayString(), is("84"));
     }
 
     /**
      * Test spred conversion when link is on and size is 24.0.
      */
     @Test
-    public void testReverbSpredValueToString_size24() {
+    public void testGetDisplayString_size24() {
         link.setValue(true);
         size.setValue(24.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(2);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(3);
-        assertThat(value.toString(), is("1"));
+        assertThat(value.getDisplayString(), is("1"));
 
         value.setValue(120);
-        assertThat(value.toString(), is("42"));
+        assertThat(value.getDisplayString(), is("42"));
 
         value.setValue(254);
-        assertThat(value.toString(), is("88"));
+        assertThat(value.getDisplayString(), is("88"));
 
         value.setValue(255);
-        assertThat(value.toString(), is("89"));
+        assertThat(value.getDisplayString(), is("89"));
     }
 
     /**
      * Test spred conversion when link is on and size is 28.0.
      */
     @Test
-    public void testReverbSpredValueToString_size28() {
+    public void testGetDisplayString_size28() {
         link.setValue(true);
         size.setValue(28.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(2);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(3);
-        assertThat(value.toString(), is("1"));
+        assertThat(value.getDisplayString(), is("1"));
 
         value.setValue(120);
-        assertThat(value.toString(), is("48"));
+        assertThat(value.getDisplayString(), is("48"));
 
         value.setValue(254);
-        assertThat(value.toString(), is("101"));
+        assertThat(value.getDisplayString(), is("101"));
 
         value.setValue(255);
-        assertThat(value.toString(), is("102"));
+        assertThat(value.getDisplayString(), is("102"));
     }
 
     /**
      * Test spred conversion when link is on and size is 35.0.
      */
     @Test
-    public void testReverbSpredValueToString_size35() {
+    public void testGetDisplayString_size35() {
         link.setValue(true);
         size.setValue(35.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(2);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(3);
-        assertThat(value.toString(), is("1"));
+        assertThat(value.getDisplayString(), is("1"));
 
         value.setValue(39);
-        assertThat(value.toString(), is("19"));
+        assertThat(value.getDisplayString(), is("19"));
 
         value.setValue(41);
-        assertThat(value.toString(), is("19"));
+        assertThat(value.getDisplayString(), is("19"));
 
         value.setValue(254);
-        assertThat(value.toString(), is("123"));
+        assertThat(value.getDisplayString(), is("123"));
 
         value.setValue(255);
-        assertThat(value.toString(), is("124"));
+        assertThat(value.getDisplayString(), is("124"));
     }
 
     /**
      * Test spred conversion when link is on and size is 53.0.
      */
     @Test
-    public void testReverbSpredValueToString_size53() {
+    public void testGetDisplayString_size53() {
         link.setValue(true);
         size.setValue(53.0);
 
         value.setValue(0);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("0"));
+        assertThat(value.getDisplayString(), is("0"));
 
         value.setValue(2);
-        assertThat(value.toString(), is("1"));
+        assertThat(value.getDisplayString(), is("1"));
 
         value.setValue(125);
-        assertThat(value.toString(), is("89"));
+        assertThat(value.getDisplayString(), is("89"));
 
         value.setValue(254);
-        assertThat(value.toString(), is("180"));
+        assertThat(value.getDisplayString(), is("180"));
 
         value.setValue(255);
-        assertThat(value.toString(), is("181"));
+        assertThat(value.getDisplayString(), is("181"));
     }
 
     /**
      * Test spred conversion when link is on and size is 53.5.
      */
     @Test
-    public void testReverbSpredValueToString_size53_5() {
+    public void testGetDisplayString_size53_5() {
         link.setValue(true);
         size.setValue(53.5);
         value.setValue(164);
-        assertThat(value.toString(), is("117"));
+        assertThat(value.getDisplayString(), is("117"));
     }
 
 }

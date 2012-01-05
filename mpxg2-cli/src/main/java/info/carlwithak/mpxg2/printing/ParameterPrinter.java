@@ -17,33 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.AmbienceHighCutValue;
-import info.carlwithak.mpxg2.model.BassValue;
-import info.carlwithak.mpxg2.model.BeatRate;
-import info.carlwithak.mpxg2.model.CrossoverValue;
-import info.carlwithak.mpxg2.model.DecayLevelValue;
-import info.carlwithak.mpxg2.model.DecayTimeValue;
-import info.carlwithak.mpxg2.model.EqModeValue;
-import info.carlwithak.mpxg2.model.FrequencyRate;
-import info.carlwithak.mpxg2.model.GenericValue;
-import info.carlwithak.mpxg2.model.HighCutValue;
-import info.carlwithak.mpxg2.model.InsertPosition;
-import info.carlwithak.mpxg2.model.IntervalValue;
-import info.carlwithak.mpxg2.model.KeyValue;
-import info.carlwithak.mpxg2.model.PanValue;
-import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Parameter;
-import info.carlwithak.mpxg2.model.Rate;
-import info.carlwithak.mpxg2.model.ReverbSpredValue;
-import info.carlwithak.mpxg2.model.ScaleValue;
-import info.carlwithak.mpxg2.model.SourceValue;
-import info.carlwithak.mpxg2.model.TapMsRate;
-import info.carlwithak.mpxg2.model.WahType;
-import java.text.DecimalFormat;
-
-import static info.carlwithak.mpxg2.printing.Util.delayInsertToString;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
-import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
 
 /**
  * Class to print out a parameter correctly depending on the type.
@@ -52,86 +26,7 @@ import static info.carlwithak.mpxg2.printing.Util.wahTypeToString;
  */
 public class ParameterPrinter {
 
-    private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
-
     public static String print(Parameter parameter) throws PrintException {
-        String result;
-        if (parameter instanceof Rate) {
-            if (parameter instanceof FrequencyRate) {
-                FrequencyRate frequencyRate = (FrequencyRate) parameter;
-                result = DECIMAL_2DP.format(frequencyRate.getFrequency()) + "Hz";
-            } else if (parameter instanceof BeatRate) {
-                BeatRate beatRate = (BeatRate) parameter;
-                result = beatRate.getMeasures() + ":" + beatRate.getBeats();
-            } else if (parameter instanceof TapMsRate) {
-                TapMsRate tapMsRate = (TapMsRate) parameter;
-                result = tapMsRate.getMs() + "ms";
-            } else {
-                throw new PrintException("Invalid rate type: " + parameter.getClass());
-            }
-        } else if (parameter instanceof InsertPosition) {
-            InsertPosition insert = (InsertPosition) parameter;
-            result = delayInsertToString(insert.getValue());
-        } else if (parameter instanceof WahType) {
-            WahType type = (WahType) parameter;
-            result = wahTypeToString(type.getValue());
-        } else if (parameter instanceof PanValue) {
-            PanValue value = (PanValue) parameter;
-            result = Util.panToString(value.getValue());
-        } else if (parameter instanceof PhaseValue) {
-            PhaseValue value = (PhaseValue) parameter;
-            result = Util.phaseToString(value.getValue());
-        } else if (parameter instanceof EqModeValue) {
-            EqModeValue value = (EqModeValue) parameter;
-            result = Util.eqModeToString(value.getValue());
-        } else if (parameter instanceof KeyValue) {
-            KeyValue value = (KeyValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof ScaleValue) {
-            ScaleValue value = (ScaleValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof IntervalValue) {
-            IntervalValue value = (IntervalValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof SourceValue) {
-            SourceValue value = (SourceValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof BassValue) {
-            BassValue value = (BassValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof CrossoverValue) {
-            CrossoverValue value = (CrossoverValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof HighCutValue) {
-            HighCutValue value = (HighCutValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof DecayLevelValue) {
-            DecayLevelValue value = (DecayLevelValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof DecayTimeValue) {
-            DecayTimeValue value = (DecayTimeValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof ReverbSpredValue) {
-            ReverbSpredValue value = (ReverbSpredValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof AmbienceHighCutValue) {
-            AmbienceHighCutValue value = (AmbienceHighCutValue) parameter;
-            result = value.toString();
-        } else if (parameter instanceof GenericValue && "OnOff".equals(parameter.getUnit())) {
-            // could surely do better than this
-            GenericValue value = (GenericValue) parameter;
-            result = Util.onOffToString((Boolean) value.getValue());
-        } else if (parameter instanceof GenericValue) {
-            GenericValue value = (GenericValue) parameter;
-            if (value.getMinValue() instanceof Integer && ((Integer) value.getMinValue()) < 0) {
-                result = signInt((Integer) value.getValue());
-            } else {
-                result = value.getValue().toString();
-            }
-            result += value.getUnit();
-        } else {
-            throw new PrintException("Invalid parameter type: " + parameter.getClass());
-        }
-        return result;
+        return parameter.getDisplayString();
     }
 }

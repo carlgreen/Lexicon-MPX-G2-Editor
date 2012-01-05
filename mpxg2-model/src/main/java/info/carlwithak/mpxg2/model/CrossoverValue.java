@@ -38,7 +38,7 @@ public class CrossoverValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return getValue() == REVERB_XOVR.length ? "Full" : REVERB_XOVR[getValue()] + getUnit();
     }
 

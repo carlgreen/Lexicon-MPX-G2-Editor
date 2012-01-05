@@ -131,7 +131,7 @@ public class DecayTimeValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         int decayIndex;
         if (link.getValue()) {
             decayIndex = 0;

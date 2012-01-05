@@ -19,9 +19,11 @@ package info.carlwithak.mpxg2.model;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -65,6 +67,11 @@ public class BeatRateTest {
 
         beatRate.setBeats(4);
         assertEquals(4, beatRate.getBeats());
+    }
+
+    @Test
+    public void testGetDisplayString() {
+        assertThat(beatRate.getDisplayString(), is("1:2"));
     }
 
     @Test

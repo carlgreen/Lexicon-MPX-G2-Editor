@@ -23,8 +23,15 @@ package info.carlwithak.mpxg2.model;
  */
 public class EqModeValue extends GenericValue<Integer> {
 
+    private static final String[] EQ_MODES = {"LShlf", "Band", "HShlf"};
+
     public EqModeValue(final String name) {
         super(name, "", 0, 2);
+    }
+
+    @Override
+    public String getDisplayString() {
+        return EQ_MODES[getValue()];
     }
 
 }

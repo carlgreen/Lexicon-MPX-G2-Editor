@@ -29,20 +29,20 @@ import static org.junit.Assert.assertThat;
 public class AmbienceHighCutValueTest {
 
     @Test
-    public void testAmbienceHighCutValueToString() {
+    public void testGetDisplayString() {
         AmbienceHighCutValue value = new AmbienceHighCutValue("Rt HC");
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.5kHz"));
+        assertThat(value.getDisplayString(), is("0.5kHz"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("1.0kHz"));
+        assertThat(value.getDisplayString(), is("1.0kHz"));
 
         value.setValue(13);
-        assertThat(value.toString(), is("15.9kHz"));
+        assertThat(value.getDisplayString(), is("15.9kHz"));
 
         value.setValue(14);
-        assertThat(value.toString(), is("21.2kHz"));
+        assertThat(value.getDisplayString(), is("21.2kHz"));
     }
 
 }

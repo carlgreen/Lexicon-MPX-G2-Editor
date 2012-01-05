@@ -17,10 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -28,12 +29,7 @@ import org.junit.Test;
  * @author Carl Green
  */
 public class GenericValueTest {
-    private GenericValue<String> genericValue;
-
-    @Before
-    public void setUp() {
-        genericValue = new GenericValue<String>("some name", "a unit", "c", "f");
-    }
+    private GenericValue<String> genericValue = new GenericValue<String>("some name", "a unit", "c", "f");
 
     @Test
     public void testGetName() {
@@ -60,5 +56,38 @@ public class GenericValueTest {
         assertNull(genericValue.getValue());
         genericValue.setValue("e");
         assertEquals("e", genericValue.getValue());
+    }
+
+    @Test
+    public void testGetDisplayString() {
+        GenericValue<Integer> signedValue = new GenericValue<Integer>("Level", "dB", 0, 6);
+
+        signedValue.setValue(6);
+        assertThat(signedValue.getDisplayString(), is("6dB"));
+    }
+
+    @Test
+    public void testGetDisplayString_Signed() {
+        GenericValue<Integer> signedValue = new GenericValue<Integer>("Level", "dB", -90, 6);
+
+        signedValue.setValue(6);
+        assertThat(signedValue.getDisplayString(), is("+6dB"));
+
+        signedValue.setValue(0);
+        assertThat(signedValue.getDisplayString(), is("0dB"));
+
+        signedValue.setValue(-6);
+        assertThat(signedValue.getDisplayString(), is("-6dB"));
+    }
+
+    @Test
+    public void testGetDisplayString_OnOff() {
+        GenericValue<Boolean> onOffValue = new GenericValue<Boolean>("Glide", "OnOff", false, true);
+
+        onOffValue.setValue(true);
+        assertThat(onOffValue.getDisplayString(), is("On"));
+
+        onOffValue.setValue(false);
+        assertThat(onOffValue.getDisplayString(), is("Off"));
     }
 }

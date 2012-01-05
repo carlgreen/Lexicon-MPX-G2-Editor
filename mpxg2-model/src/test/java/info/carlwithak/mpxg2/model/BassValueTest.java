@@ -29,17 +29,17 @@ import static org.junit.Assert.assertThat;
 public class BassValueTest {
 
     @Test
-    public void testBassValueToString() {
+    public void testGetDisplayString() {
         BassValue value = new BassValue("Bass");
 
         value.setValue(0);
-        assertThat(value.toString(), is("0.2X"));
+        assertThat(value.getDisplayString(), is("0.2X"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("0.4X"));
+        assertThat(value.getDisplayString(), is("0.4X"));
 
         value.setValue(9);
-        assertThat(value.toString(), is("4.0X"));
+        assertThat(value.getDisplayString(), is("4.0X"));
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2011 Carl Green
+ *  Copyright (C) 2012 Carl Green
  * 
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,23 +17,29 @@
 
 package info.carlwithak.mpxg2.model;
 
+import org.junit.Test;
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 /**
  *
  * @author Carl Green
  */
-public class InsertPosition extends GenericValue<Integer> {
+public class EqModeValueTest {
 
-    private static final String[] DELAY_INSERTS = {
-        "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "EQ", "Gain"
-    };
+    @Test
+    public void testGetDisplayString() {
+        EqModeValue value = new EqModeValue("Mode");
 
-    public InsertPosition(final String name) {
-        super(name, "", 0, 5);
-    }
+        value.setValue(0);
+        assertThat(value.getDisplayString(), is("LShlf"));
 
-    @Override
-    public String getDisplayString() {
-        return DELAY_INSERTS[getValue()];
+        value.setValue(1);
+        assertThat(value.getDisplayString(), is("Band"));
+
+        value.setValue(2);
+        assertThat(value.getDisplayString(), is("HShlf"));
     }
 
 }

@@ -34,7 +34,7 @@ public class DecayLevelValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         final int val = getValue() - 1; // remove 1 as 'Off' is the first value
         if (val == -1) {
             return "Off";

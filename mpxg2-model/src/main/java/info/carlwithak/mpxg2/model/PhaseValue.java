@@ -23,8 +23,15 @@ package info.carlwithak.mpxg2.model;
  */
 public class PhaseValue extends GenericValue<Integer> {
 
+    private static final String[] PHASES = {"0", "90", "180", "270"};
+
     public PhaseValue(final String name) {
         super(name, "°", 0, 3);
+    }
+
+    @Override
+    public String getDisplayString() {
+        return PHASES[getValue()] + getUnit();
     }
 
 }

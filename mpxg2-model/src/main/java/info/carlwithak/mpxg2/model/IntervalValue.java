@@ -35,7 +35,7 @@ public class IntervalValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return INTERVALS[getValue()];
     }
 

@@ -17,13 +17,17 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.text.DecimalFormat;
+
 /**
  * Holds a rate measure in hertz.
  *
  * @author Carl Green
  */
 public class FrequencyRate implements Rate {
-    // TODO surely this has no place here
+
+    private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
+
     private String name;
     private double frequency;
 
@@ -48,6 +52,11 @@ public class FrequencyRate implements Rate {
 
     public void setFrequency(final double frequency) {
         this.frequency = frequency;
+    }
+
+    @Override
+    public String getDisplayString() {
+        return DECIMAL_2DP.format(getFrequency()) + "Hz";
     }
 
     @Override

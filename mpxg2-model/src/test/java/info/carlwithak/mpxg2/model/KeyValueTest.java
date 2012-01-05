@@ -29,17 +29,17 @@ import static org.junit.Assert.assertThat;
 public class KeyValueTest {
 
     @Test
-    public void testKeyValueToString() {
+    public void testGetDisplayString() {
         KeyValue value = new KeyValue("Key");
 
         value.setValue(0);
-        assertThat(value.toString(), is("C"));
+        assertThat(value.getDisplayString(), is("C"));
 
         value.setValue(1);
-        assertThat(value.toString(), is("C#"));
+        assertThat(value.getDisplayString(), is("C#"));
 
         value.setValue(11);
-        assertThat(value.toString(), is("B"));
+        assertThat(value.getDisplayString(), is("B"));
     }
 
 }

@@ -33,7 +33,7 @@ public class SourceValue extends GenericValue<Integer> {
     }
 
     @Override
-    public String toString() {
+    public String getDisplayString() {
         return SOURCES[getValue()];
     }
 
