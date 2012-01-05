@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
@@ -32,7 +33,7 @@ public class ShiftDual extends Effect {
     private GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", -4800, 1900); // cents
     private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
     private GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", -4800, 1900); // cents
-    private GenericValue<Boolean> glide = new GenericValue<Boolean>("Glide", "OnOff", false, true);
+    private OnOffValue glide = new OnOffValue("Glide");
 
     @Override
     public String getName() {
@@ -86,7 +87,7 @@ public class ShiftDual extends Effect {
         this.tune2.setValue(tune2);
     }
 
-    public GenericValue<Boolean> isGlide() {
+    public OnOffValue isGlide() {
         return glide;
     }
 

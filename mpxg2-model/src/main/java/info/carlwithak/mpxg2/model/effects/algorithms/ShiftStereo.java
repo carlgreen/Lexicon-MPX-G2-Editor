@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Effect;
 
@@ -31,7 +32,7 @@ public class ShiftStereo extends Effect {
 
     private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", -4800, 1900); // cents
     private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
-    private GenericValue<Boolean> glide = new GenericValue<Boolean>("Glide", "OnOff", false, true);
+    private OnOffValue glide = new OnOffValue("Glide");
 
     @Override
     public String getName() {
@@ -74,7 +75,7 @@ public class ShiftStereo extends Effect {
         this.optimize.setValue(optimize);
     }
 
-    public GenericValue<Boolean> isGlide() {
+    public OnOffValue isGlide() {
         return glide;
     }
 

@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 
@@ -30,7 +31,7 @@ public class Gate extends Reverb {
     private static final String NAME = "Gate";
 
     private GenericValue<Integer> time = new GenericValue<Integer>("Time", "ms", 140, 700);
-    private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
+    private OnOffValue link = new OnOffValue("Link");
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
     private GenericValue<Integer> loSlope = new GenericValue<Integer>("LoSlp", "", -16, 16);
@@ -97,7 +98,7 @@ public class Gate extends Reverb {
         this.time.setValue(time);
     }
 
-    public GenericValue<Boolean> isLink() {
+    public OnOffValue isLink() {
         return link;
     }
 

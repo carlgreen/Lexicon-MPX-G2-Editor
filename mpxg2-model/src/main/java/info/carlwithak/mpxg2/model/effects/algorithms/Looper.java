@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -38,7 +39,7 @@ public class Looper extends Delay {
     private GenericValue<Integer> pan = new GenericValue<Integer>("Pan", "LCR", -50, 50);
     private GenericValue<Integer> release = new GenericValue<Integer>("Rls", "", 0, 100);
     private GenericValue<Integer> attack = new GenericValue<Integer>("Atk", "", 0, 100);
-    private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
+    private OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -136,7 +137,7 @@ public class Looper extends Delay {
         this.attack.setValue(attack);
     }
 
-    public GenericValue<Boolean> isClear() {
+    public OnOffValue isClear() {
         return clear;
     }
 

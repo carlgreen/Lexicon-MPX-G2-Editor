@@ -80,14 +80,4 @@ public class GenericValueTest {
         assertThat(signedValue.getDisplayString(), is("-6dB"));
     }
 
-    @Test
-    public void testGetDisplayString_OnOff() {
-        GenericValue<Boolean> onOffValue = new GenericValue<Boolean>("Glide", "OnOff", false, true);
-
-        onOffValue.setValue(true);
-        assertThat(onOffValue.getDisplayString(), is("On"));
-
-        onOffValue.setValue(false);
-        assertThat(onOffValue.getDisplayString(), is("Off"));
-    }
 }

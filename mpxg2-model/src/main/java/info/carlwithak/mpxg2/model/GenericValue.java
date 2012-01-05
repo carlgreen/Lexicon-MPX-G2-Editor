@@ -72,12 +72,6 @@ public class GenericValue<T> implements Parameter {
     @Override
     public String getDisplayString() {
         StringBuilder sb = new StringBuilder();
-
-        // TODO this should have its own 'OnOff' class.
-        if ("OnOff".equals(getUnit())) {
-            return (Boolean) getValue() ? "On" : "Off";
-        }
-
         if (getMinValue() instanceof Integer && ((Integer) getMinValue()) < 0) {
             sb.append(signInt((Integer) getValue()));
         } else {

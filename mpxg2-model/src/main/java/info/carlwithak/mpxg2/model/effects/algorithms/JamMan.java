@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Delay;
 
@@ -33,11 +34,11 @@ public class JamMan extends Delay {
     private GenericValue<Integer> size = new GenericValue<Integer>("Size", "ms", 0, 20000);
     private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
     private InsertPosition insert = new InsertPosition("Fbk insert");
-    private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
-    private GenericValue<Boolean> layer = new GenericValue<Boolean>("Layer", "OnOff", false, true);
-    private GenericValue<Boolean> replace = new GenericValue<Boolean>("Replc", "OnOff", false, true);
-    private GenericValue<Boolean> delay = new GenericValue<Boolean>("Delay", "OnOff", false, true);
-    private GenericValue<Boolean> mute = new GenericValue<Boolean>("MuteS", "OnOff", false, true);
+    private OnOffValue clear = new OnOffValue("Clear");
+    private OnOffValue layer = new OnOffValue("Layer");
+    private OnOffValue replace = new OnOffValue("Replc");
+    private OnOffValue delay = new OnOffValue("Delay");
+    private OnOffValue mute = new OnOffValue("MuteS");
 
     @Override
     public String getName() {
@@ -103,7 +104,7 @@ public class JamMan extends Delay {
         this.insert.setValue(insert);
     }
 
-    public GenericValue<Boolean> isClear() {
+    public OnOffValue isClear() {
         return clear;
     }
 
@@ -111,7 +112,7 @@ public class JamMan extends Delay {
         this.clear.setValue(clear);
     }
 
-    public GenericValue<Boolean> isLayer() {
+    public OnOffValue isLayer() {
         return layer;
     }
 
@@ -119,7 +120,7 @@ public class JamMan extends Delay {
         this.layer.setValue(layer);
     }
 
-    public GenericValue<Boolean> isReplace() {
+    public OnOffValue isReplace() {
         return replace;
     }
 
@@ -127,7 +128,7 @@ public class JamMan extends Delay {
         this.replace.setValue(replace);
     }
 
-    public GenericValue<Boolean> isDelay() {
+    public OnOffValue isDelay() {
         return delay;
     }
 
@@ -135,7 +136,7 @@ public class JamMan extends Delay {
         this.delay.setValue(delay);
     }
 
-    public GenericValue<Boolean> isMute() {
+    public OnOffValue isMute() {
         return mute;
     }
 

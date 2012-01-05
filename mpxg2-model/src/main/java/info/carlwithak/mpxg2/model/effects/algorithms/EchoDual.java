@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -40,7 +41,7 @@ public class EchoDual extends Delay {
     private GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
     private GenericValue<Integer> damp1 = new GenericValue<Integer>("Damp1", "%", 0, 100);
     private GenericValue<Integer> damp2 = new GenericValue<Integer>("Damp2", "%", 0, 100);
-    private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
+    private OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -160,7 +161,7 @@ public class EchoDual extends Delay {
         this.damp2.setValue(damp2);
     }
 
-    public GenericValue<Boolean> isClear() {
+    public OnOffValue isClear() {
         return clear;
     }
 

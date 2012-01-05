@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
 import info.carlwithak.mpxg2.model.effects.Delay;
@@ -34,7 +35,7 @@ public class DelayMono extends Delay {
     private Rate time;
     private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
     private InsertPosition insert = new InsertPosition("Fbk insert");
-    private GenericValue<Boolean> clear = new GenericValue<Boolean>("Clear", "OnOff", false, true);
+    private OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -88,7 +89,7 @@ public class DelayMono extends Delay {
         this.insert.setValue(insert);
     }
 
-    public GenericValue<Boolean> isClear() {
+    public OnOffValue isClear() {
         return clear;
     }
 

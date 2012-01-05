@@ -29,6 +29,7 @@ import info.carlwithak.mpxg2.model.HighCutValue;
 import info.carlwithak.mpxg2.model.InsertPosition;
 import info.carlwithak.mpxg2.model.IntervalValue;
 import info.carlwithak.mpxg2.model.KeyValue;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
@@ -104,7 +105,7 @@ public class ParameterPrinterTest {
 
     @Test
     public void testPrintOnOffValue() throws PrintException {
-        GenericValue<Boolean> value = new GenericValue<Boolean>("Glide", "OnOff", false, true);
+        OnOffValue value = new OnOffValue("Glide");
         value.setValue(true);
 
         String expected = "On";
@@ -231,7 +232,7 @@ public class ParameterPrinterTest {
 
     @Test
     public void testPrintDecayTimeValue() throws PrintException {
-        GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
+        OnOffValue link = new OnOffValue("Link");
         GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
         DecayTimeValue value = new DecayTimeValue("DTime", link, size);
 
@@ -258,7 +259,7 @@ public class ParameterPrinterTest {
 
     @Test
     public void testPrintReverbSpredValue() throws PrintException {
-        GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
+        OnOffValue link = new OnOffValue("Link");
         GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
         ReverbSpredValue value = new ReverbSpredValue("Spred", link, size);
 

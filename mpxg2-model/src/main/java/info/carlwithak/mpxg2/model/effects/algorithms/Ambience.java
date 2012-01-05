@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.AmbienceHighCutValue;
 import info.carlwithak.mpxg2.model.DecayLevelValue;
 import info.carlwithak.mpxg2.model.DecayTimeValue;
 import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.OnOffValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 
@@ -33,7 +34,7 @@ public class Ambience extends Reverb {
     private static final String NAME = "Ambience";
 
     private GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 76.0);
-    private GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
+    private OnOffValue link = new OnOffValue("Link");
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
     private DecayTimeValue decayTime = new DecayTimeValue("DTime", link, size);
@@ -88,7 +89,7 @@ public class Ambience extends Reverb {
         this.size.setValue(size);
     }
 
-    public GenericValue<Boolean> isLink() {
+    public OnOffValue isLink() {
         return link;
     }
 
