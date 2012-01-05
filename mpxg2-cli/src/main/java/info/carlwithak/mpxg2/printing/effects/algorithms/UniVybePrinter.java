@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,9 +33,9 @@ public class UniVybePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         UniVybe univybe = (UniVybe) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(univybe.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(univybe.getLevel())).append("\n");
-        sb.append("    Rate: ").append(ParameterPrinter.print(univybe.getRate())).append("\n");
+        sb.append(printParameter(univybe.getMix()));
+        sb.append(printParameter(univybe.getLevel()));
+        sb.append(printParameter(univybe.getRate()));
         return sb.toString();
     }
 

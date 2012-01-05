@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,14 +33,14 @@ public class Flanger24MonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Flanger24Mono flanger24Mono = (Flanger24Mono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(flanger24Mono.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(flanger24Mono.getLevel())).append("\n");
-        sb.append("    Rate: ").append(ParameterPrinter.print(flanger24Mono.getRate())).append("\n");
-        sb.append("    PW: ").append(ParameterPrinter.print(flanger24Mono.getPulseWidth())).append("\n");
-        sb.append("    Depth: ").append(ParameterPrinter.print(flanger24Mono.getDepth())).append("\n");
-        sb.append("    Res: ").append(ParameterPrinter.print(flanger24Mono.getResonance())).append("\n");
-        sb.append("    Glide: ").append(ParameterPrinter.print(flanger24Mono.getGlide())).append("\n");
-        sb.append("    Blend: ").append(ParameterPrinter.print(flanger24Mono.getBlend())).append("\n");
+        sb.append(printParameter(flanger24Mono.getMix()));
+        sb.append(printParameter(flanger24Mono.getLevel()));
+        sb.append(printParameter(flanger24Mono.getRate()));
+        sb.append(printParameter(flanger24Mono.getPulseWidth()));
+        sb.append(printParameter(flanger24Mono.getDepth()));
+        sb.append(printParameter(flanger24Mono.getResonance()));
+        sb.append(printParameter(flanger24Mono.getGlide()));
+        sb.append(printParameter(flanger24Mono.getBlend()));
         return sb.toString();
     }
 

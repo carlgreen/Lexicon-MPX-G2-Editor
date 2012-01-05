@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,15 +33,15 @@ public class RotaryCabPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         RotaryCab rotaryCab = (RotaryCab) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(rotaryCab.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(rotaryCab.getLevel())).append("\n");
-        sb.append("    Rate1: ").append(ParameterPrinter.print(rotaryCab.getRate1())).append("\n");
-        sb.append("    Dpth1: ").append(ParameterPrinter.print(rotaryCab.getDepth1())).append("\n");
-        sb.append("    Rate2: ").append(ParameterPrinter.print(rotaryCab.getRate2())).append("\n");
-        sb.append("    Dpth2: ").append(ParameterPrinter.print(rotaryCab.getDepth2())).append("\n");
-        sb.append("    Res: ").append(ParameterPrinter.print(rotaryCab.getResonance())).append("\n");
-        sb.append("    Width: ").append(ParameterPrinter.print(rotaryCab.getWidth())).append("\n");
-        sb.append("    Bal: ").append(ParameterPrinter.print(rotaryCab.getBalance())).append("\n");
+        sb.append(printParameter(rotaryCab.getMix()));
+        sb.append(printParameter(rotaryCab.getLevel()));
+        sb.append(printParameter(rotaryCab.getRate1()));
+        sb.append(printParameter(rotaryCab.getDepth1()));
+        sb.append(printParameter(rotaryCab.getRate2()));
+        sb.append(printParameter(rotaryCab.getDepth2()));
+        sb.append(printParameter(rotaryCab.getResonance()));
+        sb.append(printParameter(rotaryCab.getWidth()));
+        sb.append(printParameter(rotaryCab.getBalance()));
         return sb.toString();
     }
 

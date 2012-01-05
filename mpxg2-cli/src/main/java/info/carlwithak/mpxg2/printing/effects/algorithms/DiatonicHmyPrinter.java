@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,14 +33,15 @@ public class DiatonicHmyPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DiatonicHmy diatonicHmy = (DiatonicHmy) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(diatonicHmy.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(diatonicHmy.getLevel())).append("\n");
-        sb.append("    Key: ").append(ParameterPrinter.print(diatonicHmy.getKey())).append("\n");
-        sb.append("    Scale: ").append(ParameterPrinter.print(diatonicHmy.getScale())).append("\n");
-        sb.append("    Int: ").append(ParameterPrinter.print(diatonicHmy.getInterval())).append("\n");
-        sb.append("    Optimize: ").append(ParameterPrinter.print(diatonicHmy.getOptimize())).append("\n");
-        sb.append("    Thrsh: ").append(ParameterPrinter.print(diatonicHmy.getThreshold())).append("\n");
-        sb.append("    Src: ").append(ParameterPrinter.print(diatonicHmy.getSource())).append("\n");
+        sb.append(printParameter(diatonicHmy.getMix()));
+        sb.append(printParameter(diatonicHmy.getLevel()));
+        sb.append(printParameter(diatonicHmy.getKey()));
+        sb.append(printParameter(diatonicHmy.getScale()));
+        sb.append(printParameter(diatonicHmy.getInterval()));
+        sb.append(printParameter(diatonicHmy.getOptimize()));
+        sb.append(printParameter(diatonicHmy.getThreshold()));
+        sb.append(printParameter(diatonicHmy.getSource()));
         return sb.toString();
     }
+
 }

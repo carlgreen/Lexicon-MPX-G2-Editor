@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,16 +33,16 @@ public class ChorusPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ChorusAlgorithm chorus = (ChorusAlgorithm) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(chorus.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(chorus.getLevel())).append("\n");
-        sb.append("    Rate1: ").append(ParameterPrinter.print(chorus.getRate1())).append("\n");
-        sb.append("    PW 1: ").append(ParameterPrinter.print(chorus.getPulseWidth1())).append("\n");
-        sb.append("    Dpth1: ").append(ParameterPrinter.print(chorus.getDepth1())).append("\n");
-        sb.append("    Rate2: ").append(ParameterPrinter.print(chorus.getRate2())).append("\n");
-        sb.append("    PW 2: ").append(ParameterPrinter.print(chorus.getPulseWidth2())).append("\n");
-        sb.append("    Dpth2: ").append(ParameterPrinter.print(chorus.getDepth2())).append("\n");
-        sb.append("    Res 1: ").append(ParameterPrinter.print(chorus.getResonance1())).append("\n");
-        sb.append("    Res 2: ").append(ParameterPrinter.print(chorus.getResonance2())).append("\n");
+        sb.append(printParameter(chorus.getMix()));
+        sb.append(printParameter(chorus.getLevel()));
+        sb.append(printParameter(chorus.getRate1()));
+        sb.append(printParameter(chorus.getPulseWidth1()));
+        sb.append(printParameter(chorus.getDepth1()));
+        sb.append(printParameter(chorus.getRate2()));
+        sb.append(printParameter(chorus.getPulseWidth2()));
+        sb.append(printParameter(chorus.getDepth2()));
+        sb.append(printParameter(chorus.getResonance1()));
+        sb.append(printParameter(chorus.getResonance2()));
         return sb.toString();
     }
 

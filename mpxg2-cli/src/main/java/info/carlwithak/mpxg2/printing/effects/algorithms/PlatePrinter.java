@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,18 +33,19 @@ public class PlatePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Plate plate = (Plate) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(plate.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(plate.getLevel())).append("\n");
-        sb.append("    Size: ").append(ParameterPrinter.print(plate.getSize())).append("\n");
-        sb.append("    Link: ").append(ParameterPrinter.print(plate.isLink())).append("\n");
-        sb.append("    Diff: ").append(ParameterPrinter.print(plate.getDiff())).append("\n");
-        sb.append("    P Dly: ").append(ParameterPrinter.print(plate.getPreDelay())).append("\n");
-        sb.append("    Bass: ").append(ParameterPrinter.print(plate.getBass())).append("\n");
-        sb.append("    Decay: ").append(ParameterPrinter.print(plate.getDecay())).append("\n");
-        sb.append("    Xovr: ").append(ParameterPrinter.print(plate.getXovr())).append("\n");
-        sb.append("    Rt HC: ").append(ParameterPrinter.print(plate.getRtHC())).append("\n");
-        sb.append("    Shape: ").append(ParameterPrinter.print(plate.getShape())).append("\n");
-        sb.append("    Spred: ").append(ParameterPrinter.print(plate.getSpred())).append("\n");
+        sb.append(printParameter(plate.getMix()));
+        sb.append(printParameter(plate.getLevel()));
+        sb.append(printParameter(plate.getSize()));
+        sb.append(printParameter(plate.isLink()));
+        sb.append(printParameter(plate.getDiff()));
+        sb.append(printParameter(plate.getPreDelay()));
+        sb.append(printParameter(plate.getBass()));
+        sb.append(printParameter(plate.getDecay()));
+        sb.append(printParameter(plate.getXovr()));
+        sb.append(printParameter(plate.getRtHC()));
+        sb.append(printParameter(plate.getShape()));
+        sb.append(printParameter(plate.getSpred()));
         return sb.toString();
     }
+
 }

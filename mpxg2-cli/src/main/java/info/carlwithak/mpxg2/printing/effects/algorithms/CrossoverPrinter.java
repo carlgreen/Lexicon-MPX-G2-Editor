@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,10 +33,10 @@ public class CrossoverPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Crossover crossover = (Crossover) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(crossover.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(crossover.getLevel())).append("\n");
-        sb.append("    Fc: ").append(ParameterPrinter.print(crossover.getFc())).append("\n");
-        sb.append("    Bal: ").append(ParameterPrinter.print(crossover.getBalance())).append("\n");
+        sb.append(printParameter(crossover.getMix()));
+        sb.append(printParameter(crossover.getLevel()));
+        sb.append(printParameter(crossover.getFc()));
+        sb.append(printParameter(crossover.getBalance()));
         return sb.toString();
     }
 

@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,9 +33,9 @@ public class RedCompPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         RedComp redComp = (RedComp) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(redComp.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(redComp.getLevel())).append("\n");
-        sb.append("    Sense: ").append(ParameterPrinter.print(redComp.getSensitivity())).append("\n");
+        sb.append(printParameter(redComp.getMix()));
+        sb.append(printParameter(redComp.getLevel()));
+        sb.append(printParameter(redComp.getSensitivity()));
         return sb.toString();
     }
 

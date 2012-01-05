@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,13 +33,13 @@ public class EchoMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         EchoMono echoMono = (EchoMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(echoMono.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(echoMono.getLevel())).append("\n");
-        sb.append("    Time: ").append(ParameterPrinter.print(echoMono.getTime())).append("\n");
-        sb.append("    Fbk: ").append(ParameterPrinter.print(echoMono.getFeedback())).append("\n");
-        sb.append("    Fbk insert: ").append(ParameterPrinter.print(echoMono.getInsert())).append("\n");
-        sb.append("    Damp: ").append(ParameterPrinter.print(echoMono.getDamp())).append("\n");
-        sb.append("    Clear: ").append(ParameterPrinter.print(echoMono.isClear())).append("\n");
+        sb.append(printParameter(echoMono.getMix()));
+        sb.append(printParameter(echoMono.getLevel()));
+        sb.append(printParameter(echoMono.getTime()));
+        sb.append(printParameter(echoMono.getFeedback()));
+        sb.append(printParameter(echoMono.getInsert()));
+        sb.append(printParameter(echoMono.getDamp()));
+        sb.append(printParameter(echoMono.isClear()));
         return sb.toString();
     }
 

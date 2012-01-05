@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,9 +33,9 @@ public class ChorusVolumeMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ChorusVolumeMono volumeMono = (ChorusVolumeMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(volumeMono.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(volumeMono.getLevel())).append("\n");
-        sb.append("    Volume: ").append(ParameterPrinter.print(volumeMono.getVolume())).append("\n");
+        sb.append(printParameter(volumeMono.getMix()));
+        sb.append(printParameter(volumeMono.getLevel()));
+        sb.append(printParameter(volumeMono.getVolume()));
         return sb.toString();
     }
 

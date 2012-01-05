@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,12 +33,13 @@ public class DelayMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DelayMono delayMono = (DelayMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(delayMono.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(delayMono.getLevel())).append("\n");
-        sb.append("    Time: ").append(ParameterPrinter.print(delayMono.getTime())).append("\n");
-        sb.append("    Fbk: ").append(ParameterPrinter.print(delayMono.getFeedback())).append("\n");
-        sb.append("    Fbk insert: ").append(ParameterPrinter.print(delayMono.getInsert())).append("\n");
-        sb.append("    Clear: ").append(ParameterPrinter.print(delayMono.isClear())).append("\n");
+        sb.append(printParameter(delayMono.getMix()));
+        sb.append(printParameter(delayMono.getLevel()));
+        sb.append(printParameter(delayMono.getTime()));
+        sb.append(printParameter(delayMono.getFeedback()));
+        sb.append(printParameter(delayMono.getInsert()));
+        sb.append(printParameter(delayMono.isClear()));
         return sb.toString();
     }
+
 }

@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,11 +33,11 @@ public class CrunchPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Crunch crunch = (Crunch) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(ParameterPrinter.print(crunch.getLo())).append("\n");
-        sb.append("    Mid: ").append(ParameterPrinter.print(crunch.getMid())).append("\n");
-        sb.append("    Hi: ").append(ParameterPrinter.print(crunch.getHi())).append("\n");
-        sb.append("    InLvl: ").append(ParameterPrinter.print(crunch.getInLevel())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(crunch.getLevel())).append("\n");
+        sb.append(printParameter(crunch.getLo()));
+        sb.append(printParameter(crunch.getMid()));
+        sb.append(printParameter(crunch.getHi()));
+        sb.append(printParameter(crunch.getInLevel()));
+        sb.append(printParameter(crunch.getLevel()));
         return sb.toString();
     }
 

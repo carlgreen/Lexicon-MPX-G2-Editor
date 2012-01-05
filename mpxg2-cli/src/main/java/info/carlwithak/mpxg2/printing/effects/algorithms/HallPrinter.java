@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,18 +33,19 @@ public class HallPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Hall hall = (Hall) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(hall.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(hall.getLevel())).append("\n");
-        sb.append("    Size: ").append(ParameterPrinter.print(hall.getSize())).append("\n");
-        sb.append("    Link: ").append(ParameterPrinter.print(hall.isLink())).append("\n");
-        sb.append("    Diff: ").append(ParameterPrinter.print(hall.getDiff())).append("\n");
-        sb.append("    P Dly: ").append(ParameterPrinter.print(hall.getPreDelay())).append("\n");
-        sb.append("    Bass: ").append(ParameterPrinter.print(hall.getBass())).append("\n");
-        sb.append("    Decay: ").append(ParameterPrinter.print(hall.getDecay())).append("\n");
-        sb.append("    Xovr: ").append(ParameterPrinter.print(hall.getXovr())).append("\n");
-        sb.append("    Rt HC: ").append(ParameterPrinter.print(hall.getRtHC())).append("\n");
-        sb.append("    Shape: ").append(ParameterPrinter.print(hall.getShape())).append("\n");
-        sb.append("    Spred: ").append(ParameterPrinter.print(hall.getSpred())).append("\n");
+        sb.append(printParameter(hall.getMix()));
+        sb.append(printParameter(hall.getLevel()));
+        sb.append(printParameter(hall.getSize()));
+        sb.append(printParameter(hall.isLink()));
+        sb.append(printParameter(hall.getDiff()));
+        sb.append(printParameter(hall.getPreDelay()));
+        sb.append(printParameter(hall.getBass()));
+        sb.append(printParameter(hall.getDecay()));
+        sb.append(printParameter(hall.getXovr()));
+        sb.append(printParameter(hall.getRtHC()));
+        sb.append(printParameter(hall.getShape()));
+        sb.append(printParameter(hall.getSpred()));
         return sb.toString();
     }
+
 }

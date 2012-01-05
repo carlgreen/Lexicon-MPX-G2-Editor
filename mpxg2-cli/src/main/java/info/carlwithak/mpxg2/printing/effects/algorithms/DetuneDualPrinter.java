@@ -19,9 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -33,12 +33,12 @@ public class DetuneDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DetuneDual detuneDual = (DetuneDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(detuneDual.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(detuneDual.getLevel())).append("\n");
-        sb.append("    Tune1: ").append(ParameterPrinter.print(detuneDual.getTune1())).append("\n");
-        sb.append("    Optimize: ").append(ParameterPrinter.print(detuneDual.getOptimize())).append("\n");
-        sb.append("    Tune2: ").append(ParameterPrinter.print(detuneDual.getTune2())).append("\n");
-        sb.append("    P Dly: ").append(ParameterPrinter.print(detuneDual.getPreDelay())).append("\n");
+        sb.append(printParameter(detuneDual.getMix()));
+        sb.append(printParameter(detuneDual.getLevel()));
+        sb.append(printParameter(detuneDual.getTune1()));
+        sb.append(printParameter(detuneDual.getOptimize()));
+        sb.append(printParameter(detuneDual.getTune2()));
+        sb.append(printParameter(detuneDual.getPreDelay()));
         return sb.toString();
     }
 

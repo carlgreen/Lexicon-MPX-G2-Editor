@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,11 +33,11 @@ public class TonePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Tone tone = (Tone) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(ParameterPrinter.print(tone.getLo())).append("\n");
-        sb.append("    Mid: ").append(ParameterPrinter.print(tone.getMid())).append("\n");
-        sb.append("    Hi: ").append(ParameterPrinter.print(tone.getHi())).append("\n");
-        sb.append("    InLvl: ").append(ParameterPrinter.print(tone.getInLevel())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(tone.getLevel())).append("\n");
+        sb.append(printParameter(tone.getLo()));
+        sb.append(printParameter(tone.getMid()));
+        sb.append(printParameter(tone.getHi()));
+        sb.append(printParameter(tone.getInLevel()));
+        sb.append(printParameter(tone.getLevel()));
         return sb.toString();
     }
 

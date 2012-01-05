@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,8 +33,8 @@ public class PedalVolPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         PedalVol pedalVol = (PedalVol) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(pedalVol.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(pedalVol.getLevel())).append("\n");
+        sb.append(printParameter(pedalVol.getMix()));
+        sb.append(printParameter(pedalVol.getLevel()));
         return sb.toString();
     }
 

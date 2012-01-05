@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,15 +33,15 @@ public class AmbiencePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Ambience ambience = (Ambience) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(ambience.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(ambience.getLevel())).append("\n");
-        sb.append("    Size: ").append(ParameterPrinter.print(ambience.getSize())).append("\n");
-        sb.append("    Link: ").append(ParameterPrinter.print(ambience.isLink())).append("\n");
-        sb.append("    Diff: ").append(ParameterPrinter.print(ambience.getDiff())).append("\n");
-        sb.append("    P Dly: ").append(ParameterPrinter.print(ambience.getPreDelay())).append("\n");
-        sb.append("    DTime: ").append(ParameterPrinter.print(ambience.getDecayTime())).append("\n");
-        sb.append("    D Lvl: ").append(ParameterPrinter.print(ambience.getDecayLevel())).append("\n");
-        sb.append("    Rt HC: ").append(ParameterPrinter.print(ambience.getRtHC())).append("\n");
+        sb.append(printParameter(ambience.getMix()));
+        sb.append(printParameter(ambience.getLevel()));
+        sb.append(printParameter(ambience.getSize()));
+        sb.append(printParameter(ambience.isLink()));
+        sb.append(printParameter(ambience.getDiff()));
+        sb.append(printParameter(ambience.getPreDelay()));
+        sb.append(printParameter(ambience.getDecayTime()));
+        sb.append(printParameter(ambience.getDecayLevel()));
+        sb.append(printParameter(ambience.getRtHC()));
         return sb.toString();
     }
 

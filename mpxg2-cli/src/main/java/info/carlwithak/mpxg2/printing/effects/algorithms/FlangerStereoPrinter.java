@@ -19,10 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.phaseToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -34,14 +33,14 @@ public class FlangerStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         FlangerStereo flangerStereo = (FlangerStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(flangerStereo.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(flangerStereo.getLevel())).append("\n");
-        sb.append("    Rate: ").append(ParameterPrinter.print(flangerStereo.getRate())).append("\n");
-        sb.append("    PW: ").append(ParameterPrinter.print(flangerStereo.getPulseWidth())).append("\n");
-        sb.append("    Depth: ").append(ParameterPrinter.print(flangerStereo.getDepth())).append("\n");
-        sb.append("    Phase: ").append(phaseToString(flangerStereo.getPhase().getValue())).append("\n");
-        sb.append("    Res: ").append(ParameterPrinter.print(flangerStereo.getResonance())).append("\n");
-        sb.append("    Blend: ").append(ParameterPrinter.print(flangerStereo.getBlend())).append("\n");
+        sb.append(printParameter(flangerStereo.getMix()));
+        sb.append(printParameter(flangerStereo.getLevel()));
+        sb.append(printParameter(flangerStereo.getRate()));
+        sb.append(printParameter(flangerStereo.getPulseWidth()));
+        sb.append(printParameter(flangerStereo.getDepth()));
+        sb.append(printParameter(flangerStereo.getPhase()));
+        sb.append(printParameter(flangerStereo.getResonance()));
+        sb.append(printParameter(flangerStereo.getBlend()));
         return sb.toString();
     }
 

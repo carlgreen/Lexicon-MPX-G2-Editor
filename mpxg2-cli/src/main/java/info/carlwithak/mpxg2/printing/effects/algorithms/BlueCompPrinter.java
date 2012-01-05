@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,13 +33,13 @@ public class BlueCompPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         BlueComp blueComp = (BlueComp) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(blueComp.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(blueComp.getLevel())).append("\n");
-        sb.append("    Sense: ").append(ParameterPrinter.print(blueComp.getSensitivity())).append("\n");
-        sb.append("    Thrsh: ").append(ParameterPrinter.print(blueComp.getThreshold())).append("\n");
-        sb.append("    Gain: ").append(ParameterPrinter.print(blueComp.getGain())).append("\n");
-        sb.append("    ATime: ").append(ParameterPrinter.print(blueComp.getAttackTime())).append("\n");
-        sb.append("    RTime: ").append(ParameterPrinter.print(blueComp.getReleaseTime())).append("\n");
+        sb.append(printParameter(blueComp.getMix()));
+        sb.append(printParameter(blueComp.getLevel()));
+        sb.append(printParameter(blueComp.getSensitivity()));
+        sb.append(printParameter(blueComp.getThreshold()));
+        sb.append(printParameter(blueComp.getGain()));
+        sb.append(printParameter(blueComp.getAttackTime()));
+        sb.append(printParameter(blueComp.getReleaseTime()));
         return sb.toString();
     }
 

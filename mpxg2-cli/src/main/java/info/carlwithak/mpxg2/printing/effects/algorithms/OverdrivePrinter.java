@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,15 +33,15 @@ public class OverdrivePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Overdrive overdrive = (Overdrive) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(ParameterPrinter.print(overdrive.getLo())).append("\n");
-        sb.append("    Mid: ").append(ParameterPrinter.print(overdrive.getMid())).append("\n");
-        sb.append("    Hi: ").append(ParameterPrinter.print(overdrive.getHi())).append("\n");
-        sb.append("    InLvl: ").append(ParameterPrinter.print(overdrive.getInLevel())).append("\n");
-        sb.append("    LoCut: ").append(ParameterPrinter.print(overdrive.getLoCut())).append("\n");
-        sb.append("    Feel: ").append(ParameterPrinter.print(overdrive.getFeel())).append("\n");
-        sb.append("    Drive: ").append(ParameterPrinter.print(overdrive.getDrive())).append("\n");
-        sb.append("    Tone: ").append(ParameterPrinter.print(overdrive.getTone())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(overdrive.getLevel())).append("\n");
+        sb.append(printParameter(overdrive.getLo()));
+        sb.append(printParameter(overdrive.getMid()));
+        sb.append(printParameter(overdrive.getHi()));
+        sb.append(printParameter(overdrive.getInLevel()));
+        sb.append(printParameter(overdrive.getLoCut()));
+        sb.append(printParameter(overdrive.getFeel()));
+        sb.append(printParameter(overdrive.getDrive()));
+        sb.append(printParameter(overdrive.getTone()));
+        sb.append(printParameter(overdrive.getLevel()));
         return sb.toString();
     }
 

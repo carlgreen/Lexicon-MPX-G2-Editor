@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,13 +33,13 @@ public class EchoStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         EchoStereo echoStereo = (EchoStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(echoStereo.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(echoStereo.getLevel())).append("\n");
-        sb.append("    Time: ").append(ParameterPrinter.print(echoStereo.getTime())).append("\n");
-        sb.append("    Fbk: ").append(ParameterPrinter.print(echoStereo.getFeedback())).append("\n");
-        sb.append("    Fbk insert: ").append(ParameterPrinter.print(echoStereo.getInsert())).append("\n");
-        sb.append("    Damp: ").append(ParameterPrinter.print(echoStereo.getDamp())).append("\n");
-        sb.append("    Clear: ").append(ParameterPrinter.print(echoStereo.isClear())).append("\n");
+        sb.append(printParameter(echoStereo.getMix()));
+        sb.append(printParameter(echoStereo.getLevel()));
+        sb.append(printParameter(echoStereo.getTime()));
+        sb.append(printParameter(echoStereo.getFeedback()));
+        sb.append(printParameter(echoStereo.getInsert()));
+        sb.append(printParameter(echoStereo.getDamp()));
+        sb.append(printParameter(echoStereo.isClear()));
         return sb.toString();
     }
 

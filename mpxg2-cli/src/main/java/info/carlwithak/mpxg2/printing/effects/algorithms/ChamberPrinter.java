@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,18 +33,19 @@ public class ChamberPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Chamber chamber = (Chamber) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(chamber.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(chamber.getLevel())).append("\n");
-        sb.append("    Size: ").append(ParameterPrinter.print(chamber.getSize())).append("\n");
-        sb.append("    Link: ").append(ParameterPrinter.print(chamber.isLink())).append("\n");
-        sb.append("    Diff: ").append(ParameterPrinter.print(chamber.getDiff())).append("\n");
-        sb.append("    P Dly: ").append(ParameterPrinter.print(chamber.getPreDelay())).append("\n");
-        sb.append("    Bass: ").append(ParameterPrinter.print(chamber.getBass())).append("\n");
-        sb.append("    Decay: ").append(ParameterPrinter.print(chamber.getDecay())).append("\n");
-        sb.append("    Xovr: ").append(ParameterPrinter.print(chamber.getXovr())).append("\n");
-        sb.append("    Rt HC: ").append(ParameterPrinter.print(chamber.getRtHC())).append("\n");
-        sb.append("    Shape: ").append(ParameterPrinter.print(chamber.getShape())).append("\n");
-        sb.append("    Spred: ").append(ParameterPrinter.print(chamber.getSpred())).append("\n");
+        sb.append(printParameter(chamber.getMix()));
+        sb.append(printParameter(chamber.getLevel()));
+        sb.append(printParameter(chamber.getSize()));
+        sb.append(printParameter(chamber.isLink()));
+        sb.append(printParameter(chamber.getDiff()));
+        sb.append(printParameter(chamber.getPreDelay()));
+        sb.append(printParameter(chamber.getBass()));
+        sb.append(printParameter(chamber.getDecay()));
+        sb.append(printParameter(chamber.getXovr()));
+        sb.append(printParameter(chamber.getRtHC()));
+        sb.append(printParameter(chamber.getShape()));
+        sb.append(printParameter(chamber.getSpred()));
         return sb.toString();
     }
+
 }

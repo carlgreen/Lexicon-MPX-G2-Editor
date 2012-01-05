@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,12 +33,13 @@ public class DelayStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DelayStereo delayStereo = (DelayStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(delayStereo.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(delayStereo.getLevel())).append("\n");
-        sb.append("    Time: ").append(ParameterPrinter.print(delayStereo.getTime())).append("\n");
-        sb.append("    Fbk: ").append(ParameterPrinter.print(delayStereo.getFeedback())).append("\n");
-        sb.append("    Fbk insert: ").append(ParameterPrinter.print(delayStereo.getInsert())).append("\n");
-        sb.append("    Clear: ").append(ParameterPrinter.print(delayStereo.isClear())).append("\n");
+        sb.append(printParameter(delayStereo.getMix()));
+        sb.append(printParameter(delayStereo.getLevel()));
+        sb.append(printParameter(delayStereo.getTime()));
+        sb.append(printParameter(delayStereo.getFeedback()));
+        sb.append(printParameter(delayStereo.getInsert()));
+        sb.append(printParameter(delayStereo.isClear()));
         return sb.toString();
     }
+
 }

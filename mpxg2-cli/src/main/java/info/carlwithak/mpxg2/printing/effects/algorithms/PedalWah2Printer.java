@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,12 +33,12 @@ public class PedalWah2Printer implements Printer {
     public String print(Object algorithm) throws PrintException {
         PedalWah2 pedalWah2 = (PedalWah2) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(pedalWah2.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(pedalWah2.getLevel())).append("\n");
-        sb.append("    Bass: ").append(ParameterPrinter.print(pedalWah2.getBass())).append("\n");
-        sb.append("    Type: ").append(ParameterPrinter.print(pedalWah2.getType())).append("\n");
-        sb.append("    Resp: ").append(ParameterPrinter.print(pedalWah2.getResponse())).append("\n");
-        sb.append("    Gain: ").append(ParameterPrinter.print(pedalWah2.getGain())).append("\n");
+        sb.append(printParameter(pedalWah2.getMix()));
+        sb.append(printParameter(pedalWah2.getLevel()));
+        sb.append(printParameter(pedalWah2.getBass()));
+        sb.append(printParameter(pedalWah2.getType()));
+        sb.append(printParameter(pedalWah2.getResponse()));
+        sb.append(printParameter(pedalWah2.getGain()));
         return sb.toString();
     }
 

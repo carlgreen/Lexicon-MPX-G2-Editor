@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,13 +33,13 @@ public class FlangerMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         FlangerMono flangerMono = (FlangerMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(flangerMono.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(flangerMono.getLevel())).append("\n");
-        sb.append("    Rate: ").append(ParameterPrinter.print(flangerMono.getRate())).append("\n");
-        sb.append("    PW: ").append(ParameterPrinter.print(flangerMono.getPulseWidth())).append("\n");
-        sb.append("    Depth: ").append(ParameterPrinter.print(flangerMono.getDepth())).append("\n");
-        sb.append("    Res: ").append(ParameterPrinter.print(flangerMono.getResonance())).append("\n");
-        sb.append("    Blend: ").append(ParameterPrinter.print(flangerMono.getBlend())).append("\n");
+        sb.append(printParameter(flangerMono.getMix()));
+        sb.append(printParameter(flangerMono.getLevel()));
+        sb.append(printParameter(flangerMono.getRate()));
+        sb.append(printParameter(flangerMono.getPulseWidth()));
+        sb.append(printParameter(flangerMono.getDepth()));
+        sb.append(printParameter(flangerMono.getResonance()));
+        sb.append(printParameter(flangerMono.getBlend()));
         return sb.toString();
     }
 

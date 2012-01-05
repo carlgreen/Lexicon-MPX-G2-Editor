@@ -19,10 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.panToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -34,10 +33,11 @@ public class PannerPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Panner panner = (Panner) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(panner.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(panner.getLevel())).append("\n");
-        sb.append("    Pan 1: ").append(panToString(panner.getPan1().getValue())).append("\n");
-        sb.append("    Pan 2: ").append(panToString(panner.getPan2().getValue())).append("\n");
+        sb.append(printParameter(panner.getMix()));
+        sb.append(printParameter(panner.getLevel()));
+        sb.append(printParameter(panner.getPan1()));
+        sb.append(printParameter(panner.getPan2()));
         return sb.toString();
     }
+
 }

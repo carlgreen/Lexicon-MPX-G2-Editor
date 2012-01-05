@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,17 +33,17 @@ public class PreampPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Preamp preamp = (Preamp) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(ParameterPrinter.print(preamp.getLo())).append("\n");
-        sb.append("    Mid: ").append(ParameterPrinter.print(preamp.getMid())).append("\n");
-        sb.append("    Hi: ").append(ParameterPrinter.print(preamp.getHi())).append("\n");
-        sb.append("    InLvl: ").append(ParameterPrinter.print(preamp.getInLevel())).append("\n");
-        sb.append("    LoCut: ").append(ParameterPrinter.print(preamp.getLoCut())).append("\n");
-        sb.append("    Feel: ").append(ParameterPrinter.print(preamp.getFeel())).append("\n");
-        sb.append("    Drive: ").append(ParameterPrinter.print(preamp.getDrive())).append("\n");
-        sb.append("    Tone: ").append(ParameterPrinter.print(preamp.getTone())).append("\n");
-        sb.append("    Bass: ").append(ParameterPrinter.print(preamp.getBass())).append("\n");
-        sb.append("    Trebl: ").append(ParameterPrinter.print(preamp.getTreble())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(preamp.getLevel())).append("\n");
+        sb.append(printParameter(preamp.getLo()));
+        sb.append(printParameter(preamp.getMid()));
+        sb.append(printParameter(preamp.getHi()));
+        sb.append(printParameter(preamp.getInLevel()));
+        sb.append(printParameter(preamp.getLoCut()));
+        sb.append(printParameter(preamp.getFeel()));
+        sb.append(printParameter(preamp.getDrive()));
+        sb.append(printParameter(preamp.getTone()));
+        sb.append(printParameter(preamp.getBass()));
+        sb.append(printParameter(preamp.getTreble()));
+        sb.append(printParameter(preamp.getLevel()));
         return sb.toString();
     }
 

@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,12 +33,12 @@ public class ShiftDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ShiftDual shiftDual = (ShiftDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(shiftDual.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(shiftDual.getLevel())).append("\n");
-        sb.append("    Tune1: ").append(ParameterPrinter.print(shiftDual.getTune1())).append("\n");
-        sb.append("    Optimize: ").append(ParameterPrinter.print(shiftDual.getOptimize())).append("\n");
-        sb.append("    Tune2: ").append(ParameterPrinter.print(shiftDual.getTune2())).append("\n");
-        sb.append("    Glide: ").append(ParameterPrinter.print(shiftDual.isGlide())).append("\n");
+        sb.append(printParameter(shiftDual.getMix()));
+        sb.append(printParameter(shiftDual.getLevel()));
+        sb.append(printParameter(shiftDual.getTune1()));
+        sb.append(printParameter(shiftDual.getOptimize()));
+        sb.append(printParameter(shiftDual.getTune2()));
+        sb.append(printParameter(shiftDual.isGlide()));
         return sb.toString();
     }
 

@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,16 +33,16 @@ public class AerosolPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Aerosol aerosol = (Aerosol) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(aerosol.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(aerosol.getLevel())).append("\n");
-        sb.append("    Rate1: ").append(ParameterPrinter.print(aerosol.getRate1())).append("\n");
-        sb.append("    PW 1: ").append(ParameterPrinter.print(aerosol.getPulseWidth1())).append("\n");
-        sb.append("    Dpth1: ").append(ParameterPrinter.print(aerosol.getDepth1())).append("\n");
-        sb.append("    Rate2: ").append(ParameterPrinter.print(aerosol.getRate2())).append("\n");
-        sb.append("    PW 2: ").append(ParameterPrinter.print(aerosol.getPulseWidth2())).append("\n");
-        sb.append("    Dpth2: ").append(ParameterPrinter.print(aerosol.getDepth2())).append("\n");
-        sb.append("    Res 1: ").append(ParameterPrinter.print(aerosol.getResonance1())).append("\n");
-        sb.append("    Res 2: ").append(ParameterPrinter.print(aerosol.getResonance2())).append("\n");
+        sb.append(printParameter(aerosol.getMix()));
+        sb.append(printParameter(aerosol.getLevel()));
+        sb.append(printParameter(aerosol.getRate1()));
+        sb.append(printParameter(aerosol.getPulseWidth1()));
+        sb.append(printParameter(aerosol.getDepth1()));
+        sb.append(printParameter(aerosol.getRate2()));
+        sb.append(printParameter(aerosol.getPulseWidth2()));
+        sb.append(printParameter(aerosol.getDepth2()));
+        sb.append(printParameter(aerosol.getResonance1()));
+        sb.append(printParameter(aerosol.getResonance2()));
         return sb.toString();
     }
 

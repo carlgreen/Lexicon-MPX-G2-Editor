@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,17 +33,17 @@ public class Centrifuge1Printer implements Printer {
     public String print(Object algorithm) throws PrintException {
         Centrifuge1 centrifuge1 = (Centrifuge1) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(centrifuge1.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(centrifuge1.getLevel())).append("\n");
-        sb.append("    Rate1: ").append(ParameterPrinter.print(centrifuge1.getRate1())).append("\n");
-        sb.append("    PW 1: ").append(ParameterPrinter.print(centrifuge1.getPulseWidth1())).append("\n");
-        sb.append("    Sync1: ").append(ParameterPrinter.print(centrifuge1.getSync1())).append("\n");
-        sb.append("    Dpth1: ").append(ParameterPrinter.print(centrifuge1.getDepth1())).append("\n");
-        sb.append("    Rate2: ").append(ParameterPrinter.print(centrifuge1.getRate2())).append("\n");
-        sb.append("    PW 2: ").append(ParameterPrinter.print(centrifuge1.getPulseWidth2())).append("\n");
-        sb.append("    Sync2: ").append(ParameterPrinter.print(centrifuge1.getSync2())).append("\n");
-        sb.append("    Dpth2: ").append(ParameterPrinter.print(centrifuge1.getDepth2())).append("\n");
-        sb.append("    Res: ").append(ParameterPrinter.print(centrifuge1.getResonance())).append("\n");
+        sb.append(printParameter(centrifuge1.getMix()));
+        sb.append(printParameter(centrifuge1.getLevel()));
+        sb.append(printParameter(centrifuge1.getRate1()));
+        sb.append(printParameter(centrifuge1.getPulseWidth1()));
+        sb.append(printParameter(centrifuge1.getSync1()));
+        sb.append(printParameter(centrifuge1.getDepth1()));
+        sb.append(printParameter(centrifuge1.getRate2()));
+        sb.append(printParameter(centrifuge1.getPulseWidth2()));
+        sb.append(printParameter(centrifuge1.getSync2()));
+        sb.append(printParameter(centrifuge1.getDepth2()));
+        sb.append(printParameter(centrifuge1.getResonance()));
         return sb.toString();
     }
 

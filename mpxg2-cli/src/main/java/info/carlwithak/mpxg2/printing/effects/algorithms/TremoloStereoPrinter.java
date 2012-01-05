@@ -19,10 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.phaseToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -34,12 +33,12 @@ public class TremoloStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         TremoloStereo tremoloStereo = (TremoloStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(tremoloStereo.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(tremoloStereo.getLevel())).append("\n");
-        sb.append("    Rate: ").append(ParameterPrinter.print(tremoloStereo.getRate())).append("\n");
-        sb.append("    PW: ").append(ParameterPrinter.print(tremoloStereo.getPulseWidth())).append("\n");
-        sb.append("    Depth: ").append(ParameterPrinter.print(tremoloStereo.getDepth())).append("\n");
-        sb.append("    Phase: ").append(phaseToString(tremoloStereo.getPhase().getValue())).append("\n");
+        sb.append(printParameter(tremoloStereo.getMix()));
+        sb.append(printParameter(tremoloStereo.getLevel()));
+        sb.append(printParameter(tremoloStereo.getRate()));
+        sb.append(printParameter(tremoloStereo.getPulseWidth()));
+        sb.append(printParameter(tremoloStereo.getDepth()));
+        sb.append(printParameter(tremoloStereo.getPhase()));
         return sb.toString();
     }
 

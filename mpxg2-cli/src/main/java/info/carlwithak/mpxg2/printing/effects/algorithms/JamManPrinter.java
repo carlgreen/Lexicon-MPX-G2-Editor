@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,16 +33,16 @@ public class JamManPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         JamMan jamMan = (JamMan) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(jamMan.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(jamMan.getLevel())).append("\n");
-        sb.append("    Size: ").append(ParameterPrinter.print(jamMan.getSize())).append("\n");
-        sb.append("    Fbk: ").append(ParameterPrinter.print(jamMan.getFeedback())).append("\n");
-        sb.append("    Fbk insert: ").append(ParameterPrinter.print(jamMan.getInsert())).append("\n");
-        sb.append("    Clear: ").append(ParameterPrinter.print(jamMan.isClear())).append("\n");
-        sb.append("    Layer: ").append(ParameterPrinter.print(jamMan.isLayer())).append("\n");
-        sb.append("    Replc: ").append(ParameterPrinter.print(jamMan.isReplace())).append("\n");
-        sb.append("    Delay: ").append(ParameterPrinter.print(jamMan.isDelay())).append("\n");
-        sb.append("    MuteS: ").append(ParameterPrinter.print(jamMan.isMute())).append("\n");
+        sb.append(printParameter(jamMan.getMix()));
+        sb.append(printParameter(jamMan.getLevel()));
+        sb.append(printParameter(jamMan.getSize()));
+        sb.append(printParameter(jamMan.getFeedback()));
+        sb.append(printParameter(jamMan.getInsert()));
+        sb.append(printParameter(jamMan.isClear()));
+        sb.append(printParameter(jamMan.isLayer()));
+        sb.append(printParameter(jamMan.isReplace()));
+        sb.append(printParameter(jamMan.isDelay()));
+        sb.append(printParameter(jamMan.isMute()));
         return sb.toString();
     }
 

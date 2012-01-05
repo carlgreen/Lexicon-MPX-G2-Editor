@@ -19,9 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -33,11 +33,11 @@ public class CustomVybePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         CustomVybe customVybe = (CustomVybe) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(customVybe.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(customVybe.getLevel())).append("\n");
-        sb.append("    Rate: ").append(ParameterPrinter.print(customVybe.getRate())).append("\n");
-        sb.append("    PW: ").append(ParameterPrinter.print(customVybe.getPulseWidth())).append("\n");
-        sb.append("    Depth: ").append(ParameterPrinter.print(customVybe.getDepth())).append("\n");
+        sb.append(printParameter(customVybe.getMix()));
+        sb.append(printParameter(customVybe.getLevel()));
+        sb.append(printParameter(customVybe.getRate()));
+        sb.append(printParameter(customVybe.getPulseWidth()));
+        sb.append(printParameter(customVybe.getDepth()));
         return sb.toString();
     }
 

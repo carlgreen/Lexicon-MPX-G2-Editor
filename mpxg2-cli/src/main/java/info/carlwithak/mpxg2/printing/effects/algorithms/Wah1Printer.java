@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,13 +33,13 @@ public class Wah1Printer implements Printer {
     public String print(Object algorithm) throws PrintException {
         Wah1 wah1 = (Wah1) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(wah1.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(wah1.getLevel())).append("\n");
-        sb.append("    Sweep: ").append(ParameterPrinter.print(wah1.getSweep())).append("\n");
-        sb.append("    Bass: ").append(ParameterPrinter.print(wah1.getBass())).append("\n");
-        sb.append("    Type: ").append(ParameterPrinter.print(wah1.getType())).append("\n");
-        sb.append("    Resp: ").append(ParameterPrinter.print(wah1.getResponse())).append("\n");
-        sb.append("    Gain: ").append(ParameterPrinter.print(wah1.getGain())).append("\n");
+        sb.append(printParameter(wah1.getMix()));
+        sb.append(printParameter(wah1.getLevel()));
+        sb.append(printParameter(wah1.getSweep()));
+        sb.append(printParameter(wah1.getBass()));
+        sb.append(printParameter(wah1.getType()));
+        sb.append(printParameter(wah1.getResponse()));
+        sb.append(printParameter(wah1.getGain()));
         return sb.toString();
     }
 

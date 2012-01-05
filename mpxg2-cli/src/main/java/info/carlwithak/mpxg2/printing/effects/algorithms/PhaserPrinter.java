@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Phaser;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,12 +33,13 @@ public class PhaserPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Phaser phaser = (Phaser) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(phaser.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(phaser.getLevel())).append("\n");
-        sb.append("    Rate: ").append(ParameterPrinter.print(phaser.getRate())).append("\n");
-        sb.append("    PW: ").append(ParameterPrinter.print(phaser.getPulseWidth())).append("\n");
-        sb.append("    Depth: ").append(ParameterPrinter.print(phaser.getDepth())).append("\n");
-        sb.append("    Res: ").append(ParameterPrinter.print(phaser.getResonance())).append("\n");
+        sb.append(printParameter(phaser.getMix()));
+        sb.append(printParameter(phaser.getLevel()));
+        sb.append(printParameter(phaser.getRate()));
+        sb.append(printParameter(phaser.getPulseWidth()));
+        sb.append(printParameter(phaser.getDepth()));
+        sb.append(printParameter(phaser.getResonance()));
         return sb.toString();
     }
+
 }

@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,18 +33,18 @@ public class EchoDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         EchoDual echoDual = (EchoDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(echoDual.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(echoDual.getLevel())).append("\n");
-        sb.append("    Time1: ").append(ParameterPrinter.print(echoDual.getTime1())).append("\n");
-        sb.append("    Time2: ").append(ParameterPrinter.print(echoDual.getTime2())).append("\n");
-        sb.append("    Lvl 1: ").append(ParameterPrinter.print(echoDual.getLevel1())).append("\n");
-        sb.append("    Lvl 2: ").append(ParameterPrinter.print(echoDual.getLevel2())).append("\n");
-        sb.append("    Fbk 1: ").append(ParameterPrinter.print(echoDual.getFeedback1())).append("\n");
-        sb.append("    Fbk insert: ").append(ParameterPrinter.print(echoDual.getInsert())).append("\n");
-        sb.append("    Fbk 2: ").append(ParameterPrinter.print(echoDual.getFeedback2())).append("\n");
-        sb.append("    Damp1: ").append(ParameterPrinter.print(echoDual.getDamp1())).append("\n");
-        sb.append("    Damp2: ").append(ParameterPrinter.print(echoDual.getDamp2())).append("\n");
-        sb.append("    Clear: ").append(ParameterPrinter.print(echoDual.isClear())).append("\n");
+        sb.append(printParameter(echoDual.getMix()));
+        sb.append(printParameter(echoDual.getLevel()));
+        sb.append(printParameter(echoDual.getTime1()));
+        sb.append(printParameter(echoDual.getTime2()));
+        sb.append(printParameter(echoDual.getLevel1()));
+        sb.append(printParameter(echoDual.getLevel2()));
+        sb.append(printParameter(echoDual.getFeedback1()));
+        sb.append(printParameter(echoDual.getInsert()));
+        sb.append(printParameter(echoDual.getFeedback2()));
+        sb.append(printParameter(echoDual.getDamp1()));
+        sb.append(printParameter(echoDual.getDamp2()));
+        sb.append(printParameter(echoDual.isClear()));
         return sb.toString();
     }
 

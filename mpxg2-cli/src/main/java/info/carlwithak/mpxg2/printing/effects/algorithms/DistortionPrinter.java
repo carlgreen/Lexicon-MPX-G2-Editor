@@ -19,8 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
+
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -32,14 +33,14 @@ public class DistortionPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Distortion distortion = (Distortion) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Lo: ").append(ParameterPrinter.print(distortion.getLo())).append("\n");
-        sb.append("    Mid: ").append(ParameterPrinter.print(distortion.getMid())).append("\n");
-        sb.append("    Hi: ").append(ParameterPrinter.print(distortion.getHi())).append("\n");
-        sb.append("    Drive: ").append(ParameterPrinter.print(distortion.getDrive())).append("\n");
-        sb.append("    Tone: ").append(ParameterPrinter.print(distortion.getTone())).append("\n");
-        sb.append("    Bass: ").append(ParameterPrinter.print(distortion.getBass())).append("\n");
-        sb.append("    Trebl: ").append(ParameterPrinter.print(distortion.getTreble())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(distortion.getLevel())).append("\n");
+        sb.append(printParameter(distortion.getLo()));
+        sb.append(printParameter(distortion.getMid()));
+        sb.append(printParameter(distortion.getHi()));
+        sb.append(printParameter(distortion.getDrive()));
+        sb.append(printParameter(distortion.getTone()));
+        sb.append(printParameter(distortion.getBass()));
+        sb.append(printParameter(distortion.getTreble()));
+        sb.append(printParameter(distortion.getLevel()));
         return sb.toString();
     }
 

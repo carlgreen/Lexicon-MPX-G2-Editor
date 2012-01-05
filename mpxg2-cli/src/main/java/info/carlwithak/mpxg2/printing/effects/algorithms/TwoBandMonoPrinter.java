@@ -19,10 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandMono;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.eqModeToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -34,16 +33,16 @@ public class TwoBandMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         TwoBandMono twoBandMono = (TwoBandMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(twoBandMono.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(twoBandMono.getLevel())).append("\n");
-        sb.append("    Gain1: ").append(ParameterPrinter.print(twoBandMono.getGain1())).append("\n");
-        sb.append("    Fc 1: ").append(ParameterPrinter.print(twoBandMono.getFc1())).append("\n");
-        sb.append("    Q 1: ").append(ParameterPrinter.print(twoBandMono.getQ1())).append("\n");
-        sb.append("    Mode1: ").append(eqModeToString(twoBandMono.getMode1().getValue())).append("\n");
-        sb.append("    Gain2: ").append(ParameterPrinter.print(twoBandMono.getGain2())).append("\n");
-        sb.append("    Fc 2: ").append(ParameterPrinter.print(twoBandMono.getFc2())).append("\n");
-        sb.append("    Q 2: ").append(ParameterPrinter.print(twoBandMono.getQ2())).append("\n");
-        sb.append("    Mode2: ").append(eqModeToString(twoBandMono.getMode2().getValue())).append("\n");
+        sb.append(printParameter(twoBandMono.getMix()));
+        sb.append(printParameter(twoBandMono.getLevel()));
+        sb.append(printParameter(twoBandMono.getGain1()));
+        sb.append(printParameter(twoBandMono.getFc1()));
+        sb.append(printParameter(twoBandMono.getQ1()));
+        sb.append(printParameter(twoBandMono.getMode1()));
+        sb.append(printParameter(twoBandMono.getGain2()));
+        sb.append(printParameter(twoBandMono.getFc2()));
+        sb.append(printParameter(twoBandMono.getQ2()));
+        sb.append(printParameter(twoBandMono.getMode2()));
         return sb.toString();
     }
 

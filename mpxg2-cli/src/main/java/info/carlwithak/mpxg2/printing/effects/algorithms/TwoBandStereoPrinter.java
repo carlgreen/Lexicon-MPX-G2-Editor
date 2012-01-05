@@ -19,10 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandStereo;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.eqModeToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -34,16 +33,16 @@ public class TwoBandStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         TwoBandStereo twoBandStereo = (TwoBandStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(twoBandStereo.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(twoBandStereo.getLevel())).append("\n");
-        sb.append("    Gain1: ").append(ParameterPrinter.print(twoBandStereo.getGain1())).append("\n");
-        sb.append("    Fc 1: ").append(ParameterPrinter.print(twoBandStereo.getFc1())).append("\n");
-        sb.append("    Q 1: ").append(ParameterPrinter.print(twoBandStereo.getQ1())).append("\n");
-        sb.append("    Mode1: ").append(eqModeToString(twoBandStereo.getMode1().getValue())).append("\n");
-        sb.append("    Gain2: ").append(ParameterPrinter.print(twoBandStereo.getGain2())).append("\n");
-        sb.append("    Fc 2: ").append(ParameterPrinter.print(twoBandStereo.getFc2())).append("\n");
-        sb.append("    Q 2: ").append(ParameterPrinter.print(twoBandStereo.getQ2())).append("\n");
-        sb.append("    Mode2: ").append(eqModeToString(twoBandStereo.getMode2().getValue())).append("\n");
+        sb.append(printParameter(twoBandStereo.getMix()));
+        sb.append(printParameter(twoBandStereo.getLevel()));
+        sb.append(printParameter(twoBandStereo.getGain1()));
+        sb.append(printParameter(twoBandStereo.getFc1()));
+        sb.append(printParameter(twoBandStereo.getQ1()));
+        sb.append(printParameter(twoBandStereo.getMode1()));
+        sb.append(printParameter(twoBandStereo.getGain2()));
+        sb.append(printParameter(twoBandStereo.getFc2()));
+        sb.append(printParameter(twoBandStereo.getQ2()));
+        sb.append(printParameter(twoBandStereo.getMode2()));
         return sb.toString();
     }
 

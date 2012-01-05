@@ -19,10 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.panToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -34,20 +33,21 @@ public class DelayDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DelayDual delayDual = (DelayDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(delayDual.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(delayDual.getLevel())).append("\n");
-        sb.append("    Time1: ").append(ParameterPrinter.print(delayDual.getTime1())).append("\n");
-        sb.append("    Time2: ").append(ParameterPrinter.print(delayDual.getTime2())).append("\n");
-        sb.append("    Lvl 1: ").append(ParameterPrinter.print(delayDual.getLevel1())).append("\n");
-        sb.append("    Lvl 2: ").append(ParameterPrinter.print(delayDual.getLevel2())).append("\n");
-        sb.append("    Pan 1: ").append(panToString(delayDual.getPan1().getValue())).append("\n");
-        sb.append("    Pan 2: ").append(panToString(delayDual.getPan2().getValue())).append("\n");
-        sb.append("    Fbk 1: ").append(ParameterPrinter.print(delayDual.getFeedback1())).append("\n");
-        sb.append("    Fbk insert: ").append(ParameterPrinter.print(delayDual.getInsert())).append("\n");
-        sb.append("    Fbk 2: ").append(ParameterPrinter.print(delayDual.getFeedback2())).append("\n");
-        sb.append("    XFbk1: ").append(ParameterPrinter.print(delayDual.getXFbk1())).append("\n");
-        sb.append("    XFbk2: ").append(ParameterPrinter.print(delayDual.getXFbk2())).append("\n");
-        sb.append("    Clear: ").append(ParameterPrinter.print(delayDual.isClear())).append("\n");
+        sb.append(printParameter(delayDual.getMix()));
+        sb.append(printParameter(delayDual.getLevel()));
+        sb.append(printParameter(delayDual.getTime1()));
+        sb.append(printParameter(delayDual.getTime2()));
+        sb.append(printParameter(delayDual.getLevel1()));
+        sb.append(printParameter(delayDual.getLevel2()));
+        sb.append(printParameter(delayDual.getPan1()));
+        sb.append(printParameter(delayDual.getPan2()));
+        sb.append(printParameter(delayDual.getFeedback1()));
+        sb.append(printParameter(delayDual.getInsert()));
+        sb.append(printParameter(delayDual.getFeedback2()));
+        sb.append(printParameter(delayDual.getXFbk1()));
+        sb.append(printParameter(delayDual.getXFbk2()));
+        sb.append(printParameter(delayDual.isClear()));
         return sb.toString();
     }
+
 }

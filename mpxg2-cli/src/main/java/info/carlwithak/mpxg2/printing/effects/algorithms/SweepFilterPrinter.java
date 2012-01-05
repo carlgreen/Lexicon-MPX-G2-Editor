@@ -19,10 +19,9 @@ package info.carlwithak.mpxg2.printing.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
-import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
 
-import static info.carlwithak.mpxg2.printing.Util.panToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 
 /**
  *
@@ -34,13 +33,13 @@ public class SweepFilterPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         SweepFilter sweepFilter = (SweepFilter) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append("    Mix: ").append(ParameterPrinter.print(sweepFilter.getMix())).append("\n");
-        sb.append("    Level: ").append(ParameterPrinter.print(sweepFilter.getLevel())).append("\n");
-        sb.append("    Fc: ").append(ParameterPrinter.print(sweepFilter.getFc())).append("\n");
-        sb.append("    FRes: ").append(ParameterPrinter.print(sweepFilter.getFRes())).append("\n");
-        sb.append("    Mod: ").append(ParameterPrinter.print(sweepFilter.getMod())).append("\n");
-        sb.append("    Scale: ").append(ParameterPrinter.print(sweepFilter.getScale())).append("\n");
-        sb.append("    Pan: ").append(panToString(sweepFilter.getPan().getValue())).append("\n");
+        sb.append(printParameter(sweepFilter.getMix()));
+        sb.append(printParameter(sweepFilter.getLevel()));
+        sb.append(printParameter(sweepFilter.getFc()));
+        sb.append(printParameter(sweepFilter.getFRes()));
+        sb.append(printParameter(sweepFilter.getMod()));
+        sb.append(printParameter(sweepFilter.getScale()));
+        sb.append(printParameter(sweepFilter.getPan()));
         return sb.toString();
     }
 
