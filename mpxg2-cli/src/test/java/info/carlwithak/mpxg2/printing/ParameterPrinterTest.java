@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.CrossoverValue;
 import info.carlwithak.mpxg2.model.DecayLevelValue;
+import info.carlwithak.mpxg2.model.DecayTimeValue;
 import info.carlwithak.mpxg2.model.EqModeValue;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.GenericValue;
@@ -232,6 +233,22 @@ public class ParameterPrinterTest {
 
         value.setValue(48);
         assertThat(ParameterPrinter.print(value), is("Flat"));
+    }
+
+    @Test
+    public void testPrintDecayTimeValue() throws PrintException {
+        GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
+        GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
+        DecayTimeValue value = new DecayTimeValue("DTime", link, size);
+
+        link.setValue(true);
+        size.setValue(5.0);
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("0.07s"));
+
+        size.setValue(76.0);
+        value.setValue(63);
+        assertThat(ParameterPrinter.print(value), is("65.4s"));
     }
 
     @Test
