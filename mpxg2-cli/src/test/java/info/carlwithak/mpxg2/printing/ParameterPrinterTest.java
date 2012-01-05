@@ -32,6 +32,7 @@ import info.carlwithak.mpxg2.model.KeyValue;
 import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.ReverbSpredValue;
 import info.carlwithak.mpxg2.model.ScaleValue;
 import info.carlwithak.mpxg2.model.SourceValue;
 import info.carlwithak.mpxg2.model.TapMsRate;
@@ -260,6 +261,22 @@ public class ParameterPrinterTest {
 
         value.setValue(25);
         assertThat(ParameterPrinter.print(value), is("Full"));
+    }
+
+    @Test
+    public void testPrintReverbSpredValue() throws PrintException {
+        GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
+        GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
+        ReverbSpredValue value = new ReverbSpredValue("Spred", link, size);
+
+        link.setValue(true);
+        size.setValue(4.0);
+        value.setValue(0);
+        assertThat(ParameterPrinter.print(value), is("0"));
+
+        size.setValue(53.0);
+        value.setValue(255);
+        assertThat(ParameterPrinter.print(value), is("181"));
     }
 
     @Test

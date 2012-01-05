@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.model.PanValue;
 import info.carlwithak.mpxg2.model.PhaseValue;
 import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.ReverbSpredValue;
 import info.carlwithak.mpxg2.model.ScaleValue;
 import info.carlwithak.mpxg2.model.SourceValue;
 import info.carlwithak.mpxg2.model.TapMsRate;
@@ -109,6 +110,9 @@ public class ParameterPrinter {
             result = value.toString();
         } else if (parameter instanceof DecayTimeValue) {
             DecayTimeValue value = (DecayTimeValue) parameter;
+            result = value.toString();
+        } else if (parameter instanceof ReverbSpredValue) {
+            ReverbSpredValue value = (ReverbSpredValue) parameter;
             result = value.toString();
         } else if (parameter instanceof AmbienceHighCutValue) {
             AmbienceHighCutValue value = (AmbienceHighCutValue) parameter;
