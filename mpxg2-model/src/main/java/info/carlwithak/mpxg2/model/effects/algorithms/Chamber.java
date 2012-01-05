@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.BassValue;
 import info.carlwithak.mpxg2.model.CrossoverValue;
+import info.carlwithak.mpxg2.model.DecayTimeValue;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.HighCutValue;
 import info.carlwithak.mpxg2.model.Parameter;
@@ -37,7 +38,7 @@ public class Chamber extends Reverb {
     private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
     private BassValue bass = new BassValue("Bass");
-    private GenericValue<Integer> decay = new GenericValue<Integer>("Decay", "s", 0, 255); // 0.07 - 65.4
+    private DecayTimeValue decay = new DecayTimeValue("Decay", link, size);
     private CrossoverValue xovr = new CrossoverValue("Xovr");
     private HighCutValue rtHC = new HighCutValue("Rt HC");
     private GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
@@ -132,7 +133,7 @@ public class Chamber extends Reverb {
         this.bass.setValue(bass);
     }
 
-    public GenericValue<Integer> getDecay() {
+    public DecayTimeValue getDecay() {
         return decay;
     }
 
