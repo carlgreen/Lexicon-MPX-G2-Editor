@@ -21,7 +21,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
 /**
  *
@@ -44,7 +43,7 @@ public class ChamberPrinter implements Printer {
         sb.append("    Xovr: ").append(ParameterPrinter.print(chamber.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(ParameterPrinter.print(chamber.getRtHC())).append("\n");
         sb.append("    Shape: ").append(ParameterPrinter.print(chamber.getShape())).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(chamber.isLink().getValue(), chamber.getSize().getValue(), chamber.getSpred().getValue())).append("\n");
+        sb.append("    Spred: ").append(ParameterPrinter.print(chamber.getSpred())).append("\n");
         return sb.toString();
     }
 }

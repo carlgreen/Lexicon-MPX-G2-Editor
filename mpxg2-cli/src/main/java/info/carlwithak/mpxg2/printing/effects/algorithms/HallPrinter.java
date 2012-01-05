@@ -21,7 +21,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
 /**
  *
@@ -44,7 +43,7 @@ public class HallPrinter implements Printer {
         sb.append("    Xovr: ").append(ParameterPrinter.print(hall.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(ParameterPrinter.print(hall.getRtHC())).append("\n");
         sb.append("    Shape: ").append(ParameterPrinter.print(hall.getShape())).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(hall.isLink().getValue(), hall.getSize().getValue(), hall.getSpred().getValue())).append("\n");
+        sb.append("    Spred: ").append(ParameterPrinter.print(hall.getSpred())).append("\n");
         return sb.toString();
     }
 }

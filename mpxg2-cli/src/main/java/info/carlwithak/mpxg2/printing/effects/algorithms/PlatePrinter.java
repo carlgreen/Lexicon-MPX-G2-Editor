@@ -21,7 +21,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.printing.AlgorithmPrinter.Printer;
 import info.carlwithak.mpxg2.printing.ParameterPrinter;
 import info.carlwithak.mpxg2.printing.PrintException;
-import info.carlwithak.mpxg2.printing.ReverbSpredPrinter;
 
 /**
  *
@@ -44,7 +43,7 @@ public class PlatePrinter implements Printer {
         sb.append("    Xovr: ").append(ParameterPrinter.print(plate.getXovr())).append("\n");
         sb.append("    Rt HC: ").append(ParameterPrinter.print(plate.getRtHC())).append("\n");
         sb.append("    Shape: ").append(ParameterPrinter.print(plate.getShape())).append("\n");
-        sb.append("    Spred: ").append(ReverbSpredPrinter.reverbSpredToString(plate.isLink().getValue(), plate.getSize().getValue(), plate.getSpred().getValue())).append("\n");
+        sb.append("    Spred: ").append(ParameterPrinter.print(plate.getSpred())).append("\n");
         return sb.toString();
     }
 }

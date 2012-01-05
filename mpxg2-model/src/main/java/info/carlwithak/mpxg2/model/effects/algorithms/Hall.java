@@ -23,6 +23,7 @@ import info.carlwithak.mpxg2.model.DecayTimeValue;
 import info.carlwithak.mpxg2.model.GenericValue;
 import info.carlwithak.mpxg2.model.HighCutValue;
 import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.ReverbSpredValue;
 import info.carlwithak.mpxg2.model.effects.Reverb;
 
 /**
@@ -42,7 +43,7 @@ public class Hall extends Reverb {
     private CrossoverValue xovr = new CrossoverValue("Xovr");
     private HighCutValue rtHC = new HighCutValue("Rt HC");
     private GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
-    private GenericValue<Integer> spred = new GenericValue<Integer>("Spred", "", 0, 255);
+    private ReverbSpredValue spred = new ReverbSpredValue("Spred", link, size);
 
     @Override
     public String getName() {
@@ -165,7 +166,7 @@ public class Hall extends Reverb {
         this.shape.setValue(shape);
     }
 
-    public GenericValue<Integer> getSpred() {
+    public ReverbSpredValue getSpred() {
         return spred;
     }
 
