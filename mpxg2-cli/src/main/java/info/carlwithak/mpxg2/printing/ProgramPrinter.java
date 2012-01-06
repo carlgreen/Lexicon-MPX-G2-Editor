@@ -504,10 +504,10 @@ public class ProgramPrinter {
         sb.append("      Mode: ").append(lfoModeToString(lfo.getMode())).append("\n");
         sb.append("      Rate: ").append(lfo.getRate().getDisplayString()).append("\n");
         sb.append("      PW: ").append(lfo.getPulseWidth()).append("%\n");
-        sb.append("      Phase: ").append(lfo.getPhase()).append("\n");
+        sb.append("      Phase: ").append(signInt(lfo.getPhase())).append("\n");
         sb.append("      Depth: ").append(lfo.getDepth()).append("%\n");
-        sb.append("      On Level: ").append(lfo.getOnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(lfo.getOnSource())).append("\n");
+        sb.append("      OnLvl: ").append(lfo.getOnLevel()).append("\n");
+        sb.append("      OnSrc: ").append(lfoOnSourceToString(lfo.getOnSource())).append("\n");
         return sb.toString();
     }
 

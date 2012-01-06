@@ -115,16 +115,16 @@ Chaos Dance
       PW: 50%
       Phase: 0
       Depth: 100%
-      On Level: 64
-      On Source: none
+      OnLvl: 64
+      OnSrc: none
     LFO 2:
       Mode: On
       Rate: 5:3
       PW: 50%
-      Phase: 90
+      Phase: +90
       Depth: 100%
-      On Level: 64
-      On Source: none
+      OnLvl: 64
+      OnSrc: none
     Random:
       Low: 0
       High: 50

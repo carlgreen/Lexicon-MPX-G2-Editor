@@ -118,16 +118,16 @@ Pdl 2~3 b3~3
       PW: 50%
       Phase: 0
       Depth: 100%
-      On Level: 64
-      On Source: none
+      OnLvl: 64
+      OnSrc: none
     LFO 2:
       Mode: On
       Rate: 0.92Hz
       PW: 50%
       Phase: 0
       Depth: 100%
-      On Level: 64
-      On Source: none
+      OnLvl: 64
+      OnSrc: none
     Random:
       Low: 0
       High: 127

@@ -291,7 +291,7 @@ public class ProgramPrinterTest {
         lfo.setOnLevel(64);
         lfo.setOnSource(0);
         
-        String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      On Level: 64\n      On Source: none\n";
+        String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      OnLvl: 64\n      OnSrc: none\n";
         String actual = ProgramPrinter.printLfo(lfo);
         assertEquals(expected, actual);
     }
