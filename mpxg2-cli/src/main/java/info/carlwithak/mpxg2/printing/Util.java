@@ -26,10 +26,6 @@ import info.carlwithak.mpxg2.model.Parameter;
  */
 public class Util {
 
-    private static final String[] DELAY_INSERTS = {
-        "Effect 1", "Effect 2", "Chorus", "Delay", "Reverb", "EQ", "Gain"
-    };
-
     private static final double[] REVERB_LINK_SIZES = {
         12.0, 20.0, 28.0, 36.0, 44.0, 52.0, 60.0, 68.0, 76.0, 76.5
     };
@@ -128,17 +124,6 @@ public class Util {
         }
     };
 
-    private static final String[] PHASES = {"0", "90", "180", "270"};
-
-    private static final String[] EQ_MODES = {"LShlf", "Band", "HShlf"};
-
-    /**
-     * @return String representation of insert position.
-     */
-    public static String delayInsertToString(final int delayInsert) {
-        return DELAY_INSERTS[delayInsert];
-    }
-
     /**
      * @return String representation of reverb decay index.
      */
@@ -164,49 +149,10 @@ public class Util {
     }
 
     /**
-     * @return number with trailing 'L' or 'R', or just 'C' for zero.
-     */
-    public static String panToString(final int pan) {
-        String suffix;
-        if (pan < 0) {
-            suffix = "L";
-        } else if (pan > 0) {
-            suffix = "R";
-        } else {
-            return "C";
-        }
-        return Integer.toString(Math.abs(pan)) + suffix;
-    }
-
-    /**
-     * @return return phase postion indicated by phase
-     */
-    public static String phaseToString(final int phase) {
-        return PHASES[phase] + '°';
-    }
-
-    /**
-     * @return String 'On' or 'Off' depending on value of ind
-     * @deprecated Should be a boolean value already
-     */
-    @Deprecated
-    public static String onOffToString(final int ind) {
-        return ind == 0 ? "Off" : "On";
-    }
-
-    /**
      * @return String 'On' or 'Off' depending on value of ind
      */
     public static String onOffToString(final boolean ind) {
         return ind ? "On" : "Off";
-    }
-
-    public static String wahTypeToString(final int wahType) {
-        return "Model " + (wahType == 0 ? 'C' : 'V');
-    }
-
-    public static String eqModeToString(final int eqMode) {
-        return EQ_MODES[eqMode];
     }
 
     public static String printParameter(final Parameter parameter) {

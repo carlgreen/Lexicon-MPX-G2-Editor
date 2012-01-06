@@ -161,43 +161,9 @@ public class UtilTest {
     }
 
     @Test
-    public void testPanToString() {
-        assertEquals("10L", Util.panToString(-10));
-        assertEquals("C", Util.panToString(0));
-        assertEquals("10R", Util.panToString(10));
-    }
-
-    @Test
-    public void testPhaseToString() {
-        assertEquals("0°", Util.phaseToString(0));
-        assertEquals("90°", Util.phaseToString(1));
-        assertEquals("180°", Util.phaseToString(2));
-        assertEquals("270°", Util.phaseToString(3));
-    }
-
-    @Test
-    public void testOnOffToString_Int() {
-        assertEquals("Off", Util.onOffToString(0));
-        assertEquals("On", Util.onOffToString(1));
-    }
-
-    @Test
     public void testOnOffToString_Boolean() {
         assertEquals("Off", Util.onOffToString(false));
         assertEquals("On", Util.onOffToString(true));
-    }
-
-    @Test
-    public void testWahTypeToString() {
-        assertEquals("Model C", Util.wahTypeToString(0));
-        assertEquals("Model V", Util.wahTypeToString(1));
-    }
-
-    @Test
-    public void testEqModeToString() {
-        assertEquals("LShlf", Util.eqModeToString(0));
-        assertEquals("Band", Util.eqModeToString(1));
-        assertEquals("HShlf", Util.eqModeToString(2));
     }
 
     @Test
