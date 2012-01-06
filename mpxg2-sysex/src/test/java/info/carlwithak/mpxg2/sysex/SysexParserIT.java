@@ -306,10 +306,10 @@ public class SysexParserIT {
         assertThat(ab.getOnSource(), is(value(0)));
 
         EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
-        assertEquals(0, envelopeGenerator.getSrc1());
-        assertEquals(0, envelopeGenerator.getSrc2());
-        assertEquals(100, envelopeGenerator.getATrim());
-        assertEquals(64, envelopeGenerator.getResponse());
+        assertThat(envelopeGenerator.getSrc1(), is(value(0)));
+        assertThat(envelopeGenerator.getSrc2(), is(value(0)));
+        assertThat(envelopeGenerator.getATrim(), is(value(100)));
+        assertThat(envelopeGenerator.getResponse(), is(value(64)));
 
         assertEquals(1, program.getNoiseGate().getEnable());
         assertTrue(program.getNoiseGate().isSend());
@@ -588,10 +588,10 @@ public class SysexParserIT {
         assertThat(ab.getOnSource(), is(value(0)));
 
         EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
-        assertEquals(0, envelopeGenerator.getSrc1());
-        assertEquals(0, envelopeGenerator.getSrc2());
-        assertEquals(100, envelopeGenerator.getATrim());
-        assertEquals(64, envelopeGenerator.getResponse());
+        assertThat(envelopeGenerator.getSrc1(), is(value(0)));
+        assertThat(envelopeGenerator.getSrc2(), is(value(0)));
+        assertThat(envelopeGenerator.getATrim(), is(value(100)));
+        assertThat(envelopeGenerator.getResponse(), is(value(64)));
     }
 
     /**
@@ -1912,10 +1912,10 @@ public class SysexParserIT {
         assertThat(ab.getOnSource(), is(value(0)));
 
         EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
-        assertEquals(0, envelopeGenerator.getSrc1());
-        assertEquals(0, envelopeGenerator.getSrc2());
-        assertEquals(100, envelopeGenerator.getATrim());
-        assertEquals(64, envelopeGenerator.getResponse());
+        assertThat(envelopeGenerator.getSrc1(), is(value(0)));
+        assertThat(envelopeGenerator.getSrc2(), is(value(0)));
+        assertThat(envelopeGenerator.getATrim(), is(value(100)));
+        assertThat(envelopeGenerator.getResponse(), is(value(64)));
 
         assertEquals(0, program.getNoiseGate().getEnable());
         assertFalse(program.getNoiseGate().isSend());
@@ -2150,10 +2150,10 @@ public class SysexParserIT {
         assertThat(ab.getOnSource(), is(value(0)));
 
         EnvelopeGenerator envelopeGenerator = program.getEnvelopeGenerator();
-        assertEquals(0, envelopeGenerator.getSrc1());
-        assertEquals(0, envelopeGenerator.getSrc2());
-        assertEquals(100, envelopeGenerator.getATrim());
-        assertEquals(64, envelopeGenerator.getResponse());
+        assertThat(envelopeGenerator.getSrc1(), is(value(0)));
+        assertThat(envelopeGenerator.getSrc2(), is(value(0)));
+        assertThat(envelopeGenerator.getATrim(), is(value(100)));
+        assertThat(envelopeGenerator.getResponse(), is(value(64)));
 
         assertEquals(0, program.getNoiseGate().getEnable());
         assertFalse(program.getNoiseGate().isSend());

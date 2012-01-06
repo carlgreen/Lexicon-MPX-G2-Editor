@@ -530,9 +530,9 @@ public class SysexParserTest {
         byte[] bytes = {0, 0, 0, 0, 4, 6, 0, 4};
 
         EnvelopeGenerator envelopeGenerator = SysexParser.readEnvelopeGenerator(bytes);
-        assertEquals(0, envelopeGenerator.getSrc1());
-        assertEquals(0, envelopeGenerator.getSrc2());
-        assertEquals(100, envelopeGenerator.getATrim());
-        assertEquals(64, envelopeGenerator.getResponse());
+        assertThat(envelopeGenerator.getSrc1(), is(value(0)));
+        assertThat(envelopeGenerator.getSrc2(), is(value(0)));
+        assertThat(envelopeGenerator.getATrim(), is(value(100)));
+        assertThat(envelopeGenerator.getResponse(), is(value(64)));
     }
 }

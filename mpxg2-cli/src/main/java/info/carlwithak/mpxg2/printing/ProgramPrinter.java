@@ -107,12 +107,6 @@ public class ProgramPrinter {
         "none"
     };
 
-    private final static String[] ENVELOPE_GENERATOR_SOURCES = {
-        "Off", "In", "Ret L", "Ret R", "Raw L", "Raw R", "FX 1 L", "FX 1 R",
-        "FX 2 L", "FX 2 R", "Chrs L", "Chrs R", "EQ L", "EQ R", "Rvb L", "Rvb R",
-        "Dly L", "Dly R", "PreOut", "MainL", "MainR"
-    };
-
     private final static String[] SPEAKER_SIMULATOR_CABINET_DESIGNS = {
         "Combo1", "Combo2", "Stack1", "Stack2"
     };
@@ -519,10 +513,10 @@ public class ProgramPrinter {
 
     static String printEnvelopeGenerator(final EnvelopeGenerator envelopeGenerator) throws PrintException {
         final StringBuilder sb = new StringBuilder();
-        sb.append("      Src1: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc1())).append("\n");
-        sb.append("      Src2: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc2())).append("\n");
-        sb.append("      ATrim: ").append(envelopeGenerator.getATrim()).append("\n");
-        sb.append("      Resp: ").append(envelopeGenerator.getResponse()).append("\n");
+        sb.append("  ").append(printParameter(envelopeGenerator.getSrc1()));
+        sb.append("  ").append(printParameter(envelopeGenerator.getSrc2()));
+        sb.append("  ").append(printParameter(envelopeGenerator.getATrim()));
+        sb.append("  ").append(printParameter(envelopeGenerator.getResponse()));
         return sb.toString();
     }
 
@@ -560,10 +554,6 @@ public class ProgramPrinter {
 
     private static String tapSourceToString(final int tapSource) {
         return TAP_SOURCES[tapSource];
-    }
-
-    private static String envelopeGeneratorSourceToString(final int envelopeGeneratorSource) {
-        return ENVELOPE_GENERATOR_SOURCES[envelopeGeneratorSource];
     }
 
     static String speakerSimulatorCabinetToString(final int speakerSimulatorCabinet) {
