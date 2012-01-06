@@ -492,9 +492,9 @@ public class ProgramPrinter {
 
     static String printKnob(final Knob knob) {
         final StringBuilder sb = new StringBuilder();
-        sb.append("      Value: ").append(knob.getValue()).append("\n");
-        sb.append("      Low: ").append(knob.getLow()).append("\n");
-        sb.append("      High: ").append(knob.getHigh()).append("\n");
+        sb.append("  ").append(printParameter(knob.getValue()));
+        sb.append("  ").append(printParameter(knob.getLow()));
+        sb.append("  ").append(printParameter(knob.getHigh()));
         sb.append("      Name: ").append(knob.getName()).append("\n");
         return sb.toString();
     }

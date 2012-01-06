@@ -35,8 +35,11 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -480,9 +483,9 @@ public class SysexParserTest {
         byte[] bytes = {2, 3, 0, 0, 4, 6, 4, 4, 5, 6, 12, 6, 1, 6, 9, 7, 0, 2, 1, 4, 4, 6, 10, 6};
         Knob knob = SysexParser.readKnob(bytes);
 
-        assertEquals(50, knob.getValue());
-        assertEquals(0, knob.getLow());
-        assertEquals(100, knob.getHigh());
+        assertThat(knob.getValue(), is(value(50)));
+        assertThat(knob.getLow(), is(value(0)));
+        assertThat(knob.getHigh(), is(value(100)));
         assertEquals("Delay Adj", knob.getName());
     }
 

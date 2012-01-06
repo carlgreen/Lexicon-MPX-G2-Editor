@@ -56,9 +56,12 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import java.io.File;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsValue.value;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -267,9 +270,9 @@ public class SysexParserIT {
         assertEquals(6, program.getPatch5().getDestinationMax());
 
         Knob knob = program.getKnob();
-        assertEquals(50, knob.getValue());
-        assertEquals(0, knob.getLow());
-        assertEquals(100, knob.getHigh());
+        assertThat(knob.getValue(), is(value(50)));
+        assertThat(knob.getLow(), is(value(0)));
+        assertThat(knob.getHigh(), is(value(100)));
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
@@ -549,9 +552,9 @@ public class SysexParserIT {
         assertEquals("TremoWah", program.getProgramName());
 
         Knob knob = program.getKnob();
-        assertEquals(50, knob.getValue());
-        assertEquals(0, knob.getLow());
-        assertEquals(100, knob.getHigh());
+        assertThat(knob.getValue(), is(value(50)));
+        assertThat(knob.getLow(), is(value(0)));
+        assertThat(knob.getHigh(), is(value(100)));
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
@@ -1873,9 +1876,9 @@ public class SysexParserIT {
         assertEquals(0, program.getPatch5().getDestinationMax());
 
         Knob knob = program.getKnob();
-        assertEquals(50, knob.getValue());
-        assertEquals(0, knob.getLow());
-        assertEquals(100, knob.getHigh());
+        assertThat(knob.getValue(), is(value(50)));
+        assertThat(knob.getLow(), is(value(0)));
+        assertThat(knob.getHigh(), is(value(100)));
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
@@ -2111,9 +2114,9 @@ public class SysexParserIT {
         assertEquals(0, program.getPatch5().getDestinationMax());
 
         Knob knob = program.getKnob();
-        assertEquals(50, knob.getValue());
-        assertEquals(0, knob.getLow());
-        assertEquals(100, knob.getHigh());
+        assertThat(knob.getValue(), is(value(50)));
+        assertThat(knob.getLow(), is(value(0)));
+        assertThat(knob.getHigh(), is(value(100)));
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
