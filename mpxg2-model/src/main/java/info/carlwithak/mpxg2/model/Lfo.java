@@ -62,8 +62,8 @@ public class Lfo implements DataObject {
         return parameter;
     }
 
-    public int getMode() {
-        return mode.getValue();
+    public LfoModeValue getMode() {
+        return mode;
     }
 
     public void setMode(int mode) {
@@ -78,40 +78,40 @@ public class Lfo implements DataObject {
         this.rate = rate;
     }
 
-    public int getPulseWidth() {
-        return pulseWidth.getValue();
+    public GenericValue<Integer> getPulseWidth() {
+        return pulseWidth;
     }
 
     public void setPulseWidth(int pulseWidth) {
         this.pulseWidth.setValue(pulseWidth);
     }
 
-    public int getPhase() {
-        return phase.getValue();
+    public GenericValue<Integer> getPhase() {
+        return phase;
     }
 
     public void setPhase(int phase) {
         this.phase.setValue(phase);
     }
 
-    public int getDepth() {
-        return depth.getValue();
+    public GenericValue<Integer> getDepth() {
+        return depth;
     }
 
     public void setDepth(int depth) {
         this.depth.setValue(depth);
     }
 
-    public int getOnLevel() {
-        return onLevel.getValue();
+    public GenericValue<Integer> getOnLevel() {
+        return onLevel;
     }
 
     public void setOnLevel(int onLevel) {
         this.onLevel.setValue(onLevel);
     }
 
-    public int getOnSource() {
-        return onSource.getValue();
+    public OnSourceValue getOnSource() {
+        return onSource;
     }
 
     public void setOnSource(final int onSource) {

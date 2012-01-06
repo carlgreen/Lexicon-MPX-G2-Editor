@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
@@ -56,6 +55,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import java.io.File;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
@@ -276,22 +277,22 @@ public class SysexParserIT {
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
-        assertEquals(1, lfo1.getMode());
-        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo1.getRate());
-        assertEquals(50, lfo1.getPulseWidth());
-        assertEquals(0, lfo1.getPhase());
-        assertEquals(100, lfo1.getDepth());
-        assertEquals(64, lfo1.getOnLevel());
-        assertEquals(0, lfo1.getOnSource());
+        assertThat(lfo1.getMode(), is(value(1)));
+        assertThat(lfo1.getRate(), is(frequency(0.60)));
+        assertThat(lfo1.getPulseWidth(), is(value(50)));
+        assertThat(lfo1.getPhase(), is(value(0)));
+        assertThat(lfo1.getDepth(), is(value(100)));
+        assertThat(lfo1.getOnLevel(), is(value(64)));
+        assertThat(lfo1.getOnSource(), is(value(0)));
 
         Lfo lfo2 = program.getLfo2();
-        assertEquals(1, lfo2.getMode());
-        assertEquals(new FrequencyRate("LFO2Rate", 0.92), lfo2.getRate());
-        assertEquals(50, lfo2.getPulseWidth());
-        assertEquals(0, lfo2.getPhase());
-        assertEquals(100, lfo2.getDepth());
-        assertEquals(64, lfo2.getOnLevel());
-        assertEquals(0, lfo2.getOnSource());
+        assertThat(lfo2.getMode(), is(value(1)));
+        assertThat(lfo2.getRate(), is(frequency(0.92)));
+        assertThat(lfo2.getPulseWidth(), is(value(50)));
+        assertThat(lfo2.getPhase(), is(value(0)));
+        assertThat(lfo2.getDepth(), is(value(100)));
+        assertThat(lfo2.getOnLevel(), is(value(64)));
+        assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
         assertEquals(0, random.getLow());
@@ -558,22 +559,22 @@ public class SysexParserIT {
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
-        assertEquals(1, lfo1.getMode());
-        assertEquals(new BeatRate("LFO1Rate", 1, 4), lfo1.getRate());
-        assertEquals(50, lfo1.getPulseWidth());
-        assertEquals(0, lfo1.getPhase());
-        assertEquals(100, lfo1.getDepth());
-        assertEquals(64, lfo1.getOnLevel());
-        assertEquals(0, lfo1.getOnSource());
+        assertThat(lfo1.getMode(), is(value(1)));
+        assertThat(lfo1.getRate(), is(beat(1, 4)));
+        assertThat(lfo1.getPulseWidth(), is(value(50)));
+        assertThat(lfo1.getPhase(), is(value(0)));
+        assertThat(lfo1.getDepth(), is(value(100)));
+        assertThat(lfo1.getOnLevel(), is(value(64)));
+        assertThat(lfo1.getOnSource(), is(value(0)));
 
         Lfo lfo2 = program.getLfo2();
-        assertEquals(1, lfo2.getMode());
-        assertEquals(new BeatRate("LFO2Rate", 1, 4), lfo2.getRate());
-        assertEquals(50, lfo2.getPulseWidth());
-        assertEquals(0, lfo2.getPhase());
-        assertEquals(100, lfo2.getDepth());
-        assertEquals(64, lfo2.getOnLevel());
-        assertEquals(0, lfo2.getOnSource());
+        assertThat(lfo2.getMode(), is(value(1)));
+        assertThat(lfo2.getRate(), is(beat(1, 4)));
+        assertThat(lfo2.getPulseWidth(), is(value(50)));
+        assertThat(lfo2.getPhase(), is(value(0)));
+        assertThat(lfo2.getDepth(), is(value(100)));
+        assertThat(lfo2.getOnLevel(), is(value(64)));
+        assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
         assertEquals(0, random.getLow());
@@ -1882,22 +1883,22 @@ public class SysexParserIT {
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
-        assertEquals(1, lfo1.getMode());
-        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo1.getRate());
-        assertEquals(50, lfo1.getPulseWidth());
-        assertEquals(0, lfo1.getPhase());
-        assertEquals(100, lfo1.getDepth());
-        assertEquals(64, lfo1.getOnLevel());
-        assertEquals(0, lfo1.getOnSource());
+        assertThat(lfo1.getMode(), is(value(1)));
+        assertThat(lfo1.getRate(), is(frequency(0.60)));
+        assertThat(lfo1.getPulseWidth(), is(value(50)));
+        assertThat(lfo1.getPhase(), is(value(0)));
+        assertThat(lfo1.getDepth(), is(value(100)));
+        assertThat(lfo1.getOnLevel(), is(value(64)));
+        assertThat(lfo1.getOnSource(), is(value(0)));
 
         Lfo lfo2 = program.getLfo2();
-        assertEquals(1, lfo2.getMode());
-        assertEquals(new FrequencyRate("LFO2Rate", 0.92), lfo2.getRate());
-        assertEquals(50, lfo2.getPulseWidth());
-        assertEquals(0, lfo2.getPhase());
-        assertEquals(100, lfo2.getDepth());
-        assertEquals(64, lfo2.getOnLevel());
-        assertEquals(0, lfo2.getOnSource());
+        assertThat(lfo2.getMode(), is(value(1)));
+        assertThat(lfo2.getRate(), is(frequency(0.92)));
+        assertThat(lfo2.getPulseWidth(), is(value(50)));
+        assertThat(lfo2.getPhase(), is(value(0)));
+        assertThat(lfo2.getDepth(), is(value(100)));
+        assertThat(lfo2.getOnLevel(), is(value(64)));
+        assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
         assertEquals(0, random.getLow());
@@ -2120,22 +2121,22 @@ public class SysexParserIT {
         assertEquals("Delay Adj", knob.getName());
 
         Lfo lfo1 = program.getLfo1();
-        assertEquals(1, lfo1.getMode());
-        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo1.getRate());
-        assertEquals(50, lfo1.getPulseWidth());
-        assertEquals(0, lfo1.getPhase());
-        assertEquals(100, lfo1.getDepth());
-        assertEquals(64, lfo1.getOnLevel());
-        assertEquals(0, lfo1.getOnSource());
+        assertThat(lfo1.getMode(), is(value(1)));
+        assertThat(lfo1.getRate(), is(frequency(0.60)));
+        assertThat(lfo1.getPulseWidth(), is(value(50)));
+        assertThat(lfo1.getPhase(), is(value(0)));
+        assertThat(lfo1.getDepth(), is(value(100)));
+        assertThat(lfo1.getOnLevel(), is(value(64)));
+        assertThat(lfo1.getOnSource(), is(value(0)));
 
         Lfo lfo2 = program.getLfo2();
-        assertEquals(1, lfo2.getMode());
-        assertEquals(new FrequencyRate("LFO2Rate", 0.92), lfo2.getRate());
-        assertEquals(50, lfo2.getPulseWidth());
-        assertEquals(0, lfo2.getPhase());
-        assertEquals(100, lfo2.getDepth());
-        assertEquals(64, lfo2.getOnLevel());
-        assertEquals(0, lfo2.getOnSource());
+        assertThat(lfo2.getMode(), is(value(1)));
+        assertThat(lfo2.getRate(), is(frequency(0.92)));
+        assertThat(lfo2.getPulseWidth(), is(value(50)));
+        assertThat(lfo2.getPhase(), is(value(0)));
+        assertThat(lfo2.getDepth(), is(value(100)));
+        assertThat(lfo2.getOnLevel(), is(value(64)));
+        assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
         assertEquals(0, random.getLow());

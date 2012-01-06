@@ -20,7 +20,6 @@ package info.carlwithak.mpxg2.sysex;
 import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
@@ -35,6 +34,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
@@ -494,13 +494,13 @@ public class SysexParserTest {
         byte[] bytes = {1, 0, 12, 3, 0, 0, 0, 0, 2, 3, 0, 0, 4, 6, 0, 4, 0, 0};
         Lfo lfo = SysexParser.readLfo(bytes);
 
-        assertEquals(1, lfo.getMode());
-        assertEquals(new FrequencyRate("LFO1Rate", 0.60), lfo.getRate());
-        assertEquals(50, lfo.getPulseWidth());
-        assertEquals(0, lfo.getPhase());
-        assertEquals(100, lfo.getDepth());
-        assertEquals(64, lfo.getOnLevel());
-        assertEquals(0, lfo.getOnSource());
+        assertThat(lfo.getMode(), is(value(1)));
+        assertThat(lfo.getRate(), is(frequency(0.60)));
+        assertThat(lfo.getPulseWidth(), is(value(50)));
+        assertThat(lfo.getPhase(), is(value(0)));
+        assertThat(lfo.getDepth(), is(value(100)));
+        assertThat(lfo.getOnLevel(), is(value(64)));
+        assertThat(lfo.getOnSource(), is(value(0)));
     }
 
     @Test
