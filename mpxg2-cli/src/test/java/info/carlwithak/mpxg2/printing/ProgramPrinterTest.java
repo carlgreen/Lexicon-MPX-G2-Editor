@@ -291,7 +291,7 @@ public class ProgramPrinterTest {
         lfo.setOnLevel(64);
         lfo.setOnSource(0);
         
-        String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      OnLvl: 64\n      OnSrc: none\n";
+        String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      OnLvl: 64\n      OnSrc: None\n";
         String actual = ProgramPrinter.printLfo(lfo);
         assertEquals(expected, actual);
     }
@@ -317,7 +317,7 @@ public class ProgramPrinterTest {
         ab.setOnLevel(64);
         ab.setOnSource(0);
 
-        String expected = "      Mode: Trigger\n      A Rate: 100\n      B Rate: 10\n      On Level: 64\n      On Source: none\n";
+        String expected = "      Mode: Trigger\n      A Rate: 100\n      B Rate: 10\n      On Level: 64\n      On Source: None\n";
         String actual = ProgramPrinter.printAb(ab);
         assertEquals(expected, actual);
     }

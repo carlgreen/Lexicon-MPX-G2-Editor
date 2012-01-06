@@ -100,7 +100,7 @@ public class ProgramPrinter {
     };
 
     private final static String[] LFO_ON_SOURCES = {
-        "none"
+        "None"
     };
 
     private final static String[] TEMPO_SOURCES = {

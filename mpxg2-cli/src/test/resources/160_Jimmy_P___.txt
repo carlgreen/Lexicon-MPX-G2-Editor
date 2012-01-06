@@ -64,7 +64,7 @@ Jimmy P...
       Phase: 0
       Depth: 100%
       OnLvl: 64
-      OnSrc: none
+      OnSrc: None
     LFO 2:
       Mode: On
       Rate: 0.92Hz
@@ -72,7 +72,7 @@ Jimmy P...
       Phase: 0
       Depth: 100%
       OnLvl: 64
-      OnSrc: none
+      OnSrc: None
     Random:
       Low: 0
       High: 127
@@ -82,7 +82,7 @@ Jimmy P...
       A Rate: 100
       B Rate: 100
       On Level: 64
-      On Source: none
+      On Source: None
     Envelope:
       Src1: Off
       Src2: Off
