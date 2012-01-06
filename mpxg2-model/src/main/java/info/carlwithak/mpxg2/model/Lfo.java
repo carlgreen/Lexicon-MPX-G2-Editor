@@ -23,7 +23,7 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class Lfo implements DataObject {
-    private GenericValue<Integer> mode = new GenericValue<Integer>("Mode", "", 0, 6);
+    private LfoModeValue mode = new LfoModeValue("Mode");
     private Rate rate;
     private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "", -120, 120);
