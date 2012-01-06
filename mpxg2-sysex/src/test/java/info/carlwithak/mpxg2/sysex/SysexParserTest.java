@@ -518,11 +518,11 @@ public class SysexParserTest {
         byte[] bytes = {0, 0, 4, 6, 4, 6, 0, 4, 0, 0};
 
         Ab ab = SysexParser.readAb(bytes);
-        assertEquals(0, ab.getMode());
-        assertEquals(100, ab.getARate());
-        assertEquals(100, ab.getBRate());
-        assertEquals(64, ab.getOnLevel());
-        assertEquals(0, ab.getOnSource());
+        assertThat(ab.getMode(), is(value(0)));
+        assertThat(ab.getARate(), is(value(100)));
+        assertThat(ab.getBRate(), is(value(100)));
+        assertThat(ab.getOnLevel(), is(value(64)));
+        assertThat(ab.getOnSource(), is(value(0)));
     }
 
     @Test

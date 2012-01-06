@@ -54,40 +54,40 @@ public class Ab implements DataObject {
         return parameter;
     }
 
-    public int getMode() {
-        return mode.getValue();
+    public AbModeValue getMode() {
+        return mode;
     }
 
     public void setMode(final int mode) {
         this.mode.setValue(mode);
     }
 
-    public int getARate() {
-        return aRate.getValue();
+    public GenericValue<Integer> getARate() {
+        return aRate;
     }
 
     public void setARate(final int aRate) {
         this.aRate.setValue(aRate);
     }
 
-    public int getBRate() {
-        return bRate.getValue();
+    public GenericValue<Integer> getBRate() {
+        return bRate;
     }
 
     public void setBRate(final int bRate) {
         this.bRate.setValue(bRate);
     }
 
-    public int getOnLevel() {
-        return onLevel.getValue();
+    public GenericValue<Integer> getOnLevel() {
+        return onLevel;
     }
 
     public void setOnLevel(int onLevel) {
         this.onLevel.setValue(onLevel);
     }
 
-    public int getOnSource() {
-        return onSource.getValue();
+    public OnSourceValue getOnSource() {
+        return onSource;
     }
 
     public void setOnSource(final int onSource) {

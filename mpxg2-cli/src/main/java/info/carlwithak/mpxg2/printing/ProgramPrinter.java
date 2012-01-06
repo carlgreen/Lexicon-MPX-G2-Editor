@@ -95,10 +95,6 @@ public class ProgramPrinter {
         }
     };
 
-    private final static String[] LFO_ON_SOURCES = {
-        "None"
-    };
-
     private final static String[] TEMPO_SOURCES = {
         "internal"
     };
@@ -109,10 +105,6 @@ public class ProgramPrinter {
 
     private final static String[] TAP_SOURCES = {
         "none"
-    };
-
-    private final static String[] AB_MODES = {
-        "Trigger", "Gate"
     };
 
     private final static String[] ENVELOPE_GENERATOR_SOURCES = {
@@ -517,11 +509,11 @@ public class ProgramPrinter {
 
     static String printAb(final Ab ab) {
         final StringBuilder sb = new StringBuilder();
-        sb.append("      Mode: ").append(abModeToString(ab.getMode())).append("\n");
-        sb.append("      ARate: ").append(ab.getARate()).append("\n");
-        sb.append("      BRate: ").append(ab.getBRate()).append("\n");
-        sb.append("      OnLvl: ").append(ab.getOnLevel()).append("\n");
-        sb.append("      OnSrc: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
+        sb.append("  ").append(printParameter(ab.getMode()));
+        sb.append("  ").append(printParameter(ab.getARate()));
+        sb.append("  ").append(printParameter(ab.getBRate()));
+        sb.append("  ").append(printParameter(ab.getOnLevel()));
+        sb.append("  ").append(printParameter(ab.getOnSource()));
         return sb.toString();
     }
 
@@ -552,10 +544,6 @@ public class ProgramPrinter {
         return EFFECT_PARAMETER_UNITS[effectType - 13][effectParameter];
     }
 
-    private static String lfoOnSourceToString(final int lfoOnSource) {
-        return LFO_ON_SOURCES[lfoOnSource];
-    }
-
     private static String tempoSourceToString(final int tempoSource) {
         return TEMPO_SOURCES[tempoSource];
     }
@@ -572,10 +560,6 @@ public class ProgramPrinter {
 
     private static String tapSourceToString(final int tapSource) {
         return TAP_SOURCES[tapSource];
-    }
-
-    private static String abModeToString(final int abMode) {
-        return AB_MODES[abMode];
     }
 
     private static String envelopeGeneratorSourceToString(final int envelopeGeneratorSource) {
