@@ -25,7 +25,7 @@ public class Knob implements DataObject {
     private GenericValue<Integer> value = new GenericValue<Integer>("Value", "", 0, 127);
     private GenericValue<Integer> low = new GenericValue<Integer>("Low", "", 0, 127);
     private GenericValue<Integer> high = new GenericValue<Integer>("High", "", 0, 127);
-    private String name;
+    private String name; // TODO use some parameter class for this
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
