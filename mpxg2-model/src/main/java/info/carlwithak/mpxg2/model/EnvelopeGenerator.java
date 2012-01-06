@@ -24,7 +24,7 @@ package info.carlwithak.mpxg2.model;
  */
 public class EnvelopeGenerator implements DataObject {
     private GenericValue<Integer> src1 = new GenericValue<Integer>("Src1", "", 0, 20);
-    private GenericValue<Integer> src2 = new GenericValue<Integer>("Src1", "", 0, 20);
+    private GenericValue<Integer> src2 = new GenericValue<Integer>("Src2", "", 0, 20);
     private GenericValue<Integer> aTrim = new GenericValue<Integer>("ATrim", "", 0, 100);
     private GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
 
