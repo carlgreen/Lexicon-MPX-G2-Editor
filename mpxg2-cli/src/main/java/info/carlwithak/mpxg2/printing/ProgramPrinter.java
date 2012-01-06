@@ -115,10 +115,6 @@ public class ProgramPrinter {
         "Brite", "Norml", "Warm", "Dark"
     };
 
-    private final static String[] NOISE_GATE_ENABLES = {
-        "Off", "Guitar Input", "Returns Only"
-    };
-
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     public static String print(Program program) throws PrintException {
@@ -203,15 +199,15 @@ public class ProgramPrinter {
         sb.append("  Speaker Sim: ").append(onOffToString(program.isSpeakerSimulatorEnable())).append("\n");
         sb.append("    Cabinet: ").append(speakerSimulatorCabinetToString(program.getSpeakerSimulatorCabinet())).append("\n");
         sb.append("  Noise Gate:\n");
-        sb.append("    Enable: ").append(noiseGateEnableToString(program.getNoiseGate().getEnable())).append("\n");
-        sb.append("    Send: ").append(onOffToString(program.getNoiseGate().isSend())).append("\n");
-        sb.append("    Thrsh: ").append(program.getNoiseGate().getThreshold()).append("dB\n");
-        sb.append("    Atten: ").append(program.getNoiseGate().getAttenuation()).append("dB\n");
-        sb.append("    Offset: ").append(program.getNoiseGate().getOffset()).append("dB\n");
-        sb.append("    ATime: ").append(program.getNoiseGate().getATime()).append("\n");
-        sb.append("    HTime: ").append(program.getNoiseGate().getHTime()).append("\n");
-        sb.append("    RTime: ").append(program.getNoiseGate().getRTime()).append("\n");
-        sb.append("    Delay: ").append(program.getNoiseGate().getDelay()).append("\n");
+        sb.append(printParameter(program.getNoiseGate().getEnable()));
+        sb.append(printParameter(program.getNoiseGate().isSend()));
+        sb.append(printParameter(program.getNoiseGate().getThreshold()));
+        sb.append(printParameter(program.getNoiseGate().getAttenuation()));
+        sb.append(printParameter(program.getNoiseGate().getOffset()));
+        sb.append(printParameter(program.getNoiseGate().getATime()));
+        sb.append(printParameter(program.getNoiseGate().getHTime()));
+        sb.append(printParameter(program.getNoiseGate().getRTime()));
+        sb.append(printParameter(program.getNoiseGate().getDelay()));
         return sb.toString().trim();
     }
 
@@ -562,7 +558,4 @@ public class ProgramPrinter {
         return cabinet + speaker;
     }
 
-    private static String noiseGateEnableToString(final int noiseGateEnable) {
-        return NOISE_GATE_ENABLES[noiseGateEnable];
-    }
 }

@@ -25,86 +25,86 @@ package info.carlwithak.mpxg2.model;
  * @author Carl Green
  */
 public class NoiseGate {
-    private int enable;
-    private boolean send;
-    private int threshold;
-    private int attenuation;
-    private int offset;
-    private int aTime;
-    private int hTime;
-    private int rTime;
-    private int delay;
+    private NoiseGateEnableValue enable = new NoiseGateEnableValue("Enable");
+    private OnOffValue send = new OnOffValue("Send");
+    private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", 0, 0);
+    private GenericValue<Integer> attenuation = new GenericValue<Integer>("Atten", "dB", 0, 0);
+    private GenericValue<Integer> offset = new GenericValue<Integer>("Offset", "dB", 0, 0);
+    private GenericValue<Integer> aTime = new GenericValue<Integer>("ATime", "", 0, 0);
+    private GenericValue<Integer> hTime = new GenericValue<Integer>("HTime", "", 0, 0);
+    private GenericValue<Integer> rTime = new GenericValue<Integer>("RTime", "", 0, 0);
+    private GenericValue<Integer> delay = new GenericValue<Integer>("Delay", "", 0, 0);
 
-    public int getEnable() {
+    public NoiseGateEnableValue getEnable() {
         return enable;
     }
 
     public void setEnable(int enable) {
-        this.enable = enable;
+        this.enable.setValue(enable);
     }
 
-    public boolean isSend() {
+    public OnOffValue isSend() {
         return send;
     }
 
     public void setSend(boolean send) {
-        this.send = send;
+        this.send.setValue(send);
     }
 
-    public int getThreshold() {
+    public GenericValue<Integer> getThreshold() {
         return threshold;
     }
 
     public void setThreshold(int threshold) {
-        this.threshold = threshold;
+        this.threshold.setValue(threshold);
     }
 
-    public int getAttenuation() {
+    public GenericValue<Integer> getAttenuation() {
         return attenuation;
     }
 
     public void setAttenuation(int attenuation) {
-        this.attenuation = attenuation;
+        this.attenuation.setValue(attenuation);
     }
 
-    public int getOffset() {
+    public GenericValue<Integer> getOffset() {
         return offset;
     }
 
     public void setOffset(int offset) {
-        this.offset = offset;
+        this.offset.setValue(offset);
     }
 
-    public int getATime() {
+    public GenericValue<Integer> getATime() {
         return aTime;
     }
 
     public void setATime(int aTime) {
-        this.aTime = aTime;
+        this.aTime.setValue(aTime);
     }
 
-    public int getHTime() {
+    public GenericValue<Integer> getHTime() {
         return hTime;
     }
 
     public void setHTime(int hTime) {
-        this.hTime = hTime;
+        this.hTime.setValue(hTime);
     }
 
-    public int getRTime() {
+    public GenericValue<Integer> getRTime() {
         return rTime;
     }
 
     public void setRTime(int rTime) {
-        this.rTime = rTime;
+        this.rTime.setValue(rTime);
     }
 
-    public int getDelay() {
+    public GenericValue<Integer> getDelay() {
         return delay;
     }
 
     public void setDelay(int delay) {
-        this.delay = delay;
+        this.delay.setValue(delay);
     }
 
 }

@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
+import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
@@ -311,15 +312,17 @@ public class SysexParserIT {
         assertThat(envelopeGenerator.getATrim(), is(value(100)));
         assertThat(envelopeGenerator.getResponse(), is(value(64)));
 
-        assertEquals(1, program.getNoiseGate().getEnable());
-        assertTrue(program.getNoiseGate().isSend());
-        assertEquals(-83, program.getNoiseGate().getThreshold());
-        assertEquals(-85, program.getNoiseGate().getAttenuation());
-        assertEquals(-3, program.getNoiseGate().getOffset());
-        assertEquals(0, program.getNoiseGate().getATime());
-        assertEquals(100, program.getNoiseGate().getHTime());
-        assertEquals(100, program.getNoiseGate().getRTime());
-        assertEquals(0, program.getNoiseGate().getDelay());
+        NoiseGate noiseGate = program.getNoiseGate();
+        assertThat(noiseGate.getEnable(), is(value(1)));
+        assertThat(noiseGate.isSend(), is(value(true)));
+        assertThat(noiseGate.getThreshold(), is(value(-83)));
+        assertThat(noiseGate.getAttenuation(), is(value(-85)));
+        assertThat(noiseGate.getOffset(), is(value(-3)));
+        assertThat(noiseGate.getATime(), is(value(0)));
+        assertThat(noiseGate.getHTime(), is(value(100)));
+        assertThat(noiseGate.getRTime(), is(value(100)));
+        assertThat(noiseGate.getDelay(), is(value(0)));
+        
 
         assertEquals(0, program.getBypassState());
 
@@ -1917,15 +1920,16 @@ public class SysexParserIT {
         assertThat(envelopeGenerator.getATrim(), is(value(100)));
         assertThat(envelopeGenerator.getResponse(), is(value(64)));
 
-        assertEquals(0, program.getNoiseGate().getEnable());
-        assertFalse(program.getNoiseGate().isSend());
-        assertEquals(-83, program.getNoiseGate().getThreshold());
-        assertEquals(-80, program.getNoiseGate().getAttenuation());
-        assertEquals(-3, program.getNoiseGate().getOffset());
-        assertEquals(0, program.getNoiseGate().getATime());
-        assertEquals(100, program.getNoiseGate().getHTime());
-        assertEquals(100, program.getNoiseGate().getRTime());
-        assertEquals(0, program.getNoiseGate().getDelay());
+        NoiseGate noiseGate = program.getNoiseGate();
+        assertThat(noiseGate.getEnable(), is(value(0)));
+        assertThat(noiseGate.isSend(), is(value(false)));
+        assertThat(noiseGate.getThreshold(), is(value(-83)));
+        assertThat(noiseGate.getAttenuation(), is(value(-80)));
+        assertThat(noiseGate.getOffset(), is(value(-3)));
+        assertThat(noiseGate.getATime(), is(value(0)));
+        assertThat(noiseGate.getHTime(), is(value(100)));
+        assertThat(noiseGate.getRTime(), is(value(100)));
+        assertThat(noiseGate.getDelay(), is(value(0)));
 
         assertEquals(0, program.getBypassState());
 
@@ -2155,15 +2159,16 @@ public class SysexParserIT {
         assertThat(envelopeGenerator.getATrim(), is(value(100)));
         assertThat(envelopeGenerator.getResponse(), is(value(64)));
 
-        assertEquals(0, program.getNoiseGate().getEnable());
-        assertFalse(program.getNoiseGate().isSend());
-        assertEquals(-83, program.getNoiseGate().getThreshold());
-        assertEquals(-80, program.getNoiseGate().getAttenuation());
-        assertEquals(-3, program.getNoiseGate().getOffset());
-        assertEquals(0, program.getNoiseGate().getATime());
-        assertEquals(100, program.getNoiseGate().getHTime());
-        assertEquals(100, program.getNoiseGate().getRTime());
-        assertEquals(0, program.getNoiseGate().getDelay());
+        NoiseGate noiseGate = program.getNoiseGate();
+        assertThat(noiseGate.getEnable(), is(value(0)));
+        assertThat(noiseGate.isSend(), is(value(false)));
+        assertThat(noiseGate.getThreshold(), is(value(-83)));
+        assertThat(noiseGate.getAttenuation(), is(value(-80)));
+        assertThat(noiseGate.getOffset(), is(value(-3)));
+        assertThat(noiseGate.getATime(), is(value(0)));
+        assertThat(noiseGate.getHTime(), is(value(100)));
+        assertThat(noiseGate.getRTime(), is(value(100)));
+        assertThat(noiseGate.getDelay(), is(value(0)));
 
         assertEquals(0, program.getBypassState());
 

@@ -467,15 +467,15 @@ public class SysexParserTest {
         File preset = new File(this.getClass().getClassLoader().getResource("noisegate.syx").toURI());
         NoiseGate noiseGate = SysexParser.parsePrograms(preset).get(0).getNoiseGate();
 
-        assertEquals(2, noiseGate.getEnable());
-        assertTrue(noiseGate.isSend());
-        assertEquals(-31, noiseGate.getThreshold());
-        assertEquals(-7, noiseGate.getAttenuation());
-        assertEquals(-11, noiseGate.getOffset());
-        assertEquals(1999, noiseGate.getATime());
-        assertEquals(499, noiseGate.getHTime());
-        assertEquals(2000, noiseGate.getRTime());
-        assertEquals(10, noiseGate.getDelay());
+        assertThat(noiseGate.getEnable(), is(value(2)));
+        assertThat(noiseGate.isSend(), is(value(true)));
+        assertThat(noiseGate.getThreshold(), is(value(-31)));
+        assertThat(noiseGate.getAttenuation(), is(value(-7)));
+        assertThat(noiseGate.getOffset(), is(value(-11)));
+        assertThat(noiseGate.getATime(), is(value(1999)));
+        assertThat(noiseGate.getHTime(), is(value(499)));
+        assertThat(noiseGate.getRTime(), is(value(2000)));
+        assertThat(noiseGate.getDelay(), is(value(10)));
     }
 
     @Test
