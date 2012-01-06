@@ -188,7 +188,7 @@ public class ProgramPrinter {
         sb.append("    Beat Value: ").append(beatValueToString(program.getBeatValue())).append("\n");
         sb.append("    Tap Average: ").append(program.getTapAverage()).append(" beats\n");
         sb.append("    Tap Source: ").append(tapSourceToString(program.getTapSource())).append("\n");
-        sb.append("  Speaker Sim: ").append(onOffToString(program.isSpeakerSimulatorEnable())).append("\n");
+        sb.append("  Speaker Sim: ").append(program.isSpeakerSimulatorEnable().getDisplayString()).append("\n");
         sb.append(printParameter(program.getSpeakerSimulatorCabinet()));
         sb.append("  Noise Gate:\n");
         sb.append(printParameter(program.getNoiseGate().getEnable()));

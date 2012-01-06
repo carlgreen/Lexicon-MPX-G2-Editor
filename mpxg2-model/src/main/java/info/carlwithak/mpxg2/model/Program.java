@@ -128,7 +128,7 @@ public class Program {
     private int bypassState;
 
     // speaker simulator
-    private boolean speakerSimulatorEnable;
+    private OnOffValue speakerSimulatorEnable = new OnOffValue("Enable");
     private SpeakerSimulatorCabinetValue speakerSimulatorCabinet = new SpeakerSimulatorCabinetValue("Cabinet");
 
     // mix
@@ -751,12 +751,12 @@ public class Program {
         this.bypassState = bypassState;
     }
 
-    public boolean isSpeakerSimulatorEnable() {
+    public OnOffValue isSpeakerSimulatorEnable() {
         return speakerSimulatorEnable;
     }
 
     public void setSpeakerSimulatorEnable(final boolean speakerSimulatorEnable) {
-        this.speakerSimulatorEnable = speakerSimulatorEnable;
+        this.speakerSimulatorEnable.setValue(speakerSimulatorEnable);
     }
 
     public SpeakerSimulatorCabinetValue getSpeakerSimulatorCabinet() {
