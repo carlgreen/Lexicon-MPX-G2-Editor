@@ -129,7 +129,7 @@ public class Program {
 
     // speaker simulator
     private boolean speakerSimulatorEnable;
-    private int speakerSimulatorCabinet;
+    private SpeakerSimulatorCabinetValue speakerSimulatorCabinet = new SpeakerSimulatorCabinetValue("Cabinet");
 
     // mix
     private int sendLevel;
@@ -759,12 +759,12 @@ public class Program {
         this.speakerSimulatorEnable = speakerSimulatorEnable;
     }
 
-    public int getSpeakerSimulatorCabinet() {
+    public SpeakerSimulatorCabinetValue getSpeakerSimulatorCabinet() {
         return speakerSimulatorCabinet;
     }
 
     public void setSpeakerSimulatorCabinet(final int speakerSimulatorCabinet) {
-        this.speakerSimulatorCabinet = speakerSimulatorCabinet;
+        this.speakerSimulatorCabinet.setValue(speakerSimulatorCabinet);
     }
 
     public int getSendLevel() {

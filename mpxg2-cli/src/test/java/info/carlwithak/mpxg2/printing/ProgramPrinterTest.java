@@ -344,11 +344,4 @@ public class ProgramPrinterTest {
         assertEquals("126 beats", ProgramPrinter.beatValueToString(128));
     }
 
-    @Test
-    public void testSpeakerSimulatorCabinetToString() {
-        assertEquals("Combo1Brite", ProgramPrinter.speakerSimulatorCabinetToString(0));
-        assertEquals("Combo1Norml", ProgramPrinter.speakerSimulatorCabinetToString(1));
-        assertEquals("Combo1Dark", ProgramPrinter.speakerSimulatorCabinetToString(3));
-        assertEquals("Stack2Warm", ProgramPrinter.speakerSimulatorCabinetToString(14));
-    }
 }

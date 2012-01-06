@@ -327,7 +327,7 @@ public class SysexParserIT {
         assertEquals(0, program.getBypassState());
 
         assertFalse(program.isSpeakerSimulatorEnable());
-        assertEquals(1, program.getSpeakerSimulatorCabinet());
+        assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
         assertEquals(0, program.getSendLevel());
         assertEquals(0, program.getSendBypassLevel());
@@ -1934,7 +1934,7 @@ public class SysexParserIT {
         assertEquals(0, program.getBypassState());
 
         assertFalse(program.isSpeakerSimulatorEnable());
-        assertEquals(1, program.getSpeakerSimulatorCabinet());
+        assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
         assertEquals(0, program.getSendLevel());
         assertEquals(0, program.getSendBypassLevel());
@@ -2173,7 +2173,7 @@ public class SysexParserIT {
         assertEquals(0, program.getBypassState());
 
         assertFalse(program.isSpeakerSimulatorEnable());
-        assertEquals(1, program.getSpeakerSimulatorCabinet());
+        assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
         assertEquals(0, program.getSendLevel());
         assertEquals(0, program.getSendBypassLevel());

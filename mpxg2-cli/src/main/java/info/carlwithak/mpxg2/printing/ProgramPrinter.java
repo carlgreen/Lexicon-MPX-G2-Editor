@@ -107,14 +107,6 @@ public class ProgramPrinter {
         "none"
     };
 
-    private final static String[] SPEAKER_SIMULATOR_CABINET_DESIGNS = {
-        "Combo1", "Combo2", "Stack1", "Stack2"
-    };
-
-    private final static String[] SPEAKER_SIMULATOR_SPEAKER_TYPES = {
-        "Brite", "Norml", "Warm", "Dark"
-    };
-
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     public static String print(Program program) throws PrintException {
@@ -197,7 +189,7 @@ public class ProgramPrinter {
         sb.append("    Tap Average: ").append(program.getTapAverage()).append(" beats\n");
         sb.append("    Tap Source: ").append(tapSourceToString(program.getTapSource())).append("\n");
         sb.append("  Speaker Sim: ").append(onOffToString(program.isSpeakerSimulatorEnable())).append("\n");
-        sb.append("    Cabinet: ").append(speakerSimulatorCabinetToString(program.getSpeakerSimulatorCabinet())).append("\n");
+        sb.append(printParameter(program.getSpeakerSimulatorCabinet()));
         sb.append("  Noise Gate:\n");
         sb.append(printParameter(program.getNoiseGate().getEnable()));
         sb.append(printParameter(program.getNoiseGate().isSend()));
@@ -550,12 +542,6 @@ public class ProgramPrinter {
 
     private static String tapSourceToString(final int tapSource) {
         return TAP_SOURCES[tapSource];
-    }
-
-    static String speakerSimulatorCabinetToString(final int speakerSimulatorCabinet) {
-        String cabinet = SPEAKER_SIMULATOR_CABINET_DESIGNS[speakerSimulatorCabinet / 4];
-        String speaker = SPEAKER_SIMULATOR_SPEAKER_TYPES[speakerSimulatorCabinet % 4];
-        return cabinet + speaker;
     }
 
 }
