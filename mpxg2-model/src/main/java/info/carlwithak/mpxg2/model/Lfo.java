@@ -29,7 +29,7 @@ public class Lfo implements DataObject {
     private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "", -120, 120);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
     private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
-    private GenericValue<Integer> onSource = new GenericValue<Integer>("OnSrc", "", 0, 127); // TODO not sure what this goes up to
+    private OnSourceValue onSource = new OnSourceValue("OnSrc");
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
