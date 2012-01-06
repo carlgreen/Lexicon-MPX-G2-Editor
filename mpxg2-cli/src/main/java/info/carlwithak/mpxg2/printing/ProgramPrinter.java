@@ -35,6 +35,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import java.text.DecimalFormat;
 
 import static info.carlwithak.mpxg2.printing.Util.onOffToString;
+import static info.carlwithak.mpxg2.printing.Util.printParameter;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
@@ -183,33 +184,33 @@ public class ProgramPrinter {
         sb.append("      Bypass Level: ").append(program.getPostBypassLevel()).append("dB\n");
         if (program.getEffect1() != null) {
             sb.append("    FX1:\n");
-            sb.append("      Mix: ").append(program.getEffect1().getMix().getDisplayString()).append("\n");
-            sb.append("      Level: ").append(program.getEffect1().getLevel().getDisplayString()).append("\n");
+            sb.append("  ").append(printParameter(program.getEffect1().getMix()));
+            sb.append("  ").append(printParameter(program.getEffect1().getLevel()));
         }
         if (program.getEffect2() != null) {
             sb.append("    FX2:\n");
-            sb.append("      Mix: ").append(program.getEffect2().getMix().getDisplayString()).append("\n");
-            sb.append("      Level: ").append(program.getEffect2().getLevel().getDisplayString()).append("\n");
+            sb.append("  ").append(printParameter(program.getEffect2().getMix()));
+            sb.append("  ").append(printParameter(program.getEffect2().getLevel()));
         }
         if (program.getChorus() != null) {
             sb.append("    Chorus:\n");
-            sb.append("      Mix: ").append(program.getChorus().getMix().getDisplayString()).append("\n");
-            sb.append("      Level: ").append(program.getChorus().getLevel().getDisplayString()).append("\n");
+            sb.append("  ").append(printParameter(program.getChorus().getMix()));
+            sb.append("  ").append(printParameter(program.getChorus().getLevel()));
         }
         if (program.getDelay() != null) {
             sb.append("    Delay:\n");
-            sb.append("      Mix: ").append(program.getDelay().getMix().getDisplayString()).append("\n");
-            sb.append("      Level: ").append(program.getDelay().getLevel().getDisplayString()).append("\n");
+            sb.append("  ").append(printParameter(program.getDelay().getMix()));
+            sb.append("  ").append(printParameter(program.getDelay().getLevel()));
         }
         if (program.getReverb() != null) {
             sb.append("    Reverb:\n");
-            sb.append("      Mix: ").append(program.getReverb().getMix().getDisplayString()).append("\n");
-            sb.append("      Level: ").append(program.getReverb().getLevel().getDisplayString()).append("\n");
+            sb.append("  ").append(printParameter(program.getReverb().getMix()));
+            sb.append("  ").append(printParameter(program.getReverb().getLevel()));
         }
         if (program.getEq() != null) {
             sb.append("    Eq:\n");
-            sb.append("      Mix: ").append(program.getEq().getMix().getDisplayString()).append("\n");
-            sb.append("      Level: ").append(program.getEq().getLevel().getDisplayString()).append("\n");
+            sb.append("  ").append(printParameter(program.getEq().getMix()));
+            sb.append("  ").append(printParameter(program.getEq().getLevel()));
         }
         sb.append("  Tempo:\n");
         sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");
