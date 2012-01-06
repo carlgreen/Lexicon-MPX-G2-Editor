@@ -330,7 +330,7 @@ public class ProgramPrinterTest {
         envelopeGenerator.setATrim(17);
         envelopeGenerator.setResponse(100);
 
-        String expected = "      Src1: In\n      Src2: Off\n      A Trim: 17\n      Resp: 100\n";
+        String expected = "      Src1: In\n      Src2: Off\n      ATrim: 17\n      Resp: 100\n";
         String actual = ProgramPrinter.printEnvelopeGenerator(envelopeGenerator);
         assertEquals(expected, actual);
     }

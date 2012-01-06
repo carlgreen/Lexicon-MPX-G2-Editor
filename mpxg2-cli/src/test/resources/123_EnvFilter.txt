@@ -94,7 +94,7 @@ EnvFilter
     Envelope:
       Src1: In
       Src2: In
-      A Trim: 70
+      ATrim: 70
       Resp: 80
   Mix:
     Send:

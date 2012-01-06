@@ -90,7 +90,7 @@ EnvFilter LP
     Envelope:
       Src1: In
       Src2: In
-      A Trim: 100
+      ATrim: 100
       Resp: 83
   Mix:
     Send:

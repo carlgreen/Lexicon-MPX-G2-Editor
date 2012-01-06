@@ -130,7 +130,7 @@ Env Trem
     Envelope:
       Src1: In
       Src2: In
-      A Trim: 100
+      ATrim: 100
       Resp: 71
   Mix:
     Send:

@@ -521,7 +521,7 @@ public class ProgramPrinter {
         final StringBuilder sb = new StringBuilder();
         sb.append("      Src1: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc1())).append("\n");
         sb.append("      Src2: ").append(envelopeGeneratorSourceToString(envelopeGenerator.getSrc2())).append("\n");
-        sb.append("      A Trim: ").append(envelopeGenerator.getATrim()).append("\n");
+        sb.append("      ATrim: ").append(envelopeGenerator.getATrim()).append("\n");
         sb.append("      Resp: ").append(envelopeGenerator.getResponse()).append("\n");
         return sb.toString();
     }

@@ -145,7 +145,7 @@ TechnoChords
     Envelope:
       Src1: In
       Src2: Off
-      A Trim: 17
+      ATrim: 17
       Resp: 100
   Mix:
     Send:

@@ -86,7 +86,7 @@ Env Wah
     Envelope:
       Src1: EQ L
       Src2: EQ R
-      A Trim: 100
+      ATrim: 100
       Resp: 100
   Mix:
     Send:

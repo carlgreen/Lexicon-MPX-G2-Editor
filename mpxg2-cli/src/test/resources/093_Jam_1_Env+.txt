@@ -150,7 +150,7 @@ Jam 1 Env+
     Envelope:
       Src1: In
       Src2: In
-      A Trim: 77
+      ATrim: 77
       Resp: 84
   Mix:
     Send:

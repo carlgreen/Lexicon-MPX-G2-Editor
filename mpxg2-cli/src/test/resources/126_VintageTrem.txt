@@ -53,7 +53,7 @@ Vintage Trem
     Envelope:
       Src1: Off
       Src2: Off
-      A Trim: 100
+      ATrim: 100
       Resp: 64
   Mix:
     Send:
