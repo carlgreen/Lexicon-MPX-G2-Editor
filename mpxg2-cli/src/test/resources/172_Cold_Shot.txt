@@ -138,10 +138,10 @@ Cold Shot
       Rate: 1.00Hz
     A/B:
       Mode: Trigger
-      A Rate: 5
-      B Rate: 2
-      On Level: 64
-      On Source: None
+      ARate: 5
+      BRate: 2
+      OnLvl: 64
+      OnSrc: None
     Envelope:
       Src1: Off
       Src2: Off

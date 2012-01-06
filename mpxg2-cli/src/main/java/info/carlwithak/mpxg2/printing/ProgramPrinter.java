@@ -518,10 +518,10 @@ public class ProgramPrinter {
     static String printAb(final Ab ab) {
         final StringBuilder sb = new StringBuilder();
         sb.append("      Mode: ").append(abModeToString(ab.getMode())).append("\n");
-        sb.append("      A Rate: ").append(ab.getARate()).append("\n");
-        sb.append("      B Rate: ").append(ab.getBRate()).append("\n");
-        sb.append("      On Level: ").append(ab.getOnLevel()).append("\n");
-        sb.append("      On Source: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
+        sb.append("      ARate: ").append(ab.getARate()).append("\n");
+        sb.append("      BRate: ").append(ab.getBRate()).append("\n");
+        sb.append("      OnLvl: ").append(ab.getOnLevel()).append("\n");
+        sb.append("      OnSrc: ").append(lfoOnSourceToString(ab.getOnSource())).append("\n");
         return sb.toString();
     }
 

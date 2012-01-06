@@ -88,10 +88,10 @@ Cordovox
       Rate: 1.00Hz
     A/B:
       Mode: Trigger
-      A Rate: 1
-      B Rate: 1
-      On Level: 64
-      On Source: None
+      ARate: 1
+      BRate: 1
+      OnLvl: 64
+      OnSrc: None
     Envelope:
       Src1: Off
       Src2: Off

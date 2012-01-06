@@ -102,10 +102,10 @@ BassPitchPdl
       Rate: 1.00Hz
     A/B:
       Mode: Trigger
-      A Rate: 100
-      B Rate: 100
-      On Level: 64
-      On Source: None
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
     Envelope:
       Src1: In
       Src2: In

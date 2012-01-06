@@ -112,10 +112,10 @@ Rotary Cab
       Rate: 1.00Hz
     A/B:
       Mode: Trigger
-      A Rate: 1
-      B Rate: 3
-      On Level: 64
-      On Source: None
+      ARate: 1
+      BRate: 3
+      OnLvl: 64
+      OnSrc: None
     Envelope:
       Src1: In
       Src2: In
