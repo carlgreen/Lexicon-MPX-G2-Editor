@@ -69,8 +69,8 @@ China Grove
       OnLvl: 64
       OnSrc: None
     Random:
-      Low: 0
-      High: 127
+      RndLo: 0
+      RndHi: 127
       Rate: 1.00Hz
     A/B:
       Mode: Trigger

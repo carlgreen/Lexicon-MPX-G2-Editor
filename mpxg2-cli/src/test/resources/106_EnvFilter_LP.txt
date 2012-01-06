@@ -78,8 +78,8 @@ EnvFilter LP
       OnLvl: 64
       OnSrc: None
     Random:
-      Low: 0
-      High: 50
+      RndLo: 0
+      RndHi: 50
       Rate: 1.00Hz
     A/B:
       Mode: Trigger

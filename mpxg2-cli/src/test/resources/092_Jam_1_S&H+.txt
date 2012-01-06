@@ -133,8 +133,8 @@ Jam 1 S&H+
       OnLvl: 64
       OnSrc: None
     Random:
-      Low: 0
-      High: 20
+      RndLo: 0
+      RndHi: 20
       Rate: 4:1
     A/B:
       Mode: Trigger

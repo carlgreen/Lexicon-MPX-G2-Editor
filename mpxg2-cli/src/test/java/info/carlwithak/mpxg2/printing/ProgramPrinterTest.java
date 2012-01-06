@@ -303,7 +303,7 @@ public class ProgramPrinterTest {
         random.setHigh(50);
         random.setRate(new BeatRate("Rate", 3, 1));
 
-        String expected = "      Low: 0\n      High: 50\n      Rate: 3:1\n";
+        String expected = "      RndLo: 0\n      RndHi: 50\n      Rate: 3:1\n";
         String actual = ProgramPrinter.printRandom(random);
         assertEquals(expected, actual);
     }

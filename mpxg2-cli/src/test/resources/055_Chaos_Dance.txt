@@ -126,8 +126,8 @@ Chaos Dance
       OnLvl: 64
       OnSrc: None
     Random:
-      Low: 0
-      High: 50
+      RndLo: 0
+      RndHi: 50
       Rate: 3:1
     A/B:
       Mode: Trigger
