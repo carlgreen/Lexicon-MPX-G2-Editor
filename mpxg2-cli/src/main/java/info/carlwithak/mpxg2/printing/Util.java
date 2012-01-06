@@ -209,7 +209,7 @@ public class Util {
         return EQ_MODES[eqMode];
     }
 
-    public static String printParameter(final Parameter parameter) throws PrintException {
+    public static String printParameter(final Parameter parameter) {
         StringBuilder sb = new StringBuilder();
         sb.append("    ");
         sb.append(parameter.getName());
