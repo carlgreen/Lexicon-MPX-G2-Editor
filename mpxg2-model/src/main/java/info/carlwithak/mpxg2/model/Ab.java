@@ -27,7 +27,7 @@ public class Ab implements DataObject {
     private GenericValue<Integer> aRate = new GenericValue<Integer>("ARate", "", 0, 100);
     private GenericValue<Integer> bRate = new GenericValue<Integer>("BRate", "", 0, 100);
     private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
-    private GenericValue<Integer> onSource = new GenericValue<Integer>("OnSrc", "", 0, 127); // TODO not sure what this goes up to
+    private OnSourceValue onSource = new OnSourceValue("OnSrc");
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
