@@ -214,7 +214,7 @@ public class Util {
         sb.append("    ");
         sb.append(parameter.getName());
         sb.append(": ");
-        sb.append(ParameterPrinter.print(parameter));
+        sb.append(parameter.getDisplayString());
         sb.append("\n");
         return sb.toString();
     }

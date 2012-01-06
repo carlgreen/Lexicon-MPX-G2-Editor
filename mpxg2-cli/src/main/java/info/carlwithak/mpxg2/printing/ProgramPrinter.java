@@ -183,33 +183,33 @@ public class ProgramPrinter {
         sb.append("      Bypass Level: ").append(program.getPostBypassLevel()).append("dB\n");
         if (program.getEffect1() != null) {
             sb.append("    FX1:\n");
-            sb.append("      Mix: ").append(ParameterPrinter.print(program.getEffect1().getMix())).append("\n");
-            sb.append("      Level: ").append(ParameterPrinter.print(program.getEffect1().getLevel())).append("\n");
+            sb.append("      Mix: ").append(program.getEffect1().getMix().getDisplayString()).append("\n");
+            sb.append("      Level: ").append(program.getEffect1().getLevel().getDisplayString()).append("\n");
         }
         if (program.getEffect2() != null) {
             sb.append("    FX2:\n");
-            sb.append("      Mix: ").append(ParameterPrinter.print(program.getEffect2().getMix())).append("\n");
-            sb.append("      Level: ").append(ParameterPrinter.print(program.getEffect2().getLevel())).append("\n");
+            sb.append("      Mix: ").append(program.getEffect2().getMix().getDisplayString()).append("\n");
+            sb.append("      Level: ").append(program.getEffect2().getLevel().getDisplayString()).append("\n");
         }
         if (program.getChorus() != null) {
             sb.append("    Chorus:\n");
-            sb.append("      Mix: ").append(ParameterPrinter.print(program.getChorus().getMix())).append("\n");
-            sb.append("      Level: ").append(ParameterPrinter.print(program.getChorus().getLevel())).append("\n");
+            sb.append("      Mix: ").append(program.getChorus().getMix().getDisplayString()).append("\n");
+            sb.append("      Level: ").append(program.getChorus().getLevel().getDisplayString()).append("\n");
         }
         if (program.getDelay() != null) {
             sb.append("    Delay:\n");
-            sb.append("      Mix: ").append(ParameterPrinter.print(program.getDelay().getMix())).append("\n");
-            sb.append("      Level: ").append(ParameterPrinter.print(program.getDelay().getLevel())).append("\n");
+            sb.append("      Mix: ").append(program.getDelay().getMix().getDisplayString()).append("\n");
+            sb.append("      Level: ").append(program.getDelay().getLevel().getDisplayString()).append("\n");
         }
         if (program.getReverb() != null) {
             sb.append("    Reverb:\n");
-            sb.append("      Mix: ").append(ParameterPrinter.print(program.getReverb().getMix())).append("\n");
-            sb.append("      Level: ").append(ParameterPrinter.print(program.getReverb().getLevel())).append("\n");
+            sb.append("      Mix: ").append(program.getReverb().getMix().getDisplayString()).append("\n");
+            sb.append("      Level: ").append(program.getReverb().getLevel().getDisplayString()).append("\n");
         }
         if (program.getEq() != null) {
             sb.append("    Eq:\n");
-            sb.append("      Mix: ").append(ParameterPrinter.print(program.getEq().getMix())).append("\n");
-            sb.append("      Level: ").append(ParameterPrinter.print(program.getEq().getLevel())).append("\n");
+            sb.append("      Mix: ").append(program.getEq().getMix().getDisplayString()).append("\n");
+            sb.append("      Level: ").append(program.getEq().getLevel().getDisplayString()).append("\n");
         }
         sb.append("  Tempo:\n");
         sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");
@@ -501,7 +501,7 @@ public class ProgramPrinter {
     static String printLfo(final Lfo lfo) throws PrintException {
         final StringBuilder sb = new StringBuilder();
         sb.append("      Mode: ").append(lfoModeToString(lfo.getMode())).append("\n");
-        sb.append("      Rate: ").append(ParameterPrinter.print(lfo.getRate())).append("\n");
+        sb.append("      Rate: ").append(lfo.getRate().getDisplayString()).append("\n");
         sb.append("      PW: ").append(lfo.getPulseWidth()).append("%\n");
         sb.append("      Phase: ").append(lfo.getPhase()).append("\n");
         sb.append("      Depth: ").append(lfo.getDepth()).append("%\n");
@@ -514,7 +514,7 @@ public class ProgramPrinter {
         final StringBuilder sb = new StringBuilder();
         sb.append("      Low: ").append(random.getLow()).append("\n");
         sb.append("      High: ").append(random.getHigh()).append("\n");
-        sb.append("      Rate: ").append(ParameterPrinter.print(random.getRate())).append("\n");
+        sb.append("      Rate: ").append(random.getRate().getDisplayString()).append("\n");
         return sb.toString();
     }
 
