@@ -23,8 +23,8 @@ package info.carlwithak.mpxg2.model;
  */
 public class Knob implements DataObject {
     private GenericValue<Integer> value = new GenericValue<Integer>("Value", "", 0, 127);
-    private GenericValue<Integer> low = new GenericValue<Integer>("Value", "", 0, 127);
-    private GenericValue<Integer> high = new GenericValue<Integer>("Value", "", 0, 127);
+    private GenericValue<Integer> low = new GenericValue<Integer>("Low", "", 0, 127);
+    private GenericValue<Integer> high = new GenericValue<Integer>("High", "", 0, 127);
     private String name;
 
     @Override
