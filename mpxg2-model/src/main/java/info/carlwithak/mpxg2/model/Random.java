@@ -46,16 +46,16 @@ public class Random implements DataObject {
         return parameter;
     }
 
-    public int getLow() {
-        return low.getValue();
+    public GenericValue<Integer> getLow() {
+        return low;
     }
 
     public void setLow(int low) {
         this.low.setValue(low);
     }
 
-    public int getHigh() {
-        return high.getValue();
+    public GenericValue<Integer> getHigh() {
+        return high;
     }
 
     public void setHigh(int high) {

@@ -509,9 +509,9 @@ public class ProgramPrinter {
 
     static String printRandom(final Random random) throws PrintException {
         final StringBuilder sb = new StringBuilder();
-        sb.append("      RndLo: ").append(random.getLow()).append("\n");
-        sb.append("      RndHi: ").append(random.getHigh()).append("\n");
-        sb.append("      Rate: ").append(random.getRate().getDisplayString()).append("\n");
+        sb.append("  ").append(printParameter(random.getLow()));
+        sb.append("  ").append(printParameter(random.getHigh()));
+        sb.append("  ").append(printParameter(random.getRate()));
         return sb.toString();
     }
 

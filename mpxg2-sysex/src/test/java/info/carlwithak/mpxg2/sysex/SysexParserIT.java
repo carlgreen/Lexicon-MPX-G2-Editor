@@ -19,7 +19,6 @@ package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.Program;
@@ -295,9 +294,9 @@ public class SysexParserIT {
         assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
-        assertEquals(0, random.getLow());
-        assertEquals(127, random.getHigh());
-        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
+        assertThat(random.getLow(), is(value(0)));
+        assertThat(random.getHigh(), is(value(127)));
+        assertThat(random.getRate(), is(frequency(1.0)));
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());
@@ -577,9 +576,9 @@ public class SysexParserIT {
         assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
-        assertEquals(0, random.getLow());
-        assertEquals(127, random.getHigh());
-        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
+        assertThat(random.getLow(), is(value(0)));
+        assertThat(random.getHigh(), is(value(127)));
+        assertThat(random.getRate(), is(frequency(1.0)));
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());
@@ -1901,9 +1900,9 @@ public class SysexParserIT {
         assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
-        assertEquals(0, random.getLow());
-        assertEquals(127, random.getHigh());
-        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
+        assertThat(random.getLow(), is(value(0)));
+        assertThat(random.getHigh(), is(value(127)));
+        assertThat(random.getRate(), is(frequency(1.0)));
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());
@@ -2139,9 +2138,9 @@ public class SysexParserIT {
         assertThat(lfo2.getOnSource(), is(value(0)));
 
         Random random = program.getRandom();
-        assertEquals(0, random.getLow());
-        assertEquals(127, random.getHigh());
-        assertEquals(new FrequencyRate("Rate", 1.0), random.getRate());
+        assertThat(random.getLow(), is(value(0)));
+        assertThat(random.getHigh(), is(value(127)));
+        assertThat(random.getRate(), is(frequency(1.0)));
 
         Ab ab = program.getAb();
         assertEquals(0, ab.getMode());

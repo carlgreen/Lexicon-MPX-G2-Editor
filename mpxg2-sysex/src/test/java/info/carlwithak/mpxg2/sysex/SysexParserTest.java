@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
-import info.carlwithak.mpxg2.model.BeatRate;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -34,6 +33,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
@@ -508,9 +508,9 @@ public class SysexParserTest {
         byte[] bytes = {0, 0, 2, 3, 3, 0, 1, 0, 1, 0};
 
         Random random = SysexParser.readRandom(bytes);
-        assertEquals(0, random.getLow());
-        assertEquals(50, random.getHigh());
-        assertEquals(new BeatRate("Rate", 3, 1), random.getRate());
+        assertThat(random.getLow(), is(value(0)));
+        assertThat(random.getHigh(), is(value(50)));
+        assertThat(random.getRate(), is(beat(3, 1)));
     }
 
     @Test
