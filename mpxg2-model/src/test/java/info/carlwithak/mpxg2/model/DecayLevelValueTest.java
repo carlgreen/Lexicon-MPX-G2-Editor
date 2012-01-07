@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,23 +30,31 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class DecayLevelValueTest {
+    private final DecayLevelValue value = new DecayLevelValue("D Lvl");
+    private final int index;
+    private final String display;
+
+    public DecayLevelValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "Off" },
+            { 1, "-48dB" },
+            { 24, "-1dB" },
+            { 25, "Full" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        DecayLevelValue value = new DecayLevelValue("D Lvl");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("Off"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("-48dB"));
-
-        value.setValue(24);
-        assertThat(value.getDisplayString(), is("-1dB"));
-
-        value.setValue(25);
-        assertThat(value.getDisplayString(), is("Full"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

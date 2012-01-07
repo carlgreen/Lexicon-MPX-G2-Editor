@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,17 +30,29 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class SourceValueTest {
+    private final SourceValue value = new SourceValue("Src");
+    private final int index;
+    private final String display;
+
+    public SourceValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 1, "Guitar Input" },
+            { 2, "Returns Only" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        SourceValue value = new SourceValue("Src");
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("Guitar Input"));
-
-        value.setValue(2);
-        assertThat(value.getDisplayString(), is("Returns Only"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

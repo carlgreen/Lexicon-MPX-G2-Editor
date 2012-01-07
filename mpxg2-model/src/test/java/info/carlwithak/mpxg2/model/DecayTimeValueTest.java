@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,96 +30,57 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class DecayTimeValueTest {
     private final GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
     private final DecayTimeValue value = new DecayTimeValue("Decay", link, size);
+    private final boolean linkValue;
+    private final double sizeValue;
+    private final int index;
+    private final String display;
 
-    @Test
-    public void testGetDisplayString_noLink() {
-        link.setValue(false);
-        value.setValue(0);
+    public DecayTimeValueTest(final boolean linkValue, final double sizeValue, final int index, final String display) {
+        this.linkValue = linkValue;
+        this.sizeValue = sizeValue;
+        this.index = index;
+        this.display = display;
+    }
 
-        size.setValue(5.0);
-        assertThat(value.getDisplayString(), is("0.29s"));
-
-        size.setValue(17.0);
-        assertThat(value.getDisplayString(), is("0.29s"));
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            /* no link */
+            { false, 5.0, 0, "0.29s" },
+            { false, 17.0, 0, "0.29s" },
+            /* range 0 */
+            { true, 5.0, 0, "0.07s" },
+            { true, 5.0, 63, "6.58s" },
+            /* range 1 */
+            { true, 12.0, 0, "0.09s" },
+            { true, 12.0, 63, "13.1s" },
+            /* range 2 */
+            { true, 27.5, 0, "0.12s" },
+            { true, 27.5, 63, "19.6s" },
+            /* range 3 */
+            { true, 35.0, 0, "0.14s" },
+            { true, 35.0, 63, "26.2s" },
+            /* range 6 */
+            { true, 53.0, 0, "0.21s" },
+            { true, 53.0, 41, "1.67s" },
+            { true, 53.0, 63, "45.8s" },
+            /* range 9 */
+            { true, 76.0, 0, "0.29s" },
+            { true, 76.0, 63, "65.4s" }
+        });
     }
 
     @Test
-    public void testGetDisplayString_Link0() {
-        link.setValue(true);
-        size.setValue(5.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.07s"));
-
-        value.setValue(63);
-        assertThat(value.getDisplayString(), is("6.58s"));
-    }
-
-    @Test
-    public void testGetDisplayString_Link1() {
-        link.setValue(true);
-        size.setValue(12.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.09s"));
-
-        value.setValue(63);
-        assertThat(value.getDisplayString(), is("13.1s"));
-    }
-
-    @Test
-    public void testGetDisplayString_Link2() {
-        link.setValue(true);
-        size.setValue(27.5);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.12s"));
-
-        value.setValue(63);
-        assertThat(value.getDisplayString(), is("19.6s"));
-    }
-
-    @Test
-    public void testGetDisplayString_Link3() {
-        link.setValue(true);
-        size.setValue(35.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.14s"));
-
-        value.setValue(63);
-        assertThat(value.getDisplayString(), is("26.2s"));
-    }
-
-    @Test
-    public void testGetDisplayString_Link6() {
-        link.setValue(true);
-        size.setValue(53.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.21s"));
-
-        value.setValue(41);
-        assertThat(value.getDisplayString(), is("1.67s"));
-
-        value.setValue(63);
-        assertThat(value.getDisplayString(), is("45.8s"));
-    }
-
-    @Test
-    public void testGetDisplayString_Link9() {
-        link.setValue(true);
-        size.setValue(76.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.29s"));
-
-        value.setValue(63);
-        assertThat(value.getDisplayString(), is("65.4s"));
+    public void testGetDisplayString() {
+        link.setValue(linkValue);
+        size.setValue(sizeValue);
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

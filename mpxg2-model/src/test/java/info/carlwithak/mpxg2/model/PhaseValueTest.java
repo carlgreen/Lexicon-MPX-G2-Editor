@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,23 +30,31 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class PhaseValueTest {
+    private final PhaseValue value = new PhaseValue("Phase");
+    private final int index;
+    private final String display;
+
+    public PhaseValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "0°" },
+            { 1, "90°" },
+            { 2, "180°" },
+            { 3, "270°" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        PhaseValue value = new PhaseValue("Phase");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0°"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("90°"));
-
-        value.setValue(2);
-        assertThat(value.getDisplayString(), is("180°"));
-
-        value.setValue(3);
-        assertThat(value.getDisplayString(), is("270°"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

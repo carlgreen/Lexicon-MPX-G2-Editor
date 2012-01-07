@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,23 +30,31 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class CrossoverValueTest {
+    private final CrossoverValue value = new CrossoverValue("Xovr");
+    private final int index;
+    private final String display;
+
+    public CrossoverValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "30Hz" },
+            { 1, "60Hz" },
+            { 59, "24.7kHz" },
+            { 60, "Full" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        CrossoverValue value = new CrossoverValue("Xovr");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("30Hz"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("60Hz"));
-
-        value.setValue(59);
-        assertThat(value.getDisplayString(), is("24.7kHz"));
-
-        value.setValue(60);
-        assertThat(value.getDisplayString(), is("Full"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

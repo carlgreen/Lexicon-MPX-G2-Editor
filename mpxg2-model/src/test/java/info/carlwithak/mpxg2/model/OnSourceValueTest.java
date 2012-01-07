@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,14 +30,28 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class OnSourceValueTest {
+    private final OnSourceValue value = new OnSourceValue("OnSrc");
+    private final int index;
+    private final String display;
+
+    public OnSourceValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "None" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        OnSourceValue value = new OnSourceValue("OnSrc");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("None"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

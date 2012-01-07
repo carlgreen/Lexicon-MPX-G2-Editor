@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,26 +30,32 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class TempoBeatValueTest {
+    private final TempoBeatValue value = new TempoBeatValue("Beat Value");
+    private final int index;
+    private final String display;
+
+    public TempoBeatValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "eighth" },
+            { 3, "dotted quarter" },
+            { 4, "2 beats" },
+            { 18, "16 beats" },
+            { 128, "126 beats" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        TempoBeatValue value = new TempoBeatValue("Beat Value");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("eighth"));
-
-        value.setValue(3);
-        assertThat(value.getDisplayString(), is("dotted quarter"));
-
-        value.setValue(4);
-        assertThat(value.getDisplayString(), is("2 beats"));
-
-        value.setValue(18);
-        assertThat(value.getDisplayString(), is("16 beats"));
-
-        value.setValue(128);
-        assertThat(value.getDisplayString(), is("126 beats"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

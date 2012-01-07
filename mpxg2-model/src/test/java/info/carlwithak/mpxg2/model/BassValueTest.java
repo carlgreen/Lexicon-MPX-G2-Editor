@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import org.junit.runners.Parameterized;
+import java.util.Arrays;
 import org.junit.Test;
+import java.util.Collection;
+import org.junit.runner.RunWith;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,20 +30,30 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class BassValueTest {
+    BassValue value = new BassValue("Bass");
+    private final int index;
+    private final String display;
+
+    public BassValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "0.2X" },
+            { 1, "0.4X" },
+            { 9, "4.0X" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        BassValue value = new BassValue("Bass");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.2X"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("0.4X"));
-
-        value.setValue(9);
-        assertThat(value.getDisplayString(), is("4.0X"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runners.Parameterized;
+import org.junit.runner.RunWith;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,23 +30,31 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class AmbienceHighCutValueTest {
+    private final AmbienceHighCutValue value = new AmbienceHighCutValue("Rt HC");
+    private final int index;
+    private final String display;
+
+    public AmbienceHighCutValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "0.5kHz" },
+            { 1, "1.0kHz" },
+            { 13, "15.9kHz" },
+            { 14, "21.2kHz" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        AmbienceHighCutValue value = new AmbienceHighCutValue("Rt HC");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0.5kHz"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("1.0kHz"));
-
-        value.setValue(13);
-        assertThat(value.getDisplayString(), is("15.9kHz"));
-
-        value.setValue(14);
-        assertThat(value.getDisplayString(), is("21.2kHz"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

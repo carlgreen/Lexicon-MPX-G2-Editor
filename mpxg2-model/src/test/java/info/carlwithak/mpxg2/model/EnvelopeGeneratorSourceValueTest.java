@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,17 +30,29 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class EnvelopeGeneratorSourceValueTest {
+    private final EnvelopeGeneratorSourceValue value = new EnvelopeGeneratorSourceValue("Src");
+    private final int index;
+    private final String display;
+
+    public EnvelopeGeneratorSourceValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "Off" },
+            { 20, "MainR" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        EnvelopeGeneratorSourceValue value = new EnvelopeGeneratorSourceValue("Src");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("Off"));
-
-        value.setValue(20);
-        assertThat(value.getDisplayString(), is("MainR"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

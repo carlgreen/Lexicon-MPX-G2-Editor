@@ -20,23 +20,39 @@ package info.carlwithak.mpxg2.model;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 /**
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class OnOffValueTest {
+    private final OnOffValue value = new OnOffValue("Glide");
+    private final boolean index;
+    private final String display;
+
+    public OnOffValueTest(final boolean index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { true, "On" },
+            { false, "Off" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        OnOffValue value = new OnOffValue("Glide");
-
-        value.setValue(true);
-        assertThat(value.getDisplayString(), is("On"));
-
-        value.setValue(false);
-        assertThat(value.getDisplayString(), is("Off"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

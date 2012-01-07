@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,14 +30,28 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class TempoTapSourceValueTest {
+    private final TempoTapSourceValue value = new TempoTapSourceValue("Beat Value");
+    private final int index;
+    private final String display;
+
+    public TempoTapSourceValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "none" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        TempoTapSourceValue value = new TempoTapSourceValue("Beat Value");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("none"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

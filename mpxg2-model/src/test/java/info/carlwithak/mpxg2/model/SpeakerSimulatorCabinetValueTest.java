@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,26 +30,32 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class SpeakerSimulatorCabinetValueTest {
+    private final SpeakerSimulatorCabinetValue value = new SpeakerSimulatorCabinetValue("Cabinet");
+    private final int index;
+    private final String display;
+
+    public SpeakerSimulatorCabinetValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "Combo1Brite" },
+            { 1, "Combo1Norml" },
+            { 3, "Combo1Dark" },
+            { 14, "Stack2Warm" },
+            { 15, "Stack2Dark" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        SpeakerSimulatorCabinetValue value = new SpeakerSimulatorCabinetValue("Cabinet");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("Combo1Brite"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("Combo1Norml"));
-
-        value.setValue(3);
-        assertThat(value.getDisplayString(), is("Combo1Dark"));
-
-        value.setValue(14);
-        assertThat(value.getDisplayString(), is("Stack2Warm"));
-
-        value.setValue(15);
-        assertThat(value.getDisplayString(), is("Stack2Dark"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

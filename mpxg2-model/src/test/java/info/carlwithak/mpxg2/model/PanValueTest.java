@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,20 +30,30 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class PanValueTest {
+    private final PanValue value = new PanValue("Pan", -10, 10);
+    private final int index;
+    private final String display;
+
+    public PanValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { -10, "10L" },
+            { 0, "C" },
+            { 10, "10R" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        PanValue value = new PanValue("Pan", -10, 10);
-
-        value.setValue(-10);
-        assertThat(value.getDisplayString(), is("10L"));
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("C"));
-
-        value.setValue(10);
-        assertThat(value.getDisplayString(), is("10R"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

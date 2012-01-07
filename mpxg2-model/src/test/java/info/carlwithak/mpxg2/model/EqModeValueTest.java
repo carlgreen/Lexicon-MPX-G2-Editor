@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,20 +30,30 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class EqModeValueTest {
+    private final EqModeValue value = new EqModeValue("Mode");
+    private final int index;
+    private final String display;
+
+    public EqModeValueTest(final int index, final String display) {
+        this.index = index;
+        this.display = display;
+    }
+
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            { 0, "LShlf" },
+            { 1, "Band" },
+            { 2, "HShlf" }
+        });
+    }
 
     @Test
     public void testGetDisplayString() {
-        EqModeValue value = new EqModeValue("Mode");
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("LShlf"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("Band"));
-
-        value.setValue(2);
-        assertThat(value.getDisplayString(), is("HShlf"));
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }

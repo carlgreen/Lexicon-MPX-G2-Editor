@@ -17,7 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,205 +30,84 @@ import static org.junit.Assert.assertThat;
  *
  * @author Carl Green
  */
+@RunWith(Parameterized.class)
 public class ReverbSpredValueTest {
     private final GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
     private final ReverbSpredValue value = new ReverbSpredValue("Spred", link, size);
+    private final boolean linkValue;
+    private final double sizeValue;
+    private final int index;
+    private final String display;
 
-    /**
-     * Test spred conversion when link is off. Size shouldn't matter.
-     */
-    @Test
-    public void testGetDisplayString_noLink() {
-        link.setValue(false);
-        value.setValue(0);
-
-        size.setValue(5.0);
-        assertThat(value.getDisplayString(), is("0"));
-
-        // check size doesn't matter
-        size.setValue(17.0);
-        value.setValue(127);
-        assertThat(value.getDisplayString(), is("127"));
-
-        value.setValue(255);
-        assertThat(value.getDisplayString(), is("255"));
+    public ReverbSpredValueTest(final boolean linkValue, final double sizeValue, final int index, final String display) {
+        this.linkValue = linkValue;
+        this.sizeValue = sizeValue;
+        this.index = index;
+        this.display = display;
     }
 
-    /**
-     * Test spred conversion when link is on and size is 4.0.
-     */
-    @Test
-    public void testGetDisplayString_size4() {
-        link.setValue(true);
-        size.setValue(4.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(9);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(10);
-        assertThat(value.getDisplayString(), is("1"));
-
-        value.setValue(249);
-        assertThat(value.getDisplayString(), is("24"));
-
-        value.setValue(255);
-        assertThat(value.getDisplayString(), is("25"));
+    @Parameterized.Parameters
+    public static Collection data() {
+        return Arrays.asList(new Object[][] {
+            /* no link */
+            { false, 5.0, 0, "0" },
+            { false, 17.0, 127, "127" },
+            { false, 17.0, 255, "255" },
+            /* size 4.0 */
+            { true, 4.0, 0, "0" },
+            { true, 4.0, 9, "0" },
+            { true, 4.0, 10, "1" },
+            { true, 4.0, 249, "24" },
+            { true, 4.0, 255, "25" },
+            /* size 22.5 */
+            { true, 22.5, 0, "0" },
+            { true, 22.5, 3, "0" },
+            { true, 22.5, 4, "1" },
+            { true, 22.5, 222, "73" },
+            { true, 22.5, 253, "83" },
+            { true, 22.5, 254, "84" },
+            { true, 22.5, 255, "84" },
+            /* size 24.0 */
+            { true, 24.0, 0, "0" },
+            { true, 24.0, 2, "0" },
+            { true, 24.0, 3, "1" },
+            { true, 24.0, 120, "42" },
+            { true, 24.0, 254, "88" },
+            { true, 24.0, 255, "89" },
+            /* size 28.0 */
+            { true, 28.0, 0, "0" },
+            { true, 28.0, 2, "0" },
+            { true, 28.0, 3, "1" },
+            { true, 28.0, 120, "48" },
+            { true, 28.0, 254, "101" },
+            { true, 28.0, 255, "102" },
+            /* size 35.0 */
+            { true, 35.0, 0, "0" },
+            { true, 35.0, 2, "0" },
+            { true, 35.0, 3, "1" },
+            { true, 35.0, 39, "19" },
+            { true, 35.0, 41, "19" },
+            { true, 35.0, 254, "123" },
+            { true, 35.0, 255, "124" },
+            /* size 53.0 */
+            { true, 53.0, 0, "0" },
+            { true, 53.0, 1, "0" },
+            { true, 53.0, 2, "1" },
+            { true, 53.0, 125, "89" },
+            { true, 53.0, 254, "180" },
+            { true, 53.0, 255, "181" },
+            /* size 53.5 */
+            { true, 53.5, 164, "117" }
+        });
     }
 
-    /**
-     * Test spred conversion when link is on and size is 22.5.
-     */
     @Test
-    public void testGetDisplayString_size22_5() {
-        link.setValue(true);
-        size.setValue(22.5);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(3);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(4);
-        assertThat(value.getDisplayString(), is("1"));
-
-        value.setValue(222);
-        assertThat(value.getDisplayString(), is("73"));
-
-        value.setValue(253);
-        assertThat(value.getDisplayString(), is("83"));
-
-        value.setValue(254);
-        assertThat(value.getDisplayString(), is("84"));
-
-        value.setValue(255);
-        assertThat(value.getDisplayString(), is("84"));
-    }
-
-    /**
-     * Test spred conversion when link is on and size is 24.0.
-     */
-    @Test
-    public void testGetDisplayString_size24() {
-        link.setValue(true);
-        size.setValue(24.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(2);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(3);
-        assertThat(value.getDisplayString(), is("1"));
-
-        value.setValue(120);
-        assertThat(value.getDisplayString(), is("42"));
-
-        value.setValue(254);
-        assertThat(value.getDisplayString(), is("88"));
-
-        value.setValue(255);
-        assertThat(value.getDisplayString(), is("89"));
-    }
-
-    /**
-     * Test spred conversion when link is on and size is 28.0.
-     */
-    @Test
-    public void testGetDisplayString_size28() {
-        link.setValue(true);
-        size.setValue(28.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(2);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(3);
-        assertThat(value.getDisplayString(), is("1"));
-
-        value.setValue(120);
-        assertThat(value.getDisplayString(), is("48"));
-
-        value.setValue(254);
-        assertThat(value.getDisplayString(), is("101"));
-
-        value.setValue(255);
-        assertThat(value.getDisplayString(), is("102"));
-    }
-
-    /**
-     * Test spred conversion when link is on and size is 35.0.
-     */
-    @Test
-    public void testGetDisplayString_size35() {
-        link.setValue(true);
-        size.setValue(35.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(2);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(3);
-        assertThat(value.getDisplayString(), is("1"));
-
-        value.setValue(39);
-        assertThat(value.getDisplayString(), is("19"));
-
-        value.setValue(41);
-        assertThat(value.getDisplayString(), is("19"));
-
-        value.setValue(254);
-        assertThat(value.getDisplayString(), is("123"));
-
-        value.setValue(255);
-        assertThat(value.getDisplayString(), is("124"));
-    }
-
-    /**
-     * Test spred conversion when link is on and size is 53.0.
-     */
-    @Test
-    public void testGetDisplayString_size53() {
-        link.setValue(true);
-        size.setValue(53.0);
-
-        value.setValue(0);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(1);
-        assertThat(value.getDisplayString(), is("0"));
-
-        value.setValue(2);
-        assertThat(value.getDisplayString(), is("1"));
-
-        value.setValue(125);
-        assertThat(value.getDisplayString(), is("89"));
-
-        value.setValue(254);
-        assertThat(value.getDisplayString(), is("180"));
-
-        value.setValue(255);
-        assertThat(value.getDisplayString(), is("181"));
-    }
-
-    /**
-     * Test spred conversion when link is on and size is 53.5.
-     */
-    @Test
-    public void testGetDisplayString_size53_5() {
-        link.setValue(true);
-        size.setValue(53.5);
-        value.setValue(164);
-        assertThat(value.getDisplayString(), is("117"));
+    public void testGetDisplayString() {
+        link.setValue(linkValue);
+        size.setValue(sizeValue);
+        value.setValue(index);
+        assertThat(value.getDisplayString(), is(display));
     }
 
 }
