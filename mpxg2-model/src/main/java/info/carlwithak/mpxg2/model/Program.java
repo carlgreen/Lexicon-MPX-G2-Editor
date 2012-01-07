@@ -100,12 +100,12 @@ public class Program {
     private List<SoftRowItem> softRow = Arrays.<SoftRowItem>asList(null, null, null, null, null, null, null, null, null, null);
 
     // tempo
-    private int tempo;
-    private int tempoSource;
-    private int beatValue;
-    private int tapSource;
-    private int tapAverage;
-    private int tapSourceLevel;
+    private GenericValue<Integer> tempo = new GenericValue<Integer>("Rate", " BPM", 41, 400);
+    private TempoSourceValue tempoSource = new TempoSourceValue("Source");
+    private TempoBeatValue beatValue = new TempoBeatValue("Beat Value");
+    private TempoTapSourceValue tapSource = new TempoTapSourceValue("Tap Source");
+    private GenericValue<Integer> tapAverage = new GenericValue<Integer>("Tap Average", " beats", 2, 8);
+    private GenericValue<Integer> tapSourceLevel = new GenericValue<Integer>("Tap Source Level", "", 0, 127);
 
     // patching
     private Patch patch1;
@@ -599,52 +599,52 @@ public class Program {
         this.softRow.get(softRowPosition).setParameter(softRowParameter);
     }
 
-    public int getTempo() {
+    public GenericValue<Integer> getTempo() {
         return tempo;
     }
 
     public void setTempo(final int tempo) {
-        this.tempo = tempo;
+        this.tempo.setValue(tempo);
     }
 
-    public int getTempoSource() {
+    public TempoSourceValue getTempoSource() {
         return tempoSource;
     }
 
     public void setTempoSource(final int tempoSource) {
-        this.tempoSource = tempoSource;
+        this.tempoSource.setValue(tempoSource);
     }
 
-    public int getBeatValue() {
+    public TempoBeatValue getBeatValue() {
         return beatValue;
     }
 
     public void setBeatValue(final int beatValue) {
-        this.beatValue = beatValue;
+        this.beatValue.setValue(beatValue);
     }
 
-    public int getTapSource() {
+    public TempoTapSourceValue getTapSource() {
         return tapSource;
     }
 
     public void setTapSource(final int tapSource) {
-        this.tapSource = tapSource;
+        this.tapSource.setValue(tapSource);
     }
 
-    public int getTapAverage() {
+    public GenericValue<Integer> getTapAverage() {
         return tapAverage;
     }
 
     public void setTapAverage(final int tapAverage) {
-        this.tapAverage = tapAverage;
+        this.tapAverage.setValue(tapAverage);
     }
 
-    public int getTapSourceLevel() {
+    public GenericValue<Integer> getTapSourceLevel() {
         return tapSourceLevel;
     }
 
     public void setTapSourceLevel(final int tapSourceLevel) {
-        this.tapSourceLevel = tapSourceLevel;
+        this.tapSourceLevel.setValue(tapSourceLevel);
     }
 
     public Patch getPatch1() {

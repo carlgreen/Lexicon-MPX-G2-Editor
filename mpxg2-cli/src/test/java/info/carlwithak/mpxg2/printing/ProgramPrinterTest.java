@@ -335,13 +335,4 @@ public class ProgramPrinterTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void testBeatValueToString() {
-        assertEquals("eighth", ProgramPrinter.beatValueToString(0));
-        assertEquals("dotted quarter", ProgramPrinter.beatValueToString(3));
-        assertEquals("2 beats", ProgramPrinter.beatValueToString(4));
-        assertEquals("16 beats", ProgramPrinter.beatValueToString(18));
-        assertEquals("126 beats", ProgramPrinter.beatValueToString(128));
-    }
-
 }

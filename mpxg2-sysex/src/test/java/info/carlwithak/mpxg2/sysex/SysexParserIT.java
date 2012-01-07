@@ -217,12 +217,12 @@ public class SysexParserIT {
         assertEquals(4, program.getSoftRowEffectType(9));
         assertEquals(7, program.getSoftRowParameter(9));
 
-        assertEquals(120, program.getTempo());
-        assertEquals(0, program.getTempoSource());
-        assertEquals(2, program.getBeatValue()); // quater note
-        assertEquals(0, program.getTapSource());
-        assertEquals(2, program.getTapAverage());
-        assertEquals(64, program.getTapSourceLevel());
+        assertThat(program.getTempo(), is(value(120)));
+        assertThat(program.getTempoSource(), is(value(0)));
+        assertThat(program.getBeatValue(), is(value(2))); // quater note
+        assertThat(program.getTapSource(), is(value(0)));
+        assertThat(program.getTapAverage(), is(value(2)));
+        assertThat(program.getTapSourceLevel(), is(value(64)));
 
         assertEquals(16, program.getPatch1().getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, program.getPatch1().getSourceMin().intValue());
@@ -1825,12 +1825,12 @@ public class SysexParserIT {
         assertFalse(program.isGainOn());
         assertTrue(program.isInsertOn());
 
-        assertEquals(120, program.getTempo());
-        assertEquals(0, program.getTempoSource());
-        assertEquals(2, program.getBeatValue()); // quater note
-        assertEquals(0, program.getTapSource());
-        assertEquals(2, program.getTapAverage());
-        assertEquals(64, program.getTapSourceLevel());
+        assertThat(program.getTempo(), is(value(120)));
+        assertThat(program.getTempoSource(), is(value(0)));
+        assertThat(program.getBeatValue(), is(value(2))); // quater note
+        assertThat(program.getTapSource(), is(value(0)));
+        assertThat(program.getTapAverage(), is(value(2)));
+        assertThat(program.getTapSourceLevel(), is(value(64)));
 
         assertEquals(0, program.getPatch1().getSourceIndex());
         assertEquals(0, program.getPatch1().getSourceMin().intValue());
@@ -2064,12 +2064,12 @@ public class SysexParserIT {
         assertFalse(program.isGainOn());
         assertTrue(program.isInsertOn());
 
-        assertEquals(170, program.getTempo());
-        assertEquals(0, program.getTempoSource());
-        assertEquals(2, program.getBeatValue()); // quater note
-        assertEquals(0, program.getTapSource());
-        assertEquals(2, program.getTapAverage());
-        assertEquals(64, program.getTapSourceLevel());
+        assertThat(program.getTempo(), is(value(170)));
+        assertThat(program.getTempoSource(), is(value(0)));
+        assertThat(program.getBeatValue(), is(value(2))); // quater note
+        assertThat(program.getTapSource(), is(value(0)));
+        assertThat(program.getTapAverage(), is(value(2)));
+        assertThat(program.getTapSourceLevel(), is(value(64)));
 
         assertEquals(0, program.getPatch1().getSourceIndex());
         assertEquals(0, program.getPatch1().getSourceMin().intValue());

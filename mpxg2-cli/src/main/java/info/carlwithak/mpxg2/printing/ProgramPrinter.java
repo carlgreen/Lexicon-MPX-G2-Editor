@@ -95,18 +95,6 @@ public class ProgramPrinter {
         }
     };
 
-    private final static String[] TEMPO_SOURCES = {
-        "internal"
-    };
-
-    private final static String[] BEAT_VALUES = {
-        "eighth", "dotted eighth", "quarter", "dotted quarter"
-    };
-
-    private final static String[] TAP_SOURCES = {
-        "none"
-    };
-
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     public static String print(Program program) throws PrintException {
@@ -183,11 +171,11 @@ public class ProgramPrinter {
             sb.append("  ").append(printParameter(program.getEq().getLevel()));
         }
         sb.append("  Tempo:\n");
-        sb.append("    Rate: ").append(program.getTempo()).append(" BPM\n");
-        sb.append("    Source: ").append(tempoSourceToString(program.getTempoSource())).append("\n");
-        sb.append("    Beat Value: ").append(beatValueToString(program.getBeatValue())).append("\n");
-        sb.append("    Tap Average: ").append(program.getTapAverage()).append(" beats\n");
-        sb.append("    Tap Source: ").append(tapSourceToString(program.getTapSource())).append("\n");
+        sb.append(printParameter(program.getTempo()));
+        sb.append(printParameter(program.getTempoSource()));
+        sb.append(printParameter(program.getBeatValue()));
+        sb.append(printParameter(program.getTapAverage()));
+        sb.append(printParameter(program.getTapSource()));
         sb.append("  Speaker Sim: ").append(program.isSpeakerSimulatorEnable().getDisplayString()).append("\n");
         sb.append(printParameter(program.getSpeakerSimulatorCabinet()));
         sb.append("  Noise Gate:\n");
@@ -524,24 +512,6 @@ public class ProgramPrinter {
     private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
         // remove 13 from effectType as the 7 algorithm types and 6 controllers take care of themselves
         return EFFECT_PARAMETER_UNITS[effectType - 13][effectParameter];
-    }
-
-    private static String tempoSourceToString(final int tempoSource) {
-        return TEMPO_SOURCES[tempoSource];
-    }
-
-    static String beatValueToString(final int beatValue) {
-        String value;
-        if (beatValue < BEAT_VALUES.length) {
-            value = BEAT_VALUES[beatValue];
-        } else {
-            value = (beatValue - BEAT_VALUES.length + 2) + " beats";
-        }
-        return value;
-    }
-
-    private static String tapSourceToString(final int tapSource) {
-        return TAP_SOURCES[tapSource];
     }
 
 }
