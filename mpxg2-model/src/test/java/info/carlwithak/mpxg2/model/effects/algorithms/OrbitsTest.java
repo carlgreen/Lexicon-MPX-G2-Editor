@@ -17,8 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.Util;
+import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
 import java.beans.IntrospectionException;
 import org.junit.Before;
 import org.junit.Test;

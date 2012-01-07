@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.test;
 
-import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;

@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model;
 
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+
 /**
  * Used for complex data objects which contain various parameters that can be
  * manipulated.

@@ -17,8 +17,6 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.BeatRate;
-import info.carlwithak.mpxg2.model.FrequencyRate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
@@ -80,6 +78,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
+import info.carlwithak.mpxg2.model.parameters.BeatRate;
+import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -17,6 +17,11 @@
 
 package info.carlwithak.mpxg2.model;
 
+import info.carlwithak.mpxg2.model.parameters.AbModeValue;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.OnSourceValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+
 /**
  * Class to hold information about the A/B controller.
  *

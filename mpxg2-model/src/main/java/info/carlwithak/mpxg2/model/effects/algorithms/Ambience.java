@@ -17,13 +17,13 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.AmbienceHighCutValue;
-import info.carlwithak.mpxg2.model.DecayLevelValue;
-import info.carlwithak.mpxg2.model.DecayTimeValue;
-import info.carlwithak.mpxg2.model.GenericValue;
-import info.carlwithak.mpxg2.model.OnOffValue;
-import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.model.parameters.AmbienceHighCutValue;
+import info.carlwithak.mpxg2.model.parameters.DecayLevelValue;
+import info.carlwithak.mpxg2.model.parameters.DecayTimeValue;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.OnOffValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
 
 /**
  * Class for Ambience parameters.

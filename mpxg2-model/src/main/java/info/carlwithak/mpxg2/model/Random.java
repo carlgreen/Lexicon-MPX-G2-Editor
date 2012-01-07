@@ -17,6 +17,10 @@
 
 package info.carlwithak.mpxg2.model;
 
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.Rate;
+
 /**
  * Class to hold information about the Random controller.
  *

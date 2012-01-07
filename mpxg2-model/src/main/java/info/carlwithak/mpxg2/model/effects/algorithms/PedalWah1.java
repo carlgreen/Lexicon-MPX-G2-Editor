@@ -17,10 +17,10 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.GenericValue;
-import info.carlwithak.mpxg2.model.Parameter;
-import info.carlwithak.mpxg2.model.WahType;
 import info.carlwithak.mpxg2.model.effects.Effect;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.WahType;
 
 /**
  * Class for Pedal Wah 1 parameters.

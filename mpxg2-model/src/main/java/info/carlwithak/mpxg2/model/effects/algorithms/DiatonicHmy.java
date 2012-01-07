@@ -17,13 +17,13 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.GenericValue;
-import info.carlwithak.mpxg2.model.IntervalValue;
-import info.carlwithak.mpxg2.model.KeyValue;
-import info.carlwithak.mpxg2.model.Parameter;
-import info.carlwithak.mpxg2.model.ScaleValue;
-import info.carlwithak.mpxg2.model.SourceValue;
 import info.carlwithak.mpxg2.model.effects.Effect;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.IntervalValue;
+import info.carlwithak.mpxg2.model.parameters.KeyValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.ScaleValue;
+import info.carlwithak.mpxg2.model.parameters.SourceValue;
 
 /**
  * Class for Diatonic Hmy parameters.

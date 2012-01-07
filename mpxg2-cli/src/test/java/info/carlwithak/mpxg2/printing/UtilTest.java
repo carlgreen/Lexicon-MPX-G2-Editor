@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

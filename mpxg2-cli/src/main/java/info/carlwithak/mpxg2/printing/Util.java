@@ -17,7 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
 
 /**
  * Various helper methods for printing.

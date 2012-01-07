@@ -17,10 +17,10 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.EqModeValue;
-import info.carlwithak.mpxg2.model.GenericValue;
-import info.carlwithak.mpxg2.model.Parameter;
 import info.carlwithak.mpxg2.model.effects.Eq;
+import info.carlwithak.mpxg2.model.parameters.EqModeValue;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
 
 /**
  * Class for 2-Band (M) parameters.

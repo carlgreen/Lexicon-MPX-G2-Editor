@@ -17,6 +17,10 @@
 
 package info.carlwithak.mpxg2.model;
 
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.NoiseGateEnableValue;
+import info.carlwithak.mpxg2.model.parameters.OnOffValue;
+
 /**
  * The Noise Gate blocks signal from being output at the Send jack and/or from
  * feeding the "Post" signal path (anything after the Gain block in the routing

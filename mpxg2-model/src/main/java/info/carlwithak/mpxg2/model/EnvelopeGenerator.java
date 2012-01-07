@@ -17,6 +17,10 @@
 
 package info.carlwithak.mpxg2.model;
 
+import info.carlwithak.mpxg2.model.parameters.EnvelopeGeneratorSourceValue;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+
 /**
  * Class to hold information about the Envelope Generator controller.
  *

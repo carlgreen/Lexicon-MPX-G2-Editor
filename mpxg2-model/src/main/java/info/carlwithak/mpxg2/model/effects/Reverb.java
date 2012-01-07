@@ -17,8 +17,8 @@
 
 package info.carlwithak.mpxg2.model.effects;
 
-import info.carlwithak.mpxg2.model.GenericValue;
-import info.carlwithak.mpxg2.model.Parameter;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
 
 /**
  * Base class for Reverb effects.

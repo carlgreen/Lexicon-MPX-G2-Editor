@@ -23,6 +23,12 @@ import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.OnOffValue;
+import info.carlwithak.mpxg2.model.parameters.SpeakerSimulatorCabinetValue;
+import info.carlwithak.mpxg2.model.parameters.TempoBeatValue;
+import info.carlwithak.mpxg2.model.parameters.TempoSourceValue;
+import info.carlwithak.mpxg2.model.parameters.TempoTapSourceValue;
 import java.util.Arrays;
 import java.util.List;
 

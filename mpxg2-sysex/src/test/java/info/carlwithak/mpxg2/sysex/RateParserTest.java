@@ -17,10 +17,10 @@
 
 package info.carlwithak.mpxg2.sysex;
 
-import info.carlwithak.mpxg2.model.BeatRate;
-import info.carlwithak.mpxg2.model.FrequencyRate;
-import info.carlwithak.mpxg2.model.Rate;
-import info.carlwithak.mpxg2.model.TapMsRate;
+import info.carlwithak.mpxg2.model.parameters.BeatRate;
+import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
+import info.carlwithak.mpxg2.model.parameters.Rate;
+import info.carlwithak.mpxg2.model.parameters.TapMsRate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

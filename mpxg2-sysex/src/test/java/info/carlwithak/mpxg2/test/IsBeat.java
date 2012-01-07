@@ -17,8 +17,8 @@
 
 package info.carlwithak.mpxg2.test;
 
-import info.carlwithak.mpxg2.model.BeatRate;
-import info.carlwithak.mpxg2.model.Rate;
+import info.carlwithak.mpxg2.model.parameters.BeatRate;
+import info.carlwithak.mpxg2.model.parameters.Rate;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;

@@ -17,15 +17,15 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.BassValue;
-import info.carlwithak.mpxg2.model.CrossoverValue;
-import info.carlwithak.mpxg2.model.DecayTimeValue;
-import info.carlwithak.mpxg2.model.GenericValue;
-import info.carlwithak.mpxg2.model.HighCutValue;
-import info.carlwithak.mpxg2.model.OnOffValue;
-import info.carlwithak.mpxg2.model.Parameter;
-import info.carlwithak.mpxg2.model.ReverbSpredValue;
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.model.parameters.BassValue;
+import info.carlwithak.mpxg2.model.parameters.CrossoverValue;
+import info.carlwithak.mpxg2.model.parameters.DecayTimeValue;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.HighCutValue;
+import info.carlwithak.mpxg2.model.parameters.OnOffValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.ReverbSpredValue;
 
 /**
  * Class for Chamber parameters.
