@@ -132,11 +132,11 @@ public class Program {
     private SpeakerSimulatorCabinetValue speakerSimulatorCabinet = new SpeakerSimulatorCabinetValue("Cabinet");
 
     // mix
-    private int sendLevel;
-    private int sendBypassLevel;
-    private int postMix;
-    private int postLevel;
-    private int postBypassLevel;
+    private GenericValue<Integer> sendLevel = new GenericValue<Integer>("Level", "", -56, 0);
+    private GenericValue<Integer> sendBypassLevel = new GenericValue<Integer>("Bypass Level", "", -56, 0);
+    private GenericValue<Integer> postMix = new GenericValue<Integer>("Mix", "%", 0, 100);
+    private GenericValue<Integer> postLevel = new GenericValue<Integer>("Level", "dB", -90, 6);
+    private GenericValue<Integer> postBypassLevel = new GenericValue<Integer>("Bypass Level", "dB", -90, 6);
 
     private int programNumber;
 
@@ -767,44 +767,44 @@ public class Program {
         this.speakerSimulatorCabinet.setValue(speakerSimulatorCabinet);
     }
 
-    public int getSendLevel() {
+    public GenericValue<Integer> getSendLevel() {
         return sendLevel;
     }
 
     public void setSendLevel(final int sendLevel) {
-        this.sendLevel = sendLevel;
+        this.sendLevel.setValue(sendLevel);
     }
 
-    public int getSendBypassLevel() {
+    public GenericValue<Integer> getSendBypassLevel() {
         return sendBypassLevel;
     }
 
     public void setSendBypassLevel(final int sendBypassLevel) {
-        this.sendBypassLevel = sendBypassLevel;
+        this.sendBypassLevel.setValue(sendBypassLevel);
     }
 
-    public int getPostMix() {
+    public GenericValue<Integer> getPostMix() {
         return postMix;
     }
 
     public void setPostMix(final int postMix) {
-        this.postMix = postMix;
+        this.postMix.setValue(postMix);
     }
 
-    public int getPostLevel() {
+    public GenericValue<Integer> getPostLevel() {
         return postLevel;
     }
 
     public void setPostLevel(final int postLevel) {
-        this.postLevel = postLevel;
+        this.postLevel.setValue(postLevel);
     }
 
-    public int getPostBypassLevel() {
+    public GenericValue<Integer> getPostBypassLevel() {
         return postBypassLevel;
     }
 
     public void setPostBypassLevel(final int postBypassLevel) {
-        this.postBypassLevel = postBypassLevel;
+        this.postBypassLevel.setValue(postBypassLevel);
     }
 
     public int getProgramNumber() {

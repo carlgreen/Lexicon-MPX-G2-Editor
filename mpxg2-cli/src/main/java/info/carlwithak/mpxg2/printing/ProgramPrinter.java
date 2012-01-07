@@ -134,12 +134,12 @@ public class ProgramPrinter {
         sb.append("    Envelope:\n").append(printEnvelopeGenerator(program.getEnvelopeGenerator()));
         sb.append("  Mix:\n");
         sb.append("    Send:\n");
-        sb.append("      Level: ").append(signInt(program.getSendLevel())).append("\n");
-        sb.append("      Bypass Level: ").append(signInt(program.getSendBypassLevel())).append("\n");
+        sb.append("  ").append(printParameter(program.getSendLevel()));
+        sb.append("  ").append(printParameter(program.getSendBypassLevel()));
         sb.append("    Post:\n");
-        sb.append("      Mix: ").append(program.getPostMix()).append("%\n");
-        sb.append("      Level: ").append(signInt(program.getPostLevel())).append("dB\n");
-        sb.append("      Bypass Level: ").append(program.getPostBypassLevel()).append("dB\n");
+        sb.append("  ").append(printParameter(program.getPostMix()));
+        sb.append("  ").append(printParameter(program.getPostLevel()));
+        sb.append("  ").append(printParameter(program.getPostBypassLevel()));
         if (program.getEffect1() != null) {
             sb.append("    FX1:\n");
             sb.append("  ").append(printParameter(program.getEffect1().getMix()));

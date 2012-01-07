@@ -329,11 +329,11 @@ public class SysexParserIT {
         assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
-        assertEquals(0, program.getSendLevel());
-        assertEquals(0, program.getSendBypassLevel());
-        assertEquals(100, program.getPostMix());
-        assertEquals(0, program.getPostLevel());
-        assertEquals(0, program.getPostBypassLevel());
+        assertThat(program.getSendLevel(), is(value(0)));
+        assertThat(program.getSendBypassLevel(), is(value(0)));
+        assertThat(program.getPostMix(), is(value(100)));
+        assertThat(program.getPostLevel(), is(value(0)));
+        assertThat(program.getPostBypassLevel(), is(value(0)));
 
         assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
@@ -1936,11 +1936,11 @@ public class SysexParserIT {
         assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
-        assertEquals(0, program.getSendLevel());
-        assertEquals(0, program.getSendBypassLevel());
-        assertEquals(100, program.getPostMix());
-        assertEquals(0, program.getPostLevel());
-        assertEquals(0, program.getPostBypassLevel());
+        assertThat(program.getSendLevel(), is(value(0)));
+        assertThat(program.getSendBypassLevel(), is(value(0)));
+        assertThat(program.getPostMix(), is(value(100)));
+        assertThat(program.getPostLevel(), is(value(0)));
+        assertThat(program.getPostBypassLevel(), is(value(0)));
 
         assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
@@ -2175,11 +2175,11 @@ public class SysexParserIT {
         assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
-        assertEquals(0, program.getSendLevel());
-        assertEquals(0, program.getSendBypassLevel());
-        assertEquals(100, program.getPostMix());
-        assertEquals(0, program.getPostLevel());
-        assertEquals(0, program.getPostBypassLevel());
+        assertThat(program.getSendLevel(), is(value(0)));
+        assertThat(program.getSendBypassLevel(), is(value(0)));
+        assertThat(program.getPostMix(), is(value(100)));
+        assertThat(program.getPostLevel(), is(value(0)));
+        assertThat(program.getPostBypassLevel(), is(value(0)));
 
         assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
