@@ -135,7 +135,7 @@ Wah & Uni
   Mix:
     Send:
       Level: +8
-      Bypass Level: 8
+      Bypass Level: +8
     Post:
       Mix: 100%
       Level: 0dB

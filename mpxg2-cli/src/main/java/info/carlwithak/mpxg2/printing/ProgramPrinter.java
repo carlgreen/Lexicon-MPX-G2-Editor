@@ -135,7 +135,7 @@ public class ProgramPrinter {
         sb.append("  Mix:\n");
         sb.append("    Send:\n");
         sb.append("      Level: ").append(signInt(program.getSendLevel())).append("\n");
-        sb.append("      Bypass Level: ").append(program.getSendBypassLevel()).append("\n");
+        sb.append("      Bypass Level: ").append(signInt(program.getSendBypassLevel())).append("\n");
         sb.append("    Post:\n");
         sb.append("      Mix: ").append(program.getPostMix()).append("%\n");
         sb.append("      Level: ").append(signInt(program.getPostLevel())).append("dB\n");
