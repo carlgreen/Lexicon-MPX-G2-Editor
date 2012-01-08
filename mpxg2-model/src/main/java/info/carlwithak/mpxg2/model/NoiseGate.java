@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.model;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.NoiseGateEnableValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
 
 /**
  * The Noise Gate blocks signal from being output at the Send jack and/or from
@@ -28,7 +29,7 @@ import info.carlwithak.mpxg2.model.parameters.OnOffValue;
  *
  * @author Carl Green
  */
-public class NoiseGate {
+public class NoiseGate implements DataObject {
     private NoiseGateEnableValue enable = new NoiseGateEnableValue("Enable");
     private OnOffValue send = new OnOffValue("Send");
     private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", 0, 0);
@@ -38,6 +39,43 @@ public class NoiseGate {
     private GenericValue<Integer> hTime = new GenericValue<Integer>("HTime", "", 0, 0);
     private GenericValue<Integer> rTime = new GenericValue<Integer>("RTime", "", 0, 0);
     private GenericValue<Integer> delay = new GenericValue<Integer>("Delay", "", 0, 0);
+
+    @Override
+    public Parameter getParameter(final int parameterIndex) {
+        Parameter parameter;
+        switch (parameterIndex) {
+            case 0:
+                parameter = enable;
+                break;
+            case 1:
+                parameter = send;
+                break;
+            case 2:
+                parameter = threshold;
+                break;
+            case 3:
+                parameter = attenuation;
+                break;
+            case 4:
+                parameter = offset;
+                break;
+            case 5:
+                parameter = aTime;
+                break;
+            case 6:
+                parameter = hTime;
+                break;
+            case 7:
+                parameter = rTime;
+                break;
+            case 8:
+                parameter = delay;
+                break;
+            default:
+                parameter = null;
+        }
+        return parameter;
+    }
 
     public NoiseGateEnableValue getEnable() {
         return enable;
