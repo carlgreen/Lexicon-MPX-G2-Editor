@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
+import info.carlwithak.mpxg2.model.SendMix;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
 import info.carlwithak.mpxg2.model.effects.Effect;
@@ -774,11 +775,13 @@ public class SysexParser {
         int postMix = readInt(objectData, 896, 2);
         program.setPostMix(postMix);
 
+        SendMix sendMix = new SendMix();
         int sendLevel = readInt(objectData, 898, 2);
-        program.setSendLevel(sendLevel);
+        sendMix.setSendLevel(sendLevel);
 
         int sendBypassLevel = readInt(objectData, 900, 2);
-        program.setSendBypassLevel(sendBypassLevel);
+        sendMix.setSendBypassLevel(sendBypassLevel);
+        program.setSendMix(sendMix);
 
         // unused bytes 902 - 904
 

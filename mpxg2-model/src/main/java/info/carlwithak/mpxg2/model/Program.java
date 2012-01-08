@@ -130,8 +130,7 @@ public class Program {
     private SpeakerSimulatorCabinetValue speakerSimulatorCabinet = new SpeakerSimulatorCabinetValue("Cabinet");
 
     // mix
-    private GenericValue<Integer> sendLevel = new GenericValue<Integer>("Level", "", -56, 0);
-    private GenericValue<Integer> sendBypassLevel = new GenericValue<Integer>("Bypass Level", "", -56, 0);
+    private SendMix sendMix;
     private GenericValue<Integer> postMix = new GenericValue<Integer>("Mix", "%", 0, 100);
     private GenericValue<Integer> postLevel = new GenericValue<Integer>("Level", "dB", -90, 6);
     private GenericValue<Integer> postBypassLevel = new GenericValue<Integer>("Bypass Level", "dB", -90, 6);
@@ -709,20 +708,12 @@ public class Program {
         this.speakerSimulatorCabinet.setValue(speakerSimulatorCabinet);
     }
 
-    public GenericValue<Integer> getSendLevel() {
-        return sendLevel;
+    public SendMix getSendMix() {
+        return sendMix;
     }
 
-    public void setSendLevel(final int sendLevel) {
-        this.sendLevel.setValue(sendLevel);
-    }
-
-    public GenericValue<Integer> getSendBypassLevel() {
-        return sendBypassLevel;
-    }
-
-    public void setSendBypassLevel(final int sendBypassLevel) {
-        this.sendBypassLevel.setValue(sendBypassLevel);
+    public void setSendMix(final SendMix sendMix) {
+        this.sendMix = sendMix;
     }
 
     public GenericValue<Integer> getPostMix() {

@@ -26,6 +26,7 @@ import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
+import info.carlwithak.mpxg2.model.SendMix;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
@@ -331,8 +332,9 @@ public class SysexParserIT {
         assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
-        assertThat(program.getSendLevel(), is(value(0)));
-        assertThat(program.getSendBypassLevel(), is(value(0)));
+        SendMix sendMix = program.getSendMix();
+        assertThat(sendMix.getSendLevel(), is(value(0)));
+        assertThat(sendMix.getSendBypassLevel(), is(value(0)));
         assertThat(program.getPostMix(), is(value(100)));
         assertThat(program.getPostLevel(), is(value(0)));
         assertThat(program.getPostBypassLevel(), is(value(0)));
@@ -1939,8 +1941,9 @@ public class SysexParserIT {
         assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
-        assertThat(program.getSendLevel(), is(value(0)));
-        assertThat(program.getSendBypassLevel(), is(value(0)));
+        SendMix sendMix = program.getSendMix();
+        assertThat(sendMix.getSendLevel(), is(value(0)));
+        assertThat(sendMix.getSendBypassLevel(), is(value(0)));
         assertThat(program.getPostMix(), is(value(100)));
         assertThat(program.getPostLevel(), is(value(0)));
         assertThat(program.getPostBypassLevel(), is(value(0)));
@@ -2179,8 +2182,9 @@ public class SysexParserIT {
         assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
-        assertThat(program.getSendLevel(), is(value(0)));
-        assertThat(program.getSendBypassLevel(), is(value(0)));
+        SendMix sendMix = program.getSendMix();
+        assertThat(sendMix.getSendLevel(), is(value(0)));
+        assertThat(sendMix.getSendBypassLevel(), is(value(0)));
         assertThat(program.getPostMix(), is(value(100)));
         assertThat(program.getPostLevel(), is(value(0)));
         assertThat(program.getPostBypassLevel(), is(value(0)));
