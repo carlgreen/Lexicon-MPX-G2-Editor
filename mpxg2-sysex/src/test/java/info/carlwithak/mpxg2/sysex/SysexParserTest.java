@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.EffectsStatus;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -289,40 +290,39 @@ public class SysexParserTest {
 
     @Test
     public void testReadEffectsStatus() {
-        Program program = new Program();
-        SysexParser.readEffectsStatus(program, 0);
+        EffectsStatus effectsStatus = SysexParser.readEffectsStatus(0);
 
-        assertFalse(program.isEffect1On());
-        SysexParser.readEffectsStatus(program, 1);
-        assertTrue(program.isEffect1On());
+        assertThat(effectsStatus.getEffect1On(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(1);
+        assertThat(effectsStatus.getEffect1On(), is(value(true)));
 
-        assertFalse(program.isEffect2On());
-        SysexParser.readEffectsStatus(program, 2);
-        assertTrue(program.isEffect2On());
+        assertThat(effectsStatus.getEffect2On(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(2);
+        assertThat(effectsStatus.getEffect2On(), is(value(true)));
 
-        assertFalse(program.isChorusOn());
-        SysexParser.readEffectsStatus(program, 4);
-        assertTrue(program.isChorusOn());
+        assertThat(effectsStatus.getChorusOn(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(4);
+        assertThat(effectsStatus.getChorusOn(), is(value(true)));
 
-        assertFalse(program.isDelayOn());
-        SysexParser.readEffectsStatus(program, 8);
-        assertTrue(program.isDelayOn());
+        assertThat(effectsStatus.getDelayOn(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(8);
+        assertThat(effectsStatus.getDelayOn(), is(value(true)));
 
-        assertFalse(program.isReverbOn());
-        SysexParser.readEffectsStatus(program, 16);
-        assertTrue(program.isReverbOn());
+        assertThat(effectsStatus.getReverbOn(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(16);
+        assertThat(effectsStatus.getReverbOn(), is(value(true)));
 
-        assertFalse(program.isEqOn());
-        SysexParser.readEffectsStatus(program, 32);
-        assertTrue(program.isEqOn());
+        assertThat(effectsStatus.getEqOn(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(32);
+        assertThat(effectsStatus.getEqOn(), is(value(true)));
 
-        assertFalse(program.isGainOn());
-        SysexParser.readEffectsStatus(program, 64);
-        assertTrue(program.isGainOn());
+        assertThat(effectsStatus.getGainOn(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(64);
+        assertThat(effectsStatus.getGainOn(), is(value(true)));
 
-        assertFalse(program.isInsertOn());
-        SysexParser.readEffectsStatus(program, 128);
-        assertTrue(program.isInsertOn());
+        assertThat(effectsStatus.getInsertOn(), is(value(false)));
+        effectsStatus = SysexParser.readEffectsStatus(128);
+        assertThat(effectsStatus.getInsertOn(), is(value(true)));
     }
 
     @Test

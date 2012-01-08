@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.parameters.BeatRate;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
+import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 import org.junit.Test;
 
@@ -108,7 +109,7 @@ public class ProgramPrinterTest {
     @Test
     public void testPrintProgram() throws PrintException {
         StringBuilder sb = new StringBuilder();
-        ProgramPrinter.printProgram(sb, null, null, false, 0);
+        ProgramPrinter.printProgram(sb, null, null, null, 0);
         assertEquals("", sb.toString());
 
         sb = new StringBuilder();
@@ -116,7 +117,9 @@ public class ProgramPrinterTest {
         PedalVol pedalVol = new PedalVol();
         pedalVol.setMix(0);
         pedalVol.setLevel(0);
-        ProgramPrinter.printProgram(sb, "Effect1", pedalVol, true, 2);
+        OnOffValue effect1Status = new OnOffValue("FX1  Byp");
+        effect1Status.setValue(true);
+        ProgramPrinter.printProgram(sb, "Effect1", pedalVol, effect1Status, 2);
         assertThat(sb.toString(), containsString("  Effect1: Pedal Vol (On)\n    Toe Switch: on=bypass"));
     }
 

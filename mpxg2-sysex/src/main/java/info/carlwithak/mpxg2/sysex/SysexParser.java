@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.EffectsStatus;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -672,7 +673,7 @@ public class SysexParser {
         program.setProgramName(sb.toString().trim());
 
         int effectsStatus = readInt(objectData, 596, 2);
-        readEffectsStatus(program, effectsStatus);
+        program.setEffectsStatus(readEffectsStatus(effectsStatus));
 
         // soft row
         for (int i = 0; i < 10; i++) {
@@ -816,15 +817,17 @@ public class SysexParser {
         program.setIsRock((guitarStyle & GUITAR_STYLE_ROCK) == GUITAR_STYLE_ROCK);
     }
 
-    static void readEffectsStatus(final Program program, final int effectsStatus) {
-        program.setEffect1On((effectsStatus & 0x01) == 0x01);
-        program.setEffect2On((effectsStatus & 0x02) == 0x02);
-        program.setChorusOn((effectsStatus & 0x04) == 0x04);
-        program.setDelayOn((effectsStatus & 0x08) == 0x08);
-        program.setReverbOn((effectsStatus & 0x10) == 0x10);
-        program.setEqOn((effectsStatus & 0x20) == 0x20);
-        program.setGainOn((effectsStatus & 0x40) == 0x40);
-        program.setInsertOn((effectsStatus & 0x80) == 0x80);
+    static EffectsStatus readEffectsStatus(final int effectsStatus) {
+        EffectsStatus effectsStatusData = new EffectsStatus();
+        effectsStatusData.setEffect1On((effectsStatus & 0x01) == 0x01);
+        effectsStatusData.setEffect2On((effectsStatus & 0x02) == 0x02);
+        effectsStatusData.setChorusOn((effectsStatus & 0x04) == 0x04);
+        effectsStatusData.setDelayOn((effectsStatus & 0x08) == 0x08);
+        effectsStatusData.setReverbOn((effectsStatus & 0x10) == 0x10);
+        effectsStatusData.setEqOn((effectsStatus & 0x20) == 0x20);
+        effectsStatusData.setGainOn((effectsStatus & 0x40) == 0x40);
+        effectsStatusData.setInsertOn((effectsStatus & 0x80) == 0x80);
+        return effectsStatusData;
     }
 
     private static Patch readPatch(final byte[] bytes) throws IOException {

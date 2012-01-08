@@ -92,15 +92,7 @@ public class Program {
 
     private String programName;
 
-    // effects status
-    private boolean effect1On;
-    private boolean effect2On;
-    private boolean chorusOn;
-    private boolean delayOn;
-    private boolean reverbOn;
-    private boolean eqOn;
-    private boolean gainOn;
-    private boolean insertOn;
+    private EffectsStatus effectsStatus;
 
     // soft row
     private List<SoftRowItem> softRow = Arrays.<SoftRowItem>asList(null, null, null, null, null, null, null, null, null, null);
@@ -522,68 +514,12 @@ public class Program {
         this.programName = programName;
     }
 
-    public boolean isEffect1On() {
-        return effect1On;
+    public EffectsStatus getEffectsStatus() {
+        return effectsStatus;
     }
 
-    public void setEffect1On(final boolean effect1On) {
-        this.effect1On = effect1On;
-    }
-
-    public boolean isEffect2On() {
-        return effect2On;
-    }
-
-    public void setEffect2On(final boolean effect2On) {
-        this.effect2On = effect2On;
-    }
-
-    public boolean isChorusOn() {
-        return chorusOn;
-    }
-
-    public void setChorusOn(final boolean chorusOn) {
-        this.chorusOn = chorusOn;
-    }
-
-    public boolean isDelayOn() {
-        return delayOn;
-    }
-
-    public void setDelayOn(final boolean delayOn) {
-        this.delayOn = delayOn;
-    }
-
-    public boolean isReverbOn() {
-        return reverbOn;
-    }
-
-    public void setReverbOn(final boolean reverbOn) {
-        this.reverbOn = reverbOn;
-    }
-
-    public boolean isEqOn() {
-        return eqOn;
-    }
-
-    public void setEqOn(final boolean eqOn) {
-        this.eqOn = eqOn;
-    }
-
-    public boolean isGainOn() {
-        return gainOn;
-    }
-
-    public void setGainOn(final boolean gainOn) {
-        this.gainOn = gainOn;
-    }
-
-    public boolean isInsertOn() {
-        return insertOn;
-    }
-
-    public void setInsertOn(final boolean insertOn) {
-        this.insertOn = insertOn;
+    public void setEffectsStatus(final EffectsStatus effectsStatus) {
+        this.effectsStatus = effectsStatus;
     }
 
     public int getSoftRowEffectType(final int softRowPosition) {

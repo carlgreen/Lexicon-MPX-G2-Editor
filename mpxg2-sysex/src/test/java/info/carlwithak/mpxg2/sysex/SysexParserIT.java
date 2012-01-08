@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.EffectsStatus;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
@@ -187,14 +188,15 @@ public class SysexParserIT {
 
         assertEquals("G2 Blue", program.getProgramName());
 
-        assertTrue(program.isEffect1On());
-        assertFalse(program.isEffect2On());
-        assertTrue(program.isChorusOn());
-        assertTrue(program.isDelayOn());
-        assertFalse(program.isReverbOn());
-        assertFalse(program.isEqOn());
-        assertFalse(program.isGainOn());
-        assertTrue(program.isInsertOn());
+        EffectsStatus effectsStatus = program.getEffectsStatus();
+        assertThat(effectsStatus.getEffect1On(), is(value(true)));
+        assertThat(effectsStatus.getEffect2On(), is(value(false)));
+        assertThat(effectsStatus.getChorusOn(), is(value(true)));
+        assertThat(effectsStatus.getDelayOn(), is(value(true)));
+        assertThat(effectsStatus.getReverbOn(), is(value(false)));
+        assertThat(effectsStatus.getEqOn(), is(value(false)));
+        assertThat(effectsStatus.getGainOn(), is(value(false)));
+        assertThat(effectsStatus.getInsertOn(), is(value(true)));
 
         assertEquals(6, program.getSoftRowEffectType(0));
         assertEquals(3, program.getSoftRowParameter(0));
@@ -1816,14 +1818,15 @@ public class SysexParserIT {
 
         assertEquals("Clean Slate", program.getProgramName());
 
-        assertFalse(program.isEffect1On());
-        assertFalse(program.isEffect2On());
-        assertFalse(program.isChorusOn());
-        assertFalse(program.isDelayOn());
-        assertFalse(program.isReverbOn());
-        assertFalse(program.isEqOn());
-        assertFalse(program.isGainOn());
-        assertTrue(program.isInsertOn());
+        EffectsStatus effectsStatus = program.getEffectsStatus();
+        assertThat(effectsStatus.getEffect1On(), is(value(false)));
+        assertThat(effectsStatus.getEffect2On(), is(value(false)));
+        assertThat(effectsStatus.getChorusOn(), is(value(false)));
+        assertThat(effectsStatus.getDelayOn(), is(value(false)));
+        assertThat(effectsStatus.getReverbOn(), is(value(false)));
+        assertThat(effectsStatus.getEqOn(), is(value(false)));
+        assertThat(effectsStatus.getGainOn(), is(value(false)));
+        assertThat(effectsStatus.getInsertOn(), is(value(true)));
 
         assertThat(program.getTempo(), is(value(120)));
         assertThat(program.getTempoSource(), is(value(0)));
@@ -2055,14 +2058,15 @@ public class SysexParserIT {
 
         assertEquals("Unity Gain", program.getProgramName());
 
-        assertTrue(program.isEffect1On());
-        assertFalse(program.isEffect2On());
-        assertFalse(program.isChorusOn());
-        assertFalse(program.isDelayOn());
-        assertFalse(program.isReverbOn());
-        assertFalse(program.isEqOn());
-        assertFalse(program.isGainOn());
-        assertTrue(program.isInsertOn());
+        EffectsStatus effectsStatus = program.getEffectsStatus();
+        assertThat(effectsStatus.getEffect1On(), is(value(true)));
+        assertThat(effectsStatus.getEffect2On(), is(value(false)));
+        assertThat(effectsStatus.getChorusOn(), is(value(false)));
+        assertThat(effectsStatus.getDelayOn(), is(value(false)));
+        assertThat(effectsStatus.getReverbOn(), is(value(false)));
+        assertThat(effectsStatus.getEqOn(), is(value(false)));
+        assertThat(effectsStatus.getGainOn(), is(value(false)));
+        assertThat(effectsStatus.getInsertOn(), is(value(true)));
 
         assertThat(program.getTempo(), is(value(170)));
         assertThat(program.getTempoSource(), is(value(0)));

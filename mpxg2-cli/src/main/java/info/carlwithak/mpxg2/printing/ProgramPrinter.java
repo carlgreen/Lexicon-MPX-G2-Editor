@@ -31,10 +31,10 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 import java.text.DecimalFormat;
 
-import static info.carlwithak.mpxg2.printing.Util.onOffToString;
 import static info.carlwithak.mpxg2.printing.Util.printParameter;
 import static info.carlwithak.mpxg2.printing.Util.signInt;
 
@@ -108,13 +108,13 @@ public class ProgramPrinter {
         for (String line : RoutingPrinter.print(program).split("\n")) {
             sb.append("    ").append(line).append("\n");
         }
-        printProgram(sb, "Effect 1", program.getEffect1(), program.isEffect1On(), program.getEffect1ToePatch());
-        printProgram(sb, "Effect 2", program.getEffect2(), program.isEffect2On(), program.getEffect2ToePatch());
-        printProgram(sb, "Chorus", program.getChorus(), program.isChorusOn(), program.getChorusToePatch());
-        printProgram(sb, "Delay", program.getDelay(), program.isDelayOn(), program.getDelayToePatch());
-        printProgram(sb, "Reverb", program.getReverb(), program.isReverbOn(), program.getReverbToePatch());
-        printProgram(sb, "EQ", program.getEq(), program.isEqOn(), program.getEqToePatch());
-        printProgram(sb, "Gain", program.getGain(), program.isGainOn(), program.getGainToePatch());
+        printProgram(sb, "Effect 1", program.getEffect1(), program.getEffectsStatus().getEffect1On(), program.getEffect1ToePatch());
+        printProgram(sb, "Effect 2", program.getEffect2(), program.getEffectsStatus().getEffect2On(), program.getEffect2ToePatch());
+        printProgram(sb, "Chorus", program.getChorus(), program.getEffectsStatus().getChorusOn(), program.getChorusToePatch());
+        printProgram(sb, "Delay", program.getDelay(), program.getEffectsStatus().getDelayOn(), program.getDelayToePatch());
+        printProgram(sb, "Reverb", program.getReverb(), program.getEffectsStatus().getReverbOn(), program.getReverbToePatch());
+        printProgram(sb, "EQ", program.getEq(), program.getEffectsStatus().getEqOn(), program.getEqToePatch());
+        printProgram(sb, "Gain", program.getGain(), program.getEffectsStatus().getGainOn(), program.getGainToePatch());
         sb.append("  Softrow:\n");
         for (int i = 0; i < 10; i++) {
             sb.append(printSoftRow(program, i));
@@ -288,10 +288,10 @@ public class ProgramPrinter {
         return trimDelimitedList(sb);
     }
 
-    static void printProgram(final StringBuilder sb, final String label, final EffectObject effect, final boolean effectOn, final int effectToePatch) throws PrintException {
+    static void printProgram(final StringBuilder sb, final String label, final EffectObject effect, final OnOffValue effectOn, final int effectToePatch) throws PrintException {
         if (effect != null) {
             sb.append("  ").append(label).append(": ");
-            sb.append(effect.getName()).append(" (").append(onOffToString(effectOn)).append(")").append("\n");
+            sb.append(effect.getName()).append(" (").append(effectOn.getDisplayString()).append(")").append("\n");
             sb.append("    Toe Switch: ").append(toePatchToString(effectToePatch)).append("\n");
             sb.append(AlgorithmPrinter.print(effect));
         }
