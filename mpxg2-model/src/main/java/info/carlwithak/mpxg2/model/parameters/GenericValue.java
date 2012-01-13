@@ -18,6 +18,8 @@
 package info.carlwithak.mpxg2.model.parameters;
 
 import java.lang.reflect.Field;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
 
 /**
  *
@@ -86,10 +88,16 @@ public class GenericValue<T> implements Parameter, Cloneable {
         return sb.toString();
     }
 
-    public GenericValue<?> clone(final String newName) throws CloneNotSupportedException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
-        GenericValue<?> clone = (GenericValue<?>) super.clone();
-        Field nameField = GenericValue.class.getDeclaredField("name");
-        nameField.setAccessible(true);
+    public GenericValue<?> clone(final String newName) throws CloneNotSupportedException, NoSuchFieldException, IllegalAccessException {
+        final GenericValue<?> clone = (GenericValue<?>) super.clone();
+        final Field nameField = GenericValue.class.getDeclaredField("name");
+        AccessController.doPrivileged(new PrivilegedAction() {
+            @Override
+            public Object run() {
+                nameField.setAccessible(true);
+                return null;
+            }
+        });
         nameField.set(clone, newName);
         clone.value = null;
         return clone;
