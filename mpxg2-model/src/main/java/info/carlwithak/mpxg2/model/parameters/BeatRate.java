@@ -25,10 +25,10 @@ package info.carlwithak.mpxg2.model.parameters;
 public class BeatRate implements Rate {
 
     private String name;
-    private int measures;
-    private int beats;
+    private Integer measures;
+    private Integer beats;
 
-    public BeatRate(final String name, final int measures, final int beats) {
+    public BeatRate(final String name, final Integer measures, final Integer beats) {
         this.name = name;
         this.measures = measures;
         this.beats = beats;
@@ -44,24 +44,27 @@ public class BeatRate implements Rate {
         return ":";
     }
 
-    public int getMeasures() {
+    public Integer getMeasures() {
         return measures;
     }
 
-    public void setMeasures(final int measures) {
+    public void setMeasures(final Integer measures) {
         this.measures = measures;
     }
 
-    public int getBeats() {
+    public Integer getBeats() {
         return beats;
     }
 
-    public void setBeats(final int beats) {
+    public void setBeats(final Integer beats) {
         this.beats = beats;
     }
 
     @Override
     public String getDisplayString() {
+        if (getMeasures() == null && getBeats() == null) {
+            return "--";
+        }
         return getMeasures() + ":" + getBeats();
     }
 
@@ -74,10 +77,16 @@ public class BeatRate implements Rate {
             return false;
         }
         final BeatRate other = (BeatRate) obj;
-        if (this.measures != other.measures) {
+        if (this.measures == null) {
+            return other.measures == null;
+        }
+        if (!this.measures.equals(other.measures)) {
             return false;
         }
-        if (this.beats != other.beats) {
+        if (this.beats == null) {
+            return other.beats == null;
+        }
+        if (!this.beats.equals(other.beats)) {
             return false;
         }
         return true;

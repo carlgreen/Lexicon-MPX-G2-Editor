@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.parameters.BeatRate;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 import org.junit.Test;
@@ -147,9 +148,15 @@ public class ProgramPrinterTest {
         patch.setSourceMax(25);
         patch.setDestinationEffect(5);
         patch.setDestinationParameter(2);
-        patch.setDestinationMin(0);
-        patch.setDestinationMid(0x8000);
-        patch.setDestinationMax(24);
+        GenericValue<Integer> destinationMin = new GenericValue<Integer>("Min", "dB", -72, 24);
+        destinationMin.setValue(0);
+        patch.setDestinationMin(destinationMin);
+        GenericValue<Integer> destinationMid = new GenericValue<Integer>("Mid", "dB", -72, 24);
+        destinationMid.setValue(null);
+        patch.setDestinationMid(destinationMid);
+        GenericValue<Integer> destinationMax = new GenericValue<Integer>("Max", "dB", -72, 24);
+        destinationMax.setValue(24);
+        patch.setDestinationMax(destinationMax);
 
         Knob knob = new Knob();
 
@@ -170,83 +177,20 @@ public class ProgramPrinterTest {
         patch.setSourceMax(25);
         patch.setDestinationEffect(16);
         patch.setDestinationParameter(0);
-        patch.setDestinationMin(0);
-        patch.setDestinationMid(0x8000);
-        patch.setDestinationMax(6);
+        GenericValue<Integer> destinationMin = new GenericValue<Integer>("Min", "", -56, 0);
+        destinationMin.setValue(0);
+        patch.setDestinationMin(destinationMin);
+        GenericValue<Integer> destinationMid = new GenericValue<Integer>("Mid", "", -56, 0);
+        destinationMid.setValue(null);
+        patch.setDestinationMid(destinationMid);
+        GenericValue<Integer> destinationMax = new GenericValue<Integer>("Max", "", -56, 0);
+        destinationMax.setValue(6);
+        patch.setDestinationMax(destinationMax);
 
         Program program = new Program();
 
         String expected = "    Patch 1:\n      Source: Ctls Knob\n        Min: 0\n        Mid: --\n        Max: 25\n      Destination: Send Level\n        Min: 0\n        Mid: --\n        Max: +6\n";
         String actual = ProgramPrinter.printPatch(program, patch, 1);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testFormatPatchParameter_BeatRate() throws PrintException {
-        String patchDestinationUnit = ":";
-        int parameterValue = 7 + 4 * 256;
-
-        String expected = "7:4";
-        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testFormatPatchParameter_Frequency() throws PrintException {
-        String patchDestinationUnit = "Hz";
-
-        int parameterValue = 10;
-        String expected = "10Hz";
-        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-
-        patchDestinationUnit = "100Hz";
-        expected = "0.10Hz";
-        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testFormatPatchParameter_Boolean() throws PrintException {
-        String patchDestinationUnit = "OnOff";
-
-        int parameterValue = 0;
-        String expected = "Off";
-        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-
-        parameterValue = 1;
-        expected = "On";
-        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testFormatPatchParameter_Scale() throws PrintException {
-        String patchDestinationUnit = "scale";
-
-        int parameterValue = 0;
-        String expected = "Major";
-        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-
-        parameterValue = 1;
-        expected = "Dor";
-        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testFormatPatchParameter_Normal() throws PrintException {
-        String patchDestinationUnit = "X";
-        int parameterValue = 1;
-        String expected = "1X";
-        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
-        assertEquals(expected, actual);
-
-        patchDestinationUnit = "-X";
-        expected = "+1X";
-        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
         assertEquals(expected, actual);
     }
 
@@ -308,7 +252,7 @@ public class ProgramPrinterTest {
         lfo.setDepth(100);
         lfo.setOnLevel(64);
         lfo.setOnSource(0);
-        
+
         String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      OnLvl: 64\n      OnSrc: None\n";
         String actual = ProgramPrinter.printLfo(lfo);
         assertEquals(expected, actual);

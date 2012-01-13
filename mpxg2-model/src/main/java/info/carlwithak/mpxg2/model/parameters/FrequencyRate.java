@@ -29,9 +29,9 @@ public class FrequencyRate implements Rate {
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     private String name;
-    private double frequency;
+    private Double frequency;
 
-    public FrequencyRate(final String name, final double frequency) {
+    public FrequencyRate(final String name, final Double frequency) {
         this.name = name;
         this.frequency = frequency;
     }
@@ -46,16 +46,19 @@ public class FrequencyRate implements Rate {
         return "Hz";
     }
 
-    public double getFrequency() {
+    public Double getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(final double frequency) {
+    public void setFrequency(final Double frequency) {
         this.frequency = frequency;
     }
 
     @Override
     public String getDisplayString() {
+        if (getFrequency() == null) {
+            return "--";
+        }
         return DECIMAL_2DP.format(getFrequency()) + "Hz";
     }
 

@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.sysex;
 
 import info.carlwithak.mpxg2.model.Ab;
+import info.carlwithak.mpxg2.model.DataObject;
 import info.carlwithak.mpxg2.model.EffectsStatus;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
@@ -34,6 +35,12 @@ import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.model.parameters.BeatRate;
+import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.Rate;
+import info.carlwithak.mpxg2.model.parameters.TapMsRate;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AerosolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AutoPanParser;
@@ -706,12 +713,7 @@ public class SysexParser {
 
         // unused bytes 652 - 654
 
-        // patching
-        program.setPatch1(readPatch(Arrays.copyOfRange(objectData, 654, 678)));
-        program.setPatch2(readPatch(Arrays.copyOfRange(objectData, 678, 702)));
-        program.setPatch3(readPatch(Arrays.copyOfRange(objectData, 702, 726)));
-        program.setPatch4(readPatch(Arrays.copyOfRange(objectData, 726, 750)));
-        program.setPatch5(readPatch(Arrays.copyOfRange(objectData, 750, 774)));
+        // patching uses bytes 654 - 774 later on
 
         // knob controller
         program.setKnob(readKnob(Arrays.copyOfRange(objectData, 774, 798)));
@@ -783,12 +785,79 @@ public class SysexParser {
         sendMix.setSendBypassLevel(sendBypassLevel);
         program.setSendMix(sendMix);
 
+        // patching
+        program.setPatch1(readPatch(program, Arrays.copyOfRange(objectData, 654, 678)));
+        program.setPatch2(readPatch(program, Arrays.copyOfRange(objectData, 678, 702)));
+        program.setPatch3(readPatch(program, Arrays.copyOfRange(objectData, 702, 726)));
+        program.setPatch4(readPatch(program, Arrays.copyOfRange(objectData, 726, 750)));
+        program.setPatch5(readPatch(program, Arrays.copyOfRange(objectData, 750, 774)));
+
         // unused bytes 902 - 904
 
         // TODO what is this?
         // skip bytes 904 - 908
 
         return program;
+    }
+
+    /**
+     * copied and altered from ProgramPrinter.
+     */
+    private static Parameter getEffectParameter(final Program program, final int effectIndex, final int parameterIndex) {
+        DataObject dataObject;
+        switch (effectIndex) {
+            case 0:
+                dataObject = program.getEffect1();
+                break;
+            case 1:
+                dataObject = program.getEffect2();
+                break;
+            case 2:
+                dataObject = program.getChorus();
+                break;
+            case 3:
+                dataObject = program.getDelay();
+                break;
+            case 4:
+                dataObject = program.getReverb();
+                break;
+            case 5:
+                dataObject = program.getEq();
+                break;
+            case 6:
+                dataObject = program.getGain();
+                break;
+            case 7:
+                dataObject = program.getKnob();
+                break;
+            case 8:
+                dataObject = program.getLfo1();
+                break;
+            case 9:
+                dataObject = program.getLfo2();
+                break;
+            case 10:
+                dataObject = program.getRandom();
+                break;
+            case 11:
+                dataObject = program.getAb();
+                break;
+            case 12:
+                dataObject = program.getEnvelopeGenerator();
+                break;
+            case 16:
+                dataObject = program.getSendMix();
+                break;
+            case 19:
+                dataObject = program.getNoiseGate();
+                break;
+            case 24:
+                dataObject = program.getEffectsStatus();
+                break;
+            default:
+                dataObject = null;
+        }
+        return dataObject == null ? null : dataObject.getParameter(parameterIndex);
     }
 
     static void readEffectTypes(final Program program, final int effectTypes) {
@@ -833,7 +902,7 @@ public class SysexParser {
         return effectsStatusData;
     }
 
-    private static Patch readPatch(final byte[] bytes) throws IOException {
+    private static Patch readPatch(final Program program, final byte[] bytes) throws IOException, ParseException {
         int source = readInt(bytes, 0, 2);
         int sourceMin = readInt(bytes, 2, 2);
         int sourceMid = readInt(bytes, 4, 2);
@@ -857,10 +926,49 @@ public class SysexParser {
         patch.setSourceMax(sourceMax);
         patch.setDestinationEffect(destinationEffect == NO_DESTINATION ? null : destinationEffect);
         patch.setDestinationParameter(destinationParameter);
-        patch.setDestinationMin(destinationMin);
-        patch.setDestinationMid(destinationMid);
-        patch.setDestinationMax(destinationMax);
+        if (patch != null && patch.getDestinationEffectIndex() != null) {
+            final Parameter baseParameter = getEffectParameter(program, patch.getDestinationEffectIndex(), patch.getDestinationParameter());
+            if (baseParameter != null) {
+                patch.setDestinationMin(createPatchDestinationParameter(baseParameter, "Min", destinationMin));
+                patch.setDestinationMid(createPatchDestinationParameter(baseParameter, "Mid", destinationMid));
+                patch.setDestinationMax(createPatchDestinationParameter(baseParameter, "Max", destinationMax));
+            }
+        }
         return patch;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static Parameter createPatchDestinationParameter(final Parameter baseParameter, final String name, final int value) throws ParseException {
+        Parameter destinationParameter = null;
+        if (baseParameter instanceof GenericValue) {
+            try {
+                destinationParameter = ((GenericValue) baseParameter).clone(name);
+            } catch (Exception e) {
+                throw new ParseException("Could not create patch parameter for " + baseParameter, e);
+            }
+            if (value != 0x8000) {
+                if (((GenericValue) baseParameter).getValue() instanceof Integer) {
+                    ((GenericValue<Integer>) destinationParameter).setValue(value);
+                } else if (((GenericValue) baseParameter).getValue() instanceof Boolean) {
+                    ((GenericValue<Boolean>) destinationParameter).setValue(value != 0);
+                }
+            }
+        } else if (baseParameter instanceof Rate) {
+            int rateType = -1;
+            if (baseParameter instanceof FrequencyRate) {
+                rateType = 0;
+            } else if (baseParameter instanceof BeatRate) {
+                rateType = 1;
+            } else if (baseParameter instanceof TapMsRate) {
+                rateType = 4;
+            }
+            byte[] bbMin = intToArray(value + (rateType * 256 * 256), 6);
+            destinationParameter = RateParser.parse(name, bbMin);
+        }
+        if (destinationParameter == null) {
+            throw new ParseException("Could not create patch parameters for " + baseParameter);
+        }
+        return destinationParameter;
     }
 
     static Knob readKnob(byte[] bytes) {
@@ -980,6 +1088,15 @@ public class SysexParser {
         int result = 0;
         for (int i = 0; i < size; i++) {
             result += (bytes[i + offset] * Math.pow(16, i));
+        }
+        return result;
+    }
+
+    private static byte[] intToArray(int i, final int size) {
+        byte[] result = new byte[size];
+        for (int x = 0; x < size; x++) {
+            result[x] = (byte) (i & 0xf);
+            i >>= 4;
         }
         return result;
     }

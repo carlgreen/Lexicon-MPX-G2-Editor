@@ -55,18 +55,18 @@ public class BeatRateTest {
 
     @Test
     public void testGetAndSetMeasures() {
-        assertEquals(1, beatRate.getMeasures());
+        assertEquals(1, beatRate.getMeasures().intValue());
 
         beatRate.setMeasures(3);
-        assertEquals(3, beatRate.getMeasures());
+        assertEquals(3, beatRate.getMeasures().intValue());
     }
 
     @Test
     public void testGetAndSetBeats() {
-        assertEquals(2, beatRate.getBeats());
+        assertEquals(2, beatRate.getBeats().intValue());
 
         beatRate.setBeats(4);
-        assertEquals(4, beatRate.getBeats());
+        assertEquals(4, beatRate.getBeats().intValue());
     }
 
     @Test

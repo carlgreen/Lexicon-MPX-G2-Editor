@@ -27,18 +27,10 @@ import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.SendMix;
 import info.carlwithak.mpxg2.model.effects.EffectObject;
-import info.carlwithak.mpxg2.model.effects.Reverb;
-import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
-import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
-import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
-import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
-import info.carlwithak.mpxg2.model.parameters.ScaleValue;
-import java.text.DecimalFormat;
 
 import static info.carlwithak.mpxg2.printing.Util.printParameter;
-import static info.carlwithak.mpxg2.printing.Util.signInt;
 
 /**
  * Class to print out a program nicely.
@@ -76,28 +68,6 @@ public class ProgramPrinter {
             "FX1", "FX2", "Chrs", "Dly", "Rvb", "EQ", "Gain", "Ins"
         }
     };
-    private static final String[][] EFFECT_PARAMETER_UNITS = {
-        {},
-        {},
-        {},
-        {
-            ""
-        },
-        {},
-        {},
-        {
-            null, "OnOff", "dB", "dB", "dB", "", "", "", ""
-        },
-        {},
-        {},
-        {},
-        {},
-        {
-            "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff", "OnOff"
-        }
-    };
-
-    private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
     public static String print(Program program) throws PrintException {
         StringBuilder sb = new StringBuilder();
@@ -327,20 +297,11 @@ public class ProgramPrinter {
             return "";
         }
         String patchParameter;
-        String patchDestinationUnit;
         Parameter parameter = getEffectParameter(program, patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         if (parameter == null) {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
-            patchDestinationUnit = getEffectParameterUnits(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         } else {
             patchParameter = parameter.getName();
-            patchDestinationUnit = parameter.getUnit();
-            if (parameter instanceof GenericValue && ((GenericValue) parameter).getMinValue() instanceof Integer && ((Integer) ((GenericValue) parameter).getMinValue()) < 0) {
-                patchDestinationUnit = '-' + patchDestinationUnit;
-            } else if (parameter instanceof FrequencyRate) {
-                // TODO find a better way
-                patchDestinationUnit = "100" + patchDestinationUnit;
-            }
         }
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
@@ -350,60 +311,9 @@ public class ProgramPrinter {
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
         String patchEffect = patch.getDestinationEffectName();
         sb.append("      Destination: ").append(patchEffect).append(" ").append(patchParameter).append("\n");
-        sb.append("        Min: ");
-        sb.append(formatPatchParameter(patchDestinationUnit, patch.getDestinationMin(), patchEffect, patchParameter, program.getReverb())).append("\n");
-        sb.append("        Mid: ");
-        if (patch.getDestinationMid() == 0x8000) {
-            sb.append("--\n");
-        } else {
-            sb.append(formatPatchParameter(patchDestinationUnit, patch.getDestinationMid(), patchEffect, patchParameter, program.getReverb())).append("\n");
-        }
-        sb.append("        Max: ");
-        sb.append(formatPatchParameter(patchDestinationUnit, patch.getDestinationMax(), patchEffect, patchParameter, program.getReverb())).append("\n");
-        return sb.toString();
-    }
-
-    static String formatPatchParameter(final String patchDestinationUnit, final int parameterValue, final String patchEffect, final String patchParameter, final Reverb reverb) throws PrintException {
-        StringBuilder sb = new StringBuilder();
-        if ("Decay".equals(patchParameter)) {
-            boolean link;
-            double size;
-            if (reverb instanceof Chamber) {
-                Chamber chamber = (Chamber) reverb;
-                link = chamber.isLink().getValue();
-                size = chamber.getSize().getValue();
-            } else if (reverb instanceof Plate) {
-                Plate plate = (Plate) reverb;
-                link = plate.isLink().getValue();
-                size = plate.getSize().getValue();
-            } else {
-                throw new PrintException("Cannot determine reverb decay for class " + reverb.getClass());
-            }
-            String reverbDecay = Util.reverbDecayToString(link, size, parameterValue);
-            sb.append(reverbDecay).append("s");
-        } else if(":".equals(patchDestinationUnit)) {
-            sb.append(parameterValue % 0x100).append(patchDestinationUnit).append(parameterValue / 0x100);
-        } else if ("Hz".equals(patchDestinationUnit)) {
-            sb.append(parameterValue).append(patchDestinationUnit);
-        } else if ("100Hz".equals(patchDestinationUnit)) {
-            sb.append(DECIMAL_2DP.format(parameterValue / 100.0)).append(patchDestinationUnit.substring(3));
-        } else if ("OnOff".equals(patchDestinationUnit)) {
-            sb.append(Util.onOffToString(parameterValue == 1));
-        } else if ("scale".equals(patchDestinationUnit)) {
-            ScaleValue scale = new ScaleValue("");
-            scale.setValue(parameterValue);
-            sb.append(scale.getDisplayString());
-        } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
-            sb.append(signInt(parameterValue)).append(patchDestinationUnit);
-        } else {
-            // TODO better way of determining what sign is necessary
-            if (patchDestinationUnit.indexOf("-") == 0) {
-                String newPatchDestinationUnit = patchDestinationUnit.substring(1);
-                sb.append(signInt(parameterValue)).append(newPatchDestinationUnit);
-            } else {
-                sb.append(parameterValue).append(patchDestinationUnit);
-            }
-        }
+        sb.append("    ").append(printParameter(patch.getDestinationMin()));
+        sb.append("    ").append(printParameter(patch.getDestinationMid()));
+        sb.append("    ").append(printParameter(patch.getDestinationMax()));
         return sb.toString();
     }
 
@@ -514,11 +424,6 @@ public class ProgramPrinter {
     private static String effectParameterToString(final int effectType, final int effectParameter) {
         // remove 13 from effectType as the 7 algorithm types and 6 controllers take care of themselves
         return EFFECT_PARAMETERS[effectType - 13][effectParameter];
-    }
-
-    private static String getEffectParameterUnits(final int effectType, final int effectParameter) {
-        // remove 13 from effectType as the 7 algorithm types and 6 controllers take care of themselves
-        return EFFECT_PARAMETER_UNITS[effectType - 13][effectParameter];
     }
 
 }

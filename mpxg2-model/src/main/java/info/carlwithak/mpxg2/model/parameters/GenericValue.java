@@ -17,11 +17,13 @@
 
 package info.carlwithak.mpxg2.model.parameters;
 
+import java.lang.reflect.Field;
+
 /**
  *
  * @author Carl Green
  */
-public class GenericValue<T> implements Parameter {
+public class GenericValue<T> implements Parameter, Cloneable {
     private final String name;
     private final String unit;
     private final T minValue;
@@ -71,6 +73,9 @@ public class GenericValue<T> implements Parameter {
 
     @Override
     public String getDisplayString() {
+        if (getValue() == null) {
+            return "--";
+        }
         StringBuilder sb = new StringBuilder();
         if (getMinValue() instanceof Integer && ((Integer) getMinValue()) < 0) {
             sb.append(signInt((Integer) getValue()));
@@ -79,6 +84,15 @@ public class GenericValue<T> implements Parameter {
         }
         sb.append(getUnit());
         return sb.toString();
+    }
+
+    public GenericValue<?> clone(final String newName) throws CloneNotSupportedException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
+        GenericValue<?> clone = (GenericValue<?>) super.clone();
+        Field nameField = GenericValue.class.getDeclaredField("name");
+        nameField.setAccessible(true);
+        nameField.set(clone, newName);
+        clone.value = null;
+        return clone;
     }
 
 }

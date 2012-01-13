@@ -29,6 +29,9 @@ public class OnOffValue extends GenericValue<Boolean> {
 
     @Override
     public String getDisplayString() {
+        if (getValue() == null) {
+            return "--";
+        }
         return getValue() ? "On" : "Off";
     }
 

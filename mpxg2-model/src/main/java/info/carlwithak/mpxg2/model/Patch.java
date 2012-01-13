@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.model;
 
+import info.carlwithak.mpxg2.model.parameters.Parameter;
 import java.util.Locale;
 
 /**
@@ -117,9 +118,9 @@ public class Patch {
     private Integer sourceMax;
     private PatchDestination destinationEffect;
     private int destinationParameter;
-    private int destinationMin;
-    private int destinationMid;
-    private int destinationMax;
+    private Parameter destinationMin;
+    private Parameter destinationMid;
+    private Parameter destinationMax;
 
     public int getSourceIndex() {
         return source.ordinal();
@@ -177,27 +178,27 @@ public class Patch {
         this.destinationParameter = destinationParameter;
     }
 
-    public int getDestinationMin() {
+    public Parameter getDestinationMin() {
         return destinationMin;
     }
 
-    public void setDestinationMin(final int destinationMin) {
+    public void setDestinationMin(final Parameter destinationMin) {
         this.destinationMin = destinationMin;
     }
 
-    public int getDestinationMid() {
+    public Parameter getDestinationMid() {
         return destinationMid;
     }
 
-    public void setDestinationMid(final int destinationMid) {
+    public void setDestinationMid(final Parameter destinationMid) {
         this.destinationMid = destinationMid;
     }
 
-    public int getDestinationMax() {
+    public Parameter getDestinationMax() {
         return destinationMax;
     }
 
-    public void setDestinationMax(final int destinationMax) {
+    public void setDestinationMax(final Parameter destinationMax) {
         this.destinationMax = destinationMax;
     }
 }

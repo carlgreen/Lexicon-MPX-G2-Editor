@@ -24,9 +24,9 @@ package info.carlwithak.mpxg2.model.parameters;
 public class TapMsRate implements Rate {
 
     private String name;
-    private int ms;
+    private Integer ms;
 
-    public TapMsRate(final String name, final int ms) {
+    public TapMsRate(final String name, final Integer ms) {
         this.name = name;
         this.ms = ms;
     }
@@ -41,16 +41,19 @@ public class TapMsRate implements Rate {
         return "ms";
     }
 
-    public int getMs() {
+    public Integer getMs() {
         return ms;
     }
 
-    public void setMs(final int ms) {
+    public void setMs(final Integer ms) {
         this.ms = ms;
     }
 
     @Override
     public String getDisplayString() {
+        if (getMs() == null) {
+            return "--";
+        }
         return getMs() + "ms";
     }
 
@@ -63,7 +66,10 @@ public class TapMsRate implements Rate {
             return false;
         }
         final TapMsRate other = (TapMsRate) obj;
-        if (this.ms != other.ms) {
+        if (this.ms == null) {
+            return other.ms == null;
+        }
+        if (!this.ms.equals(other.ms)) {
             return false;
         }
         return true;

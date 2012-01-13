@@ -27,11 +27,14 @@ public class ScaleValue extends GenericValue<Integer> {
     };
 
     public ScaleValue(final String name) {
-        super(name, "scale", 0, 6);
+        super(name, "", 0, 6);
     }
 
     @Override
     public String getDisplayString() {
+        if (getValue() == null) {
+            return "--";
+        }
         return SCALES[getValue()];
     }
 

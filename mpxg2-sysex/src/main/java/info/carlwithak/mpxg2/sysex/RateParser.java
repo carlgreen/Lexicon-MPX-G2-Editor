@@ -37,17 +37,21 @@ public class RateParser {
             for (int i = 0; i < 4; i++) {
                 frequency += (rateBytes[i] * Math.pow(16, i));
             }
-            rate = new FrequencyRate(name, frequency / 100.0);
+            rate = new FrequencyRate(name, frequency == 0x8000 ? null : frequency / 100.0);
         } else if (rateUnit == 1) {
             int cycles = rateBytes[0] + rateBytes[1] * 16;
             int beats = rateBytes[2] + rateBytes[3] * 16;
-            rate = new BeatRate(name, cycles, beats);
+            if (beats == 0x80 && cycles == 0x00) {
+                rate = new BeatRate(name, null, null);
+            } else {
+                rate = new BeatRate(name, cycles, beats);
+            }
         } else if (rateUnit == 4) {
             int ms = 0;
             for (int i = 0; i < 4; i++) {
                 ms += (rateBytes[i] * Math.pow(16, i));
             }
-            rate = new TapMsRate(name, ms);
+            rate = new TapMsRate(name, ms == 0x8000 ? null : ms);
         } else {
             throw new ParseException("Unexpected rate unit: " + rateUnit);
         }

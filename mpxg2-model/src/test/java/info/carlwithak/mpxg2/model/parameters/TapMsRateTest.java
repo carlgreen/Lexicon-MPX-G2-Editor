@@ -56,10 +56,10 @@ public class TapMsRateTest {
 
     @Test
     public void testGetAndSetTapMs() {
-        assertEquals(100, tapMsRate.getMs());
+        assertEquals(100, tapMsRate.getMs().intValue());
 
         tapMsRate.setMs(300);
-        assertEquals(300, tapMsRate.getMs());
+        assertEquals(300, tapMsRate.getMs().intValue());
     }
 
     @Test
