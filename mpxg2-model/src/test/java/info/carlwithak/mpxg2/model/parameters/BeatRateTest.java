@@ -35,12 +35,18 @@ public class BeatRateTest {
     private BeatRate beatRate;
     private BeatRate sameBeatRate;
     private BeatRate differentBeatRate;
+    private BeatRate nullMeasureBeatRate;
+    private BeatRate nullBeatBeatRate;
+    private BeatRate nullBeatRate;
 
     @Before
     public void setup() {
         beatRate = new BeatRate("a", 1, 2);
         sameBeatRate = new BeatRate("b", 1, 2);
         differentBeatRate = new BeatRate("c", 2, 1);
+        nullMeasureBeatRate = new BeatRate("d", null, 2);
+        nullBeatBeatRate = new BeatRate("e", 1, null);
+        nullBeatRate = new BeatRate("f", null, null);
     }
 
     @Test
@@ -70,6 +76,13 @@ public class BeatRateTest {
     }
 
     @Test
+    public void testIsSet() {
+        assertThat(nullBeatRate.isSet(), is(false));
+        assertThat(nullMeasureBeatRate.isSet(), is(true));
+        assertThat(nullBeatBeatRate.isSet(), is(true));
+    }
+
+    @Test
     public void testGetDisplayString() {
         assertThat(beatRate.getDisplayString(), is("1:2"));
     }
@@ -82,6 +95,16 @@ public class BeatRateTest {
         assertFalse(beatRate.equals(differentBeatRate));
         differentBeatRate.setMeasures(1);
         assertFalse(beatRate.equals(differentBeatRate));
+
+        assertThat(nullMeasureBeatRate.equals(nullMeasureBeatRate), is(true));
+        assertThat(beatRate.equals(nullMeasureBeatRate), is(false));
+        assertThat(nullMeasureBeatRate.equals(beatRate), is(false));
+
+        assertThat(nullBeatBeatRate.equals(nullBeatBeatRate), is(true));
+        assertThat(beatRate.equals(nullBeatBeatRate), is(false));
+        assertThat(nullBeatBeatRate.equals(beatRate), is(false));
+
+        assertThat(nullBeatRate.equals(nullBeatRate), is(true));
     }
 
     @Test

@@ -22,6 +22,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -30,6 +31,13 @@ import org.junit.Test;
  */
 public class GenericValueTest {
     private GenericValue<String> genericValue = new GenericValue<String>("some name", "a unit", "c", "f");
+    private GenericValue<String> nullGenericValue = new GenericValue<String>("some name", "a unit", "c", "f");
+
+    @Before
+    public void setup() {
+        genericValue.setValue("x");
+        nullGenericValue.setValue(null);
+    }
 
     @Test
     public void testGetName() {
@@ -53,17 +61,25 @@ public class GenericValueTest {
 
     @Test
     public void testGetAndSetValue() {
-        assertNull(genericValue.getValue());
-        genericValue.setValue("e");
-        assertEquals("e", genericValue.getValue());
+        assertNull(nullGenericValue.getValue());
+        nullGenericValue.setValue("e");
+        assertEquals("e", nullGenericValue.getValue());
+    }
+
+    @Test
+    public void testIsSet() {
+        assertThat(genericValue.isSet(), is(true));
+        assertThat(nullGenericValue.isSet(), is(false));
     }
 
     @Test
     public void testGetDisplayString() {
-        GenericValue<Integer> signedValue = new GenericValue<Integer>("Level", "dB", 0, 6);
+        assertThat(genericValue.getDisplayString(), is("xa unit"));
 
-        signedValue.setValue(6);
-        assertThat(signedValue.getDisplayString(), is("6dB"));
+        GenericValue<Integer> unsignedValue = new GenericValue<Integer>("Level", "dB", 0, 6);
+
+        unsignedValue.setValue(6);
+        assertThat(unsignedValue.getDisplayString(), is("6dB"));
     }
 
     @Test
@@ -77,6 +93,10 @@ public class GenericValueTest {
         assertThat(signedValue.getDisplayString(), is("0dB"));
 
         signedValue.setValue(-6);
+        assertThat(signedValue.getDisplayString(), is("-6dB"));
+
+        // test with wrapping
+        signedValue.setValue(65530);
         assertThat(signedValue.getDisplayString(), is("-6dB"));
     }
 

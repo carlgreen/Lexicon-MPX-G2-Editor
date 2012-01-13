@@ -35,12 +35,14 @@ public class FrequencyRateTest {
     private FrequencyRate freqRate;
     private FrequencyRate sameFreqRate;
     private FrequencyRate differentFreqRate;
+    private FrequencyRate nullFreqRate;
 
     @Before
     public void setup() {
         freqRate = new FrequencyRate("a", 1.0);
         sameFreqRate = new FrequencyRate("b", 1.0);
         differentFreqRate = new FrequencyRate("c", 2.0);
+        nullFreqRate = new FrequencyRate("d", null);
     }
 
     @Test
@@ -57,6 +59,12 @@ public class FrequencyRateTest {
     }
 
     @Test
+    public void testIsSet() {
+        assertThat(freqRate.isSet(), is(true));
+        assertThat(nullFreqRate.isSet(), is(false));
+    }
+
+    @Test
     public void testGetDisplayString() {
         assertThat(freqRate.getDisplayString(), is("1.00Hz"));
     }
@@ -67,6 +75,10 @@ public class FrequencyRateTest {
         assertFalse(freqRate.equals("something else"));
         assertTrue(freqRate.equals(sameFreqRate));
         assertFalse(freqRate.equals(differentFreqRate));
+
+        assertThat(freqRate.equals(nullFreqRate), is(false));
+        assertThat(nullFreqRate.equals(freqRate), is(false));
+        assertThat(nullFreqRate.equals(nullFreqRate), is(true));
     }
 
     @Test

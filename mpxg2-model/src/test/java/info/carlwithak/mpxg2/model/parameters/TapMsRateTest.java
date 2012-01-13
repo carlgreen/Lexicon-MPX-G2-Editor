@@ -36,12 +36,14 @@ public class TapMsRateTest {
     private TapMsRate tapMsRate;
     private TapMsRate sameTapMsRate;
     private TapMsRate differentTapMsRate;
+    private TapMsRate nullTapMsRate;
 
     @Before
     public void setup() {
         tapMsRate = new TapMsRate("a", 100);
         sameTapMsRate = new TapMsRate("b", 100);
         differentTapMsRate = new TapMsRate("c", 200);
+        nullTapMsRate = new TapMsRate("d", null);
     }
 
     @Test
@@ -63,6 +65,12 @@ public class TapMsRateTest {
     }
 
     @Test
+    public void testIsSet() {
+        assertThat(tapMsRate.isSet(), is(true));
+        assertThat(nullTapMsRate.isSet(), is(false));
+    }
+
+    @Test
     public void testGetDisplayString() {
         assertThat(tapMsRate.getDisplayString(), is("100ms"));
     }
@@ -73,6 +81,10 @@ public class TapMsRateTest {
         assertFalse(tapMsRate.equals("something else"));
         assertTrue(tapMsRate.equals(sameTapMsRate));
         assertFalse(tapMsRate.equals(differentTapMsRate));
+
+        assertThat(tapMsRate.equals(nullTapMsRate), is(false));
+        assertThat(nullTapMsRate.equals(tapMsRate), is(false));
+        assertThat(nullTapMsRate.equals(nullTapMsRate), is(true));
     }
 
     @Test

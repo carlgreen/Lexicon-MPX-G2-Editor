@@ -73,6 +73,9 @@ public class FrequencyRate implements Rate {
             return false;
         }
         final FrequencyRate other = (FrequencyRate) obj;
+        if (this.frequency == null || other.frequency == null) {
+            return this.frequency == null && other.frequency == null;
+        }
         if (Double.doubleToLongBits(this.frequency) != Double.doubleToLongBits(other.frequency)) {
             return false;
         }

@@ -80,16 +80,22 @@ public class BeatRate implements Rate {
         }
         final BeatRate other = (BeatRate) obj;
         if (this.measures == null) {
-            return other.measures == null;
-        }
-        if (!this.measures.equals(other.measures)) {
-            return false;
+            if (other.measures != null) {
+                return false;
+            }
+        } else {
+            if (!this.measures.equals(other.measures)) {
+                return false;
+            }
         }
         if (this.beats == null) {
-            return other.beats == null;
-        }
-        if (!this.beats.equals(other.beats)) {
-            return false;
+            if (other.beats != null) {
+                return false;
+            }
+        } else {
+            if (!this.beats.equals(other.beats)) {
+                return false;
+            }
         }
         return true;
     }
