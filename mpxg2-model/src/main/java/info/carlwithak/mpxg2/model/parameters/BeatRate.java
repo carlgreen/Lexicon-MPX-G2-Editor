@@ -61,10 +61,12 @@ public class BeatRate implements Rate {
     }
 
     @Override
+    public boolean isSet() {
+        return getMeasures() != null || getBeats() != null;
+    }
+
+    @Override
     public String getDisplayString() {
-        if (getMeasures() == null && getBeats() == null) {
-            return "--";
-        }
         return getMeasures() + ":" + getBeats();
     }
 

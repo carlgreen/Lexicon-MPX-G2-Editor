@@ -50,10 +50,12 @@ public class TapMsRate implements Rate {
     }
 
     @Override
+    public boolean isSet() {
+        return getMs() != null;
+    }
+
+    @Override
     public String getDisplayString() {
-        if (getMs() == null) {
-            return "--";
-        }
         return getMs() + "ms";
     }
 

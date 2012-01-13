@@ -55,10 +55,12 @@ public class FrequencyRate implements Rate {
     }
 
     @Override
+    public boolean isSet() {
+        return getFrequency() != null;
+    }
+
+    @Override
     public String getDisplayString() {
-        if (getFrequency() == null) {
-            return "--";
-        }
         return DECIMAL_2DP.format(getFrequency()) + "Hz";
     }
 

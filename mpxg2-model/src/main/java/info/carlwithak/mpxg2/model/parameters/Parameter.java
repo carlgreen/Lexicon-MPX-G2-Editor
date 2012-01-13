@@ -27,5 +27,7 @@ public interface Parameter {
 
     String getUnit();
 
+    boolean isSet();
+
     String getDisplayString();
 }

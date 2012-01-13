@@ -160,7 +160,7 @@ public class Util {
         sb.append("    ");
         sb.append(parameter.getName());
         sb.append(": ");
-        sb.append(parameter.getDisplayString());
+        sb.append(parameter.isSet() ? parameter.getDisplayString() : "--");
         sb.append("\n");
         return sb.toString();
     }

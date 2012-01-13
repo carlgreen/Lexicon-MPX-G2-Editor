@@ -65,6 +65,11 @@ public class GenericValue<T> implements Parameter, Cloneable {
         this.value = value;
     }
 
+    @Override
+    public boolean isSet() {
+        return value != null;
+    }
+
     /**
      * @return postive numbers prefixed with '+' and negative numbers prefixed with '-'.
      */
@@ -75,9 +80,6 @@ public class GenericValue<T> implements Parameter, Cloneable {
 
     @Override
     public String getDisplayString() {
-        if (getValue() == null) {
-            return "--";
-        }
         StringBuilder sb = new StringBuilder();
         if (getMinValue() instanceof Integer && ((Integer) getMinValue()) < 0) {
             sb.append(signInt((Integer) getValue()));
