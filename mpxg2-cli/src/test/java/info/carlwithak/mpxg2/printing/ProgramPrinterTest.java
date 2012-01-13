@@ -222,6 +222,21 @@ public class ProgramPrinterTest {
     }
 
     @Test
+    public void testFormatPatchParameter_Scale() throws PrintException {
+        String patchDestinationUnit = "scale";
+
+        int parameterValue = 0;
+        String expected = "Major";
+        String actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+
+        parameterValue = 1;
+        expected = "Dor";
+        actual = ProgramPrinter.formatPatchParameter(patchDestinationUnit, parameterValue, null, null, null);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testFormatPatchParameter_Normal() throws PrintException {
         String patchDestinationUnit = "X";
         int parameterValue = 1;

@@ -34,6 +34,7 @@ import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.ScaleValue;
 import java.text.DecimalFormat;
 
 import static info.carlwithak.mpxg2.printing.Util.printParameter;
@@ -388,6 +389,10 @@ public class ProgramPrinter {
             sb.append(DECIMAL_2DP.format(parameterValue / 100.0)).append(patchDestinationUnit.substring(3));
         } else if ("OnOff".equals(patchDestinationUnit)) {
             sb.append(Util.onOffToString(parameterValue == 1));
+        } else if ("scale".equals(patchDestinationUnit)) {
+            ScaleValue scale = new ScaleValue("");
+            scale.setValue(parameterValue);
+            sb.append(scale.getDisplayString());
         } else if ("Send".equals(patchEffect) && "Level".equals(patchParameter)) {
             sb.append(signInt(parameterValue)).append(patchDestinationUnit);
         } else {

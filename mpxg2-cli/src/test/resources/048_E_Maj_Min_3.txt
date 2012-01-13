@@ -81,9 +81,9 @@ E Maj/Min 3
         Mid: --
         Max: 127
       Destination: Effect 1 Scale
-        Min: 0
+        Min: Major
         Mid: --
-        Max: 5
+        Max: Minor
     Patch 3:
       Source: Midi Toe
         Min: 0

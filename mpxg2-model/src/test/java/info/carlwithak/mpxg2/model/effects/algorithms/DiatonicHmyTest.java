@@ -59,7 +59,7 @@ public class DiatonicHmyTest {
 
     @Test
     public void testScale() {
-        assertEquals("", diatonicHmy.getParameter(3).getUnit());
+        assertEquals("scale", diatonicHmy.getParameter(3).getUnit());
     }
 
     @Test

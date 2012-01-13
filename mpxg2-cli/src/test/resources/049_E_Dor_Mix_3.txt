@@ -81,9 +81,9 @@ E Dor/Mix 3
         Mid: --
         Max: 127
       Destination: Effect 1 Scale
-        Min: 1
+        Min: Dor
         Mid: --
-        Max: 4
+        Max: Mixo
     Patch 3:
       Source: Midi Toe
         Min: 0

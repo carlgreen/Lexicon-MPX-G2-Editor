@@ -27,7 +27,7 @@ public class ScaleValue extends GenericValue<Integer> {
     };
 
     public ScaleValue(final String name) {
-        super(name, "", 0, 6);
+        super(name, "scale", 0, 6);
     }
 
     @Override
