@@ -18,6 +18,9 @@
 package info.carlwithak.mpxg2.model.parameters;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.core.IsNull.nullValue;
+import static org.hamcrest.core.IsSame.sameInstance;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
@@ -98,6 +101,15 @@ public class GenericValueTest {
         // test with wrapping
         signedValue.setValue(65530);
         assertThat(signedValue.getDisplayString(), is("-6dB"));
+    }
+
+    @Test
+    public void testClone() throws CloneNotSupportedException, NoSuchFieldException, IllegalAccessException {
+        @SuppressWarnings("unchecked")
+        final GenericValue<String> clonedGenericValue = (GenericValue<String>) genericValue.clone("new name");
+        assertThat(clonedGenericValue, is(not(sameInstance(genericValue))));
+        assertThat(clonedGenericValue.getName(), is("new name"));
+        assertThat(clonedGenericValue.getValue(), is(nullValue()));
     }
 
 }

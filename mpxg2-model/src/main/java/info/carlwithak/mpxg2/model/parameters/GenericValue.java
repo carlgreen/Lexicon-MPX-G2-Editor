@@ -93,9 +93,9 @@ public class GenericValue<T> implements Parameter, Cloneable {
     public GenericValue<?> clone(final String newName) throws CloneNotSupportedException, NoSuchFieldException, IllegalAccessException {
         final GenericValue<?> clone = (GenericValue<?>) super.clone();
         final Field nameField = GenericValue.class.getDeclaredField("name");
-        AccessController.doPrivileged(new PrivilegedAction() {
+        AccessController.doPrivileged(new PrivilegedAction<Void>() {
             @Override
-            public Object run() {
+            public Void run() {
                 nameField.setAccessible(true);
                 return null;
             }
