@@ -282,7 +282,8 @@ public class ProgramPrinter {
         if (program.getSoftRowEffectType(i) > 12) {
             effectParameterName = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
         } else {
-            Parameter effectParameter = getEffectParameter(program, program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
+            DataObject effect = program.getEffect(program.getSoftRowEffectType(i));
+            Parameter effectParameter = effect == null ? null : effect.getParameter(program.getSoftRowParameter(i));
             if (effectParameter == null) {
                 return "";
             }
@@ -296,8 +297,9 @@ public class ProgramPrinter {
         if (patch.getSourceIndex() == 0) {
             return "";
         }
+        DataObject effect = program.getEffect(patch.getDestinationEffectIndex());
+        Parameter parameter = effect == null ? null : effect.getParameter(patch.getDestinationParameter());
         String patchParameter;
-        Parameter parameter = getEffectParameter(program, patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         if (parameter == null) {
             patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
         } else {
@@ -315,54 +317,6 @@ public class ProgramPrinter {
         sb.append("    ").append(printParameter(patch.getDestinationMid()));
         sb.append("    ").append(printParameter(patch.getDestinationMax()));
         return sb.toString();
-    }
-
-    static Parameter getEffectParameter(final Program program, final int effectIndex, final int parameterIndex) {
-        DataObject dataObject;
-        switch (effectIndex) {
-            case 0:
-                dataObject = program.getEffect1();
-                break;
-            case 1:
-                dataObject = program.getEffect2();
-                break;
-            case 2:
-                dataObject = program.getChorus();
-                break;
-            case 3:
-                dataObject = program.getDelay();
-                break;
-            case 4:
-                dataObject = program.getReverb();
-                break;
-            case 5:
-                dataObject = program.getEq();
-                break;
-            case 6:
-                dataObject = program.getGain();
-                break;
-            case 7:
-                dataObject = program.getKnob();
-                break;
-            case 8:
-                dataObject = program.getLfo1();
-                break;
-            case 9:
-                dataObject = program.getLfo2();
-                break;
-            case 10:
-                dataObject = program.getRandom();
-                break;
-            case 11:
-                dataObject = program.getAb();
-                break;
-            case 12:
-                dataObject = program.getEnvelopeGenerator();
-                break;
-            default:
-                dataObject = null;
-        }
-        return dataObject == null ? null : dataObject.getParameter(parameterIndex);
     }
 
     static String printKnob(final Knob knob) {

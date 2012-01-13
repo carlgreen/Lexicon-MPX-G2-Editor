@@ -800,66 +800,6 @@ public class SysexParser {
         return program;
     }
 
-    /**
-     * copied and altered from ProgramPrinter.
-     */
-    private static Parameter getEffectParameter(final Program program, final int effectIndex, final int parameterIndex) {
-        DataObject dataObject;
-        switch (effectIndex) {
-            case 0:
-                dataObject = program.getEffect1();
-                break;
-            case 1:
-                dataObject = program.getEffect2();
-                break;
-            case 2:
-                dataObject = program.getChorus();
-                break;
-            case 3:
-                dataObject = program.getDelay();
-                break;
-            case 4:
-                dataObject = program.getReverb();
-                break;
-            case 5:
-                dataObject = program.getEq();
-                break;
-            case 6:
-                dataObject = program.getGain();
-                break;
-            case 7:
-                dataObject = program.getKnob();
-                break;
-            case 8:
-                dataObject = program.getLfo1();
-                break;
-            case 9:
-                dataObject = program.getLfo2();
-                break;
-            case 10:
-                dataObject = program.getRandom();
-                break;
-            case 11:
-                dataObject = program.getAb();
-                break;
-            case 12:
-                dataObject = program.getEnvelopeGenerator();
-                break;
-            case 16:
-                dataObject = program.getSendMix();
-                break;
-            case 19:
-                dataObject = program.getNoiseGate();
-                break;
-            case 24:
-                dataObject = program.getEffectsStatus();
-                break;
-            default:
-                dataObject = null;
-        }
-        return dataObject == null ? null : dataObject.getParameter(parameterIndex);
-    }
-
     static void readEffectTypes(final Program program, final int effectTypes) {
         program.setIsChorus((effectTypes & EFFECT_TYPE_CHORUS) == EFFECT_TYPE_CHORUS);
         program.setIsDelay((effectTypes & EFFECT_TYPE_DELAY) == EFFECT_TYPE_DELAY);
@@ -927,7 +867,8 @@ public class SysexParser {
         patch.setDestinationEffect(destinationEffect == NO_DESTINATION ? null : destinationEffect);
         patch.setDestinationParameter(destinationParameter);
         if (patch != null && patch.getDestinationEffectIndex() != null) {
-            final Parameter baseParameter = getEffectParameter(program, patch.getDestinationEffectIndex(), patch.getDestinationParameter());
+            DataObject effect = program.getEffect(patch.getDestinationEffectIndex());
+            Parameter baseParameter = effect == null ? null : effect.getParameter(patch.getDestinationParameter());
             if (baseParameter != null) {
                 patch.setDestinationMin(createPatchDestinationParameter(baseParameter, "Min", destinationMin));
                 patch.setDestinationMid(createPatchDestinationParameter(baseParameter, "Mid", destinationMid));

@@ -18,6 +18,7 @@ package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
+import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
@@ -26,9 +27,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
@@ -348,4 +353,44 @@ public class ProgramTest {
         program.setSoftRowParameter(0, 7);
         assertEquals(7, program.getSoftRowParameter(0));
     }
+
+    @Test
+    public void testGetEffect() {
+        for (int i = 0; i <= 24; i++) {
+            assertThat(program.getEffect(i), is(nullValue()));
+        }
+        program.setEffect1(mock(Effect.class));
+        assertThat(program.getEffect(0), is(notNullValue()));
+        program.setEffect2(mock(Effect.class));
+        assertThat(program.getEffect(1), is(notNullValue()));
+        program.setChorus(mock(Chorus.class));
+        assertThat(program.getEffect(2), is(notNullValue()));
+        program.setDelay(mock(Delay.class));
+        assertThat(program.getEffect(3), is(notNullValue()));
+        program.setReverb(mock(Reverb.class));
+        assertThat(program.getEffect(4), is(notNullValue()));
+        program.setEq(mock(Eq.class));
+        assertThat(program.getEffect(5), is(notNullValue()));
+        program.setGain(mock(Gain.class));
+        assertThat(program.getEffect(6), is(notNullValue()));
+        program.setKnob(mock(Knob.class));
+        assertThat(program.getEffect(7), is(notNullValue()));
+        program.setLfo1(mock(Lfo.class));
+        assertThat(program.getEffect(8), is(notNullValue()));
+        program.setLfo2(mock(Lfo.class));
+        assertThat(program.getEffect(9), is(notNullValue()));
+        program.setRandom(mock(Random.class));
+        assertThat(program.getEffect(10), is(notNullValue()));
+        program.setAb(mock(Ab.class));
+        assertThat(program.getEffect(11), is(notNullValue()));
+        program.setEnvelopeGenerator(mock(EnvelopeGenerator.class));
+        assertThat(program.getEffect(12), is(notNullValue()));
+        program.setSendMix(mock(SendMix.class));
+        assertThat(program.getEffect(16), is(notNullValue()));
+        program.setNoiseGate(mock(NoiseGate.class));
+        assertThat(program.getEffect(19), is(notNullValue()));
+        program.setEffectsStatus(mock(EffectsStatus.class));
+        assertThat(program.getEffect(24), is(notNullValue()));
+    }
+
 }

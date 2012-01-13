@@ -747,4 +747,62 @@ public class Program {
     public void setProgramNumber(final int programNumber) {
         this.programNumber = programNumber;
     }
+
+    public DataObject getEffect(final int effectIndex) {
+        DataObject dataObject;
+        switch (effectIndex) {
+            case 0:
+                dataObject = getEffect1();
+                break;
+            case 1:
+                dataObject = getEffect2();
+                break;
+            case 2:
+                dataObject = getChorus();
+                break;
+            case 3:
+                dataObject = getDelay();
+                break;
+            case 4:
+                dataObject = getReverb();
+                break;
+            case 5:
+                dataObject = getEq();
+                break;
+            case 6:
+                dataObject = getGain();
+                break;
+            case 7:
+                dataObject = getKnob();
+                break;
+            case 8:
+                dataObject = getLfo1();
+                break;
+            case 9:
+                dataObject = getLfo2();
+                break;
+            case 10:
+                dataObject = getRandom();
+                break;
+            case 11:
+                dataObject = getAb();
+                break;
+            case 12:
+                dataObject = getEnvelopeGenerator();
+                break;
+            case 16:
+                dataObject = getSendMix();
+                break;
+            case 19:
+                dataObject = getNoiseGate();
+                break;
+            case 24:
+                dataObject = getEffectsStatus();
+                break;
+            default:
+                dataObject = null;
+        }
+        return dataObject;
+    }
+
 }
