@@ -317,7 +317,7 @@ public class SysexParserIT {
 
         NoiseGate noiseGate = program.getNoiseGate();
         assertThat(noiseGate.getEnable(), is(value(1)));
-        assertThat(noiseGate.isSend(), is(value(true)));
+        assertThat(noiseGate.getSend(), is(value(true)));
         assertThat(noiseGate.getThreshold(), is(value(-83)));
         assertThat(noiseGate.getAttenuation(), is(value(-85)));
         assertThat(noiseGate.getOffset(), is(value(-3)));
@@ -1927,7 +1927,7 @@ public class SysexParserIT {
 
         NoiseGate noiseGate = program.getNoiseGate();
         assertThat(noiseGate.getEnable(), is(value(0)));
-        assertThat(noiseGate.isSend(), is(value(false)));
+        assertThat(noiseGate.getSend(), is(value(false)));
         assertThat(noiseGate.getThreshold(), is(value(-83)));
         assertThat(noiseGate.getAttenuation(), is(value(-80)));
         assertThat(noiseGate.getOffset(), is(value(-3)));
@@ -2168,7 +2168,7 @@ public class SysexParserIT {
 
         NoiseGate noiseGate = program.getNoiseGate();
         assertThat(noiseGate.getEnable(), is(value(0)));
-        assertThat(noiseGate.isSend(), is(value(false)));
+        assertThat(noiseGate.getSend(), is(value(false)));
         assertThat(noiseGate.getThreshold(), is(value(-83)));
         assertThat(noiseGate.getAttenuation(), is(value(-80)));
         assertThat(noiseGate.getOffset(), is(value(-3)));

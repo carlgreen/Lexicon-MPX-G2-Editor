@@ -85,7 +85,7 @@ public class NoiseGate implements DataObject {
         this.enable.setValue(enable);
     }
 
-    public OnOffValue isSend() {
+    public OnOffValue getSend() {
         return send;
     }
 

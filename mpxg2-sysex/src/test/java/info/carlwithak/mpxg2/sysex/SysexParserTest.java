@@ -468,7 +468,7 @@ public class SysexParserTest {
         NoiseGate noiseGate = SysexParser.parsePrograms(preset).get(0).getNoiseGate();
 
         assertThat(noiseGate.getEnable(), is(value(2)));
-        assertThat(noiseGate.isSend(), is(value(true)));
+        assertThat(noiseGate.getSend(), is(value(true)));
         assertThat(noiseGate.getThreshold(), is(value(-31)));
         assertThat(noiseGate.getAttenuation(), is(value(-7)));
         assertThat(noiseGate.getOffset(), is(value(-11)));

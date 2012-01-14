@@ -153,7 +153,7 @@ public class ProgramPrinter {
         sb.append(printParameter(program.getSpeakerSimulatorCabinet()));
         sb.append("  Noise Gate:\n");
         sb.append(printParameter(program.getNoiseGate().getEnable()));
-        sb.append(printParameter(program.getNoiseGate().isSend()));
+        sb.append(printParameter(program.getNoiseGate().getSend()));
         sb.append(printParameter(program.getNoiseGate().getThreshold()));
         sb.append(printParameter(program.getNoiseGate().getAttenuation()));
         sb.append(printParameter(program.getNoiseGate().getOffset()));
