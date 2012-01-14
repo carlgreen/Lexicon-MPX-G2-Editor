@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.DataObject;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
+import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
@@ -85,10 +86,7 @@ public class ProgramPrinter {
         sb.append("    A/B:\n").append(printAb(program.getAb()));
         sb.append("    Envelope:\n").append(printEnvelopeGenerator(program.getEnvelopeGenerator()));
         sb.append("  Mix:\n");
-        sb.append("    Send:\n");
-        SendMix sendMix = program.getSendMix();
-        sb.append("  ").append(printParameter(sendMix.getSendLevel()));
-        sb.append("  ").append(printParameter(sendMix.getSendBypassLevel()));
+        sb.append("    Send:\n").append(printSendMix(program.getSendMix()));
         sb.append("    Post:\n");
         sb.append("  ").append(printParameter(program.getPostMix()));
         sb.append("  ").append(printParameter(program.getPostLevel()));
@@ -131,16 +129,7 @@ public class ProgramPrinter {
         sb.append(printParameter(program.getTapSource()));
         sb.append("  Speaker Sim: ").append(program.isSpeakerSimulatorEnable().getDisplayString()).append("\n");
         sb.append(printParameter(program.getSpeakerSimulatorCabinet()));
-        sb.append("  Noise Gate:\n");
-        sb.append(printParameter(program.getNoiseGate().getEnable()));
-        sb.append(printParameter(program.getNoiseGate().getSend()));
-        sb.append(printParameter(program.getNoiseGate().getThreshold()));
-        sb.append(printParameter(program.getNoiseGate().getAttenuation()));
-        sb.append(printParameter(program.getNoiseGate().getOffset()));
-        sb.append(printParameter(program.getNoiseGate().getATime()));
-        sb.append(printParameter(program.getNoiseGate().getHTime()));
-        sb.append(printParameter(program.getNoiseGate().getRTime()));
-        sb.append(printParameter(program.getNoiseGate().getDelay()));
+        sb.append("  Noise Gate:\n").append(printNoiseGate(program.getNoiseGate()));
         return sb.toString().trim();
     }
 
@@ -333,6 +322,27 @@ public class ProgramPrinter {
         sb.append("  ").append(printParameter(envelopeGenerator.getSrc2()));
         sb.append("  ").append(printParameter(envelopeGenerator.getATrim()));
         sb.append("  ").append(printParameter(envelopeGenerator.getResponse()));
+        return sb.toString();
+    }
+
+    static String printSendMix(final SendMix sendMix) {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("  ").append(printParameter(sendMix.getSendLevel()));
+        sb.append("  ").append(printParameter(sendMix.getSendBypassLevel()));
+        return sb.toString();
+    }
+
+    static String printNoiseGate(final NoiseGate noiseGate) {
+        final StringBuilder sb = new StringBuilder();
+        sb.append(printParameter(noiseGate.getEnable()));
+        sb.append(printParameter(noiseGate.getSend()));
+        sb.append(printParameter(noiseGate.getThreshold()));
+        sb.append(printParameter(noiseGate.getAttenuation()));
+        sb.append(printParameter(noiseGate.getOffset()));
+        sb.append(printParameter(noiseGate.getATime()));
+        sb.append(printParameter(noiseGate.getHTime()));
+        sb.append(printParameter(noiseGate.getRTime()));
+        sb.append(printParameter(noiseGate.getDelay()));
         return sb.toString();
     }
 

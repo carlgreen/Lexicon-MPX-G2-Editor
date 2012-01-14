@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
 import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
+import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
@@ -33,6 +34,7 @@ import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
@@ -250,6 +252,33 @@ public class ProgramPrinterTest {
         String expected = "      Src1: In\n      Src2: Off\n      ATrim: 17\n      Resp: 100\n";
         String actual = ProgramPrinter.printEnvelopeGenerator(envelopeGenerator);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintSendMix() throws PrintException {
+        SendMix sendMix = new SendMix();
+        sendMix.getSendLevel().setValue(0);
+        sendMix.getSendBypassLevel().setValue(0);
+
+        String expected = "      Level: 0\n      Bypass Level: 0\n";
+        assertThat(ProgramPrinter.printSendMix(sendMix), is(expected));
+    }
+
+    @Test
+    public void testPrintNoiseGate() throws PrintException {
+        NoiseGate noiseGate = new NoiseGate();
+        noiseGate.getEnable().setValue(2);
+        noiseGate.getSend().setValue(true);
+        noiseGate.getThreshold().setValue(-31);
+        noiseGate.getAttenuation().setValue(-7);
+        noiseGate.getOffset().setValue(-11);
+        noiseGate.getATime().setValue(1999);
+        noiseGate.getHTime().setValue(499);
+        noiseGate.getRTime().setValue(2000);
+        noiseGate.getDelay().setValue(10);
+
+        String expected = "    Enable: Returns Only\n    Send: On\n    Thrsh: -31dB\n    Atten: -7dB\n    Offset: -11dB\n    ATime: 1999\n    HTime: 499\n    RTime: 2000\n    Delay: 10\n";
+        assertThat(ProgramPrinter.printNoiseGate(noiseGate), is(expected));
     }
 
 }
