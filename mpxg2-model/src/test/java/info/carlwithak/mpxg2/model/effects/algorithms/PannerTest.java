@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PannerTest {
-    private Panner panner;
-
-    @Before
-    public void setUp() {
-        panner = new Panner();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(Panner.class);
-    }
+    private Panner panner = new Panner();
 
     @Test
     public void testMix() {

@@ -17,10 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
 import info.carlwithak.mpxg2.model.parameters.BeatRate;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -31,17 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DuckerTest {
-    private Ducker ducker;
-
-    @Before
-    public void setUp() {
-        ducker = new Ducker();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(Ducker.class);
-    }
+    private Ducker ducker = new Ducker();
 
     @Test
     public void testMix() {

@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PedalWah2Test {
-    private PedalWah2 pedalWah2;
-
-    @Before
-    public void setUp() {
-        pedalWah2 = new PedalWah2();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(PedalWah2.class);
-    }
+    private PedalWah2 pedalWah2 = new PedalWah2();
 
     @Test
     public void testMix() {

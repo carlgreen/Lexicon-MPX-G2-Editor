@@ -17,10 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -31,17 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class FlangerMonoTest {
-    private FlangerMono flangerMono;
-
-    @Before
-    public void setUp() {
-        flangerMono = new FlangerMono();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(FlangerMono.class);
-    }
+    private FlangerMono flangerMono = new FlangerMono();
 
     @Test
     public void testMix() {

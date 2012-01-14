@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class SplitPreampTest {
-    private SplitPreamp splitPreamp;
-
-    @Before
-    public void setUp() {
-        splitPreamp = new SplitPreamp();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(SplitPreamp.class);
-    }
+    private SplitPreamp splitPreamp = new SplitPreamp();
 
     @Test
     public void testLo() {

@@ -17,10 +17,7 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -31,17 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class Centrifuge2Test {
-    private Centrifuge2 centrifuge2;
-
-    @Before
-    public void setUp() {
-        centrifuge2 = new Centrifuge2();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(Centrifuge2.class);
-    }
+    private Centrifuge2  centrifuge2 = new Centrifuge2();
 
     @Test
     public void testMix() {

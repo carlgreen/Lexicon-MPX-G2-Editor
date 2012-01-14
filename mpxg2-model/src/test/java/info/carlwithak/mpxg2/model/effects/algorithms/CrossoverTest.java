@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class CrossoverTest {
-    private Crossover crossover;
-
-    @Before
-    public void setUp() {
-        crossover = new Crossover();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(Crossover.class);
-    }
+    private Crossover crossover = new Crossover();
 
     @Test
     public void testMix() {

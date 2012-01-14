@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DetuneStereoTest {
-    private DetuneStereo detuneStereo;
-
-    @Before
-    public void setUp() {
-        detuneStereo = new DetuneStereo();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(DetuneStereo.class);
-    }
+    private DetuneStereo detuneStereo = new DetuneStereo();
 
     @Test
     public void testMix() {

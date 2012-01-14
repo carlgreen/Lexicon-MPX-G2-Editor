@@ -17,8 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,17 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class VolumeStereoTest {
-    private VolumeStereo volumeStereo;
-
-    @Before
-    public void setUp() {
-        volumeStereo = new VolumeStereo();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(VolumeStereo.class);
-    }
+    private VolumeStereo volumeStereo = new VolumeStereo();
 
     @Test
     public void testMix() {

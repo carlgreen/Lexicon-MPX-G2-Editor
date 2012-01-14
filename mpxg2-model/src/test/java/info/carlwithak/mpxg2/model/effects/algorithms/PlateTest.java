@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PlateTest {
-    private Plate plate;
-
-    @Before
-    public void setUp() {
-        plate = new Plate();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(Plate.class);
-    }
+    private Plate plate = new Plate();
 
     @Test
     public void testMix() {

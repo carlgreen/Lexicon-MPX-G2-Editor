@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ChorusVolumeDualTest {
-    private ChorusVolumeDual volumeDual;
-
-    @Before
-    public void setUp() {
-        volumeDual = new ChorusVolumeDual();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(ChorusVolumeDual.class);
-    }
+    private ChorusVolumeDual volumeDual = new ChorusVolumeDual();
 
     @Test
     public void testMix() {

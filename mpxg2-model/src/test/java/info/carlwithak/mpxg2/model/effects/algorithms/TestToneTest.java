@@ -30,17 +30,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class TestToneTest {
-    private TestTone testTone;
-
-    @Before
-    public void setUp() {
-        testTone = new TestTone();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(TestTone.class);
-    }
+    private TestTone testTone = new TestTone();
 
     @Test
     public void testMix() {

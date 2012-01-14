@@ -17,9 +17,6 @@
 
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
-import info.carlwithak.mpxg2.model.Util;
-import java.beans.IntrospectionException;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,17 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class TwoBandMonoTest {
-    private TwoBandMono twoBandMono;
-
-    @Before
-    public void setUp() {
-        twoBandMono = new TwoBandMono();
-    }
-
-    @Test
-    public void testBean() throws IntrospectionException {
-        Util.testBean(TwoBandMono.class);
-    }
+    private TwoBandMono twoBandMono = new TwoBandMono();
 
     @Test
     public void testMix() {
