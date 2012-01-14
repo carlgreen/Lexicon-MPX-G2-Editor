@@ -53,24 +53,12 @@ public class Knob implements DataObject {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value.setValue(value);
-    }
-
     public GenericValue<Integer> getLow() {
         return low;
     }
 
-    public void setLow(int low) {
-        this.low.setValue(low);
-    }
-
     public GenericValue<Integer> getHigh() {
         return high;
-    }
-
-    public void setHigh(int high) {
-        this.high.setValue(high);
     }
 
     public String getName() {

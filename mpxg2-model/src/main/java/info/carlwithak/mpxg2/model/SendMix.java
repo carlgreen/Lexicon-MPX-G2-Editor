@@ -48,16 +48,8 @@ public class SendMix implements DataObject {
         return sendLevel;
     }
 
-    public void setSendLevel(final int sendLevel) {
-        this.sendLevel.setValue(sendLevel);
-    }
-
     public GenericValue<Integer> getSendBypassLevel() {
         return sendBypassLevel;
-    }
-
-    public void setSendBypassLevel(final int sendBypassLevel) {
-        this.sendBypassLevel.setValue(sendBypassLevel);
     }
 
 }

@@ -745,15 +745,15 @@ public class SysexParser {
         int noiseGateSend = readInt(objectData, 884, 2);
 
         NoiseGate noiseGate = new NoiseGate();
-        noiseGate.setEnable(noiseGateEnable);
-        noiseGate.setThreshold(-1 * (256 - noiseGateThreshold));
-        noiseGate.setOffset(-1 * noiseGateOffset);
-        noiseGate.setHTime(noiseGateHTime);
-        noiseGate.setATime(noiseGateATime);
-        noiseGate.setRTime(noiseGateRTime);
-        noiseGate.setAttenuation(-1 * (256 - noiseGateAttenuation));
-        noiseGate.setDelay(noiseGateDelay);
-        noiseGate.setSend(Util.parseBoolean(noiseGateSend));
+        noiseGate.getEnable().setValue(noiseGateEnable);
+        noiseGate.getThreshold().setValue(-1 * (256 - noiseGateThreshold));
+        noiseGate.getOffset().setValue(-1 * noiseGateOffset);
+        noiseGate.getHTime().setValue(noiseGateHTime);
+        noiseGate.getATime().setValue(noiseGateATime);
+        noiseGate.getRTime().setValue(noiseGateRTime);
+        noiseGate.getAttenuation().setValue(-1 * (256 - noiseGateAttenuation));
+        noiseGate.getDelay().setValue(noiseGateDelay);
+        noiseGate.getSend().setValue(Util.parseBoolean(noiseGateSend));
         program.setNoiseGate(noiseGate);
 
         // Bypass State
@@ -779,10 +779,10 @@ public class SysexParser {
 
         SendMix sendMix = new SendMix();
         int sendLevel = readInt(objectData, 898, 2);
-        sendMix.setSendLevel(sendLevel);
+        sendMix.getSendLevel().setValue(sendLevel);
 
         int sendBypassLevel = readInt(objectData, 900, 2);
-        sendMix.setSendBypassLevel(sendBypassLevel);
+        sendMix.getSendBypassLevel().setValue(sendBypassLevel);
         program.setSendMix(sendMix);
 
         // patching
@@ -831,14 +831,14 @@ public class SysexParser {
 
     static EffectsStatus readEffectsStatus(final int effectsStatus) {
         EffectsStatus effectsStatusData = new EffectsStatus();
-        effectsStatusData.setEffect1On((effectsStatus & 0x01) == 0x01);
-        effectsStatusData.setEffect2On((effectsStatus & 0x02) == 0x02);
-        effectsStatusData.setChorusOn((effectsStatus & 0x04) == 0x04);
-        effectsStatusData.setDelayOn((effectsStatus & 0x08) == 0x08);
-        effectsStatusData.setReverbOn((effectsStatus & 0x10) == 0x10);
-        effectsStatusData.setEqOn((effectsStatus & 0x20) == 0x20);
-        effectsStatusData.setGainOn((effectsStatus & 0x40) == 0x40);
-        effectsStatusData.setInsertOn((effectsStatus & 0x80) == 0x80);
+        effectsStatusData.getEffect1On().setValue((effectsStatus & 0x01) == 0x01);
+        effectsStatusData.getEffect2On().setValue((effectsStatus & 0x02) == 0x02);
+        effectsStatusData.getChorusOn().setValue((effectsStatus & 0x04) == 0x04);
+        effectsStatusData.getDelayOn().setValue((effectsStatus & 0x08) == 0x08);
+        effectsStatusData.getReverbOn().setValue((effectsStatus & 0x10) == 0x10);
+        effectsStatusData.getEqOn().setValue((effectsStatus & 0x20) == 0x20);
+        effectsStatusData.getGainOn().setValue((effectsStatus & 0x40) == 0x40);
+        effectsStatusData.getInsertOn().setValue((effectsStatus & 0x80) == 0x80);
         return effectsStatusData;
     }
 
@@ -916,13 +916,13 @@ public class SysexParser {
         final Knob knob = new Knob();
 
         int knobValue = bytes[0] + bytes[1] * 16;
-        knob.setValue(knobValue);
+        knob.getValue().setValue(knobValue);
 
         int knobLow = bytes[2] + bytes[3] * 16;
-        knob.setLow(knobLow);
+        knob.getLow().setValue(knobLow);
 
         int knobHigh = bytes[4] + bytes[5] * 16;
-        knob.setHigh(knobHigh);
+        knob.getHigh().setValue(knobHigh);
 
         bytes = Arrays.copyOfRange(bytes, 6, 24);
         StringBuilder knobName = new StringBuilder(9);
@@ -939,25 +939,25 @@ public class SysexParser {
         final Lfo lfo = new Lfo();
 
         int mode = bytes[0] + bytes[1] * 16;
-        lfo.setMode(mode);
+        lfo.getMode().setValue(mode);
 
         byte[] rateBytes = Arrays.copyOfRange(bytes, 2, 8);
         lfo.setRate(RateParser.parse("Rate", rateBytes));
 
         int pulseWidth = bytes[8] + bytes[9] * 16;
-        lfo.setPulseWidth(pulseWidth);
+        lfo.getPulseWidth().setValue(pulseWidth);
 
         int phase = bytes[10] + bytes[11] * 16;
-        lfo.setPhase(phase);
+        lfo.getPhase().setValue(phase);
 
         int depth = bytes[12] + bytes[13] * 16;
-        lfo.setDepth(depth);
+        lfo.getDepth().setValue(depth);
 
         int onLevel = bytes[14] + bytes[15] * 16;
-        lfo.setOnLevel(onLevel);
+        lfo.getOnLevel().setValue(onLevel);
 
         int onSource = bytes[16] + bytes[17] * 16;
-        lfo.setOnSource(onSource);
+        lfo.getOnSource().setValue(onSource);
 
         return lfo;
     }
@@ -966,10 +966,10 @@ public class SysexParser {
         final Random random = new Random();
 
         int randomLow = bytes[0] + bytes[1] * 16;
-        random.setLow(randomLow);
+        random.getLow().setValue(randomLow);
 
         int randomHigh = bytes[2] + bytes[3] * 16;
-        random.setHigh(randomHigh);
+        random.getHigh().setValue(randomHigh);
 
         byte[] rateBytes = Arrays.copyOfRange(bytes, 4, 10);
         random.setRate(RateParser.parse("Rate", rateBytes));
@@ -981,19 +981,19 @@ public class SysexParser {
         final Ab ab = new Ab();
 
         int abMode = bytes[0] + bytes[1] * 16;
-        ab.setMode(abMode);
+        ab.getMode().setValue(abMode);
 
         int aRate = bytes[2] + bytes[3] * 16;
-        ab.setARate(aRate);
+        ab.getARate().setValue(aRate);
 
         int bRate = bytes[4] + bytes[5] * 16;
-        ab.setBRate(bRate);
+        ab.getBRate().setValue(bRate);
 
         int abOnLevel = bytes[6] + bytes[7] * 16;
-        ab.setOnLevel(abOnLevel);
+        ab.getOnLevel().setValue(abOnLevel);
 
         int abOnSource = bytes[8] + bytes[9] * 16;
-        ab.setOnSource(abOnSource);
+        ab.getOnSource().setValue(abOnSource);
 
         return ab;
     }
@@ -1002,16 +1002,16 @@ public class SysexParser {
         EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
 
         int envGenSrc1 = bytes[0] + bytes[1] * 16;
-        envelopeGenerator.setSrc1(envGenSrc1);
+        envelopeGenerator.getSrc1().setValue(envGenSrc1);
 
         int envGenSrc2 = bytes[2] + bytes[3] * 16;
-        envelopeGenerator.setSrc2(envGenSrc2);
+        envelopeGenerator.getSrc2().setValue(envGenSrc2);
 
         int envGenATrim = bytes[4] + bytes[5] * 16;
-        envelopeGenerator.setATrim(envGenATrim);
+        envelopeGenerator.getATrim().setValue(envGenATrim);
 
         int envGenResponse = bytes[6] + bytes[7] * 16;
-        envelopeGenerator.setResponse(envGenResponse);
+        envelopeGenerator.getResponse().setValue(envGenResponse);
 
         return envelopeGenerator;
     }

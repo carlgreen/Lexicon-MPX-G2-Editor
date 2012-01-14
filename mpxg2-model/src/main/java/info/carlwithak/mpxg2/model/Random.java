@@ -54,16 +54,8 @@ public class Random implements DataObject {
         return low;
     }
 
-    public void setLow(int low) {
-        this.low.setValue(low);
-    }
-
     public GenericValue<Integer> getHigh() {
         return high;
-    }
-
-    public void setHigh(int high) {
-        this.high.setValue(high);
     }
 
     public Rate getRate() {

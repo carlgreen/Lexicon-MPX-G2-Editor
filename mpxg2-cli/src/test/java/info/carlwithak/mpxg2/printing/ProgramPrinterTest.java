@@ -185,9 +185,9 @@ public class ProgramPrinterTest {
     @Test
     public void testPrintKnob() {
         Knob knob = new Knob();
-        knob.setValue(50);
-        knob.setLow(0);
-        knob.setHigh(100);
+        knob.getValue().setValue(50);
+        knob.getLow().setValue(0);
+        knob.getHigh().setValue(100);
         knob.setName("Delay Adj");
 
         String expected = "      Value: 50\n      Low: 0\n      High: 100\n      Name: Delay Adj\n";
@@ -198,13 +198,13 @@ public class ProgramPrinterTest {
     @Test
     public void testPrintLfo() throws PrintException {
         Lfo lfo = new Lfo();
-        lfo.setMode(1);
+        lfo.getMode().setValue(1);
         lfo.setRate(new FrequencyRate("Rate", 0.6));
-        lfo.setPulseWidth(50);
-        lfo.setPhase(0);
-        lfo.setDepth(100);
-        lfo.setOnLevel(64);
-        lfo.setOnSource(0);
+        lfo.getPulseWidth().setValue(50);
+        lfo.getPhase().setValue(0);
+        lfo.getDepth().setValue(100);
+        lfo.getOnLevel().setValue(64);
+        lfo.getOnSource().setValue(0);
 
         String expected = "      Mode: On\n      Rate: 0.60Hz\n      PW: 50%\n      Phase: 0\n      Depth: 100%\n      OnLvl: 64\n      OnSrc: None\n";
         String actual = ProgramPrinter.printLfo(lfo);
@@ -214,8 +214,8 @@ public class ProgramPrinterTest {
     @Test
     public void testPrintRandom() throws PrintException {
         Random random = new Random();
-        random.setLow(0);
-        random.setHigh(50);
+        random.getLow().setValue(0);
+        random.getHigh().setValue(50);
         random.setRate(new BeatRate("Rate", 3, 1));
 
         String expected = "      RndLo: 0\n      RndHi: 50\n      Rate: 3:1\n";
@@ -226,11 +226,11 @@ public class ProgramPrinterTest {
     @Test
     public void testPrintAb() throws PrintException {
         Ab ab = new Ab();
-        ab.setMode(0);
-        ab.setARate(100);
-        ab.setBRate(10);
-        ab.setOnLevel(64);
-        ab.setOnSource(0);
+        ab.getMode().setValue(0);
+        ab.getARate().setValue(100);
+        ab.getBRate().setValue(10);
+        ab.getOnLevel().setValue(64);
+        ab.getOnSource().setValue(0);
 
         String expected = "      Mode: Trigger\n      ARate: 100\n      BRate: 10\n      OnLvl: 64\n      OnSrc: None\n";
         String actual = ProgramPrinter.printAb(ab);
@@ -240,10 +240,10 @@ public class ProgramPrinterTest {
     @Test
     public void testPrintEnvelopeGenerator() throws PrintException {
         EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
-        envelopeGenerator.setSrc1(1);
-        envelopeGenerator.setSrc2(0);
-        envelopeGenerator.setATrim(17);
-        envelopeGenerator.setResponse(100);
+        envelopeGenerator.getSrc1().setValue(1);
+        envelopeGenerator.getSrc2().setValue(0);
+        envelopeGenerator.getATrim().setValue(17);
+        envelopeGenerator.getResponse().setValue(100);
 
         String expected = "      Src1: In\n      Src2: Off\n      ATrim: 17\n      Resp: 100\n";
         String actual = ProgramPrinter.printEnvelopeGenerator(envelopeGenerator);

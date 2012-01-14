@@ -58,32 +58,16 @@ public class EnvelopeGenerator implements DataObject {
         return src1;
     }
 
-    public void setSrc1(final int src1) {
-        this.src1.setValue(src1);
-    }
-
     public EnvelopeGeneratorSourceValue getSrc2() {
         return src2;
-    }
-
-    public void setSrc2(final int src2) {
-        this.src2.setValue(src2);
     }
 
     public GenericValue<Integer> getATrim() {
         return aTrim;
     }
 
-    public void setATrim(final int aTrim) {
-        this.aTrim.setValue(aTrim);
-    }
-
     public GenericValue<Integer> getResponse() {
         return response;
-    }
-
-    public void setResponse(final int response) {
-        this.response.setValue(response);
     }
 
 }

@@ -72,64 +72,32 @@ public class EffectsStatus implements DataObject {
         return effect1On;
     }
 
-    public void setEffect1On(final boolean effect1On) {
-        this.effect1On.setValue(effect1On);
-    }
-
     public OnOffValue getEffect2On() {
         return effect2On;
-    }
-
-    public void setEffect2On(final boolean effect2On) {
-        this.effect2On.setValue(effect2On);
     }
 
     public OnOffValue getChorusOn() {
         return chorusOn;
     }
 
-    public void setChorusOn(final boolean chorusOn) {
-        this.chorusOn.setValue(chorusOn);
-    }
-
     public OnOffValue getDelayOn() {
         return delayOn;
-    }
-
-    public void setDelayOn(final boolean delayOn) {
-        this.delayOn.setValue(delayOn);
     }
 
     public OnOffValue getReverbOn() {
         return reverbOn;
     }
 
-    public void setReverbOn(final boolean reverbOn) {
-        this.reverbOn.setValue(reverbOn);
-    }
-
     public OnOffValue getEqOn() {
         return eqOn;
-    }
-
-    public void setEqOn(final boolean eqOn) {
-        this.eqOn.setValue(eqOn);
     }
 
     public OnOffValue getGainOn() {
         return gainOn;
     }
 
-    public void setGainOn(final boolean gainOn) {
-        this.gainOn.setValue(gainOn);
-    }
-
     public OnOffValue getInsertOn() {
         return insertOn;
-    }
-
-    public void setInsertOn(final boolean insertOn) {
-        this.insertOn.setValue(insertOn);
     }
 
 }
