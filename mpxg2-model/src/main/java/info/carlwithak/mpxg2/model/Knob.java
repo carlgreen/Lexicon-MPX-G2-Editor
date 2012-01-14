@@ -28,7 +28,7 @@ public class Knob implements DataObject {
     private GenericValue<Integer> value = new GenericValue<Integer>("Value", "", 0, 127);
     private GenericValue<Integer> low = new GenericValue<Integer>("Low", "", 0, 127);
     private GenericValue<Integer> high = new GenericValue<Integer>("High", "", 0, 127);
-    private String name; // TODO use some parameter class for this
+    private GenericValue<String> name = new GenericValue<String>("Name", "", "", ""); // TODO length validation
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
@@ -61,12 +61,8 @@ public class Knob implements DataObject {
         return high;
     }
 
-    public String getName() {
+    public GenericValue<String> getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
 }

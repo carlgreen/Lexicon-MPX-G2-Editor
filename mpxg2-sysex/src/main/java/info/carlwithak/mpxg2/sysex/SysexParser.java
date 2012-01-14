@@ -930,7 +930,7 @@ public class SysexParser {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
             knobName.append(c);
         }
-        knob.setName(knobName.toString().trim());
+        knob.getName().setValue(knobName.toString().trim());
 
         return knob;
     }

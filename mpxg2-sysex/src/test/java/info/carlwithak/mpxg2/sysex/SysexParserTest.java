@@ -486,7 +486,7 @@ public class SysexParserTest {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertEquals("Delay Adj", knob.getName());
+        assertThat(knob.getName(), is(value("Delay Adj")));
     }
 
     @Test

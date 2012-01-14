@@ -324,7 +324,7 @@ public class ProgramPrinter {
         sb.append("  ").append(printParameter(knob.getValue()));
         sb.append("  ").append(printParameter(knob.getLow()));
         sb.append("  ").append(printParameter(knob.getHigh()));
-        sb.append("      Name: ").append(knob.getName()).append("\n");
+        sb.append("  ").append(printParameter(knob.getName()));
         return sb.toString();
     }
 

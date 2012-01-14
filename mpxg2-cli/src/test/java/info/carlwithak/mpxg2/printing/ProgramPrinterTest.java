@@ -188,7 +188,7 @@ public class ProgramPrinterTest {
         knob.getValue().setValue(50);
         knob.getLow().setValue(0);
         knob.getHigh().setValue(100);
-        knob.setName("Delay Adj");
+        knob.getName().setValue("Delay Adj");
 
         String expected = "      Value: 50\n      Low: 0\n      High: 100\n      Name: Delay Adj\n";
         String actual = ProgramPrinter.printKnob(knob);

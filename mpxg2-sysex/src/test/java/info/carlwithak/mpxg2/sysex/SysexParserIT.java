@@ -277,7 +277,7 @@ public class SysexParserIT {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertEquals("Delay Adj", knob.getName());
+        assertThat(knob.getName(), is(value("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));
@@ -562,7 +562,7 @@ public class SysexParserIT {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertEquals("Delay Adj", knob.getName());
+        assertThat(knob.getName(), is(value("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));
@@ -1887,7 +1887,7 @@ public class SysexParserIT {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertEquals("Delay Adj", knob.getName());
+        assertThat(knob.getName(), is(value("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));
@@ -2128,7 +2128,7 @@ public class SysexParserIT {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertEquals("Delay Adj", knob.getName());
+        assertThat(knob.getName(), is(value("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));
