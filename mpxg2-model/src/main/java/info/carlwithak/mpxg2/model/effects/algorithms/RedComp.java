@@ -56,7 +56,4 @@ public class RedComp extends Effect {
         return sensitivity;
     }
 
-    public void setSensitivity(final int sensitivity) {
-        this.sensitivity.setValue(sensitivity);
-    }
 }

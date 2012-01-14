@@ -69,31 +69,16 @@ public class Comb1 extends Chorus {
         return loCut;
     }
 
-    public void setLoCut(int loCut) {
-        this.loCut.setValue(loCut);
-    }
-
     public GenericValue<Integer> getHiCut() {
         return hiCut;
-    }
-
-    public void setHiCut(int hiCut) {
-        this.hiCut.setValue(hiCut);
     }
 
     public GenericValue<Integer> getComb() {
         return comb;
     }
 
-    public void setComb(int comb) {
-        this.comb.setValue(comb);
-    }
-
     public GenericValue<Integer> getNotch() {
         return notch;
     }
 
-    public void setNotch(int notch) {
-        this.notch.setValue(notch);
-    }
 }

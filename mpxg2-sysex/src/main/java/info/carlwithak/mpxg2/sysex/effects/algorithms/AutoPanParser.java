@@ -41,13 +41,13 @@ public class AutoPanParser {
         autoPan.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        autoPan.setPulseWidth(pulseWidth);
+        autoPan.getPulseWidth().setValue(pulseWidth);
 
         int depth = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        autoPan.setDepth(depth);
+        autoPan.getDepth().setValue(depth);
 
         int phase = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        autoPan.setPhase(phase);
+        autoPan.getPhase().setValue(phase);
 
         return autoPan;
     }

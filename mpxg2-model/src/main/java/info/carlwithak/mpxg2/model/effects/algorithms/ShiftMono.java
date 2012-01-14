@@ -63,23 +63,12 @@ public class ShiftMono extends Effect {
         return tune;
     }
 
-    public void setTune(int tune) {
-        this.tune.setValue(tune);
-    }
-
     public GenericValue<Integer> getOptimize() {
         return optimize;
-    }
-
-    public void setOptimize(int optimize) {
-        this.optimize.setValue(optimize);
     }
 
     public OnOffValue isGlide() {
         return glide;
     }
 
-    public void setGlide(boolean glide) {
-        this.glide.setValue(glide);
-    }
 }

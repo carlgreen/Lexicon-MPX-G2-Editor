@@ -41,19 +41,19 @@ public class Flanger24MonoParser {
         flanger24Mono.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        flanger24Mono.setPulseWidth(pulseWidth);
+        flanger24Mono.getPulseWidth().setValue(pulseWidth);
 
         int depth = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        flanger24Mono.setDepth(depth);
+        flanger24Mono.getDepth().setValue(depth);
 
         int resonance = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        flanger24Mono.setResonance(resonance);
+        flanger24Mono.getResonance().setValue(resonance);
 
         int glide = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        flanger24Mono.setGlide(glide);
+        flanger24Mono.getGlide().setValue(glide);
 
         int blend = (byte) (effectParameters[18] + effectParameters[19] * 16);
-        flanger24Mono.setBlend(blend);
+        flanger24Mono.getBlend().setValue(blend);
 
         return flanger24Mono;
     }

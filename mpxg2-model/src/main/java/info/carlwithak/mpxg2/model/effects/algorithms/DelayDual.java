@@ -118,79 +118,40 @@ public class DelayDual extends Delay {
         return level1;
     }
 
-    public void setLevel1(int level1) {
-        this.level1.setValue(level1);
-    }
-
     public GenericValue<Integer> getLevel2() {
         return level2;
-    }
-
-    public void setLevel2(int level2) {
-        this.level2.setValue(level2);
     }
 
     public PanValue getPan1() {
         return pan1;
     }
 
-    public void setPan1(int pan1) {
-        this.pan1.setValue(pan1);
-    }
-
     public PanValue getPan2() {
         return pan2;
-    }
-
-    public void setPan2(int pan2) {
-        this.pan2.setValue(pan2);
     }
 
     public GenericValue<Integer> getFeedback1() {
         return feedback1;
     }
 
-    public void setFeedback1(int feedback1) {
-        this.feedback1.setValue(feedback1);
-    }
-
     public InsertPosition getInsert() {
         return insert;
-    }
-
-    public void setInsert(int insert) {
-        this.insert.setValue(insert);
     }
 
     public GenericValue<Integer> getFeedback2() {
         return feedback2;
     }
 
-    public void setFeedback2(int feedback2) {
-        this.feedback2.setValue(feedback2);
-    }
-
     public GenericValue<Integer> getXFbk1() {
         return xFbk1;
-    }
-
-    public void setXFbk1(int xFbk1) {
-        this.xFbk1.setValue(xFbk1);
     }
 
     public GenericValue<Integer> getXFbk2() {
         return xFbk2;
     }
 
-    public void setXFbk2(int xFbk2) {
-        this.xFbk2.setValue(xFbk2);
-    }
-
     public OnOffValue isClear() {
         return clear;
     }
 
-    public void setClear(boolean clear) {
-        this.clear.setValue(clear);
-    }
 }

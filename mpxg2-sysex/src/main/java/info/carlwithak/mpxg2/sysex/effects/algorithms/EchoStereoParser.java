@@ -42,16 +42,16 @@ public class EchoStereoParser {
         echoStereo.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        echoStereo.setFeedback(feedback);
+        echoStereo.getFeedback().setValue(feedback);
 
         int insert = effectParameters[12] + effectParameters[13] * 16;
-        echoStereo.setInsert(insert);
+        echoStereo.getInsert().setValue(insert);
 
         int damp = effectParameters[14] + effectParameters[15] * 16;
-        echoStereo.setDamp(damp);
+        echoStereo.getDamp().setValue(damp);
 
         int clear = effectParameters[16] + effectParameters[17] * 16;
-        echoStereo.setClear(Util.parseBoolean(clear));
+        echoStereo.isClear().setValue(Util.parseBoolean(clear));
 
         return echoStereo;
     }

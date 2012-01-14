@@ -30,19 +30,19 @@ public class CrunchParser {
         Crunch crunch = new Crunch();
 
         int lo = effectParameters[0] + effectParameters[1] * 16;
-        crunch.setLo(lo);
+        crunch.getLo().setValue(lo);
 
         int mid = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        crunch.setMid(mid);
+        crunch.getMid().setValue(mid);
 
         int hi = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        crunch.setHi(hi);
+        crunch.getHi().setValue(hi);
 
         int inLevel = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        crunch.setInLevel(inLevel);
+        crunch.getInLevel().setValue(inLevel);
 
         int level = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        crunch.setLevel(level);
+        crunch.getLevel().setValue(level);
 
         return crunch;
     }

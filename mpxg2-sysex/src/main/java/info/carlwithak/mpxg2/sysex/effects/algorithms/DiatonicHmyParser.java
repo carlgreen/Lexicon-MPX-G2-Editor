@@ -36,22 +36,22 @@ public class DiatonicHmyParser {
         diatonicHmy.getLevel().setValue(level);
 
         int key = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        diatonicHmy.setKey(key);
+        diatonicHmy.getKey().setValue(key);
 
         int scale = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        diatonicHmy.setScale(scale);
+        diatonicHmy.getScale().setValue(scale);
 
         int interval = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        diatonicHmy.setInterval(interval);
+        diatonicHmy.getInterval().setValue(interval);
 
         int optimize = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        diatonicHmy.setOptimize(optimize);
+        diatonicHmy.getOptimize().setValue(optimize);
 
         int threshold = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        diatonicHmy.setThreshold(threshold);
+        diatonicHmy.getThreshold().setValue(threshold);
 
         int source = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        diatonicHmy.setSource(source);
+        diatonicHmy.getSource().setValue(source);
 
         return diatonicHmy;
     }

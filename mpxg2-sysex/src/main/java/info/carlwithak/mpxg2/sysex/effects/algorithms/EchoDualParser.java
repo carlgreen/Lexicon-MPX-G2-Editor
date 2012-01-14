@@ -44,28 +44,28 @@ public class EchoDualParser {
         echoDual.setTime2(RateParser.parse("Time2", Arrays.copyOfRange(effectParameters, 10, 16)));
 
         int level1 = effectParameters[16] + effectParameters[17] * 16;
-        echoDual.setLevel1(level1);
+        echoDual.getLevel1().setValue(level1);
 
         int level2 = effectParameters[18] + effectParameters[19] * 16;
-        echoDual.setLevel2(level2);
+        echoDual.getLevel2().setValue(level2);
 
         int feedback1 = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        echoDual.setFeedback1(feedback1);
+        echoDual.getFeedback1().setValue(feedback1);
 
         int insert = effectParameters[22] + effectParameters[23] * 16;
-        echoDual.setInsert(insert);
+        echoDual.getInsert().setValue(insert);
 
         int feedback2 = (byte) (effectParameters[24] + effectParameters[25] * 16);
-        echoDual.setFeedback2(feedback2);
+        echoDual.getFeedback2().setValue(feedback2);
 
         int damp1 = effectParameters[26] + effectParameters[27] * 16;
-        echoDual.setDamp1(damp1);
+        echoDual.getDamp1().setValue(damp1);
 
         int damp2 = effectParameters[28] + effectParameters[29] * 16;
-        echoDual.setDamp2(damp2);
+        echoDual.getDamp2().setValue(damp2);
 
         int clear = effectParameters[30] + effectParameters[31] * 16;
-        echoDual.setClear(Util.parseBoolean(clear));
+        echoDual.isClear().setValue(Util.parseBoolean(clear));
 
         return echoDual;
     }

@@ -41,21 +41,21 @@ public class RotaryCabParser {
         rotaryCab.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int depth1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        rotaryCab.setDepth1(depth1);
+        rotaryCab.getDepth1().setValue(depth1);
 
         rotaryCab.setRate2(RateParser.parse("Rate2", Arrays.copyOfRange(effectParameters, 12, 18)));
 
         int depth2 = (byte) (effectParameters[18] + effectParameters[19] * 16);
-        rotaryCab.setDepth2(depth2);
+        rotaryCab.getDepth2().setValue(depth2);
 
         int resonance = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        rotaryCab.setResonance(resonance);
+        rotaryCab.getResonance().setValue(resonance);
 
         int width = (byte) (effectParameters[22] + effectParameters[23] * 16);
-        rotaryCab.setWidth(width);
+        rotaryCab.getWidth().setValue(width);
 
         int balance = (byte) (effectParameters[24] + effectParameters[25] * 16);
-        rotaryCab.setBalance(balance);
+        rotaryCab.getBalance().setValue(balance);
 
         return rotaryCab;
     }

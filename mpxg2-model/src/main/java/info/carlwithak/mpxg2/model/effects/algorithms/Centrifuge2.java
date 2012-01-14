@@ -98,24 +98,12 @@ public class Centrifuge2 extends Chorus {
         return pulseWidth1;
     }
 
-    public void setPulseWidth1(int pulseWidth1) {
-        this.pulseWidth1.setValue(pulseWidth1);
-    }
-
     public GenericValue<Integer> getSync1() {
         return sync1;
     }
 
-    public void setSync1(int sync1) {
-        this.sync1.setValue(sync1);
-    }
-
     public GenericValue<Integer> getDepth1() {
         return depth1;
-    }
-
-    public void setDepth1(int depth1) {
-        this.depth1.setValue(depth1);
     }
 
     public Rate getRate2() {
@@ -130,31 +118,16 @@ public class Centrifuge2 extends Chorus {
         return pulseWidth2;
     }
 
-    public void setPulseWidth2(int pulseWidth2) {
-        this.pulseWidth2.setValue(pulseWidth2);
-    }
-
     public GenericValue<Integer> getSync2() {
         return sync2;
-    }
-
-    public void setSync2(int sync2) {
-        this.sync2.setValue(sync2);
     }
 
     public GenericValue<Integer> getDepth2() {
         return depth2;
     }
 
-    public void setDepth2(int depth2) {
-        this.depth2.setValue(depth2);
-    }
-
     public GenericValue<Integer> getResonance() {
         return resonance;
     }
 
-    public void setResonance(int resonance) {
-        this.resonance.setValue(resonance);
-    }
 }

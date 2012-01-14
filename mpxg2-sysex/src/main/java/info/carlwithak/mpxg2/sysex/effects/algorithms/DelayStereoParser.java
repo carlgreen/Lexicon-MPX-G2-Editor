@@ -42,13 +42,13 @@ public class DelayStereoParser {
         delayStereo.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        delayStereo.setFeedback(feedback);
+        delayStereo.getFeedback().setValue(feedback);
 
         int insert = effectParameters[12] + effectParameters[13] * 16;
-        delayStereo.setInsert(insert);
+        delayStereo.getInsert().setValue(insert);
 
         int clear = effectParameters[14] + effectParameters[15] * 16;
-        delayStereo.setClear(Util.parseBoolean(clear));
+        delayStereo.isClear().setValue(Util.parseBoolean(clear));
 
         return delayStereo;
     }

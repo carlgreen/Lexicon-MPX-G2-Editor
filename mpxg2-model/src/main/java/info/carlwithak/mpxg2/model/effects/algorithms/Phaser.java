@@ -78,23 +78,12 @@ public class Phaser extends Effect {
         return pulseWidth;
     }
 
-    public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth.setValue(pulseWidth);
-    }
-
     public GenericValue<Integer> getDepth() {
         return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth.setValue(depth);
     }
 
     public GenericValue<Integer> getResonance() {
         return resonance;
     }
 
-    public void setResonance(int resonance) {
-        this.resonance.setValue(resonance);
-    }
 }

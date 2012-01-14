@@ -77,23 +77,12 @@ public class DelayStereo extends Delay {
         return feedback;
     }
 
-    public void setFeedback(int feedback) {
-        this.feedback.setValue(feedback);
-    }
-
     public InsertPosition getInsert() {
         return insert;
-    }
-
-    public void setInsert(int insert) {
-        this.insert.setValue(insert);
     }
 
     public OnOffValue isClear() {
         return clear;
     }
 
-    public void setClear(boolean clear) {
-        this.clear.setValue(clear);
-    }
 }

@@ -36,10 +36,10 @@ public class PannerParser {
         panner.getLevel().setValue(level);
 
         int pan1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        panner.setPan1(pan1);
+        panner.getPan1().setValue(pan1);
 
         int pan2 = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        panner.setPan2(pan2);
+        panner.getPan2().setValue(pan2);
 
         return panner;
     }

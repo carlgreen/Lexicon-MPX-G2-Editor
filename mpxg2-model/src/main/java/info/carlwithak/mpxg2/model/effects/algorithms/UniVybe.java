@@ -57,8 +57,4 @@ public class UniVybe extends Effect {
         return rate;
     }
 
-    public void setRate(int rate) {
-        this.rate.setValue(rate);
-    }
-
 }

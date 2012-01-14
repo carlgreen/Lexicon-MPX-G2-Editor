@@ -36,7 +36,7 @@ public class VolumeStereoParser {
         volumeStereo.getLevel().setValue(level);
 
         int volume = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        volumeStereo.setVolume(volume);
+        volumeStereo.getVolume().setValue(volume);
 
         return volumeStereo;
     }

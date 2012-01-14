@@ -36,34 +36,34 @@ public class TwoBandMonoParser {
         twoBandMono.getLevel().setValue(level);
 
         int gain1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        twoBandMono.setGain1(gain1);
+        twoBandMono.getGain1().setValue(gain1);
 
         int fc1 = 0;
         for (int i = 0; i < 4; i++) {
             fc1 += (effectParameters[6 + i] * Math.pow(16, i));
         }
-        twoBandMono.setFc1(fc1);
+        twoBandMono.getFc1().setValue(fc1);
 
         int q1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        twoBandMono.setQ1(q1 / 10.0);
+        twoBandMono.getQ1().setValue(q1 / 10.0);
 
         int mode1 = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        twoBandMono.setMode1(mode1);
+        twoBandMono.getMode1().setValue(mode1);
 
         int gain2 = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        twoBandMono.setGain2(gain2);
+        twoBandMono.getGain2().setValue(gain2);
 
         int fc2 = 0;
         for (int i = 0; i < 4; i++) {
             fc2 += (effectParameters[16 + i] * Math.pow(16, i));
         }
-        twoBandMono.setFc2(fc2);
+        twoBandMono.getFc2().setValue(fc2);
 
         int q2 = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        twoBandMono.setQ2(q2 / 10.0);
+        twoBandMono.getQ2().setValue(q2 / 10.0);
 
         int mode2 = (byte) (effectParameters[22] + effectParameters[23] * 16);
-        twoBandMono.setMode2(mode2);
+        twoBandMono.getMode2().setValue(mode2);
 
         return twoBandMono;
     }

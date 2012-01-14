@@ -37,7 +37,7 @@ public class OrangePhaseParser {
         orangePhase.getLevel().setValue(level);
 
         int rate = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        orangePhase.setRate(rate);
+        orangePhase.getRate().setValue(rate);
 
         return orangePhase;
     }

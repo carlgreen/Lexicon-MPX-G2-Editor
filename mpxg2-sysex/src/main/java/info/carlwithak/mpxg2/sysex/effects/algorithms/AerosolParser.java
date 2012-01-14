@@ -41,24 +41,24 @@ public class AerosolParser {
         aerosol.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        aerosol.setPulseWidth1(pulseWidth1);
+        aerosol.getPulseWidth1().setValue(pulseWidth1);
 
         int depth1 = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        aerosol.setDepth1(depth1);
+        aerosol.getDepth1().setValue(depth1);
 
         aerosol.setRate2(RateParser.parse("Rate2", Arrays.copyOfRange(effectParameters, 14, 20)));
 
         int pulseWidth2 = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        aerosol.setPulseWidth2(pulseWidth2);
+        aerosol.getPulseWidth2().setValue(pulseWidth2);
 
         int depth2 = (byte) (effectParameters[22] + effectParameters[23] * 16);
-        aerosol.setDepth2(depth2);
+        aerosol.getDepth2().setValue(depth2);
 
         int resonance1 = (byte) (effectParameters[24] + effectParameters[25] * 16);
-        aerosol.setResonance1(resonance1);
+        aerosol.getResonance1().setValue(resonance1);
 
         int resonance2 = (byte) (effectParameters[26] + effectParameters[27] * 16);
-        aerosol.setResonance2(resonance2);
+        aerosol.getResonance2().setValue(resonance2);
 
         return aerosol;
     }

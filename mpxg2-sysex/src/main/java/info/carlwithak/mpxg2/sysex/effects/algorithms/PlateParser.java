@@ -37,34 +37,34 @@ public class PlateParser {
         plate.getLevel().setValue(level);
 
         double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
-        plate.setSize(size);
+        plate.getSize().setValue(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        plate.setLink(Util.parseBoolean(link));
+        plate.isLink().setValue(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
-        plate.setDiff(diff);
+        plate.getDiff().setValue(diff);
 
         int preDelay = effectParameters[10] + effectParameters[11] * 16;
-        plate.setPreDelay(preDelay);
+        plate.getPreDelay().setValue(preDelay);
         
         int bass = effectParameters[12] + effectParameters[13] * 16;
-        plate.setBass(bass);
+        plate.getBass().setValue(bass);
 
         int decay = effectParameters[14] + effectParameters[15] * 16;
-        plate.setDecay(decay);
+        plate.getDecay().setValue(decay);
 
         int xovr = effectParameters[16] + effectParameters[17] * 16;
-        plate.setXovr(xovr);
+        plate.getXovr().setValue(xovr);
 
         int rtHC = effectParameters[18] + effectParameters[19] * 16;
-        plate.setRtHC(rtHC);
+        plate.getRtHC().setValue(rtHC);
 
         int shape = effectParameters[20] + effectParameters[21] * 16;
-        plate.setShape(shape);
+        plate.getShape().setValue(shape);
 
         int spred = effectParameters[22] + effectParameters[23] * 16;
-        plate.setSpred(spred);
+        plate.getSpred().setValue(spred);
 
         return plate;
     }

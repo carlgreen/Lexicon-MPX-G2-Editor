@@ -85,71 +85,36 @@ public class Overdrive extends Gain {
         return lo;
     }
 
-    public void setLo(int lo) {
-        this.lo.setValue(lo);
-    }
-
     public GenericValue<Integer> getMid() {
         return mid;
-    }
-
-    public void setMid(int mid) {
-        this.mid.setValue(mid);
     }
 
     public GenericValue<Integer> getHi() {
         return hi;
     }
 
-    public void setHi(int hi) {
-        this.hi.setValue(hi);
-    }
-
     public GenericValue<Integer> getInLevel() {
         return inLevel;
-    }
-
-    public void setInLevel(int inLevel) {
-        this.inLevel.setValue(inLevel);
     }
 
     public GenericValue<Integer> getLoCut() {
         return loCut;
     }
 
-    public void setLoCut(int loCut) {
-        this.loCut.setValue(loCut);
-    }
-
     public GenericValue<Integer> getFeel() {
         return feel;
-    }
-
-    public void setFeel(int feel) {
-        this.feel.setValue(feel);
     }
 
     public GenericValue<Integer> getDrive() {
         return drive;
     }
 
-    public void setDrive(int drive) {
-        this.drive.setValue(drive);
-    }
-
     public GenericValue<Integer> getTone() {
         return tone;
-    }
-
-    public void setTone(int tone) {
-        this.tone.setValue(tone);
     }
 
     public GenericValue<Integer> getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
-        this.level.setValue(level);
-    }
 }

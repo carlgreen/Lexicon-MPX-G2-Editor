@@ -85,55 +85,28 @@ public class Ambience extends Reverb {
         return size;
     }
 
-    public void setSize(double size) {
-        this.size.setValue(size);
-    }
-
     public OnOffValue isLink() {
         return link;
-    }
-
-    public void setLink(boolean link) {
-        this.link.setValue(link);
     }
 
     public GenericValue<Integer> getDiff() {
         return diff;
     }
 
-    public void setDiff(int diff) {
-        this.diff.setValue(diff);
-    }
-
     public GenericValue<Integer> getPreDelay() {
         return preDelay;
-    }
-
-    public void setPreDelay(int preDelay) {
-        this.preDelay.setValue(preDelay);
     }
 
     public DecayTimeValue getDecayTime() {
         return decayTime;
     }
 
-    public void setDecayTime(int decayTime) {
-        this.decayTime.setValue(decayTime);
-    }
-
     public DecayLevelValue getDecayLevel() {
         return decayLevel;
-    }
-
-    public void setDecayLevel(int decayLevel) {
-        this.decayLevel.setValue(decayLevel);
     }
 
     public AmbienceHighCutValue getRtHC() {
         return rtHC;
     }
 
-    public void setRtHC(int rtHC) {
-        this.rtHC.setValue(rtHC);
-    }
 }

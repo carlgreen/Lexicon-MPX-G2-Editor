@@ -57,7 +57,4 @@ public class ChorusVolumeStereo extends Chorus {
         return volume;
     }
 
-    public void setVolume(int volume) {
-        this.volume.setValue(volume);
-    }
 }

@@ -40,28 +40,28 @@ public class JamManParser {
         for (int i = 0; i < 4; i++) {
             size += (effectParameters[4 + i] * Math.pow(16, i));
         }
-        jamMan.setSize(size);
+        jamMan.getSize().setValue(size);
 
         int feedback = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        jamMan.setFeedback(feedback);
+        jamMan.getFeedback().setValue(feedback);
 
         int insert = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        jamMan.setInsert(insert);
+        jamMan.getInsert().setValue(insert);
 
         int clear = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        jamMan.setClear(Util.parseBoolean(clear));
+        jamMan.isClear().setValue(Util.parseBoolean(clear));
 
         int layer = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        jamMan.setLayer(Util.parseBoolean(layer));
+        jamMan.isLayer().setValue(Util.parseBoolean(layer));
 
         int replace = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        jamMan.setReplace(Util.parseBoolean(replace));
+        jamMan.isReplace().setValue(Util.parseBoolean(replace));
 
         int delay = (byte) (effectParameters[18] + effectParameters[19] * 16);
-        jamMan.setDelay(Util.parseBoolean(delay));
+        jamMan.isDelay().setValue(Util.parseBoolean(delay));
 
         int mute = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        jamMan.setMute(Util.parseBoolean(mute));
+        jamMan.isMute().setValue(Util.parseBoolean(mute));
 
         return jamMan;
     }

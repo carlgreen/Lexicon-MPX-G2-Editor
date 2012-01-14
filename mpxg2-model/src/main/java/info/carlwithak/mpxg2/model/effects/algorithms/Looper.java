@@ -93,55 +93,28 @@ public class Looper extends Delay {
         return inMix;
     }
 
-    public void setInMix(int inMix) {
-        this.inMix.setValue(inMix);
-    }
-
     public InsertPosition getFeedbackInsert() {
         return feedbackInsert;
-    }
-
-    public void setFeedbackInsert(int feedbackInsert) {
-        this.feedbackInsert.setValue(feedbackInsert);
     }
 
     public GenericValue<Integer> getSensitivity() {
         return sensitivity;
     }
 
-    public void setSensitivity(int sensitivity) {
-        this.sensitivity.setValue(sensitivity);
-    }
-
     public GenericValue<Integer> getPan() {
         return pan;
-    }
-
-    public void setPan(int pan) {
-        this.pan.setValue(pan);
     }
 
     public GenericValue<Integer> getRelease() {
         return release;
     }
 
-    public void setRelease(int release) {
-        this.release.setValue(release);
-    }
-
     public GenericValue<Integer> getAttack() {
         return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack.setValue(attack);
     }
 
     public OnOffValue isClear() {
         return clear;
     }
 
-    public void setClear(boolean clear) {
-        this.clear.setValue(clear);
-    }
 }

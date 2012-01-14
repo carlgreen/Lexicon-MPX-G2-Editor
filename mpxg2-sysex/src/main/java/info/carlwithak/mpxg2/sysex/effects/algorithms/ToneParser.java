@@ -30,19 +30,19 @@ public class ToneParser {
         Tone tone = new Tone();
 
         int lo = effectParameters[0] + effectParameters[1] * 16;
-        tone.setLo(lo);
+        tone.getLo().setValue(lo);
 
         int mid = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        tone.setMid(mid);
+        tone.getMid().setValue(mid);
 
         int hi = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        tone.setHi(hi);
+        tone.getHi().setValue(hi);
 
         int inLevel = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        tone.setInLevel(inLevel);
+        tone.getInLevel().setValue(inLevel);
 
         int level = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        tone.setLevel(level);
+        tone.getLevel().setValue(level);
 
         return tone;
     }

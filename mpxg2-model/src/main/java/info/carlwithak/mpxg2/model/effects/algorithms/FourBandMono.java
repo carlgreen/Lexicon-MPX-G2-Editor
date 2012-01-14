@@ -117,127 +117,64 @@ public class FourBandMono extends Eq {
         return gain1;
     }
 
-    public void setGain1(final int gain1) {
-        this.gain1.setValue(gain1);
-    }
-
     public GenericValue<Integer> getGain2() {
         return gain2;
-    }
-
-    public void setGain2(final int gain2) {
-        this.gain2.setValue(gain2);
     }
 
     public GenericValue<Integer> getGain3() {
         return gain3;
     }
 
-    public void setGain3(final int gain3) {
-        this.gain3.setValue(gain3);
-    }
-
     public GenericValue<Integer> getGain4() {
         return gain4;
-    }
-
-    public void setGain4(final int gain4) {
-        this.gain4.setValue(gain4);
     }
 
     public GenericValue<Integer> getFc1() {
         return fc1;
     }
 
-    public void setFc1(final int fc1) {
-        this.fc1.setValue(fc1);
-    }
-
     public GenericValue<Integer> getFc2() {
         return fc2;
-    }
-
-    public void setFc2(final int fc2) {
-        this.fc2.setValue(fc2);
     }
 
     public GenericValue<Integer> getFc3() {
         return fc3;
     }
 
-    public void setFc3(final int fc3) {
-        this.fc3.setValue(fc3);
-    }
-
     public GenericValue<Integer> getFc4() {
         return fc4;
-    }
-
-    public void setFc4(final int fc4) {
-        this.fc4.setValue(fc4);
     }
 
     public GenericValue<Double> getQ1() {
         return q1;
     }
 
-    public void setQ1(final double q1) {
-        this.q1.setValue(q1);
-    }
-
     public GenericValue<Double> getQ2() {
         return q2;
-    }
-
-    public void setQ2(final double q2) {
-        this.q2.setValue(q2);
     }
 
     public GenericValue<Double> getQ3() {
         return q3;
     }
 
-    public void setQ3(final double q3) {
-        this.q3.setValue(q3);
-    }
-
     public GenericValue<Double> getQ4() {
         return q4;
-    }
-
-    public void setQ4(final double q4) {
-        this.q4.setValue(q4);
     }
 
     public GenericValue<Integer> getMode1() {
         return mode1;
     }
 
-    public void setMode1(final int mode1) {
-        this.mode1.setValue(mode1);
-    }
-
     public GenericValue<Integer> getMode2() {
         return mode2;
-    }
-
-    public void setMode2(final int mode2) {
-        this.mode2.setValue(mode2);
     }
 
     public GenericValue<Integer> getMode3() {
         return mode3;
     }
 
-    public void setMode3(final int mode3) {
-        this.mode3.setValue(mode3);
-    }
-
     public GenericValue<Integer> getMode4() {
         return mode4;
     }
 
-    public void setMode4(final int mode4) {
-        this.mode4.setValue(mode4);
-    }
 }

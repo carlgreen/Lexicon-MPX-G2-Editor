@@ -91,32 +91,16 @@ public class Comb2 extends Chorus {
         return loCut;
     }
 
-    public void setLoCut(int loCut) {
-        this.loCut.setValue(loCut);
-    }
-
     public GenericValue<Integer> getHiCut() {
         return hiCut;
-    }
-
-    public void setHiCut(int hiCut) {
-        this.hiCut.setValue(hiCut);
     }
 
     public GenericValue<Integer> getComb() {
         return comb;
     }
 
-    public void setComb(int comb) {
-        this.comb.setValue(comb);
-    }
-
     public GenericValue<Integer> getNotch() {
         return notch;
-    }
-
-    public void setNotch(int notch) {
-        this.notch.setValue(notch);
     }
 
     public Rate getRate() {
@@ -131,31 +115,16 @@ public class Comb2 extends Chorus {
         return pulseWidth;
     }
 
-    public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth.setValue(pulseWidth);
-    }
-
     public GenericValue<Integer> getDepth() {
         return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth.setValue(depth);
     }
 
     public GenericValue<Integer> getResonance() {
         return resonance;
     }
 
-    public void setResonance(int resonance) {
-        this.resonance.setValue(resonance);
-    }
-
     public PhaseValue getPhase() {
         return phase;
     }
 
-    public void setPhase(int phase) {
-        this.phase.setValue(phase);
-    }
 }

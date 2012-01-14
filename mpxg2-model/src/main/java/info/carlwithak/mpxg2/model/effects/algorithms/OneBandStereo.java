@@ -69,31 +69,16 @@ public class OneBandStereo extends Eq {
         return gain;
     }
 
-    public void setGain(final int gain) {
-        this.gain.setValue(gain);
-    }
-
     public GenericValue<Integer> getFc() {
         return fc;
-    }
-
-    public void setFc(final int fc) {
-        this.fc.setValue(fc);
     }
 
     public GenericValue<Double> getQ() {
         return q;
     }
 
-    public void setQ(final double q) {
-        this.q.setValue(q);
-    }
-
     public GenericValue<Integer> getMode() {
         return mode;
     }
 
-    public void setMode(final int mode) {
-        this.mode.setValue(mode);
-    }
 }

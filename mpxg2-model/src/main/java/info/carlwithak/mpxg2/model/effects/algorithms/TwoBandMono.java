@@ -86,63 +86,32 @@ public class TwoBandMono extends Eq {
         return gain1;
     }
 
-    public void setGain1(final int gain1) {
-        this.gain1.setValue(gain1);
-    }
-
     public GenericValue<Integer> getGain2() {
         return gain2;
-    }
-
-    public void setGain2(final int gain2) {
-        this.gain2.setValue(gain2);
     }
 
     public GenericValue<Integer> getFc1() {
         return fc1;
     }
 
-    public void setFc1(final int fc1) {
-        this.fc1.setValue(fc1);
-    }
-
     public GenericValue<Integer> getFc2() {
         return fc2;
-    }
-
-    public void setFc2(final int fc2) {
-        this.fc2.setValue(fc2);
     }
 
     public GenericValue<Double> getQ1() {
         return q1;
     }
 
-    public void setQ1(final double q1) {
-        this.q1.setValue(q1);
-    }
-
     public GenericValue<Double> getQ2() {
         return q2;
-    }
-
-    public void setQ2(final double q2) {
-        this.q2.setValue(q2);
     }
 
     public EqModeValue getMode1() {
         return mode1;
     }
 
-    public void setMode1(final int mode1) {
-        this.mode1.setValue(mode1);
-    }
-
     public EqModeValue getMode2() {
         return mode2;
     }
 
-    public void setMode2(final int mode2) {
-        this.mode2.setValue(mode2);
-    }
 }

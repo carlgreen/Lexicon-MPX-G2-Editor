@@ -37,25 +37,25 @@ public class BlueCompParser {
         blueComp.getLevel().setValue(level);
 
         int sense = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        blueComp.setSensitivity(sense);
+        blueComp.getSensitivity().setValue(sense);
 
         int threshold = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        blueComp.setThreshold(threshold);
+        blueComp.getThreshold().setValue(threshold);
 
         int gain = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        blueComp.setGain(gain);
+        blueComp.getGain().setValue(gain);
 
         int attackTime = 0;
         for (int i = 0; i < 4; i++) {
             attackTime += (effectParameters[10 + i] * Math.pow(16, i));
         }
-        blueComp.setAttackTime(attackTime);
+        blueComp.getAttackTime().setValue(attackTime);
 
         int releaseTime = 0;
         for (int i = 0; i < 4; i++) {
             releaseTime += (effectParameters[14 + i] * Math.pow(16, i));
         }
-        blueComp.setReleaseTime(releaseTime);
+        blueComp.getReleaseTime().setValue(releaseTime);
 
         return blueComp;
     }

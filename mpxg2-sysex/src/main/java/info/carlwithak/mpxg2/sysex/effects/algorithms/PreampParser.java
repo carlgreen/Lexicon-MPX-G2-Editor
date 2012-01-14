@@ -30,37 +30,37 @@ public class PreampParser {
         Preamp preamp = new Preamp();
 
         int lo = effectParameters[0] + effectParameters[1] * 16;
-        preamp.setLo(lo);
+        preamp.getLo().setValue(lo);
 
         int mid = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        preamp.setMid(mid);
+        preamp.getMid().setValue(mid);
 
         int hi = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        preamp.setHi(hi);
+        preamp.getHi().setValue(hi);
 
         int inLevel = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        preamp.setInLevel(inLevel);
+        preamp.getInLevel().setValue(inLevel);
 
         int loCut = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        preamp.setLoCut(loCut);
+        preamp.getLoCut().setValue(loCut);
 
         int feel = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        preamp.setFeel(feel);
+        preamp.getFeel().setValue(feel);
 
         int drive = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        preamp.setDrive(drive);
+        preamp.getDrive().setValue(drive);
 
         int tone = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        preamp.setTone(tone);
+        preamp.getTone().setValue(tone);
 
         int bass = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        preamp.setBass(bass);
+        preamp.getBass().setValue(bass);
 
         int treble = (byte) (effectParameters[18] + effectParameters[19] * 16);
-        preamp.setTreble(treble);
+        preamp.getTreble().setValue(treble);
 
         int level = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        preamp.setLevel(level);
+        preamp.getLevel().setValue(level);
 
         return preamp;
     }

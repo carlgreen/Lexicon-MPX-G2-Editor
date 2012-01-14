@@ -36,19 +36,19 @@ public class OneBandMonoParser {
         oneBandMono.getLevel().setValue(level);
 
         int gain = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        oneBandMono.setGain(gain);
+        oneBandMono.getGain().setValue(gain);
 
         int fc = 0;
         for (int i = 0; i < 4; i++) {
             fc += (effectParameters[6 + i] * Math.pow(16, i));
         }
-        oneBandMono.setFc(fc);
+        oneBandMono.getFc().setValue(fc);
 
         int q = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        oneBandMono.setQ(q / 10.0);
+        oneBandMono.getQ().setValue(q / 10.0);
 
         int mode = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        oneBandMono.setMode(mode);
+        oneBandMono.getMode().setValue(mode);
 
         return oneBandMono;
     }

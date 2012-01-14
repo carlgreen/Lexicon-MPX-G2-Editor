@@ -61,15 +61,8 @@ public class Panner extends Effect {
         return pan1;
     }
 
-    public void setPan1(int pan1) {
-        this.pan1.setValue(pan1);
-    }
-
     public PanValue getPan2() {
         return pan2;
     }
 
-    public void setPan2(int pan2) {
-        this.pan2.setValue(pan2);
-    }
 }

@@ -81,31 +81,16 @@ public class EchoStereo extends Delay {
         return feedback;
     }
 
-    public void setFeedback(int feedback) {
-        this.feedback.setValue(feedback);
-    }
-
     public InsertPosition getInsert() {
         return insert;
-    }
-
-    public void setInsert(int insert) {
-        this.insert.setValue(insert);
     }
 
     public GenericValue<Integer> getDamp() {
         return damp;
     }
 
-    public void setDamp(int damp) {
-        this.damp.setValue(damp);
-    }
-
     public OnOffValue isClear() {
         return clear;
     }
 
-    public void setClear(boolean clear) {
-        this.clear.setValue(clear);
-    }
 }

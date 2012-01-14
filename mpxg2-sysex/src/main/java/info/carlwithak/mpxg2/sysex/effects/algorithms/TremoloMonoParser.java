@@ -41,10 +41,10 @@ public class TremoloMonoParser {
         tremoloMono.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        tremoloMono.setPulseWidth(pulseWidth);
+        tremoloMono.getPulseWidth().setValue(pulseWidth);
 
         int depth = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        tremoloMono.setDepth(depth);
+        tremoloMono.getDepth().setValue(depth);
 
         return tremoloMono;
     }

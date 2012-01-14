@@ -74,16 +74,8 @@ public class TremoloMono extends Effect {
         return pulseWidth;
     }
 
-    public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth.setValue(pulseWidth);
-    }
-
     public GenericValue<Integer> getDepth() {
         return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth.setValue(depth);
     }
 
 }

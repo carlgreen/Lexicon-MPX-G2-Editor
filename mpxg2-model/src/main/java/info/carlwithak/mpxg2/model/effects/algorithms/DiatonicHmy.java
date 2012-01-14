@@ -75,47 +75,24 @@ public class DiatonicHmy extends Effect {
         return key;
     }
 
-    public void setKey(int key) {
-        this.key.setValue(key);
-    }
-
     public ScaleValue getScale() {
         return scale;
-    }
-
-    public void setScale(int scale) {
-        this.scale.setValue(scale);
     }
 
     public IntervalValue getInterval() {
         return interval;
     }
 
-    public void setInterval(int interval) {
-        this.interval.setValue(interval);
-    }
-
     public GenericValue<Integer> getOptimize() {
         return optimize;
-    }
-
-    public void setOptimize(int optimize) {
-        this.optimize.setValue(optimize);
     }
 
     public GenericValue<Integer> getThreshold() {
         return threshold;
     }
 
-    public void setThreshold(int threshold) {
-        this.threshold.setValue(threshold);
-    }
-
     public SourceValue getSource() {
         return source;
     }
 
-    public void setSource(int source) {
-        this.source.setValue(source);
-    }
 }

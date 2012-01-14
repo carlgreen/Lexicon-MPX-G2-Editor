@@ -36,19 +36,19 @@ public class Wah1Parser {
         wah1.getLevel().setValue(level);
 
         int sweep = effectParameters[4] + effectParameters[5] * 16;
-        wah1.setSweep(sweep);
+        wah1.getSweep().setValue(sweep);
 
         int bass = effectParameters[6] + effectParameters[7] * 16;
-        wah1.setBass(bass);
+        wah1.getBass().setValue(bass);
 
         int type = effectParameters[8] + effectParameters[9] * 16;
-        wah1.setType(type);
+        wah1.getType().setValue(type);
 
         int response = effectParameters[10] + effectParameters[11] * 16;
-        wah1.setResponse(response);
+        wah1.getResponse().setValue(response);
 
         int gain = effectParameters[12] + effectParameters[13] * 16;
-        wah1.setGain(gain);
+        wah1.getGain().setValue(gain);
 
         return wah1;
     }

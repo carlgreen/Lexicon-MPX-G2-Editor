@@ -79,23 +79,12 @@ public class AutoPan extends Effect {
         return pulseWidth;
     }
 
-    public void setPulseWidth(int pulseWidth) {
-        this.pulseWidth.setValue(pulseWidth);
-    }
-
     public GenericValue<Integer> getDepth() {
         return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth.setValue(depth);
     }
 
     public PhaseValue getPhase() {
         return phase;
     }
 
-    public void setPhase(int phase) {
-        this.phase.setValue(phase);
-    }
 }

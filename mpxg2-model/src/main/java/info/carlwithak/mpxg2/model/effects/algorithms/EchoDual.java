@@ -109,63 +109,32 @@ public class EchoDual extends Delay {
         return level1;
     }
 
-    public void setLevel1(int level1) {
-        this.level1.setValue(level1);
-    }
-
     public GenericValue<Integer> getLevel2() {
         return level2;
-    }
-
-    public void setLevel2(int level2) {
-        this.level2.setValue(level2);
     }
 
     public GenericValue<Integer> getFeedback1() {
         return feedback1;
     }
 
-    public void setFeedback1(int feedback1) {
-        this.feedback1.setValue(feedback1);
-    }
-
     public InsertPosition getInsert() {
         return insert;
-    }
-
-    public void setInsert(int insert) {
-        this.insert.setValue(insert);
     }
 
     public GenericValue<Integer> getFeedback2() {
         return feedback2;
     }
 
-    public void setFeedback2(int feedback2) {
-        this.feedback2.setValue(feedback2);
-    }
-
     public GenericValue<Integer> getDamp1() {
         return damp1;
-    }
-
-    public void setDamp1(int damp1) {
-        this.damp1.setValue(damp1);
     }
 
     public GenericValue<Integer> getDamp2() {
         return damp2;
     }
 
-    public void setDamp2(int damp2) {
-        this.damp2.setValue(damp2);
-    }
-
     public OnOffValue isClear() {
         return clear;
     }
 
-    public void setClear(boolean clear) {
-        this.clear.setValue(clear);
-    }
 }

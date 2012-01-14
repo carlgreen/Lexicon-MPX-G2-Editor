@@ -85,63 +85,32 @@ public class OneBandDual extends Eq {
         return gainLeft;
     }
 
-    public void setGainLeft(final int gainLeft) {
-        this.gainLeft.setValue(gainLeft);
-    }
-
     public GenericValue<Integer> getFcLeft() {
         return fcLeft;
-    }
-
-    public void setFcLeft(final int fcLeft) {
-        this.fcLeft.setValue(fcLeft);
     }
 
     public GenericValue<Double> getQLeft() {
         return qLeft;
     }
 
-    public void setQLeft(final double qLeft) {
-        this.qLeft.setValue(qLeft);
-    }
-
     public GenericValue<Integer> getModeLeft() {
         return modeLeft;
-    }
-
-    public void setModeLeft(final int modeLeft) {
-        this.modeLeft.setValue(modeLeft);
     }
 
     public GenericValue<Integer> getGainRight() {
         return gainRight;
     }
 
-    public void setGainRight(final int gainRight) {
-        this.gainRight.setValue(gainRight);
-    }
-
     public GenericValue<Integer> getFcRight() {
         return fcRight;
-    }
-
-    public void setFcRight(final int fcRight) {
-        this.fcRight.setValue(fcRight);
     }
 
     public GenericValue<Double> getQRight() {
         return qRight;
     }
 
-    public void setQRight(final double qRight) {
-        this.qRight.setValue(qRight);
-    }
-
     public GenericValue<Integer> getModeRight() {
         return modeRight;
     }
 
-    public void setModeRight(final int modeRight) {
-        this.modeRight.setValue(modeRight);
-    }
 }

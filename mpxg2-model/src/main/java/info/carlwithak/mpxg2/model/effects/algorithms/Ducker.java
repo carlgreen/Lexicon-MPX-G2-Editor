@@ -85,39 +85,20 @@ public class Ducker extends Delay {
         return feedback;
     }
 
-    public void setFeedback(int feedback) {
-        this.feedback.setValue(feedback);
-    }
-
     public InsertPosition getFeedbackInsert() {
         return feedbackInsert;
-    }
-
-    public void setFeedbackInsert(int feedbackInsert) {
-        this.feedbackInsert.setValue(feedbackInsert);
     }
 
     public GenericValue<Integer> getSensitivity() {
         return sensitivity;
     }
 
-    public void setSensitivity(int sensitivity) {
-        this.sensitivity.setValue(sensitivity);
-    }
-
     public GenericValue<Integer> getRelease() {
         return release;
-    }
-
-    public void setRelease(int release) {
-        this.release.setValue(release);
     }
 
     public OnOffValue isClear() {
         return clear;
     }
 
-    public void setClear(boolean clear) {
-        this.clear.setValue(clear);
-    }
 }

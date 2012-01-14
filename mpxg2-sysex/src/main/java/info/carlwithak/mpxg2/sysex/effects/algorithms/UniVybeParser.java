@@ -36,7 +36,7 @@ public class UniVybeParser {
         univybe.getLevel().setValue(level);
 
         int rate = effectParameters[4] + effectParameters[5] * 16;
-        univybe.setRate(rate);
+        univybe.getRate().setValue(rate);
 
         return univybe;
     }

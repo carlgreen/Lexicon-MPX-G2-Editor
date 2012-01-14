@@ -36,34 +36,34 @@ public class TwoBandStereoParser {
         twoBandStereo.getLevel().setValue(level);
 
         int gain1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        twoBandStereo.setGain1(gain1);
+        twoBandStereo.getGain1().setValue(gain1);
 
         int fc1 = 0;
         for (int i = 0; i < 4; i++) {
             fc1 += (effectParameters[6 + i] * Math.pow(16, i));
         }
-        twoBandStereo.setFc1(fc1);
+        twoBandStereo.getFc1().setValue(fc1);
 
         int q1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        twoBandStereo.setQ1(q1 / 10.0);
+        twoBandStereo.getQ1().setValue(q1 / 10.0);
 
         int mode1 = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        twoBandStereo.setMode1(mode1);
+        twoBandStereo.getMode1().setValue(mode1);
 
         int gain2 = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        twoBandStereo.setGain2(gain2);
+        twoBandStereo.getGain2().setValue(gain2);
 
         int fc2 = 0;
         for (int i = 0; i < 4; i++) {
             fc2 += (effectParameters[16 + i] * Math.pow(16, i));
         }
-        twoBandStereo.setFc2(fc2);
+        twoBandStereo.getFc2().setValue(fc2);
 
         int q2 = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        twoBandStereo.setQ2(q2 / 10.0);
+        twoBandStereo.getQ2().setValue(q2 / 10.0);
 
         int mode2 = (byte) (effectParameters[22] + effectParameters[23] * 16);
-        twoBandStereo.setMode2(mode2);
+        twoBandStereo.getMode2().setValue(mode2);
 
         return twoBandStereo;
     }

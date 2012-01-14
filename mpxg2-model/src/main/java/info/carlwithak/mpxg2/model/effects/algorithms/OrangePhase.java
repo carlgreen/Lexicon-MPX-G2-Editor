@@ -57,7 +57,4 @@ public class OrangePhase extends Effect {
         return rate;
     }
 
-    public void setRate(final int rate) {
-        this.rate.setValue(rate);
-    }
 }

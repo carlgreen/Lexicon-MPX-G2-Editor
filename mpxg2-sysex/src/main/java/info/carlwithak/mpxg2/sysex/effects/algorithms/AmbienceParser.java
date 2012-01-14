@@ -37,25 +37,25 @@ public class AmbienceParser {
         ambience.getLevel().setValue(level);
 
         double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
-        ambience.setSize(size);
+        ambience.getSize().setValue(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        ambience.setLink(Util.parseBoolean(link));
+        ambience.isLink().setValue(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
-        ambience.setDiff(diff);
+        ambience.getDiff().setValue(diff);
 
         int preDelay = effectParameters[10] + effectParameters[11] * 16;
-        ambience.setPreDelay(preDelay);
+        ambience.getPreDelay().setValue(preDelay);
 
         int decayTime = effectParameters[12] + effectParameters[13] * 16;
-        ambience.setDecayTime(decayTime);
+        ambience.getDecayTime().setValue(decayTime);
 
         int decayLevel = effectParameters[14] + effectParameters[15] * 16;
-        ambience.setDecayLevel(decayLevel);
+        ambience.getDecayLevel().setValue(decayLevel);
 
         int rtHC = effectParameters[16] + effectParameters[17] * 16;
-        ambience.setRtHC(rtHC);
+        ambience.getRtHC().setValue(rtHC);
 
         return ambience;
     }

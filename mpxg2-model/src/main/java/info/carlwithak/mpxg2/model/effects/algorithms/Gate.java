@@ -94,80 +94,40 @@ public class Gate extends Reverb {
         return time;
     }
 
-    public void setTime(int time) {
-        this.time.setValue(time);
-    }
-
     public OnOffValue isLink() {
         return link;
-    }
-
-    public void setLink(boolean link) {
-        this.link.setValue(link);
     }
 
     public GenericValue<Integer> getDiff() {
         return diff;
     }
 
-    public void setDiff(int diff) {
-        this.diff.setValue(diff);
-    }
-
     public GenericValue<Integer> getPreDelay() {
         return preDelay;
-    }
-
-    public void setPreDelay(int preDelay) {
-        this.preDelay.setValue(preDelay);
     }
 
     public GenericValue<Integer> getLoSlope() {
         return loSlope;
     }
 
-    public void setLoSlope(int loSlope) {
-        this.loSlope.setValue(loSlope);
-    }
-
     public GenericValue<Integer> getHiSlope() {
         return hiSlope;
-    }
-
-    public void setHiSlope(int hiSlope) {
-        this.hiSlope.setValue(hiSlope);
     }
 
     public GenericValue<Integer> getXovr() {
         return xovr;
     }
 
-    public void setXovr(int xovr) {
-        this.xovr.setValue(xovr);
-    }
-
     public GenericValue<Integer> getRtHC() {
         return rtHC;
-    }
-
-    public void setRtHC(int rtHC) {
-        this.rtHC.setValue(rtHC);
     }
 
     public GenericValue<Integer> getShape() {
         return shape;
     }
 
-    public void setShape(int shape) {
-        this.shape.setValue(shape);
-    }
-
     public GenericValue<Integer> getSpred() {
         return spred;
-    }
-
-    public void setSpred(int spred) {
-        this.spred.setValue(spred);
     }
 
 }

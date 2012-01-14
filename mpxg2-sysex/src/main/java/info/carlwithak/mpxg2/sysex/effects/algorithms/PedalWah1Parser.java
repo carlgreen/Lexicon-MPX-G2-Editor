@@ -36,16 +36,16 @@ public class PedalWah1Parser {
         pedalWah1.getLevel().setValue(level);
 
         int bass = effectParameters[4] + effectParameters[5] * 16;
-        pedalWah1.setBass(bass);
+        pedalWah1.getBass().setValue(bass);
 
         int type = effectParameters[6] + effectParameters[7] * 16;
-        pedalWah1.setType(type);
+        pedalWah1.getType().setValue(type);
 
         int response = effectParameters[8] + effectParameters[9] * 16;
-        pedalWah1.setResponse(response);
+        pedalWah1.getResponse().setValue(response);
 
         int gain = effectParameters[10] + effectParameters[11] * 16;
-        pedalWah1.setGain(gain);
+        pedalWah1.getGain().setValue(gain);
 
         return pedalWah1;
     }

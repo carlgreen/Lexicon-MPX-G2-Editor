@@ -57,7 +57,4 @@ public class EqVolumeMono extends Eq {
         return volume;
     }
 
-    public void setVolume(int volume) {
-        this.volume.setValue(volume);
-    }
 }

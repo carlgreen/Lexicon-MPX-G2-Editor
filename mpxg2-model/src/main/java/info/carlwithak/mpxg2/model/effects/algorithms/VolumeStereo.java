@@ -57,7 +57,4 @@ public class VolumeStereo extends Effect {
         return volume;
     }
 
-    public void setVolume(int volume) {
-        this.volume.setValue(volume);
-    }
 }

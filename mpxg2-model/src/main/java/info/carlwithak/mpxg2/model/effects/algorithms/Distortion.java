@@ -81,63 +81,32 @@ public class Distortion extends Gain {
         return lo;
     }
 
-    public void setLo(int lo) {
-        this.lo.setValue(lo);
-    }
-
     public GenericValue<Integer> getMid() {
         return mid;
-    }
-
-    public void setMid(int mid) {
-        this.mid.setValue(mid);
     }
 
     public GenericValue<Integer> getHi() {
         return hi;
     }
 
-    public void setHi(int hi) {
-        this.hi.setValue(hi);
-    }
-
     public GenericValue<Integer> getDrive() {
         return drive;
-    }
-
-    public void setDrive(int drive) {
-        this.drive.setValue(drive);
     }
 
     public GenericValue<Integer> getTone() {
         return tone;
     }
 
-    public void setTone(int tone) {
-        this.tone.setValue(tone);
-    }
-
     public GenericValue<Integer> getBass() {
         return bass;
-    }
-
-    public void setBass(int bass) {
-        this.bass.setValue(bass);
     }
 
     public GenericValue<Integer> getTreble() {
         return treble;
     }
 
-    public void setTreble(int treble) {
-        this.treble.setValue(treble);
-    }
-
     public GenericValue<Integer> getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
-        this.level.setValue(level);
-    }
 }

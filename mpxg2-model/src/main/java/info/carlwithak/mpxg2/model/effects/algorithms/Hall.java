@@ -99,80 +99,40 @@ public class Hall extends Reverb {
         return size;
     }
 
-    public void setSize(double size) {
-        this.size.setValue(size);
-    }
-
     public OnOffValue isLink() {
         return link;
-    }
-
-    public void setLink(boolean link) {
-        this.link.setValue(link);
     }
 
     public GenericValue<Integer> getDiff() {
         return diff;
     }
 
-    public void setDiff(int diff) {
-        this.diff.setValue(diff);
-    }
-
     public GenericValue<Integer> getPreDelay() {
         return preDelay;
-    }
-
-    public void setPreDelay(int preDelay) {
-        this.preDelay.setValue(preDelay);
     }
 
     public BassValue getBass() {
         return bass;
     }
 
-    public void setBass(int bass) {
-        this.bass.setValue(bass);
-    }
-
     public DecayTimeValue getDecay() {
         return decay;
-    }
-
-    public void setDecay(int decay) {
-        this.decay.setValue(decay);
     }
 
     public CrossoverValue getXovr() {
         return xovr;
     }
 
-    public void setXovr(int xovr) {
-        this.xovr.setValue(xovr);
-    }
-
     public HighCutValue getRtHC() {
         return rtHC;
-    }
-
-    public void setRtHC(int rtHC) {
-        this.rtHC.setValue(rtHC);
     }
 
     public GenericValue<Integer> getShape() {
         return shape;
     }
 
-    public void setShape(int shape) {
-        this.shape.setValue(shape);
-    }
-
     public ReverbSpredValue getSpred() {
         return spred;
-    }
-
-    public void setSpred(int spred) {
-        this.spred.setValue(spred);
     }
 
 }

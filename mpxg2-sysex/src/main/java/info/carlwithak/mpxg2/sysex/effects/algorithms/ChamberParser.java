@@ -37,34 +37,34 @@ public class ChamberParser {
         chamber.getLevel().setValue(level);
 
         double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
-        chamber.setSize(size);
+        chamber.getSize().setValue(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        chamber.setLink(Util.parseBoolean(link));
+        chamber.isLink().setValue(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
-        chamber.setDiff(diff);
+        chamber.getDiff().setValue(diff);
 
         int preDelay = effectParameters[10] + effectParameters[11] * 16;
-        chamber.setPreDelay(preDelay);
+        chamber.getPreDelay().setValue(preDelay);
 
         int bass = effectParameters[12] + effectParameters[13] * 16;
-        chamber.setBass(bass);
+        chamber.getBass().setValue(bass);
 
         int decay = effectParameters[14] + effectParameters[15] * 16;
-        chamber.setDecay(decay);
+        chamber.getDecay().setValue(decay);
 
         int xovr = effectParameters[16] + effectParameters[17] * 16;
-        chamber.setXovr(xovr);
+        chamber.getXovr().setValue(xovr);
 
         int rtHC = effectParameters[18] + effectParameters[19] * 16;
-        chamber.setRtHC(rtHC);
+        chamber.getRtHC().setValue(rtHC);
 
         int shape = effectParameters[20] + effectParameters[21] * 16;
-        chamber.setShape(shape);
+        chamber.getShape().setValue(shape);
 
         int spred = effectParameters[22] + effectParameters[23] * 16;
-        chamber.setSpred(spred);
+        chamber.getSpred().setValue(spred);
 
         return chamber;
     }

@@ -69,39 +69,20 @@ public class Crunch extends Gain {
         return lo;
     }
 
-    public void setLo(int lo) {
-        this.lo.setValue(lo);
-    }
-
     public GenericValue<Integer> getMid() {
         return mid;
-    }
-
-    public void setMid(int mid) {
-        this.mid.setValue(mid);
     }
 
     public GenericValue<Integer> getHi() {
         return hi;
     }
 
-    public void setHi(int hi) {
-        this.hi.setValue(hi);
-    }
-
     public GenericValue<Integer> getInLevel() {
         return inLevel;
-    }
-
-    public void setInLevel(int inLevel) {
-        this.inLevel.setValue(inLevel);
     }
 
     public GenericValue<Integer> getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
-        this.level.setValue(level);
-    }
 }

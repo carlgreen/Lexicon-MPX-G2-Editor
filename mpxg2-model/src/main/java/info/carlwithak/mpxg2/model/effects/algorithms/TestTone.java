@@ -61,15 +61,8 @@ public class TestTone extends Effect {
         return note;
     }
 
-    public void setNote(int note) {
-        this.note.setValue(note);
-    }
-
     public GenericValue<Integer> getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
-        this.balance.setValue(balance);
-    }
 }
