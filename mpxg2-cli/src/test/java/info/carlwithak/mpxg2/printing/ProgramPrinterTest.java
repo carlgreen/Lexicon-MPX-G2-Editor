@@ -26,6 +26,7 @@ import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.SendMix;
+import info.carlwithak.mpxg2.model.Tempo;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.parameters.BeatRate;
@@ -262,6 +263,20 @@ public class ProgramPrinterTest {
 
         String expected = "      Level: 0\n      Bypass Level: 0\n";
         assertThat(ProgramPrinter.printSendMix(sendMix), is(expected));
+    }
+
+    @Test
+    public void testPrintTempo() throws PrintException {
+        Tempo tempo = new Tempo();
+        tempo.getRate().setValue(170);
+        tempo.getSource().setValue(0);
+        tempo.getBeatValue().setValue(2); // quater note
+        tempo.getTapSource().setValue(0);
+        tempo.getTapAverage().setValue(2);
+        tempo.getTapSourceLevel().setValue(64);
+
+        String expected = "    Rate: 170 BPM\n    Source: internal\n    Beat Value: quarter\n    Tap Average: 2 beats\n    Tap Source: none\n";
+        assertThat(ProgramPrinter.printTempo(tempo), is(expected));
     }
 
     @Test

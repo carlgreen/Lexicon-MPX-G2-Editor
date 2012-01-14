@@ -122,13 +122,7 @@ public class ProgramPrinter {
             sb.append("  ").append(printParameter(program.getEq().getMix()));
             sb.append("  ").append(printParameter(program.getEq().getLevel()));
         }
-        sb.append("  Tempo:\n");
-        Tempo tempo = program.getTempo();
-        sb.append(printParameter(tempo.getRate()));
-        sb.append(printParameter(tempo.getSource()));
-        sb.append(printParameter(tempo.getBeatValue()));
-        sb.append(printParameter(tempo.getTapAverage()));
-        sb.append(printParameter(tempo.getTapSource()));
+        sb.append("  Tempo:\n").append(printTempo(program.getTempo()));
         sb.append("  Speaker Sim: ").append(program.isSpeakerSimulatorEnable().getDisplayString()).append("\n");
         sb.append(printParameter(program.getSpeakerSimulatorCabinet()));
         sb.append("  Noise Gate:\n").append(printNoiseGate(program.getNoiseGate()));
@@ -333,6 +327,17 @@ public class ProgramPrinter {
         final StringBuilder sb = new StringBuilder();
         sb.append("  ").append(printParameter(sendMix.getSendLevel()));
         sb.append("  ").append(printParameter(sendMix.getSendBypassLevel()));
+        return sb.toString();
+    }
+
+    static String printTempo(final Tempo tempo) {
+        final StringBuilder sb = new StringBuilder();
+        sb.append(printParameter(tempo.getRate()));
+        sb.append(printParameter(tempo.getSource()));
+        sb.append(printParameter(tempo.getBeatValue()));
+        sb.append(printParameter(tempo.getTapAverage()));
+        sb.append(printParameter(tempo.getTapSource()));
+        // TODO print source level?
         return sb.toString();
     }
 
