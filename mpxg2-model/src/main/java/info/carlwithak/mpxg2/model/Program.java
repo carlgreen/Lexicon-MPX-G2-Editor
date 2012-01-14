@@ -26,9 +26,6 @@ import info.carlwithak.mpxg2.model.effects.Reverb;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.SpeakerSimulatorCabinetValue;
-import info.carlwithak.mpxg2.model.parameters.TempoBeatValue;
-import info.carlwithak.mpxg2.model.parameters.TempoSourceValue;
-import info.carlwithak.mpxg2.model.parameters.TempoTapSourceValue;
 import java.util.Arrays;
 import java.util.List;
 
@@ -97,13 +94,7 @@ public class Program {
     // soft row
     private List<SoftRowItem> softRow = Arrays.<SoftRowItem>asList(null, null, null, null, null, null, null, null, null, null);
 
-    // tempo
-    private GenericValue<Integer> tempo = new GenericValue<Integer>("Rate", " BPM", 41, 400);
-    private TempoSourceValue tempoSource = new TempoSourceValue("Source");
-    private TempoBeatValue beatValue = new TempoBeatValue("Beat Value");
-    private TempoTapSourceValue tapSource = new TempoTapSourceValue("Tap Source");
-    private GenericValue<Integer> tapAverage = new GenericValue<Integer>("Tap Average", " beats", 2, 8);
-    private GenericValue<Integer> tapSourceLevel = new GenericValue<Integer>("Tap Source Level", "", 0, 127);
+    private Tempo tempo;
 
     // patching
     private Patch patch1;
@@ -536,52 +527,12 @@ public class Program {
         this.softRow.get(softRowPosition).setParameter(softRowParameter);
     }
 
-    public GenericValue<Integer> getTempo() {
+    public Tempo getTempo() {
         return tempo;
     }
 
-    public void setTempo(final int tempo) {
-        this.tempo.setValue(tempo);
-    }
-
-    public TempoSourceValue getTempoSource() {
-        return tempoSource;
-    }
-
-    public void setTempoSource(final int tempoSource) {
-        this.tempoSource.setValue(tempoSource);
-    }
-
-    public TempoBeatValue getBeatValue() {
-        return beatValue;
-    }
-
-    public void setBeatValue(final int beatValue) {
-        this.beatValue.setValue(beatValue);
-    }
-
-    public TempoTapSourceValue getTapSource() {
-        return tapSource;
-    }
-
-    public void setTapSource(final int tapSource) {
-        this.tapSource.setValue(tapSource);
-    }
-
-    public GenericValue<Integer> getTapAverage() {
-        return tapAverage;
-    }
-
-    public void setTapAverage(final int tapAverage) {
-        this.tapAverage.setValue(tapAverage);
-    }
-
-    public GenericValue<Integer> getTapSourceLevel() {
-        return tapSourceLevel;
-    }
-
-    public void setTapSourceLevel(final int tapSourceLevel) {
-        this.tapSourceLevel.setValue(tapSourceLevel);
+    public void setTempo(final Tempo tempo) {
+        this.tempo = tempo;
     }
 
     public Patch getPatch1() {
@@ -791,6 +742,9 @@ public class Program {
                 break;
             case 19:
                 dataObject = getNoiseGate();
+                break;
+            case 20:
+                dataObject = getTempo();
                 break;
             case 24:
                 dataObject = getEffectsStatus();

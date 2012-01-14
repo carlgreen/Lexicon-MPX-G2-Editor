@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.SendMix;
+import info.carlwithak.mpxg2.model.Tempo;
 import info.carlwithak.mpxg2.model.effects.EffectObject;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
@@ -122,11 +123,12 @@ public class ProgramPrinter {
             sb.append("  ").append(printParameter(program.getEq().getLevel()));
         }
         sb.append("  Tempo:\n");
-        sb.append(printParameter(program.getTempo()));
-        sb.append(printParameter(program.getTempoSource()));
-        sb.append(printParameter(program.getBeatValue()));
-        sb.append(printParameter(program.getTapAverage()));
-        sb.append(printParameter(program.getTapSource()));
+        Tempo tempo = program.getTempo();
+        sb.append(printParameter(tempo.getRate()));
+        sb.append(printParameter(tempo.getSource()));
+        sb.append(printParameter(tempo.getBeatValue()));
+        sb.append(printParameter(tempo.getTapAverage()));
+        sb.append(printParameter(tempo.getTapSource()));
         sb.append("  Speaker Sim: ").append(program.isSpeakerSimulatorEnable().getDisplayString()).append("\n");
         sb.append(printParameter(program.getSpeakerSimulatorCabinet()));
         sb.append("  Noise Gate:\n").append(printNoiseGate(program.getNoiseGate()));

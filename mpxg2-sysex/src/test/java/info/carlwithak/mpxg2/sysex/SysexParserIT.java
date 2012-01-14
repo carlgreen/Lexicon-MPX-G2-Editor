@@ -27,6 +27,7 @@ import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.SendMix;
+import info.carlwithak.mpxg2.model.Tempo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
@@ -220,12 +221,13 @@ public class SysexParserIT {
         assertEquals(4, program.getSoftRowEffectType(9));
         assertEquals(7, program.getSoftRowParameter(9));
 
-        assertThat(program.getTempo(), is(value(120)));
-        assertThat(program.getTempoSource(), is(value(0)));
-        assertThat(program.getBeatValue(), is(value(2))); // quater note
-        assertThat(program.getTapSource(), is(value(0)));
-        assertThat(program.getTapAverage(), is(value(2)));
-        assertThat(program.getTapSourceLevel(), is(value(64)));
+        Tempo tempo = program.getTempo();
+        assertThat(tempo.getRate(), is(value(120)));
+        assertThat(tempo.getSource(), is(value(0)));
+        assertThat(tempo.getBeatValue(), is(value(2))); // quater note
+        assertThat(tempo.getTapSource(), is(value(0)));
+        assertThat(tempo.getTapAverage(), is(value(2)));
+        assertThat(tempo.getTapSourceLevel(), is(value(64)));
 
         assertEquals(16, program.getPatch1().getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, program.getPatch1().getSourceMin().intValue());
@@ -1830,12 +1832,13 @@ public class SysexParserIT {
         assertThat(effectsStatus.getGainOn(), is(value(false)));
         assertThat(effectsStatus.getInsertOn(), is(value(true)));
 
-        assertThat(program.getTempo(), is(value(120)));
-        assertThat(program.getTempoSource(), is(value(0)));
-        assertThat(program.getBeatValue(), is(value(2))); // quater note
-        assertThat(program.getTapSource(), is(value(0)));
-        assertThat(program.getTapAverage(), is(value(2)));
-        assertThat(program.getTapSourceLevel(), is(value(64)));
+        Tempo tempo = program.getTempo();
+        assertThat(tempo.getRate(), is(value(120)));
+        assertThat(tempo.getSource(), is(value(0)));
+        assertThat(tempo.getBeatValue(), is(value(2))); // quater note
+        assertThat(tempo.getTapSource(), is(value(0)));
+        assertThat(tempo.getTapAverage(), is(value(2)));
+        assertThat(tempo.getTapSourceLevel(), is(value(64)));
 
         assertEquals(0, program.getPatch1().getSourceIndex());
         assertEquals(0, program.getPatch1().getSourceMin().intValue());
@@ -2071,12 +2074,13 @@ public class SysexParserIT {
         assertThat(effectsStatus.getGainOn(), is(value(false)));
         assertThat(effectsStatus.getInsertOn(), is(value(true)));
 
-        assertThat(program.getTempo(), is(value(170)));
-        assertThat(program.getTempoSource(), is(value(0)));
-        assertThat(program.getBeatValue(), is(value(2))); // quater note
-        assertThat(program.getTapSource(), is(value(0)));
-        assertThat(program.getTapAverage(), is(value(2)));
-        assertThat(program.getTapSourceLevel(), is(value(64)));
+        Tempo tempo = program.getTempo();
+        assertThat(tempo.getRate(), is(value(170)));
+        assertThat(tempo.getSource(), is(value(0)));
+        assertThat(tempo.getBeatValue(), is(value(2))); // quater note
+        assertThat(tempo.getTapSource(), is(value(0)));
+        assertThat(tempo.getTapAverage(), is(value(2)));
+        assertThat(tempo.getTapSourceLevel(), is(value(64)));
 
         assertEquals(0, program.getPatch1().getSourceIndex());
         assertEquals(0, program.getPatch1().getSourceMin().intValue());

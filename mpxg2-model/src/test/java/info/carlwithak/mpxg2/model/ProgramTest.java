@@ -389,6 +389,8 @@ public class ProgramTest {
         assertThat(program.getEffect(16), is(notNullValue()));
         program.setNoiseGate(mock(NoiseGate.class));
         assertThat(program.getEffect(19), is(notNullValue()));
+        program.setTempo(mock(Tempo.class));
+        assertThat(program.getEffect(20), is(notNullValue()));
         program.setEffectsStatus(mock(EffectsStatus.class));
         assertThat(program.getEffect(24), is(notNullValue()));
     }

@@ -29,6 +29,7 @@ import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.SendMix;
+import info.carlwithak.mpxg2.model.Tempo;
 import info.carlwithak.mpxg2.model.effects.Chorus;
 import info.carlwithak.mpxg2.model.effects.Delay;
 import info.carlwithak.mpxg2.model.effects.Effect;
@@ -693,23 +694,20 @@ public class SysexParser {
         }
 
         // tempo
-        int tempo = readInt(objectData, 638, 4);
-        program.setTempo(tempo);
-
+        int tempoRate = readInt(objectData, 638, 4);
         int tempoSource = readInt(objectData, 642, 2);
-        program.setTempoSource(tempoSource);
-
         int beatValue = readInt(objectData, 644, 2);
-        program.setBeatValue(beatValue);
-
         int tapSource = readInt(objectData, 646, 2);
-        program.setTapSource(tapSource);
-
         int tapAverage = readInt(objectData, 648, 2);
-        program.setTapAverage(tapAverage);
-
         int tapSourceLevel = readInt(objectData, 650, 2);
-        program.setTapSourceLevel(tapSourceLevel);
+        Tempo tempo = new Tempo();
+        tempo.getRate().setValue(tempoRate);
+        tempo.getSource().setValue(tempoSource);
+        tempo.getBeatValue().setValue(beatValue);
+        tempo.getTapSource().setValue(tapSource);
+        tempo.getTapAverage().setValue(tapAverage);
+        tempo.getTapSourceLevel().setValue(tapSourceLevel);
+        program.setTempo(tempo);
 
         // unused bytes 652 - 654
 
