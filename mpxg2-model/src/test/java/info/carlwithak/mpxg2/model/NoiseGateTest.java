@@ -16,21 +16,67 @@
  */
 package info.carlwithak.mpxg2.model;
 
-import java.beans.IntrospectionException;
 import org.junit.Test;
 
-import static info.carlwithak.mpxg2.model.Util.testBean;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.junit.Assert.assertThat;
 
 /**
- * Test NoiseGate using bean tester.
  *
  * @author Carl Green
  */
 public class NoiseGateTest {
+    final private NoiseGate noiseGate = new NoiseGate();
 
     @Test
-    public void testNoiseGate() throws IntrospectionException {
-        testBean(NoiseGate.class);
+    public void testEnable() {
+        assertThat(noiseGate.getParameter(0).getName(), is("Enable"));
+    }
+
+    @Test
+    public void testSend() {
+        assertThat(noiseGate.getParameter(1).getName(), is("Send"));
+    }
+
+    @Test
+    public void testThreshold() {
+        assertThat(noiseGate.getParameter(2).getName(), is("Thrsh"));
+    }
+
+    @Test
+    public void testAttenuation() {
+        assertThat(noiseGate.getParameter(3).getName(), is("Atten"));
+    }
+
+    @Test
+    public void testOffset() {
+        assertThat(noiseGate.getParameter(4).getName(), is("Offset"));
+    }
+
+    @Test
+    public void testATime() {
+        assertThat(noiseGate.getParameter(5).getName(), is("ATime"));
+    }
+
+    @Test
+    public void testHTime() {
+        assertThat(noiseGate.getParameter(6).getName(), is("HTime"));
+    }
+
+    @Test
+    public void testRTime() {
+        assertThat(noiseGate.getParameter(7).getName(), is("RTime"));
+    }
+
+    @Test
+    public void testDelay() {
+        assertThat(noiseGate.getParameter(8).getName(), is("Delay"));
+    }
+
+    @Test
+    public void testInvalid() {
+        assertThat(noiseGate.getParameter(9), is(nullValue()));
     }
 
 }

@@ -25,17 +25,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 /**
- * Test Lfo using bean tester.
  *
  * @author Carl Green
  */
 public class LfoTest {
-    private Lfo lfo = new Lfo();
-
-    @Test
-    public void testLfo() throws IntrospectionException {
-        testBean(Lfo.class);
-    }
+    final private Lfo lfo = new Lfo();
 
     @Test
     public void testMode() {

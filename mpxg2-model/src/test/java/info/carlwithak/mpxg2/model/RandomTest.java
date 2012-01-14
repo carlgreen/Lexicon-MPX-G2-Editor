@@ -17,25 +17,17 @@
 package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
-import java.beans.IntrospectionException;
 import org.junit.Test;
 
-import static info.carlwithak.mpxg2.model.Util.testBean;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 /**
- * Test Random using bean tester.
  *
  * @author Carl Green
  */
 public class RandomTest {
-    private Random random = new Random();
-
-    @Test
-    public void testRandom() throws IntrospectionException {
-        testBean(Random.class);
-    }
+    final private Random random = new Random();
 
     @Test
     public void testLow() {

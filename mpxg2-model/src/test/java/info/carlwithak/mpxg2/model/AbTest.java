@@ -16,25 +16,17 @@
  */
 package info.carlwithak.mpxg2.model;
 
-import java.beans.IntrospectionException;
 import org.junit.Test;
 
-import static info.carlwithak.mpxg2.model.Util.testBean;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 /**
- * Test Ab using bean tester.
  *
  * @author Carl Green
  */
 public class AbTest {
-    private Ab ab = new Ab();
-
-    @Test
-    public void testAb() throws IntrospectionException {
-        testBean(Ab.class);
-    }
+    final private Ab ab = new Ab();
 
     @Test
     public void testMode() {
