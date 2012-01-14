@@ -71,7 +71,7 @@ public class ProgramPrinter {
 
     public static String print(Program program) throws PrintException {
         StringBuilder sb = new StringBuilder();
-        sb.append(program.getProgramName()).append("\n");
+        sb.append(program.getProgramName().getDisplayString()).append("\n");
         sb.append("  Guitar Style: ").append(printGuitarStyles(program)).append("\n");
         sb.append("  Effect Type: ").append(printEffectTypes(program)).append("\n");
         sb.append("  Application Type: ").append(printApplicationTypes(program)).append("\n");

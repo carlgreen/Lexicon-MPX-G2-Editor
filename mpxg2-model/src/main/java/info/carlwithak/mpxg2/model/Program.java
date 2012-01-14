@@ -90,7 +90,7 @@ public class Program {
     private int eqToePatch;
     private int gainToePatch;
 
-    private String programName;
+    private GenericValue<String> programName = new GenericValue<String>("Name", "", "", ""); // TODO length validation
 
     private EffectsStatus effectsStatus;
 
@@ -505,12 +505,8 @@ public class Program {
         this.gainToePatch = gainToePatch;
     }
 
-    public String getProgramName() {
+    public GenericValue<String> getProgramName() {
         return programName;
-    }
-
-    public void setProgramName(final String programName) {
-        this.programName = programName;
     }
 
     public EffectsStatus getEffectsStatus() {

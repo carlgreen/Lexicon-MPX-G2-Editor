@@ -678,7 +678,7 @@ public class SysexParser {
             char c = (char) (bytes[i] + (bytes[i + 1] * 16));
             sb.append(c);
         }
-        program.setProgramName(sb.toString().trim());
+        program.getProgramName().setValue(sb.toString().trim());
 
         int effectsStatus = readInt(objectData, 596, 2);
         program.setEffectsStatus(readEffectsStatus(effectsStatus));
