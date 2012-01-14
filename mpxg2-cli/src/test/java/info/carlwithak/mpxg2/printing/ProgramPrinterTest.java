@@ -24,6 +24,7 @@ import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.Patch;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
+import info.carlwithak.mpxg2.model.SendMix;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
 import info.carlwithak.mpxg2.model.parameters.BeatRate;
@@ -176,6 +177,7 @@ public class ProgramPrinterTest {
         patch.setDestinationMax(destinationMax);
 
         Program program = new Program();
+        program.setSendMix(new SendMix());
 
         String expected = "    Patch 1:\n      Source: Ctls Knob\n        Min: 0\n        Mid: --\n        Max: 25\n      Destination: Send Level\n        Min: 0\n        Mid: --\n        Max: +6\n";
         String actual = ProgramPrinter.printPatch(program, patch, 1);

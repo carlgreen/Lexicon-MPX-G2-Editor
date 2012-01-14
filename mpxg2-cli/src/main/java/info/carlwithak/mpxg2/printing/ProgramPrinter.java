@@ -48,26 +48,6 @@ public class ProgramPrinter {
         "Knob", "LFO1", "LFO2", "Rand", "A/B", "Env", "", "", "Post", "Send",
         "SpkrSim", "NGate", "Tempo"
     };
-    private static final String[][] EFFECT_PARAMETERS = {
-        {},
-        {},
-        {},
-        {
-            "Level"
-        },
-        {},
-        {},
-        {
-            null, "Send", "Thrsh", "Atten", "Offse", "ATime", "HTime", "RTime", "Delay"
-        },
-        {},
-        {},
-        {},
-        {},
-        {
-            "FX1", "FX2", "Chrs", "Dly", "Rvb", "EQ", "Gain", "Ins"
-        }
-    };
 
     public static String print(Program program) throws PrintException {
         StringBuilder sb = new StringBuilder();
@@ -275,21 +255,15 @@ public class ProgramPrinter {
         if (program.getSoftRowEffectType(i) == 255 || program.getSoftRowParameter(i) == 255) {
             return "";
         }
+        DataObject effect = program.getEffect(program.getSoftRowEffectType(i));
+        Parameter effectParameter = effect == null ? null : effect.getParameter(program.getSoftRowParameter(i));
+        if (effectParameter == null) {
+            return "";
+        }
         StringBuilder sb = new StringBuilder();
         sb.append("    ").append(i + 1).append(": ");
         sb.append(effectTypeToString(program.getSoftRowEffectType(i))).append(" ");
-        String effectParameterName;
-        if (program.getSoftRowEffectType(i) > 12) {
-            effectParameterName = effectParameterToString(program.getSoftRowEffectType(i), program.getSoftRowParameter(i));
-        } else {
-            DataObject effect = program.getEffect(program.getSoftRowEffectType(i));
-            Parameter effectParameter = effect == null ? null : effect.getParameter(program.getSoftRowParameter(i));
-            if (effectParameter == null) {
-                return "";
-            }
-            effectParameterName = effectParameter.getName();
-        }
-        sb.append(effectParameterName).append("\n");
+        sb.append(effectParameter.getName()).append("\n");
         return sb.toString();
     }
 
@@ -299,12 +273,7 @@ public class ProgramPrinter {
         }
         DataObject effect = program.getEffect(patch.getDestinationEffectIndex());
         Parameter parameter = effect == null ? null : effect.getParameter(patch.getDestinationParameter());
-        String patchParameter;
-        if (parameter == null) {
-            patchParameter = effectParameterToString(patch.getDestinationEffectIndex(), patch.getDestinationParameter());
-        } else {
-            patchParameter = parameter.getName();
-        }
+        String patchParameter = parameter.getName();
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
         sb.append("      Source: ").append(patch.getSourceName()).append("\n");
@@ -373,11 +342,6 @@ public class ProgramPrinter {
 
     private static String effectTypeToString(final int effectType) {
         return EFFECT_TYPES[effectType];
-    }
-
-    private static String effectParameterToString(final int effectType, final int effectParameter) {
-        // remove 13 from effectType as the 7 algorithm types and 6 controllers take care of themselves
-        return EFFECT_PARAMETERS[effectType - 13][effectParameter];
     }
 
 }
