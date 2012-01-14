@@ -30,10 +30,10 @@ public class OneBandMonoParser {
         OneBandMono oneBandMono = new OneBandMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        oneBandMono.setMix(mix);
+        oneBandMono.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        oneBandMono.setLevel(level);
+        oneBandMono.getLevel().setValue(level);
 
         int gain = (byte) (effectParameters[4] + effectParameters[5] * 16);
         oneBandMono.setGain(gain);

@@ -34,10 +34,10 @@ public class DelayStereoParser {
         DelayStereo delayStereo = new DelayStereo();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        delayStereo.setMix(mix);
+        delayStereo.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        delayStereo.setLevel(level);
+        delayStereo.getLevel().setValue(level);
 
         delayStereo.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 

@@ -31,10 +31,10 @@ public class ShiftMonoParser {
         ShiftMono shiftMono = new ShiftMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        shiftMono.setMix(mix);
+        shiftMono.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        shiftMono.setLevel(level);
+        shiftMono.getLevel().setValue(level);
 
         int tune1 = 0;
         for (int i = 0; i < 4; i++) {

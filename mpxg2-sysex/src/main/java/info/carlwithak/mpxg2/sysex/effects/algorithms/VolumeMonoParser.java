@@ -30,10 +30,10 @@ public class VolumeMonoParser {
         VolumeMono volumeMono = new VolumeMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        volumeMono.setMix(mix);
+        volumeMono.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        volumeMono.setLevel(level);
+        volumeMono.getLevel().setValue(level);
 
         int volume = (byte) (effectParameters[4] + effectParameters[5] * 16);
         volumeMono.setVolume(volume);

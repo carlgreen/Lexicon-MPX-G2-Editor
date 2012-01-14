@@ -30,10 +30,10 @@ public class PannerParser {
         Panner panner = new Panner();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        panner.setMix(mix);
+        panner.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        panner.setLevel(level);
+        panner.getLevel().setValue(level);
 
         int pan1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
         panner.setPan1(pan1);

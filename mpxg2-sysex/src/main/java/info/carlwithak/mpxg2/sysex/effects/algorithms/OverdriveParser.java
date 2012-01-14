@@ -54,7 +54,7 @@ public class OverdriveParser {
         overdrive.setTone(tone);
 
         int level = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        overdrive.setLevel(level);
+        overdrive.getLevel().setValue(level);
 
         return overdrive;
     }

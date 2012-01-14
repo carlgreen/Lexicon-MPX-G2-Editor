@@ -30,10 +30,10 @@ public class DiatonicHmyParser {
         DiatonicHmy diatonicHmy = new DiatonicHmy();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        diatonicHmy.setMix(mix);
+        diatonicHmy.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        diatonicHmy.setLevel(level);
+        diatonicHmy.getLevel().setValue(level);
 
         int key = (byte) (effectParameters[4] + effectParameters[5] * 16);
         diatonicHmy.setKey(key);

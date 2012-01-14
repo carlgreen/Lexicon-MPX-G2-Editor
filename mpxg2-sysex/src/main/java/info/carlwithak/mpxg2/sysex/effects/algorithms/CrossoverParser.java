@@ -30,10 +30,10 @@ public class CrossoverParser {
         Crossover crossover = new Crossover();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        crossover.setMix(mix);
+        crossover.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        crossover.setLevel(level);
+        crossover.getLevel().setValue(level);
 
         int fc = 0;
         for (int i = 0; i < 4; i++) {

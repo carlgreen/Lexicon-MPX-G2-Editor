@@ -31,10 +31,10 @@ public class RedCompParser {
         RedComp redComp = new RedComp();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        redComp.setMix(mix);
+        redComp.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        redComp.setLevel(level);
+        redComp.getLevel().setValue(level);
 
         int sense = (byte) (effectParameters[4] + effectParameters[5] * 16);
         redComp.setSensitivity(sense);

@@ -33,10 +33,10 @@ public class Flanger24MonoParser {
         Flanger24Mono flanger24Mono = new Flanger24Mono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        flanger24Mono.setMix(mix);
+        flanger24Mono.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        flanger24Mono.setLevel(level);
+        flanger24Mono.getLevel().setValue(level);
 
         flanger24Mono.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 

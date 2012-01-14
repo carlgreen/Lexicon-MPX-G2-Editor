@@ -34,10 +34,10 @@ public class EchoMonoParser {
         EchoMono echoMono = new EchoMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        echoMono.setMix(mix);
+        echoMono.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        echoMono.setLevel(level);
+        echoMono.getLevel().setValue(level);
 
         echoMono.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 

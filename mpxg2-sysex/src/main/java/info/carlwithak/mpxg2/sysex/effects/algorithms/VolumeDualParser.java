@@ -30,10 +30,10 @@ public class VolumeDualParser {
         VolumeDual volumeDual = new VolumeDual();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        volumeDual.setMix(mix);
+        volumeDual.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        volumeDual.setLevel(level);
+        volumeDual.getLevel().setValue(level);
 
         int volumeLeft = (byte) (effectParameters[4] + effectParameters[5] * 16);
         volumeDual.setVolumeLeft(volumeLeft);

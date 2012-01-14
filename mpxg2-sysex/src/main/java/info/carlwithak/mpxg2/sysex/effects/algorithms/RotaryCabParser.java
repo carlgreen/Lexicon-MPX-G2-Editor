@@ -33,10 +33,10 @@ public class RotaryCabParser {
         RotaryCab rotaryCab = new RotaryCab();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        rotaryCab.setMix(mix);
+        rotaryCab.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        rotaryCab.setLevel(level);
+        rotaryCab.getLevel().setValue(level);
 
         rotaryCab.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 

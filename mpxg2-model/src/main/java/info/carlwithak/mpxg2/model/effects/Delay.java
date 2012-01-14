@@ -49,15 +49,8 @@ public abstract class Delay implements EffectObject {
         return mix;
     }
 
-    public void setMix(int mix) {
-        this.mix.setValue(mix);
-    }
-
     public GenericValue<Integer> getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
-        this.level.setValue(level);
-    }
 }

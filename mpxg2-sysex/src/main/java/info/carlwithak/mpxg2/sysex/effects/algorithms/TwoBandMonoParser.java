@@ -30,10 +30,10 @@ public class TwoBandMonoParser {
         TwoBandMono twoBandMono = new TwoBandMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        twoBandMono.setMix(mix);
+        twoBandMono.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        twoBandMono.setLevel(level);
+        twoBandMono.getLevel().setValue(level);
 
         int gain1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
         twoBandMono.setGain1(gain1);

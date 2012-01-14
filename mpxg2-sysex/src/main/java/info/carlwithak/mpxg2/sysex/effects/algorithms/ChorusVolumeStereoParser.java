@@ -30,10 +30,10 @@ public class ChorusVolumeStereoParser {
         ChorusVolumeStereo volumeStereo = new ChorusVolumeStereo();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        volumeStereo.setMix(mix);
+        volumeStereo.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        volumeStereo.setLevel(level);
+        volumeStereo.getLevel().setValue(level);
 
         int volume = (byte) (effectParameters[4] + effectParameters[5] * 16);
         volumeStereo.setVolume(volume);

@@ -34,10 +34,10 @@ public class EchoStereoParser {
         EchoStereo echoStereo = new EchoStereo();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        echoStereo.setMix(mix);
+        echoStereo.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        echoStereo.setLevel(level);
+        echoStereo.getLevel().setValue(level);
 
         echoStereo.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 

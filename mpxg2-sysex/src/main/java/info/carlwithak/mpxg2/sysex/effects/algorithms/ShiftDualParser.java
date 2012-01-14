@@ -31,10 +31,10 @@ public class ShiftDualParser {
         ShiftDual shiftDual = new ShiftDual();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        shiftDual.setMix(mix);
+        shiftDual.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        shiftDual.setLevel(level);
+        shiftDual.getLevel().setValue(level);
 
         int tune1 = 0;
         for (int i = 0; i < 4; i++) {

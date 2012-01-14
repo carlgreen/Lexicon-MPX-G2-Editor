@@ -31,10 +31,10 @@ public class AmbienceParser {
         Ambience ambience = new Ambience();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        ambience.setMix(mix);
+        ambience.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        ambience.setLevel(level);
+        ambience.getLevel().setValue(level);
 
         double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
         ambience.setSize(size);

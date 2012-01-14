@@ -33,10 +33,10 @@ public class Centrifuge1Parser {
         Centrifuge1 centrifuge1 = new Centrifuge1();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        centrifuge1.setMix(mix);
+        centrifuge1.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        centrifuge1.setLevel(level);
+        centrifuge1.getLevel().setValue(level);
 
         centrifuge1.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 

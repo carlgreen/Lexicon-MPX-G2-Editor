@@ -33,10 +33,10 @@ public class PhaserParser {
         Phaser phaser = new Phaser();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        phaser.setMix(mix);
+        phaser.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        phaser.setLevel(level);
+        phaser.getLevel().setValue(level);
 
         phaser.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 

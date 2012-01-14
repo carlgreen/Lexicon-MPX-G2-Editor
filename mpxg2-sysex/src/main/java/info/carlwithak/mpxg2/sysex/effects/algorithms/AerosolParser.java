@@ -33,10 +33,10 @@ public class AerosolParser {
         Aerosol aerosol = new Aerosol();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        aerosol.setMix(mix);
+        aerosol.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        aerosol.setLevel(level);
+        aerosol.getLevel().setValue(level);
 
         aerosol.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 

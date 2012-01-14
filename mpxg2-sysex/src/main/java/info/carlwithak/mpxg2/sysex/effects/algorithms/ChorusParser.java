@@ -33,10 +33,10 @@ public class ChorusParser {
         ChorusAlgorithm chorus = new ChorusAlgorithm();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        chorus.setMix(mix);
+        chorus.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        chorus.setLevel(level);
+        chorus.getLevel().setValue(level);
 
         chorus.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 

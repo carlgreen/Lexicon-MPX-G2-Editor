@@ -31,10 +31,10 @@ public class JamManParser {
         JamMan jamMan = new JamMan();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        jamMan.setMix(mix);
+        jamMan.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        jamMan.setLevel(level);
+        jamMan.getLevel().setValue(level);
 
         int size = 0;
         for (int i = 0; i < 4; i++) {

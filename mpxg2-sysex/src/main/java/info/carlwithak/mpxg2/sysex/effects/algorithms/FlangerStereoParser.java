@@ -33,10 +33,10 @@ public class FlangerStereoParser {
         FlangerStereo flangerStereo = new FlangerStereo();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        flangerStereo.setMix(mix);
+        flangerStereo.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        flangerStereo.setLevel(level);
+        flangerStereo.getLevel().setValue(level);
 
         flangerStereo.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 

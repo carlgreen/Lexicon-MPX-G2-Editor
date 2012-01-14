@@ -33,10 +33,10 @@ public class TremoloStereoParser {
         TremoloStereo tremoloStereo = new TremoloStereo();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        tremoloStereo.setMix(mix);
+        tremoloStereo.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        tremoloStereo.setLevel(level);
+        tremoloStereo.getLevel().setValue(level);
 
         tremoloStereo.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 

@@ -34,10 +34,10 @@ public class EchoDualParser {
         EchoDual echoDual = new EchoDual();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        echoDual.setMix(mix);
+        echoDual.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        echoDual.setLevel(level);
+        echoDual.getLevel().setValue(level);
 
         echoDual.setTime1(RateParser.parse("Time1", Arrays.copyOfRange(effectParameters, 4, 10)));
 

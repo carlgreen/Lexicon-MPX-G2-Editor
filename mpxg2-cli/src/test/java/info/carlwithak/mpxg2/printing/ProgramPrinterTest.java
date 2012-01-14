@@ -104,8 +104,8 @@ public class ProgramPrinterTest {
         sb = new StringBuilder();
         // TODO would be good to mock the effect here
         PedalVol pedalVol = new PedalVol();
-        pedalVol.setMix(0);
-        pedalVol.setLevel(0);
+        pedalVol.getMix().setValue(0);
+        pedalVol.getLevel().setValue(0);
         OnOffValue effect1Status = new OnOffValue("FX1  Byp");
         effect1Status.setValue(true);
         ProgramPrinter.printProgram(sb, "Effect1", pedalVol, effect1Status, 2);

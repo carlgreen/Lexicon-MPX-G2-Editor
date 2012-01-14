@@ -31,10 +31,10 @@ public class OrangePhaseParser {
         OrangePhase orangePhase = new OrangePhase();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        orangePhase.setMix(mix);
+        orangePhase.getMix().setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        orangePhase.setLevel(level);
+        orangePhase.getLevel().setValue(level);
 
         int rate = (byte) (effectParameters[4] + effectParameters[5] * 16);
         orangePhase.setRate(rate);
