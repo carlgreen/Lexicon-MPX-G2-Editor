@@ -261,8 +261,10 @@ public class ProgramPrinter {
             return "";
         }
         DataObject effect = program.getEffect(patch.getDestinationEffectIndex());
-        Parameter parameter = effect == null ? null : effect.getParameter(patch.getDestinationParameter());
-        String patchParameter = parameter.getName();
+        if (effect == null) {
+            return "";
+        }
+        String patchParameter = effect.getParameter(patch.getDestinationParameter()).getName();
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
         sb.append("      Source: ").append(patch.getSourceName()).append("\n");
