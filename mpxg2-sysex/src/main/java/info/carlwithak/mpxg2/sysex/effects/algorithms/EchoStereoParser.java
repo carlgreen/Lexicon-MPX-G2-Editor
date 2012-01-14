@@ -51,7 +51,7 @@ public class EchoStereoParser {
         echoStereo.getDamp().setValue(damp);
 
         int clear = effectParameters[16] + effectParameters[17] * 16;
-        echoStereo.isClear().setValue(Util.parseBoolean(clear));
+        echoStereo.getClear().setValue(Util.parseBoolean(clear));
 
         return echoStereo;
     }

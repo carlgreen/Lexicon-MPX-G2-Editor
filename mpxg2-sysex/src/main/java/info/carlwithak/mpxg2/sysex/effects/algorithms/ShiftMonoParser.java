@@ -46,7 +46,7 @@ public class ShiftMonoParser {
         shiftMono.getOptimize().setValue(optimize);
 
         int glide = effectParameters[10] + effectParameters[11] * 16;
-        shiftMono.isGlide().setValue(Util.parseBoolean(glide));
+        shiftMono.getGlide().setValue(Util.parseBoolean(glide));
 
         return shiftMono;
     }

@@ -99,7 +99,7 @@ public class Chamber extends Reverb {
         return size;
     }
 
-    public OnOffValue isLink() {
+    public OnOffValue getLink() {
         return link;
     }
 

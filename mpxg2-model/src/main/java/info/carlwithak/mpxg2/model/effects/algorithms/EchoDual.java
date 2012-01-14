@@ -133,7 +133,7 @@ public class EchoDual extends Delay {
         return damp2;
     }
 
-    public OnOffValue isClear() {
+    public OnOffValue getClear() {
         return clear;
     }
 

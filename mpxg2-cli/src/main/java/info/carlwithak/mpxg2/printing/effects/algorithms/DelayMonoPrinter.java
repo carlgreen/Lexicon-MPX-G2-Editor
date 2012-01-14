@@ -38,7 +38,7 @@ public class DelayMonoPrinter implements Printer {
         sb.append(printParameter(delayMono.getTime()));
         sb.append(printParameter(delayMono.getFeedback()));
         sb.append(printParameter(delayMono.getInsert()));
-        sb.append(printParameter(delayMono.isClear()));
+        sb.append(printParameter(delayMono.getClear()));
         return sb.toString();
     }
 

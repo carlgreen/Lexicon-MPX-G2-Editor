@@ -92,23 +92,23 @@ public class JamMan extends Delay {
         return insert;
     }
 
-    public OnOffValue isClear() {
+    public OnOffValue getClear() {
         return clear;
     }
 
-    public OnOffValue isLayer() {
+    public OnOffValue getLayer() {
         return layer;
     }
 
-    public OnOffValue isReplace() {
+    public OnOffValue getReplace() {
         return replace;
     }
 
-    public OnOffValue isDelay() {
+    public OnOffValue getDelay() {
         return delay;
     }
 
-    public OnOffValue isMute() {
+    public OnOffValue getMute() {
         return mute;
     }
 

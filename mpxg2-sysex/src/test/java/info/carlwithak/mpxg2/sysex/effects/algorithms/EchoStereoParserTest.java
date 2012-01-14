@@ -42,7 +42,7 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.getFeedback(), is(value(0)));
         assertThat(echoStereo.getInsert(), is(value(3)));
         assertThat(echoStereo.getDamp(), is(value(16)));
-        assertThat(echoStereo.isClear(), is(value(false)));
+        assertThat(echoStereo.getClear(), is(value(false)));
     }
 
     @Test
@@ -55,6 +55,6 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.getFeedback(), is(value(0)));
         assertThat(echoStereo.getInsert(), is(value(3)));
         assertThat(echoStereo.getDamp(), is(value(16)));
-        assertThat(echoStereo.isClear(), is(value(false)));
+        assertThat(echoStereo.getClear(), is(value(false)));
     }
 }

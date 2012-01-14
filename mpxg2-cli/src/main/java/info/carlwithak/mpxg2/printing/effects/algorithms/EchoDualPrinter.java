@@ -44,7 +44,7 @@ public class EchoDualPrinter implements Printer {
         sb.append(printParameter(echoDual.getFeedback2()));
         sb.append(printParameter(echoDual.getDamp1()));
         sb.append(printParameter(echoDual.getDamp2()));
-        sb.append(printParameter(echoDual.isClear()));
+        sb.append(printParameter(echoDual.getClear()));
         return sb.toString();
     }
 

@@ -49,7 +49,7 @@ public class DelayDualParserTest {
         assertThat(delayDual.getFeedback2(), is(value(10)));
         assertThat(delayDual.getXFbk1(), is(value(0)));
         assertThat(delayDual.getXFbk2(), is(value(0)));
-        assertThat(delayDual.isClear(), is(value(false)));
+        assertThat(delayDual.getClear(), is(value(false)));
     }
 
     @Test
@@ -69,6 +69,6 @@ public class DelayDualParserTest {
         assertThat(delayDual.getFeedback2(), is(value(0)));
         assertThat(delayDual.getXFbk1(), is(value(0)));
         assertThat(delayDual.getXFbk2(), is(value(0)));
-        assertThat(delayDual.isClear(), is(value(false)));
+        assertThat(delayDual.getClear(), is(value(false)));
     }
 }

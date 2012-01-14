@@ -36,7 +36,7 @@ public class ChamberPrinter implements Printer {
         sb.append(printParameter(chamber.getMix()));
         sb.append(printParameter(chamber.getLevel()));
         sb.append(printParameter(chamber.getSize()));
-        sb.append(printParameter(chamber.isLink()));
+        sb.append(printParameter(chamber.getLink()));
         sb.append(printParameter(chamber.getDiff()));
         sb.append(printParameter(chamber.getPreDelay()));
         sb.append(printParameter(chamber.getBass()));

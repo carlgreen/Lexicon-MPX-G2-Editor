@@ -67,7 +67,7 @@ public class ShiftMono extends Effect {
         return optimize;
     }
 
-    public OnOffValue isGlide() {
+    public OnOffValue getGlide() {
         return glide;
     }
 

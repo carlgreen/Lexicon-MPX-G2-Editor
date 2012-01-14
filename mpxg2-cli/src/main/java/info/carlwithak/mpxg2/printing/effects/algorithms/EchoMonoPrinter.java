@@ -39,7 +39,7 @@ public class EchoMonoPrinter implements Printer {
         sb.append(printParameter(echoMono.getFeedback()));
         sb.append(printParameter(echoMono.getInsert()));
         sb.append(printParameter(echoMono.getDamp()));
-        sb.append(printParameter(echoMono.isClear()));
+        sb.append(printParameter(echoMono.getClear()));
         return sb.toString();
     }
 

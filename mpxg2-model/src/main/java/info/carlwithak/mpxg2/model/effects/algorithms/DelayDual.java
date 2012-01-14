@@ -150,7 +150,7 @@ public class DelayDual extends Delay {
         return xFbk2;
     }
 
-    public OnOffValue isClear() {
+    public OnOffValue getClear() {
         return clear;
     }
 

@@ -40,7 +40,7 @@ public class PlateParser {
         plate.getSize().setValue(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        plate.isLink().setValue(Util.parseBoolean(link));
+        plate.getLink().setValue(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
         plate.getDiff().setValue(diff);

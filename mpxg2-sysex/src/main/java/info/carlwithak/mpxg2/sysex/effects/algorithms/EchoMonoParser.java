@@ -51,7 +51,7 @@ public class EchoMonoParser {
         echoMono.getDamp().setValue(damp);
 
         int clear = effectParameters[16] + effectParameters[17] * 16;
-        echoMono.isClear().setValue(Util.parseBoolean(clear));
+        echoMono.getClear().setValue(Util.parseBoolean(clear));
 
         return echoMono;
     }

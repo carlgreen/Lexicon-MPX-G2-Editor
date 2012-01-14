@@ -89,7 +89,7 @@ public class EchoStereo extends Delay {
         return damp;
     }
 
-    public OnOffValue isClear() {
+    public OnOffValue getClear() {
         return clear;
     }
 

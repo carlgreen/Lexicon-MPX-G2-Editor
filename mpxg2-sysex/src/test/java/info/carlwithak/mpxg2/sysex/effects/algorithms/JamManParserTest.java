@@ -39,10 +39,10 @@ public class JamManParserTest {
         assertThat(jamMan.getSize(), is(value(250)));
         assertThat(jamMan.getFeedback(), is(value(0)));
         assertThat(jamMan.getInsert(), is(value(3)));
-        assertThat(jamMan.isClear(), is(value(false)));
-        assertThat(jamMan.isLayer(), is(value(false)));
-        assertThat(jamMan.isReplace(), is(value(false)));
-        assertThat(jamMan.isDelay(), is(value(false)));
-        assertThat(jamMan.isMute(), is(value(false)));
+        assertThat(jamMan.getClear(), is(value(false)));
+        assertThat(jamMan.getLayer(), is(value(false)));
+        assertThat(jamMan.getReplace(), is(value(false)));
+        assertThat(jamMan.getDelay(), is(value(false)));
+        assertThat(jamMan.getMute(), is(value(false)));
     }
 }

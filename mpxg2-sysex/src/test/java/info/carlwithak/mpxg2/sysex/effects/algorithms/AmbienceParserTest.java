@@ -37,7 +37,7 @@ public class AmbienceParserTest {
         assertThat(ambience.getMix(), is(value(18)));
         assertThat(ambience.getLevel(), is(value(0)));
         assertThat(ambience.getSize(), is(value(24.5)));
-        assertThat(ambience.isLink(), is(value(true)));
+        assertThat(ambience.getLink(), is(value(true)));
         assertThat(ambience.getDiff(), is(value(60)));
         assertThat(ambience.getPreDelay(), is(value(7)));
         assertThat(ambience.getDecayTime(), is(value(51))); // 1.41s is number 51 in list

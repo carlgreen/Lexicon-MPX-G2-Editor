@@ -71,7 +71,7 @@ public class DelayDualParser {
         delayDual.getXFbk2().setValue(xFbk2);
 
         int clear = effectParameters[34] + effectParameters[35] * 16;
-        delayDual.isClear().setValue(Util.parseBoolean(clear));
+        delayDual.getClear().setValue(Util.parseBoolean(clear));
 
         return delayDual;
     }

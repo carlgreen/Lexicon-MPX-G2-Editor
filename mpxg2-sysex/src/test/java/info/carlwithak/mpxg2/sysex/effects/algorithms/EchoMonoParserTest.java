@@ -42,6 +42,6 @@ public class EchoMonoParserTest {
         assertThat(echoMono.getFeedback(), is(value(-15)));
         assertThat(echoMono.getInsert(), is(value(3)));
         assertThat(echoMono.getDamp(), is(value(20)));
-        assertThat(echoMono.isClear(), is(value(false)));
+        assertThat(echoMono.getClear(), is(value(false)));
     }
 }

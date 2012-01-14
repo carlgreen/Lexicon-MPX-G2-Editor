@@ -39,7 +39,7 @@ public class EchoStereoPrinter implements Printer {
         sb.append(printParameter(echoStereo.getFeedback()));
         sb.append(printParameter(echoStereo.getInsert()));
         sb.append(printParameter(echoStereo.getDamp()));
-        sb.append(printParameter(echoStereo.isClear()));
+        sb.append(printParameter(echoStereo.getClear()));
         return sb.toString();
     }
 

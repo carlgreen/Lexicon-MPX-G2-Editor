@@ -48,7 +48,7 @@ public class DelayStereoParser {
         delayStereo.getInsert().setValue(insert);
 
         int clear = effectParameters[14] + effectParameters[15] * 16;
-        delayStereo.isClear().setValue(Util.parseBoolean(clear));
+        delayStereo.getClear().setValue(Util.parseBoolean(clear));
 
         return delayStereo;
     }

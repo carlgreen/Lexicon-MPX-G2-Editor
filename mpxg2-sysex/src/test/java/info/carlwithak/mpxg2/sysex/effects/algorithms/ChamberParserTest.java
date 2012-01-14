@@ -37,7 +37,7 @@ public class ChamberParserTest {
         assertThat(chamber.getMix(), is(value(28)));
         assertThat(chamber.getLevel(), is(value(0)));
         assertThat(chamber.getSize(), is(value(24.0)));
-        assertThat(chamber.isLink(), is(value(true)));
+        assertThat(chamber.getLink(), is(value(true)));
         assertThat(chamber.getDiff(), is(value(22)));
         assertThat(chamber.getPreDelay(), is(value(0)));
         assertThat(chamber.getBass(), is(value(6))); // 1.5X is number 6 in list
@@ -55,7 +55,7 @@ public class ChamberParserTest {
         assertThat(chamber.getMix(), is(value(35)));
         assertThat(chamber.getLevel(), is(value(0)));
         assertThat(chamber.getSize(), is(value(28.0)));
-        assertThat(chamber.isLink(), is(value(true)));
+        assertThat(chamber.getLink(), is(value(true)));
         assertThat(chamber.getDiff(), is(value(90)));
         assertThat(chamber.getPreDelay(), is(value(82)));
         assertThat(chamber.getBass(), is(value(5))); // 1.2X is number 5 in list

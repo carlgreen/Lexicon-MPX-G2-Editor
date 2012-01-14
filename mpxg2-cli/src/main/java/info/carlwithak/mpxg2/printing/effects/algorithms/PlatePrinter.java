@@ -36,7 +36,7 @@ public class PlatePrinter implements Printer {
         sb.append(printParameter(plate.getMix()));
         sb.append(printParameter(plate.getLevel()));
         sb.append(printParameter(plate.getSize()));
-        sb.append(printParameter(plate.isLink()));
+        sb.append(printParameter(plate.getLink()));
         sb.append(printParameter(plate.getDiff()));
         sb.append(printParameter(plate.getPreDelay()));
         sb.append(printParameter(plate.getBass()));

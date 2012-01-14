@@ -40,7 +40,7 @@ public class ChamberParser {
         chamber.getSize().setValue(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        chamber.isLink().setValue(Util.parseBoolean(link));
+        chamber.getLink().setValue(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
         chamber.getDiff().setValue(diff);

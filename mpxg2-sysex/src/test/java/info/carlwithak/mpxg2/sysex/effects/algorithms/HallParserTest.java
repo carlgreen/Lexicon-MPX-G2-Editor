@@ -37,7 +37,7 @@ public class HallParserTest {
         assertThat(hall.getMix(), is(value(20)));
         assertThat(hall.getLevel(), is(value(0)));
         assertThat(hall.getSize(), is(value(53.0)));
-        assertThat(hall.isLink(), is(value(true)));
+        assertThat(hall.getLink(), is(value(true)));
         assertThat(hall.getDiff(), is(value(80)));
         assertThat(hall.getPreDelay(), is(value(25)));
         assertThat(hall.getBass(), is(value(5))); // 1.2X is number 5 in list

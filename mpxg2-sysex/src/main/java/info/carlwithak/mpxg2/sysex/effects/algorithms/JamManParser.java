@@ -49,19 +49,19 @@ public class JamManParser {
         jamMan.getInsert().setValue(insert);
 
         int clear = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        jamMan.isClear().setValue(Util.parseBoolean(clear));
+        jamMan.getClear().setValue(Util.parseBoolean(clear));
 
         int layer = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        jamMan.isLayer().setValue(Util.parseBoolean(layer));
+        jamMan.getLayer().setValue(Util.parseBoolean(layer));
 
         int replace = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        jamMan.isReplace().setValue(Util.parseBoolean(replace));
+        jamMan.getReplace().setValue(Util.parseBoolean(replace));
 
         int delay = (byte) (effectParameters[18] + effectParameters[19] * 16);
-        jamMan.isDelay().setValue(Util.parseBoolean(delay));
+        jamMan.getDelay().setValue(Util.parseBoolean(delay));
 
         int mute = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        jamMan.isMute().setValue(Util.parseBoolean(mute));
+        jamMan.getMute().setValue(Util.parseBoolean(mute));
 
         return jamMan;
     }

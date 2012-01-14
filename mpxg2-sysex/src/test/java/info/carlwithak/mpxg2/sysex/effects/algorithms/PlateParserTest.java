@@ -37,7 +37,7 @@ public class PlateParserTest {
         assertThat(plate.getMix(), is(value(100)));
         assertThat(plate.getLevel(), is(value(6)));
         assertThat(plate.getSize(), is(value(22.5)));
-        assertThat(plate.isLink(), is(value(true)));
+        assertThat(plate.getLink(), is(value(true)));
         assertThat(plate.getDiff(), is(value(66)));
         assertThat(plate.getPreDelay(), is(value(169)));
         assertThat(plate.getBass(), is(value(5))); // 1.2X is number 5 in list
@@ -55,7 +55,7 @@ public class PlateParserTest {
         assertThat(plate.getMix(), is(value(28)));
         assertThat(plate.getLevel(), is(value(0)));
         assertThat(plate.getSize(), is(value(16.5)));
-        assertThat(plate.isLink(), is(value(true)));
+        assertThat(plate.getLink(), is(value(true)));
         assertThat(plate.getDiff(), is(value(90)));
         assertThat(plate.getPreDelay(), is(value(10)));
         assertThat(plate.getBass(), is(value(0))); // 0.2X is number 0 in list

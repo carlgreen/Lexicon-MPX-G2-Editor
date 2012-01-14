@@ -48,7 +48,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.getFeedback2(), is(value(1)));
         assertThat(echoDual.getDamp1(), is(value(20)));
         assertThat(echoDual.getDamp2(), is(value(20)));
-        assertThat(echoDual.isClear(), is(value(false)));
+        assertThat(echoDual.getClear(), is(value(false)));
     }
 
     @Test
@@ -66,7 +66,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.getFeedback2(), is(value(15)));
         assertThat(echoDual.getDamp1(), is(value(25)));
         assertThat(echoDual.getDamp2(), is(value(25)));
-        assertThat(echoDual.isClear(), is(value(false)));
+        assertThat(echoDual.getClear(), is(value(false)));
     }
 
     @Test
@@ -84,7 +84,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.getFeedback2(), is(value(-20)));
         assertThat(echoDual.getDamp1(), is(value(20)));
         assertThat(echoDual.getDamp2(), is(value(20)));
-        assertThat(echoDual.isClear(), is(value(false)));
+        assertThat(echoDual.getClear(), is(value(false)));
     }
 
     @Test
@@ -102,6 +102,6 @@ public class EchoDualParserTest {
         assertThat(echoDual.getFeedback2(), is(value(-20)));
         assertThat(echoDual.getDamp1(), is(value(20)));
         assertThat(echoDual.getDamp2(), is(value(20)));
-        assertThat(echoDual.isClear(), is(value(false)));
+        assertThat(echoDual.getClear(), is(value(false)));
     }
 }

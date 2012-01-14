@@ -85,7 +85,7 @@ public class Ambience extends Reverb {
         return size;
     }
 
-    public OnOffValue isLink() {
+    public OnOffValue getLink() {
         return link;
     }
 

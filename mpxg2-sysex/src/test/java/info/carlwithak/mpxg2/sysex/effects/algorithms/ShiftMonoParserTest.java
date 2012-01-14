@@ -38,6 +38,6 @@ public class ShiftMonoParserTest {
         assertThat(shiftMono.getLevel(), is(value(-90))); // Off
         assertThat(shiftMono.getTune(), is(value(-1200)));
         assertThat(shiftMono.getOptimize(), is(value(50)));
-        assertThat(shiftMono.isGlide(), is(value(true)));
+        assertThat(shiftMono.getGlide(), is(value(true)));
     }
 }

@@ -41,6 +41,6 @@ public class DelayMonoParserTest {
         assertThat(delayMono.getTime(), is(beat(4, 3)));
         assertThat(delayMono.getFeedback(), is(value(10)));
         assertThat(delayMono.getInsert(), is(value(3)));
-        assertThat(delayMono.isClear(), is(value(false)));
+        assertThat(delayMono.getClear(), is(value(false)));
     }
 }

@@ -40,7 +40,7 @@ public class HallParser {
         hall.getSize().setValue(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        hall.isLink().setValue(Util.parseBoolean(link));
+        hall.getLink().setValue(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
         hall.getDiff().setValue(diff);

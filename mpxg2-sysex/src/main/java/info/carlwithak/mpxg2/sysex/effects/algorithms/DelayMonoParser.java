@@ -48,7 +48,7 @@ public class DelayMonoParser {
         delayMono.getInsert().setValue(insert);
 
         int clear = effectParameters[14] + effectParameters[15] * 16;
-        delayMono.isClear().setValue(Util.parseBoolean(clear));
+        delayMono.getClear().setValue(Util.parseBoolean(clear));
 
         return delayMono;
     }

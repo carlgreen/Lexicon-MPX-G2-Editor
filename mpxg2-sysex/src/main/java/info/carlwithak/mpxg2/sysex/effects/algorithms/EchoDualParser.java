@@ -65,7 +65,7 @@ public class EchoDualParser {
         echoDual.getDamp2().setValue(damp2);
 
         int clear = effectParameters[30] + effectParameters[31] * 16;
-        echoDual.isClear().setValue(Util.parseBoolean(clear));
+        echoDual.getClear().setValue(Util.parseBoolean(clear));
 
         return echoDual;
     }

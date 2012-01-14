@@ -81,7 +81,7 @@ public class DelayMono extends Delay {
         return insert;
     }
 
-    public OnOffValue isClear() {
+    public OnOffValue getClear() {
         return clear;
     }
 

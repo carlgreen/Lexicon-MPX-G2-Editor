@@ -46,7 +46,7 @@ public class DelayDualPrinter implements Printer {
         sb.append(printParameter(delayDual.getFeedback2()));
         sb.append(printParameter(delayDual.getXFbk1()));
         sb.append(printParameter(delayDual.getXFbk2()));
-        sb.append(printParameter(delayDual.isClear()));
+        sb.append(printParameter(delayDual.getClear()));
         return sb.toString();
     }
 

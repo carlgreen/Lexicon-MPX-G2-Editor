@@ -36,7 +36,7 @@ public class AmbiencePrinter implements Printer {
         sb.append(printParameter(ambience.getMix()));
         sb.append(printParameter(ambience.getLevel()));
         sb.append(printParameter(ambience.getSize()));
-        sb.append(printParameter(ambience.isLink()));
+        sb.append(printParameter(ambience.getLink()));
         sb.append(printParameter(ambience.getDiff()));
         sb.append(printParameter(ambience.getPreDelay()));
         sb.append(printParameter(ambience.getDecayTime()));

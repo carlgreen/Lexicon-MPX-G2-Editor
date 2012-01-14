@@ -75,7 +75,7 @@ public class ShiftDual extends Effect {
         return tune2;
     }
 
-    public OnOffValue isGlide() {
+    public OnOffValue getGlide() {
         return glide;
     }
 

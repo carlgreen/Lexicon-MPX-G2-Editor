@@ -52,7 +52,7 @@ public class ShiftDualParser {
         shiftDual.getTune2().setValue(Util.wrapInteger(tune2));
 
         int glide = effectParameters[14] + effectParameters[15] * 16;
-        shiftDual.isGlide().setValue(Util.parseBoolean(glide));
+        shiftDual.getGlide().setValue(Util.parseBoolean(glide));
 
         return shiftDual;
     }

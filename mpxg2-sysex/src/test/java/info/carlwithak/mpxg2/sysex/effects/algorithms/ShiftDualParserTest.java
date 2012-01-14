@@ -39,6 +39,6 @@ public class ShiftDualParserTest {
         assertThat(shiftDual.getTune1(), is(value(-1200)));
         assertThat(shiftDual.getOptimize(), is(value(10)));
         assertThat(shiftDual.getTune2(), is(value(-500)));
-        assertThat(shiftDual.isGlide(), is(value(true)));
+        assertThat(shiftDual.getGlide(), is(value(true)));
     }
 }

@@ -104,7 +104,7 @@ public class AlgorithmPrinterTest {
         shiftMono.getLevel().setValue(-90);
         shiftMono.getTune().setValue(-1200);
         shiftMono.getOptimize().setValue(50);
-        shiftMono.isGlide().setValue(true);
+        shiftMono.getGlide().setValue(true);
 
         // TODO level should be 'Off'
         String expected = "    Mix: 100%\n    Level: -90dB\n    Tune: -1200\n    Optimize: 50\n    Glide: On\n";
@@ -121,7 +121,7 @@ public class AlgorithmPrinterTest {
         shiftDual.getTune1().setValue(-1200);
         shiftDual.getOptimize().setValue(10);
         shiftDual.getTune2().setValue(-500);
-        shiftDual.isGlide().setValue(true);
+        shiftDual.getGlide().setValue(true);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Tune1: -1200\n    Optimize: 10\n    Tune2: -500\n    Glide: On\n";
         String actual = AlgorithmPrinter.print(shiftDual);
@@ -666,7 +666,7 @@ public class AlgorithmPrinterTest {
         delayMono.setTime(new BeatRate("Time", 4, 3));
         delayMono.getFeedback().setValue(10);
         delayMono.getInsert().setValue(3);
-        delayMono.isClear().setValue(false);
+        delayMono.getClear().setValue(false);
 
         String expected = "    Mix: 10%\n    Level: 0dB\n    Time: 4:3\n    Fbk: +10%\n    Fbk insert: Delay\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayMono);
@@ -682,7 +682,7 @@ public class AlgorithmPrinterTest {
         delayStereo.setTime(new BeatRate("Time", 2, 4));
         delayStereo.getFeedback().setValue(20);
         delayStereo.getInsert().setValue(3);
-        delayStereo.isClear().setValue(false);
+        delayStereo.getClear().setValue(false);
 
         String expected = "    Mix: 20%\n    Level: 0dB\n    Time: 2:4\n    Fbk: +20%\n    Fbk insert: Delay\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayStereo);
@@ -706,7 +706,7 @@ public class AlgorithmPrinterTest {
         delayDual.getFeedback2().setValue(10);
         delayDual.getXFbk1().setValue(0);
         delayDual.getXFbk2().setValue(0);
-        delayDual.isClear().setValue(false);
+        delayDual.getClear().setValue(false);
 
         String expected = "    Mix: 25%\n    Level: 0dB\n    Time1: 3:4\n    Time2: 4:3\n    Lvl 1: 0dB\n    Lvl 2: 0dB\n    Pan 1: 50L\n    Pan 2: 50R\n    Fbk 1: +10%\n    Fbk insert: Delay\n    Fbk 2: +10%\n    XFbk1: 0%\n    XFbk2: 0%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayDual);
@@ -723,7 +723,7 @@ public class AlgorithmPrinterTest {
         echoMono.getFeedback().setValue(-15);
         echoMono.getInsert().setValue(3);
         echoMono.getDamp().setValue(20);
-        echoMono.isClear().setValue(false);
+        echoMono.getClear().setValue(false);
 
         String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Fbk: -15%\n    Fbk insert: Delay\n    Damp: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoMono);
@@ -740,7 +740,7 @@ public class AlgorithmPrinterTest {
         echoStereo.getFeedback().setValue(0);
         echoStereo.getInsert().setValue(3);
         echoStereo.getDamp().setValue(16);
-        echoStereo.isClear().setValue(false);
+        echoStereo.getClear().setValue(false);
 
         String expected = "    Mix: 0%\n    Level: 0dB\n    Time: 1:1\n    Fbk: 0%\n    Fbk insert: Delay\n    Damp: 16%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoStereo);
@@ -762,7 +762,7 @@ public class AlgorithmPrinterTest {
         echoDual.getFeedback2().setValue(1);
         echoDual.getDamp1().setValue(20);
         echoDual.getDamp2().setValue(20);
-        echoDual.isClear().setValue(false);
+        echoDual.getClear().setValue(false);
 
         String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Lvl 1: 0dB\n    Lvl 2: 0dB\n    Fbk 1: +1%\n    Fbk insert: Delay\n    Fbk 2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoDual);
@@ -778,11 +778,11 @@ public class AlgorithmPrinterTest {
         jamMan.getSize().setValue(250);
         jamMan.getFeedback().setValue(0);
         jamMan.getInsert().setValue(3);
-        jamMan.isClear().setValue(false);
-        jamMan.isLayer().setValue(false);
-        jamMan.isReplace().setValue(false);
-        jamMan.isDelay().setValue(false);
-        jamMan.isMute().setValue(false);
+        jamMan.getClear().setValue(false);
+        jamMan.getLayer().setValue(false);
+        jamMan.getReplace().setValue(false);
+        jamMan.getDelay().setValue(false);
+        jamMan.getMute().setValue(false);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Fbk: 0%\n    Fbk insert: Delay\n    Clear: Off\n    Layer: Off\n    Replc: Off\n    Delay: Off\n    MuteS: Off\n";
         String actual = AlgorithmPrinter.print(jamMan);
@@ -796,7 +796,7 @@ public class AlgorithmPrinterTest {
         chamber.getMix().setValue(28);
         chamber.getLevel().setValue(0);
         chamber.getSize().setValue(24.0);
-        chamber.isLink().setValue(true);
+        chamber.getLink().setValue(true);
         chamber.getDiff().setValue(22);
         chamber.getPreDelay().setValue(0);
         chamber.getBass().setValue(6);
@@ -818,7 +818,7 @@ public class AlgorithmPrinterTest {
         hall.getMix().setValue(20);
         hall.getLevel().setValue(0);
         hall.getSize().setValue(53.0);
-        hall.isLink().setValue(true);
+        hall.getLink().setValue(true);
         hall.getDiff().setValue(80);
         hall.getPreDelay().setValue(25);
         hall.getBass().setValue(5);
@@ -840,7 +840,7 @@ public class AlgorithmPrinterTest {
         plate.getMix().setValue(100);
         plate.getLevel().setValue(6);
         plate.getSize().setValue(22.5);
-        plate.isLink().setValue(true);
+        plate.getLink().setValue(true);
         plate.getDiff().setValue(66);
         plate.getPreDelay().setValue(169);
         plate.getBass().setValue(5);
@@ -862,7 +862,7 @@ public class AlgorithmPrinterTest {
         ambience.getMix().setValue(18);
         ambience.getLevel().setValue(0);
         ambience.getSize().setValue(24.5);
-        ambience.isLink().setValue(true);
+        ambience.getLink().setValue(true);
         ambience.getDiff().setValue(60);
         ambience.getPreDelay().setValue(7);
         ambience.getDecayTime().setValue(51);
