@@ -89,11 +89,7 @@ public class ProgramPrinter {
         sb.append("    Envelope:\n").append(printEnvelopeGenerator(program.getEnvelopeGenerator()));
         sb.append("  Mix:\n");
         sb.append("    Send:\n").append(printSendMix(program.getSendMix()));
-        sb.append("    Post:\n");
-        PostMix postMix = program.getPostMix();
-        sb.append("  ").append(printParameter(postMix.getPostMix()));
-        sb.append("  ").append(printParameter(postMix.getPostLevel()));
-        sb.append("  ").append(printParameter(postMix.getPostBypassLevel()));
+        sb.append("    Post:\n").append(printPostMix(program.getPostMix()));
         if (program.getEffect1() != null) {
             sb.append("    FX1:\n");
             sb.append("  ").append(printParameter(program.getEffect1().getMix()));
@@ -329,6 +325,14 @@ public class ProgramPrinter {
         final StringBuilder sb = new StringBuilder();
         sb.append("  ").append(printParameter(sendMix.getSendLevel()));
         sb.append("  ").append(printParameter(sendMix.getSendBypassLevel()));
+        return sb.toString();
+    }
+
+    static String printPostMix(final PostMix postMix) {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("  ").append(printParameter(postMix.getPostMix()));
+        sb.append("  ").append(printParameter(postMix.getPostLevel()));
+        sb.append("  ").append(printParameter(postMix.getPostBypassLevel()));
         return sb.toString();
     }
 

@@ -23,6 +23,7 @@ import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
+import info.carlwithak.mpxg2.model.PostMix;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.SendMix;
@@ -263,6 +264,17 @@ public class ProgramPrinterTest {
 
         String expected = "      Level: 0\n      Bypass Level: 0\n";
         assertThat(ProgramPrinter.printSendMix(sendMix), is(expected));
+    }
+
+    @Test
+    public void testPrintPostMix() throws PrintException {
+        PostMix postMix = new PostMix();
+        postMix.getPostMix().setValue(100);
+        postMix.getPostLevel().setValue(0);
+        postMix.getPostBypassLevel().setValue(0);
+
+        String expected = "      Mix: 100%\n      Level: 0dB\n      Bypass Level: 0dB\n";
+        assertThat(ProgramPrinter.printPostMix(postMix), is(expected));
     }
 
     @Test
