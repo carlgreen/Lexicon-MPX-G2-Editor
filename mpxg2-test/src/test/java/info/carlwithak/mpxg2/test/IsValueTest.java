@@ -37,6 +37,7 @@ import static org.mockito.Mockito.when;
 public class IsValueTest {
     private final GenericValue<String> value = new GenericValue<String>(null, null, null, null);
     private final Matcher<GenericValue<String>> isValue = value("something");
+    private final Matcher<GenericValue<String>> nullIsValue = value(null);
 
     @Test
     public void testMatches() {
@@ -45,6 +46,9 @@ public class IsValueTest {
         assertThat(isValue.matches(value), is(true));
         value.setValue("something else");
         assertThat(isValue.matches(value), is(false));
+        value.setValue(null);
+        assertThat(isValue.matches(value), is(false));
+        assertThat(nullIsValue.matches(value), is(true));
     }
 
     @Test

@@ -24,16 +24,18 @@ import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 /**
  * Hamcrest matcher for beat rate parameters.
  *
  * @author Carl Green
  */
 public class IsBeat extends BaseMatcher<Rate> {
-    private final int value1;
-    private final int value2;
+    private final Integer value1;
+    private final Integer value2;
 
-    public IsBeat(final int value1, final int value2) {
+    public IsBeat(final Integer value1, final Integer value2) {
         this.value1 = value1;
         this.value2 = value2;
     }
@@ -42,7 +44,7 @@ public class IsBeat extends BaseMatcher<Rate> {
     public boolean matches(final Object item) {
         if (item instanceof BeatRate) {
             BeatRate rate = (BeatRate) item;
-            return value1 == rate.getMeasures() && value2 == rate.getBeats();
+            return equalTo(value1).matches(rate.getMeasures()) && equalTo(value2).matches(rate.getBeats());
         }
         return false;
     }
@@ -53,7 +55,7 @@ public class IsBeat extends BaseMatcher<Rate> {
     }
 
     @Factory
-    public static Matcher<Rate> beat(int value1, int value2) {
+    public static Matcher<Rate> beat(Integer value1, Integer value2) {
         return new IsBeat(value1, value2);
     }
 

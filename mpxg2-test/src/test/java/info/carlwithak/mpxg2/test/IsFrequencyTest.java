@@ -38,6 +38,7 @@ import static org.mockito.Mockito.when;
 public class IsFrequencyTest {
     private final FrequencyRate frequency = new FrequencyRate(null, null);
     private final Matcher<Rate> isFrequency = frequency(1.0);
+    private final Matcher<Rate> nullIsFrequency = frequency(null);
 
     @Test
     public void testMatches() {
@@ -46,6 +47,9 @@ public class IsFrequencyTest {
         assertThat(isFrequency.matches(frequency), is(true));
         frequency.setFrequency(1.1);
         assertThat(isFrequency.matches(frequency), is(false));
+        frequency.setFrequency(null);
+        assertThat(isFrequency.matches(frequency), is(false));
+        assertThat(nullIsFrequency.matches(frequency), is(true));
     }
 
     @Test

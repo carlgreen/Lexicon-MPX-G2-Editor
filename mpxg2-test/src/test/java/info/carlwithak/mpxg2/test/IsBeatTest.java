@@ -38,6 +38,7 @@ import static org.mockito.Mockito.when;
 public class IsBeatTest {
     private final BeatRate beat = new BeatRate(null, null, null);
     private final Matcher<Rate> isBeat = beat(1, 2);
+    private final Matcher<Rate> nullIsBeat = beat(null, null);
 
     @Test
     public void testMatches() {
@@ -51,6 +52,10 @@ public class IsBeatTest {
         beat.setMeasures(2);
         beat.setBeats(1);
         assertThat(isBeat.matches(beat), is(false));
+        beat.setMeasures(null);
+        beat.setBeats(null);
+        assertThat(isBeat.matches(beat), is(false));
+        assertThat(nullIsBeat.matches(beat), is(true));
     }
 
     @Test

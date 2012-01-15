@@ -24,15 +24,17 @@ import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 /**
  * Hamcrest matcher for frequency rate parameters.
  *
  * @author Carl Green
  */
 public class IsFrequency extends BaseMatcher<Rate> {
-    private final double value;
+    private final Double value;
 
-    public IsFrequency(final double value) {
+    public IsFrequency(final Double value) {
         this.value = value;
     }
 
@@ -40,7 +42,7 @@ public class IsFrequency extends BaseMatcher<Rate> {
     public boolean matches(final Object item) {
         if (item instanceof FrequencyRate) {
             FrequencyRate rate = (FrequencyRate) item;
-            return value == rate.getFrequency();
+            return equalTo(value).matches(rate.getFrequency());
         }
         return false;
     }
@@ -51,7 +53,7 @@ public class IsFrequency extends BaseMatcher<Rate> {
     }
 
     @Factory
-    public static Matcher<Rate> frequency(final double value) {
+    public static Matcher<Rate> frequency(final Double value) {
         return new IsFrequency(value);
     }
 

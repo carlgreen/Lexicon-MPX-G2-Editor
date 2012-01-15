@@ -23,6 +23,8 @@ import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 /**
  * Hamcrest matcher for generic value parameters.
  *
@@ -39,7 +41,7 @@ public class IsValue<T> extends BaseMatcher<GenericValue<T>> {
     public boolean matches(final Object item) {
         if (item instanceof GenericValue) {
             GenericValue parameter = (GenericValue) item;
-            return parameter.getValue().equals(value);
+            return equalTo(value).matches(parameter.getValue());
         }
         return false;
     }

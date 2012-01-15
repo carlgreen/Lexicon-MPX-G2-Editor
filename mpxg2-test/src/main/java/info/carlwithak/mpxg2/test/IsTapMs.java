@@ -24,15 +24,17 @@ import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 /**
  * Hamcrest matcher for tap ms rate parameters.
  *
  * @author Carl Green
  */
 public class IsTapMs extends BaseMatcher<Rate> {
-    private final int value;
+    private final Integer value;
 
-    public IsTapMs(final int value) {
+    public IsTapMs(final Integer value) {
         this.value = value;
     }
 
@@ -40,7 +42,7 @@ public class IsTapMs extends BaseMatcher<Rate> {
     public boolean matches(final Object item) {
         if (item instanceof TapMsRate) {
             TapMsRate rate = (TapMsRate) item;
-            return value == rate.getMs();
+            return equalTo(value).matches(rate.getMs());
         }
         return false;
     }
@@ -51,7 +53,7 @@ public class IsTapMs extends BaseMatcher<Rate> {
     }
 
     @Factory
-    public static Matcher<Rate> tapMs(final int value) {
+    public static Matcher<Rate> tapMs(final Integer value) {
         return new IsTapMs(value);
     }
 

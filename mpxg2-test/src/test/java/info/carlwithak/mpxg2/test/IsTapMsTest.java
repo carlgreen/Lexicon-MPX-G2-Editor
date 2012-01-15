@@ -38,6 +38,7 @@ import static org.mockito.Mockito.when;
 public class IsTapMsTest {
     private final TapMsRate tapMs = new TapMsRate(null, null);
     private final Matcher<Rate> isTapMs = tapMs(1);
+    private final Matcher<Rate> nullIsTapMs = tapMs(null);
 
     @Test
     public void testMatches() {
@@ -46,6 +47,9 @@ public class IsTapMsTest {
         assertThat(isTapMs.matches(tapMs), is(true));
         tapMs.setMs(2);
         assertThat(isTapMs.matches(tapMs), is(false));
+        tapMs.setMs(null);
+        assertThat(isTapMs.matches(tapMs), is(false));
+        assertThat(nullIsTapMs.matches(tapMs), is(true));
     }
 
     @Test
