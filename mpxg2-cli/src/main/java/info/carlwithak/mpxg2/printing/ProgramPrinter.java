@@ -75,11 +75,11 @@ public class ProgramPrinter {
             sb.append(printSoftRow(program, i));
         }
         sb.append("  Patching:\n");
-        sb.append(printPatch(program, program.getPatch1(), 1));
-        sb.append(printPatch(program, program.getPatch2(), 2));
-        sb.append(printPatch(program, program.getPatch3(), 3));
-        sb.append(printPatch(program, program.getPatch4(), 4));
-        sb.append(printPatch(program, program.getPatch5(), 5));
+        sb.append(printPatch(program, program.getPatch(1), 1));
+        sb.append(printPatch(program, program.getPatch(2), 2));
+        sb.append(printPatch(program, program.getPatch(3), 3));
+        sb.append(printPatch(program, program.getPatch(4), 4));
+        sb.append(printPatch(program, program.getPatch(5), 5));
         sb.append("  Controllers:\n");
         sb.append("    Knob:\n").append(printKnob(program.getKnob()));
         sb.append("    LFO 1:\n").append(printLfo(program.getLfo1()));

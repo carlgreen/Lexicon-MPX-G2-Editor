@@ -91,17 +91,11 @@ public class Program {
 
     private EffectsStatus effectsStatus;
 
-    // soft row
     private List<SoftRowItem> softRow = Arrays.<SoftRowItem>asList(null, null, null, null, null, null, null, null, null, null);
 
     private Tempo tempo;
 
-    // patching
-    private Patch patch1;
-    private Patch patch2;
-    private Patch patch3;
-    private Patch patch4;
-    private Patch patch5;
+    private Patch[] patches = new Patch[5];
 
     // controllers
     private Knob knob;
@@ -533,44 +527,12 @@ public class Program {
         this.tempo = tempo;
     }
 
-    public Patch getPatch1() {
-        return patch1;
+    public Patch getPatch(final int patchNo) {
+        return patches[patchNo - 1];
     }
 
-    public void setPatch1(final Patch patch1) {
-        this.patch1 = patch1;
-    }
-
-    public Patch getPatch2() {
-        return patch2;
-    }
-
-    public void setPatch2(final Patch patch2) {
-        this.patch2 = patch2;
-    }
-
-    public Patch getPatch3() {
-        return patch3;
-    }
-
-    public void setPatch3(final Patch patch3) {
-        this.patch3 = patch3;
-    }
-
-    public Patch getPatch4() {
-        return patch4;
-    }
-
-    public void setPatch4(final Patch patch4) {
-        this.patch4 = patch4;
-    }
-
-    public Patch getPatch5() {
-        return patch5;
-    }
-
-    public void setPatch5(final Patch patch5) {
-        this.patch5 = patch5;
+    public void setPatch(final int patchNo, final Patch patch) {
+        this.patches[patchNo - 1] = patch;
     }
 
     public Knob getKnob() {

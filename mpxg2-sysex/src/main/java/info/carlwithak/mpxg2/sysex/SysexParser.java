@@ -785,11 +785,11 @@ public class SysexParser {
         program.setSendMix(sendMix);
 
         // patching
-        program.setPatch1(readPatch(program, Arrays.copyOfRange(objectData, 654, 678)));
-        program.setPatch2(readPatch(program, Arrays.copyOfRange(objectData, 678, 702)));
-        program.setPatch3(readPatch(program, Arrays.copyOfRange(objectData, 702, 726)));
-        program.setPatch4(readPatch(program, Arrays.copyOfRange(objectData, 726, 750)));
-        program.setPatch5(readPatch(program, Arrays.copyOfRange(objectData, 750, 774)));
+        program.setPatch(1, readPatch(program, Arrays.copyOfRange(objectData, 654, 678)));
+        program.setPatch(2, readPatch(program, Arrays.copyOfRange(objectData, 678, 702)));
+        program.setPatch(3, readPatch(program, Arrays.copyOfRange(objectData, 702, 726)));
+        program.setPatch(4, readPatch(program, Arrays.copyOfRange(objectData, 726, 750)));
+        program.setPatch(5, readPatch(program, Arrays.copyOfRange(objectData, 750, 774)));
 
         // unused bytes 902 - 904
 
