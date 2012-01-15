@@ -122,9 +122,7 @@ public class Program {
 
     // mix
     private SendMix sendMix;
-    private GenericValue<Integer> postMix = new GenericValue<Integer>("Mix", "%", 0, 100);
-    private GenericValue<Integer> postLevel = new GenericValue<Integer>("Level", "dB", -90, 6);
-    private GenericValue<Integer> postBypassLevel = new GenericValue<Integer>("Bypass Level", "dB", -90, 6);
+    private PostMix postMix;
 
     private int programNumber;
 
@@ -663,28 +661,12 @@ public class Program {
         this.sendMix = sendMix;
     }
 
-    public GenericValue<Integer> getPostMix() {
+    public PostMix getPostMix() {
         return postMix;
     }
 
-    public void setPostMix(final int postMix) {
-        this.postMix.setValue(postMix);
-    }
-
-    public GenericValue<Integer> getPostLevel() {
-        return postLevel;
-    }
-
-    public void setPostLevel(final int postLevel) {
-        this.postLevel.setValue(postLevel);
-    }
-
-    public GenericValue<Integer> getPostBypassLevel() {
-        return postBypassLevel;
-    }
-
-    public void setPostBypassLevel(final int postBypassLevel) {
-        this.postBypassLevel.setValue(postBypassLevel);
+    public void setPostMix(final PostMix postMix) {
+        this.postMix = postMix;
     }
 
     public int getProgramNumber() {
@@ -736,6 +718,9 @@ public class Program {
                 break;
             case 12:
                 dataObject = getEnvelopeGenerator();
+                break;
+            case 15:
+                dataObject = getPostMix();
                 break;
             case 16:
                 dataObject = getSendMix();

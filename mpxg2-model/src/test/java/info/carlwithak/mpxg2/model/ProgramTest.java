@@ -385,6 +385,8 @@ public class ProgramTest {
         assertThat(program.getEffect(11), is(notNullValue()));
         program.setEnvelopeGenerator(mock(EnvelopeGenerator.class));
         assertThat(program.getEffect(12), is(notNullValue()));
+        program.setPostMix(mock(PostMix.class));
+        assertThat(program.getEffect(15), is(notNullValue()));
         program.setSendMix(mock(SendMix.class));
         assertThat(program.getEffect(16), is(notNullValue()));
         program.setNoiseGate(mock(NoiseGate.class));

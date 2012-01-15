@@ -25,6 +25,7 @@ import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
+import info.carlwithak.mpxg2.model.PostMix;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.RoutingData;
@@ -767,13 +768,13 @@ public class SysexParser {
 
         // Mix
         int postLevel = readInt(objectData, 892, 2);
-        program.setPostLevel(postLevel);
-
         int postBypassLevel = readInt(objectData, 894, 2);
-        program.setPostBypassLevel(postBypassLevel);
-
         int postMix = readInt(objectData, 896, 2);
-        program.setPostMix(postMix);
+        PostMix postMixData = new PostMix();
+        postMixData.getPostLevel().setValue(postLevel);
+        postMixData.getPostBypassLevel().setValue(postBypassLevel);
+        postMixData.getPostMix().setValue(postMix);
+        program.setPostMix(postMixData);
 
         SendMix sendMix = new SendMix();
         int sendLevel = readInt(objectData, 898, 2);

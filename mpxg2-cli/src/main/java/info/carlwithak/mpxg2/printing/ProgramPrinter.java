@@ -24,6 +24,7 @@ import info.carlwithak.mpxg2.model.Knob;
 import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Patch;
+import info.carlwithak.mpxg2.model.PostMix;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
 import info.carlwithak.mpxg2.model.SendMix;
@@ -89,9 +90,10 @@ public class ProgramPrinter {
         sb.append("  Mix:\n");
         sb.append("    Send:\n").append(printSendMix(program.getSendMix()));
         sb.append("    Post:\n");
-        sb.append("  ").append(printParameter(program.getPostMix()));
-        sb.append("  ").append(printParameter(program.getPostLevel()));
-        sb.append("  ").append(printParameter(program.getPostBypassLevel()));
+        PostMix postMix = program.getPostMix();
+        sb.append("  ").append(printParameter(postMix.getPostMix()));
+        sb.append("  ").append(printParameter(postMix.getPostLevel()));
+        sb.append("  ").append(printParameter(postMix.getPostBypassLevel()));
         if (program.getEffect1() != null) {
             sb.append("    FX1:\n");
             sb.append("  ").append(printParameter(program.getEffect1().getMix()));
