@@ -25,6 +25,9 @@ import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
+import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.Parameter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -38,11 +41,14 @@ import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsInstanceOf.instanceOf;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.mock;
 
 /**
  * Tests for SysexParser, using real files dumped from the MPX G2.
@@ -535,4 +541,65 @@ public class SysexParserTest {
         assertThat(envelopeGenerator.getATrim(), is(value(100)));
         assertThat(envelopeGenerator.getResponse(), is(value(64)));
     }
+
+    @Test
+    public void testCreatePatchDestinationParameterFromGenericValueInteger() throws ParseException {
+        GenericValue<Integer> input = new GenericValue<Integer>("a1", "b", -1, 1);
+        input.setValue(-1);
+        Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 1);
+        assertThat(actual, is(instanceOf(GenericValue.class)));
+        GenericValue<Integer> val = (GenericValue<Integer>) actual;
+        assertThat(actual.getName(), (is("a2")));
+        assertThat(actual.getUnit(), (is("b")));
+        assertThat(val.getMinValue(), (is(-1)));
+        assertThat(val.getMaxValue(), (is(1)));
+        assertThat(val.getValue(), (is(1)));
+    }
+
+    @Test
+    public void testCreatePatchDestinationParameterFromGenericValueBoolean() throws ParseException {
+        GenericValue<Boolean> input = new GenericValue<Boolean>("a1", "b", false, true);
+        input.setValue(false);
+        Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 1);
+        assertThat(actual, is(instanceOf(GenericValue.class)));
+        GenericValue<Boolean> val = (GenericValue<Boolean>) actual;
+        assertThat(actual.getName(), (is("a2")));
+        assertThat(actual.getUnit(), (is("b")));
+        assertThat(val.getMinValue(), (is(false)));
+        assertThat(val.getMaxValue(), (is(true)));
+        assertThat(val.getValue(), (is(true)));
+    }
+
+    @Test
+    public void testCreatePatchDestinationParameterFromUnsetGenericValue() throws ParseException {
+        GenericValue<Integer> input = new GenericValue<Integer>("a1", "b", -1, 1);
+        input.setValue(-1);
+        Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 0x8000);
+        assertThat(actual, is(instanceOf(GenericValue.class)));
+        GenericValue<Integer> val = (GenericValue<Integer>) actual;
+        assertThat(val.getValue(), (is(nullValue())));
+    }
+
+    @Test
+    public void testCreatePatchDestinationParameterFromRate() throws ParseException {
+        FrequencyRate input = new FrequencyRate("a", 1.0);
+        Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 0xc8);
+        assertThat(actual, is(instanceOf(FrequencyRate.class)));
+        FrequencyRate val = (FrequencyRate) actual;
+        assertThat(actual.getName(), (is("a2")));
+        assertThat(val.getFrequency(), (is(2.0)));
+    }
+
+    @Test(expected = ParseException.class)
+    public void testCreatePatchDestinationParameterFromUnsupportedType() throws ParseException {
+        Parameter parameter = mock(Parameter.class);
+        SysexParser.createPatchDestinationParameter(parameter, null, 0);
+    }
+
+    @Test(expected = ParseException.class)
+    public void testCreatePatchDestinationParameterFromUnsupportedGenericType() throws ParseException {
+        Parameter parameter = mock(GenericValue.class);
+        SysexParser.createPatchDestinationParameter(parameter, null, 0);
+    }
+
 }

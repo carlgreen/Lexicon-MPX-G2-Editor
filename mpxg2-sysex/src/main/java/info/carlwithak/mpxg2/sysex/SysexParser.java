@@ -878,7 +878,7 @@ public class SysexParser {
     }
 
     @SuppressWarnings("unchecked")
-    private static Parameter createPatchDestinationParameter(final Parameter baseParameter, final String name, final int value) throws ParseException {
+    static Parameter createPatchDestinationParameter(final Parameter baseParameter, final String name, final int value) throws ParseException {
         Parameter destinationParameter = null;
         if (baseParameter instanceof GenericValue) {
             try {
@@ -890,7 +890,7 @@ public class SysexParser {
                 if (((GenericValue) baseParameter).getValue() instanceof Integer) {
                     ((GenericValue<Integer>) destinationParameter).setValue(value);
                 } else if (((GenericValue) baseParameter).getValue() instanceof Boolean) {
-                    ((GenericValue<Boolean>) destinationParameter).setValue(value != 0);
+                    ((GenericValue<Boolean>) destinationParameter).setValue(Util.parseBoolean(value));
                 }
             }
         } else if (baseParameter instanceof Rate) {
