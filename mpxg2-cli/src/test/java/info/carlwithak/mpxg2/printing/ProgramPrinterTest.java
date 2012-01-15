@@ -118,7 +118,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintSoftrow_Knob() throws PrintException {
+    public void testPrintSoftrow_Knob() {
         Knob knob = new Knob();
 
         Program program = new Program();
@@ -132,7 +132,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintPatch_Knob() throws PrintException {
+    public void testPrintPatch_Knob() {
         OneBandMono oneBandMono = new OneBandMono();
 
         Patch patch = new Patch();
@@ -163,7 +163,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintPatch_toSendLevel() throws PrintException {
+    public void testPrintPatch_toSendLevel() {
         Patch patch = new Patch();
         patch.setSource(3);
         patch.setSourceMin(0);
@@ -202,7 +202,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintLfo() throws PrintException {
+    public void testPrintLfo() {
         Lfo lfo = new Lfo();
         lfo.getMode().setValue(1);
         lfo.setRate(new FrequencyRate("Rate", 0.6));
@@ -218,7 +218,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintRandom() throws PrintException {
+    public void testPrintRandom() {
         Random random = new Random();
         random.getLow().setValue(0);
         random.getHigh().setValue(50);
@@ -230,7 +230,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintAb() throws PrintException {
+    public void testPrintAb() {
         Ab ab = new Ab();
         ab.getMode().setValue(0);
         ab.getARate().setValue(100);
@@ -244,7 +244,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintEnvelopeGenerator() throws PrintException {
+    public void testPrintEnvelopeGenerator() {
         EnvelopeGenerator envelopeGenerator = new EnvelopeGenerator();
         envelopeGenerator.getSrc1().setValue(1);
         envelopeGenerator.getSrc2().setValue(0);
@@ -257,7 +257,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintSendMix() throws PrintException {
+    public void testPrintSendMix() {
         SendMix sendMix = new SendMix();
         sendMix.getSendLevel().setValue(0);
         sendMix.getSendBypassLevel().setValue(0);
@@ -267,7 +267,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintPostMix() throws PrintException {
+    public void testPrintPostMix() {
         PostMix postMix = new PostMix();
         postMix.getPostMix().setValue(100);
         postMix.getPostLevel().setValue(0);
@@ -278,7 +278,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintTempo() throws PrintException {
+    public void testPrintTempo() {
         Tempo tempo = new Tempo();
         tempo.getRate().setValue(170);
         tempo.getSource().setValue(0);
@@ -292,7 +292,7 @@ public class ProgramPrinterTest {
     }
 
     @Test
-    public void testPrintNoiseGate() throws PrintException {
+    public void testPrintNoiseGate() {
         NoiseGate noiseGate = new NoiseGate();
         noiseGate.getEnable().setValue(2);
         noiseGate.getSend().setValue(true);

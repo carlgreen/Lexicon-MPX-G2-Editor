@@ -233,7 +233,7 @@ public class ProgramPrinter {
         }
     }
 
-    static String printSoftRow(final Program program, final int i) throws PrintException {
+    static String printSoftRow(final Program program, final int i) {
         // TODO should be null if it's not used
         if (program.getSoftRowEffectType(i) == 255 || program.getSoftRowParameter(i) == 255) {
             return "";
@@ -250,7 +250,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    static String printPatch(final Program program, final Patch patch, final int patchNumber) throws PrintException {
+    static String printPatch(final Program program, final Patch patch, final int patchNumber) {
         if (patch.getSourceIndex() == 0) {
             return "";
         }
@@ -282,7 +282,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    static String printLfo(final Lfo lfo) throws PrintException {
+    static String printLfo(final Lfo lfo) {
         final StringBuilder sb = new StringBuilder();
         sb.append("  ").append(printParameter(lfo.getMode()));
         sb.append("  ").append(printParameter(lfo.getRate()));
@@ -294,7 +294,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    static String printRandom(final Random random) throws PrintException {
+    static String printRandom(final Random random) {
         final StringBuilder sb = new StringBuilder();
         sb.append("  ").append(printParameter(random.getLow()));
         sb.append("  ").append(printParameter(random.getHigh()));
@@ -312,7 +312,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    static String printEnvelopeGenerator(final EnvelopeGenerator envelopeGenerator) throws PrintException {
+    static String printEnvelopeGenerator(final EnvelopeGenerator envelopeGenerator) {
         final StringBuilder sb = new StringBuilder();
         sb.append("  ").append(printParameter(envelopeGenerator.getSrc1()));
         sb.append("  ").append(printParameter(envelopeGenerator.getSrc2()));
@@ -361,7 +361,7 @@ public class ProgramPrinter {
         return sb.toString();
     }
 
-    private static String toePatchToString(final int toePatch) throws PrintException {
+    private static String toePatchToString(final int toePatch) {
         return TOE_PATCH_STATES[toePatch];
     }
 
