@@ -25,6 +25,67 @@ import info.carlwithak.mpxg2.model.Lfo;
 import info.carlwithak.mpxg2.model.NoiseGate;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.Random;
+import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
+import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
+import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
+import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
+import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
+import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
+import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
+import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
+import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
+import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
+import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
+import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah2;
+import info.carlwithak.mpxg2.model.effects.algorithms.Phaser;
+import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Preamp;
+import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
+import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
+import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
+import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
+import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
@@ -42,6 +103,7 @@ import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
+import static org.hamcrest.core.IsNull.notNullValue;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -463,6 +525,203 @@ public class SysexParserTest {
             offset += b.length;
         }
         return result;
+    }
+
+    @Test
+    public void testParseEffect1() throws ParseException {
+        final byte[] effect1ParameterData = new byte[64];
+        // TODO replace nulls with classes and remove assumption
+        final Class[] classes = {
+            null,
+            null,
+            DetuneDual.class,
+            ShiftMono.class,
+            null,
+            ShiftDual.class,
+            DiatonicHmy.class,
+            null, //Panner.class,
+            AutoPan.class,
+            TremoloMono.class,
+            null, //TremoloStereo.class,
+            UniVybe.class,
+            CustomVybe.class,
+            Phaser.class,
+            OrangePhase.class,
+            RedComp.class,
+            BlueComp.class,
+            null, //DigiDrive1.class,
+            null, //DigiDrive2.class,
+            OctaBuzz.class,
+            SweepFilter.class,
+            null,
+            Wah1.class,
+            Wah2.class,
+            PedalWah1.class,
+            PedalWah2.class,
+            VolumeMono.class,
+            VolumeStereo.class,
+            null, //VolumeDual.class,
+            PedalVol.class
+        };
+        for (int i = 0; i < classes.length; i++) {
+            if (notNullValue().matches(classes[i])) {
+                assertThat(SysexParser.parseEffect1(i + 1, effect1ParameterData), is(instanceOf(classes[i])));
+            }
+        }
+    }
+
+    @Test
+    public void testParseEffect2() throws ParseException {
+        final byte[] effect2ParameterData = new byte[64];
+        // TODO replace nulls with classes and remove assumption
+        final Class[] classes = {
+            Panner.class,
+            AutoPan.class,
+            TremoloMono.class,
+            TremoloStereo.class,
+            null, //UniVybe.class,
+            null, //CustomVybe.class,
+            null, //Phaser.class,
+            OrangePhase.class,
+            RedComp.class,
+            BlueComp.class,
+            null, //DigiDrive1.class,
+            null, //DigiDrive2.class,
+            OctaBuzz.class,
+            SweepFilter.class,
+            null,
+            Wah1.class,
+            Wah2.class,
+            PedalWah1.class,
+            PedalWah2.class,
+            VolumeMono.class,
+            VolumeStereo.class,
+            VolumeDual.class,
+            null //PedalVol.class
+        };
+        for (int i = 0; i < classes.length; i++) {
+            if (notNullValue().matches(classes[i])) {
+                assertThat(SysexParser.parseEffect2(i + 1, effect2ParameterData), is(instanceOf(classes[i])));
+            }
+        }
+    }
+
+    @Test
+    public void testParseChorus() throws ParseException {
+        final byte[] chorusParameterData = new byte[64];
+        // TODO replace nulls with classes and remove assumption
+        final Class[] classes = {
+            ChorusAlgorithm.class,
+            ChorusDetuneMono.class,
+            FlangerMono.class,
+            Flanger24Mono.class,
+            FlangerStereo.class,
+            RotaryCab.class,
+            Aerosol.class,
+            null, //Orbits.class,
+            Centrifuge1.class,
+            null, //Centrifuge2.class,
+            null, //Comb1.class,
+            null, //Comb2.class,
+            ChorusVolumeMono.class,
+            ChorusVolumeStereo.class,
+            ChorusVolumeDual.class,
+            ChorusPedalVol.class,
+            null //ExtPedalVol.class
+        };
+        for (int i = 0; i < classes.length; i++) {
+            if (notNullValue().matches(classes[i])) {
+                assertThat(SysexParser.parseChorus(i + 1, chorusParameterData), is(instanceOf(classes[i])));
+            }
+        }
+    }
+
+    @Test
+    public void testParseDelay() throws ParseException {
+        final byte[] delayParameterData = new byte[64];
+        // TODO replace nulls with classes and remove assumption
+        final Class[] classes = {
+            DelayMono.class,
+            DelayStereo.class,
+            DelayDual.class,
+            EchoMono.class,
+            EchoStereo.class,
+            EchoDual.class,
+            null, // Looper.class,
+            JamMan.class,
+            null // Ducker.class
+        };
+        for (int i = 0; i < classes.length; i++) {
+            if (notNullValue().matches(classes[i])) {
+                assertThat(SysexParser.parseDelay(i + 1, delayParameterData), is(instanceOf(classes[i])));
+            }
+        }
+    }
+
+    @Test
+    public void testParseReverb() throws ParseException {
+        final byte[] reverbParameterData = new byte[64];
+        // TODO replace nulls with classes and remove assumption
+        final Class[] classes = {
+            Chamber.class,
+            Hall.class,
+            Plate.class,
+            Ambience.class,
+            null // Gate.class
+        };
+        for (int i = 0; i < classes.length; i++) {
+            if (notNullValue().matches(classes[i])) {
+                assertThat(SysexParser.parseReverb(i + 1, reverbParameterData), is(instanceOf(classes[i])));
+            }
+        }
+    }
+
+    @Test
+    public void testParseEq() throws ParseException {
+        final byte[] eqParameterData = new byte[64];
+        // TODO replace nulls with classes and remove assumption
+        final Class[] classes = {
+            OneBandMono.class,
+            TwoBandMono.class,
+            null,
+            null,
+            null,
+            TwoBandStereo.class,
+            null,
+            null,
+            null,
+            Crossover.class,
+            EqVolumeMono.class,
+            EqVolumeStereo.class,
+            EqVolumeDual.class,
+            EqPedalVol.class,
+            null
+        };
+        for (int i = 0; i < classes.length; i++) {
+            if (notNullValue().matches(classes[i])) {
+                assertThat(SysexParser.parseEq(i + 1, eqParameterData), is(instanceOf(classes[i])));
+            }
+        }
+    }
+
+    @Test
+    public void testParseGain() throws ParseException {
+        final byte[] gainParameterData = new byte[64];
+        // TODO replace nulls with classes and remove assumption
+        final Class[] classes = {
+            Tone.class,
+            Crunch.class,
+            Screamer.class,
+            Overdrive.class,
+            Distortion.class,
+            Preamp.class,
+            null // SplitPreamp.class
+        };
+        for (int i = 0; i < classes.length; i++) {
+            if (notNullValue().matches(classes[i])) {
+                assertThat(SysexParser.parseGain(i + 1, gainParameterData), is(instanceOf(classes[i])));
+            }
+        }
     }
 
     /**
