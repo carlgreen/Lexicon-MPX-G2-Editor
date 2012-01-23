@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.Eq;
+import info.carlwithak.mpxg2.model.parameters.EqModeValue;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 
@@ -29,22 +30,22 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class FourBandMono extends Eq {
     private static final String NAME = "4-Band (M)";
 
-    private GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gain4 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fc4 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Double> q1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> q2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> q3 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> q4 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Integer> mode1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> mode2 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> mode3 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> mode4 = new GenericValue<Integer>("Mode", "", 0, 2);
+    private GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
+    private GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
+    private GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain3", "dB", -72, 24);
+    private GenericValue<Integer> gain4 = new GenericValue<Integer>("Gain4", "dB", -72, 24);
+    private GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
+    private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
+    private GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc 3", "Hz", 20, 20000);
+    private GenericValue<Integer> fc4 = new GenericValue<Integer>("Fc 4", "Hz", 20, 20000);
+    private GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
+    private GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
+    private GenericValue<Double> q3 = new GenericValue<Double>("Q 3", "", 0.1, 10.0);
+    private GenericValue<Double> q4 = new GenericValue<Double>("Q 4", "", 0.1, 10.0);
+    private EqModeValue mode1 = new EqModeValue("Mode1");
+    private EqModeValue mode2 = new EqModeValue("Mode2");
+    private EqModeValue mode3 = new EqModeValue("Mode3");
+    private EqModeValue mode4 = new EqModeValue("Mode4");
 
     @Override
     public String getName() {
@@ -161,19 +162,19 @@ public class FourBandMono extends Eq {
         return q4;
     }
 
-    public GenericValue<Integer> getMode1() {
+    public EqModeValue getMode1() {
         return mode1;
     }
 
-    public GenericValue<Integer> getMode2() {
+    public EqModeValue getMode2() {
         return mode2;
     }
 
-    public GenericValue<Integer> getMode3() {
+    public EqModeValue getMode3() {
         return mode3;
     }
 
-    public GenericValue<Integer> getMode4() {
+    public EqModeValue getMode4() {
         return mode4;
     }
 
