@@ -56,6 +56,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.FourBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
@@ -684,7 +685,7 @@ public class SysexParserTest {
             OneBandMono.class,
             TwoBandMono.class,
             null,
-            null,
+            FourBandMono.class,
             null,
             TwoBandStereo.class,
             null,

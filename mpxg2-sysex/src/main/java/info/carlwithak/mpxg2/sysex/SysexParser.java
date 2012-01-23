@@ -74,6 +74,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Flanger24MonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.FourBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OctaBuzzParser;
@@ -794,7 +795,9 @@ public class SysexParser {
                 eq = TwoBandMonoParser.parse(eqParameters);
                 break;
             // TODO 3 - 3-Band (M)
-            // TODO 4 - 4-Band (M)
+            case 4:
+                eq = FourBandMonoParser.parse(eqParameters);
+                break;
             // TODO 5 - 1-Band (S)
             case 6:
                 eq = TwoBandStereoParser.parse(eqParameters);
