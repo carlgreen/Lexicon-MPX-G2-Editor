@@ -57,6 +57,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
 import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
+import info.carlwithak.mpxg2.model.parameters.BeatRate;
+import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import java.io.File;
 import org.junit.Test;
 
@@ -64,6 +66,7 @@ import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -238,9 +241,9 @@ public class SysexParserIT {
         assertEquals(127, patch1.getSourceMax().intValue());
         assertEquals(3, patch1.getDestinationEffectIndex().intValue());
         assertEquals(0, patch1.getDestinationParameter());
-        // TODO assertEquals(2, patch1.getDestinationMin());
-        // TODO assertEquals(0x8000, patch1.getDestinationMid());
-        // TODO assertEquals(30, patch1.getDestinationMax());
+        assertThat(((GenericValue<Integer>) patch1.getDestinationMin()), is(value(2)));
+        assertThat(((GenericValue<Integer>) patch1.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch1.getDestinationMax()), is(value(30)));
         Patch patch2 = program.getPatch(2);
         assertEquals(16, patch2.getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, patch2.getSourceMin().intValue());
@@ -248,9 +251,9 @@ public class SysexParserIT {
         assertEquals(127, patch2.getSourceMax().intValue());
         assertEquals(3, patch2.getDestinationEffectIndex().intValue());
         assertEquals(3, patch2.getDestinationParameter());
-        // TODO assertEquals(260, patch2.getDestinationMin()); // TODO 260 = 0x0104 => 4, 1 - figure out how to split this
-        // TODO assertEquals(0x8000, patch2.getDestinationMid());
-        // TODO assertEquals(516, patch2.getDestinationMax()); // TODO 516 = 0x0204 => 4, 2 - figure out how to split this
+        assertThat((BeatRate) patch2.getDestinationMin(), is(beat(4, 1)));
+        assertThat((BeatRate) patch2.getDestinationMid(), is(beat(null, null)));
+        assertThat((BeatRate) patch2.getDestinationMax(), is(beat(4, 2)));
         Patch patch3 = program.getPatch(3);
         assertEquals(16, patch3.getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, patch3.getSourceMin().intValue());
@@ -258,9 +261,9 @@ public class SysexParserIT {
         assertEquals(127, patch3.getSourceMax().intValue());
         assertEquals(3, patch3.getDestinationEffectIndex().intValue());
         assertEquals(6, patch3.getDestinationParameter());
-        // TODO assertEquals(1, patch3.getDestinationMin());
-        // TODO assertEquals(0x8000, patch3.getDestinationMid());
-        // TODO assertEquals(15, patch3.getDestinationMax());
+        assertThat(((GenericValue<Integer>) patch3.getDestinationMin()), is(value(1)));
+        assertThat(((GenericValue<Integer>) patch3.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch3.getDestinationMax()), is(value(15)));
         Patch patch4 = program.getPatch(4);
         assertEquals(16, patch4.getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, patch4.getSourceMin().intValue());
@@ -268,9 +271,9 @@ public class SysexParserIT {
         assertEquals(127, patch4.getSourceMax().intValue());
         assertEquals(3, patch4.getDestinationEffectIndex().intValue());
         assertEquals(7, patch4.getDestinationParameter());
-        // TODO assertEquals(1, patch4.getDestinationMin());
-        // TODO assertEquals(0x8000, patch4.getDestinationMid());
-        // TODO assertEquals(4, patch4.getDestinationMax());
+        assertThat(((GenericValue<Integer>) patch4.getDestinationMin()), is(value(1)));
+        assertThat(((GenericValue<Integer>) patch4.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch4.getDestinationMax()), is(value(4)));
         Patch patch5 = program.getPatch(5);
         assertEquals(157, patch5.getSourceIndex()); // TODO why is the source 157 (0x9d) not 21 (0x15)?
         assertEquals(0, patch5.getSourceMin().intValue());
@@ -278,9 +281,9 @@ public class SysexParserIT {
         assertEquals(127, patch5.getSourceMax().intValue());
         assertEquals(16, patch5.getDestinationEffectIndex().intValue());
         assertEquals(0, patch5.getDestinationParameter());
-        // TODO assertEquals(0, patch5.getDestinationMin());
-        // TODO assertEquals(0x8000, patch5.getDestinationMid());
-        // TODO assertEquals(6, patch5.getDestinationMax());
+        assertThat(((GenericValue<Integer>) patch5.getDestinationMin()), is(value(0)));
+        assertThat(((GenericValue<Integer>) patch5.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch5.getDestinationMax()), is(value(6)));
 
         Knob knob = program.getKnob();
         assertThat(knob.getValue(), is(value(50)));
@@ -1855,9 +1858,9 @@ public class SysexParserIT {
         assertEquals(127, patch1.getSourceMax().intValue());
         assertNull(patch1.getDestinationEffectIndex());
         assertEquals(255, patch1.getDestinationParameter());
-        // TODO assertEquals(0, patch1.getDestinationMin());
-        // TODO assertEquals(0x8000, patch1.getDestinationMid());
-        // TODO assertEquals(0, patch1.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch1.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch1.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch1.getDestinationMax(), is(nullValue()));
         Patch patch2 = program.getPatch(2);
         assertEquals(0, patch2.getSourceIndex());
         assertEquals(0, patch2.getSourceMin().intValue());
@@ -1865,9 +1868,9 @@ public class SysexParserIT {
         assertEquals(127, patch2.getSourceMax().intValue());
         assertNull(patch2.getDestinationEffectIndex());
         assertEquals(255, patch2.getDestinationParameter());
-        // TODO assertEquals(0, patch2.getDestinationMin());
-        // TODO assertEquals(0x8000, patch2.getDestinationMid());
-        // TODO assertEquals(0, patch2.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch2.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch2.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch2.getDestinationMax(), is(nullValue()));
         Patch patch3 = program.getPatch(3);
         assertEquals(0, patch3.getSourceIndex());
         assertEquals(0, patch3.getSourceMin().intValue());
@@ -1875,9 +1878,9 @@ public class SysexParserIT {
         assertEquals(127, patch3.getSourceMax().intValue());
         assertNull(patch3.getDestinationEffectIndex());
         assertEquals(255, patch3.getDestinationParameter());
-        // TODO assertEquals(0, patch3.getDestinationMin());
-        // TODO assertEquals(0x8000, patch3.getDestinationMid());
-        // TODO assertEquals(0, patch3.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch3.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch3.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch3.getDestinationMax(), is(nullValue()));
         Patch patch4 = program.getPatch(4);
         assertEquals(0, patch4.getSourceIndex());
         assertEquals(0, patch4.getSourceMin().intValue());
@@ -1885,9 +1888,9 @@ public class SysexParserIT {
         assertEquals(127, patch4.getSourceMax().intValue());
         assertNull(patch4.getDestinationEffectIndex());
         assertEquals(255, patch4.getDestinationParameter());
-        // TODO assertEquals(0, patch4.getDestinationMin());
-        // TODO assertEquals(0x8000, patch4.getDestinationMid());
-        // TODO assertEquals(0, patch4.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch4.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch4.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch4.getDestinationMax(), is(nullValue()));
         Patch patch5 = program.getPatch(5);
         assertEquals(0, patch5.getSourceIndex());
         assertEquals(0, patch5.getSourceMin().intValue());
@@ -1895,9 +1898,9 @@ public class SysexParserIT {
         assertEquals(127, patch5.getSourceMax().intValue());
         assertNull(patch5.getDestinationEffectIndex());
         assertEquals(255, patch5.getDestinationParameter());
-        // TODO assertEquals(0, patch5.getDestinationMin());
-        // TODO assertEquals(0x8000, patch5.getDestinationMid());
-        // TODO assertEquals(0, patch5.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch5.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch5.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch5.getDestinationMax(), is(nullValue()));
 
         Knob knob = program.getKnob();
         assertThat(knob.getValue(), is(value(50)));
@@ -2103,9 +2106,9 @@ public class SysexParserIT {
         assertEquals(127, patch1.getSourceMax().intValue());
         assertNull(patch1.getDestinationEffectIndex());
         assertEquals(255, patch1.getDestinationParameter());
-        // TODO assertEquals(0, patch1.getDestinationMin());
-        // TODO assertEquals(0x8000, patch1.getDestinationMid());
-        // TODO assertEquals(0, patch1.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch1.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch1.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch1.getDestinationMax(), is(nullValue()));
         Patch patch2 = program.getPatch(2);
         assertEquals(0, patch2.getSourceIndex());
         assertEquals(0, patch2.getSourceMin().intValue());
@@ -2113,9 +2116,9 @@ public class SysexParserIT {
         assertEquals(127, patch2.getSourceMax().intValue());
         assertNull(patch2.getDestinationEffectIndex());
         assertEquals(255, patch2.getDestinationParameter());
-        // TODO assertEquals(0, patch2.getDestinationMin());
-        // TODO assertEquals(0x8000, patch2.getDestinationMid());
-        // TODO assertEquals(0, patch2.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch2.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch2.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch2.getDestinationMax(), is(nullValue()));
         Patch patch3 = program.getPatch(3);
         assertEquals(0, patch3.getSourceIndex());
         assertEquals(0, patch3.getSourceMin().intValue());
@@ -2123,9 +2126,9 @@ public class SysexParserIT {
         assertEquals(127, patch3.getSourceMax().intValue());
         assertNull(patch3.getDestinationEffectIndex());
         assertEquals(255, patch3.getDestinationParameter());
-        // TODO assertEquals(0, patch3.getDestinationMin());
-        // TODO assertEquals(0x8000, patch3.getDestinationMid());
-        // TODO assertEquals(0, patch3.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch3.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch3.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch3.getDestinationMax(), is(nullValue()));
         Patch patch4 = program.getPatch(4);
         assertEquals(0, patch4.getSourceIndex());
         assertEquals(0, patch4.getSourceMin().intValue());
@@ -2133,9 +2136,9 @@ public class SysexParserIT {
         assertEquals(127, patch4.getSourceMax().intValue());
         assertNull(patch4.getDestinationEffectIndex());
         assertEquals(255, patch4.getDestinationParameter());
-        // TODO assertEquals(0, patch4.getDestinationMin());
-        // TODO assertEquals(0x8000, patch4.getDestinationMid());
-        // TODO assertEquals(0, patch4.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch4.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch4.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch4.getDestinationMax(), is(nullValue()));
         Patch patch5 = program.getPatch(5);
         assertEquals(0, patch5.getSourceIndex());
         assertEquals(0, patch5.getSourceMin().intValue());
@@ -2143,9 +2146,9 @@ public class SysexParserIT {
         assertEquals(127, patch5.getSourceMax().intValue());
         assertNull(patch5.getDestinationEffectIndex());
         assertEquals(255, patch5.getDestinationParameter());
-        // TODO assertEquals(0, patch5.getDestinationMin());
-        // TODO assertEquals(0x8000, patch5.getDestinationMid());
-        // TODO assertEquals(0, patch5.getDestinationMax());
+        assertThat((GenericValue<Integer>) patch5.getDestinationMin(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch5.getDestinationMid(), is(nullValue()));
+        assertThat((GenericValue<Integer>) patch5.getDestinationMax(), is(nullValue()));
 
         Knob knob = program.getKnob();
         assertThat(knob.getValue(), is(value(50)));
