@@ -141,7 +141,7 @@ public class SysexParserTest {
         String expectedMessage = null;
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xe0});
-            expectedMessage = "Invalid Sysex ID (start)";
+            expectedMessage = "Invalid Sysex ID (start): 0xe0, expected 0xf0";
             SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
@@ -150,7 +150,7 @@ public class SysexParserTest {
 
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x05});
-            expectedMessage = "Invalid Manufacturer ID";
+            expectedMessage = "Invalid Manufacturer ID: 0x05, expected 0x06";
             SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
@@ -159,7 +159,7 @@ public class SysexParserTest {
 
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x06, 0x10});
-            expectedMessage = "Invalid Product ID";
+            expectedMessage = "Invalid Product ID: 0x10, expected 0x0f";
             SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {
@@ -168,7 +168,7 @@ public class SysexParserTest {
 
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xf0, 0x06, 0x0f, 0x00, 0x00});
-            expectedMessage = "Invalid Message Type";
+            expectedMessage = "Invalid Message Type: 0x00, expected 0x01";
             SysexParser.parsePrograms(temp);
             fail("Expected \"" + expectedMessage + "\"");
         } catch (ParseException e) {

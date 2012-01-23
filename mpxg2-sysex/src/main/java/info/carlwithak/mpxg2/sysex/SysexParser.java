@@ -194,20 +194,20 @@ public class SysexParser {
         }
 
         if (b != SYSEX_ID_START) {
-            throw new ParseException("Invalid Sysex ID (start)");
+            throw new ParseException("Invalid Sysex ID (start): " + String.format("%#04x", b) + ", expected " + String.format("%#04x", SYSEX_ID_START));
         }
         if ((b = in.read()) != LEXICON_MANUFACTURER_ID) {
-            throw new ParseException("Invalid Manufacturer ID");
+            throw new ParseException("Invalid Manufacturer ID: " + String.format("%#04x", b) + ", expected " + String.format("%#04x", LEXICON_MANUFACTURER_ID));
         }
         if ((b = in.read()) != MPXG2_PRODUCT_ID) {
-            throw new ParseException("Invalid Product ID");
+            throw new ParseException("Invalid Product ID: " + String.format("%#04x", b) + ", expected " + String.format("%#04x", MPXG2_PRODUCT_ID));
         }
 
         // ignore device ID
         in.read();
 
         if ((b = in.read()) != DATA_MESSAGE_TYPE) {
-            throw new ParseException("Invalid Message Type");
+            throw new ParseException("Invalid Message Type: " + String.format("%#04x", b) + ", expected " + String.format("%#04x", DATA_MESSAGE_TYPE));
         }
 
         Program program = new Program();
