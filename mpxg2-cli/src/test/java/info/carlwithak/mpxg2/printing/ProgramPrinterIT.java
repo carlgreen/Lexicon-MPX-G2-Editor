@@ -927,6 +927,106 @@ public class ProgramPrinterIT {
         testParseAndPrint("179_Tush");
     }
 
+    @Test
+    public void testPrintAmericanClean_StandAlone() throws Exception {
+        testParseAndPrint("180_AmericanClean");
+    }
+
+    @Test
+    public void testPrintAmericanOD_StandAlone() throws Exception {
+        testParseAndPrint("181_AmericanOD");
+    }
+
+    @Test
+    public void testPrintAmericanGain_StandAlone() throws Exception {
+        testParseAndPrint("182_AmericanGain");
+    }
+
+    @Test
+    public void testPrintRoadhouse_StandAlone() throws Exception {
+        testParseAndPrint("183_Roadhouse");
+    }
+
+    @Test
+    public void testPrintTaxmania_StandAlone() throws Exception {
+        testParseAndPrint("184_Taxmania");
+    }
+
+    @Test
+    public void testPrintBritish60s_StandAlone() throws Exception {
+        testParseAndPrint("185_British_60s");
+    }
+
+    @Test
+    public void testPrintBritish70s_StandAlone() throws Exception {
+        testParseAndPrint("186_British_70s");
+    }
+
+    @Test
+    public void testPrintBritish80s_StandAlone() throws Exception {
+        testParseAndPrint("187_British_80s");
+    }
+
+    @Test
+    public void testPrintAmericanMod_StandAlone() throws Exception {
+        testParseAndPrint("188_AmericanMod");
+    }
+
+    @Test
+    public void testPrintModernHiGain_StandAlone() throws Exception {
+        testParseAndPrint("189_ModernHiGain");
+    }
+
+    @Test
+    public void testPrintTransChorus1_StandAlone() throws Exception {
+        testParseAndPrint("190_TransChorus1");
+    }
+
+    @Test
+    public void testPrintTransChorus2_StandAlone() throws Exception {
+        testParseAndPrint("191_TransChorus2");
+    }
+
+    @Test
+    public void testPrintJazzBright_StandAlone() throws Exception {
+        testParseAndPrint("192_Jazz_Bright");
+    }
+
+    @Test
+    public void testPrintJazzDark_StandAlone() throws Exception {
+        testParseAndPrint("193_Jazz_Dark");
+    }
+
+    @Test
+    public void testPrintAcoustic_StandAlone() throws Exception {
+        testParseAndPrint("194_Acoustic");
+    }
+
+    @Test
+    public void testPrintLittleAmp_StandAlone() throws Exception {
+        testParseAndPrint("195_Little_Amp");
+    }
+
+    @Test
+    public void testPrintPhoneFilter_StandAlone() throws Exception {
+        testParseAndPrint("196_Phone_Filter");
+    }
+
+    @Test
+    public void testPrintVibroCab_StandAlone() throws Exception {
+        testParseAndPrint("197_Vibro_Cab");
+    }
+
+    @Test
+    public void testPrintCordovox_StandAlone() throws Exception {
+        testParseAndPrint("198_Cordovox");
+    }
+
+    @Test
+    public void testPrintRotaryCab_StandAlone() throws Exception {
+        testParseAndPrint("199_Rotary_Cab");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

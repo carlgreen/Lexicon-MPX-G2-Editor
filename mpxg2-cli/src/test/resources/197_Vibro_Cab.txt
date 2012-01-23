@@ -1,0 +1,188 @@
+Vibro Cab
+  Guitar Style: Blues, Clean, Rock
+  Effect Type: Chorus, Gain, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=G=E\C=1=D=R=2=O
+        |/=====/|
+  Effect 1: Auto Pan (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Rate: 0.04Hz
+    PW: 50%
+    Depth: 60%
+    Phase: 90°
+  Effect 2: Volume (S) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: +6dB
+    Volume: 100%
+  Chorus: Chorus (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Rate1: 0.51Hz
+    PW 1: 45%
+    Dpth1: 30%
+    Rate2: 0.31Hz
+    PW 2: 54%
+    Dpth2: 20%
+    Res 1: -19
+    Res 2: 0
+  Reverb: Ambience (On)
+    Toe Switch: disabled
+    Mix: 18%
+    Level: +6dB
+    Size: 37.0m
+    Link: On
+    Diff: 60%
+    P Dly: 0ms
+    DTime: 1.61s
+    D Lvl: Off
+    Rt HC: 12.8kHz
+  EQ: Crossover (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Fc: 3000Hz
+    Bal: +4
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +8dB
+    Mid: -5dB
+    Hi: 8dB
+    InLvl: -18dB
+    LoCut: 0
+    Feel: 32
+    Drive: 17
+    Tone: 20
+    Bass: +10dB
+    Trebl: +15dB
+    Level: 58dB
+  Softrow:
+    1: Gain Drive
+    2: Gain Tone
+    3: Gain Drive
+    4: Gain Bass
+    5: Gain Trebl
+    6: Gain Level
+    7: Chorus Mix
+    8: Reverb Mix
+    9: A/B ARate
+    10: A/B BRate
+  Patching:
+    Patch 1:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Chorus Rate1
+        Min: 0.51Hz
+        Mid: 4.00Hz
+        Max: 6.77Hz
+    Patch 2:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Chorus Rate2
+        Min: 0.31Hz
+        Mid: --
+        Max: 6.90Hz
+    Patch 3:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 1 Depth
+        Min: 60%
+        Mid: --
+        Max: 100%
+    Patch 4:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 1 Rate
+        Min: 0.04Hz
+        Mid: 2.00Hz
+        Max: 6.00Hz
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 5
+      BRate: 2
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +6dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 100%
+      Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: +6dB
+    Chorus:
+      Mix: 100%
+      Level: 0dB
+    Reverb:
+      Mix: 18%
+      Level: +6dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

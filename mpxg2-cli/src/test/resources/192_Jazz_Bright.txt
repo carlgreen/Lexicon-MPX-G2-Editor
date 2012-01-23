@@ -1,0 +1,119 @@
+Jazz Bright
+  Guitar Style: Clean, Jazz
+  Effect Type: Gain, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=G=C=D=E=R=2=O
+  Chorus: Chorus (Off)
+    Toe Switch: disabled
+    Mix: 40%
+    Level: +6dB
+    Rate1: 1.02Hz
+    PW 1: 45%
+    Dpth1: 28%
+    Rate2: 2.31Hz
+    PW 2: 54%
+    Dpth2: 25%
+    Res 1: -22
+    Res 2: -15
+  Reverb: Plate (On)
+    Toe Switch: disabled
+    Mix: 10%
+    Level: 0dB
+    Size: 34.5m
+    Link: On
+    Diff: 90%
+    P Dly: 148ms
+    Bass: 1.2X
+    Decay: 0.97s
+    Xovr: 2.4kHz
+    Rt HC: 6.8kHz
+    Shape: 36
+    Spred: 106
+  Gain: Tone (On)
+    Toe Switch: disabled
+    Lo: +12dB
+    Mid: -1dB
+    Hi: +12dB
+    InLvl: 0dB
+    Level: 64dB
+  Softrow:
+    1: Gain InLvl
+    2: Gain Level
+    3: Reverb Mix
+    4: Reverb Size
+    5: Reverb P Dly
+    6: Reverb Bass
+    7: Reverb Decay
+    8: Reverb Shape
+    9: Reverb Spred
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +3dB
+      Bypass Level: 0dB
+    Chorus:
+      Mix: 40%
+      Level: +6dB
+    Reverb:
+      Mix: 10%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

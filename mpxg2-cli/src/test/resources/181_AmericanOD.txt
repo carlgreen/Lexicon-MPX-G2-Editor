@@ -1,0 +1,106 @@
+American OD
+  Guitar Style: Blues, Rock
+  Effect Type: Distortion, Gain, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=E=1=2=G=D=C=R=O
+  Reverb: Ambience (On)
+    Toe Switch: disabled
+    Mix: 25%
+    Level: +6dB
+    Size: 10.0m
+    Link: On
+    Diff: 100%
+    P Dly: 0ms
+    DTime: 0.07s
+    D Lvl: Off
+    Rt HC: 12.8kHz
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +10dB
+    Mid: -14dB
+    Hi: 25dB
+    InLvl: -15dB
+    LoCut: 0
+    Feel: 32
+    Drive: 30
+    Tone: 20
+    Bass: +12dB
+    Trebl: +20dB
+    Level: 50dB
+  Softrow:
+    1: Gain InLvl
+    2: Gain LoCut
+    3: Gain Feel
+    4: Gain Drive
+    5: Gain Tone
+    6: Gain Bass
+    7: Gain Trebl
+    8: Gain Level
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    Reverb:
+      Mix: 25%
+      Level: +6dB
+  Tempo:
+    Rate: 170 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo2Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
