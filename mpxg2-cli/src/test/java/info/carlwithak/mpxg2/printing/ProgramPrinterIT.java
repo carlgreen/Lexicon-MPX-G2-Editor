@@ -24,7 +24,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -1032,11 +1033,11 @@ public class ProgramPrinterIT {
         String expected = readFile(expectedFile);
         File preset = new File(this.getClass().getClassLoader().getResource(filename + ".syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
-        String actual = ProgramPrinter.print(program);
-        assertEquals(expected, actual);
+        assertThat(ProgramPrinter.print(program), is(expected));
     }
 
     private static String readFile(final File file) throws FileNotFoundException {
-        return new Scanner(file).useDelimiter("\\Z").next();
+        final Scanner scanner = new Scanner(file).useDelimiter("\\Z");
+        return scanner.hasNext() ? scanner.next() : null;
     }
 }
