@@ -33,8 +33,8 @@ public class TwoBandMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         TwoBandMono twoBandMono = (TwoBandMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(twoBandMono.getMix()));
-        sb.append(printParameter(twoBandMono.getLevel()));
+        sb.append(printParameter(twoBandMono.mix));
+        sb.append(printParameter(twoBandMono.level));
         sb.append(printParameter(twoBandMono.getGain1()));
         sb.append(printParameter(twoBandMono.getFc1()));
         sb.append(printParameter(twoBandMono.getQ1()));

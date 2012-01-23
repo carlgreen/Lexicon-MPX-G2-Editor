@@ -33,8 +33,8 @@ public class Wah1Printer implements Printer {
     public String print(Object algorithm) throws PrintException {
         Wah1 wah1 = (Wah1) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(wah1.getMix()));
-        sb.append(printParameter(wah1.getLevel()));
+        sb.append(printParameter(wah1.mix));
+        sb.append(printParameter(wah1.level));
         sb.append(printParameter(wah1.getSweep()));
         sb.append(printParameter(wah1.getBass()));
         sb.append(printParameter(wah1.getType()));

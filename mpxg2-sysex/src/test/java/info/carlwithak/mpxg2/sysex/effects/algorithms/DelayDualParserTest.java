@@ -36,8 +36,8 @@ public class DelayDualParserTest {
     public void testParse_PowerChords() throws ParseException {
         byte[] effectParameters = {9, 1, 0, 0, 3, 0, 4, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 14, 12, 2, 3, 10, 0, 3, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayDual delayDual = DelayDualParser.parse(effectParameters);
-        assertThat(delayDual.getMix(), is(value(25)));
-        assertThat(delayDual.getLevel(), is(value(0)));
+        assertThat(delayDual.mix, is(value(25)));
+        assertThat(delayDual.level, is(value(0)));
         assertThat(delayDual.getTime1(), is(beat(3, 4)));
         assertThat(delayDual.getTime2(), is(beat(4, 3)));
         assertThat(delayDual.getLevel1(), is(value(0)));
@@ -56,8 +56,8 @@ public class DelayDualParserTest {
     public void testParse() throws ParseException {
         byte[] effectParameters = {3, 1, 0, 0, 1, 0, 1, 0, 1, 0, 4, 0, 3, 0, 1, 0, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayDual delayDual = DelayDualParser.parse(effectParameters);
-        assertThat(delayDual.getMix(), is(value(19)));
-        assertThat( delayDual.getLevel(), is(value(0)));
+        assertThat(delayDual.mix, is(value(19)));
+        assertThat( delayDual.level, is(value(0)));
         assertThat(delayDual.getTime1(), is(beat(1, 1)));
         assertThat(delayDual.getTime2(), is(beat(4, 3)));
         assertThat(delayDual.getLevel1(), is(value(0)));

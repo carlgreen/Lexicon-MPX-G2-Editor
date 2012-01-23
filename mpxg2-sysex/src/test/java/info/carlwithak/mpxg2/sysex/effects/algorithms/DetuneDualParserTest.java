@@ -34,8 +34,8 @@ public class DetuneDualParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 3, 0, 7, 0, 10, 0, 5, 0, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DetuneDual detuneDual = DetuneDualParser.parse(effectParameters);
-        assertThat(detuneDual.getMix(), is(value(100)));
-        assertThat(detuneDual.getLevel(), is(value(3)));
+        assertThat(detuneDual.mix, is(value(100)));
+        assertThat(detuneDual.level, is(value(3)));
         assertThat(detuneDual.getTune1(), is(value(7)));
         assertThat(detuneDual.getOptimize(), is(value(10)));
         assertThat(detuneDual.getTune2(), is(value(5)));

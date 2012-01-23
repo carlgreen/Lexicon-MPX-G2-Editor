@@ -33,8 +33,8 @@ public class UniVybePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         UniVybe univybe = (UniVybe) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(univybe.getMix()));
-        sb.append(printParameter(univybe.getLevel()));
+        sb.append(printParameter(univybe.mix));
+        sb.append(printParameter(univybe.level));
         sb.append(printParameter(univybe.getRate()));
         return sb.toString();
     }

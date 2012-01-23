@@ -33,8 +33,8 @@ public class Centrifuge1Printer implements Printer {
     public String print(Object algorithm) throws PrintException {
         Centrifuge1 centrifuge1 = (Centrifuge1) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(centrifuge1.getMix()));
-        sb.append(printParameter(centrifuge1.getLevel()));
+        sb.append(printParameter(centrifuge1.mix));
+        sb.append(printParameter(centrifuge1.level));
         sb.append(printParameter(centrifuge1.getRate1()));
         sb.append(printParameter(centrifuge1.getPulseWidth1()));
         sb.append(printParameter(centrifuge1.getSync1()));

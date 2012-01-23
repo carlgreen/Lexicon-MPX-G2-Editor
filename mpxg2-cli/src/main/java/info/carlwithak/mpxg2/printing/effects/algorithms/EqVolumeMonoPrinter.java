@@ -33,8 +33,8 @@ public class EqVolumeMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         EqVolumeMono volumeMono = (EqVolumeMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(volumeMono.getMix()));
-        sb.append(printParameter(volumeMono.getLevel()));
+        sb.append(printParameter(volumeMono.mix));
+        sb.append(printParameter(volumeMono.level));
         sb.append(printParameter(volumeMono.getVolume()));
         return sb.toString();
     }

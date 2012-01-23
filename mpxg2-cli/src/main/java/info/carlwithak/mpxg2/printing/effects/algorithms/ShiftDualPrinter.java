@@ -33,8 +33,8 @@ public class ShiftDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ShiftDual shiftDual = (ShiftDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(shiftDual.getMix()));
-        sb.append(printParameter(shiftDual.getLevel()));
+        sb.append(printParameter(shiftDual.mix));
+        sb.append(printParameter(shiftDual.level));
         sb.append(printParameter(shiftDual.getTune1()));
         sb.append(printParameter(shiftDual.getOptimize()));
         sb.append(printParameter(shiftDual.getTune2()));

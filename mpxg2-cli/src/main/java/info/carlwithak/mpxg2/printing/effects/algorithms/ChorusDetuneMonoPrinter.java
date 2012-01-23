@@ -33,8 +33,8 @@ public class ChorusDetuneMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ChorusDetuneMono detuneMono = (ChorusDetuneMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(detuneMono.getMix()));
-        sb.append(printParameter(detuneMono.getLevel()));
+        sb.append(printParameter(detuneMono.mix));
+        sb.append(printParameter(detuneMono.level));
         sb.append(printParameter(detuneMono.getTune()));
         sb.append(printParameter(detuneMono.getOptimize()));
         sb.append(printParameter(detuneMono.getPreDelay()));

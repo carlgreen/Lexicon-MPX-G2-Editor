@@ -31,10 +31,10 @@ public class BlueCompParser {
         BlueComp blueComp = new BlueComp();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        blueComp.getMix().setValue(mix);
+        blueComp.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        blueComp.getLevel().setValue(level);
+        blueComp.level.setValue(level);
 
         int sense = (byte) (effectParameters[4] + effectParameters[5] * 16);
         blueComp.getSensitivity().setValue(sense);

@@ -33,8 +33,8 @@ public class TremoloMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         TremoloMono tremoloMono = (TremoloMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(tremoloMono.getMix()));
-        sb.append(printParameter(tremoloMono.getLevel()));
+        sb.append(printParameter(tremoloMono.mix));
+        sb.append(printParameter(tremoloMono.level));
         sb.append(printParameter(tremoloMono.getRate()));
         sb.append(printParameter(tremoloMono.getPulseWidth()));
         sb.append(printParameter(tremoloMono.getDepth()));

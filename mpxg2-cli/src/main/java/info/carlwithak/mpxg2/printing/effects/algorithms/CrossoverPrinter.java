@@ -33,8 +33,8 @@ public class CrossoverPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Crossover crossover = (Crossover) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(crossover.getMix()));
-        sb.append(printParameter(crossover.getLevel()));
+        sb.append(printParameter(crossover.mix));
+        sb.append(printParameter(crossover.level));
         sb.append(printParameter(crossover.getFc()));
         sb.append(printParameter(crossover.getBalance()));
         return sb.toString();

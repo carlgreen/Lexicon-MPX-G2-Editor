@@ -30,10 +30,10 @@ public class ChorusDetuneMonoParser {
         ChorusDetuneMono detuneMono = new ChorusDetuneMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        detuneMono.getMix().setValue(mix);
+        detuneMono.mix.setValue(mix);
 
         int level = effectParameters[2] + effectParameters[3] * 16;
-        detuneMono.getLevel().setValue(level);
+        detuneMono.level.setValue(level);
 
         int tune = effectParameters[4] + effectParameters[5] * 16;
         detuneMono.getTune().setValue(tune);

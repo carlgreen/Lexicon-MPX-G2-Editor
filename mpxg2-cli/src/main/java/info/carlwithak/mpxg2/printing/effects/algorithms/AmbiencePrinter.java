@@ -33,8 +33,8 @@ public class AmbiencePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Ambience ambience = (Ambience) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(ambience.getMix()));
-        sb.append(printParameter(ambience.getLevel()));
+        sb.append(printParameter(ambience.mix));
+        sb.append(printParameter(ambience.level));
         sb.append(printParameter(ambience.getSize()));
         sb.append(printParameter(ambience.getLink()));
         sb.append(printParameter(ambience.getDiff()));

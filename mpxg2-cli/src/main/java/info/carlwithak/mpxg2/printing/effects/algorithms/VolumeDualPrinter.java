@@ -33,8 +33,8 @@ public class VolumeDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         VolumeDual volumeDual = (VolumeDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(volumeDual.getMix()));
-        sb.append(printParameter(volumeDual.getLevel()));
+        sb.append(printParameter(volumeDual.mix));
+        sb.append(printParameter(volumeDual.level));
         sb.append(printParameter(volumeDual.getVolumeLeft()));
         sb.append(printParameter(volumeDual.getVolumeRight()));
         return sb.toString();

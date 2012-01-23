@@ -30,10 +30,10 @@ public class TwoBandStereoParser {
         TwoBandStereo twoBandStereo = new TwoBandStereo();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        twoBandStereo.getMix().setValue(mix);
+        twoBandStereo.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        twoBandStereo.getLevel().setValue(level);
+        twoBandStereo.level.setValue(level);
 
         int gain1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
         twoBandStereo.getGain1().setValue(gain1);

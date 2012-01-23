@@ -33,8 +33,8 @@ public class EchoMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         EchoMono echoMono = (EchoMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(echoMono.getMix()));
-        sb.append(printParameter(echoMono.getLevel()));
+        sb.append(printParameter(echoMono.mix));
+        sb.append(printParameter(echoMono.level));
         sb.append(printParameter(echoMono.getTime()));
         sb.append(printParameter(echoMono.getFeedback()));
         sb.append(printParameter(echoMono.getInsert()));

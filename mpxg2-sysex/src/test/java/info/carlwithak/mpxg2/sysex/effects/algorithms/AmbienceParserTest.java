@@ -34,8 +34,8 @@ public class AmbienceParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {2, 1, 0, 0, 9, 2, 1, 0, 14, 1, 7, 0, 3, 3, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Ambience ambience = AmbienceParser.parse(effectParameters);
-        assertThat(ambience.getMix(), is(value(18)));
-        assertThat(ambience.getLevel(), is(value(0)));
+        assertThat(ambience.mix, is(value(18)));
+        assertThat(ambience.level, is(value(0)));
         assertThat(ambience.getSize(), is(value(24.5)));
         assertThat(ambience.getLink(), is(value(true)));
         assertThat(ambience.getDiff(), is(value(60)));

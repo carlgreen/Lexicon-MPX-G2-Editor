@@ -33,8 +33,8 @@ public class Flanger24MonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Flanger24Mono flanger24Mono = (Flanger24Mono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(flanger24Mono.getMix()));
-        sb.append(printParameter(flanger24Mono.getLevel()));
+        sb.append(printParameter(flanger24Mono.mix));
+        sb.append(printParameter(flanger24Mono.level));
         sb.append(printParameter(flanger24Mono.getRate()));
         sb.append(printParameter(flanger24Mono.getPulseWidth()));
         sb.append(printParameter(flanger24Mono.getDepth()));

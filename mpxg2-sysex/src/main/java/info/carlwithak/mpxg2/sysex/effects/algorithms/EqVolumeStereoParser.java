@@ -30,10 +30,10 @@ public class EqVolumeStereoParser {
         EqVolumeStereo volumeStereo = new EqVolumeStereo();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        volumeStereo.getMix().setValue(mix);
+        volumeStereo.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        volumeStereo.getLevel().setValue(level);
+        volumeStereo.level.setValue(level);
 
         int volume = (byte) (effectParameters[4] + effectParameters[5] * 16);
         volumeStereo.getVolume().setValue(volume);

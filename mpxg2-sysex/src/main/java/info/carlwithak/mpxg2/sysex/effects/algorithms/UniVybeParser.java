@@ -30,10 +30,10 @@ public class UniVybeParser {
         UniVybe univybe = new UniVybe();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        univybe.getMix().setValue(mix);
+        univybe.mix.setValue(mix);
 
         int level = effectParameters[2] + effectParameters[3] * 16;
-        univybe.getLevel().setValue(level);
+        univybe.level.setValue(level);
 
         int rate = effectParameters[4] + effectParameters[5] * 16;
         univybe.getRate().setValue(rate);

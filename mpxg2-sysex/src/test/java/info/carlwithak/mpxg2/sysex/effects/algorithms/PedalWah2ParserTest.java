@@ -34,8 +34,8 @@ public class PedalWah2ParserTest {
     public void testParse_RotaryCab() {
         byte[] effectParameters = {4, 6, 0, 0, 10, 0, 1, 0, 4, 6, 0, 0, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         PedalWah2 pedalWah2 = PedalWah2Parser.parse(effectParameters);
-        assertThat(pedalWah2.getMix(), is(value(100)));
-        assertThat(pedalWah2.getLevel(), is(value(0)));
+        assertThat(pedalWah2.mix, is(value(100)));
+        assertThat(pedalWah2.level, is(value(0)));
         assertThat(pedalWah2.getBass(), is(value(10)));
         assertThat(pedalWah2.getType(), is(value(1)));
         assertThat(pedalWah2.getResponse(), is(value(100)));

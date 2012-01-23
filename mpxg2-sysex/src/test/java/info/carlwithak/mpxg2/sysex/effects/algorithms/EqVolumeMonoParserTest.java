@@ -34,8 +34,8 @@ public class EqVolumeMonoParserTest {
     public void testParse_RoundTrem() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 8, 12, 0, 0, 7, 0, 0, 0, 9, 15, 8, 8, 3, 1, 7, 0, 2, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EqVolumeMono volumeMono = EqVolumeMonoParser.parse(effectParameters);
-        assertThat(volumeMono.getMix(), is(value(100)));
-        assertThat(volumeMono.getLevel(), is(value(0)));
+        assertThat(volumeMono.mix, is(value(100)));
+        assertThat(volumeMono.level, is(value(0)));
         assertThat(volumeMono.getVolume(), is(value(100)));
     }
 }

@@ -30,10 +30,10 @@ public class OctaBuzzParser {
         OctaBuzz octaBuzz = new OctaBuzz();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        octaBuzz.getMix().setValue(mix);
+        octaBuzz.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        octaBuzz.getLevel().setValue(level);
+        octaBuzz.level.setValue(level);
 
         return octaBuzz;
     }

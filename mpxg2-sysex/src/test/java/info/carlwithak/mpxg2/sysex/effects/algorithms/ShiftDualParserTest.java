@@ -34,8 +34,8 @@ public class ShiftDualParserTest {
     public void testParse_PowerChords() {
         byte[] effectParameters = {4, 6, 6, 0, 0, 5, 11, 15, 10, 0, 12, 0, 14, 15, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ShiftDual shiftDual = ShiftDualParser.parse(effectParameters);
-        assertThat(shiftDual.getMix(), is(value(100)));
-        assertThat(shiftDual.getLevel(), is(value(6)));
+        assertThat(shiftDual.mix, is(value(100)));
+        assertThat(shiftDual.level, is(value(6)));
         assertThat(shiftDual.getTune1(), is(value(-1200)));
         assertThat(shiftDual.getOptimize(), is(value(10)));
         assertThat(shiftDual.getTune2(), is(value(-500)));

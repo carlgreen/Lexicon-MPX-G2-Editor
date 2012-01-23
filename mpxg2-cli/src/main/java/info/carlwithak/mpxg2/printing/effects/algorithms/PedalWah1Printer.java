@@ -33,8 +33,8 @@ public class PedalWah1Printer implements Printer {
     public String print(Object algorithm) throws PrintException {
         PedalWah1 pedalWah1 = (PedalWah1) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(pedalWah1.getMix()));
-        sb.append(printParameter(pedalWah1.getLevel()));
+        sb.append(printParameter(pedalWah1.mix));
+        sb.append(printParameter(pedalWah1.level));
         sb.append(printParameter(pedalWah1.getBass()));
         sb.append(printParameter(pedalWah1.getType()));
         sb.append(printParameter(pedalWah1.getResponse()));

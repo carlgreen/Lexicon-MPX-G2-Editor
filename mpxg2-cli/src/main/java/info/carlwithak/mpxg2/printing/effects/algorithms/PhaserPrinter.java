@@ -33,8 +33,8 @@ public class PhaserPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Phaser phaser = (Phaser) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(phaser.getMix()));
-        sb.append(printParameter(phaser.getLevel()));
+        sb.append(printParameter(phaser.mix));
+        sb.append(printParameter(phaser.level));
         sb.append(printParameter(phaser.getRate()));
         sb.append(printParameter(phaser.getPulseWidth()));
         sb.append(printParameter(phaser.getDepth()));

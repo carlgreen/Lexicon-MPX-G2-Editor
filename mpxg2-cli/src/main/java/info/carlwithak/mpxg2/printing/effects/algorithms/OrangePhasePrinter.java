@@ -33,8 +33,8 @@ public class OrangePhasePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         OrangePhase orangePhase = (OrangePhase) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(orangePhase.getMix()));
-        sb.append(printParameter(orangePhase.getLevel()));
+        sb.append(printParameter(orangePhase.mix));
+        sb.append(printParameter(orangePhase.level));
         sb.append(printParameter(orangePhase.getRate()));
         return sb.toString();
     }

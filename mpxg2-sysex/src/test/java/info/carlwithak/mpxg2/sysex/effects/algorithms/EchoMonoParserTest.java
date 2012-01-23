@@ -36,8 +36,8 @@ public class EchoMonoParserTest {
     public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {6, 0, 1, 0, 4, 0, 4, 0, 1, 0, 1, 15, 3, 0, 4, 1, 0, 0, 0, 0, 6, 15, 3, 0, 15, 0, 9, 1, 9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         EchoMono echoMono = EchoMonoParser.parse(effectParameters);
-        assertThat(echoMono.getMix(), is(value(6)));
-        assertThat(echoMono.getLevel(), is(value(1)));
+        assertThat(echoMono.mix, is(value(6)));
+        assertThat(echoMono.level, is(value(1)));
         assertThat(echoMono.getTime(), is(beat(4, 4)));
         assertThat(echoMono.getFeedback(), is(value(-15)));
         assertThat(echoMono.getInsert(), is(value(3)));

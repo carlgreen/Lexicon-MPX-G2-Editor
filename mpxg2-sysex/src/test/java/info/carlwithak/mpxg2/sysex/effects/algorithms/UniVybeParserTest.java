@@ -34,8 +34,8 @@ public class UniVybeParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         UniVybe uniVybe = UniVybeParser.parse(effectParameters);
-        assertThat(uniVybe.getMix(), is(value(100)));
-        assertThat(uniVybe.getLevel(), is(value(0)));
+        assertThat(uniVybe.mix, is(value(100)));
+        assertThat(uniVybe.level, is(value(0)));
         assertThat(uniVybe.getRate(), is(value(20)));
     }
 }

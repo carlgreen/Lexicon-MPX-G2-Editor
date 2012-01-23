@@ -33,8 +33,8 @@ public class SweepFilterPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         SweepFilter sweepFilter = (SweepFilter) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(sweepFilter.getMix()));
-        sb.append(printParameter(sweepFilter.getLevel()));
+        sb.append(printParameter(sweepFilter.mix));
+        sb.append(printParameter(sweepFilter.level));
         sb.append(printParameter(sweepFilter.getFc()));
         sb.append(printParameter(sweepFilter.getFRes()));
         sb.append(printParameter(sweepFilter.getMod()));

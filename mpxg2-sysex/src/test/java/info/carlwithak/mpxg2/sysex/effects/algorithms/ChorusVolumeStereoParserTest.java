@@ -34,8 +34,8 @@ public class ChorusVolumeStereoParserTest {
     public void testParse_WahUni() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusVolumeStereo volumeStereo = ChorusVolumeStereoParser.parse(effectParameters);
-        assertThat(volumeStereo.getMix(), is(value(100)));
-        assertThat(volumeStereo.getLevel(), is(value(0)));
+        assertThat(volumeStereo.mix, is(value(100)));
+        assertThat(volumeStereo.level, is(value(0)));
         assertThat(volumeStereo.getVolume(), is(value(0)));
     }
 }

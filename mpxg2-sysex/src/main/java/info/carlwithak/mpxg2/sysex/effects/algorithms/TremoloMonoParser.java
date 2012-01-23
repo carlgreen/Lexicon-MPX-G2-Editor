@@ -33,10 +33,10 @@ public class TremoloMonoParser {
         TremoloMono tremoloMono = new TremoloMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        tremoloMono.getMix().setValue(mix);
+        tremoloMono.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        tremoloMono.getLevel().setValue(level);
+        tremoloMono.level.setValue(level);
 
         tremoloMono.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 

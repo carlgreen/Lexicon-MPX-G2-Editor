@@ -30,10 +30,10 @@ public class Wah2Parser {
         Wah2 wah2 = new Wah2();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        wah2.getMix().setValue(mix);
+        wah2.mix.setValue(mix);
 
         int level = effectParameters[2] + effectParameters[3] * 16;
-        wah2.getLevel().setValue(level);
+        wah2.level.setValue(level);
 
         int sweep = effectParameters[4] + effectParameters[5] * 16;
         wah2.getSweep().setValue(sweep);

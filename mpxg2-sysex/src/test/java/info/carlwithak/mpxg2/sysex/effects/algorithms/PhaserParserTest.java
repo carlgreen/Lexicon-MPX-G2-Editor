@@ -36,8 +36,8 @@ public class PhaserParserTest {
     public void testParse_Phaser() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 3, 5, 0, 0, 0, 0, 2, 3, 4, 6, 14, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Phaser phaser = PhaserParser.parse(effectParameters);
-        assertThat(phaser.getMix(), is(value(100)));
-        assertThat(phaser.getLevel(), is(value(0)));
+        assertThat(phaser.mix, is(value(100)));
+        assertThat(phaser.level, is(value(0)));
         assertThat(phaser.getRate(), is(frequency(0.83)));
         assertThat(phaser.getPulseWidth(), is(value(50)));
         assertThat(phaser.getDepth(), is(value(100)));

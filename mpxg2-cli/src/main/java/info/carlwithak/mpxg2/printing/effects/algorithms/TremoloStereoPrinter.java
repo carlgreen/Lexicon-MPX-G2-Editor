@@ -33,8 +33,8 @@ public class TremoloStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         TremoloStereo tremoloStereo = (TremoloStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(tremoloStereo.getMix()));
-        sb.append(printParameter(tremoloStereo.getLevel()));
+        sb.append(printParameter(tremoloStereo.mix));
+        sb.append(printParameter(tremoloStereo.level));
         sb.append(printParameter(tremoloStereo.getRate()));
         sb.append(printParameter(tremoloStereo.getPulseWidth()));
         sb.append(printParameter(tremoloStereo.getDepth()));

@@ -34,8 +34,8 @@ public class DiatonicHmyParserTest {
     public void testParse_EMajMin3() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 0, 0, 0, 1, 10, 0, 13, 10, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
-        assertThat(diatonicHmy.getMix(), is(value(100)));
-        assertThat(diatonicHmy.getLevel(), is(value(0)));
+        assertThat(diatonicHmy.mix, is(value(100)));
+        assertThat(diatonicHmy.level, is(value(0)));
         assertThat(diatonicHmy.getKey(), is(value(4))); // E
         assertThat(diatonicHmy.getScale(), is(value(0))); // Major
         assertThat(diatonicHmy.getInterval(), is(value(16))); // +3rd
@@ -48,8 +48,8 @@ public class DiatonicHmyParserTest {
     public void testParse_EDorMix3() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 4, 0, 0, 1, 10, 0, 13, 10, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
-        assertThat(diatonicHmy.getMix(), is(value(100)));
-        assertThat(diatonicHmy.getLevel(), is(value(0)));
+        assertThat(diatonicHmy.mix, is(value(100)));
+        assertThat(diatonicHmy.level, is(value(0)));
         assertThat(diatonicHmy.getKey(), is(value(4))); // E
         assertThat(diatonicHmy.getScale(), is(value(4))); // Mixo
         assertThat(diatonicHmy.getInterval(), is(value(16))); // +3rd

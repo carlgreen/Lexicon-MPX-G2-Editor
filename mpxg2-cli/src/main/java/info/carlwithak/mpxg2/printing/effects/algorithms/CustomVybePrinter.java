@@ -33,8 +33,8 @@ public class CustomVybePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         CustomVybe customVybe = (CustomVybe) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(customVybe.getMix()));
-        sb.append(printParameter(customVybe.getLevel()));
+        sb.append(printParameter(customVybe.mix));
+        sb.append(printParameter(customVybe.level));
         sb.append(printParameter(customVybe.getRate()));
         sb.append(printParameter(customVybe.getPulseWidth()));
         sb.append(printParameter(customVybe.getDepth()));

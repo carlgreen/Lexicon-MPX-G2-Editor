@@ -90,33 +90,33 @@ public class ProgramPrinter {
         sb.append("    Post:\n").append(printPostMix(program.getPostMix()));
         if (program.getEffect1() != null) {
             sb.append("    FX1:\n");
-            sb.append("  ").append(printParameter(program.getEffect1().getMix()));
-            sb.append("  ").append(printParameter(program.getEffect1().getLevel()));
+            sb.append("  ").append(printParameter(program.getEffect1().mix));
+            sb.append("  ").append(printParameter(program.getEffect1().level));
         }
         if (program.getEffect2() != null) {
             sb.append("    FX2:\n");
-            sb.append("  ").append(printParameter(program.getEffect2().getMix()));
-            sb.append("  ").append(printParameter(program.getEffect2().getLevel()));
+            sb.append("  ").append(printParameter(program.getEffect2().mix));
+            sb.append("  ").append(printParameter(program.getEffect2().level));
         }
         if (program.getChorus() != null) {
             sb.append("    Chorus:\n");
-            sb.append("  ").append(printParameter(program.getChorus().getMix()));
-            sb.append("  ").append(printParameter(program.getChorus().getLevel()));
+            sb.append("  ").append(printParameter(program.getChorus().mix));
+            sb.append("  ").append(printParameter(program.getChorus().level));
         }
         if (program.getDelay() != null) {
             sb.append("    Delay:\n");
-            sb.append("  ").append(printParameter(program.getDelay().getMix()));
-            sb.append("  ").append(printParameter(program.getDelay().getLevel()));
+            sb.append("  ").append(printParameter(program.getDelay().mix));
+            sb.append("  ").append(printParameter(program.getDelay().level));
         }
         if (program.getReverb() != null) {
             sb.append("    Reverb:\n");
-            sb.append("  ").append(printParameter(program.getReverb().getMix()));
-            sb.append("  ").append(printParameter(program.getReverb().getLevel()));
+            sb.append("  ").append(printParameter(program.getReverb().mix));
+            sb.append("  ").append(printParameter(program.getReverb().level));
         }
         if (program.getEq() != null) {
             sb.append("    Eq:\n");
-            sb.append("  ").append(printParameter(program.getEq().getMix()));
-            sb.append("  ").append(printParameter(program.getEq().getLevel()));
+            sb.append("  ").append(printParameter(program.getEq().mix));
+            sb.append("  ").append(printParameter(program.getEq().level));
         }
         sb.append("  Tempo:\n").append(printTempo(program.getTempo()));
         sb.append("  Speaker Sim: ").append(program.isSpeakerSimulatorEnable().getDisplayString()).append("\n");

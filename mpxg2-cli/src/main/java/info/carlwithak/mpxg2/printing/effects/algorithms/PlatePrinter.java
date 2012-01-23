@@ -33,8 +33,8 @@ public class PlatePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Plate plate = (Plate) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(plate.getMix()));
-        sb.append(printParameter(plate.getLevel()));
+        sb.append(printParameter(plate.mix));
+        sb.append(printParameter(plate.level));
         sb.append(printParameter(plate.getSize()));
         sb.append(printParameter(plate.getLink()));
         sb.append(printParameter(plate.getDiff()));

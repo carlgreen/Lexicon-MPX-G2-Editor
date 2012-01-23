@@ -33,8 +33,8 @@ public class OneBandMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         OneBandMono oneBandMono = (OneBandMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(oneBandMono.getMix()));
-        sb.append(printParameter(oneBandMono.getLevel()));
+        sb.append(printParameter(oneBandMono.mix));
+        sb.append(printParameter(oneBandMono.level));
         sb.append(printParameter(oneBandMono.getGain()));
         sb.append(printParameter(oneBandMono.getFc()));
         sb.append(printParameter(oneBandMono.getQ()));

@@ -33,8 +33,8 @@ public class JamManPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         JamMan jamMan = (JamMan) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(jamMan.getMix()));
-        sb.append(printParameter(jamMan.getLevel()));
+        sb.append(printParameter(jamMan.mix));
+        sb.append(printParameter(jamMan.level));
         sb.append(printParameter(jamMan.getSize()));
         sb.append(printParameter(jamMan.getFeedback()));
         sb.append(printParameter(jamMan.getInsert()));

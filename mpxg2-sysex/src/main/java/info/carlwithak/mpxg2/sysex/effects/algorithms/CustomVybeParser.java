@@ -33,10 +33,10 @@ public class CustomVybeParser {
         CustomVybe customVybe = new CustomVybe();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        customVybe.getMix().setValue(mix);
+        customVybe.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        customVybe.getLevel().setValue(level);
+        customVybe.level.setValue(level);
 
         customVybe.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 

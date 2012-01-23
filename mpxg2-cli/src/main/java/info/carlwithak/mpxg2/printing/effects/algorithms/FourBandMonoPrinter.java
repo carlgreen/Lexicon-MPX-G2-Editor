@@ -33,8 +33,8 @@ public class FourBandMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         FourBandMono fourBandMono = (FourBandMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(fourBandMono.getMix()));
-        sb.append(printParameter(fourBandMono.getLevel()));
+        sb.append(printParameter(fourBandMono.mix));
+        sb.append(printParameter(fourBandMono.level));
         sb.append(printParameter(fourBandMono.getGain1()));
         sb.append(printParameter(fourBandMono.getFc1()));
         sb.append(printParameter(fourBandMono.getQ1()));

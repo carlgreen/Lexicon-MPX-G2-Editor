@@ -33,8 +33,8 @@ public class VolumeStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         VolumeStereo volumeStereo = (VolumeStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(volumeStereo.getMix()));
-        sb.append(printParameter(volumeStereo.getLevel()));
+        sb.append(printParameter(volumeStereo.mix));
+        sb.append(printParameter(volumeStereo.level));
         sb.append(printParameter(volumeStereo.getVolume()));
         return sb.toString();
     }

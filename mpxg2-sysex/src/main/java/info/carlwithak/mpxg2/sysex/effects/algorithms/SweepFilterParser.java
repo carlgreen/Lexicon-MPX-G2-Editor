@@ -30,10 +30,10 @@ public class SweepFilterParser {
         SweepFilter sweepFilter = new SweepFilter();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        sweepFilter.getMix().setValue(mix);
+        sweepFilter.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        sweepFilter.getLevel().setValue(level);
+        sweepFilter.level.setValue(level);
 
         int fc = 0;
         for (int i = 0; i < 4; i++) {

@@ -34,8 +34,8 @@ public class JamManParserTest {
     public void testParse() {
         byte[] effectParameters = {4, 6, 0, 0, 10, 15, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         JamMan jamMan = JamManParser.parse(effectParameters);
-        assertThat(jamMan.getMix(), is(value(100)));
-        assertThat(jamMan.getLevel(), is(value(0)));
+        assertThat(jamMan.mix, is(value(100)));
+        assertThat(jamMan.level, is(value(0)));
         assertThat(jamMan.getSize(), is(value(250)));
         assertThat(jamMan.getFeedback(), is(value(0)));
         assertThat(jamMan.getInsert(), is(value(3)));

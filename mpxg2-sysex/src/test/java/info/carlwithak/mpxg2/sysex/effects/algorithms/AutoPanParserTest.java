@@ -37,8 +37,8 @@ public class AutoPanParserTest {
     public void testParse_Cordovox1() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 4, 0, 0, 0, 0, 0, 2, 3, 4, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         AutoPan autoPan = AutoPanParser.parse(effectParameters);
-        assertThat(autoPan.getMix(), is(value(100)));
-        assertThat(autoPan.getLevel(), is(value(0)));
+        assertThat(autoPan.mix, is(value(100)));
+        assertThat(autoPan.level, is(value(0)));
         assertThat(autoPan.getRate(), is(frequency(0.04)));
         assertThat(autoPan.getPulseWidth(), is(value(50)));
         assertThat(autoPan.getDepth(), is(value(100)));
@@ -49,8 +49,8 @@ public class AutoPanParserTest {
     public void testParse_Cordovox2() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 4, 6, 0, 0, 0, 0, 2, 3, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         AutoPan autoPan = AutoPanParser.parse(effectParameters);
-        assertThat(autoPan.getMix(), is(value(100)));
-        assertThat(autoPan.getLevel(), is(value(0)));
+        assertThat(autoPan.mix, is(value(100)));
+        assertThat(autoPan.level, is(value(0)));
         assertThat(autoPan.getRate(), is(frequency(1.00)));
         assertThat(autoPan.getPulseWidth(), is(value(50)));
         assertThat(autoPan.getDepth(), is(value(100)));
@@ -61,8 +61,8 @@ public class AutoPanParserTest {
     public void testParse_VybeFlange() throws ParseException {
         byte[] effectParameters = {4, 6, 3, 0, 1, 0, 2, 0, 1, 0, 2, 3, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         AutoPan autoPan = AutoPanParser.parse(effectParameters);
-        assertThat(autoPan.getMix(), is(value(100)));
-        assertThat(autoPan.getLevel(), is(value(3)));
+        assertThat(autoPan.mix, is(value(100)));
+        assertThat(autoPan.level, is(value(3)));
         assertThat(autoPan.getRate(), is(beat(1, 2)));
         assertThat(autoPan.getPulseWidth(), is(value(50)));
         assertThat(autoPan.getDepth(), is(value(100)));

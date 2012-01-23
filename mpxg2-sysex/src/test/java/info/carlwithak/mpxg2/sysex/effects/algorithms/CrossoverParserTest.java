@@ -34,8 +34,8 @@ public class CrossoverParserTest {
     public void testParse_OctaWah() {
         byte[] effectParameters = {4, 6, 0, 0, 8, 11, 11, 0, 4, 0, 1, 0, 0, 0, 8, 0, 4, 1, 0, 0, 1, 0, 1, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Crossover crossover = CrossoverParser.parse(effectParameters);
-        assertThat(crossover.getMix(), is(value(100)));
-        assertThat(crossover.getLevel(), is(value(0)));
+        assertThat(crossover.mix, is(value(100)));
+        assertThat(crossover.level, is(value(0)));
         assertThat(crossover.getFc(), is(value(3000)));
         assertThat(crossover.getBalance(), is(value(4)));
     }

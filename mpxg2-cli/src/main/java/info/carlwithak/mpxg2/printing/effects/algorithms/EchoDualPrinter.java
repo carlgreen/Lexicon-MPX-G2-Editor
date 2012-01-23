@@ -33,8 +33,8 @@ public class EchoDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         EchoDual echoDual = (EchoDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(echoDual.getMix()));
-        sb.append(printParameter(echoDual.getLevel()));
+        sb.append(printParameter(echoDual.mix));
+        sb.append(printParameter(echoDual.level));
         sb.append(printParameter(echoDual.getTime1()));
         sb.append(printParameter(echoDual.getTime2()));
         sb.append(printParameter(echoDual.getLevel1()));

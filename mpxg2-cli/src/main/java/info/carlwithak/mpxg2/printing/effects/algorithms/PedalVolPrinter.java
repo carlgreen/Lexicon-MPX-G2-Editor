@@ -33,8 +33,8 @@ public class PedalVolPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         PedalVol pedalVol = (PedalVol) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(pedalVol.getMix()));
-        sb.append(printParameter(pedalVol.getLevel()));
+        sb.append(printParameter(pedalVol.mix));
+        sb.append(printParameter(pedalVol.level));
         return sb.toString();
     }
 

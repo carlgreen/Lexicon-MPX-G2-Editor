@@ -33,8 +33,8 @@ public class TwoBandStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         TwoBandStereo twoBandStereo = (TwoBandStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(twoBandStereo.getMix()));
-        sb.append(printParameter(twoBandStereo.getLevel()));
+        sb.append(printParameter(twoBandStereo.mix));
+        sb.append(printParameter(twoBandStereo.level));
         sb.append(printParameter(twoBandStereo.getGain1()));
         sb.append(printParameter(twoBandStereo.getFc1()));
         sb.append(printParameter(twoBandStereo.getQ1()));

@@ -34,8 +34,8 @@ public class FourBandMonoParserTest {
     public void testParse_PhoneFilter() {
         byte[] effectParameters = {4, 6, 0, 0, 8, 11, 4, 3, 3, 0, 7, 0, 0, 0, 6, 0, 0, 11, 4, 0, 9, 1, 0, 0, 10, 0, 4, 10, 6, 0, 15, 0, 1, 0, 8, 11, 8, 13, 14, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         FourBandMono fourBandMono = FourBandMonoParser.parse(effectParameters);
-        assertThat(fourBandMono.getMix(), is(value(100)));
-        assertThat(fourBandMono.getLevel(), is(value(0)));
+        assertThat(fourBandMono.mix, is(value(100)));
+        assertThat(fourBandMono.level, is(value(0)));
         assertThat(fourBandMono.getGain1(), is(value(-72)));
         assertThat(fourBandMono.getFc1(), is(value(820)));
         assertThat(fourBandMono.getQ1(), is(value(0.7)));

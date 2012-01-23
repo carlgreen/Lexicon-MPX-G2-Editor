@@ -33,8 +33,8 @@ public class EchoStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         EchoStereo echoStereo = (EchoStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(echoStereo.getMix()));
-        sb.append(printParameter(echoStereo.getLevel()));
+        sb.append(printParameter(echoStereo.mix));
+        sb.append(printParameter(echoStereo.level));
         sb.append(printParameter(echoStereo.getTime()));
         sb.append(printParameter(echoStereo.getFeedback()));
         sb.append(printParameter(echoStereo.getInsert()));

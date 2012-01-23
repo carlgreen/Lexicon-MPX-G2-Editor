@@ -34,10 +34,10 @@ public class DelayMonoParser {
         DelayMono delayMono = new DelayMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        delayMono.getMix().setValue(mix);
+        delayMono.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        delayMono.getLevel().setValue(level);
+        delayMono.level.setValue(level);
 
         delayMono.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 

@@ -33,8 +33,8 @@ public class Wah2Printer implements Printer {
     public String print(Object algorithm) throws PrintException {
         Wah2 wah2 = (Wah2) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(wah2.getMix()));
-        sb.append(printParameter(wah2.getLevel()));
+        sb.append(printParameter(wah2.mix));
+        sb.append(printParameter(wah2.level));
         sb.append(printParameter(wah2.getSweep()));
         sb.append(printParameter(wah2.getBass()));
         sb.append(printParameter(wah2.getType()));

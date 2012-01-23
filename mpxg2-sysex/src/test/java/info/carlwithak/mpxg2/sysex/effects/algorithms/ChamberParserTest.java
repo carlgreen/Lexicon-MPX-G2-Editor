@@ -34,8 +34,8 @@ public class ChamberParserTest {
     public void testParse_Cordovox() {
         byte[] effectParameters = {12, 1, 0, 0, 8, 2, 1, 0, 11, 0, 0, 0, 6, 0, 15, 2, 0, 1, 2, 2, 14, 3, 8, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Chamber chamber = ChamberParser.parse(effectParameters);
-        assertThat(chamber.getMix(), is(value(28)));
-        assertThat(chamber.getLevel(), is(value(0)));
+        assertThat(chamber.mix, is(value(28)));
+        assertThat(chamber.level, is(value(0)));
         assertThat(chamber.getSize(), is(value(24.0)));
         assertThat(chamber.getLink(), is(value(true)));
         assertThat(chamber.getDiff(), is(value(22)));
@@ -52,8 +52,8 @@ public class ChamberParserTest {
     public void testParse_PowerChords() {
         byte[] effectParameters = {3, 2, 0, 0, 0, 3, 1, 0, 13, 2, 2, 5, 5, 0, 3, 2, 15, 0, 4, 2, 14, 3, 8, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Chamber chamber = ChamberParser.parse(effectParameters);
-        assertThat(chamber.getMix(), is(value(35)));
-        assertThat(chamber.getLevel(), is(value(0)));
+        assertThat(chamber.mix, is(value(35)));
+        assertThat(chamber.level, is(value(0)));
         assertThat(chamber.getSize(), is(value(28.0)));
         assertThat(chamber.getLink(), is(value(true)));
         assertThat(chamber.getDiff(), is(value(90)));

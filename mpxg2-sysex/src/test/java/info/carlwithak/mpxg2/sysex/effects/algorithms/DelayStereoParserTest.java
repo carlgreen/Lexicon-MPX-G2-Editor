@@ -36,8 +36,8 @@ public class DelayStereoParserTest {
     public void testParse_TremoWah() throws ParseException {
         byte[] effectParameters = {4, 1, 0, 0, 2, 0, 4, 0, 1, 0, 4, 1, 3, 0, 0, 0, 0, 0, 0, 0, 14, 12, 2, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DelayStereo delayStereo = DelayStereoParser.parse(effectParameters);
-        assertThat(delayStereo.getMix(), is(value(20)));
-        assertThat(delayStereo.getLevel(), is(value(0)));
+        assertThat(delayStereo.mix, is(value(20)));
+        assertThat(delayStereo.level, is(value(0)));
         assertThat(delayStereo.getTime(), is(beat(2, 4)));
         assertThat(delayStereo.getFeedback(), is(value(20)));
         assertThat(delayStereo.getInsert(), is(value(3)));

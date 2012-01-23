@@ -30,10 +30,10 @@ public class FourBandMonoParser {
         FourBandMono fourBandMono = new FourBandMono();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        fourBandMono.getMix().setValue(mix);
+        fourBandMono.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        fourBandMono.getLevel().setValue(level);
+        fourBandMono.level.setValue(level);
 
         int gain1 = (byte) (effectParameters[4] + effectParameters[5] * 16);
         fourBandMono.getGain1().setValue(gain1);

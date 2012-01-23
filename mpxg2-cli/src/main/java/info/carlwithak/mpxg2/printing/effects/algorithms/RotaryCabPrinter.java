@@ -33,8 +33,8 @@ public class RotaryCabPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         RotaryCab rotaryCab = (RotaryCab) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(rotaryCab.getMix()));
-        sb.append(printParameter(rotaryCab.getLevel()));
+        sb.append(printParameter(rotaryCab.mix));
+        sb.append(printParameter(rotaryCab.level));
         sb.append(printParameter(rotaryCab.getRate1()));
         sb.append(printParameter(rotaryCab.getDepth1()));
         sb.append(printParameter(rotaryCab.getRate2()));

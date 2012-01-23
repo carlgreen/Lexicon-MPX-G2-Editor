@@ -34,8 +34,8 @@ public class VolumeStereoParserTest {
     public void testParse_WahFlange() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 14, 2, 13, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         VolumeStereo volumeStereo = VolumeStereoParser.parse(effectParameters);
-        assertThat(volumeStereo.getMix(), is(value(100)));
-        assertThat(volumeStereo.getLevel(), is(value(0)));
+        assertThat(volumeStereo.mix, is(value(100)));
+        assertThat(volumeStereo.level, is(value(0)));
         assertThat(volumeStereo.getVolume(), is(value(0)));
     }
 }

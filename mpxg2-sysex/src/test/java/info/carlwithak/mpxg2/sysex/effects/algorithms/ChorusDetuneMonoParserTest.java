@@ -34,8 +34,8 @@ public class ChorusDetuneMonoParserTest {
     public void testParse() {
         byte[] effectParameters = {2, 3, 6, 0, 10, 0, 10, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusDetuneMono detuneMono = ChorusDetuneMonoParser.parse(effectParameters);
-        assertThat(detuneMono.getMix(), is(value(50)));
-        assertThat(detuneMono.getLevel(), is(value(6)));
+        assertThat(detuneMono.mix, is(value(50)));
+        assertThat(detuneMono.level, is(value(6)));
         assertThat(detuneMono.getTune(), is(value(10)));
         assertThat(detuneMono.getOptimize(), is(value(10)));
         assertThat(detuneMono.getPreDelay(), is(value(0)));

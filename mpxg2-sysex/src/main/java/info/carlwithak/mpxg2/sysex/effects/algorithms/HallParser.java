@@ -31,10 +31,10 @@ public class HallParser {
         Hall hall = new Hall();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        hall.getMix().setValue(mix);
+        hall.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        hall.getLevel().setValue(level);
+        hall.level.setValue(level);
 
         double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
         hall.getSize().setValue(size);

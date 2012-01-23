@@ -33,8 +33,8 @@ public class ShiftMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ShiftMono shiftMono = (ShiftMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(shiftMono.getMix()));
-        sb.append(printParameter(shiftMono.getLevel()));
+        sb.append(printParameter(shiftMono.mix));
+        sb.append(printParameter(shiftMono.level));
         sb.append(printParameter(shiftMono.getTune()));
         sb.append(printParameter(shiftMono.getOptimize()));
         sb.append(printParameter(shiftMono.getGlide()));

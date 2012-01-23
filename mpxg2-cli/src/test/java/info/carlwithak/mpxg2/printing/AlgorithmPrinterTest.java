@@ -101,8 +101,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintShiftMono() throws PrintException {
         ShiftMono shiftMono = new ShiftMono();
-        shiftMono.getMix().setValue(100);
-        shiftMono.getLevel().setValue(-90);
+        shiftMono.mix.setValue(100);
+        shiftMono.level.setValue(-90);
         shiftMono.getTune().setValue(-1200);
         shiftMono.getOptimize().setValue(50);
         shiftMono.getGlide().setValue(true);
@@ -117,8 +117,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintShiftDual() throws PrintException {
         ShiftDual shiftDual = new ShiftDual();
-        shiftDual.getMix().setValue(100);
-        shiftDual.getLevel().setValue(6);
+        shiftDual.mix.setValue(100);
+        shiftDual.level.setValue(6);
         shiftDual.getTune1().setValue(-1200);
         shiftDual.getOptimize().setValue(10);
         shiftDual.getTune2().setValue(-500);
@@ -133,8 +133,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintDiatonicHmy() throws PrintException {
         DiatonicHmy diatonicHmy = new DiatonicHmy();
-        diatonicHmy.getMix().setValue(100);
-        diatonicHmy.getLevel().setValue(0);
+        diatonicHmy.mix.setValue(100);
+        diatonicHmy.level.setValue(0);
         diatonicHmy.getKey().setValue(4);
         diatonicHmy.getScale().setValue(0);
         diatonicHmy.getInterval().setValue(16);
@@ -151,8 +151,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintPanner() throws PrintException {
         Panner panner = new Panner();
-        panner.getMix().setValue(100);
-        panner.getLevel().setValue(-24);
+        panner.mix.setValue(100);
+        panner.level.setValue(-24);
         panner.getPan1().setValue(-50);
         panner.getPan2().setValue(50);
 
@@ -165,8 +165,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintAutoPan() throws PrintException {
         AutoPan autoPan = new AutoPan();
-        autoPan.getMix().setValue(100);
-        autoPan.getLevel().setValue(0);
+        autoPan.mix.setValue(100);
+        autoPan.level.setValue(0);
         autoPan.setRate(new FrequencyRate("Rate", 1.0));
         autoPan.getPulseWidth().setValue(50);
         autoPan.getDepth().setValue(100);
@@ -181,8 +181,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintTremoloMono() throws PrintException {
         TremoloMono tremoloMono = new TremoloMono();
-        tremoloMono.getMix().setValue(100);
-        tremoloMono.getLevel().setValue(6);
+        tremoloMono.mix.setValue(100);
+        tremoloMono.level.setValue(6);
         tremoloMono.setRate(new BeatRate("Rate", 7, 4));
         tremoloMono.getPulseWidth().setValue(30);
         tremoloMono.getDepth().setValue(100);
@@ -196,8 +196,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintTremoloStereo() throws PrintException {
         TremoloStereo tremoloStereo = new TremoloStereo();
-        tremoloStereo.getMix().setValue(100);
-        tremoloStereo.getLevel().setValue(0);
+        tremoloStereo.mix.setValue(100);
+        tremoloStereo.level.setValue(0);
         tremoloStereo.setRate(new FrequencyRate("Rate", 3.0));
         tremoloStereo.getPulseWidth().setValue(50);
         tremoloStereo.getDepth().setValue(100);
@@ -212,8 +212,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintUniVybe() throws PrintException {
         UniVybe univybe = new UniVybe();
-        univybe.getMix().setValue(100);
-        univybe.getLevel().setValue(0);
+        univybe.mix.setValue(100);
+        univybe.level.setValue(0);
         univybe.getRate().setValue(20);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
@@ -225,8 +225,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintCustomVybe() throws PrintException {
         CustomVybe customVybe = new CustomVybe();
-        customVybe.getMix().setValue(100);
-        customVybe.getLevel().setValue(0);
+        customVybe.mix.setValue(100);
+        customVybe.level.setValue(0);
         customVybe.setRate(new FrequencyRate("Rate", 0.97));
         customVybe.getPulseWidth().setValue(46);
         customVybe.getDepth().setValue(45);
@@ -240,8 +240,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintPhaser() throws PrintException {
         Phaser phaser = new Phaser();
-        phaser.getMix().setValue(100);
-        phaser.getLevel().setValue(0);
+        phaser.mix.setValue(100);
+        phaser.level.setValue(0);
         phaser.setRate(new FrequencyRate("Rate", 0.83));
         phaser.getPulseWidth().setValue(50);
         phaser.getDepth().setValue(100);
@@ -256,8 +256,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintRedComp() throws PrintException {
         RedComp redComp = new RedComp();
-        redComp.getMix().setValue(100);
-        redComp.getLevel().setValue(6);
+        redComp.mix.setValue(100);
+        redComp.level.setValue(6);
         redComp.getSensitivity().setValue(70);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: 70\n";
@@ -269,8 +269,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintBlueComp() throws PrintException {
         BlueComp blueComp = new BlueComp();
-        blueComp.getMix().setValue(100);
-        blueComp.getLevel().setValue(6);
+        blueComp.mix.setValue(100);
+        blueComp.level.setValue(6);
         blueComp.getSensitivity().setValue(5);
         blueComp.getThreshold().setValue(-28);
         blueComp.getGain().setValue(5);
@@ -286,8 +286,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintOrangePhase() throws PrintException {
         OrangePhase orangePhase = new OrangePhase();
-        orangePhase.getMix().setValue(100);
-        orangePhase.getLevel().setValue(0);
+        orangePhase.mix.setValue(100);
+        orangePhase.level.setValue(0);
         orangePhase.getRate().setValue(20);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
@@ -299,8 +299,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintOctaBuzz() throws PrintException {
         OctaBuzz octaBuzz = new OctaBuzz();
-        octaBuzz.getMix().setValue(100);
-        octaBuzz.getLevel().setValue(3);
+        octaBuzz.mix.setValue(100);
+        octaBuzz.level.setValue(3);
 
         String expected = "    Mix: 100%\n    Level: +3dB\n";
         String actual = AlgorithmPrinter.print(octaBuzz);
@@ -311,8 +311,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintSweepFilter() throws PrintException {
         SweepFilter sweepFilter = new SweepFilter();
-        sweepFilter.getMix().setValue(100);
-        sweepFilter.getLevel().setValue(6);
+        sweepFilter.mix.setValue(100);
+        sweepFilter.level.setValue(6);
         sweepFilter.getFc().setValue(88);
         sweepFilter.getFRes().setValue(34);
         sweepFilter.getMod().setValue(2120);
@@ -328,8 +328,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintWah1() throws PrintException {
         Wah1 wah1 = new Wah1();
-        wah1.getMix().setValue(100);
-        wah1.getLevel().setValue(0);
+        wah1.mix.setValue(100);
+        wah1.level.setValue(0);
         wah1.getSweep().setValue(50);
         wah1.getBass().setValue(19);
         wah1.getType().setValue(0);
@@ -345,8 +345,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintWah2() throws PrintException {
         Wah2 wah2 = new Wah2();
-        wah2.getMix().setValue(100);
-        wah2.getLevel().setValue(6);
+        wah2.mix.setValue(100);
+        wah2.level.setValue(6);
         wah2.getSweep().setValue(50);
         wah2.getBass().setValue(0);
         wah2.getType().setValue(0);
@@ -362,8 +362,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintPedalWah1() throws PrintException {
         PedalWah1 pedalWah1 = new PedalWah1();
-        pedalWah1.getMix().setValue(100);
-        pedalWah1.getLevel().setValue(0);
+        pedalWah1.mix.setValue(100);
+        pedalWah1.level.setValue(0);
         pedalWah1.getBass().setValue(19);
         pedalWah1.getType().setValue(0);
         pedalWah1.getResponse().setValue(100);
@@ -378,8 +378,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintPedalWah2() throws PrintException {
         PedalWah2 pedalWah2 = new PedalWah2();
-        pedalWah2.getMix().setValue(100);
-        pedalWah2.getLevel().setValue(0);
+        pedalWah2.mix.setValue(100);
+        pedalWah2.level.setValue(0);
         pedalWah2.getBass().setValue(10);
         pedalWah2.getType().setValue(0);
         pedalWah2.getResponse().setValue(100);
@@ -394,8 +394,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintVolumeMono() throws PrintException {
         VolumeMono volumeMono = new VolumeMono();
-        volumeMono.getMix().setValue(100);
-        volumeMono.getLevel().setValue(0);
+        volumeMono.mix.setValue(100);
+        volumeMono.level.setValue(0);
         volumeMono.getVolume().setValue(60);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 60%\n";
@@ -407,8 +407,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintVolumeStereo() throws PrintException {
         VolumeStereo volumeStereo = new VolumeStereo();
-        volumeStereo.getMix().setValue(100);
-        volumeStereo.getLevel().setValue(0);
+        volumeStereo.mix.setValue(100);
+        volumeStereo.level.setValue(0);
         volumeStereo.getVolume().setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
@@ -420,8 +420,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintVolumeDual() throws PrintException {
         VolumeDual volumeDual = new VolumeDual();
-        volumeDual.getMix().setValue(100);
-        volumeDual.getLevel().setValue(0);
+        volumeDual.mix.setValue(100);
+        volumeDual.level.setValue(0);
         volumeDual.getVolumeLeft().setValue(100);
         volumeDual.getVolumeRight().setValue(100);
 
@@ -434,8 +434,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintPedalVol() throws PrintException {
         PedalVol pedalVol = new PedalVol();
-        pedalVol.getMix().setValue(100);
-        pedalVol.getLevel().setValue(0);
+        pedalVol.mix.setValue(100);
+        pedalVol.level.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n";
         String actual = AlgorithmPrinter.print(pedalVol);
@@ -446,8 +446,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintChorus() throws PrintException {
         ChorusAlgorithm chorus = new ChorusAlgorithm();
-        chorus.getMix().setValue(100);
-        chorus.getLevel().setValue(0);
+        chorus.mix.setValue(100);
+        chorus.level.setValue(0);
         chorus.setRate1(new FrequencyRate("Rate1", 0.62));
         chorus.getPulseWidth1().setValue(45);
         chorus.getDepth1().setValue(30);
@@ -466,8 +466,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintChorusDetuneMono() throws PrintException {
         ChorusDetuneMono detuneMono = new ChorusDetuneMono();
-        detuneMono.getMix().setValue(100);
-        detuneMono.getLevel().setValue(3);
+        detuneMono.mix.setValue(100);
+        detuneMono.level.setValue(3);
         detuneMono.getTune().setValue(7);
         detuneMono.getOptimize().setValue(10);
         detuneMono.getPreDelay().setValue(22);
@@ -481,8 +481,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintDetuneDual() throws PrintException {
         DetuneDual detuneDual = new DetuneDual();
-        detuneDual.getMix().setValue(100);
-        detuneDual.getLevel().setValue(3);
+        detuneDual.mix.setValue(100);
+        detuneDual.level.setValue(3);
         detuneDual.getTune1().setValue(7);
         detuneDual.getOptimize().setValue(10);
         detuneDual.getTune2().setValue(5);
@@ -497,8 +497,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintFlangerMono() throws PrintException {
         FlangerMono flangerMono = new FlangerMono();
-        flangerMono.getMix().setValue(100);
-        flangerMono.getLevel().setValue(0);
+        flangerMono.mix.setValue(100);
+        flangerMono.level.setValue(0);
         flangerMono.setRate(new FrequencyRate("Rate", 0.05));
         flangerMono.getPulseWidth().setValue(20);
         flangerMono.getDepth().setValue(30);
@@ -514,8 +514,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintFlanger24Mono() throws PrintException {
         Flanger24Mono flanger24Mono = new Flanger24Mono();
-        flanger24Mono.getMix().setValue(100);
-        flanger24Mono.getLevel().setValue(0);
+        flanger24Mono.mix.setValue(100);
+        flanger24Mono.level.setValue(0);
         flanger24Mono.setRate(new FrequencyRate("Rate", 0.31));
         flanger24Mono.getPulseWidth().setValue(50);
         flanger24Mono.getDepth().setValue(36);
@@ -532,8 +532,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintFlangerStereo() throws PrintException {
         FlangerStereo flangerStereo = new FlangerStereo();
-        flangerStereo.getMix().setValue(67);
-        flangerStereo.getLevel().setValue(1);
+        flangerStereo.mix.setValue(67);
+        flangerStereo.level.setValue(1);
         flangerStereo.setRate(new BeatRate("Rate", 1, 4));
         flangerStereo.getPulseWidth().setValue(50);
         flangerStereo.getDepth().setValue(62);
@@ -550,8 +550,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintRotaryCab() throws PrintException {
         RotaryCab rotaryCab = new RotaryCab();
-        rotaryCab.getMix().setValue(100);
-        rotaryCab.getLevel().setValue(4);
+        rotaryCab.mix.setValue(100);
+        rotaryCab.level.setValue(4);
         rotaryCab.setRate1(new FrequencyRate("Rate1", 5.73));
         rotaryCab.getDepth1().setValue(43);
         rotaryCab.setRate2(new FrequencyRate("Rate2", 5.73));
@@ -569,8 +569,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintAerosol() throws PrintException {
         Aerosol aerosol = new Aerosol();
-        aerosol.getMix().setValue(100);
-        aerosol.getLevel().setValue(0);
+        aerosol.mix.setValue(100);
+        aerosol.level.setValue(0);
         aerosol.setRate1(new FrequencyRate("Rate1", 0.26));
         aerosol.getPulseWidth1().setValue(45);
         aerosol.getDepth1().setValue(70);
@@ -589,8 +589,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintCentrifuge1() throws PrintException {
         Centrifuge1 centrifuge1 = new Centrifuge1();
-        centrifuge1.getMix().setValue(100);
-        centrifuge1.getLevel().setValue(6);
+        centrifuge1.mix.setValue(100);
+        centrifuge1.level.setValue(6);
         centrifuge1.setRate1(new FrequencyRate("Rate1", 0.6));
         centrifuge1.getPulseWidth1().setValue(45);
         centrifuge1.getSync1().setValue(120);
@@ -610,8 +610,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintChorusVolumeMono() throws PrintException {
         ChorusVolumeMono volumeMono = new ChorusVolumeMono();
-        volumeMono.getMix().setValue(100);
-        volumeMono.getLevel().setValue(0);
+        volumeMono.mix.setValue(100);
+        volumeMono.level.setValue(0);
         volumeMono.getVolume().setValue(100);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 100%\n";
@@ -623,8 +623,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintChorusVolumeStereo() throws PrintException {
         ChorusVolumeStereo volumeStereo = new ChorusVolumeStereo();
-        volumeStereo.getMix().setValue(100);
-        volumeStereo.getLevel().setValue(0);
+        volumeStereo.mix.setValue(100);
+        volumeStereo.level.setValue(0);
         volumeStereo.getVolume().setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
@@ -636,8 +636,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintChorusVolumeDual() throws PrintException {
         ChorusVolumeDual volumeDual = new ChorusVolumeDual();
-        volumeDual.getMix().setValue(100);
-        volumeDual.getLevel().setValue(0);
+        volumeDual.mix.setValue(100);
+        volumeDual.level.setValue(0);
         volumeDual.getVolumeLeft().setValue(80);
         volumeDual.getVolumeRight().setValue(90);
 
@@ -650,8 +650,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintChorusPedalVol() throws PrintException {
         ChorusPedalVol pedalVol = new ChorusPedalVol();
-        pedalVol.getMix().setValue(100);
-        pedalVol.getLevel().setValue(0);
+        pedalVol.mix.setValue(100);
+        pedalVol.level.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n";
         String actual = AlgorithmPrinter.print(pedalVol);
@@ -662,8 +662,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintDelayMono() throws PrintException {
         DelayMono delayMono = new DelayMono();
-        delayMono.getMix().setValue(10);
-        delayMono.getLevel().setValue(0);
+        delayMono.mix.setValue(10);
+        delayMono.level.setValue(0);
         delayMono.setTime(new BeatRate("Time", 4, 3));
         delayMono.getFeedback().setValue(10);
         delayMono.getInsert().setValue(3);
@@ -678,8 +678,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintDelayStereo() throws PrintException {
         DelayStereo delayStereo = new DelayStereo();
-        delayStereo.getMix().setValue(20);
-        delayStereo.getLevel().setValue(0);
+        delayStereo.mix.setValue(20);
+        delayStereo.level.setValue(0);
         delayStereo.setTime(new BeatRate("Time", 2, 4));
         delayStereo.getFeedback().setValue(20);
         delayStereo.getInsert().setValue(3);
@@ -694,8 +694,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintDelayDual() throws PrintException {
         DelayDual delayDual = new DelayDual();
-        delayDual.getMix().setValue(25);
-        delayDual.getLevel().setValue(0);
+        delayDual.mix.setValue(25);
+        delayDual.level.setValue(0);
         delayDual.setTime1(new BeatRate("Time1", 3, 4));
         delayDual.setTime2(new BeatRate("Time2", 4, 3));
         delayDual.getLevel1().setValue(0);
@@ -718,8 +718,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintEchoMono() throws PrintException {
         EchoMono echoMono = new EchoMono();
-        echoMono.getMix().setValue(6);
-        echoMono.getLevel().setValue(1);
+        echoMono.mix.setValue(6);
+        echoMono.level.setValue(1);
         echoMono.setTime(new BeatRate("Time", 4, 4));
         echoMono.getFeedback().setValue(-15);
         echoMono.getInsert().setValue(3);
@@ -735,8 +735,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintEchoStereo() throws PrintException {
         EchoStereo echoStereo = new EchoStereo();
-        echoStereo.getMix().setValue(0);
-        echoStereo.getLevel().setValue(0);
+        echoStereo.mix.setValue(0);
+        echoStereo.level.setValue(0);
         echoStereo.setTime(new BeatRate("Time", 1, 1));
         echoStereo.getFeedback().setValue(0);
         echoStereo.getInsert().setValue(3);
@@ -752,8 +752,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintEchoDual() throws PrintException {
         EchoDual echoDual = new EchoDual();
-        echoDual.getMix().setValue(2);
-        echoDual.getLevel().setValue(1);
+        echoDual.mix.setValue(2);
+        echoDual.level.setValue(1);
         echoDual.setTime1(new BeatRate("Time1", 4, 4));
         echoDual.setTime2(new BeatRate("Time2", 2, 1));
         echoDual.getLevel1().setValue(0);
@@ -774,8 +774,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintJamMan() throws PrintException {
         JamMan jamMan = new JamMan();
-        jamMan.getMix().setValue(100);
-        jamMan.getLevel().setValue(0);
+        jamMan.mix.setValue(100);
+        jamMan.level.setValue(0);
         jamMan.getSize().setValue(250);
         jamMan.getFeedback().setValue(0);
         jamMan.getInsert().setValue(3);
@@ -794,8 +794,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintChamber() throws PrintException {
         Chamber chamber = new Chamber();
-        chamber.getMix().setValue(28);
-        chamber.getLevel().setValue(0);
+        chamber.mix.setValue(28);
+        chamber.level.setValue(0);
         chamber.getSize().setValue(24.0);
         chamber.getLink().setValue(true);
         chamber.getDiff().setValue(22);
@@ -816,8 +816,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintHall() throws PrintException {
         Hall hall = new Hall();
-        hall.getMix().setValue(20);
-        hall.getLevel().setValue(0);
+        hall.mix.setValue(20);
+        hall.level.setValue(0);
         hall.getSize().setValue(53.0);
         hall.getLink().setValue(true);
         hall.getDiff().setValue(80);
@@ -838,8 +838,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintPlate() throws PrintException {
         Plate plate = new Plate();
-        plate.getMix().setValue(100);
-        plate.getLevel().setValue(6);
+        plate.mix.setValue(100);
+        plate.level.setValue(6);
         plate.getSize().setValue(22.5);
         plate.getLink().setValue(true);
         plate.getDiff().setValue(66);
@@ -860,8 +860,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintAmbience() throws PrintException {
         Ambience ambience = new Ambience();
-        ambience.getMix().setValue(18);
-        ambience.getLevel().setValue(0);
+        ambience.mix.setValue(18);
+        ambience.level.setValue(0);
         ambience.getSize().setValue(24.5);
         ambience.getLink().setValue(true);
         ambience.getDiff().setValue(60);
@@ -879,8 +879,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintOneBandMono() throws PrintException {
         OneBandMono oneBandMono = new OneBandMono();
-        oneBandMono.getMix().setValue(100);
-        oneBandMono.getLevel().setValue(0);
+        oneBandMono.mix.setValue(100);
+        oneBandMono.level.setValue(0);
         oneBandMono.getGain().setValue(9);
         oneBandMono.getFc().setValue(393);
         oneBandMono.getQ().setValue(0.1);
@@ -895,8 +895,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintTwoBandMono() throws PrintException {
         TwoBandMono twoBandMono = new TwoBandMono();
-        twoBandMono.getMix().setValue(100);
-        twoBandMono.getLevel().setValue(0);
+        twoBandMono.mix.setValue(100);
+        twoBandMono.level.setValue(0);
         twoBandMono.getGain1().setValue(-5);
         twoBandMono.getFc1().setValue(200);
         twoBandMono.getQ1().setValue(0.7);
@@ -915,8 +915,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintFourBandMono() throws PrintException {
         FourBandMono fourBandMono = new FourBandMono();
-        fourBandMono.getMix().setValue(100);
-        fourBandMono.getLevel().setValue(0);
+        fourBandMono.mix.setValue(100);
+        fourBandMono.level.setValue(0);
         fourBandMono.getGain1().setValue(-72);
         fourBandMono.getFc1().setValue(820);
         fourBandMono.getQ1().setValue(0.7);
@@ -943,8 +943,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintTwoBandStereo() throws PrintException {
         TwoBandStereo twoBandStereo = new TwoBandStereo();
-        twoBandStereo.getMix().setValue(100);
-        twoBandStereo.getLevel().setValue(-2);
+        twoBandStereo.mix.setValue(100);
+        twoBandStereo.level.setValue(-2);
         twoBandStereo.getGain1().setValue(5);
         twoBandStereo.getFc1().setValue(5050);
         twoBandStereo.getQ1().setValue(0.1);
@@ -963,8 +963,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintCrossover() throws PrintException {
         Crossover crossover = new Crossover();
-        crossover.getMix().setValue(100);
-        crossover.getLevel().setValue(0);
+        crossover.mix.setValue(100);
+        crossover.level.setValue(0);
         crossover.getFc().setValue(3000);
         crossover.getBalance().setValue(4);
 
@@ -977,8 +977,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintEqVolumeMono() throws PrintException {
         EqVolumeMono volumeMono = new EqVolumeMono();
-        volumeMono.getMix().setValue(100);
-        volumeMono.getLevel().setValue(0);
+        volumeMono.mix.setValue(100);
+        volumeMono.level.setValue(0);
         volumeMono.getVolume().setValue(100);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 100%\n";
@@ -990,8 +990,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintEqVolumeStereo() throws PrintException {
         EqVolumeStereo volumeStereo = new EqVolumeStereo();
-        volumeStereo.getMix().setValue(100);
-        volumeStereo.getLevel().setValue(0);
+        volumeStereo.mix.setValue(100);
+        volumeStereo.level.setValue(0);
         volumeStereo.getVolume().setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
@@ -1003,8 +1003,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintEqVolumeDual() throws PrintException {
         EqVolumeDual volumeDual = new EqVolumeDual();
-        volumeDual.getMix().setValue(100);
-        volumeDual.getLevel().setValue(0);
+        volumeDual.mix.setValue(100);
+        volumeDual.level.setValue(0);
         volumeDual.getVolumeLeft().setValue(0);
         volumeDual.getVolumeRight().setValue(100);
 
@@ -1017,8 +1017,8 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintEqPedalVol() throws PrintException {
         EqPedalVol pedalVol = new EqPedalVol();
-        pedalVol.getMix().setValue(100);
-        pedalVol.getLevel().setValue(0);
+        pedalVol.mix.setValue(100);
+        pedalVol.level.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n";
         String actual = AlgorithmPrinter.print(pedalVol);

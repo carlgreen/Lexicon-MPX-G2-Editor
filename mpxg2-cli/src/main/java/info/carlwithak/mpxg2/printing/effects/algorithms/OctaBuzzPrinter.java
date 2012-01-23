@@ -33,8 +33,8 @@ public class OctaBuzzPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         OctaBuzz octaBuzz = (OctaBuzz) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(octaBuzz.getMix()));
-        sb.append(printParameter(octaBuzz.getLevel()));
+        sb.append(printParameter(octaBuzz.mix));
+        sb.append(printParameter(octaBuzz.level));
         return sb.toString();
     }
 

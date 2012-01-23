@@ -30,10 +30,10 @@ public class PedalVolParser {
         PedalVol pedalVol = new PedalVol();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        pedalVol.getMix().setValue(mix);
+        pedalVol.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        pedalVol.getLevel().setValue(level);
+        pedalVol.level.setValue(level);
 
         return pedalVol;
     }

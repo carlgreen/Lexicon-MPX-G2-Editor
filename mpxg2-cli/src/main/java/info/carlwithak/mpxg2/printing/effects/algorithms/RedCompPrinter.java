@@ -33,8 +33,8 @@ public class RedCompPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         RedComp redComp = (RedComp) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(redComp.getMix()));
-        sb.append(printParameter(redComp.getLevel()));
+        sb.append(printParameter(redComp.mix));
+        sb.append(printParameter(redComp.level));
         sb.append(printParameter(redComp.getSensitivity()));
         return sb.toString();
     }

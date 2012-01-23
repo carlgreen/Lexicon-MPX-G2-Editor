@@ -33,8 +33,8 @@ public class DetuneDualPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DetuneDual detuneDual = (DetuneDual) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(detuneDual.getMix()));
-        sb.append(printParameter(detuneDual.getLevel()));
+        sb.append(printParameter(detuneDual.mix));
+        sb.append(printParameter(detuneDual.level));
         sb.append(printParameter(detuneDual.getTune1()));
         sb.append(printParameter(detuneDual.getOptimize()));
         sb.append(printParameter(detuneDual.getTune2()));

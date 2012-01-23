@@ -33,8 +33,8 @@ public class FlangerStereoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         FlangerStereo flangerStereo = (FlangerStereo) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(flangerStereo.getMix()));
-        sb.append(printParameter(flangerStereo.getLevel()));
+        sb.append(printParameter(flangerStereo.mix));
+        sb.append(printParameter(flangerStereo.level));
         sb.append(printParameter(flangerStereo.getRate()));
         sb.append(printParameter(flangerStereo.getPulseWidth()));
         sb.append(printParameter(flangerStereo.getDepth()));

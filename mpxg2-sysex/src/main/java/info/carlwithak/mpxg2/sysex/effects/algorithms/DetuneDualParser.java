@@ -30,10 +30,10 @@ public class DetuneDualParser {
         DetuneDual detuneDual = new DetuneDual();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        detuneDual.getMix().setValue(mix);
+        detuneDual.mix.setValue(mix);
 
         int level = effectParameters[2] + effectParameters[3] * 16;
-        detuneDual.getLevel().setValue(level);
+        detuneDual.level.setValue(level);
 
         int tune1 = effectParameters[4] + effectParameters[5] * 16;
         detuneDual.getTune1().setValue(tune1);

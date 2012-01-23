@@ -33,8 +33,8 @@ public class AutoPanPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         AutoPan autoPan = (AutoPan) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(autoPan.getMix()));
-        sb.append(printParameter(autoPan.getLevel()));
+        sb.append(printParameter(autoPan.mix));
+        sb.append(printParameter(autoPan.level));
         sb.append(printParameter(autoPan.getRate()));
         sb.append(printParameter(autoPan.getPulseWidth()));
         sb.append(printParameter(autoPan.getDepth()));

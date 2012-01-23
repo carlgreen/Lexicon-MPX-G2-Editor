@@ -34,7 +34,7 @@ public class ChorusPedalVolParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusPedalVol pedalVol = ChorusPedalVolParser.parse(effectParameters);
-        assertThat(pedalVol.getMix(), is(value(100)));
-        assertThat(pedalVol.getLevel(), is(value(0)));
+        assertThat(pedalVol.mix, is(value(100)));
+        assertThat(pedalVol.level, is(value(0)));
     }
 }

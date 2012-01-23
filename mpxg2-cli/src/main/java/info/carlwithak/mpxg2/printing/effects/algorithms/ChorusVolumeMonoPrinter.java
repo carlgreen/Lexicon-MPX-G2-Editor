@@ -33,8 +33,8 @@ public class ChorusVolumeMonoPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ChorusVolumeMono volumeMono = (ChorusVolumeMono) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(volumeMono.getMix()));
-        sb.append(printParameter(volumeMono.getLevel()));
+        sb.append(printParameter(volumeMono.mix));
+        sb.append(printParameter(volumeMono.level));
         sb.append(printParameter(volumeMono.getVolume()));
         return sb.toString();
     }

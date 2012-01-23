@@ -33,8 +33,8 @@ public class ChorusPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         ChorusAlgorithm chorus = (ChorusAlgorithm) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(chorus.getMix()));
-        sb.append(printParameter(chorus.getLevel()));
+        sb.append(printParameter(chorus.mix));
+        sb.append(printParameter(chorus.level));
         sb.append(printParameter(chorus.getRate1()));
         sb.append(printParameter(chorus.getPulseWidth1()));
         sb.append(printParameter(chorus.getDepth1()));

@@ -33,10 +33,10 @@ public class AutoPanParser {
         AutoPan autoPan = new AutoPan();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        autoPan.getMix().setValue(mix);
+        autoPan.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        autoPan.getLevel().setValue(level);
+        autoPan.level.setValue(level);
 
         autoPan.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 

@@ -26,8 +26,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
  * @author Carl Green
  */
 public abstract class Eq implements EffectObject {
-    private GenericValue<Integer> mix = new GenericValue<Integer>("Mix", "%", 0, 100);
-    private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", -90, 6);
+    public final GenericValue<Integer> mix = new GenericValue<Integer>("Mix", "%", 0, 100);
+    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", -90, 6);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
@@ -43,14 +43,6 @@ public abstract class Eq implements EffectObject {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getMix() {
-        return mix;
-    }
-
-    public GenericValue<Integer> getLevel() {
-        return level;
     }
 
 }

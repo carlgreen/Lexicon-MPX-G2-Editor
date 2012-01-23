@@ -33,8 +33,8 @@ public class PannerPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Panner panner = (Panner) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(panner.getMix()));
-        sb.append(printParameter(panner.getLevel()));
+        sb.append(printParameter(panner.mix));
+        sb.append(printParameter(panner.level));
         sb.append(printParameter(panner.getPan1()));
         sb.append(printParameter(panner.getPan2()));
         return sb.toString();

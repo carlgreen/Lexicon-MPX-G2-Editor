@@ -30,10 +30,10 @@ public class PedalWah1Parser {
         PedalWah1 pedalWah1 = new PedalWah1();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        pedalWah1.getMix().setValue(mix);
+        pedalWah1.mix.setValue(mix);
 
         int level = effectParameters[2] + effectParameters[3] * 16;
-        pedalWah1.getLevel().setValue(level);
+        pedalWah1.level.setValue(level);
 
         int bass = effectParameters[4] + effectParameters[5] * 16;
         pedalWah1.getBass().setValue(bass);

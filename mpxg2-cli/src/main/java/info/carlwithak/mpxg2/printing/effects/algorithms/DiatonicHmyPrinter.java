@@ -33,8 +33,8 @@ public class DiatonicHmyPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         DiatonicHmy diatonicHmy = (DiatonicHmy) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(diatonicHmy.getMix()));
-        sb.append(printParameter(diatonicHmy.getLevel()));
+        sb.append(printParameter(diatonicHmy.mix));
+        sb.append(printParameter(diatonicHmy.level));
         sb.append(printParameter(diatonicHmy.getKey()));
         sb.append(printParameter(diatonicHmy.getScale()));
         sb.append(printParameter(diatonicHmy.getInterval()));

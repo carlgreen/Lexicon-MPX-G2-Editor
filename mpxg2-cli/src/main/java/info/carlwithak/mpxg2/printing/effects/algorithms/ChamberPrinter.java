@@ -33,8 +33,8 @@ public class ChamberPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Chamber chamber = (Chamber) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(chamber.getMix()));
-        sb.append(printParameter(chamber.getLevel()));
+        sb.append(printParameter(chamber.mix));
+        sb.append(printParameter(chamber.level));
         sb.append(printParameter(chamber.getSize()));
         sb.append(printParameter(chamber.getLink()));
         sb.append(printParameter(chamber.getDiff()));

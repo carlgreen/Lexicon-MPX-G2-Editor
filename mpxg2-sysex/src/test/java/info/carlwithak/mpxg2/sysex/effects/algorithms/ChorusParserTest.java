@@ -36,8 +36,8 @@ public class ChorusParserTest {
     public void testParse_Cordovox() throws ParseException {
         byte[] effectParameters = {4, 6, 0, 0, 14, 3, 0, 0, 0, 0, 13, 2, 14, 1, 8, 3, 0, 0, 0, 0, 6, 3, 0, 0, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         ChorusAlgorithm chorus = ChorusParser.parse(effectParameters);
-        assertThat(chorus.getMix(), is(value(100)));
-        assertThat(chorus.getLevel(), is(value(0)));
+        assertThat(chorus.mix, is(value(100)));
+        assertThat(chorus.level, is(value(0)));
         assertThat(chorus.getRate1(), is(frequency(0.62)));
         assertThat(chorus.getPulseWidth1(), is(value(45)));
         assertThat(chorus.getDepth1(), is(value(30)));

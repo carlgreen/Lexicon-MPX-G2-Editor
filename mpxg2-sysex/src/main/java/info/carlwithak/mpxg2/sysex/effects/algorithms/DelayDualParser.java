@@ -34,10 +34,10 @@ public class DelayDualParser {
         DelayDual delayDual = new DelayDual();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        delayDual.getMix().setValue(mix);
+        delayDual.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        delayDual.getLevel().setValue(level);
+        delayDual.level.setValue(level);
 
         delayDual.setTime1(RateParser.parse("Time1", Arrays.copyOfRange(effectParameters, 4, 10)));
 

@@ -31,10 +31,10 @@ public class ChamberParser {
         Chamber chamber = new Chamber();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
-        chamber.getMix().setValue(mix);
+        chamber.mix.setValue(mix);
 
         int level = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        chamber.getLevel().setValue(level);
+        chamber.level.setValue(level);
 
         double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
         chamber.getSize().setValue(size);

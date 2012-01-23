@@ -33,8 +33,8 @@ public class HallPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Hall hall = (Hall) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(hall.getMix()));
-        sb.append(printParameter(hall.getLevel()));
+        sb.append(printParameter(hall.mix));
+        sb.append(printParameter(hall.level));
         sb.append(printParameter(hall.getSize()));
         sb.append(printParameter(hall.getLink()));
         sb.append(printParameter(hall.getDiff()));
