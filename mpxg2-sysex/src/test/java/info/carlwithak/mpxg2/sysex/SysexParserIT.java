@@ -83,6 +83,7 @@ public class SysexParserIT {
      * Test parsing the G2 Blue preset.
      */
     @Test
+    @SuppressWarnings("unchecked")
     public void testParseG2Blue() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("001_G2_Blue.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
@@ -1729,6 +1730,7 @@ public class SysexParserIT {
      * Test parsing the Clean Slate preset, which has pretty much nothing defined.
      */
     @Test
+    @SuppressWarnings("unchecked")
     public void testParseCleanSlate() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("250_Clean_Slate.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
@@ -1975,6 +1977,7 @@ public class SysexParserIT {
      * Test parsing the Unity Gain preset, which has a little more than Clean Slate defined.
      */
     @Test
+    @SuppressWarnings("unchecked")
     public void testParseUnityGain() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("249_Unity_Gain.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);

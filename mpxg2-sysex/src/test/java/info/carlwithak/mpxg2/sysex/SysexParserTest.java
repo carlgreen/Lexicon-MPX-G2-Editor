@@ -807,6 +807,7 @@ public class SysexParserTest {
         input.setValue(-1);
         Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 1);
         assertThat(actual, is(instanceOf(GenericValue.class)));
+        @SuppressWarnings("unchecked")
         GenericValue<Integer> val = (GenericValue<Integer>) actual;
         assertThat(actual.getName(), (is("a2")));
         assertThat(actual.getUnit(), (is("b")));
@@ -821,6 +822,7 @@ public class SysexParserTest {
         input.setValue(false);
         Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 1);
         assertThat(actual, is(instanceOf(GenericValue.class)));
+        @SuppressWarnings("unchecked")
         GenericValue<Boolean> val = (GenericValue<Boolean>) actual;
         assertThat(actual.getName(), (is("a2")));
         assertThat(actual.getUnit(), (is("b")));
@@ -835,6 +837,7 @@ public class SysexParserTest {
         input.setValue(-1);
         Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 0x8000);
         assertThat(actual, is(instanceOf(GenericValue.class)));
+        @SuppressWarnings("unchecked")
         GenericValue<Integer> val = (GenericValue<Integer>) actual;
         assertThat(val.getValue(), (is(nullValue())));
     }
