@@ -48,6 +48,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.FourBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
@@ -907,6 +908,34 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -5dB\n    Fc 1: 200Hz\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: -7dB\n    Fc 2: 5000Hz\n    Q 2: 0.7\n    Mode2: HShlf\n";
         String actual = AlgorithmPrinter.print(twoBandMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintFourBandMono() throws PrintException {
+        FourBandMono fourBandMono = new FourBandMono();
+        fourBandMono.getMix().setValue(100);
+        fourBandMono.getLevel().setValue(0);
+        fourBandMono.getGain1().setValue(-72);
+        fourBandMono.getFc1().setValue(820);
+        fourBandMono.getQ1().setValue(0.7);
+        fourBandMono.getMode1().setValue(0);
+        fourBandMono.getGain2().setValue(6);
+        fourBandMono.getFc2().setValue(1200);
+        fourBandMono.getQ2().setValue(2.5);
+        fourBandMono.getMode2().setValue(0);
+        fourBandMono.getGain3().setValue(10);
+        fourBandMono.getFc3().setValue(1700);
+        fourBandMono.getQ3().setValue(1.5);
+        fourBandMono.getMode3().setValue(1);
+        fourBandMono.getGain4().setValue(-72);
+        fourBandMono.getFc4().setValue(3800);
+        fourBandMono.getQ4().setValue(0.7);
+        fourBandMono.getMode4().setValue(2);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -72dB\n    Fc 1: 820Hz\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: +6dB\n    Fc 2: 1200Hz\n    Q 2: 2.5\n    Mode2: LShlf\n    Gain3: +10dB\n    Fc 3: 1700Hz\n    Q 3: 1.5\n    Mode3: Band\n    Gain4: -72dB\n    Fc 4: 3800Hz\n    Q 4: 0.7\n    Mode4: HShlf\n";
+        String actual = AlgorithmPrinter.print(fourBandMono);
 
         assertEquals(expected, actual);
     }
