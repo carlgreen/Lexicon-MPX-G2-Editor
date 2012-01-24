@@ -35,22 +35,22 @@ public class FourBandMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(fourBandMono.mix));
         sb.append(printParameter(fourBandMono.level));
-        sb.append(printParameter(fourBandMono.getGain1()));
-        sb.append(printParameter(fourBandMono.getFc1()));
-        sb.append(printParameter(fourBandMono.getQ1()));
-        sb.append(printParameter(fourBandMono.getMode1()));
-        sb.append(printParameter(fourBandMono.getGain2()));
-        sb.append(printParameter(fourBandMono.getFc2()));
-        sb.append(printParameter(fourBandMono.getQ2()));
-        sb.append(printParameter(fourBandMono.getMode2()));
-        sb.append(printParameter(fourBandMono.getGain3()));
-        sb.append(printParameter(fourBandMono.getFc3()));
-        sb.append(printParameter(fourBandMono.getQ3()));
-        sb.append(printParameter(fourBandMono.getMode3()));
-        sb.append(printParameter(fourBandMono.getGain4()));
-        sb.append(printParameter(fourBandMono.getFc4()));
-        sb.append(printParameter(fourBandMono.getQ4()));
-        sb.append(printParameter(fourBandMono.getMode4()));
+        sb.append(printParameter(fourBandMono.gain1));
+        sb.append(printParameter(fourBandMono.fc1));
+        sb.append(printParameter(fourBandMono.q1));
+        sb.append(printParameter(fourBandMono.mode1));
+        sb.append(printParameter(fourBandMono.gain2));
+        sb.append(printParameter(fourBandMono.fc2));
+        sb.append(printParameter(fourBandMono.q2));
+        sb.append(printParameter(fourBandMono.mode2));
+        sb.append(printParameter(fourBandMono.gain3));
+        sb.append(printParameter(fourBandMono.fc3));
+        sb.append(printParameter(fourBandMono.q3));
+        sb.append(printParameter(fourBandMono.mode3));
+        sb.append(printParameter(fourBandMono.gain4));
+        sb.append(printParameter(fourBandMono.fc4));
+        sb.append(printParameter(fourBandMono.q4));
+        sb.append(printParameter(fourBandMono.mode4));
         return sb.toString();
     }
 

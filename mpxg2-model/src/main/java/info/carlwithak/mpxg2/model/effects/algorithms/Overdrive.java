@@ -29,15 +29,15 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Overdrive extends Gain {
     private static final String NAME = "Overdrive";
 
-    private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -15, 15);
-    private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -15, 15);
-    private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 15);
-    private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
-    private GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "", 0, 20);
-    private GenericValue<Integer> feel = new GenericValue<Integer>("Feel", "", 0, 64);
-    private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 40);
-    private GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
-    private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+    public final GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -15, 15);
+    public final GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -15, 15);
+    public final GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 15);
+    public final GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
+    public final GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "", 0, 20);
+    public final GenericValue<Integer> feel = new GenericValue<Integer>("Feel", "", 0, 64);
+    public final GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 40);
+    public final GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
+    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
 
     @Override
     public String getName() {
@@ -79,42 +79,6 @@ public class Overdrive extends Gain {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getLo() {
-        return lo;
-    }
-
-    public GenericValue<Integer> getMid() {
-        return mid;
-    }
-
-    public GenericValue<Integer> getHi() {
-        return hi;
-    }
-
-    public GenericValue<Integer> getInLevel() {
-        return inLevel;
-    }
-
-    public GenericValue<Integer> getLoCut() {
-        return loCut;
-    }
-
-    public GenericValue<Integer> getFeel() {
-        return feel;
-    }
-
-    public GenericValue<Integer> getDrive() {
-        return drive;
-    }
-
-    public GenericValue<Integer> getTone() {
-        return tone;
-    }
-
-    public GenericValue<Integer> getLevel() {
-        return level;
     }
 
 }

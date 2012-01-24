@@ -36,13 +36,13 @@ public class TwoBandStereoParserTest {
         TwoBandStereo twoBandStereo = TwoBandStereoParser.parse(effectParameters);
         assertThat(twoBandStereo.mix, is(value(100)));
         assertThat(twoBandStereo.level, is(value(-2)));
-        assertThat(twoBandStereo.getGain1(), is(value(5)));
-        assertThat(twoBandStereo.getFc1(), is(value(5050)));
-        assertThat(twoBandStereo.getQ1(), is(value(0.1)));
-        assertThat(twoBandStereo.getMode1(), is(value(0))); // LShlf
-        assertThat(twoBandStereo.getGain2(), is(value(8)));
-        assertThat(twoBandStereo.getFc2(), is(value(20)));
-        assertThat(twoBandStereo.getQ2(), is(value(0.1)));
-        assertThat(twoBandStereo.getMode2(), is(value(1))); // Band
+        assertThat(twoBandStereo.gain1, is(value(5)));
+        assertThat(twoBandStereo.fc1, is(value(5050)));
+        assertThat(twoBandStereo.q1, is(value(0.1)));
+        assertThat(twoBandStereo.mode1, is(value(0))); // LShlf
+        assertThat(twoBandStereo.gain2, is(value(8)));
+        assertThat(twoBandStereo.fc2, is(value(20)));
+        assertThat(twoBandStereo.q2, is(value(0.1)));
+        assertThat(twoBandStereo.mode2, is(value(1))); // Band
     }
 }

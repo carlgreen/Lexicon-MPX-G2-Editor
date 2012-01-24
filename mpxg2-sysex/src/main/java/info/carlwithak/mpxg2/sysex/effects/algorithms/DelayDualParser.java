@@ -44,34 +44,34 @@ public class DelayDualParser {
         delayDual.setTime2(RateParser.parse("Time2", Arrays.copyOfRange(effectParameters, 10, 16)));
 
         int level1 = effectParameters[16] + effectParameters[17] * 16;
-        delayDual.getLevel1().setValue(level1);
+        delayDual.level1.setValue(level1);
 
         int level2 = effectParameters[18] + effectParameters[19] * 16;
-        delayDual.getLevel2().setValue(level2);
+        delayDual.level2.setValue(level2);
 
         int pan1 = (byte) (effectParameters[20] + effectParameters[21] * 16);
-        delayDual.getPan1().setValue(pan1);
+        delayDual.pan1.setValue(pan1);
 
         int pan2 = (byte) (effectParameters[22] + effectParameters[23] * 16);
-        delayDual.getPan2().setValue(pan2);
+        delayDual.pan2.setValue(pan2);
 
         int feedback1 = (byte) (effectParameters[24] + effectParameters[25] * 16);
-        delayDual.getFeedback1().setValue(feedback1);
+        delayDual.feedback1.setValue(feedback1);
 
         int insert = effectParameters[26] + effectParameters[27] * 16;
-        delayDual.getInsert().setValue(insert);
+        delayDual.insert.setValue(insert);
 
         int feedback2 = (byte) (effectParameters[28] + effectParameters[29] * 16);
-        delayDual.getFeedback2().setValue(feedback2);
+        delayDual.feedback2.setValue(feedback2);
 
         int xFbk1 = effectParameters[30] + effectParameters[31] * 16;
-        delayDual.getXFbk1().setValue(xFbk1);
+        delayDual.xFbk1.setValue(xFbk1);
 
         int xFbk2 = effectParameters[32] + effectParameters[33] * 16;
-        delayDual.getXFbk2().setValue(xFbk2);
+        delayDual.xFbk2.setValue(xFbk2);
 
         int clear = effectParameters[34] + effectParameters[35] * 16;
-        delayDual.getClear().setValue(Util.parseBoolean(clear));
+        delayDual.clear.setValue(Util.parseBoolean(clear));
 
         return delayDual;
     }

@@ -41,13 +41,13 @@ public class PhaserParser {
         phaser.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = effectParameters[10] + effectParameters[11] * 16;
-        phaser.getPulseWidth().setValue(pulseWidth);
+        phaser.pulseWidth.setValue(pulseWidth);
 
         int depth = effectParameters[12] + effectParameters[13] * 16;
-        phaser.getDepth().setValue(depth);
+        phaser.depth.setValue(depth);
 
         int resonance = effectParameters[14] + effectParameters[15] * 16;
-        phaser.getResonance().setValue(resonance);
+        phaser.resonance.setValue(resonance);
 
         return phaser;
     }

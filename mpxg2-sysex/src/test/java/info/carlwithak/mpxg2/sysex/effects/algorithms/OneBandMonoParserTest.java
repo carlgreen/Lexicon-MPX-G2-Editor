@@ -36,9 +36,9 @@ public class OneBandMonoParserTest {
         OneBandMono oneBandMono = OneBandMonoParser.parse(effectParameters);
         assertThat(oneBandMono.mix, is(value(100)));
         assertThat(oneBandMono.level, is(value(0)));
-        assertThat(oneBandMono.getGain(), is(value(9)));
-        assertThat(oneBandMono.getFc(), is(value(393)));
-        assertThat(oneBandMono.getQ(), is(value(0.1)));
-        assertThat(oneBandMono.getMode(), is(value(0)));
+        assertThat(oneBandMono.gain, is(value(9)));
+        assertThat(oneBandMono.fc, is(value(393)));
+        assertThat(oneBandMono.q, is(value(0.1)));
+        assertThat(oneBandMono.mode, is(value(0)));
     }
 }

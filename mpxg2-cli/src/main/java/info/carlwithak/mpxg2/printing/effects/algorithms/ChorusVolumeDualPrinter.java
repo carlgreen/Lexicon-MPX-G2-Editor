@@ -35,8 +35,8 @@ public class ChorusVolumeDualPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(volumeDual.mix));
         sb.append(printParameter(volumeDual.level));
-        sb.append(printParameter(volumeDual.getVolumeLeft()));
-        sb.append(printParameter(volumeDual.getVolumeRight()));
+        sb.append(printParameter(volumeDual.volumeLeft));
+        sb.append(printParameter(volumeDual.volumeRight));
         return sb.toString();
     }
 

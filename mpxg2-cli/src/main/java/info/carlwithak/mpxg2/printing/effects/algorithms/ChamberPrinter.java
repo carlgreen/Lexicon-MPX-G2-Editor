@@ -35,16 +35,16 @@ public class ChamberPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(chamber.mix));
         sb.append(printParameter(chamber.level));
-        sb.append(printParameter(chamber.getSize()));
-        sb.append(printParameter(chamber.getLink()));
-        sb.append(printParameter(chamber.getDiff()));
-        sb.append(printParameter(chamber.getPreDelay()));
-        sb.append(printParameter(chamber.getBass()));
-        sb.append(printParameter(chamber.getDecay()));
-        sb.append(printParameter(chamber.getXovr()));
-        sb.append(printParameter(chamber.getRtHC()));
-        sb.append(printParameter(chamber.getShape()));
-        sb.append(printParameter(chamber.getSpred()));
+        sb.append(printParameter(chamber.size));
+        sb.append(printParameter(chamber.link));
+        sb.append(printParameter(chamber.diff));
+        sb.append(printParameter(chamber.preDelay));
+        sb.append(printParameter(chamber.bass));
+        sb.append(printParameter(chamber.decay));
+        sb.append(printParameter(chamber.xovr));
+        sb.append(printParameter(chamber.rtHC));
+        sb.append(printParameter(chamber.shape));
+        sb.append(printParameter(chamber.spred));
         return sb.toString();
     }
 

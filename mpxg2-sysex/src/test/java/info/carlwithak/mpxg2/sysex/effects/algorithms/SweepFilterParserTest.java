@@ -36,11 +36,11 @@ public class SweepFilterParserTest {
         SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
         assertThat(sweepFilter.mix, is(value(100)));
         assertThat(sweepFilter.level, is(value(6)));
-        assertThat(sweepFilter.getFc(), is(value(88)));
-        assertThat(sweepFilter.getFRes(), is(value(34)));
-        assertThat(sweepFilter.getMod(), is(value(2120)));
-        assertThat(sweepFilter.getScale(), is(value(50)));
-        assertThat(sweepFilter.getPan(), is(value(0)));
+        assertThat(sweepFilter.fc, is(value(88)));
+        assertThat(sweepFilter.fRes, is(value(34)));
+        assertThat(sweepFilter.mod, is(value(2120)));
+        assertThat(sweepFilter.scale, is(value(50)));
+        assertThat(sweepFilter.pan, is(value(0)));
     }
 
     @Test
@@ -49,10 +49,10 @@ public class SweepFilterParserTest {
         SweepFilter sweepFilter = SweepFilterParser.parse(effectParameters);
         assertThat(sweepFilter.mix, is(value(100)));
         assertThat(sweepFilter.level, is(value(0)));
-        assertThat(sweepFilter.getFc(), is(value(20)));
-        assertThat(sweepFilter.getFRes(), is(value(36)));
-        assertThat(sweepFilter.getMod(), is(value(2020)));
-        assertThat(sweepFilter.getScale(), is(value(49)));
-        assertThat(sweepFilter.getPan(), is(value(0)));
+        assertThat(sweepFilter.fc, is(value(20)));
+        assertThat(sweepFilter.fRes, is(value(36)));
+        assertThat(sweepFilter.mod, is(value(2020)));
+        assertThat(sweepFilter.scale, is(value(49)));
+        assertThat(sweepFilter.pan, is(value(0)));
     }
 }

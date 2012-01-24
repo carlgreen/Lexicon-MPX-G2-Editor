@@ -39,12 +39,12 @@ public class ChorusParserTest {
         assertThat(chorus.mix, is(value(100)));
         assertThat(chorus.level, is(value(0)));
         assertThat(chorus.getRate1(), is(frequency(0.62)));
-        assertThat(chorus.getPulseWidth1(), is(value(45)));
-        assertThat(chorus.getDepth1(), is(value(30)));
+        assertThat(chorus.pulseWidth1, is(value(45)));
+        assertThat(chorus.depth1, is(value(30)));
         assertThat(chorus.getRate2(), is(frequency(0.56)));
-        assertThat(chorus.getPulseWidth2(), is(value(54)));
-        assertThat(chorus.getDepth2(), is(value(0)));
-        assertThat(chorus.getResonance1(), is(value(-19)));
-        assertThat(chorus.getResonance2(), is(value(0)));
+        assertThat(chorus.pulseWidth2, is(value(54)));
+        assertThat(chorus.depth2, is(value(0)));
+        assertThat(chorus.resonance1, is(value(-19)));
+        assertThat(chorus.resonance2, is(value(0)));
     }
 }

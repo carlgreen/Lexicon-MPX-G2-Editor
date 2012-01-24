@@ -29,10 +29,10 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class DigiDrive1 extends Effect {
     private static final String NAME = "DigiDrive1";
 
-    private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 100);
-    private GenericValue<Integer> low = new GenericValue<Integer>("Low", "dB", -72, 24);
-    private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -72, 24);
-    private GenericValue<Integer> high = new GenericValue<Integer>("High", "dB", -72, 24);
+    public final GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 100);
+    public final GenericValue<Integer> low = new GenericValue<Integer>("Low", "dB", -72, 24);
+    public final GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -72, 24);
+    public final GenericValue<Integer> high = new GenericValue<Integer>("High", "dB", -72, 24);
 
     @Override
     public String getName() {
@@ -63,22 +63,6 @@ public class DigiDrive1 extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getDrive() {
-        return drive;
-    }
-
-    public GenericValue<Integer> getLow() {
-        return low;
-    }
-
-    public GenericValue<Integer> getMid() {
-        return mid;
-    }
-
-    public GenericValue<Integer> getHigh() {
-        return high;
     }
 
 }

@@ -39,7 +39,7 @@ public class CustomVybeParserTest {
         assertThat(customVybe.mix, is(value(100)));
         assertThat(customVybe.level, is(value(0)));
         assertThat(customVybe.getRate(), is(frequency(0.97)));
-        assertThat(customVybe.getPulseWidth(), is(value(46)));
-        assertThat(customVybe.getDepth(), is(value(45)));
+        assertThat(customVybe.pulseWidth, is(value(46)));
+        assertThat(customVybe.depth, is(value(45)));
     }
 }

@@ -35,16 +35,16 @@ public class HallPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(hall.mix));
         sb.append(printParameter(hall.level));
-        sb.append(printParameter(hall.getSize()));
-        sb.append(printParameter(hall.getLink()));
-        sb.append(printParameter(hall.getDiff()));
-        sb.append(printParameter(hall.getPreDelay()));
-        sb.append(printParameter(hall.getBass()));
-        sb.append(printParameter(hall.getDecay()));
-        sb.append(printParameter(hall.getXovr()));
-        sb.append(printParameter(hall.getRtHC()));
-        sb.append(printParameter(hall.getShape()));
-        sb.append(printParameter(hall.getSpred()));
+        sb.append(printParameter(hall.size));
+        sb.append(printParameter(hall.link));
+        sb.append(printParameter(hall.diff));
+        sb.append(printParameter(hall.preDelay));
+        sb.append(printParameter(hall.bass));
+        sb.append(printParameter(hall.decay));
+        sb.append(printParameter(hall.xovr));
+        sb.append(printParameter(hall.rtHC));
+        sb.append(printParameter(hall.shape));
+        sb.append(printParameter(hall.spred));
         return sb.toString();
     }
 

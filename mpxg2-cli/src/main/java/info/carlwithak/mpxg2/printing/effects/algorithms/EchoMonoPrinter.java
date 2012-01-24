@@ -36,10 +36,10 @@ public class EchoMonoPrinter implements Printer {
         sb.append(printParameter(echoMono.mix));
         sb.append(printParameter(echoMono.level));
         sb.append(printParameter(echoMono.getTime()));
-        sb.append(printParameter(echoMono.getFeedback()));
-        sb.append(printParameter(echoMono.getInsert()));
-        sb.append(printParameter(echoMono.getDamp()));
-        sb.append(printParameter(echoMono.getClear()));
+        sb.append(printParameter(echoMono.feedback));
+        sb.append(printParameter(echoMono.insert));
+        sb.append(printParameter(echoMono.damp));
+        sb.append(printParameter(echoMono.clear));
         return sb.toString();
     }
 

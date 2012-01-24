@@ -36,16 +36,16 @@ public class PlateParserTest {
         Plate plate = PlateParser.parse(effectParameters);
         assertThat(plate.mix, is(value(100)));
         assertThat(plate.level, is(value(6)));
-        assertThat(plate.getSize(), is(value(22.5)));
-        assertThat(plate.getLink(), is(value(true)));
-        assertThat(plate.getDiff(), is(value(66)));
-        assertThat(plate.getPreDelay(), is(value(169)));
-        assertThat(plate.getBass(), is(value(5))); // 1.2X is number 5 in list
-        assertThat(plate.getDecay(), is(value(50))); // 1.30s is number 50 in list
-        assertThat(plate.getXovr(), is(value(16))); // 986 is number 16 in list
-        assertThat(plate.getRtHC(), is(value(45))); // 19.4k is number 45 in list for this size
-        assertThat(plate.getShape(), is(value(36)));
-        assertThat(plate.getSpred(), is(value(222))); // 73 is number 222 in list for this size
+        assertThat(plate.size, is(value(22.5)));
+        assertThat(plate.link, is(value(true)));
+        assertThat(plate.diff, is(value(66)));
+        assertThat(plate.preDelay, is(value(169)));
+        assertThat(plate.bass, is(value(5))); // 1.2X is number 5 in list
+        assertThat(plate.decay, is(value(50))); // 1.30s is number 50 in list
+        assertThat(plate.xovr, is(value(16))); // 986 is number 16 in list
+        assertThat(plate.rtHC, is(value(45))); // 19.4k is number 45 in list for this size
+        assertThat(plate.shape, is(value(36)));
+        assertThat(plate.spred, is(value(222))); // 73 is number 222 in list for this size
     }
 
     @Test
@@ -54,15 +54,15 @@ public class PlateParserTest {
         Plate plate = PlateParser.parse(effectParameters);
         assertThat(plate.mix, is(value(28)));
         assertThat(plate.level, is(value(0)));
-        assertThat(plate.getSize(), is(value(16.5)));
-        assertThat(plate.getLink(), is(value(true)));
-        assertThat(plate.getDiff(), is(value(90)));
-        assertThat(plate.getPreDelay(), is(value(10)));
-        assertThat(plate.getBass(), is(value(0))); // 0.2X is number 0 in list
-        assertThat(plate.getDecay(), is(value(0))); // 0.09s is number 0 in list for this size
-        assertThat(plate.getXovr(), is(value(16))); // 986 is number 16 in list
-        assertThat(plate.getRtHC(), is(value(33))); // 8.8k is number 33 in list
-        assertThat(plate.getShape(), is(value(58)));
-        assertThat(plate.getSpred(), is(value(254))); // 65 is number 254 in list for this size
+        assertThat(plate.size, is(value(16.5)));
+        assertThat(plate.link, is(value(true)));
+        assertThat(plate.diff, is(value(90)));
+        assertThat(plate.preDelay, is(value(10)));
+        assertThat(plate.bass, is(value(0))); // 0.2X is number 0 in list
+        assertThat(plate.decay, is(value(0))); // 0.09s is number 0 in list for this size
+        assertThat(plate.xovr, is(value(16))); // 986 is number 16 in list
+        assertThat(plate.rtHC, is(value(33))); // 8.8k is number 33 in list
+        assertThat(plate.shape, is(value(58)));
+        assertThat(plate.spred, is(value(254))); // 65 is number 254 in list for this size
     }
 }

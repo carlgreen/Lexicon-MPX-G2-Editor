@@ -34,16 +34,16 @@ public class PreampParserTest {
     public void testParse_RotaryCab() {
         byte[] effectParameters = {7, 0, 3, 0, 0, 0, 11, 15, 0, 0, 0, 2, 7, 1, 6, 1, 0, 0, 0, 0, 13, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Preamp preamp = PreampParser.parse(effectParameters);
-        assertThat(preamp.getLo(), is(value(7)));
-        assertThat(preamp.getMid(), is(value(3)));
-        assertThat(preamp.getHi(), is(value(0)));
-        assertThat(preamp.getInLevel(), is(value(-5)));
-        assertThat(preamp.getLoCut(), is(value(0)));
-        assertThat(preamp.getFeel(), is(value(32)));
-        assertThat(preamp.getDrive(), is(value(23)));
-        assertThat(preamp.getTone(), is(value(22)));
-        assertThat(preamp.getBass(), is(value(0)));
-        assertThat(preamp.getTreble(), is(value(0)));
-        assertThat(preamp.getLevel(), is(value(45)));
+        assertThat(preamp.lo, is(value(7)));
+        assertThat(preamp.mid, is(value(3)));
+        assertThat(preamp.hi, is(value(0)));
+        assertThat(preamp.inLevel, is(value(-5)));
+        assertThat(preamp.loCut, is(value(0)));
+        assertThat(preamp.feel, is(value(32)));
+        assertThat(preamp.drive, is(value(23)));
+        assertThat(preamp.tone, is(value(22)));
+        assertThat(preamp.bass, is(value(0)));
+        assertThat(preamp.treble, is(value(0)));
+        assertThat(preamp.level, is(value(45)));
     }
 }

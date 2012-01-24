@@ -28,11 +28,11 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class BlueComp extends Effect {
     private static final String NAME = "Blue Comp";
 
-    private GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "dB", -90, 6);
-    private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -72, 24);
-    private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -83, 0);
-    private GenericValue<Integer> attackTime = new GenericValue<Integer>("ATime", "ms", 0, 2000);
-    private GenericValue<Integer> releaseTime = new GenericValue<Integer>("RTime", "ms", 0, 2000);
+    public final GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "dB", -90, 6);
+    public final GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -72, 24);
+    public final GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -83, 0);
+    public final GenericValue<Integer> attackTime = new GenericValue<Integer>("ATime", "ms", 0, 2000);
+    public final GenericValue<Integer> releaseTime = new GenericValue<Integer>("RTime", "ms", 0, 2000);
 
     @Override
     public String getName() {
@@ -66,26 +66,6 @@ public class BlueComp extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getSensitivity() {
-        return sensitivity;
-    }
-
-    public GenericValue<Integer> getThreshold() {
-        return threshold;
-    }
-
-    public GenericValue<Integer> getGain() {
-        return gain;
-    }
-
-    public GenericValue<Integer> getAttackTime() {
-        return attackTime;
-    }
-
-    public GenericValue<Integer> getReleaseTime() {
-        return releaseTime;
     }
 
 }

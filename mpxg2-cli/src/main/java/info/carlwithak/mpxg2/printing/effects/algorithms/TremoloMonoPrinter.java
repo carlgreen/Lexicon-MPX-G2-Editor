@@ -36,8 +36,8 @@ public class TremoloMonoPrinter implements Printer {
         sb.append(printParameter(tremoloMono.mix));
         sb.append(printParameter(tremoloMono.level));
         sb.append(printParameter(tremoloMono.getRate()));
-        sb.append(printParameter(tremoloMono.getPulseWidth()));
-        sb.append(printParameter(tremoloMono.getDepth()));
+        sb.append(printParameter(tremoloMono.pulseWidth));
+        sb.append(printParameter(tremoloMono.depth));
         return sb.toString();
     }
 

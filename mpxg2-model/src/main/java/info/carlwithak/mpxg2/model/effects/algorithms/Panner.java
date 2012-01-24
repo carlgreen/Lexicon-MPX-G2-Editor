@@ -29,8 +29,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Panner extends Effect {
     private static final String NAME = "Panner";
 
-    private PanValue pan1 = new PanValue("Pan 1", -50, 50);
-    private PanValue pan2 = new PanValue("Pan 2", -50, 50);
+    public final PanValue pan1 = new PanValue("Pan 1", -50, 50);
+    public final PanValue pan2 = new PanValue("Pan 2", -50, 50);
 
     @Override
     public String getName() {
@@ -55,14 +55,6 @@ public class Panner extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public PanValue getPan1() {
-        return pan1;
-    }
-
-    public PanValue getPan2() {
-        return pan2;
     }
 
 }

@@ -31,15 +31,15 @@ import info.carlwithak.mpxg2.model.parameters.Rate;
 public class Comb2 extends Chorus {
     private static final String NAME = "Comb 2";
 
-    private GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "Hz", 100, 100000);
-    private GenericValue<Integer> hiCut = new GenericValue<Integer>("HiCut", "Hz", 100, 100000);
-    private GenericValue<Integer> comb = new GenericValue<Integer>("Comb", "", 0, 100);
-    private GenericValue<Integer> notch = new GenericValue<Integer>("Notch", "", -100, 100);
+    public final GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "Hz", 100, 100000);
+    public final GenericValue<Integer> hiCut = new GenericValue<Integer>("HiCut", "Hz", 100, 100000);
+    public final GenericValue<Integer> comb = new GenericValue<Integer>("Comb", "", 0, 100);
+    public final GenericValue<Integer> notch = new GenericValue<Integer>("Notch", "", -100, 100);
     private Rate rate;
-    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
-    private GenericValue<Integer> depth = new GenericValue<Integer>("Dpth", "%", 0, 100);
-    private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
-    private PhaseValue phase = new PhaseValue("Phase");
+    public final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    public final GenericValue<Integer> depth = new GenericValue<Integer>("Dpth", "%", 0, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    public final PhaseValue phase = new PhaseValue("Phase");
 
     @Override
     public String getName() {
@@ -87,44 +87,12 @@ public class Comb2 extends Chorus {
         return parameter;
     }
 
-    public GenericValue<Integer> getLoCut() {
-        return loCut;
-    }
-
-    public GenericValue<Integer> getHiCut() {
-        return hiCut;
-    }
-
-    public GenericValue<Integer> getComb() {
-        return comb;
-    }
-
-    public GenericValue<Integer> getNotch() {
-        return notch;
-    }
-
     public Rate getRate() {
         return rate;
     }
 
     public void setRate(Rate rate) {
         this.rate = rate;
-    }
-
-    public GenericValue<Integer> getPulseWidth() {
-        return pulseWidth;
-    }
-
-    public GenericValue<Integer> getDepth() {
-        return depth;
-    }
-
-    public GenericValue<Integer> getResonance() {
-        return resonance;
-    }
-
-    public PhaseValue getPhase() {
-        return phase;
     }
 
 }

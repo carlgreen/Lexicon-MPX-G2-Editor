@@ -30,9 +30,9 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class ShiftMono extends Effect {
     private static final String NAME = "Shift (M)";
 
-    private GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", -4800, 1900); // cents
-    private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
-    private OnOffValue glide = new OnOffValue("Glide");
+    public final GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", -4800, 1900); // cents
+    public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
+    public final OnOffValue glide = new OnOffValue("Glide");
 
     @Override
     public String getName() {
@@ -57,18 +57,6 @@ public class ShiftMono extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getTune() {
-        return tune;
-    }
-
-    public GenericValue<Integer> getOptimize() {
-        return optimize;
-    }
-
-    public OnOffValue getGlide() {
-        return glide;
     }
 
 }

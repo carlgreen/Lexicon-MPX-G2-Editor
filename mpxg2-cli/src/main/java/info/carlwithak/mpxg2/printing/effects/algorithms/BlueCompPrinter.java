@@ -35,11 +35,11 @@ public class BlueCompPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(blueComp.mix));
         sb.append(printParameter(blueComp.level));
-        sb.append(printParameter(blueComp.getSensitivity()));
-        sb.append(printParameter(blueComp.getThreshold()));
-        sb.append(printParameter(blueComp.getGain()));
-        sb.append(printParameter(blueComp.getAttackTime()));
-        sb.append(printParameter(blueComp.getReleaseTime()));
+        sb.append(printParameter(blueComp.sensitivity));
+        sb.append(printParameter(blueComp.threshold));
+        sb.append(printParameter(blueComp.gain));
+        sb.append(printParameter(blueComp.attackTime));
+        sb.append(printParameter(blueComp.releaseTime));
         return sb.toString();
     }
 

@@ -31,14 +31,14 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class JamMan extends Delay {
     private static final String NAME = "JamMan";
 
-    private GenericValue<Integer> size = new GenericValue<Integer>("Size", "ms", 0, 20000);
-    private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
-    private InsertPosition insert = new InsertPosition("Fbk insert");
-    private OnOffValue clear = new OnOffValue("Clear");
-    private OnOffValue layer = new OnOffValue("Layer");
-    private OnOffValue replace = new OnOffValue("Replc");
-    private OnOffValue delay = new OnOffValue("Delay");
-    private OnOffValue mute = new OnOffValue("MuteS");
+    public final GenericValue<Integer> size = new GenericValue<Integer>("Size", "ms", 0, 20000);
+    public final GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
+    public final InsertPosition insert = new InsertPosition("Fbk insert");
+    public final OnOffValue clear = new OnOffValue("Clear");
+    public final OnOffValue layer = new OnOffValue("Layer");
+    public final OnOffValue replace = new OnOffValue("Replc");
+    public final OnOffValue delay = new OnOffValue("Delay");
+    public final OnOffValue mute = new OnOffValue("MuteS");
 
     @Override
     public String getName() {
@@ -78,38 +78,6 @@ public class JamMan extends Delay {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getSize() {
-        return size;
-    }
-
-    public GenericValue<Integer> getFeedback() {
-        return feedback;
-    }
-
-    public InsertPosition getInsert() {
-        return insert;
-    }
-
-    public OnOffValue getClear() {
-        return clear;
-    }
-
-    public OnOffValue getLayer() {
-        return layer;
-    }
-
-    public OnOffValue getReplace() {
-        return replace;
-    }
-
-    public OnOffValue getDelay() {
-        return delay;
-    }
-
-    public OnOffValue getMute() {
-        return mute;
     }
 
 }

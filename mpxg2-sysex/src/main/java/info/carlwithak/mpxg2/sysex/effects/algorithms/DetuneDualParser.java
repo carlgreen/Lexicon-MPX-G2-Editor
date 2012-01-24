@@ -36,16 +36,16 @@ public class DetuneDualParser {
         detuneDual.level.setValue(level);
 
         int tune1 = effectParameters[4] + effectParameters[5] * 16;
-        detuneDual.getTune1().setValue(tune1);
+        detuneDual.tune1.setValue(tune1);
 
         int optimize = effectParameters[6] + effectParameters[7] * 16;
-        detuneDual.getOptimize().setValue(optimize);
+        detuneDual.optimize.setValue(optimize);
 
         int tune2 = effectParameters[8] + effectParameters[9] * 16;
-        detuneDual.getTune2().setValue(tune2);
+        detuneDual.tune2.setValue(tune2);
 
         int preDelay = effectParameters[10] + effectParameters[11] * 16;
-        detuneDual.getPreDelay().setValue(preDelay);
+        detuneDual.preDelay.setValue(preDelay);
 
         return detuneDual;
     }

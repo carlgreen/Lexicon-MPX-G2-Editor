@@ -35,7 +35,7 @@ public class OrangePhasePrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(orangePhase.mix));
         sb.append(printParameter(orangePhase.level));
-        sb.append(printParameter(orangePhase.getRate()));
+        sb.append(printParameter(orangePhase.rate));
         return sb.toString();
     }
 

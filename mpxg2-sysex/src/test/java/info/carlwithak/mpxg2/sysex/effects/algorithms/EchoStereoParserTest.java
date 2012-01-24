@@ -39,10 +39,10 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.mix, is(value(0)));
         assertThat(echoStereo.level, is(value(0)));
         assertThat(echoStereo.getTime(), is(beat(1, 1)));
-        assertThat(echoStereo.getFeedback(), is(value(0)));
-        assertThat(echoStereo.getInsert(), is(value(3)));
-        assertThat(echoStereo.getDamp(), is(value(16)));
-        assertThat(echoStereo.getClear(), is(value(false)));
+        assertThat(echoStereo.feedback, is(value(0)));
+        assertThat(echoStereo.insert, is(value(3)));
+        assertThat(echoStereo.damp, is(value(16)));
+        assertThat(echoStereo.clear, is(value(false)));
     }
 
     @Test
@@ -52,9 +52,9 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.mix, is(value(20)));
         assertThat(echoStereo.level, is(value(0)));
         assertThat(echoStereo.getTime(), is(beat(1, 1)));
-        assertThat(echoStereo.getFeedback(), is(value(0)));
-        assertThat(echoStereo.getInsert(), is(value(3)));
-        assertThat(echoStereo.getDamp(), is(value(16)));
-        assertThat(echoStereo.getClear(), is(value(false)));
+        assertThat(echoStereo.feedback, is(value(0)));
+        assertThat(echoStereo.insert, is(value(3)));
+        assertThat(echoStereo.damp, is(value(16)));
+        assertThat(echoStereo.clear, is(value(false)));
     }
 }

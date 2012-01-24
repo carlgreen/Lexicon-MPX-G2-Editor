@@ -35,14 +35,14 @@ public class TwoBandStereoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(twoBandStereo.mix));
         sb.append(printParameter(twoBandStereo.level));
-        sb.append(printParameter(twoBandStereo.getGain1()));
-        sb.append(printParameter(twoBandStereo.getFc1()));
-        sb.append(printParameter(twoBandStereo.getQ1()));
-        sb.append(printParameter(twoBandStereo.getMode1()));
-        sb.append(printParameter(twoBandStereo.getGain2()));
-        sb.append(printParameter(twoBandStereo.getFc2()));
-        sb.append(printParameter(twoBandStereo.getQ2()));
-        sb.append(printParameter(twoBandStereo.getMode2()));
+        sb.append(printParameter(twoBandStereo.gain1));
+        sb.append(printParameter(twoBandStereo.fc1));
+        sb.append(printParameter(twoBandStereo.q1));
+        sb.append(printParameter(twoBandStereo.mode1));
+        sb.append(printParameter(twoBandStereo.gain2));
+        sb.append(printParameter(twoBandStereo.fc2));
+        sb.append(printParameter(twoBandStereo.q2));
+        sb.append(printParameter(twoBandStereo.mode2));
         return sb.toString();
     }
 

@@ -33,12 +33,12 @@ public class ScreamerPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Screamer screamer = (Screamer) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(screamer.getLo()));
-        sb.append(printParameter(screamer.getMid()));
-        sb.append(printParameter(screamer.getHi()));
-        sb.append(printParameter(screamer.getDrive()));
-        sb.append(printParameter(screamer.getTone()));
-        sb.append(printParameter(screamer.getLevel()));
+        sb.append(printParameter(screamer.lo));
+        sb.append(printParameter(screamer.mid));
+        sb.append(printParameter(screamer.hi));
+        sb.append(printParameter(screamer.drive));
+        sb.append(printParameter(screamer.tone));
+        sb.append(printParameter(screamer.level));
         return sb.toString();
     }
 

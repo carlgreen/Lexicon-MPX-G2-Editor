@@ -39,7 +39,7 @@ public class TremoloMonoParserTest {
         assertThat(tremoloMono.mix, is(value(100)));
         assertThat(tremoloMono.level, is(value(6)));
         assertThat(tremoloMono.getRate(), is(beat(7, 4)));
-        assertThat(tremoloMono.getPulseWidth(), is(value(30)));
-        assertThat(tremoloMono.getDepth(), is(value(100)));
+        assertThat(tremoloMono.pulseWidth, is(value(30)));
+        assertThat(tremoloMono.depth, is(value(100)));
     }
 }

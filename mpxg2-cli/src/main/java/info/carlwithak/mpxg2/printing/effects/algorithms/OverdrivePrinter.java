@@ -33,15 +33,15 @@ public class OverdrivePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Overdrive overdrive = (Overdrive) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(overdrive.getLo()));
-        sb.append(printParameter(overdrive.getMid()));
-        sb.append(printParameter(overdrive.getHi()));
-        sb.append(printParameter(overdrive.getInLevel()));
-        sb.append(printParameter(overdrive.getLoCut()));
-        sb.append(printParameter(overdrive.getFeel()));
-        sb.append(printParameter(overdrive.getDrive()));
-        sb.append(printParameter(overdrive.getTone()));
-        sb.append(printParameter(overdrive.getLevel()));
+        sb.append(printParameter(overdrive.lo));
+        sb.append(printParameter(overdrive.mid));
+        sb.append(printParameter(overdrive.hi));
+        sb.append(printParameter(overdrive.inLevel));
+        sb.append(printParameter(overdrive.loCut));
+        sb.append(printParameter(overdrive.feel));
+        sb.append(printParameter(overdrive.drive));
+        sb.append(printParameter(overdrive.tone));
+        sb.append(printParameter(overdrive.level));
         return sb.toString();
     }
 

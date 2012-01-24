@@ -36,12 +36,12 @@ public class AmbienceParserTest {
         Ambience ambience = AmbienceParser.parse(effectParameters);
         assertThat(ambience.mix, is(value(18)));
         assertThat(ambience.level, is(value(0)));
-        assertThat(ambience.getSize(), is(value(24.5)));
-        assertThat(ambience.getLink(), is(value(true)));
-        assertThat(ambience.getDiff(), is(value(60)));
-        assertThat(ambience.getPreDelay(), is(value(7)));
-        assertThat(ambience.getDecayTime(), is(value(51))); // 1.41s is number 51 in list
-        assertThat(ambience.getDecayLevel(), is(value(0)));
-        assertThat(ambience.getRtHC(), is(value(12))); // 12.8k is number 12 in list
+        assertThat(ambience.size, is(value(24.5)));
+        assertThat(ambience.link, is(value(true)));
+        assertThat(ambience.diff, is(value(60)));
+        assertThat(ambience.preDelay, is(value(7)));
+        assertThat(ambience.decayTime, is(value(51))); // 1.41s is number 51 in list
+        assertThat(ambience.decayLevel, is(value(0)));
+        assertThat(ambience.rtHC, is(value(12))); // 12.8k is number 12 in list
     }
 }

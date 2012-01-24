@@ -30,14 +30,14 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class TwoBandMono extends Eq {
     private static final String NAME = "2-Band (M)";
 
-    private GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
-    private GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
-    private GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
-    private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
-    private GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
-    private GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
-    private EqModeValue mode1 = new EqModeValue("Mode1");
-    private EqModeValue mode2 = new EqModeValue("Mode2");
+    public final GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
+    public final GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
+    public final GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
+    public final GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
+    public final GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
+    public final EqModeValue mode1 = new EqModeValue("Mode1");
+    public final EqModeValue mode2 = new EqModeValue("Mode2");
 
     @Override
     public String getName() {
@@ -80,38 +80,6 @@ public class TwoBandMono extends Eq {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getGain1() {
-        return gain1;
-    }
-
-    public GenericValue<Integer> getGain2() {
-        return gain2;
-    }
-
-    public GenericValue<Integer> getFc1() {
-        return fc1;
-    }
-
-    public GenericValue<Integer> getFc2() {
-        return fc2;
-    }
-
-    public GenericValue<Double> getQ1() {
-        return q1;
-    }
-
-    public GenericValue<Double> getQ2() {
-        return q2;
-    }
-
-    public EqModeValue getMode1() {
-        return mode1;
-    }
-
-    public EqModeValue getMode2() {
-        return mode2;
     }
 
 }

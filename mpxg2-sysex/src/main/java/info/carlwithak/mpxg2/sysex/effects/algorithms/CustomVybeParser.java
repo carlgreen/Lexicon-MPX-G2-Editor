@@ -41,10 +41,10 @@ public class CustomVybeParser {
         customVybe.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = effectParameters[10] + effectParameters[11] * 16;
-        customVybe.getPulseWidth().setValue(pulseWidth);
+        customVybe.pulseWidth.setValue(pulseWidth);
 
         int depth = effectParameters[12] + effectParameters[13] * 16;
-        customVybe.getDepth().setValue(depth);
+        customVybe.depth.setValue(depth);
 
         return customVybe;
     }

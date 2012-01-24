@@ -36,11 +36,11 @@ public class Flanger24MonoPrinter implements Printer {
         sb.append(printParameter(flanger24Mono.mix));
         sb.append(printParameter(flanger24Mono.level));
         sb.append(printParameter(flanger24Mono.getRate()));
-        sb.append(printParameter(flanger24Mono.getPulseWidth()));
-        sb.append(printParameter(flanger24Mono.getDepth()));
-        sb.append(printParameter(flanger24Mono.getResonance()));
-        sb.append(printParameter(flanger24Mono.getGlide()));
-        sb.append(printParameter(flanger24Mono.getBlend()));
+        sb.append(printParameter(flanger24Mono.pulseWidth));
+        sb.append(printParameter(flanger24Mono.depth));
+        sb.append(printParameter(flanger24Mono.resonance));
+        sb.append(printParameter(flanger24Mono.glide));
+        sb.append(printParameter(flanger24Mono.blend));
         return sb.toString();
     }
 

@@ -31,11 +31,11 @@ public class Flanger24Mono extends Chorus {
     private static final String NAME = "Flanger24 (M)";
 
     private Rate rate;
-    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
-    private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
-    private GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
-    private GenericValue<Integer> glide = new GenericValue<Integer>("Glide", "", 0, 100);
-    private GenericValue<Integer> blend = new GenericValue<Integer>("Blend", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    public final GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
+    public final GenericValue<Integer> glide = new GenericValue<Integer>("Glide", "", 0, 100);
+    public final GenericValue<Integer> blend = new GenericValue<Integer>("Blend", "%", 0, 100);
 
     @Override
     public String getName() {
@@ -80,26 +80,6 @@ public class Flanger24Mono extends Chorus {
 
     public void setRate(Rate rate) {
         this.rate = rate;
-    }
-
-    public GenericValue<Integer> getPulseWidth() {
-        return pulseWidth;
-    }
-
-    public GenericValue<Integer> getDepth() {
-        return depth;
-    }
-
-    public GenericValue<Integer> getResonance() {
-        return resonance;
-    }
-
-    public GenericValue<Integer> getGlide() {
-        return glide;
-    }
-
-    public GenericValue<Integer> getBlend() {
-        return blend;
     }
 
 }

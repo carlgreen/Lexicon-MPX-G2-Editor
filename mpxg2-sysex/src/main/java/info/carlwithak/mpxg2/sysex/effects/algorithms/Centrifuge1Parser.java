@@ -41,27 +41,27 @@ public class Centrifuge1Parser {
         centrifuge1.setRate1(RateParser.parse("Rate1", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth1 = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        centrifuge1.getPulseWidth1().setValue(pulseWidth1);
+        centrifuge1.pulseWidth1.setValue(pulseWidth1);
 
         int sync1 = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        centrifuge1.getSync1().setValue(sync1);
+        centrifuge1.sync1.setValue(sync1);
 
         int depth1 = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        centrifuge1.getDepth1().setValue(depth1);
+        centrifuge1.depth1.setValue(depth1);
 
         centrifuge1.setRate2(RateParser.parse("Rate2", Arrays.copyOfRange(effectParameters, 16, 22)));
 
         int pulseWidth2 = (byte) (effectParameters[22] + effectParameters[23] * 16);
-        centrifuge1.getPulseWidth2().setValue(pulseWidth2);
+        centrifuge1.pulseWidth2.setValue(pulseWidth2);
 
         int sync2 = (byte) (effectParameters[24] + effectParameters[25] * 16);
-        centrifuge1.getSync2().setValue(sync2);
+        centrifuge1.sync2.setValue(sync2);
 
         int depth2 = (byte) (effectParameters[26] + effectParameters[27] * 16);
-        centrifuge1.getDepth2().setValue(depth2);
+        centrifuge1.depth2.setValue(depth2);
 
         int resonance = (byte) (effectParameters[28] + effectParameters[29] * 16);
-        centrifuge1.getResonance().setValue(resonance);
+        centrifuge1.resonance.setValue(resonance);
 
         return centrifuge1;
     }

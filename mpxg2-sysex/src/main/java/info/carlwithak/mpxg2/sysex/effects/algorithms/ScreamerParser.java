@@ -30,22 +30,22 @@ public class ScreamerParser {
         Screamer screamer = new Screamer();
 
         int lo = effectParameters[0] + effectParameters[1] * 16;
-        screamer.getLo().setValue(lo);
+        screamer.lo.setValue(lo);
 
         int mid = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        screamer.getMid().setValue(mid);
+        screamer.mid.setValue(mid);
 
         int hi = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        screamer.getHi().setValue(hi);
+        screamer.hi.setValue(hi);
 
         int drive = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        screamer.getDrive().setValue(drive);
+        screamer.drive.setValue(drive);
 
         int tone = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        screamer.getTone().setValue(tone);
+        screamer.tone.setValue(tone);
 
         int level = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        screamer.getLevel().setValue(level);
+        screamer.level.setValue(level);
 
         return screamer;
     }

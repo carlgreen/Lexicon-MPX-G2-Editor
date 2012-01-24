@@ -36,7 +36,7 @@ public class PannerParserTest {
         Panner panner = PannerParser.parse(effectParameters);
         assertThat(panner.mix, is(value(100)));
         assertThat(panner.level, is(value(-24)));
-        assertThat(panner.getPan1(), is(value(-50)));
-        assertThat(panner.getPan2(), is(value(50)));
+        assertThat(panner.pan1, is(value(-50)));
+        assertThat(panner.pan2, is(value(50)));
     }
 }

@@ -37,11 +37,11 @@ public class BlueCompParserTest {
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
         assertThat(blueComp.mix, is(value(100)));
         assertThat(blueComp.level, is(value(6)));
-        assertThat(blueComp.getSensitivity(), is(value(5)));
-        assertThat(blueComp.getThreshold(), is(value(-28)));
-        assertThat(blueComp.getGain(), is(value(5)));
-        assertThat(blueComp.getAttackTime(), is(value(20)));
-        assertThat(blueComp.getReleaseTime(), is(value(100)));
+        assertThat(blueComp.sensitivity, is(value(5)));
+        assertThat(blueComp.threshold, is(value(-28)));
+        assertThat(blueComp.gain, is(value(5)));
+        assertThat(blueComp.attackTime, is(value(20)));
+        assertThat(blueComp.releaseTime, is(value(100)));
     }
 
     @Test
@@ -50,10 +50,10 @@ public class BlueCompParserTest {
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
         assertThat(blueComp.mix, is(value(100)));
         assertThat(blueComp.level, is(value(0)));
-        assertThat(blueComp.getSensitivity(), is(value(10)));
-        assertThat(blueComp.getThreshold(), is(value(-35)));
-        assertThat(blueComp.getGain(), is(value(0)));
-        assertThat(blueComp.getAttackTime(), is(value(68)));
-        assertThat(blueComp.getReleaseTime(), is(value(190)));
+        assertThat(blueComp.sensitivity, is(value(10)));
+        assertThat(blueComp.threshold, is(value(-35)));
+        assertThat(blueComp.gain, is(value(0)));
+        assertThat(blueComp.attackTime, is(value(68)));
+        assertThat(blueComp.releaseTime, is(value(190)));
     }
 }

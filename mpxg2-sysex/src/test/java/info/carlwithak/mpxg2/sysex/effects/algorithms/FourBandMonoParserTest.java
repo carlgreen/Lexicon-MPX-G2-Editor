@@ -36,22 +36,22 @@ public class FourBandMonoParserTest {
         FourBandMono fourBandMono = FourBandMonoParser.parse(effectParameters);
         assertThat(fourBandMono.mix, is(value(100)));
         assertThat(fourBandMono.level, is(value(0)));
-        assertThat(fourBandMono.getGain1(), is(value(-72)));
-        assertThat(fourBandMono.getFc1(), is(value(820)));
-        assertThat(fourBandMono.getQ1(), is(value(0.7)));
-        assertThat(fourBandMono.getMode1(), is(value(0))); // LShlf
-        assertThat(fourBandMono.getGain2(), is(value(6)));
-        assertThat(fourBandMono.getFc2(), is(value(1200)));
-        assertThat(fourBandMono.getQ2(), is(value(2.5)));
-        assertThat(fourBandMono.getMode2(), is(value(0))); // LShlf
-        assertThat(fourBandMono.getGain3(), is(value(10)));
-        assertThat(fourBandMono.getFc3(), is(value(1700)));
-        assertThat(fourBandMono.getQ3(), is(value(1.5)));
-        assertThat(fourBandMono.getMode3(), is(value(1))); // Band
-        assertThat(fourBandMono.getGain4(), is(value(-72)));
-        assertThat(fourBandMono.getFc4(), is(value(3800)));
-        assertThat(fourBandMono.getQ4(), is(value(0.7)));
-        assertThat(fourBandMono.getMode4(), is(value(2))); // HShlf
+        assertThat(fourBandMono.gain1, is(value(-72)));
+        assertThat(fourBandMono.fc1, is(value(820)));
+        assertThat(fourBandMono.q1, is(value(0.7)));
+        assertThat(fourBandMono.mode1, is(value(0))); // LShlf
+        assertThat(fourBandMono.gain2, is(value(6)));
+        assertThat(fourBandMono.fc2, is(value(1200)));
+        assertThat(fourBandMono.q2, is(value(2.5)));
+        assertThat(fourBandMono.mode2, is(value(0))); // LShlf
+        assertThat(fourBandMono.gain3, is(value(10)));
+        assertThat(fourBandMono.fc3, is(value(1700)));
+        assertThat(fourBandMono.q3, is(value(1.5)));
+        assertThat(fourBandMono.mode3, is(value(1))); // Band
+        assertThat(fourBandMono.gain4, is(value(-72)));
+        assertThat(fourBandMono.fc4, is(value(3800)));
+        assertThat(fourBandMono.q4, is(value(0.7)));
+        assertThat(fourBandMono.mode4, is(value(2))); // HShlf
     }
 
 }

@@ -36,12 +36,12 @@ public class RotaryCabPrinter implements Printer {
         sb.append(printParameter(rotaryCab.mix));
         sb.append(printParameter(rotaryCab.level));
         sb.append(printParameter(rotaryCab.getRate1()));
-        sb.append(printParameter(rotaryCab.getDepth1()));
+        sb.append(printParameter(rotaryCab.depth1));
         sb.append(printParameter(rotaryCab.getRate2()));
-        sb.append(printParameter(rotaryCab.getDepth2()));
-        sb.append(printParameter(rotaryCab.getResonance()));
-        sb.append(printParameter(rotaryCab.getWidth()));
-        sb.append(printParameter(rotaryCab.getBalance()));
+        sb.append(printParameter(rotaryCab.depth2));
+        sb.append(printParameter(rotaryCab.resonance));
+        sb.append(printParameter(rotaryCab.width));
+        sb.append(printParameter(rotaryCab.balance));
         return sb.toString();
     }
 

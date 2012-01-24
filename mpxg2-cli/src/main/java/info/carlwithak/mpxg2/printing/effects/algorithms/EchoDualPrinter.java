@@ -37,14 +37,14 @@ public class EchoDualPrinter implements Printer {
         sb.append(printParameter(echoDual.level));
         sb.append(printParameter(echoDual.getTime1()));
         sb.append(printParameter(echoDual.getTime2()));
-        sb.append(printParameter(echoDual.getLevel1()));
-        sb.append(printParameter(echoDual.getLevel2()));
-        sb.append(printParameter(echoDual.getFeedback1()));
-        sb.append(printParameter(echoDual.getInsert()));
-        sb.append(printParameter(echoDual.getFeedback2()));
-        sb.append(printParameter(echoDual.getDamp1()));
-        sb.append(printParameter(echoDual.getDamp2()));
-        sb.append(printParameter(echoDual.getClear()));
+        sb.append(printParameter(echoDual.level1));
+        sb.append(printParameter(echoDual.level2));
+        sb.append(printParameter(echoDual.feedback1));
+        sb.append(printParameter(echoDual.insert));
+        sb.append(printParameter(echoDual.feedback2));
+        sb.append(printParameter(echoDual.damp1));
+        sb.append(printParameter(echoDual.damp2));
+        sb.append(printParameter(echoDual.clear));
         return sb.toString();
     }
 

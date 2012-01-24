@@ -30,31 +30,31 @@ public class OverdriveParser {
         Overdrive overdrive = new Overdrive();
 
         int lo = effectParameters[0] + effectParameters[1] * 16;
-        overdrive.getLo().setValue(lo);
+        overdrive.lo.setValue(lo);
 
         int mid = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        overdrive.getMid().setValue(mid);
+        overdrive.mid.setValue(mid);
 
         int hi = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        overdrive.getHi().setValue(hi);
+        overdrive.hi.setValue(hi);
 
         int inLevel = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        overdrive.getInLevel().setValue(inLevel);
+        overdrive.inLevel.setValue(inLevel);
 
         int loCut = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        overdrive.getLoCut().setValue(loCut);
+        overdrive.loCut.setValue(loCut);
 
         int feel = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        overdrive.getFeel().setValue(feel);
+        overdrive.feel.setValue(feel);
 
         int drive = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        overdrive.getDrive().setValue(drive);
+        overdrive.drive.setValue(drive);
 
         int tone = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        overdrive.getTone().setValue(tone);
+        overdrive.tone.setValue(tone);
 
         int level = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        overdrive.getLevel().setValue(level);
+        overdrive.level.setValue(level);
 
         return overdrive;
     }

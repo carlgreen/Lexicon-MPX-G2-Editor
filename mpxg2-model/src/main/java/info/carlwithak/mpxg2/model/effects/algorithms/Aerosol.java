@@ -31,13 +31,13 @@ public class Aerosol extends Chorus {
     private static final String NAME = "Aerosol";
 
     private Rate rate1;
-    private GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("PW 1", "%", 0, 100);
-    private GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("PW 1", "%", 0, 100);
+    public final GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
     private Rate rate2;
-    private GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 2", "%", 0, 100);
-    private GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
-    private GenericValue<Integer> resonance1 = new GenericValue<Integer>("Res 1", "", -100, 100);
-    private GenericValue<Integer> resonance2 = new GenericValue<Integer>("Res 2", "", -100, 100);
+    public final GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 2", "%", 0, 100);
+    public final GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
+    public final GenericValue<Integer> resonance1 = new GenericValue<Integer>("Res 1", "", -100, 100);
+    public final GenericValue<Integer> resonance2 = new GenericValue<Integer>("Res 2", "", -100, 100);
 
     @Override
     public String getName() {
@@ -90,36 +90,12 @@ public class Aerosol extends Chorus {
         this.rate1 = rate1;
     }
 
-    public GenericValue<Integer> getPulseWidth1() {
-        return pulseWidth1;
-    }
-
-    public GenericValue<Integer> getDepth1() {
-        return depth1;
-    }
-
     public Rate getRate2() {
         return rate2;
     }
 
     public void setRate2(Rate rate2) {
         this.rate2 = rate2;
-    }
-
-    public GenericValue<Integer> getPulseWidth2() {
-        return pulseWidth2;
-    }
-
-    public GenericValue<Integer> getDepth2() {
-        return depth2;
-    }
-
-    public GenericValue<Integer> getResonance1() {
-        return resonance1;
-    }
-
-    public GenericValue<Integer> getResonance2() {
-        return resonance2;
     }
 
 }

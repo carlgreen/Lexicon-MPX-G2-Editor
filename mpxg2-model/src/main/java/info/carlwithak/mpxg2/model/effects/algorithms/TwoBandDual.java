@@ -29,22 +29,22 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class TwoBandDual extends Eq {
     private static final String NAME = "2-Band (D)";
 
-    private GenericValue<Integer> gainLeft1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gainLeft2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> fcLeft1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fcLeft2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Double> qLeft1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> qLeft2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Integer> modeLeft1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> modeLeft2 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> gainRight1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gainRight2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> fcRight1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fcRight2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Double> qRight1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> qRight2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Integer> modeRight1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> modeRight2 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> gainLeft1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> gainLeft2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> fcLeft1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Integer> fcLeft2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Double> qLeft1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Double> qLeft2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Integer> modeLeft1 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> modeLeft2 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> gainRight1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> gainRight2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> fcRight1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Integer> fcRight2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Double> qRight1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Double> qRight2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Integer> modeRight1 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> modeRight2 = new GenericValue<Integer>("Mode", "", 0, 2);
 
     @Override
     public String getName() {
@@ -111,70 +111,6 @@ public class TwoBandDual extends Eq {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getGainLeft1() {
-        return gainLeft1;
-    }
-
-    public GenericValue<Integer> getGainLeft2() {
-        return gainLeft2;
-    }
-
-    public GenericValue<Integer> getFcLeft1() {
-        return fcLeft1;
-    }
-
-    public GenericValue<Integer> getFcLeft2() {
-        return fcLeft2;
-    }
-
-    public GenericValue<Double> getQLeft1() {
-        return qLeft1;
-    }
-
-    public GenericValue<Double> getQLeft2() {
-        return qLeft2;
-    }
-
-    public GenericValue<Integer> getModeLeft1() {
-        return modeLeft1;
-    }
-
-    public GenericValue<Integer> getModeLeft2() {
-        return modeLeft2;
-    }
-
-    public GenericValue<Integer> getGainRight1() {
-        return gainRight1;
-    }
-
-    public GenericValue<Integer> getGainRight2() {
-        return gainRight2;
-    }
-
-    public GenericValue<Integer> getFcRight1() {
-        return fcRight1;
-    }
-
-    public GenericValue<Integer> getFcRight2() {
-        return fcRight2;
-    }
-
-    public GenericValue<Double> getQRight1() {
-        return qRight1;
-    }
-
-    public GenericValue<Double> getQRight2() {
-        return qRight2;
-    }
-
-    public GenericValue<Integer> getModeRight1() {
-        return modeRight1;
-    }
-
-    public GenericValue<Integer> getModeRight2() {
-        return modeRight2;
     }
 
 }

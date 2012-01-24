@@ -35,14 +35,14 @@ public class JamManPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(jamMan.mix));
         sb.append(printParameter(jamMan.level));
-        sb.append(printParameter(jamMan.getSize()));
-        sb.append(printParameter(jamMan.getFeedback()));
-        sb.append(printParameter(jamMan.getInsert()));
-        sb.append(printParameter(jamMan.getClear()));
-        sb.append(printParameter(jamMan.getLayer()));
-        sb.append(printParameter(jamMan.getReplace()));
-        sb.append(printParameter(jamMan.getDelay()));
-        sb.append(printParameter(jamMan.getMute()));
+        sb.append(printParameter(jamMan.size));
+        sb.append(printParameter(jamMan.feedback));
+        sb.append(printParameter(jamMan.insert));
+        sb.append(printParameter(jamMan.clear));
+        sb.append(printParameter(jamMan.layer));
+        sb.append(printParameter(jamMan.replace));
+        sb.append(printParameter(jamMan.delay));
+        sb.append(printParameter(jamMan.mute));
         return sb.toString();
     }
 

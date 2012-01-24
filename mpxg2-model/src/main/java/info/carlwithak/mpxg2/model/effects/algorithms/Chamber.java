@@ -35,16 +35,16 @@ import info.carlwithak.mpxg2.model.parameters.ReverbSpredValue;
 public class Chamber extends Reverb {
     private static final String NAME = "Chamber";
 
-    private GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
-    private OnOffValue link = new OnOffValue("Link");
-    private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
-    private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
-    private BassValue bass = new BassValue("Bass");
-    private DecayTimeValue decay = new DecayTimeValue("Decay", link, size);
-    private CrossoverValue xovr = new CrossoverValue("Xovr");
-    private HighCutValue rtHC = new HighCutValue("Rt HC");
-    private GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
-    private ReverbSpredValue spred = new ReverbSpredValue("Spred", link, size);
+    public final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
+    public final OnOffValue link = new OnOffValue("Link");
+    public final GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
+    public final GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
+    public final BassValue bass = new BassValue("Bass");
+    public final DecayTimeValue decay = new DecayTimeValue("Decay", link, size);
+    public final CrossoverValue xovr = new CrossoverValue("Xovr");
+    public final HighCutValue rtHC = new HighCutValue("Rt HC");
+    public final GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
+    public final ReverbSpredValue spred = new ReverbSpredValue("Spred", link, size);
 
     @Override
     public String getName() {
@@ -93,46 +93,6 @@ public class Chamber extends Reverb {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Double> getSize() {
-        return size;
-    }
-
-    public OnOffValue getLink() {
-        return link;
-    }
-
-    public GenericValue<Integer> getDiff() {
-        return diff;
-    }
-
-    public GenericValue<Integer> getPreDelay() {
-        return preDelay;
-    }
-
-    public BassValue getBass() {
-        return bass;
-    }
-
-    public DecayTimeValue getDecay() {
-        return decay;
-    }
-
-    public CrossoverValue getXovr() {
-        return xovr;
-    }
-
-    public HighCutValue getRtHC() {
-        return rtHC;
-    }
-
-    public GenericValue<Integer> getShape() {
-        return shape;
-    }
-
-    public ReverbSpredValue getSpred() {
-        return spred;
     }
 
 }

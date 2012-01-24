@@ -35,9 +35,9 @@ public class ChorusDetuneMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(detuneMono.mix));
         sb.append(printParameter(detuneMono.level));
-        sb.append(printParameter(detuneMono.getTune()));
-        sb.append(printParameter(detuneMono.getOptimize()));
-        sb.append(printParameter(detuneMono.getPreDelay()));
+        sb.append(printParameter(detuneMono.tune));
+        sb.append(printParameter(detuneMono.optimize));
+        sb.append(printParameter(detuneMono.preDelay));
         return sb.toString();
     }
 

@@ -36,6 +36,6 @@ public class UniVybeParserTest {
         UniVybe uniVybe = UniVybeParser.parse(effectParameters);
         assertThat(uniVybe.mix, is(value(100)));
         assertThat(uniVybe.level, is(value(0)));
-        assertThat(uniVybe.getRate(), is(value(20)));
+        assertThat(uniVybe.rate, is(value(20)));
     }
 }

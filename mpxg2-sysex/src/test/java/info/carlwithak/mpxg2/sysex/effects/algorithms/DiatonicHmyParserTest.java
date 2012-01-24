@@ -36,12 +36,12 @@ public class DiatonicHmyParserTest {
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
         assertThat(diatonicHmy.mix, is(value(100)));
         assertThat(diatonicHmy.level, is(value(0)));
-        assertThat(diatonicHmy.getKey(), is(value(4))); // E
-        assertThat(diatonicHmy.getScale(), is(value(0))); // Major
-        assertThat(diatonicHmy.getInterval(), is(value(16))); // +3rd
-        assertThat(diatonicHmy.getOptimize(), is(value(10)));
-        assertThat(diatonicHmy.getThreshold(), is(value(-83)));
-        assertThat(diatonicHmy.getSource(), is(value(1))); // Guitar Input
+        assertThat(diatonicHmy.key, is(value(4))); // E
+        assertThat(diatonicHmy.scale, is(value(0))); // Major
+        assertThat(diatonicHmy.interval, is(value(16))); // +3rd
+        assertThat(diatonicHmy.optimize, is(value(10)));
+        assertThat(diatonicHmy.threshold, is(value(-83)));
+        assertThat(diatonicHmy.source, is(value(1))); // Guitar Input
     }
 
     @Test
@@ -50,11 +50,11 @@ public class DiatonicHmyParserTest {
         DiatonicHmy diatonicHmy = DiatonicHmyParser.parse(effectParameters);
         assertThat(diatonicHmy.mix, is(value(100)));
         assertThat(diatonicHmy.level, is(value(0)));
-        assertThat(diatonicHmy.getKey(), is(value(4))); // E
-        assertThat(diatonicHmy.getScale(), is(value(4))); // Mixo
-        assertThat(diatonicHmy.getInterval(), is(value(16))); // +3rd
-        assertThat(diatonicHmy.getOptimize(), is(value(10)));
-        assertThat(diatonicHmy.getThreshold(), is(value(-83)));
-        assertThat(diatonicHmy.getSource(), is(value(1))); // Guitar Input
+        assertThat(diatonicHmy.key, is(value(4))); // E
+        assertThat(diatonicHmy.scale, is(value(4))); // Mixo
+        assertThat(diatonicHmy.interval, is(value(16))); // +3rd
+        assertThat(diatonicHmy.optimize, is(value(10)));
+        assertThat(diatonicHmy.threshold, is(value(-83)));
+        assertThat(diatonicHmy.source, is(value(1))); // Guitar Input
     }
 }

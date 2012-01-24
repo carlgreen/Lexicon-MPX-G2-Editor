@@ -36,9 +36,9 @@ public class PhaserPrinter implements Printer {
         sb.append(printParameter(phaser.mix));
         sb.append(printParameter(phaser.level));
         sb.append(printParameter(phaser.getRate()));
-        sb.append(printParameter(phaser.getPulseWidth()));
-        sb.append(printParameter(phaser.getDepth()));
-        sb.append(printParameter(phaser.getResonance()));
+        sb.append(printParameter(phaser.pulseWidth));
+        sb.append(printParameter(phaser.depth));
+        sb.append(printParameter(phaser.resonance));
         return sb.toString();
     }
 

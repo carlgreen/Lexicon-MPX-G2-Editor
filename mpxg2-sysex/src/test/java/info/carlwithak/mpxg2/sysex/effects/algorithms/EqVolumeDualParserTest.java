@@ -36,7 +36,7 @@ public class EqVolumeDualParserTest {
         EqVolumeDual volumeDual = EqVolumeDualParser.parse(effectParameters);
         assertThat(volumeDual.mix, is(value(100)));
         assertThat(volumeDual.level, is(value(0)));
-        assertThat(volumeDual.getVolumeLeft(), is(value(100)));
-        assertThat(volumeDual.getVolumeRight(), is(value(100)));
+        assertThat(volumeDual.volumeLeft, is(value(100)));
+        assertThat(volumeDual.volumeRight, is(value(100)));
     }
 }

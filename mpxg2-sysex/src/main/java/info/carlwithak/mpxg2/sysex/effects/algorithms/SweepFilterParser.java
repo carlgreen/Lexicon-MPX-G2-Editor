@@ -39,22 +39,22 @@ public class SweepFilterParser {
         for (int i = 0; i < 4; i++) {
             fc += (effectParameters[4 + i] * Math.pow(16, i));
         }
-        sweepFilter.getFc().setValue(fc);
+        sweepFilter.fc.setValue(fc);
 
         int fRes = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        sweepFilter.getFRes().setValue(fRes);
+        sweepFilter.fRes.setValue(fRes);
 
         int mod = 0;
         for (int i = 0; i < 4; i++) {
             mod += (effectParameters[10 + i] * Math.pow(16, i));
         }
-        sweepFilter.getMod().setValue(mod);
+        sweepFilter.mod.setValue(mod);
 
         int scale = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        sweepFilter.getScale().setValue(scale);
+        sweepFilter.scale.setValue(scale);
 
         int pan = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        sweepFilter.getPan().setValue(pan);
+        sweepFilter.pan.setValue(pan);
 
         return sweepFilter;
     }

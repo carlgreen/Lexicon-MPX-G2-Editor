@@ -36,7 +36,7 @@ public class ChorusVolumeStereoParser {
         volumeStereo.level.setValue(level);
 
         int volume = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        volumeStereo.getVolume().setValue(volume);
+        volumeStereo.volume.setValue(volume);
 
         return volumeStereo;
     }

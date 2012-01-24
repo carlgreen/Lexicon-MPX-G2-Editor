@@ -35,10 +35,10 @@ public class PedalWah1Printer implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(pedalWah1.mix));
         sb.append(printParameter(pedalWah1.level));
-        sb.append(printParameter(pedalWah1.getBass()));
-        sb.append(printParameter(pedalWah1.getType()));
-        sb.append(printParameter(pedalWah1.getResponse()));
-        sb.append(printParameter(pedalWah1.getGain()));
+        sb.append(printParameter(pedalWah1.bass));
+        sb.append(printParameter(pedalWah1.type));
+        sb.append(printParameter(pedalWah1.response));
+        sb.append(printParameter(pedalWah1.gain));
         return sb.toString();
     }
 

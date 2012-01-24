@@ -29,7 +29,7 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class VolumeStereo extends Effect {
     private static final String NAME = "Volume (S)";
 
-    private GenericValue<Integer> volume = new GenericValue<Integer>("Volume", "%", 0, 100);
+    public final GenericValue<Integer> volume = new GenericValue<Integer>("Volume", "%", 0, 100);
 
     @Override
     public String getName() {
@@ -51,10 +51,6 @@ public class VolumeStereo extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getVolume() {
-        return volume;
     }
 
 }

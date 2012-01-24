@@ -42,13 +42,13 @@ public class DelayMonoParser {
         delayMono.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        delayMono.getFeedback().setValue(feedback);
+        delayMono.feedback.setValue(feedback);
 
         int insert = effectParameters[12] + effectParameters[13] * 16;
-        delayMono.getInsert().setValue(insert);
+        delayMono.insert.setValue(insert);
 
         int clear = effectParameters[14] + effectParameters[15] * 16;
-        delayMono.getClear().setValue(Util.parseBoolean(clear));
+        delayMono.clear.setValue(Util.parseBoolean(clear));
 
         return delayMono;
     }

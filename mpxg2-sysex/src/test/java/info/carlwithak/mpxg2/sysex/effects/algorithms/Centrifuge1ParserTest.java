@@ -39,13 +39,13 @@ public class Centrifuge1ParserTest {
         assertThat(centrifuge1.mix, is(value(100)));
         assertThat(centrifuge1.level, is(value(6)));
         assertThat(centrifuge1.getRate1(), is(frequency(0.60)));
-        assertThat(centrifuge1.getPulseWidth1(), is(value(45)));
-        assertThat(centrifuge1.getSync1(), is(value(120)));
-        assertThat(centrifuge1.getDepth1(), is(value(100)));
+        assertThat(centrifuge1.pulseWidth1, is(value(45)));
+        assertThat(centrifuge1.sync1, is(value(120)));
+        assertThat(centrifuge1.depth1, is(value(100)));
         assertThat(centrifuge1.getRate2(), is(frequency(1.00)));
-        assertThat(centrifuge1.getPulseWidth2(), is(value(100)));
-        assertThat(centrifuge1.getSync2(), is(value(-120)));
-        assertThat(centrifuge1.getDepth2(), is(value(43)));
-        assertThat(centrifuge1.getResonance(), is(value(100)));
+        assertThat(centrifuge1.pulseWidth2, is(value(100)));
+        assertThat(centrifuge1.sync2, is(value(-120)));
+        assertThat(centrifuge1.depth2, is(value(43)));
+        assertThat(centrifuge1.resonance, is(value(100)));
     }
 }

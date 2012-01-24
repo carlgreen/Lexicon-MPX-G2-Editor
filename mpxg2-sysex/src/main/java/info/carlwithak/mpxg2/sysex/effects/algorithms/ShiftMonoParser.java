@@ -40,13 +40,13 @@ public class ShiftMonoParser {
         for (int i = 0; i < 4; i++) {
             tune1 += (effectParameters[4 + i] * Math.pow(16, i));
         }
-        shiftMono.getTune().setValue(Util.wrapInteger(tune1));
+        shiftMono.tune.setValue(Util.wrapInteger(tune1));
 
         int optimize = effectParameters[8] + effectParameters[9] * 16;
-        shiftMono.getOptimize().setValue(optimize);
+        shiftMono.optimize.setValue(optimize);
 
         int glide = effectParameters[10] + effectParameters[11] * 16;
-        shiftMono.getGlide().setValue(Util.parseBoolean(glide));
+        shiftMono.glide.setValue(Util.parseBoolean(glide));
 
         return shiftMono;
     }

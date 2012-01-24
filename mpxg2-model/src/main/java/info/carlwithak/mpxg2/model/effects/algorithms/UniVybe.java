@@ -29,7 +29,7 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class UniVybe extends Effect {
     private static final String NAME = "UniVybe";
 
-    private GenericValue<Integer> rate = new GenericValue<Integer>("Rate", "", 0, 100);
+    public final GenericValue<Integer> rate = new GenericValue<Integer>("Rate", "", 0, 100);
 
     @Override
     public String getName() {
@@ -51,10 +51,6 @@ public class UniVybe extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getRate() {
-        return rate;
     }
 
 }

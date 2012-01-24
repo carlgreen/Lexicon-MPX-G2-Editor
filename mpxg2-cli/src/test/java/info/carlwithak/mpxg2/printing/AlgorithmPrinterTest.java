@@ -103,9 +103,9 @@ public class AlgorithmPrinterTest {
         ShiftMono shiftMono = new ShiftMono();
         shiftMono.mix.setValue(100);
         shiftMono.level.setValue(-90);
-        shiftMono.getTune().setValue(-1200);
-        shiftMono.getOptimize().setValue(50);
-        shiftMono.getGlide().setValue(true);
+        shiftMono.tune.setValue(-1200);
+        shiftMono.optimize.setValue(50);
+        shiftMono.glide.setValue(true);
 
         // TODO level should be 'Off'
         String expected = "    Mix: 100%\n    Level: -90dB\n    Tune: -1200\n    Optimize: 50\n    Glide: On\n";
@@ -119,10 +119,10 @@ public class AlgorithmPrinterTest {
         ShiftDual shiftDual = new ShiftDual();
         shiftDual.mix.setValue(100);
         shiftDual.level.setValue(6);
-        shiftDual.getTune1().setValue(-1200);
-        shiftDual.getOptimize().setValue(10);
-        shiftDual.getTune2().setValue(-500);
-        shiftDual.getGlide().setValue(true);
+        shiftDual.tune1.setValue(-1200);
+        shiftDual.optimize.setValue(10);
+        shiftDual.tune2.setValue(-500);
+        shiftDual.glide.setValue(true);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Tune1: -1200\n    Optimize: 10\n    Tune2: -500\n    Glide: On\n";
         String actual = AlgorithmPrinter.print(shiftDual);
@@ -135,12 +135,12 @@ public class AlgorithmPrinterTest {
         DiatonicHmy diatonicHmy = new DiatonicHmy();
         diatonicHmy.mix.setValue(100);
         diatonicHmy.level.setValue(0);
-        diatonicHmy.getKey().setValue(4);
-        diatonicHmy.getScale().setValue(0);
-        diatonicHmy.getInterval().setValue(16);
-        diatonicHmy.getOptimize().setValue(10);
-        diatonicHmy.getThreshold().setValue(-83);
-        diatonicHmy.getSource().setValue(1);
+        diatonicHmy.key.setValue(4);
+        diatonicHmy.scale.setValue(0);
+        diatonicHmy.interval.setValue(16);
+        diatonicHmy.optimize.setValue(10);
+        diatonicHmy.threshold.setValue(-83);
+        diatonicHmy.source.setValue(1);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Key: E\n    Scale: Major\n    Int: +3rd\n    Optimize: 10\n    Thrsh: -83dB\n    Src: Guitar Input\n";
         String actual = AlgorithmPrinter.print(diatonicHmy);
@@ -153,8 +153,8 @@ public class AlgorithmPrinterTest {
         Panner panner = new Panner();
         panner.mix.setValue(100);
         panner.level.setValue(-24);
-        panner.getPan1().setValue(-50);
-        panner.getPan2().setValue(50);
+        panner.pan1.setValue(-50);
+        panner.pan2.setValue(50);
 
         String expected = "    Mix: 100%\n    Level: -24dB\n    Pan 1: 50L\n    Pan 2: 50R\n";
         String actual = AlgorithmPrinter.print(panner);
@@ -168,9 +168,9 @@ public class AlgorithmPrinterTest {
         autoPan.mix.setValue(100);
         autoPan.level.setValue(0);
         autoPan.setRate(new FrequencyRate("Rate", 1.0));
-        autoPan.getPulseWidth().setValue(50);
-        autoPan.getDepth().setValue(100);
-        autoPan.getPhase().setValue(3);
+        autoPan.pulseWidth.setValue(50);
+        autoPan.depth.setValue(100);
+        autoPan.phase.setValue(3);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 1.00Hz\n    PW: 50%\n    Depth: 100%\n    Phase: 270°\n";
         String actual = AlgorithmPrinter.print(autoPan);
@@ -184,8 +184,8 @@ public class AlgorithmPrinterTest {
         tremoloMono.mix.setValue(100);
         tremoloMono.level.setValue(6);
         tremoloMono.setRate(new BeatRate("Rate", 7, 4));
-        tremoloMono.getPulseWidth().setValue(30);
-        tremoloMono.getDepth().setValue(100);
+        tremoloMono.pulseWidth.setValue(30);
+        tremoloMono.depth.setValue(100);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Rate: 7:4\n    PW: 30%\n    Depth: 100%\n";
         String actual = AlgorithmPrinter.print(tremoloMono);
@@ -199,9 +199,9 @@ public class AlgorithmPrinterTest {
         tremoloStereo.mix.setValue(100);
         tremoloStereo.level.setValue(0);
         tremoloStereo.setRate(new FrequencyRate("Rate", 3.0));
-        tremoloStereo.getPulseWidth().setValue(50);
-        tremoloStereo.getDepth().setValue(100);
-        tremoloStereo.getPhase().setValue(3);
+        tremoloStereo.pulseWidth.setValue(50);
+        tremoloStereo.depth.setValue(100);
+        tremoloStereo.phase.setValue(3);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 3.00Hz\n    PW: 50%\n    Depth: 100%\n    Phase: 270°\n";
         String actual = AlgorithmPrinter.print(tremoloStereo);
@@ -214,7 +214,7 @@ public class AlgorithmPrinterTest {
         UniVybe univybe = new UniVybe();
         univybe.mix.setValue(100);
         univybe.level.setValue(0);
-        univybe.getRate().setValue(20);
+        univybe.rate.setValue(20);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
         String actual = AlgorithmPrinter.print(univybe);
@@ -228,8 +228,8 @@ public class AlgorithmPrinterTest {
         customVybe.mix.setValue(100);
         customVybe.level.setValue(0);
         customVybe.setRate(new FrequencyRate("Rate", 0.97));
-        customVybe.getPulseWidth().setValue(46);
-        customVybe.getDepth().setValue(45);
+        customVybe.pulseWidth.setValue(46);
+        customVybe.depth.setValue(45);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.97Hz\n    PW: 46%\n    Depth: 45%\n";
         String actual = AlgorithmPrinter.print(customVybe);
@@ -243,9 +243,9 @@ public class AlgorithmPrinterTest {
         phaser.mix.setValue(100);
         phaser.level.setValue(0);
         phaser.setRate(new FrequencyRate("Rate", 0.83));
-        phaser.getPulseWidth().setValue(50);
-        phaser.getDepth().setValue(100);
-        phaser.getResonance().setValue(30);
+        phaser.pulseWidth.setValue(50);
+        phaser.depth.setValue(100);
+        phaser.resonance.setValue(30);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.83Hz\n    PW: 50%\n    Depth: 100%\n    Res: +30%\n";
         String actual = AlgorithmPrinter.print(phaser);
@@ -258,7 +258,7 @@ public class AlgorithmPrinterTest {
         RedComp redComp = new RedComp();
         redComp.mix.setValue(100);
         redComp.level.setValue(6);
-        redComp.getSensitivity().setValue(70);
+        redComp.sensitivity.setValue(70);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: 70\n";
         String actual = AlgorithmPrinter.print(redComp);
@@ -271,11 +271,11 @@ public class AlgorithmPrinterTest {
         BlueComp blueComp = new BlueComp();
         blueComp.mix.setValue(100);
         blueComp.level.setValue(6);
-        blueComp.getSensitivity().setValue(5);
-        blueComp.getThreshold().setValue(-28);
-        blueComp.getGain().setValue(5);
-        blueComp.getAttackTime().setValue(20);
-        blueComp.getReleaseTime().setValue(100);
+        blueComp.sensitivity.setValue(5);
+        blueComp.threshold.setValue(-28);
+        blueComp.gain.setValue(5);
+        blueComp.attackTime.setValue(20);
+        blueComp.releaseTime.setValue(100);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Sense: +5dB\n    Thrsh: -28dB\n    Gain: +5dB\n    ATime: 20ms\n    RTime: 100ms\n";
         String actual = AlgorithmPrinter.print(blueComp);
@@ -288,7 +288,7 @@ public class AlgorithmPrinterTest {
         OrangePhase orangePhase = new OrangePhase();
         orangePhase.mix.setValue(100);
         orangePhase.level.setValue(0);
-        orangePhase.getRate().setValue(20);
+        orangePhase.rate.setValue(20);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 20\n";
         String actual = AlgorithmPrinter.print(orangePhase);
@@ -313,11 +313,11 @@ public class AlgorithmPrinterTest {
         SweepFilter sweepFilter = new SweepFilter();
         sweepFilter.mix.setValue(100);
         sweepFilter.level.setValue(6);
-        sweepFilter.getFc().setValue(88);
-        sweepFilter.getFRes().setValue(34);
-        sweepFilter.getMod().setValue(2120);
-        sweepFilter.getScale().setValue(50);
-        sweepFilter.getPan().setValue(0);
+        sweepFilter.fc.setValue(88);
+        sweepFilter.fRes.setValue(34);
+        sweepFilter.mod.setValue(2120);
+        sweepFilter.scale.setValue(50);
+        sweepFilter.pan.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Fc: 88Hz\n    FRes: 34\n    Mod: 2120Hz\n    Scale: +50%\n    Pan: C\n";
         String actual = AlgorithmPrinter.print(sweepFilter);
@@ -330,11 +330,11 @@ public class AlgorithmPrinterTest {
         Wah1 wah1 = new Wah1();
         wah1.mix.setValue(100);
         wah1.level.setValue(0);
-        wah1.getSweep().setValue(50);
-        wah1.getBass().setValue(19);
-        wah1.getType().setValue(0);
-        wah1.getResponse().setValue(100);
-        wah1.getGain().setValue(10);
+        wah1.sweep.setValue(50);
+        wah1.bass.setValue(19);
+        wah1.type.setValue(0);
+        wah1.response.setValue(100);
+        wah1.gain.setValue(10);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Sweep: 50\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10dB\n";
         String actual = AlgorithmPrinter.print(wah1);
@@ -347,11 +347,11 @@ public class AlgorithmPrinterTest {
         Wah2 wah2 = new Wah2();
         wah2.mix.setValue(100);
         wah2.level.setValue(6);
-        wah2.getSweep().setValue(50);
-        wah2.getBass().setValue(0);
-        wah2.getType().setValue(0);
-        wah2.getResponse().setValue(100);
-        wah2.getGain().setValue(10);
+        wah2.sweep.setValue(50);
+        wah2.bass.setValue(0);
+        wah2.type.setValue(0);
+        wah2.response.setValue(100);
+        wah2.gain.setValue(10);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Sweep: 50\n    Bass: 0\n    Type: Model C\n    Resp: 100\n    Gain: +10dB\n";
         String actual = AlgorithmPrinter.print(wah2);
@@ -364,10 +364,10 @@ public class AlgorithmPrinterTest {
         PedalWah1 pedalWah1 = new PedalWah1();
         pedalWah1.mix.setValue(100);
         pedalWah1.level.setValue(0);
-        pedalWah1.getBass().setValue(19);
-        pedalWah1.getType().setValue(0);
-        pedalWah1.getResponse().setValue(100);
-        pedalWah1.getGain().setValue(10);
+        pedalWah1.bass.setValue(19);
+        pedalWah1.type.setValue(0);
+        pedalWah1.response.setValue(100);
+        pedalWah1.gain.setValue(10);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Bass: 19\n    Type: Model C\n    Resp: 100\n    Gain: +10dB\n";
         String actual = AlgorithmPrinter.print(pedalWah1);
@@ -380,10 +380,10 @@ public class AlgorithmPrinterTest {
         PedalWah2 pedalWah2 = new PedalWah2();
         pedalWah2.mix.setValue(100);
         pedalWah2.level.setValue(0);
-        pedalWah2.getBass().setValue(10);
-        pedalWah2.getType().setValue(0);
-        pedalWah2.getResponse().setValue(100);
-        pedalWah2.getGain().setValue(6);
+        pedalWah2.bass.setValue(10);
+        pedalWah2.type.setValue(0);
+        pedalWah2.response.setValue(100);
+        pedalWah2.gain.setValue(6);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Bass: 10\n    Type: Model C\n    Resp: 100\n    Gain: +6dB\n";
         String actual = AlgorithmPrinter.print(pedalWah2);
@@ -396,7 +396,7 @@ public class AlgorithmPrinterTest {
         VolumeMono volumeMono = new VolumeMono();
         volumeMono.mix.setValue(100);
         volumeMono.level.setValue(0);
-        volumeMono.getVolume().setValue(60);
+        volumeMono.volume.setValue(60);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 60%\n";
         String actual = AlgorithmPrinter.print(volumeMono);
@@ -409,7 +409,7 @@ public class AlgorithmPrinterTest {
         VolumeStereo volumeStereo = new VolumeStereo();
         volumeStereo.mix.setValue(100);
         volumeStereo.level.setValue(0);
-        volumeStereo.getVolume().setValue(0);
+        volumeStereo.volume.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
         String actual = AlgorithmPrinter.print(volumeStereo);
@@ -422,8 +422,8 @@ public class AlgorithmPrinterTest {
         VolumeDual volumeDual = new VolumeDual();
         volumeDual.mix.setValue(100);
         volumeDual.level.setValue(0);
-        volumeDual.getVolumeLeft().setValue(100);
-        volumeDual.getVolumeRight().setValue(100);
+        volumeDual.volumeLeft.setValue(100);
+        volumeDual.volumeRight.setValue(100);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Vol-L: 100%\n    Vol-R: 100%\n";
         String actual = AlgorithmPrinter.print(volumeDual);
@@ -449,13 +449,13 @@ public class AlgorithmPrinterTest {
         chorus.mix.setValue(100);
         chorus.level.setValue(0);
         chorus.setRate1(new FrequencyRate("Rate1", 0.62));
-        chorus.getPulseWidth1().setValue(45);
-        chorus.getDepth1().setValue(30);
+        chorus.pulseWidth1.setValue(45);
+        chorus.depth1.setValue(30);
         chorus.setRate2(new FrequencyRate("Rate2", 0.56));
-        chorus.getPulseWidth2().setValue(54);
-        chorus.getDepth2().setValue(0);
-        chorus.getResonance1().setValue(-19);
-        chorus.getResonance2().setValue(0);
+        chorus.pulseWidth2.setValue(54);
+        chorus.depth2.setValue(0);
+        chorus.resonance1.setValue(-19);
+        chorus.resonance2.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.62Hz\n    PW 1: 45%\n    Dpth1: 30%\n    Rate2: 0.56Hz\n    PW 2: 54%\n    Dpth2: 0%\n    Res 1: -19\n    Res 2: 0\n";
         String actual = AlgorithmPrinter.print(chorus);
@@ -468,9 +468,9 @@ public class AlgorithmPrinterTest {
         ChorusDetuneMono detuneMono = new ChorusDetuneMono();
         detuneMono.mix.setValue(100);
         detuneMono.level.setValue(3);
-        detuneMono.getTune().setValue(7);
-        detuneMono.getOptimize().setValue(10);
-        detuneMono.getPreDelay().setValue(22);
+        detuneMono.tune.setValue(7);
+        detuneMono.optimize.setValue(10);
+        detuneMono.preDelay.setValue(22);
 
         String expected = "    Mix: 100%\n    Level: +3dB\n    Tune: 7\n    Optimize: 10ms\n    P Dly: 22ms\n";
         String actual = AlgorithmPrinter.print(detuneMono);
@@ -483,10 +483,10 @@ public class AlgorithmPrinterTest {
         DetuneDual detuneDual = new DetuneDual();
         detuneDual.mix.setValue(100);
         detuneDual.level.setValue(3);
-        detuneDual.getTune1().setValue(7);
-        detuneDual.getOptimize().setValue(10);
-        detuneDual.getTune2().setValue(5);
-        detuneDual.getPreDelay().setValue(22);
+        detuneDual.tune1.setValue(7);
+        detuneDual.optimize.setValue(10);
+        detuneDual.tune2.setValue(5);
+        detuneDual.preDelay.setValue(22);
 
         String expected = "    Mix: 100%\n    Level: +3dB\n    Tune1: 7\n    Optimize: 10ms\n    Tune2: 5\n    P Dly: 22ms\n";
         String actual = AlgorithmPrinter.print(detuneDual);
@@ -500,10 +500,10 @@ public class AlgorithmPrinterTest {
         flangerMono.mix.setValue(100);
         flangerMono.level.setValue(0);
         flangerMono.setRate(new FrequencyRate("Rate", 0.05));
-        flangerMono.getPulseWidth().setValue(20);
-        flangerMono.getDepth().setValue(30);
-        flangerMono.getResonance().setValue(-60);
-        flangerMono.getBlend().setValue(30);
+        flangerMono.pulseWidth.setValue(20);
+        flangerMono.depth.setValue(30);
+        flangerMono.resonance.setValue(-60);
+        flangerMono.blend.setValue(30);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.05Hz\n    PW: 20%\n    Depth: 30%\n    Res: -60%\n    Blend: 30%\n";
         String actual = AlgorithmPrinter.print(flangerMono);
@@ -517,11 +517,11 @@ public class AlgorithmPrinterTest {
         flanger24Mono.mix.setValue(100);
         flanger24Mono.level.setValue(0);
         flanger24Mono.setRate(new FrequencyRate("Rate", 0.31));
-        flanger24Mono.getPulseWidth().setValue(50);
-        flanger24Mono.getDepth().setValue(36);
-        flanger24Mono.getResonance().setValue(-30);
-        flanger24Mono.getGlide().setValue(50);
-        flanger24Mono.getBlend().setValue(50);
+        flanger24Mono.pulseWidth.setValue(50);
+        flanger24Mono.depth.setValue(36);
+        flanger24Mono.resonance.setValue(-30);
+        flanger24Mono.glide.setValue(50);
+        flanger24Mono.blend.setValue(50);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate: 0.31Hz\n    PW: 50%\n    Depth: 36%\n    Res: -30%\n    Glide: 50\n    Blend: 50%\n";
         String actual = AlgorithmPrinter.print(flanger24Mono);
@@ -535,11 +535,11 @@ public class AlgorithmPrinterTest {
         flangerStereo.mix.setValue(67);
         flangerStereo.level.setValue(1);
         flangerStereo.setRate(new BeatRate("Rate", 1, 4));
-        flangerStereo.getPulseWidth().setValue(50);
-        flangerStereo.getDepth().setValue(62);
-        flangerStereo.getPhase().setValue(1);
-        flangerStereo.getResonance().setValue(20);
-        flangerStereo.getBlend().setValue(0);
+        flangerStereo.pulseWidth.setValue(50);
+        flangerStereo.depth.setValue(62);
+        flangerStereo.phase.setValue(1);
+        flangerStereo.resonance.setValue(20);
+        flangerStereo.blend.setValue(0);
 
         String expected = "    Mix: 67%\n    Level: +1dB\n    Rate: 1:4\n    PW: 50%\n    Depth: 62%\n    Phase: 90°\n    Res: +20%\n    Blend: 0%\n";
         String actual = AlgorithmPrinter.print(flangerStereo);
@@ -553,12 +553,12 @@ public class AlgorithmPrinterTest {
         rotaryCab.mix.setValue(100);
         rotaryCab.level.setValue(4);
         rotaryCab.setRate1(new FrequencyRate("Rate1", 5.73));
-        rotaryCab.getDepth1().setValue(43);
+        rotaryCab.depth1.setValue(43);
         rotaryCab.setRate2(new FrequencyRate("Rate2", 5.73));
-        rotaryCab.getDepth2().setValue(36);
-        rotaryCab.getResonance().setValue(0);
-        rotaryCab.getWidth().setValue(100);
-        rotaryCab.getBalance().setValue(-20);
+        rotaryCab.depth2.setValue(36);
+        rotaryCab.resonance.setValue(0);
+        rotaryCab.width.setValue(100);
+        rotaryCab.balance.setValue(-20);
 
         String expected = "    Mix: 100%\n    Level: +4dB\n    Rate1: 5.73Hz\n    Dpth1: 43%\n    Rate2: 5.73Hz\n    Dpth2: 36%\n    Res: 0\n    Width: 100%\n    Bal: -20\n";
         String actual = AlgorithmPrinter.print(rotaryCab);
@@ -572,13 +572,13 @@ public class AlgorithmPrinterTest {
         aerosol.mix.setValue(100);
         aerosol.level.setValue(0);
         aerosol.setRate1(new FrequencyRate("Rate1", 0.26));
-        aerosol.getPulseWidth1().setValue(45);
-        aerosol.getDepth1().setValue(70);
+        aerosol.pulseWidth1.setValue(45);
+        aerosol.depth1.setValue(70);
         aerosol.setRate2(new FrequencyRate("Rate2", 0.26));
-        aerosol.getPulseWidth2().setValue(55);
-        aerosol.getDepth2().setValue(60);
-        aerosol.getResonance1().setValue(-60);
-        aerosol.getResonance2().setValue(60);
+        aerosol.pulseWidth2.setValue(55);
+        aerosol.depth2.setValue(60);
+        aerosol.resonance1.setValue(-60);
+        aerosol.resonance2.setValue(60);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.26Hz\n    PW 1: 45%\n    Dpth1: 70%\n    Rate2: 0.26Hz\n    PW 2: 55%\n    Dpth2: 60%\n    Res 1: -60\n    Res 2: +60\n";
         String actual = AlgorithmPrinter.print(aerosol);
@@ -592,14 +592,14 @@ public class AlgorithmPrinterTest {
         centrifuge1.mix.setValue(100);
         centrifuge1.level.setValue(6);
         centrifuge1.setRate1(new FrequencyRate("Rate1", 0.6));
-        centrifuge1.getPulseWidth1().setValue(45);
-        centrifuge1.getSync1().setValue(120);
-        centrifuge1.getDepth1().setValue(100);
+        centrifuge1.pulseWidth1.setValue(45);
+        centrifuge1.sync1.setValue(120);
+        centrifuge1.depth1.setValue(100);
         centrifuge1.setRate2(new FrequencyRate("Rate2", 1.0));
-        centrifuge1.getPulseWidth2().setValue(100);
-        centrifuge1.getSync2().setValue(-120);
-        centrifuge1.getDepth2().setValue(43);
-        centrifuge1.getResonance().setValue(100);
+        centrifuge1.pulseWidth2.setValue(100);
+        centrifuge1.sync2.setValue(-120);
+        centrifuge1.depth2.setValue(43);
+        centrifuge1.resonance.setValue(100);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Dpth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Dpth2: 43%\n    Res: +100%\n";
         String actual = AlgorithmPrinter.print(centrifuge1);
@@ -612,7 +612,7 @@ public class AlgorithmPrinterTest {
         ChorusVolumeMono volumeMono = new ChorusVolumeMono();
         volumeMono.mix.setValue(100);
         volumeMono.level.setValue(0);
-        volumeMono.getVolume().setValue(100);
+        volumeMono.volume.setValue(100);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 100%\n";
         String actual = AlgorithmPrinter.print(volumeMono);
@@ -625,7 +625,7 @@ public class AlgorithmPrinterTest {
         ChorusVolumeStereo volumeStereo = new ChorusVolumeStereo();
         volumeStereo.mix.setValue(100);
         volumeStereo.level.setValue(0);
-        volumeStereo.getVolume().setValue(0);
+        volumeStereo.volume.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
         String actual = AlgorithmPrinter.print(volumeStereo);
@@ -638,8 +638,8 @@ public class AlgorithmPrinterTest {
         ChorusVolumeDual volumeDual = new ChorusVolumeDual();
         volumeDual.mix.setValue(100);
         volumeDual.level.setValue(0);
-        volumeDual.getVolumeLeft().setValue(80);
-        volumeDual.getVolumeRight().setValue(90);
+        volumeDual.volumeLeft.setValue(80);
+        volumeDual.volumeRight.setValue(90);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Vol-L: 80%\n    Vol-R: 90%\n";
         String actual = AlgorithmPrinter.print(volumeDual);
@@ -665,9 +665,9 @@ public class AlgorithmPrinterTest {
         delayMono.mix.setValue(10);
         delayMono.level.setValue(0);
         delayMono.setTime(new BeatRate("Time", 4, 3));
-        delayMono.getFeedback().setValue(10);
-        delayMono.getInsert().setValue(3);
-        delayMono.getClear().setValue(false);
+        delayMono.feedback.setValue(10);
+        delayMono.insert.setValue(3);
+        delayMono.clear.setValue(false);
 
         String expected = "    Mix: 10%\n    Level: 0dB\n    Time: 4:3\n    Fbk: +10%\n    Fbk insert: Delay\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayMono);
@@ -681,9 +681,9 @@ public class AlgorithmPrinterTest {
         delayStereo.mix.setValue(20);
         delayStereo.level.setValue(0);
         delayStereo.setTime(new BeatRate("Time", 2, 4));
-        delayStereo.getFeedback().setValue(20);
-        delayStereo.getInsert().setValue(3);
-        delayStereo.getClear().setValue(false);
+        delayStereo.feedback.setValue(20);
+        delayStereo.insert.setValue(3);
+        delayStereo.clear.setValue(false);
 
         String expected = "    Mix: 20%\n    Level: 0dB\n    Time: 2:4\n    Fbk: +20%\n    Fbk insert: Delay\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayStereo);
@@ -698,16 +698,16 @@ public class AlgorithmPrinterTest {
         delayDual.level.setValue(0);
         delayDual.setTime1(new BeatRate("Time1", 3, 4));
         delayDual.setTime2(new BeatRate("Time2", 4, 3));
-        delayDual.getLevel1().setValue(0);
-        delayDual.getLevel2().setValue(0);
-        delayDual.getPan1().setValue(-50);
-        delayDual.getPan2().setValue(50);
-        delayDual.getFeedback1().setValue(10);
-        delayDual.getInsert().setValue(3);
-        delayDual.getFeedback2().setValue(10);
-        delayDual.getXFbk1().setValue(0);
-        delayDual.getXFbk2().setValue(0);
-        delayDual.getClear().setValue(false);
+        delayDual.level1.setValue(0);
+        delayDual.level2.setValue(0);
+        delayDual.pan1.setValue(-50);
+        delayDual.pan2.setValue(50);
+        delayDual.feedback1.setValue(10);
+        delayDual.insert.setValue(3);
+        delayDual.feedback2.setValue(10);
+        delayDual.xFbk1.setValue(0);
+        delayDual.xFbk2.setValue(0);
+        delayDual.clear.setValue(false);
 
         String expected = "    Mix: 25%\n    Level: 0dB\n    Time1: 3:4\n    Time2: 4:3\n    Lvl 1: 0dB\n    Lvl 2: 0dB\n    Pan 1: 50L\n    Pan 2: 50R\n    Fbk 1: +10%\n    Fbk insert: Delay\n    Fbk 2: +10%\n    XFbk1: 0%\n    XFbk2: 0%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(delayDual);
@@ -721,10 +721,10 @@ public class AlgorithmPrinterTest {
         echoMono.mix.setValue(6);
         echoMono.level.setValue(1);
         echoMono.setTime(new BeatRate("Time", 4, 4));
-        echoMono.getFeedback().setValue(-15);
-        echoMono.getInsert().setValue(3);
-        echoMono.getDamp().setValue(20);
-        echoMono.getClear().setValue(false);
+        echoMono.feedback.setValue(-15);
+        echoMono.insert.setValue(3);
+        echoMono.damp.setValue(20);
+        echoMono.clear.setValue(false);
 
         String expected = "    Mix: 6%\n    Level: +1dB\n    Time: 4:4\n    Fbk: -15%\n    Fbk insert: Delay\n    Damp: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoMono);
@@ -738,10 +738,10 @@ public class AlgorithmPrinterTest {
         echoStereo.mix.setValue(0);
         echoStereo.level.setValue(0);
         echoStereo.setTime(new BeatRate("Time", 1, 1));
-        echoStereo.getFeedback().setValue(0);
-        echoStereo.getInsert().setValue(3);
-        echoStereo.getDamp().setValue(16);
-        echoStereo.getClear().setValue(false);
+        echoStereo.feedback.setValue(0);
+        echoStereo.insert.setValue(3);
+        echoStereo.damp.setValue(16);
+        echoStereo.clear.setValue(false);
 
         String expected = "    Mix: 0%\n    Level: 0dB\n    Time: 1:1\n    Fbk: 0%\n    Fbk insert: Delay\n    Damp: 16%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoStereo);
@@ -756,14 +756,14 @@ public class AlgorithmPrinterTest {
         echoDual.level.setValue(1);
         echoDual.setTime1(new BeatRate("Time1", 4, 4));
         echoDual.setTime2(new BeatRate("Time2", 2, 1));
-        echoDual.getLevel1().setValue(0);
-        echoDual.getLevel2().setValue(0);
-        echoDual.getFeedback1().setValue(1);
-        echoDual.getInsert().setValue(3);
-        echoDual.getFeedback2().setValue(1);
-        echoDual.getDamp1().setValue(20);
-        echoDual.getDamp2().setValue(20);
-        echoDual.getClear().setValue(false);
+        echoDual.level1.setValue(0);
+        echoDual.level2.setValue(0);
+        echoDual.feedback1.setValue(1);
+        echoDual.insert.setValue(3);
+        echoDual.feedback2.setValue(1);
+        echoDual.damp1.setValue(20);
+        echoDual.damp2.setValue(20);
+        echoDual.clear.setValue(false);
 
         String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Lvl 1: 0dB\n    Lvl 2: 0dB\n    Fbk 1: +1%\n    Fbk insert: Delay\n    Fbk 2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoDual);
@@ -776,14 +776,14 @@ public class AlgorithmPrinterTest {
         JamMan jamMan = new JamMan();
         jamMan.mix.setValue(100);
         jamMan.level.setValue(0);
-        jamMan.getSize().setValue(250);
-        jamMan.getFeedback().setValue(0);
-        jamMan.getInsert().setValue(3);
-        jamMan.getClear().setValue(false);
-        jamMan.getLayer().setValue(false);
-        jamMan.getReplace().setValue(false);
-        jamMan.getDelay().setValue(false);
-        jamMan.getMute().setValue(false);
+        jamMan.size.setValue(250);
+        jamMan.feedback.setValue(0);
+        jamMan.insert.setValue(3);
+        jamMan.clear.setValue(false);
+        jamMan.layer.setValue(false);
+        jamMan.replace.setValue(false);
+        jamMan.delay.setValue(false);
+        jamMan.mute.setValue(false);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Fbk: 0%\n    Fbk insert: Delay\n    Clear: Off\n    Layer: Off\n    Replc: Off\n    Delay: Off\n    MuteS: Off\n";
         String actual = AlgorithmPrinter.print(jamMan);
@@ -796,16 +796,16 @@ public class AlgorithmPrinterTest {
         Chamber chamber = new Chamber();
         chamber.mix.setValue(28);
         chamber.level.setValue(0);
-        chamber.getSize().setValue(24.0);
-        chamber.getLink().setValue(true);
-        chamber.getDiff().setValue(22);
-        chamber.getPreDelay().setValue(0);
-        chamber.getBass().setValue(6);
-        chamber.getDecay().setValue(47);
-        chamber.getXovr().setValue(16);
-        chamber.getRtHC().setValue(34);
-        chamber.getShape().setValue(62);
-        chamber.getSpred().setValue(120);
+        chamber.size.setValue(24.0);
+        chamber.link.setValue(true);
+        chamber.diff.setValue(22);
+        chamber.preDelay.setValue(0);
+        chamber.bass.setValue(6);
+        chamber.decay.setValue(47);
+        chamber.xovr.setValue(16);
+        chamber.rtHC.setValue(34);
+        chamber.shape.setValue(62);
+        chamber.spred.setValue(120);
 
         String expected = "    Mix: 28%\n    Level: 0dB\n    Size: 24.0m\n    Link: On\n    Diff: 22%\n    P Dly: 0ms\n    Bass: 1.5X\n    Decay: 1.05s\n    Xovr: 986Hz\n    Rt HC: 9.3kHz\n    Shape: 62\n    Spred: 42\n";
         String actual = AlgorithmPrinter.print(chamber);
@@ -818,16 +818,16 @@ public class AlgorithmPrinterTest {
         Hall hall = new Hall();
         hall.mix.setValue(20);
         hall.level.setValue(0);
-        hall.getSize().setValue(53.0);
-        hall.getLink().setValue(true);
-        hall.getDiff().setValue(80);
-        hall.getPreDelay().setValue(25);
-        hall.getBass().setValue(5);
-        hall.getDecay().setValue(41);
-        hall.getXovr().setValue(15);
-        hall.getRtHC().setValue(31);
-        hall.getShape().setValue(110);
-        hall.getSpred().setValue(125);
+        hall.size.setValue(53.0);
+        hall.link.setValue(true);
+        hall.diff.setValue(80);
+        hall.preDelay.setValue(25);
+        hall.bass.setValue(5);
+        hall.decay.setValue(41);
+        hall.xovr.setValue(15);
+        hall.rtHC.setValue(31);
+        hall.shape.setValue(110);
+        hall.spred.setValue(125);
 
         String expected = "    Mix: 20%\n    Level: 0dB\n    Size: 53.0m\n    Link: On\n    Diff: 80%\n    P Dly: 25ms\n    Bass: 1.2X\n    Decay: 1.67s\n    Xovr: 818Hz\n    Rt HC: 7.9kHz\n    Shape: 110\n    Spred: 89\n";
         String actual = AlgorithmPrinter.print(hall);
@@ -840,16 +840,16 @@ public class AlgorithmPrinterTest {
         Plate plate = new Plate();
         plate.mix.setValue(100);
         plate.level.setValue(6);
-        plate.getSize().setValue(22.5);
-        plate.getLink().setValue(true);
-        plate.getDiff().setValue(66);
-        plate.getPreDelay().setValue(169);
-        plate.getBass().setValue(5);
-        plate.getDecay().setValue(50);
-        plate.getXovr().setValue(16);
-        plate.getRtHC().setValue(45);
-        plate.getShape().setValue(36);
-        plate.getSpred().setValue(222);
+        plate.size.setValue(22.5);
+        plate.link.setValue(true);
+        plate.diff.setValue(66);
+        plate.preDelay.setValue(169);
+        plate.bass.setValue(5);
+        plate.decay.setValue(50);
+        plate.xovr.setValue(16);
+        plate.rtHC.setValue(45);
+        plate.shape.setValue(36);
+        plate.spred.setValue(222);
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Size: 22.5m\n    Link: On\n    Diff: 66%\n    P Dly: 169ms\n    Bass: 1.2X\n    Decay: 1.30s\n    Xovr: 986Hz\n    Rt HC: 19.4kHz\n    Shape: 36\n    Spred: 73\n";
         String actual = AlgorithmPrinter.print(plate);
@@ -862,13 +862,13 @@ public class AlgorithmPrinterTest {
         Ambience ambience = new Ambience();
         ambience.mix.setValue(18);
         ambience.level.setValue(0);
-        ambience.getSize().setValue(24.5);
-        ambience.getLink().setValue(true);
-        ambience.getDiff().setValue(60);
-        ambience.getPreDelay().setValue(7);
-        ambience.getDecayTime().setValue(51);
-        ambience.getDecayLevel().setValue(0);
-        ambience.getRtHC().setValue(12);
+        ambience.size.setValue(24.5);
+        ambience.link.setValue(true);
+        ambience.diff.setValue(60);
+        ambience.preDelay.setValue(7);
+        ambience.decayTime.setValue(51);
+        ambience.decayLevel.setValue(0);
+        ambience.rtHC.setValue(12);
 
         String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: On\n    Diff: 60%\n    P Dly: 7ms\n    DTime: 1.41s\n    D Lvl: Off\n    Rt HC: 12.8kHz\n";
         String actual = AlgorithmPrinter.print(ambience);
@@ -881,10 +881,10 @@ public class AlgorithmPrinterTest {
         OneBandMono oneBandMono = new OneBandMono();
         oneBandMono.mix.setValue(100);
         oneBandMono.level.setValue(0);
-        oneBandMono.getGain().setValue(9);
-        oneBandMono.getFc().setValue(393);
-        oneBandMono.getQ().setValue(0.1);
-        oneBandMono.getMode().setValue(0);
+        oneBandMono.gain.setValue(9);
+        oneBandMono.fc.setValue(393);
+        oneBandMono.q.setValue(0.1);
+        oneBandMono.mode.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: +9dB\n    Fc: 393Hz\n    Q: 0.1\n    Mode: LShlf\n";
         String actual = AlgorithmPrinter.print(oneBandMono);
@@ -897,14 +897,14 @@ public class AlgorithmPrinterTest {
         TwoBandMono twoBandMono = new TwoBandMono();
         twoBandMono.mix.setValue(100);
         twoBandMono.level.setValue(0);
-        twoBandMono.getGain1().setValue(-5);
-        twoBandMono.getFc1().setValue(200);
-        twoBandMono.getQ1().setValue(0.7);
-        twoBandMono.getMode1().setValue(0);
-        twoBandMono.getGain2().setValue(-7);
-        twoBandMono.getFc2().setValue(5000);
-        twoBandMono.getQ2().setValue(0.7);
-        twoBandMono.getMode2().setValue(2);
+        twoBandMono.gain1.setValue(-5);
+        twoBandMono.fc1.setValue(200);
+        twoBandMono.q1.setValue(0.7);
+        twoBandMono.mode1.setValue(0);
+        twoBandMono.gain2.setValue(-7);
+        twoBandMono.fc2.setValue(5000);
+        twoBandMono.q2.setValue(0.7);
+        twoBandMono.mode2.setValue(2);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -5dB\n    Fc 1: 200Hz\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: -7dB\n    Fc 2: 5000Hz\n    Q 2: 0.7\n    Mode2: HShlf\n";
         String actual = AlgorithmPrinter.print(twoBandMono);
@@ -917,22 +917,22 @@ public class AlgorithmPrinterTest {
         FourBandMono fourBandMono = new FourBandMono();
         fourBandMono.mix.setValue(100);
         fourBandMono.level.setValue(0);
-        fourBandMono.getGain1().setValue(-72);
-        fourBandMono.getFc1().setValue(820);
-        fourBandMono.getQ1().setValue(0.7);
-        fourBandMono.getMode1().setValue(0);
-        fourBandMono.getGain2().setValue(6);
-        fourBandMono.getFc2().setValue(1200);
-        fourBandMono.getQ2().setValue(2.5);
-        fourBandMono.getMode2().setValue(0);
-        fourBandMono.getGain3().setValue(10);
-        fourBandMono.getFc3().setValue(1700);
-        fourBandMono.getQ3().setValue(1.5);
-        fourBandMono.getMode3().setValue(1);
-        fourBandMono.getGain4().setValue(-72);
-        fourBandMono.getFc4().setValue(3800);
-        fourBandMono.getQ4().setValue(0.7);
-        fourBandMono.getMode4().setValue(2);
+        fourBandMono.gain1.setValue(-72);
+        fourBandMono.fc1.setValue(820);
+        fourBandMono.q1.setValue(0.7);
+        fourBandMono.mode1.setValue(0);
+        fourBandMono.gain2.setValue(6);
+        fourBandMono.fc2.setValue(1200);
+        fourBandMono.q2.setValue(2.5);
+        fourBandMono.mode2.setValue(0);
+        fourBandMono.gain3.setValue(10);
+        fourBandMono.fc3.setValue(1700);
+        fourBandMono.q3.setValue(1.5);
+        fourBandMono.mode3.setValue(1);
+        fourBandMono.gain4.setValue(-72);
+        fourBandMono.fc4.setValue(3800);
+        fourBandMono.q4.setValue(0.7);
+        fourBandMono.mode4.setValue(2);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -72dB\n    Fc 1: 820Hz\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: +6dB\n    Fc 2: 1200Hz\n    Q 2: 2.5\n    Mode2: LShlf\n    Gain3: +10dB\n    Fc 3: 1700Hz\n    Q 3: 1.5\n    Mode3: Band\n    Gain4: -72dB\n    Fc 4: 3800Hz\n    Q 4: 0.7\n    Mode4: HShlf\n";
         String actual = AlgorithmPrinter.print(fourBandMono);
@@ -945,14 +945,14 @@ public class AlgorithmPrinterTest {
         TwoBandStereo twoBandStereo = new TwoBandStereo();
         twoBandStereo.mix.setValue(100);
         twoBandStereo.level.setValue(-2);
-        twoBandStereo.getGain1().setValue(5);
-        twoBandStereo.getFc1().setValue(5050);
-        twoBandStereo.getQ1().setValue(0.1);
-        twoBandStereo.getMode1().setValue(0);
-        twoBandStereo.getGain2().setValue(8);
-        twoBandStereo.getFc2().setValue(20);
-        twoBandStereo.getQ2().setValue(0.1);
-        twoBandStereo.getMode2().setValue(1);
+        twoBandStereo.gain1.setValue(5);
+        twoBandStereo.fc1.setValue(5050);
+        twoBandStereo.q1.setValue(0.1);
+        twoBandStereo.mode1.setValue(0);
+        twoBandStereo.gain2.setValue(8);
+        twoBandStereo.fc2.setValue(20);
+        twoBandStereo.q2.setValue(0.1);
+        twoBandStereo.mode2.setValue(1);
 
         String expected = "    Mix: 100%\n    Level: -2dB\n    Gain1: +5dB\n    Fc 1: 5050Hz\n    Q 1: 0.1\n    Mode1: LShlf\n    Gain2: +8dB\n    Fc 2: 20Hz\n    Q 2: 0.1\n    Mode2: Band\n";
         String actual = AlgorithmPrinter.print(twoBandStereo);
@@ -965,8 +965,8 @@ public class AlgorithmPrinterTest {
         Crossover crossover = new Crossover();
         crossover.mix.setValue(100);
         crossover.level.setValue(0);
-        crossover.getFc().setValue(3000);
-        crossover.getBalance().setValue(4);
+        crossover.fc.setValue(3000);
+        crossover.balance.setValue(4);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Fc: 3000Hz\n    Bal: +4\n";
         String actual = AlgorithmPrinter.print(crossover);
@@ -979,7 +979,7 @@ public class AlgorithmPrinterTest {
         EqVolumeMono volumeMono = new EqVolumeMono();
         volumeMono.mix.setValue(100);
         volumeMono.level.setValue(0);
-        volumeMono.getVolume().setValue(100);
+        volumeMono.volume.setValue(100);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 100%\n";
         String actual = AlgorithmPrinter.print(volumeMono);
@@ -992,7 +992,7 @@ public class AlgorithmPrinterTest {
         EqVolumeStereo volumeStereo = new EqVolumeStereo();
         volumeStereo.mix.setValue(100);
         volumeStereo.level.setValue(0);
-        volumeStereo.getVolume().setValue(0);
+        volumeStereo.volume.setValue(0);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Volume: 0%\n";
         String actual = AlgorithmPrinter.print(volumeStereo);
@@ -1005,8 +1005,8 @@ public class AlgorithmPrinterTest {
         EqVolumeDual volumeDual = new EqVolumeDual();
         volumeDual.mix.setValue(100);
         volumeDual.level.setValue(0);
-        volumeDual.getVolumeLeft().setValue(0);
-        volumeDual.getVolumeRight().setValue(100);
+        volumeDual.volumeLeft.setValue(0);
+        volumeDual.volumeRight.setValue(100);
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Vol-L: 0%\n    Vol-R: 100%\n";
         String actual = AlgorithmPrinter.print(volumeDual);
@@ -1029,11 +1029,11 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintTone() throws PrintException {
         Tone tone = new Tone();
-        tone.getLo().setValue(25);
-        tone.getMid().setValue(10);
-        tone.getHi().setValue(20);
-        tone.getInLevel().setValue(0);
-        tone.getLevel().setValue(55);
+        tone.lo.setValue(25);
+        tone.mid.setValue(10);
+        tone.hi.setValue(20);
+        tone.inLevel.setValue(0);
+        tone.level.setValue(55);
 
         String expected = "    Lo: +25dB\n    Mid: +10dB\n    Hi: +20dB\n    InLvl: 0dB\n    Level: 55dB\n";
         String actual = AlgorithmPrinter.print(tone);
@@ -1044,11 +1044,11 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintCrunch() throws PrintException {
         Crunch crunch = new Crunch();
-        crunch.getLo().setValue(6);
-        crunch.getMid().setValue(12);
-        crunch.getHi().setValue(15);
-        crunch.getInLevel().setValue(0);
-        crunch.getLevel().setValue(50);
+        crunch.lo.setValue(6);
+        crunch.mid.setValue(12);
+        crunch.hi.setValue(15);
+        crunch.inLevel.setValue(0);
+        crunch.level.setValue(50);
 
         String expected = "    Lo: +6dB\n    Mid: +12dB\n    Hi: 15dB\n    InLvl: 0dB\n    Level: 50dB\n";
         String actual = AlgorithmPrinter.print(crunch);
@@ -1059,12 +1059,12 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintScreamer() throws PrintException {
         Screamer screamer = new Screamer();
-        screamer.getLo().setValue(2);
-        screamer.getMid().setValue(1);
-        screamer.getHi().setValue(3);
-        screamer.getDrive().setValue(22);
-        screamer.getTone().setValue(25);
-        screamer.getLevel().setValue(57);
+        screamer.lo.setValue(2);
+        screamer.mid.setValue(1);
+        screamer.hi.setValue(3);
+        screamer.drive.setValue(22);
+        screamer.tone.setValue(25);
+        screamer.level.setValue(57);
 
         String expected = "    Lo: +2dB\n    Mid: +1dB\n    Hi: 3dB\n    Drive: 22\n    Tone: 25\n    Level: 57dB\n";
         String actual = AlgorithmPrinter.print(screamer);
@@ -1075,15 +1075,15 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintOverdrive() throws PrintException {
         Overdrive overdrive = new Overdrive();
-        overdrive.getLo().setValue(4);
-        overdrive.getMid().setValue(8);
-        overdrive.getHi().setValue(0);
-        overdrive.getInLevel().setValue(-8);
-        overdrive.getLoCut().setValue(0);
-        overdrive.getFeel().setValue(32);
-        overdrive.getDrive().setValue(40);
-        overdrive.getTone().setValue(21);
-        overdrive.getLevel().setValue(44);
+        overdrive.lo.setValue(4);
+        overdrive.mid.setValue(8);
+        overdrive.hi.setValue(0);
+        overdrive.inLevel.setValue(-8);
+        overdrive.loCut.setValue(0);
+        overdrive.feel.setValue(32);
+        overdrive.drive.setValue(40);
+        overdrive.tone.setValue(21);
+        overdrive.level.setValue(44);
 
         String expected = "    Lo: +4dB\n    Mid: +8dB\n    Hi: 0dB\n    InLvl: -8dB\n    LoCut: 0\n    Feel: 32\n    Drive: 40\n    Tone: 21\n    Level: 44dB\n";
         String actual = AlgorithmPrinter.print(overdrive);
@@ -1094,14 +1094,14 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintDistortion() throws PrintException {
         Distortion distortion = new Distortion();
-        distortion.getLo().setValue(0);
-        distortion.getMid().setValue(4);
-        distortion.getHi().setValue(11);
-        distortion.getDrive().setValue(25);
-        distortion.getTone().setValue(21);
-        distortion.getBass().setValue(7);
-        distortion.getTreble().setValue(6);
-        distortion.getLevel().setValue(40);
+        distortion.lo.setValue(0);
+        distortion.mid.setValue(4);
+        distortion.hi.setValue(11);
+        distortion.drive.setValue(25);
+        distortion.tone.setValue(21);
+        distortion.bass.setValue(7);
+        distortion.treble.setValue(6);
+        distortion.level.setValue(40);
 
         String expected = "    Lo: 0dB\n    Mid: +4dB\n    Hi: 11dB\n    Drive: 25\n    Tone: 21\n    Bass: +7dB\n    Trebl: +6dB\n    Level: 40dB\n";
         String actual = AlgorithmPrinter.print(distortion);
@@ -1112,17 +1112,17 @@ public class AlgorithmPrinterTest {
     @Test
     public void testPrintPreamp() throws PrintException {
         Preamp preamp = new Preamp();
-        preamp.getLo().setValue(7);
-        preamp.getMid().setValue(3);
-        preamp.getHi().setValue(0);
-        preamp.getInLevel().setValue(-5);
-        preamp.getLoCut().setValue(0);
-        preamp.getFeel().setValue(32);
-        preamp.getDrive().setValue(23);
-        preamp.getTone().setValue(22);
-        preamp.getBass().setValue(0);
-        preamp.getTreble().setValue(0);
-        preamp.getLevel().setValue(45);
+        preamp.lo.setValue(7);
+        preamp.mid.setValue(3);
+        preamp.hi.setValue(0);
+        preamp.inLevel.setValue(-5);
+        preamp.loCut.setValue(0);
+        preamp.feel.setValue(32);
+        preamp.drive.setValue(23);
+        preamp.tone.setValue(22);
+        preamp.bass.setValue(0);
+        preamp.treble.setValue(0);
+        preamp.level.setValue(45);
 
         String expected = "    Lo: +7dB\n    Mid: +3dB\n    Hi: 0dB\n    InLvl: -5dB\n    LoCut: 0\n    Feel: 32\n    Drive: 23\n    Tone: 22\n    Bass: 0dB\n    Trebl: 0dB\n    Level: 45dB\n";
         String actual = AlgorithmPrinter.print(preamp);

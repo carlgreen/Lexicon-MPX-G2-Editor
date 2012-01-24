@@ -39,12 +39,12 @@ public class AerosolParserTest {
         assertThat(aerosol.mix, is(value(100)));
         assertThat(aerosol.level, is(value(0)));
         assertThat(aerosol.getRate1(), is(frequency(0.26)));
-        assertThat(aerosol.getPulseWidth1(), is(value(45)));
-        assertThat(aerosol.getDepth1(), is(value(70)));
+        assertThat(aerosol.pulseWidth1, is(value(45)));
+        assertThat(aerosol.depth1, is(value(70)));
         assertThat(aerosol.getRate2(), is(frequency(0.26)));
-        assertThat(aerosol.getPulseWidth2(), is(value(55)));
-        assertThat(aerosol.getDepth2(), is(value(60)));
-        assertThat(aerosol.getResonance1(), is(value(-60)));
-        assertThat(aerosol.getResonance2(), is(value(60)));
+        assertThat(aerosol.pulseWidth2, is(value(55)));
+        assertThat(aerosol.depth2, is(value(60)));
+        assertThat(aerosol.resonance1, is(value(-60)));
+        assertThat(aerosol.resonance2, is(value(60)));
     }
 }

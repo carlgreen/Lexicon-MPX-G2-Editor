@@ -34,14 +34,14 @@ public class EchoDual extends Delay {
 
     private Rate time1;
     private Rate time2;
-    private GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
-    private GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
-    private GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
-    private InsertPosition insert = new InsertPosition("Fbk insert");
-    private GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
-    private GenericValue<Integer> damp1 = new GenericValue<Integer>("Damp1", "%", 0, 100);
-    private GenericValue<Integer> damp2 = new GenericValue<Integer>("Damp2", "%", 0, 100);
-    private OnOffValue clear = new OnOffValue("Clear");
+    public final GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
+    public final GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
+    public final GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
+    public final InsertPosition insert = new InsertPosition("Fbk insert");
+    public final GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
+    public final GenericValue<Integer> damp1 = new GenericValue<Integer>("Damp1", "%", 0, 100);
+    public final GenericValue<Integer> damp2 = new GenericValue<Integer>("Damp2", "%", 0, 100);
+    public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -103,38 +103,6 @@ public class EchoDual extends Delay {
 
     public void setTime2(Rate time2) {
         this.time2 = time2;
-    }
-
-    public GenericValue<Integer> getLevel1() {
-        return level1;
-    }
-
-    public GenericValue<Integer> getLevel2() {
-        return level2;
-    }
-
-    public GenericValue<Integer> getFeedback1() {
-        return feedback1;
-    }
-
-    public InsertPosition getInsert() {
-        return insert;
-    }
-
-    public GenericValue<Integer> getFeedback2() {
-        return feedback2;
-    }
-
-    public GenericValue<Integer> getDamp1() {
-        return damp1;
-    }
-
-    public GenericValue<Integer> getDamp2() {
-        return damp2;
-    }
-
-    public OnOffValue getClear() {
-        return clear;
     }
 
 }

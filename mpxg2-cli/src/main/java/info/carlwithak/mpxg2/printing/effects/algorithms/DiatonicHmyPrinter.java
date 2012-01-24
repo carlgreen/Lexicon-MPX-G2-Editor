@@ -35,12 +35,12 @@ public class DiatonicHmyPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(diatonicHmy.mix));
         sb.append(printParameter(diatonicHmy.level));
-        sb.append(printParameter(diatonicHmy.getKey()));
-        sb.append(printParameter(diatonicHmy.getScale()));
-        sb.append(printParameter(diatonicHmy.getInterval()));
-        sb.append(printParameter(diatonicHmy.getOptimize()));
-        sb.append(printParameter(diatonicHmy.getThreshold()));
-        sb.append(printParameter(diatonicHmy.getSource()));
+        sb.append(printParameter(diatonicHmy.key));
+        sb.append(printParameter(diatonicHmy.scale));
+        sb.append(printParameter(diatonicHmy.interval));
+        sb.append(printParameter(diatonicHmy.optimize));
+        sb.append(printParameter(diatonicHmy.threshold));
+        sb.append(printParameter(diatonicHmy.source));
         return sb.toString();
     }
 

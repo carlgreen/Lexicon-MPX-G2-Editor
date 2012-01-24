@@ -39,11 +39,11 @@ public class RotaryCabParserTest {
         assertThat(rotaryCab.mix, is(value(100)));
         assertThat(rotaryCab.level, is(value(4)));
         assertThat(rotaryCab.getRate1(), is(frequency(5.73)));
-        assertThat(rotaryCab.getDepth1(), is(value(43)));
+        assertThat(rotaryCab.depth1, is(value(43)));
         assertThat(rotaryCab.getRate2(), is(frequency(5.73)));
-        assertThat(rotaryCab.getDepth2(), is(value(36)));
-        assertThat(rotaryCab.getResonance(), is(value(0)));
-        assertThat(rotaryCab.getWidth(), is(value(100)));
-        assertThat(rotaryCab.getBalance(), is(value(-20)));
+        assertThat(rotaryCab.depth2, is(value(36)));
+        assertThat(rotaryCab.resonance, is(value(0)));
+        assertThat(rotaryCab.width, is(value(100)));
+        assertThat(rotaryCab.balance, is(value(-20)));
     }
 }

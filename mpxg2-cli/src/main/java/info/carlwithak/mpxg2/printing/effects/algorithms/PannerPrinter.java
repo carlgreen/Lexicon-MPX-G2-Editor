@@ -35,8 +35,8 @@ public class PannerPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(panner.mix));
         sb.append(printParameter(panner.level));
-        sb.append(printParameter(panner.getPan1()));
-        sb.append(printParameter(panner.getPan2()));
+        sb.append(printParameter(panner.pan1));
+        sb.append(printParameter(panner.pan2));
         return sb.toString();
     }
 

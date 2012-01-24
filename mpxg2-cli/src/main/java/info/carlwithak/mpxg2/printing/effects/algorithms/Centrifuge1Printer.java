@@ -36,14 +36,14 @@ public class Centrifuge1Printer implements Printer {
         sb.append(printParameter(centrifuge1.mix));
         sb.append(printParameter(centrifuge1.level));
         sb.append(printParameter(centrifuge1.getRate1()));
-        sb.append(printParameter(centrifuge1.getPulseWidth1()));
-        sb.append(printParameter(centrifuge1.getSync1()));
-        sb.append(printParameter(centrifuge1.getDepth1()));
+        sb.append(printParameter(centrifuge1.pulseWidth1));
+        sb.append(printParameter(centrifuge1.sync1));
+        sb.append(printParameter(centrifuge1.depth1));
         sb.append(printParameter(centrifuge1.getRate2()));
-        sb.append(printParameter(centrifuge1.getPulseWidth2()));
-        sb.append(printParameter(centrifuge1.getSync2()));
-        sb.append(printParameter(centrifuge1.getDepth2()));
-        sb.append(printParameter(centrifuge1.getResonance()));
+        sb.append(printParameter(centrifuge1.pulseWidth2));
+        sb.append(printParameter(centrifuge1.sync2));
+        sb.append(printParameter(centrifuge1.depth2));
+        sb.append(printParameter(centrifuge1.resonance));
         return sb.toString();
     }
 

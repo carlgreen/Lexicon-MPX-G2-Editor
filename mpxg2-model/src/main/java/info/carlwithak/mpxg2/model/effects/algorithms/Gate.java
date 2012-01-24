@@ -30,16 +30,16 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Gate extends Reverb {
     private static final String NAME = "Gate";
 
-    private GenericValue<Integer> time = new GenericValue<Integer>("Time", "ms", 140, 700);
-    private OnOffValue link = new OnOffValue("Link");
-    private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
-    private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
-    private GenericValue<Integer> loSlope = new GenericValue<Integer>("LoSlp", "", -16, 16);
-    private GenericValue<Integer> hiSlope = new GenericValue<Integer>("HiSlp", "", -16, 16);
-    private GenericValue<Integer> xovr = new GenericValue<Integer>("Xovr", "Hz", 0, 255); // 30 - 24700
-    private GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 525 - 24700
-    private GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
-    private GenericValue<Integer> spred = new GenericValue<Integer>("Spred", "", 0, 255);
+    public final GenericValue<Integer> time = new GenericValue<Integer>("Time", "ms", 140, 700);
+    public final OnOffValue link = new OnOffValue("Link");
+    public final GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
+    public final GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
+    public final GenericValue<Integer> loSlope = new GenericValue<Integer>("LoSlp", "", -16, 16);
+    public final GenericValue<Integer> hiSlope = new GenericValue<Integer>("HiSlp", "", -16, 16);
+    public final GenericValue<Integer> xovr = new GenericValue<Integer>("Xovr", "Hz", 0, 255); // 30 - 24700
+    public final GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 525 - 24700
+    public final GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
+    public final GenericValue<Integer> spred = new GenericValue<Integer>("Spred", "", 0, 255);
 
     @Override
     public String getName() {
@@ -88,46 +88,6 @@ public class Gate extends Reverb {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getTime() {
-        return time;
-    }
-
-    public OnOffValue isLink() {
-        return link;
-    }
-
-    public GenericValue<Integer> getDiff() {
-        return diff;
-    }
-
-    public GenericValue<Integer> getPreDelay() {
-        return preDelay;
-    }
-
-    public GenericValue<Integer> getLoSlope() {
-        return loSlope;
-    }
-
-    public GenericValue<Integer> getHiSlope() {
-        return hiSlope;
-    }
-
-    public GenericValue<Integer> getXovr() {
-        return xovr;
-    }
-
-    public GenericValue<Integer> getRtHC() {
-        return rtHC;
-    }
-
-    public GenericValue<Integer> getShape() {
-        return shape;
-    }
-
-    public GenericValue<Integer> getSpred() {
-        return spred;
     }
 
 }

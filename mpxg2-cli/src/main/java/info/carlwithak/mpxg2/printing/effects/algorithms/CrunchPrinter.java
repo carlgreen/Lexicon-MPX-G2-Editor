@@ -33,11 +33,11 @@ public class CrunchPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Crunch crunch = (Crunch) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(crunch.getLo()));
-        sb.append(printParameter(crunch.getMid()));
-        sb.append(printParameter(crunch.getHi()));
-        sb.append(printParameter(crunch.getInLevel()));
-        sb.append(printParameter(crunch.getLevel()));
+        sb.append(printParameter(crunch.lo));
+        sb.append(printParameter(crunch.mid));
+        sb.append(printParameter(crunch.hi));
+        sb.append(printParameter(crunch.inLevel));
+        sb.append(printParameter(crunch.level));
         return sb.toString();
     }
 

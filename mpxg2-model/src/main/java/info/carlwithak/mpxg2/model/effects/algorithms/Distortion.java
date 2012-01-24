@@ -29,14 +29,14 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Distortion extends Gain {
     private static final String NAME = "Distortion";
 
-    private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 18);
-    private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 18);
-    private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 18);
-    private GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 50);
-    private GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
-    private GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "dB", -25, 25);
-    private GenericValue<Integer> treble = new GenericValue<Integer>("Trebl", "dB", -25, 25);
-    private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+    public final GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 18);
+    public final GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 18);
+    public final GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 18);
+    public final GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 50);
+    public final GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
+    public final GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "dB", -25, 25);
+    public final GenericValue<Integer> treble = new GenericValue<Integer>("Trebl", "dB", -25, 25);
+    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
 
     @Override
     public String getName() {
@@ -75,38 +75,6 @@ public class Distortion extends Gain {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getLo() {
-        return lo;
-    }
-
-    public GenericValue<Integer> getMid() {
-        return mid;
-    }
-
-    public GenericValue<Integer> getHi() {
-        return hi;
-    }
-
-    public GenericValue<Integer> getDrive() {
-        return drive;
-    }
-
-    public GenericValue<Integer> getTone() {
-        return tone;
-    }
-
-    public GenericValue<Integer> getBass() {
-        return bass;
-    }
-
-    public GenericValue<Integer> getTreble() {
-        return treble;
-    }
-
-    public GenericValue<Integer> getLevel() {
-        return level;
     }
 
 }

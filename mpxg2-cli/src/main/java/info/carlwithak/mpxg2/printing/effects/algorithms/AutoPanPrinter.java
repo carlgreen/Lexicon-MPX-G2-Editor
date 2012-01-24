@@ -36,9 +36,9 @@ public class AutoPanPrinter implements Printer {
         sb.append(printParameter(autoPan.mix));
         sb.append(printParameter(autoPan.level));
         sb.append(printParameter(autoPan.getRate()));
-        sb.append(printParameter(autoPan.getPulseWidth()));
-        sb.append(printParameter(autoPan.getDepth()));
-        sb.append(printParameter(autoPan.getPhase()));
+        sb.append(printParameter(autoPan.pulseWidth));
+        sb.append(printParameter(autoPan.depth));
+        sb.append(printParameter(autoPan.phase));
         return sb.toString();
     }
 

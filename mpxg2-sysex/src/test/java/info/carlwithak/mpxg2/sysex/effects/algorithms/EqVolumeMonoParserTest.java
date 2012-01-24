@@ -36,6 +36,6 @@ public class EqVolumeMonoParserTest {
         EqVolumeMono volumeMono = EqVolumeMonoParser.parse(effectParameters);
         assertThat(volumeMono.mix, is(value(100)));
         assertThat(volumeMono.level, is(value(0)));
-        assertThat(volumeMono.getVolume(), is(value(100)));
+        assertThat(volumeMono.volume, is(value(100)));
     }
 }

@@ -39,10 +39,10 @@ public class FlangerStereoParserTest {
         assertThat(flangerStereo.mix, is(value(67)));
         assertThat(flangerStereo.level, is(value(1)));
         assertThat(flangerStereo.getRate(), is(beat(1, 4)));
-        assertThat(flangerStereo.getPulseWidth(), is(value(50)));
-        assertThat(flangerStereo.getDepth(), is(value(62)));
-        assertThat(flangerStereo.getPhase(), is(value(1))); // 0, 90, 180, 270 degrees
-        assertThat(flangerStereo.getResonance(), is(value(20)));
-        assertThat(flangerStereo.getBlend(), is(value(0)));
+        assertThat(flangerStereo.pulseWidth, is(value(50)));
+        assertThat(flangerStereo.depth, is(value(62)));
+        assertThat(flangerStereo.phase, is(value(1))); // 0, 90, 180, 270 degrees
+        assertThat(flangerStereo.resonance, is(value(20)));
+        assertThat(flangerStereo.blend, is(value(0)));
     }
 }

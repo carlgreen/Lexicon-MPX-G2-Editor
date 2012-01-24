@@ -34,13 +34,13 @@ public class DistortionParserTest {
     public void testParse() {
         byte[] effectParameters = {0, 0, 4, 0, 11, 0, 9, 1, 5, 1, 7, 0, 6, 0, 8, 2, 14, 2, 12, 0, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Distortion distortion = DistortionParser.parse(effectParameters);
-        assertThat(distortion.getLo(), is(value(0)));
-        assertThat(distortion.getMid(), is(value(4)));
-        assertThat(distortion.getHi(), is(value(11)));
-        assertThat(distortion.getDrive(), is(value(25)));
-        assertThat(distortion.getTone(), is(value(21)));
-        assertThat(distortion.getBass(), is(value(7)));
-        assertThat(distortion.getTreble(), is(value(6)));
-        assertThat(distortion.getLevel(), is(value(40)));
+        assertThat(distortion.lo, is(value(0)));
+        assertThat(distortion.mid, is(value(4)));
+        assertThat(distortion.hi, is(value(11)));
+        assertThat(distortion.drive, is(value(25)));
+        assertThat(distortion.tone, is(value(21)));
+        assertThat(distortion.bass, is(value(7)));
+        assertThat(distortion.treble, is(value(6)));
+        assertThat(distortion.level, is(value(40)));
     }
 }

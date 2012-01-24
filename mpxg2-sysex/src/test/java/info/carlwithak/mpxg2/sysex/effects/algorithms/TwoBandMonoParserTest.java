@@ -36,13 +36,13 @@ public class TwoBandMonoParserTest {
         TwoBandMono twoBandMono = TwoBandMonoParser.parse(effectParameters);
         assertThat(twoBandMono.mix, is(value(100)));
         assertThat(twoBandMono.level, is(value(0)));
-        assertThat(twoBandMono.getGain1(), is(value(-5)));
-        assertThat(twoBandMono.getFc1(), is(value(200)));
-        assertThat(twoBandMono.getQ1(), is(value(0.7)));
-        assertThat(twoBandMono.getMode1(), is(value(0))); // LShlf
-        assertThat(twoBandMono.getGain2(), is(value(-7)));
-        assertThat(twoBandMono.getFc2(), is(value(5000)));
-        assertThat(twoBandMono.getQ2(), is(value(0.7)));
-        assertThat(twoBandMono.getMode2(), is(value(2))); // HShlf
+        assertThat(twoBandMono.gain1, is(value(-5)));
+        assertThat(twoBandMono.fc1, is(value(200)));
+        assertThat(twoBandMono.q1, is(value(0.7)));
+        assertThat(twoBandMono.mode1, is(value(0))); // LShlf
+        assertThat(twoBandMono.gain2, is(value(-7)));
+        assertThat(twoBandMono.fc2, is(value(5000)));
+        assertThat(twoBandMono.q2, is(value(0.7)));
+        assertThat(twoBandMono.mode2, is(value(2))); // HShlf
     }
 }

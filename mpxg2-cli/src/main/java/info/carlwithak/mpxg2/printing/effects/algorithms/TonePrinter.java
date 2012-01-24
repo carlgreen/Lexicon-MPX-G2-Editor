@@ -33,11 +33,11 @@ public class TonePrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Tone tone = (Tone) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(tone.getLo()));
-        sb.append(printParameter(tone.getMid()));
-        sb.append(printParameter(tone.getHi()));
-        sb.append(printParameter(tone.getInLevel()));
-        sb.append(printParameter(tone.getLevel()));
+        sb.append(printParameter(tone.lo));
+        sb.append(printParameter(tone.mid));
+        sb.append(printParameter(tone.hi));
+        sb.append(printParameter(tone.inLevel));
+        sb.append(printParameter(tone.level));
         return sb.toString();
     }
 

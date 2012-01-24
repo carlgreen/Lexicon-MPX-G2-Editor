@@ -32,9 +32,9 @@ public class AutoPan extends Effect {
     private static final String NAME = "Auto Pan";
 
     private Rate rate;
-    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
-    private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
-    private PhaseValue phase = new PhaseValue("Phase");
+    public final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    public final GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
+    public final PhaseValue phase = new PhaseValue("Phase");
 
     @Override
     public String getName() {
@@ -73,18 +73,6 @@ public class AutoPan extends Effect {
 
     public void setRate(Rate rate) {
         this.rate = rate;
-    }
-
-    public GenericValue<Integer> getPulseWidth() {
-        return pulseWidth;
-    }
-
-    public GenericValue<Integer> getDepth() {
-        return depth;
-    }
-
-    public PhaseValue getPhase() {
-        return phase;
     }
 
 }

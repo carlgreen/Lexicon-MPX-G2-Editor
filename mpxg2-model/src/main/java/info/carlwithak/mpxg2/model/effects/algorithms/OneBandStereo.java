@@ -29,10 +29,10 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class OneBandStereo extends Eq {
     private static final String NAME = "1-Band (S)";
 
-    private GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Double> q = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Integer> mode = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Double> q = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Integer> mode = new GenericValue<Integer>("Mode", "", 0, 2);
 
     @Override
     public String getName() {
@@ -63,22 +63,6 @@ public class OneBandStereo extends Eq {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getGain() {
-        return gain;
-    }
-
-    public GenericValue<Integer> getFc() {
-        return fc;
-    }
-
-    public GenericValue<Double> getQ() {
-        return q;
-    }
-
-    public GenericValue<Integer> getMode() {
-        return mode;
     }
 
 }

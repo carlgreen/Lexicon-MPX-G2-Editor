@@ -36,7 +36,7 @@ public class CrossoverParserTest {
         Crossover crossover = CrossoverParser.parse(effectParameters);
         assertThat(crossover.mix, is(value(100)));
         assertThat(crossover.level, is(value(0)));
-        assertThat(crossover.getFc(), is(value(3000)));
-        assertThat(crossover.getBalance(), is(value(4)));
+        assertThat(crossover.fc, is(value(3000)));
+        assertThat(crossover.balance, is(value(4)));
     }
 }

@@ -30,10 +30,10 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class ShiftDual extends Effect {
     private static final String NAME = "Shift (D)";
 
-    private GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", -4800, 1900); // cents
-    private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
-    private GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", -4800, 1900); // cents
-    private OnOffValue glide = new OnOffValue("Glide");
+    public final GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", -4800, 1900); // cents
+    public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
+    public final GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", -4800, 1900); // cents
+    public final OnOffValue glide = new OnOffValue("Glide");
 
     @Override
     public String getName() {
@@ -61,22 +61,6 @@ public class ShiftDual extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getTune1() {
-        return tune1;
-    }
-
-    public GenericValue<Integer> getOptimize() {
-        return optimize;
-    }
-
-    public GenericValue<Integer> getTune2() {
-        return tune2;
-    }
-
-    public OnOffValue getGlide() {
-        return glide;
     }
 
 }

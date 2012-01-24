@@ -37,16 +37,16 @@ public class DelayDualPrinter implements Printer {
         sb.append(printParameter(delayDual.level));
         sb.append(printParameter(delayDual.getTime1()));
         sb.append(printParameter(delayDual.getTime2()));
-        sb.append(printParameter(delayDual.getLevel1()));
-        sb.append(printParameter(delayDual.getLevel2()));
-        sb.append(printParameter(delayDual.getPan1()));
-        sb.append(printParameter(delayDual.getPan2()));
-        sb.append(printParameter(delayDual.getFeedback1()));
-        sb.append(printParameter(delayDual.getInsert()));
-        sb.append(printParameter(delayDual.getFeedback2()));
-        sb.append(printParameter(delayDual.getXFbk1()));
-        sb.append(printParameter(delayDual.getXFbk2()));
-        sb.append(printParameter(delayDual.getClear()));
+        sb.append(printParameter(delayDual.level1));
+        sb.append(printParameter(delayDual.level2));
+        sb.append(printParameter(delayDual.pan1));
+        sb.append(printParameter(delayDual.pan2));
+        sb.append(printParameter(delayDual.feedback1));
+        sb.append(printParameter(delayDual.insert));
+        sb.append(printParameter(delayDual.feedback2));
+        sb.append(printParameter(delayDual.xFbk1));
+        sb.append(printParameter(delayDual.xFbk2));
+        sb.append(printParameter(delayDual.clear));
         return sb.toString();
     }
 

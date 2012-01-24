@@ -36,9 +36,9 @@ public class DelayStereoPrinter implements Printer {
         sb.append(printParameter(delayStereo.mix));
         sb.append(printParameter(delayStereo.level));
         sb.append(printParameter(delayStereo.getTime()));
-        sb.append(printParameter(delayStereo.getFeedback()));
-        sb.append(printParameter(delayStereo.getInsert()));
-        sb.append(printParameter(delayStereo.getClear()));
+        sb.append(printParameter(delayStereo.feedback));
+        sb.append(printParameter(delayStereo.insert));
+        sb.append(printParameter(delayStereo.clear));
         return sb.toString();
     }
 

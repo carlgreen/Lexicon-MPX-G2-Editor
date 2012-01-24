@@ -35,8 +35,8 @@ public class CrossoverPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(crossover.mix));
         sb.append(printParameter(crossover.level));
-        sb.append(printParameter(crossover.getFc()));
-        sb.append(printParameter(crossover.getBalance()));
+        sb.append(printParameter(crossover.fc));
+        sb.append(printParameter(crossover.balance));
         return sb.toString();
     }
 

@@ -35,7 +35,7 @@ public class VolumeMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(volumeMono.mix));
         sb.append(printParameter(volumeMono.level));
-        sb.append(printParameter(volumeMono.getVolume()));
+        sb.append(printParameter(volumeMono.volume));
         return sb.toString();
     }
 

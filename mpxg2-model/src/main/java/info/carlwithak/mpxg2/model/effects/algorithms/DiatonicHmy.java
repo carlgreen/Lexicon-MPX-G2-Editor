@@ -33,12 +33,12 @@ import info.carlwithak.mpxg2.model.parameters.SourceValue;
 public class DiatonicHmy extends Effect {
     private static final String NAME = "Diatonic Hmy";
 
-    private KeyValue key = new KeyValue("Key");
-    private ScaleValue scale = new ScaleValue("Scale");
-    private IntervalValue interval = new IntervalValue("Int");
-    private GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
-    private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -83, 0);
-    private SourceValue source = new SourceValue("Src");
+    public final KeyValue key = new KeyValue("Key");
+    public final ScaleValue scale = new ScaleValue("Scale");
+    public final IntervalValue interval = new IntervalValue("Int");
+    public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
+    public final GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -83, 0);
+    public final SourceValue source = new SourceValue("Src");
 
     @Override
     public String getName() {
@@ -69,30 +69,6 @@ public class DiatonicHmy extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public KeyValue getKey() {
-        return key;
-    }
-
-    public ScaleValue getScale() {
-        return scale;
-    }
-
-    public IntervalValue getInterval() {
-        return interval;
-    }
-
-    public GenericValue<Integer> getOptimize() {
-        return optimize;
-    }
-
-    public GenericValue<Integer> getThreshold() {
-        return threshold;
-    }
-
-    public SourceValue getSource() {
-        return source;
     }
 
 }

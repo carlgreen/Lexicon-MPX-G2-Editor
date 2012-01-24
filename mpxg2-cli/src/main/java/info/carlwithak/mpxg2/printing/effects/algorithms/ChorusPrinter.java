@@ -36,13 +36,13 @@ public class ChorusPrinter implements Printer {
         sb.append(printParameter(chorus.mix));
         sb.append(printParameter(chorus.level));
         sb.append(printParameter(chorus.getRate1()));
-        sb.append(printParameter(chorus.getPulseWidth1()));
-        sb.append(printParameter(chorus.getDepth1()));
+        sb.append(printParameter(chorus.pulseWidth1));
+        sb.append(printParameter(chorus.depth1));
         sb.append(printParameter(chorus.getRate2()));
-        sb.append(printParameter(chorus.getPulseWidth2()));
-        sb.append(printParameter(chorus.getDepth2()));
-        sb.append(printParameter(chorus.getResonance1()));
-        sb.append(printParameter(chorus.getResonance2()));
+        sb.append(printParameter(chorus.pulseWidth2));
+        sb.append(printParameter(chorus.depth2));
+        sb.append(printParameter(chorus.resonance1));
+        sb.append(printParameter(chorus.resonance2));
         return sb.toString();
     }
 

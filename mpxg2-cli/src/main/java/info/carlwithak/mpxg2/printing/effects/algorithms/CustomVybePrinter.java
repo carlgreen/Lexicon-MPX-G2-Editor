@@ -36,8 +36,8 @@ public class CustomVybePrinter implements Printer {
         sb.append(printParameter(customVybe.mix));
         sb.append(printParameter(customVybe.level));
         sb.append(printParameter(customVybe.getRate()));
-        sb.append(printParameter(customVybe.getPulseWidth()));
-        sb.append(printParameter(customVybe.getDepth()));
+        sb.append(printParameter(customVybe.pulseWidth));
+        sb.append(printParameter(customVybe.depth));
         return sb.toString();
     }
 

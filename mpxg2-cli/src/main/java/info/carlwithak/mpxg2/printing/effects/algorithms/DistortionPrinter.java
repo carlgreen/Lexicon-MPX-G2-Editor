@@ -33,14 +33,14 @@ public class DistortionPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Distortion distortion = (Distortion) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(distortion.getLo()));
-        sb.append(printParameter(distortion.getMid()));
-        sb.append(printParameter(distortion.getHi()));
-        sb.append(printParameter(distortion.getDrive()));
-        sb.append(printParameter(distortion.getTone()));
-        sb.append(printParameter(distortion.getBass()));
-        sb.append(printParameter(distortion.getTreble()));
-        sb.append(printParameter(distortion.getLevel()));
+        sb.append(printParameter(distortion.lo));
+        sb.append(printParameter(distortion.mid));
+        sb.append(printParameter(distortion.hi));
+        sb.append(printParameter(distortion.drive));
+        sb.append(printParameter(distortion.tone));
+        sb.append(printParameter(distortion.bass));
+        sb.append(printParameter(distortion.treble));
+        sb.append(printParameter(distortion.level));
         return sb.toString();
     }
 

@@ -36,9 +36,9 @@ public class ShiftDualParserTest {
         ShiftDual shiftDual = ShiftDualParser.parse(effectParameters);
         assertThat(shiftDual.mix, is(value(100)));
         assertThat(shiftDual.level, is(value(6)));
-        assertThat(shiftDual.getTune1(), is(value(-1200)));
-        assertThat(shiftDual.getOptimize(), is(value(10)));
-        assertThat(shiftDual.getTune2(), is(value(-500)));
-        assertThat(shiftDual.getGlide(), is(value(true)));
+        assertThat(shiftDual.tune1, is(value(-1200)));
+        assertThat(shiftDual.optimize, is(value(10)));
+        assertThat(shiftDual.tune2, is(value(-500)));
+        assertThat(shiftDual.glide, is(value(true)));
     }
 }

@@ -29,8 +29,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Crossover extends Eq {
     private static final String NAME = "Crossover";
 
-    private GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 100, 10000);
-    private GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
+    public final GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 100, 10000);
+    public final GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
 
     @Override
     public String getName() {
@@ -55,14 +55,6 @@ public class Crossover extends Eq {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getFc() {
-        return fc;
-    }
-
-    public GenericValue<Integer> getBalance() {
-        return balance;
     }
 
 }

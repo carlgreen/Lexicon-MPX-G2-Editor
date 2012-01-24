@@ -36,10 +36,10 @@ public class EqVolumeDualParser {
         volumeDual.level.setValue(level);
 
         int volumeLeft = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        volumeDual.getVolumeLeft().setValue(volumeLeft);
+        volumeDual.volumeLeft.setValue(volumeLeft);
 
         int volumeRight = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        volumeDual.getVolumeRight().setValue(volumeRight);
+        volumeDual.volumeRight.setValue(volumeRight);
 
         return volumeDual;
     }

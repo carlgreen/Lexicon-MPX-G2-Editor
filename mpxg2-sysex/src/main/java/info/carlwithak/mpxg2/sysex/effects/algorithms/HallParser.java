@@ -37,34 +37,34 @@ public class HallParser {
         hall.level.setValue(level);
 
         double size = (effectParameters[4] + effectParameters[5] * 16) / 2.0 + 4;
-        hall.getSize().setValue(size);
+        hall.size.setValue(size);
 
         int link = effectParameters[6] + effectParameters[7] * 16;
-        hall.getLink().setValue(Util.parseBoolean(link));
+        hall.link.setValue(Util.parseBoolean(link));
 
         int diff = (effectParameters[8] + effectParameters[9] * 16) * 2;
-        hall.getDiff().setValue(diff);
+        hall.diff.setValue(diff);
 
         int preDelay = effectParameters[10] + effectParameters[11] * 16;
-        hall.getPreDelay().setValue(preDelay);
+        hall.preDelay.setValue(preDelay);
 
         int bass = effectParameters[12] + effectParameters[13] * 16;
-        hall.getBass().setValue(bass);
+        hall.bass.setValue(bass);
 
         int decay = effectParameters[14] + effectParameters[15] * 16;
-        hall.getDecay().setValue(decay);
+        hall.decay.setValue(decay);
 
         int xovr = effectParameters[16] + effectParameters[17] * 16;
-        hall.getXovr().setValue(xovr);
+        hall.xovr.setValue(xovr);
 
         int rtHC = effectParameters[18] + effectParameters[19] * 16;
-        hall.getRtHC().setValue(rtHC);
+        hall.rtHC.setValue(rtHC);
 
         int shape = effectParameters[20] + effectParameters[21] * 16;
-        hall.getShape().setValue(shape);
+        hall.shape.setValue(shape);
 
         int spred = effectParameters[22] + effectParameters[23] * 16;
-        hall.getSpred().setValue(spred);
+        hall.spred.setValue(spred);
 
         return hall;
     }

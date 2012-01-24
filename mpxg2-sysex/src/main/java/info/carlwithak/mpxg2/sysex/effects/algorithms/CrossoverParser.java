@@ -39,10 +39,10 @@ public class CrossoverParser {
         for (int i = 0; i < 4; i++) {
             fc += (effectParameters[4 + i] * Math.pow(16, i));
         }
-        crossover.getFc().setValue(fc);
+        crossover.fc.setValue(fc);
 
         int balance = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        crossover.getBalance().setValue(balance);
+        crossover.balance.setValue(balance);
 
         return crossover;
     }

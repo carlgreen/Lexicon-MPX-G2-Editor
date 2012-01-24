@@ -29,10 +29,10 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Comb1 extends Chorus {
     private static final String NAME = "Comb 1";
 
-    private GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "Hz", 100, 100000);
-    private GenericValue<Integer> hiCut = new GenericValue<Integer>("HiCut", "Hz", 100, 100000);
-    private GenericValue<Integer> comb = new GenericValue<Integer>("Comb", "", 0, 100);
-    private GenericValue<Integer> notch = new GenericValue<Integer>("Notch", "", -100, 100);
+    public final GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "Hz", 100, 100000);
+    public final GenericValue<Integer> hiCut = new GenericValue<Integer>("HiCut", "Hz", 100, 100000);
+    public final GenericValue<Integer> comb = new GenericValue<Integer>("Comb", "", 0, 100);
+    public final GenericValue<Integer> notch = new GenericValue<Integer>("Notch", "", -100, 100);
 
     @Override
     public String getName() {
@@ -63,22 +63,6 @@ public class Comb1 extends Chorus {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getLoCut() {
-        return loCut;
-    }
-
-    public GenericValue<Integer> getHiCut() {
-        return hiCut;
-    }
-
-    public GenericValue<Integer> getComb() {
-        return comb;
-    }
-
-    public GenericValue<Integer> getNotch() {
-        return notch;
     }
 
 }

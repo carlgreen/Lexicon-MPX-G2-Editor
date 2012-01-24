@@ -35,7 +35,7 @@ public class RedCompPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(redComp.mix));
         sb.append(printParameter(redComp.level));
-        sb.append(printParameter(redComp.getSensitivity()));
+        sb.append(printParameter(redComp.sensitivity));
         return sb.toString();
     }
 

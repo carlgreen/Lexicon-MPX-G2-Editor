@@ -30,28 +30,28 @@ public class DistortionParser {
         Distortion distortion = new Distortion();
 
         int lo = effectParameters[0] + effectParameters[1] * 16;
-        distortion.getLo().setValue(lo);
+        distortion.lo.setValue(lo);
 
         int mid = (byte) (effectParameters[2] + effectParameters[3] * 16);
-        distortion.getMid().setValue(mid);
+        distortion.mid.setValue(mid);
 
         int hi = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        distortion.getHi().setValue(hi);
+        distortion.hi.setValue(hi);
 
         int drive = (byte) (effectParameters[6] + effectParameters[7] * 16);
-        distortion.getDrive().setValue(drive);
+        distortion.drive.setValue(drive);
 
         int tone = (byte) (effectParameters[8] + effectParameters[9] * 16);
-        distortion.getTone().setValue(tone);
+        distortion.tone.setValue(tone);
 
         int bass = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        distortion.getBass().setValue(bass);
+        distortion.bass.setValue(bass);
 
         int treble = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        distortion.getTreble().setValue(treble);
+        distortion.treble.setValue(treble);
 
         int level = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        distortion.getLevel().setValue(level);
+        distortion.level.setValue(level);
 
         return distortion;
     }

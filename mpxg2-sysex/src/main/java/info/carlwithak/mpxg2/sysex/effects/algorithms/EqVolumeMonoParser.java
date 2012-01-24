@@ -36,7 +36,7 @@ public class EqVolumeMonoParser {
         volumeMono.level.setValue(level);
 
         int volume = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        volumeMono.getVolume().setValue(volume);
+        volumeMono.volume.setValue(volume);
 
         return volumeMono;
     }

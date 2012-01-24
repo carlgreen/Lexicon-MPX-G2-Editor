@@ -29,11 +29,11 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Tone extends Gain {
     private static final String NAME = "Tone";
 
-    private GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
-    private GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 12);
-    private GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", -25, -25);
-    private GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
-    private GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+    public final GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
+    public final GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 12);
+    public final GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", -25, -25);
+    public final GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
+    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
 
     @Override
     public String getName() {
@@ -63,26 +63,6 @@ public class Tone extends Gain {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getLo() {
-        return lo;
-    }
-
-    public GenericValue<Integer> getMid() {
-        return mid;
-    }
-
-    public GenericValue<Integer> getHi() {
-        return hi;
-    }
-
-    public GenericValue<Integer> getInLevel() {
-        return inLevel;
-    }
-
-    public GenericValue<Integer> getLevel() {
-        return level;
     }
 
 }

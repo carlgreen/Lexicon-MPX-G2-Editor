@@ -33,9 +33,9 @@ public class DelayMono extends Delay {
     private static final String NAME = "Delay (M)";
 
     private Rate time;
-    private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
-    private InsertPosition insert = new InsertPosition("Fbk insert");
-    private OnOffValue clear = new OnOffValue("Clear");
+    public final GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
+    public final InsertPosition insert = new InsertPosition("Fbk insert");
+    public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -71,18 +71,6 @@ public class DelayMono extends Delay {
 
     public void setTime(Rate time) {
         this.time = time;
-    }
-
-    public GenericValue<Integer> getFeedback() {
-        return feedback;
-    }
-
-    public InsertPosition getInsert() {
-        return insert;
-    }
-
-    public OnOffValue getClear() {
-        return clear;
     }
 
 }

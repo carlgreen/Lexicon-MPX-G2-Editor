@@ -36,13 +36,13 @@ public class AerosolPrinter implements Printer {
         sb.append(printParameter(aerosol.mix));
         sb.append(printParameter(aerosol.level));
         sb.append(printParameter(aerosol.getRate1()));
-        sb.append(printParameter(aerosol.getPulseWidth1()));
-        sb.append(printParameter(aerosol.getDepth1()));
+        sb.append(printParameter(aerosol.pulseWidth1));
+        sb.append(printParameter(aerosol.depth1));
         sb.append(printParameter(aerosol.getRate2()));
-        sb.append(printParameter(aerosol.getPulseWidth2()));
-        sb.append(printParameter(aerosol.getDepth2()));
-        sb.append(printParameter(aerosol.getResonance1()));
-        sb.append(printParameter(aerosol.getResonance2()));
+        sb.append(printParameter(aerosol.pulseWidth2));
+        sb.append(printParameter(aerosol.depth2));
+        sb.append(printParameter(aerosol.resonance1));
+        sb.append(printParameter(aerosol.resonance2));
         return sb.toString();
     }
 

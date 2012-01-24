@@ -33,17 +33,17 @@ public class PreampPrinter implements Printer {
     public String print(Object algorithm) throws PrintException {
         Preamp preamp = (Preamp) algorithm;
         StringBuilder sb = new StringBuilder();
-        sb.append(printParameter(preamp.getLo()));
-        sb.append(printParameter(preamp.getMid()));
-        sb.append(printParameter(preamp.getHi()));
-        sb.append(printParameter(preamp.getInLevel()));
-        sb.append(printParameter(preamp.getLoCut()));
-        sb.append(printParameter(preamp.getFeel()));
-        sb.append(printParameter(preamp.getDrive()));
-        sb.append(printParameter(preamp.getTone()));
-        sb.append(printParameter(preamp.getBass()));
-        sb.append(printParameter(preamp.getTreble()));
-        sb.append(printParameter(preamp.getLevel()));
+        sb.append(printParameter(preamp.lo));
+        sb.append(printParameter(preamp.mid));
+        sb.append(printParameter(preamp.hi));
+        sb.append(printParameter(preamp.inLevel));
+        sb.append(printParameter(preamp.loCut));
+        sb.append(printParameter(preamp.feel));
+        sb.append(printParameter(preamp.drive));
+        sb.append(printParameter(preamp.tone));
+        sb.append(printParameter(preamp.bass));
+        sb.append(printParameter(preamp.treble));
+        sb.append(printParameter(preamp.level));
         return sb.toString();
     }
 

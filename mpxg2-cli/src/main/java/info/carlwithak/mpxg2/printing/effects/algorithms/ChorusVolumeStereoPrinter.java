@@ -35,7 +35,7 @@ public class ChorusVolumeStereoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(volumeStereo.mix));
         sb.append(printParameter(volumeStereo.level));
-        sb.append(printParameter(volumeStereo.getVolume()));
+        sb.append(printParameter(volumeStereo.volume));
         return sb.toString();
     }
 

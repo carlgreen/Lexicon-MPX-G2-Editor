@@ -37,7 +37,7 @@ public class RedCompParser {
         redComp.level.setValue(level);
 
         int sense = (byte) (effectParameters[4] + effectParameters[5] * 16);
-        redComp.getSensitivity().setValue(sense);
+        redComp.sensitivity.setValue(sense);
 
         return redComp;
     }

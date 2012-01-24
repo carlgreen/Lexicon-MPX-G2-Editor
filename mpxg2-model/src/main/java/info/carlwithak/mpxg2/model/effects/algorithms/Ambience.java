@@ -33,13 +33,13 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Ambience extends Reverb {
     private static final String NAME = "Ambience";
 
-    private GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 76.0);
-    private OnOffValue link = new OnOffValue("Link");
-    private GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
-    private GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
-    private DecayTimeValue decayTime = new DecayTimeValue("DTime", link, size);
-    private DecayLevelValue decayLevel = new DecayLevelValue("D Lvl");
-    private AmbienceHighCutValue rtHC = new AmbienceHighCutValue("Rt HC");
+    public final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 76.0);
+    public final OnOffValue link = new OnOffValue("Link");
+    public final GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
+    public final GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
+    public final DecayTimeValue decayTime = new DecayTimeValue("DTime", link, size);
+    public final DecayLevelValue decayLevel = new DecayLevelValue("D Lvl");
+    public final AmbienceHighCutValue rtHC = new AmbienceHighCutValue("Rt HC");
 
     @Override
     public String getName() {
@@ -79,34 +79,6 @@ public class Ambience extends Reverb {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Double> getSize() {
-        return size;
-    }
-
-    public OnOffValue getLink() {
-        return link;
-    }
-
-    public GenericValue<Integer> getDiff() {
-        return diff;
-    }
-
-    public GenericValue<Integer> getPreDelay() {
-        return preDelay;
-    }
-
-    public DecayTimeValue getDecayTime() {
-        return decayTime;
-    }
-
-    public DecayLevelValue getDecayLevel() {
-        return decayLevel;
-    }
-
-    public AmbienceHighCutValue getRtHC() {
-        return rtHC;
     }
 
 }

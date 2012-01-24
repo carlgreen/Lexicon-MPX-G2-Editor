@@ -35,16 +35,16 @@ public class PlatePrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(plate.mix));
         sb.append(printParameter(plate.level));
-        sb.append(printParameter(plate.getSize()));
-        sb.append(printParameter(plate.getLink()));
-        sb.append(printParameter(plate.getDiff()));
-        sb.append(printParameter(plate.getPreDelay()));
-        sb.append(printParameter(plate.getBass()));
-        sb.append(printParameter(plate.getDecay()));
-        sb.append(printParameter(plate.getXovr()));
-        sb.append(printParameter(plate.getRtHC()));
-        sb.append(printParameter(plate.getShape()));
-        sb.append(printParameter(plate.getSpred()));
+        sb.append(printParameter(plate.size));
+        sb.append(printParameter(plate.link));
+        sb.append(printParameter(plate.diff));
+        sb.append(printParameter(plate.preDelay));
+        sb.append(printParameter(plate.bass));
+        sb.append(printParameter(plate.decay));
+        sb.append(printParameter(plate.xovr));
+        sb.append(printParameter(plate.rtHC));
+        sb.append(printParameter(plate.shape));
+        sb.append(printParameter(plate.spred));
         return sb.toString();
     }
 

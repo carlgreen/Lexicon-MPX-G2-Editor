@@ -39,8 +39,8 @@ public class PhaserParserTest {
         assertThat(phaser.mix, is(value(100)));
         assertThat(phaser.level, is(value(0)));
         assertThat(phaser.getRate(), is(frequency(0.83)));
-        assertThat(phaser.getPulseWidth(), is(value(50)));
-        assertThat(phaser.getDepth(), is(value(100)));
-        assertThat(phaser.getResonance(), is(value(30)));
+        assertThat(phaser.pulseWidth, is(value(50)));
+        assertThat(phaser.depth, is(value(100)));
+        assertThat(phaser.resonance, is(value(30)));
     }
 }

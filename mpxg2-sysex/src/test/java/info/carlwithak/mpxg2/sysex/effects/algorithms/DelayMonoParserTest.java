@@ -39,8 +39,8 @@ public class DelayMonoParserTest {
         assertThat(delayMono.mix, is(value(10)));
         assertThat(delayMono.level, is(value(0)));
         assertThat(delayMono.getTime(), is(beat(4, 3)));
-        assertThat(delayMono.getFeedback(), is(value(10)));
-        assertThat(delayMono.getInsert(), is(value(3)));
-        assertThat(delayMono.getClear(), is(value(false)));
+        assertThat(delayMono.feedback, is(value(10)));
+        assertThat(delayMono.insert, is(value(3)));
+        assertThat(delayMono.clear, is(value(false)));
     }
 }

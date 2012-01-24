@@ -35,11 +35,11 @@ public class SweepFilterPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(sweepFilter.mix));
         sb.append(printParameter(sweepFilter.level));
-        sb.append(printParameter(sweepFilter.getFc()));
-        sb.append(printParameter(sweepFilter.getFRes()));
-        sb.append(printParameter(sweepFilter.getMod()));
-        sb.append(printParameter(sweepFilter.getScale()));
-        sb.append(printParameter(sweepFilter.getPan()));
+        sb.append(printParameter(sweepFilter.fc));
+        sb.append(printParameter(sweepFilter.fRes));
+        sb.append(printParameter(sweepFilter.mod));
+        sb.append(printParameter(sweepFilter.scale));
+        sb.append(printParameter(sweepFilter.pan));
         return sb.toString();
     }
 

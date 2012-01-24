@@ -41,13 +41,13 @@ public class TremoloStereoParser {
         tremoloStereo.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        tremoloStereo.getPulseWidth().setValue(pulseWidth);
+        tremoloStereo.pulseWidth.setValue(pulseWidth);
 
         int depth = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        tremoloStereo.getDepth().setValue(depth);
+        tremoloStereo.depth.setValue(depth);
 
         int phase = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        tremoloStereo.getPhase().setValue(phase);
+        tremoloStereo.phase.setValue(phase);
 
         return tremoloStereo;
     }

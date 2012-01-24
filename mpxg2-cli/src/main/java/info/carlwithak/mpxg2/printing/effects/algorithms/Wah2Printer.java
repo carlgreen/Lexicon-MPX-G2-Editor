@@ -35,11 +35,11 @@ public class Wah2Printer implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(wah2.mix));
         sb.append(printParameter(wah2.level));
-        sb.append(printParameter(wah2.getSweep()));
-        sb.append(printParameter(wah2.getBass()));
-        sb.append(printParameter(wah2.getType()));
-        sb.append(printParameter(wah2.getResponse()));
-        sb.append(printParameter(wah2.getGain()));
+        sb.append(printParameter(wah2.sweep));
+        sb.append(printParameter(wah2.bass));
+        sb.append(printParameter(wah2.type));
+        sb.append(printParameter(wah2.response));
+        sb.append(printParameter(wah2.gain));
         return sb.toString();
     }
 

@@ -35,10 +35,10 @@ public class OneBandMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(oneBandMono.mix));
         sb.append(printParameter(oneBandMono.level));
-        sb.append(printParameter(oneBandMono.getGain()));
-        sb.append(printParameter(oneBandMono.getFc()));
-        sb.append(printParameter(oneBandMono.getQ()));
-        sb.append(printParameter(oneBandMono.getMode()));
+        sb.append(printParameter(oneBandMono.gain));
+        sb.append(printParameter(oneBandMono.fc));
+        sb.append(printParameter(oneBandMono.q));
+        sb.append(printParameter(oneBandMono.mode));
         return sb.toString();
     }
 

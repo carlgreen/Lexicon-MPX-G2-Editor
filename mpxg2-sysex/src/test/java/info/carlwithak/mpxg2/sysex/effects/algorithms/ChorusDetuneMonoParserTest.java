@@ -36,8 +36,8 @@ public class ChorusDetuneMonoParserTest {
         ChorusDetuneMono detuneMono = ChorusDetuneMonoParser.parse(effectParameters);
         assertThat(detuneMono.mix, is(value(50)));
         assertThat(detuneMono.level, is(value(6)));
-        assertThat(detuneMono.getTune(), is(value(10)));
-        assertThat(detuneMono.getOptimize(), is(value(10)));
-        assertThat(detuneMono.getPreDelay(), is(value(0)));
+        assertThat(detuneMono.tune, is(value(10)));
+        assertThat(detuneMono.optimize, is(value(10)));
+        assertThat(detuneMono.preDelay, is(value(0)));
     }
 }

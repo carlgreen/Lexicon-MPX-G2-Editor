@@ -35,16 +35,16 @@ public class DelayDual extends Delay {
 
     private Rate time1;
     private Rate time2;
-    private GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
-    private GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
-    private PanValue pan1 = new PanValue("Pan 1", -50, 50);
-    private PanValue pan2 = new PanValue("Pan 2", -50, 50);
-    private GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
-    private InsertPosition insert = new InsertPosition("Fbk insert");
-    private GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
-    private GenericValue<Integer> xFbk1 = new GenericValue<Integer>("XFbk1", "%", -100, 100);
-    private GenericValue<Integer> xFbk2 = new GenericValue<Integer>("XFbk2", "%", -100, 100);
-    private OnOffValue clear = new OnOffValue("Clear");
+    public final GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
+    public final GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
+    public final PanValue pan1 = new PanValue("Pan 1", -50, 50);
+    public final PanValue pan2 = new PanValue("Pan 2", -50, 50);
+    public final GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
+    public final InsertPosition insert = new InsertPosition("Fbk insert");
+    public final GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
+    public final GenericValue<Integer> xFbk1 = new GenericValue<Integer>("XFbk1", "%", -100, 100);
+    public final GenericValue<Integer> xFbk2 = new GenericValue<Integer>("XFbk2", "%", -100, 100);
+    public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -112,46 +112,6 @@ public class DelayDual extends Delay {
 
     public void setTime2(Rate time2) {
         this.time2 = time2;
-    }
-
-    public GenericValue<Integer> getLevel1() {
-        return level1;
-    }
-
-    public GenericValue<Integer> getLevel2() {
-        return level2;
-    }
-
-    public PanValue getPan1() {
-        return pan1;
-    }
-
-    public PanValue getPan2() {
-        return pan2;
-    }
-
-    public GenericValue<Integer> getFeedback1() {
-        return feedback1;
-    }
-
-    public InsertPosition getInsert() {
-        return insert;
-    }
-
-    public GenericValue<Integer> getFeedback2() {
-        return feedback2;
-    }
-
-    public GenericValue<Integer> getXFbk1() {
-        return xFbk1;
-    }
-
-    public GenericValue<Integer> getXFbk2() {
-        return xFbk2;
-    }
-
-    public OnOffValue getClear() {
-        return clear;
     }
 
 }

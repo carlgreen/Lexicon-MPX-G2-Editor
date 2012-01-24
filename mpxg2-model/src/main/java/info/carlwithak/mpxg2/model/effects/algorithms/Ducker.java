@@ -33,11 +33,11 @@ public class Ducker extends Delay {
     private static final String NAME = "Ducker";
 
     private Rate time;
-    private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
-    private InsertPosition feedbackInsert = new InsertPosition("Fbk insert");
-    private GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
-    private GenericValue<Integer> release = new GenericValue<Integer>("Rls", "", 0, 100);
-    private OnOffValue clear = new OnOffValue("Clear");
+    public final GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
+    public final InsertPosition feedbackInsert = new InsertPosition("Fbk insert");
+    public final GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
+    public final GenericValue<Integer> release = new GenericValue<Integer>("Rls", "", 0, 100);
+    public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -79,26 +79,6 @@ public class Ducker extends Delay {
 
     public void setTime(Rate time) {
         this.time = time;
-    }
-
-    public GenericValue<Integer> getFeedback() {
-        return feedback;
-    }
-
-    public InsertPosition getFeedbackInsert() {
-        return feedbackInsert;
-    }
-
-    public GenericValue<Integer> getSensitivity() {
-        return sensitivity;
-    }
-
-    public GenericValue<Integer> getRelease() {
-        return release;
-    }
-
-    public OnOffValue isClear() {
-        return clear;
     }
 
 }

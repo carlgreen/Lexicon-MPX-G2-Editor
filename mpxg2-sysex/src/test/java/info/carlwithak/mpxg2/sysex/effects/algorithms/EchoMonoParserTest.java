@@ -39,9 +39,9 @@ public class EchoMonoParserTest {
         assertThat(echoMono.mix, is(value(6)));
         assertThat(echoMono.level, is(value(1)));
         assertThat(echoMono.getTime(), is(beat(4, 4)));
-        assertThat(echoMono.getFeedback(), is(value(-15)));
-        assertThat(echoMono.getInsert(), is(value(3)));
-        assertThat(echoMono.getDamp(), is(value(20)));
-        assertThat(echoMono.getClear(), is(value(false)));
+        assertThat(echoMono.feedback, is(value(-15)));
+        assertThat(echoMono.insert, is(value(3)));
+        assertThat(echoMono.damp, is(value(20)));
+        assertThat(echoMono.clear, is(value(false)));
     }
 }

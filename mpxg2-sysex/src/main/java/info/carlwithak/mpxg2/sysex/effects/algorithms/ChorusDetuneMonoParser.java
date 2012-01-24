@@ -36,13 +36,13 @@ public class ChorusDetuneMonoParser {
         detuneMono.level.setValue(level);
 
         int tune = effectParameters[4] + effectParameters[5] * 16;
-        detuneMono.getTune().setValue(tune);
+        detuneMono.tune.setValue(tune);
 
         int optimize = effectParameters[6] + effectParameters[7] * 16;
-        detuneMono.getOptimize().setValue(optimize);
+        detuneMono.optimize.setValue(optimize);
 
         int preDelay = effectParameters[8] + effectParameters[9] * 16;
-        detuneMono.getPreDelay().setValue(preDelay);
+        detuneMono.preDelay.setValue(preDelay);
 
         return detuneMono;
     }

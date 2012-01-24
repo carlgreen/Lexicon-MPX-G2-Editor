@@ -39,9 +39,9 @@ public class FlangerMonoParserTest {
         assertThat(flangerMono.mix, is(value(100)));
         assertThat(flangerMono.level, is(value(0)));
         assertThat(flangerMono.getRate(), is(frequency(0.05)));
-        assertThat(flangerMono.getPulseWidth(), is(value(20)));
-        assertThat(flangerMono.getDepth(), is(value(30)));
-        assertThat(flangerMono.getResonance(), is(value(-60)));
-        assertThat(flangerMono.getBlend(), is(value(30)));
+        assertThat(flangerMono.pulseWidth, is(value(20)));
+        assertThat(flangerMono.depth, is(value(30)));
+        assertThat(flangerMono.resonance, is(value(-60)));
+        assertThat(flangerMono.blend, is(value(30)));
     }
 }

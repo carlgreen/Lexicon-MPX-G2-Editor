@@ -30,22 +30,22 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class FourBandMono extends Eq {
     private static final String NAME = "4-Band (M)";
 
-    private GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
-    private GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
-    private GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain3", "dB", -72, 24);
-    private GenericValue<Integer> gain4 = new GenericValue<Integer>("Gain4", "dB", -72, 24);
-    private GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
-    private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
-    private GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc 3", "Hz", 20, 20000);
-    private GenericValue<Integer> fc4 = new GenericValue<Integer>("Fc 4", "Hz", 20, 20000);
-    private GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
-    private GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
-    private GenericValue<Double> q3 = new GenericValue<Double>("Q 3", "", 0.1, 10.0);
-    private GenericValue<Double> q4 = new GenericValue<Double>("Q 4", "", 0.1, 10.0);
-    private EqModeValue mode1 = new EqModeValue("Mode1");
-    private EqModeValue mode2 = new EqModeValue("Mode2");
-    private EqModeValue mode3 = new EqModeValue("Mode3");
-    private EqModeValue mode4 = new EqModeValue("Mode4");
+    public final GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
+    public final GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
+    public final GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain3", "dB", -72, 24);
+    public final GenericValue<Integer> gain4 = new GenericValue<Integer>("Gain4", "dB", -72, 24);
+    public final GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc 3", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc4 = new GenericValue<Integer>("Fc 4", "Hz", 20, 20000);
+    public final GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
+    public final GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
+    public final GenericValue<Double> q3 = new GenericValue<Double>("Q 3", "", 0.1, 10.0);
+    public final GenericValue<Double> q4 = new GenericValue<Double>("Q 4", "", 0.1, 10.0);
+    public final EqModeValue mode1 = new EqModeValue("Mode1");
+    public final EqModeValue mode2 = new EqModeValue("Mode2");
+    public final EqModeValue mode3 = new EqModeValue("Mode3");
+    public final EqModeValue mode4 = new EqModeValue("Mode4");
 
     @Override
     public String getName() {
@@ -112,70 +112,6 @@ public class FourBandMono extends Eq {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getGain1() {
-        return gain1;
-    }
-
-    public GenericValue<Integer> getGain2() {
-        return gain2;
-    }
-
-    public GenericValue<Integer> getGain3() {
-        return gain3;
-    }
-
-    public GenericValue<Integer> getGain4() {
-        return gain4;
-    }
-
-    public GenericValue<Integer> getFc1() {
-        return fc1;
-    }
-
-    public GenericValue<Integer> getFc2() {
-        return fc2;
-    }
-
-    public GenericValue<Integer> getFc3() {
-        return fc3;
-    }
-
-    public GenericValue<Integer> getFc4() {
-        return fc4;
-    }
-
-    public GenericValue<Double> getQ1() {
-        return q1;
-    }
-
-    public GenericValue<Double> getQ2() {
-        return q2;
-    }
-
-    public GenericValue<Double> getQ3() {
-        return q3;
-    }
-
-    public GenericValue<Double> getQ4() {
-        return q4;
-    }
-
-    public EqModeValue getMode1() {
-        return mode1;
-    }
-
-    public EqModeValue getMode2() {
-        return mode2;
-    }
-
-    public EqModeValue getMode3() {
-        return mode3;
-    }
-
-    public EqModeValue getMode4() {
-        return mode4;
     }
 
 }

@@ -39,8 +39,8 @@ public class TremoloStereoParserTest {
         assertThat(tremoloStereo.mix, is(value(100)));
         assertThat(tremoloStereo.level, is(value(0)));
         assertThat(tremoloStereo.getRate(), is(frequency(3.0)));
-        assertThat(tremoloStereo.getPulseWidth(), is(value(50)));
-        assertThat(tremoloStereo.getDepth(), is(value(100)));
-        assertThat(tremoloStereo.getPhase(), is(value(3))); // 270°
+        assertThat(tremoloStereo.pulseWidth, is(value(50)));
+        assertThat(tremoloStereo.depth, is(value(100)));
+        assertThat(tremoloStereo.phase, is(value(3))); // 270°
     }
 }

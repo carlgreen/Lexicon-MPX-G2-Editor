@@ -40,16 +40,16 @@ public class DelayDualParserTest {
         assertThat(delayDual.level, is(value(0)));
         assertThat(delayDual.getTime1(), is(beat(3, 4)));
         assertThat(delayDual.getTime2(), is(beat(4, 3)));
-        assertThat(delayDual.getLevel1(), is(value(0)));
-        assertThat(delayDual.getLevel2(), is(value(0)));
-        assertThat(delayDual.getPan1(), is(value(-50)));
-        assertThat(delayDual.getPan2(), is(value(50)));
-        assertThat(delayDual.getFeedback1(), is(value(10)));
-        assertThat(delayDual.getInsert(), is(value(3)));
-        assertThat(delayDual.getFeedback2(), is(value(10)));
-        assertThat(delayDual.getXFbk1(), is(value(0)));
-        assertThat(delayDual.getXFbk2(), is(value(0)));
-        assertThat(delayDual.getClear(), is(value(false)));
+        assertThat(delayDual.level1, is(value(0)));
+        assertThat(delayDual.level2, is(value(0)));
+        assertThat(delayDual.pan1, is(value(-50)));
+        assertThat(delayDual.pan2, is(value(50)));
+        assertThat(delayDual.feedback1, is(value(10)));
+        assertThat(delayDual.insert, is(value(3)));
+        assertThat(delayDual.feedback2, is(value(10)));
+        assertThat(delayDual.xFbk1, is(value(0)));
+        assertThat(delayDual.xFbk2, is(value(0)));
+        assertThat(delayDual.clear, is(value(false)));
     }
 
     @Test
@@ -60,15 +60,15 @@ public class DelayDualParserTest {
         assertThat( delayDual.level, is(value(0)));
         assertThat(delayDual.getTime1(), is(beat(1, 1)));
         assertThat(delayDual.getTime2(), is(beat(4, 3)));
-        assertThat(delayDual.getLevel1(), is(value(0)));
-        assertThat(delayDual.getLevel2(), is(value(0)));
-        assertThat(delayDual.getPan1(), is(value(-50)));
-        assertThat(delayDual.getPan2(), is(value(50)));
-        assertThat(delayDual.getFeedback1(), is(value(0)));
-        assertThat(delayDual.getInsert(), is(value(3)));
-        assertThat(delayDual.getFeedback2(), is(value(0)));
-        assertThat(delayDual.getXFbk1(), is(value(0)));
-        assertThat(delayDual.getXFbk2(), is(value(0)));
-        assertThat(delayDual.getClear(), is(value(false)));
+        assertThat(delayDual.level1, is(value(0)));
+        assertThat(delayDual.level2, is(value(0)));
+        assertThat(delayDual.pan1, is(value(-50)));
+        assertThat(delayDual.pan2, is(value(50)));
+        assertThat(delayDual.feedback1, is(value(0)));
+        assertThat(delayDual.insert, is(value(3)));
+        assertThat(delayDual.feedback2, is(value(0)));
+        assertThat(delayDual.xFbk1, is(value(0)));
+        assertThat(delayDual.xFbk2, is(value(0)));
+        assertThat(delayDual.clear, is(value(false)));
     }
 }

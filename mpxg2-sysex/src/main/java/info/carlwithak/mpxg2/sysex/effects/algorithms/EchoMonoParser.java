@@ -42,16 +42,16 @@ public class EchoMonoParser {
         echoMono.setTime(RateParser.parse("Time", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int feedback = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        echoMono.getFeedback().setValue(feedback);
+        echoMono.feedback.setValue(feedback);
 
         int insert = effectParameters[12] + effectParameters[13] * 16;
-        echoMono.getInsert().setValue(insert);
+        echoMono.insert.setValue(insert);
 
         int damp = effectParameters[14] + effectParameters[15] * 16;
-        echoMono.getDamp().setValue(damp);
+        echoMono.damp.setValue(damp);
 
         int clear = effectParameters[16] + effectParameters[17] * 16;
-        echoMono.getClear().setValue(Util.parseBoolean(clear));
+        echoMono.clear.setValue(Util.parseBoolean(clear));
 
         return echoMono;
     }

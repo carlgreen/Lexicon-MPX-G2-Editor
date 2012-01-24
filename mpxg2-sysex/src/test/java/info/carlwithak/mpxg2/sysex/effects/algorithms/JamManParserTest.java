@@ -36,13 +36,13 @@ public class JamManParserTest {
         JamMan jamMan = JamManParser.parse(effectParameters);
         assertThat(jamMan.mix, is(value(100)));
         assertThat(jamMan.level, is(value(0)));
-        assertThat(jamMan.getSize(), is(value(250)));
-        assertThat(jamMan.getFeedback(), is(value(0)));
-        assertThat(jamMan.getInsert(), is(value(3)));
-        assertThat(jamMan.getClear(), is(value(false)));
-        assertThat(jamMan.getLayer(), is(value(false)));
-        assertThat(jamMan.getReplace(), is(value(false)));
-        assertThat(jamMan.getDelay(), is(value(false)));
-        assertThat(jamMan.getMute(), is(value(false)));
+        assertThat(jamMan.size, is(value(250)));
+        assertThat(jamMan.feedback, is(value(0)));
+        assertThat(jamMan.insert, is(value(3)));
+        assertThat(jamMan.clear, is(value(false)));
+        assertThat(jamMan.layer, is(value(false)));
+        assertThat(jamMan.replace, is(value(false)));
+        assertThat(jamMan.delay, is(value(false)));
+        assertThat(jamMan.mute, is(value(false)));
     }
 }

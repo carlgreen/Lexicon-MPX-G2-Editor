@@ -39,8 +39,8 @@ public class DelayStereoParserTest {
         assertThat(delayStereo.mix, is(value(20)));
         assertThat(delayStereo.level, is(value(0)));
         assertThat(delayStereo.getTime(), is(beat(2, 4)));
-        assertThat(delayStereo.getFeedback(), is(value(20)));
-        assertThat(delayStereo.getInsert(), is(value(3)));
-        assertThat(delayStereo.getClear(), is(value(false)));
+        assertThat(delayStereo.feedback, is(value(20)));
+        assertThat(delayStereo.insert, is(value(3)));
+        assertThat(delayStereo.clear, is(value(false)));
     }
 }

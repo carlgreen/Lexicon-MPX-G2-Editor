@@ -34,35 +34,35 @@ public class ScreamerParserTest {
     public void testParse_G2Blue() {
         byte[] effectParameters = {2, 0, 1, 0, 3, 0, 6, 1, 9, 1, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Screamer screamer = ScreamerParser.parse(effectParameters);
-        assertThat(screamer.getLo(), is(value(2)));
-        assertThat(screamer.getMid(), is(value(1)));
-        assertThat(screamer.getHi(), is(value(3)));
-        assertThat(screamer.getDrive(), is(value(22)));
-        assertThat(screamer.getTone(), is(value(25)));
-        assertThat(screamer.getLevel(), is(value(57)));
+        assertThat(screamer.lo, is(value(2)));
+        assertThat(screamer.mid, is(value(1)));
+        assertThat(screamer.hi, is(value(3)));
+        assertThat(screamer.drive, is(value(22)));
+        assertThat(screamer.tone, is(value(25)));
+        assertThat(screamer.level, is(value(57)));
     }
 
     @Test
     public void testParse_GuitarSolo() {
         byte[] effectParameters = {5, 0, 0, 0, 0, 0, 8, 2, 5, 1, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Screamer screamer = ScreamerParser.parse(effectParameters);
-        assertThat(screamer.getLo(), is(value(5)));
-        assertThat(screamer.getMid(), is(value(0)));
-        assertThat(screamer.getHi(), is(value(0)));
-        assertThat(screamer.getDrive(), is(value(40)));
-        assertThat(screamer.getTone(), is(value(21)));
-        assertThat(screamer.getLevel(), is(value(39)));
+        assertThat(screamer.lo, is(value(5)));
+        assertThat(screamer.mid, is(value(0)));
+        assertThat(screamer.hi, is(value(0)));
+        assertThat(screamer.drive, is(value(40)));
+        assertThat(screamer.tone, is(value(21)));
+        assertThat(screamer.level, is(value(39)));
     }
 
     @Test
     public void testParse_VybeFlange() {
         byte[] effectParameters = {0, 0, 1, 0, 0, 0, 13, 1, 3, 1, 5, 3, 8, 2, 5, 1, 12, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Screamer screamer = ScreamerParser.parse(effectParameters);
-        assertThat(screamer.getLo(), is(value(0)));
-        assertThat(screamer.getMid(), is(value(1)));
-        assertThat(screamer.getHi(), is(value(0)));
-        assertThat(screamer.getDrive(), is(value(29)));
-        assertThat(screamer.getTone(), is(value(19)));
-        assertThat(screamer.getLevel(), is(value(53)));
+        assertThat(screamer.lo, is(value(0)));
+        assertThat(screamer.mid, is(value(1)));
+        assertThat(screamer.hi, is(value(0)));
+        assertThat(screamer.drive, is(value(29)));
+        assertThat(screamer.tone, is(value(19)));
+        assertThat(screamer.level, is(value(53)));
     }
 }

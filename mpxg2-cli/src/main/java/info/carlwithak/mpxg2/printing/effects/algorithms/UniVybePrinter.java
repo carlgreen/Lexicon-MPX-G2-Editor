@@ -35,7 +35,7 @@ public class UniVybePrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(univybe.mix));
         sb.append(printParameter(univybe.level));
-        sb.append(printParameter(univybe.getRate()));
+        sb.append(printParameter(univybe.rate));
         return sb.toString();
     }
 

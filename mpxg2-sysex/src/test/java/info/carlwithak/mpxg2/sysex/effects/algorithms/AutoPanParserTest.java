@@ -40,9 +40,9 @@ public class AutoPanParserTest {
         assertThat(autoPan.mix, is(value(100)));
         assertThat(autoPan.level, is(value(0)));
         assertThat(autoPan.getRate(), is(frequency(0.04)));
-        assertThat(autoPan.getPulseWidth(), is(value(50)));
-        assertThat(autoPan.getDepth(), is(value(100)));
-        assertThat(autoPan.getPhase(), is(value(1))); // 0, 90, 180, 270 degrees
+        assertThat(autoPan.pulseWidth, is(value(50)));
+        assertThat(autoPan.depth, is(value(100)));
+        assertThat(autoPan.phase, is(value(1))); // 0, 90, 180, 270 degrees
     }
 
     @Test
@@ -52,9 +52,9 @@ public class AutoPanParserTest {
         assertThat(autoPan.mix, is(value(100)));
         assertThat(autoPan.level, is(value(0)));
         assertThat(autoPan.getRate(), is(frequency(1.00)));
-        assertThat(autoPan.getPulseWidth(), is(value(50)));
-        assertThat(autoPan.getDepth(), is(value(100)));
-        assertThat(autoPan.getPhase(), is(value(3))); // 0, 90, 180, 270 degrees
+        assertThat(autoPan.pulseWidth, is(value(50)));
+        assertThat(autoPan.depth, is(value(100)));
+        assertThat(autoPan.phase, is(value(3))); // 0, 90, 180, 270 degrees
     }
 
     @Test
@@ -64,8 +64,8 @@ public class AutoPanParserTest {
         assertThat(autoPan.mix, is(value(100)));
         assertThat(autoPan.level, is(value(3)));
         assertThat(autoPan.getRate(), is(beat(1, 2)));
-        assertThat(autoPan.getPulseWidth(), is(value(50)));
-        assertThat(autoPan.getDepth(), is(value(100)));
-        assertThat(autoPan.getPhase(), is(value(0))); // 0, 90, 180, 270 degrees
+        assertThat(autoPan.pulseWidth, is(value(50)));
+        assertThat(autoPan.depth, is(value(100)));
+        assertThat(autoPan.phase, is(value(0))); // 0, 90, 180, 270 degrees
     }
 }

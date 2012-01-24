@@ -41,19 +41,19 @@ public class FlangerStereoParser {
         flangerStereo.setRate(RateParser.parse("Rate", Arrays.copyOfRange(effectParameters, 4, 10)));
 
         int pulseWidth = (byte) (effectParameters[10] + effectParameters[11] * 16);
-        flangerStereo.getPulseWidth().setValue(pulseWidth);
+        flangerStereo.pulseWidth.setValue(pulseWidth);
 
         int depth = (byte) (effectParameters[12] + effectParameters[13] * 16);
-        flangerStereo.getDepth().setValue(depth);
+        flangerStereo.depth.setValue(depth);
 
         int phase = (byte) (effectParameters[14] + effectParameters[15] * 16);
-        flangerStereo.getPhase().setValue(phase);
+        flangerStereo.phase.setValue(phase);
 
         int resonance = (byte) (effectParameters[16] + effectParameters[17] * 16);
-        flangerStereo.getResonance().setValue(resonance);
+        flangerStereo.resonance.setValue(resonance);
 
         int blend = (byte) (effectParameters[18] + effectParameters[19] * 16);
-        flangerStereo.getBlend().setValue(blend);
+        flangerStereo.blend.setValue(blend);
 
         return flangerStereo;
     }

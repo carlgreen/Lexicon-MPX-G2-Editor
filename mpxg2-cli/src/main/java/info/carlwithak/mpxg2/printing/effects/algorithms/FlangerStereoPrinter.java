@@ -36,11 +36,11 @@ public class FlangerStereoPrinter implements Printer {
         sb.append(printParameter(flangerStereo.mix));
         sb.append(printParameter(flangerStereo.level));
         sb.append(printParameter(flangerStereo.getRate()));
-        sb.append(printParameter(flangerStereo.getPulseWidth()));
-        sb.append(printParameter(flangerStereo.getDepth()));
-        sb.append(printParameter(flangerStereo.getPhase()));
-        sb.append(printParameter(flangerStereo.getResonance()));
-        sb.append(printParameter(flangerStereo.getBlend()));
+        sb.append(printParameter(flangerStereo.pulseWidth));
+        sb.append(printParameter(flangerStereo.depth));
+        sb.append(printParameter(flangerStereo.phase));
+        sb.append(printParameter(flangerStereo.resonance));
+        sb.append(printParameter(flangerStereo.blend));
         return sb.toString();
     }
 

@@ -41,14 +41,14 @@ public class EchoDualParserTest {
         assertThat(echoDual.level, is(value(1)));
         assertThat(echoDual.getTime1(), is(beat(4, 4)));
         assertThat(echoDual.getTime2(), is(beat(2, 1)));
-        assertThat(echoDual.getLevel1(), is(value(0)));
-        assertThat(echoDual.getLevel2(), is(value(0)));
-        assertThat(echoDual.getFeedback1(), is(value(1)));
-        assertThat(echoDual.getInsert(), is(value(3)));
-        assertThat(echoDual.getFeedback2(), is(value(1)));
-        assertThat(echoDual.getDamp1(), is(value(20)));
-        assertThat(echoDual.getDamp2(), is(value(20)));
-        assertThat(echoDual.getClear(), is(value(false)));
+        assertThat(echoDual.level1, is(value(0)));
+        assertThat(echoDual.level2, is(value(0)));
+        assertThat(echoDual.feedback1, is(value(1)));
+        assertThat(echoDual.insert, is(value(3)));
+        assertThat(echoDual.feedback2, is(value(1)));
+        assertThat(echoDual.damp1, is(value(20)));
+        assertThat(echoDual.damp2, is(value(20)));
+        assertThat(echoDual.clear, is(value(false)));
     }
 
     @Test
@@ -59,14 +59,14 @@ public class EchoDualParserTest {
         assertThat(echoDual.level, is(value(5)));
         assertThat(echoDual.getTime1(), is(beat(1, 1)));
         assertThat(echoDual.getTime2(), is(beat(3, 2)));
-        assertThat(echoDual.getLevel1(), is(value(0)));
-        assertThat(echoDual.getLevel2(), is(value(0)));
-        assertThat(echoDual.getFeedback1(), is(value(-10)));
-        assertThat(echoDual.getInsert(), is(value(3)));
-        assertThat(echoDual.getFeedback2(), is(value(15)));
-        assertThat(echoDual.getDamp1(), is(value(25)));
-        assertThat(echoDual.getDamp2(), is(value(25)));
-        assertThat(echoDual.getClear(), is(value(false)));
+        assertThat(echoDual.level1, is(value(0)));
+        assertThat(echoDual.level2, is(value(0)));
+        assertThat(echoDual.feedback1, is(value(-10)));
+        assertThat(echoDual.insert, is(value(3)));
+        assertThat(echoDual.feedback2, is(value(15)));
+        assertThat(echoDual.damp1, is(value(25)));
+        assertThat(echoDual.damp2, is(value(25)));
+        assertThat(echoDual.clear, is(value(false)));
     }
 
     @Test
@@ -77,14 +77,14 @@ public class EchoDualParserTest {
         assertThat(echoDual.level, is(value(0)));
         assertThat(echoDual.getTime1(), is(beat(1, 1)));
         assertThat(echoDual.getTime2(), is(beat(4, 3)));
-        assertThat(echoDual.getLevel1(), is(value(0)));
-        assertThat(echoDual.getLevel2(), is(value(0)));
-        assertThat(echoDual.getFeedback1(), is(value(-10)));
-        assertThat(echoDual.getInsert(), is(value(3)));
-        assertThat(echoDual.getFeedback2(), is(value(-20)));
-        assertThat(echoDual.getDamp1(), is(value(20)));
-        assertThat(echoDual.getDamp2(), is(value(20)));
-        assertThat(echoDual.getClear(), is(value(false)));
+        assertThat(echoDual.level1, is(value(0)));
+        assertThat(echoDual.level2, is(value(0)));
+        assertThat(echoDual.feedback1, is(value(-10)));
+        assertThat(echoDual.insert, is(value(3)));
+        assertThat(echoDual.feedback2, is(value(-20)));
+        assertThat(echoDual.damp1, is(value(20)));
+        assertThat(echoDual.damp2, is(value(20)));
+        assertThat(echoDual.clear, is(value(false)));
     }
 
     @Test
@@ -95,13 +95,13 @@ public class EchoDualParserTest {
         assertThat(echoDual.level, is(value(0)));
         assertThat(echoDual.getTime1(), is(tapMs(200)));
         assertThat(echoDual.getTime2(), is(tapMs(300)));
-        assertThat(echoDual.getLevel1(), is(value(0)));
-        assertThat(echoDual.getLevel2(), is(value(0)));
-        assertThat(echoDual.getFeedback1(), is(value(-15)));
-        assertThat(echoDual.getInsert(), is(value(3)));
-        assertThat(echoDual.getFeedback2(), is(value(-20)));
-        assertThat(echoDual.getDamp1(), is(value(20)));
-        assertThat(echoDual.getDamp2(), is(value(20)));
-        assertThat(echoDual.getClear(), is(value(false)));
+        assertThat(echoDual.level1, is(value(0)));
+        assertThat(echoDual.level2, is(value(0)));
+        assertThat(echoDual.feedback1, is(value(-15)));
+        assertThat(echoDual.insert, is(value(3)));
+        assertThat(echoDual.feedback2, is(value(-20)));
+        assertThat(echoDual.damp1, is(value(20)));
+        assertThat(echoDual.damp2, is(value(20)));
+        assertThat(echoDual.clear, is(value(false)));
     }
 }

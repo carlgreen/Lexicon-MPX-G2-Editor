@@ -36,9 +36,9 @@ public class TremoloStereoPrinter implements Printer {
         sb.append(printParameter(tremoloStereo.mix));
         sb.append(printParameter(tremoloStereo.level));
         sb.append(printParameter(tremoloStereo.getRate()));
-        sb.append(printParameter(tremoloStereo.getPulseWidth()));
-        sb.append(printParameter(tremoloStereo.getDepth()));
-        sb.append(printParameter(tremoloStereo.getPhase()));
+        sb.append(printParameter(tremoloStereo.pulseWidth));
+        sb.append(printParameter(tremoloStereo.depth));
+        sb.append(printParameter(tremoloStereo.phase));
         return sb.toString();
     }
 

@@ -36,15 +36,15 @@ public class HallParserTest {
         Hall hall = HallParser.parse(effectParameters);
         assertThat(hall.mix, is(value(20)));
         assertThat(hall.level, is(value(0)));
-        assertThat(hall.getSize(), is(value(53.0)));
-        assertThat(hall.getLink(), is(value(true)));
-        assertThat(hall.getDiff(), is(value(80)));
-        assertThat(hall.getPreDelay(), is(value(25)));
-        assertThat(hall.getBass(), is(value(5))); // 1.2X is number 5 in list
-        assertThat(hall.getDecay(), is(value(41))); // 1.67s is number 41 in list
-        assertThat(hall.getXovr(), is(value(15))); // 818 is number 15 in list
-        assertThat(hall.getRtHC(), is(value(31))); // 7.9k is number 31 in list for this size
-        assertThat(hall.getShape(), is(value(110)));
-        assertThat(hall.getSpred(), is(value(125))); // 89 is number 125 in list for this size
+        assertThat(hall.size, is(value(53.0)));
+        assertThat(hall.link, is(value(true)));
+        assertThat(hall.diff, is(value(80)));
+        assertThat(hall.preDelay, is(value(25)));
+        assertThat(hall.bass, is(value(5))); // 1.2X is number 5 in list
+        assertThat(hall.decay, is(value(41))); // 1.67s is number 41 in list
+        assertThat(hall.xovr, is(value(15))); // 818 is number 15 in list
+        assertThat(hall.rtHC, is(value(31))); // 7.9k is number 31 in list for this size
+        assertThat(hall.shape, is(value(110)));
+        assertThat(hall.spred, is(value(125))); // 89 is number 125 in list for this size
     }
 }

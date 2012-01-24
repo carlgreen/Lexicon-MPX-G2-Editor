@@ -40,19 +40,19 @@ public class ShiftDualParser {
         for (int i = 0; i < 4; i++) {
             tune1 += (effectParameters[4 + i] * Math.pow(16, i));
         }
-        shiftDual.getTune1().setValue(Util.wrapInteger(tune1));
+        shiftDual.tune1.setValue(Util.wrapInteger(tune1));
 
         int optimize = effectParameters[8] + effectParameters[9] * 16;
-        shiftDual.getOptimize().setValue(optimize);
+        shiftDual.optimize.setValue(optimize);
 
         int tune2 = 0;
         for (int i = 0; i < 4; i++) {
             tune2 += (effectParameters[10 + i] * Math.pow(16, i));
         }
-        shiftDual.getTune2().setValue(Util.wrapInteger(tune2));
+        shiftDual.tune2.setValue(Util.wrapInteger(tune2));
 
         int glide = effectParameters[14] + effectParameters[15] * 16;
-        shiftDual.getGlide().setValue(Util.parseBoolean(glide));
+        shiftDual.glide.setValue(Util.parseBoolean(glide));
 
         return shiftDual;
     }

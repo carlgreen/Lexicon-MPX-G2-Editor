@@ -33,10 +33,10 @@ public class EchoStereo extends Delay {
     private static final String NAME = "Echo (S)";
 
     private Rate time;
-    private GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
-    private InsertPosition insert = new InsertPosition("Fbk insert");
-    private GenericValue<Integer> damp = new GenericValue<Integer>("Damp", "%", 0, 100);
-    private OnOffValue clear = new OnOffValue("Clear");
+    public final GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
+    public final InsertPosition insert = new InsertPosition("Fbk insert");
+    public final GenericValue<Integer> damp = new GenericValue<Integer>("Damp", "%", 0, 100);
+    public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override
     public String getName() {
@@ -75,22 +75,6 @@ public class EchoStereo extends Delay {
 
     public void setTime(Rate time) {
         this.time = time;
-    }
-
-    public GenericValue<Integer> getFeedback() {
-        return feedback;
-    }
-
-    public InsertPosition getInsert() {
-        return insert;
-    }
-
-    public GenericValue<Integer> getDamp() {
-        return damp;
-    }
-
-    public OnOffValue getClear() {
-        return clear;
     }
 
 }

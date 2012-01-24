@@ -29,18 +29,18 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class ThreeBandMono extends Eq {
     private static final String NAME = "3-Band (M)";
 
-    private GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    private GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Double> q1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> q2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Double> q3 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    private GenericValue<Integer> mode1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> mode2 = new GenericValue<Integer>("Mode", "", 0, 2);
-    private GenericValue<Integer> mode3 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Double> q1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Double> q2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Double> q3 = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Integer> mode1 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> mode2 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> mode3 = new GenericValue<Integer>("Mode", "", 0, 2);
 
     @Override
     public String getName() {
@@ -95,54 +95,6 @@ public class ThreeBandMono extends Eq {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getGain1() {
-        return gain1;
-    }
-
-    public GenericValue<Integer> getGain2() {
-        return gain2;
-    }
-
-    public GenericValue<Integer> getGain3() {
-        return gain3;
-    }
-
-    public GenericValue<Integer> getFc1() {
-        return fc1;
-    }
-
-    public GenericValue<Integer> getFc2() {
-        return fc2;
-    }
-
-    public GenericValue<Integer> getFc3() {
-        return fc3;
-    }
-
-    public GenericValue<Double> getQ1() {
-        return q1;
-    }
-
-    public GenericValue<Double> getQ2() {
-        return q2;
-    }
-
-    public GenericValue<Double> getQ3() {
-        return q3;
-    }
-
-    public GenericValue<Integer> getMode1() {
-        return mode1;
-    }
-
-    public GenericValue<Integer> getMode2() {
-        return mode2;
-    }
-
-    public GenericValue<Integer> getMode3() {
-        return mode3;
     }
 
 }

@@ -37,6 +37,6 @@ public class OrangePhaseParserTest {
         OrangePhase orangePhase = OrangePhaseParser.parse(effectParameters);
         assertThat(orangePhase.mix, is(value(100)));
         assertThat(orangePhase.level, is(value(0)));
-        assertThat(orangePhase.getRate(), is(value(20)));
+        assertThat(orangePhase.rate, is(value(20)));
     }
 }

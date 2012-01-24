@@ -29,8 +29,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class TestTone extends Effect {
     private static final String NAME = "Test Tone";
 
-    private GenericValue<Integer> note = new GenericValue<Integer>("Note", "", 0, 127); // C0 - G10
-    private GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
+    public final GenericValue<Integer> note = new GenericValue<Integer>("Note", "", 0, 127); // C0 - G10
+    public final GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
 
     @Override
     public String getName() {
@@ -55,14 +55,6 @@ public class TestTone extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getNote() {
-        return note;
-    }
-
-    public GenericValue<Integer> getBalance() {
-        return balance;
     }
 
 }

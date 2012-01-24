@@ -31,8 +31,8 @@ public class CustomVybe extends Effect {
     private static final String NAME = "Custom Vybe";
 
     private Rate rate;
-    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
-    private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    public final GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
 
     @Override
     public String getName() {
@@ -68,14 +68,6 @@ public class CustomVybe extends Effect {
 
     public void setRate(Rate rate) {
         this.rate = rate;
-    }
-
-    public GenericValue<Integer> getPulseWidth() {
-        return pulseWidth;
-    }
-
-    public GenericValue<Integer> getDepth() {
-        return depth;
     }
 
 }

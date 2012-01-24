@@ -30,11 +30,11 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class SweepFilter extends Effect {
     private static final String NAME = "SweepFilter";
 
-    private GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    private GenericValue<Integer> fRes = new GenericValue<Integer>("FRes", "", 1, 100);
-    private GenericValue<Integer> mod = new GenericValue<Integer>("Mod", "Hz", 20, 20000);
-    private GenericValue<Integer> scale = new GenericValue<Integer>("Scale", "%", -100, 100);
-    private PanValue pan = new PanValue("Pan", -50, 50);
+    public final GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Integer> fRes = new GenericValue<Integer>("FRes", "", 1, 100);
+    public final GenericValue<Integer> mod = new GenericValue<Integer>("Mod", "Hz", 20, 20000);
+    public final GenericValue<Integer> scale = new GenericValue<Integer>("Scale", "%", -100, 100);
+    public final PanValue pan = new PanValue("Pan", -50, 50);
 
     @Override
     public String getName() {
@@ -68,26 +68,6 @@ public class SweepFilter extends Effect {
                 parameter = null;
         }
         return parameter;
-    }
-
-    public GenericValue<Integer> getFc() {
-        return fc;
-    }
-
-    public GenericValue<Integer> getFRes() {
-        return fRes;
-    }
-
-    public GenericValue<Integer> getMod() {
-        return mod;
-    }
-
-    public GenericValue<Integer> getScale() {
-        return scale;
-    }
-
-    public PanValue getPan() {
-        return pan;
     }
 
 }

@@ -35,10 +35,10 @@ public class DetuneDualPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(detuneDual.mix));
         sb.append(printParameter(detuneDual.level));
-        sb.append(printParameter(detuneDual.getTune1()));
-        sb.append(printParameter(detuneDual.getOptimize()));
-        sb.append(printParameter(detuneDual.getTune2()));
-        sb.append(printParameter(detuneDual.getPreDelay()));
+        sb.append(printParameter(detuneDual.tune1));
+        sb.append(printParameter(detuneDual.optimize));
+        sb.append(printParameter(detuneDual.tune2));
+        sb.append(printParameter(detuneDual.preDelay));
         return sb.toString();
     }
 

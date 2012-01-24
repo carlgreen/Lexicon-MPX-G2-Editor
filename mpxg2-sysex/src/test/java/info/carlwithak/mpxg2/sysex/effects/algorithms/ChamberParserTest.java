@@ -36,16 +36,16 @@ public class ChamberParserTest {
         Chamber chamber = ChamberParser.parse(effectParameters);
         assertThat(chamber.mix, is(value(28)));
         assertThat(chamber.level, is(value(0)));
-        assertThat(chamber.getSize(), is(value(24.0)));
-        assertThat(chamber.getLink(), is(value(true)));
-        assertThat(chamber.getDiff(), is(value(22)));
-        assertThat(chamber.getPreDelay(), is(value(0)));
-        assertThat(chamber.getBass(), is(value(6))); // 1.5X is number 6 in list
-        assertThat(chamber.getDecay(), is(value(47))); // 1.05s is number 47 in list for this size
-        assertThat(chamber.getXovr(), is(value(16))); // 986 is number 16 in list
-        assertThat(chamber.getRtHC(), is(value(34))); // 9.3k is number 34 in list
-        assertThat(chamber.getShape(), is(value(62)));
-        assertThat(chamber.getSpred(), is(value(120))); // 42 is number 120 in list for this size
+        assertThat(chamber.size, is(value(24.0)));
+        assertThat(chamber.link, is(value(true)));
+        assertThat(chamber.diff, is(value(22)));
+        assertThat(chamber.preDelay, is(value(0)));
+        assertThat(chamber.bass, is(value(6))); // 1.5X is number 6 in list
+        assertThat(chamber.decay, is(value(47))); // 1.05s is number 47 in list for this size
+        assertThat(chamber.xovr, is(value(16))); // 986 is number 16 in list
+        assertThat(chamber.rtHC, is(value(34))); // 9.3k is number 34 in list
+        assertThat(chamber.shape, is(value(62)));
+        assertThat(chamber.spred, is(value(120))); // 42 is number 120 in list for this size
     }
 
     @Test
@@ -54,15 +54,15 @@ public class ChamberParserTest {
         Chamber chamber = ChamberParser.parse(effectParameters);
         assertThat(chamber.mix, is(value(35)));
         assertThat(chamber.level, is(value(0)));
-        assertThat(chamber.getSize(), is(value(28.0)));
-        assertThat(chamber.getLink(), is(value(true)));
-        assertThat(chamber.getDiff(), is(value(90)));
-        assertThat(chamber.getPreDelay(), is(value(82)));
-        assertThat(chamber.getBass(), is(value(5))); // 1.2X is number 5 in list
-        assertThat(chamber.getDecay(), is(value(35))); // 0.73s is number 35 in list
-        assertThat(chamber.getXovr(), is(value(15))); // 818 is number 15 in list
-        assertThat(chamber.getRtHC(), is(value(36))); // 10.4k is number 36 in list
-        assertThat(chamber.getShape(), is(value(62)));
-        assertThat(chamber.getSpred(), is(value(120))); // 48 is number 120 in list for this size
+        assertThat(chamber.size, is(value(28.0)));
+        assertThat(chamber.link, is(value(true)));
+        assertThat(chamber.diff, is(value(90)));
+        assertThat(chamber.preDelay, is(value(82)));
+        assertThat(chamber.bass, is(value(5))); // 1.2X is number 5 in list
+        assertThat(chamber.decay, is(value(35))); // 0.73s is number 35 in list
+        assertThat(chamber.xovr, is(value(15))); // 818 is number 15 in list
+        assertThat(chamber.rtHC, is(value(36))); // 10.4k is number 36 in list
+        assertThat(chamber.shape, is(value(62)));
+        assertThat(chamber.spred, is(value(120))); // 48 is number 120 in list for this size
     }
 }

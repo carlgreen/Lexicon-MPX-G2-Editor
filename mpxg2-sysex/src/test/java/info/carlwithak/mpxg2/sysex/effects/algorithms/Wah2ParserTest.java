@@ -36,10 +36,10 @@ public class Wah2ParserTest {
         Wah2 wah2 = Wah2Parser.parse(effectParameters);
         assertThat(wah2.mix, is(value(100)));
         assertThat(wah2.level, is(value(6)));
-        assertThat(wah2.getSweep(), is(value(50)));
-        assertThat(wah2.getBass(), is(value(0)));
-        assertThat(wah2.getType(), is(value(0)));
-        assertThat(wah2.getResponse(), is(value(100)));
-        assertThat(wah2.getGain(), is(value(10)));
+        assertThat(wah2.sweep, is(value(50)));
+        assertThat(wah2.bass, is(value(0)));
+        assertThat(wah2.type, is(value(0)));
+        assertThat(wah2.response, is(value(100)));
+        assertThat(wah2.gain, is(value(10)));
     }
 }

@@ -35,13 +35,13 @@ public class AmbiencePrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(ambience.mix));
         sb.append(printParameter(ambience.level));
-        sb.append(printParameter(ambience.getSize()));
-        sb.append(printParameter(ambience.getLink()));
-        sb.append(printParameter(ambience.getDiff()));
-        sb.append(printParameter(ambience.getPreDelay()));
-        sb.append(printParameter(ambience.getDecayTime()));
-        sb.append(printParameter(ambience.getDecayLevel()));
-        sb.append(printParameter(ambience.getRtHC()));
+        sb.append(printParameter(ambience.size));
+        sb.append(printParameter(ambience.link));
+        sb.append(printParameter(ambience.diff));
+        sb.append(printParameter(ambience.preDelay));
+        sb.append(printParameter(ambience.decayTime));
+        sb.append(printParameter(ambience.decayLevel));
+        sb.append(printParameter(ambience.rtHC));
         return sb.toString();
     }
 

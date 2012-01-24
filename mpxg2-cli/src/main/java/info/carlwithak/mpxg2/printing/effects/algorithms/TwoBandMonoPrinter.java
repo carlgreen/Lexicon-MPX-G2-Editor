@@ -35,14 +35,14 @@ public class TwoBandMonoPrinter implements Printer {
         StringBuilder sb = new StringBuilder();
         sb.append(printParameter(twoBandMono.mix));
         sb.append(printParameter(twoBandMono.level));
-        sb.append(printParameter(twoBandMono.getGain1()));
-        sb.append(printParameter(twoBandMono.getFc1()));
-        sb.append(printParameter(twoBandMono.getQ1()));
-        sb.append(printParameter(twoBandMono.getMode1()));
-        sb.append(printParameter(twoBandMono.getGain2()));
-        sb.append(printParameter(twoBandMono.getFc2()));
-        sb.append(printParameter(twoBandMono.getQ2()));
-        sb.append(printParameter(twoBandMono.getMode2()));
+        sb.append(printParameter(twoBandMono.gain1));
+        sb.append(printParameter(twoBandMono.fc1));
+        sb.append(printParameter(twoBandMono.q1));
+        sb.append(printParameter(twoBandMono.mode1));
+        sb.append(printParameter(twoBandMono.gain2));
+        sb.append(printParameter(twoBandMono.fc2));
+        sb.append(printParameter(twoBandMono.q2));
+        sb.append(printParameter(twoBandMono.mode2));
         return sb.toString();
     }
 

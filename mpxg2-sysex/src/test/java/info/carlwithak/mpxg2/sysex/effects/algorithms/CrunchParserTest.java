@@ -35,10 +35,10 @@ public class CrunchParserTest {
     public void testParse_TremAutoWah() throws ParseException {
         byte[] effectParameters = {6, 0, 12, 0, 15, 0, 0, 0, 2, 3, 0, 2, 8, 2, 5, 1, 9, 2, 0, 0, 13, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Crunch crunch = CrunchParser.parse(effectParameters);
-        assertThat(crunch.getLo(), is(value(6)));
-        assertThat(crunch.getMid(), is(value(12)));
-        assertThat(crunch.getHi(), is(value(15)));
-        assertThat(crunch.getInLevel(), is(value(0)));
-        assertThat(crunch.getLevel(), is(value(50)));
+        assertThat(crunch.lo, is(value(6)));
+        assertThat(crunch.mid, is(value(12)));
+        assertThat(crunch.hi, is(value(15)));
+        assertThat(crunch.inLevel, is(value(0)));
+        assertThat(crunch.level, is(value(50)));
     }
 }

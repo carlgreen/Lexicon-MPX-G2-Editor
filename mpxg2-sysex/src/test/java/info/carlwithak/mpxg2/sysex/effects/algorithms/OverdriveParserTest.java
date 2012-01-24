@@ -34,14 +34,14 @@ public class OverdriveParserTest {
     public void testParse_PowerChords() {
         byte[] effectParameters = {4, 0, 8, 0, 0, 0, 8, 15, 0, 0, 0, 2, 8, 2, 5, 1, 12, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         Overdrive overdrive = OverdriveParser.parse(effectParameters);
-        assertThat(overdrive.getLo(), is(value(4)));
-        assertThat(overdrive.getMid(), is(value(8)));
-        assertThat(overdrive.getHi(), is(value(0)));
-        assertThat(overdrive.getInLevel(), is(value(-8)));
-        assertThat(overdrive.getLoCut(), is(value(0)));
-        assertThat(overdrive.getFeel(), is(value(32)));
-        assertThat(overdrive.getDrive(), is(value(40)));
-        assertThat(overdrive.getTone(), is(value(21)));
-        assertThat(overdrive.getLevel(), is(value(44)));
+        assertThat(overdrive.lo, is(value(4)));
+        assertThat(overdrive.mid, is(value(8)));
+        assertThat(overdrive.hi, is(value(0)));
+        assertThat(overdrive.inLevel, is(value(-8)));
+        assertThat(overdrive.loCut, is(value(0)));
+        assertThat(overdrive.feel, is(value(32)));
+        assertThat(overdrive.drive, is(value(40)));
+        assertThat(overdrive.tone, is(value(21)));
+        assertThat(overdrive.level, is(value(44)));
     }
 }

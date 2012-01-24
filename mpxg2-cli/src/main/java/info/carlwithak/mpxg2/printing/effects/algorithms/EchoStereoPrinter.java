@@ -36,10 +36,10 @@ public class EchoStereoPrinter implements Printer {
         sb.append(printParameter(echoStereo.mix));
         sb.append(printParameter(echoStereo.level));
         sb.append(printParameter(echoStereo.getTime()));
-        sb.append(printParameter(echoStereo.getFeedback()));
-        sb.append(printParameter(echoStereo.getInsert()));
-        sb.append(printParameter(echoStereo.getDamp()));
-        sb.append(printParameter(echoStereo.getClear()));
+        sb.append(printParameter(echoStereo.feedback));
+        sb.append(printParameter(echoStereo.insert));
+        sb.append(printParameter(echoStereo.damp));
+        sb.append(printParameter(echoStereo.clear));
         return sb.toString();
     }
 
