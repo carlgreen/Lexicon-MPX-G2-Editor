@@ -71,6 +71,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
@@ -956,6 +957,34 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: -2dB\n    Gain1: +5dB\n    Fc 1: 5050Hz\n    Q 1: 0.1\n    Mode1: LShlf\n    Gain2: +8dB\n    Fc 2: 20Hz\n    Q 2: 0.1\n    Mode2: Band\n";
         String actual = AlgorithmPrinter.print(twoBandStereo);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTwoBandDual() throws PrintException {
+        TwoBandDual twoBandDual = new TwoBandDual();
+        twoBandDual.mix.setValue(100);
+        twoBandDual.level.setValue(0);
+        twoBandDual.gainLeft1.setValue(-30);
+        twoBandDual.fcLeft1.setValue(110);
+        twoBandDual.qLeft1.setValue(0.7);
+        twoBandDual.modeLeft1.setValue(0);
+        twoBandDual.gainLeft2.setValue(-30);
+        twoBandDual.fcLeft2.setValue(850);
+        twoBandDual.qLeft2.setValue(0.7);
+        twoBandDual.modeLeft2.setValue(2);
+        twoBandDual.gainRight1.setValue(-30);
+        twoBandDual.fcRight1.setValue(110);
+        twoBandDual.qRight1.setValue(0.7);
+        twoBandDual.modeRight1.setValue(0);
+        twoBandDual.gainRight2.setValue(-30);
+        twoBandDual.fcRight2.setValue(1700);
+        twoBandDual.qRight2.setValue(0.7);
+        twoBandDual.modeRight2.setValue(2);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    G-L1: -30dB\n    F-L1: 110Hz\n    Q-L1: 0.7\n    M-L1: LShlf\n    G-L2: -30dB\n    F-L2: 850Hz\n    Q-L2: 0.7\n    M-L2: HShlf\n    G-R1: -30dB\n    F-R1: 110Hz\n    Q-R1: 0.7\n    M-R1: LShlf\n    G-R2: -30dB\n    F-R2: 1700Hz\n    Q-R2: 0.7\n    M-R2: HShlf\n";
+        String actual = AlgorithmPrinter.print(twoBandDual);
 
         assertEquals(expected, actual);
     }
