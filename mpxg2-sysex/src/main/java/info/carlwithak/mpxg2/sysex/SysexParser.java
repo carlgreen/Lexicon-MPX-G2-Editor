@@ -97,6 +97,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TremoloMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TremoloStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.TwoBandDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TwoBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TwoBandStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.UniVybeParser;
@@ -803,7 +804,9 @@ public class SysexParser {
                 eq = TwoBandStereoParser.parse(eqParameters);
                 break;
             // TODO 7 - 1-Band (D)
-            // TODO 8 - 2-Band (D)
+            case 8:
+                eq = TwoBandDualParser.parse(eqParameters);
+                break;
             // TODO 9 - Fc Splitter
             case 10:
                 eq = CrossoverParser.parse(eqParameters);

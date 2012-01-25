@@ -79,6 +79,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.TwoBandStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
@@ -689,7 +690,7 @@ public class SysexParserTest {
             null,
             TwoBandStereo.class,
             null,
-            null,
+            TwoBandDual.class,
             null,
             Crossover.class,
             EqVolumeMono.class,
