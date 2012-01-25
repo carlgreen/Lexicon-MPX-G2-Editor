@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.Eq;
+import info.carlwithak.mpxg2.model.parameters.EqModeValue;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 
@@ -29,22 +30,22 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class TwoBandDual extends Eq {
     private static final String NAME = "2-Band (D)";
 
-    public final GenericValue<Integer> gainLeft1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> gainLeft2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> fcLeft1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Integer> fcLeft2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Double> qLeft1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    public final GenericValue<Double> qLeft2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    public final GenericValue<Integer> modeLeft1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    public final GenericValue<Integer> modeLeft2 = new GenericValue<Integer>("Mode", "", 0, 2);
-    public final GenericValue<Integer> gainRight1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> gainRight2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> fcRight1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Integer> fcRight2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Double> qRight1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    public final GenericValue<Double> qRight2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    public final GenericValue<Integer> modeRight1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    public final GenericValue<Integer> modeRight2 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> gainLeft1 = new GenericValue<Integer>("G-L1", "dB", -72, 24);
+    public final GenericValue<Integer> gainLeft2 = new GenericValue<Integer>("G-L2", "dB", -72, 24);
+    public final GenericValue<Integer> fcLeft1 = new GenericValue<Integer>("F-L1", "Hz", 20, 20000);
+    public final GenericValue<Integer> fcLeft2 = new GenericValue<Integer>("F-L2", "Hz", 20, 20000);
+    public final GenericValue<Double> qLeft1 = new GenericValue<Double>("Q-L1", "", 0.1, 10.0);
+    public final GenericValue<Double> qLeft2 = new GenericValue<Double>("Q-L2", "", 0.1, 10.0);
+    public final EqModeValue modeLeft1 = new EqModeValue("M-L1");
+    public final EqModeValue modeLeft2 = new EqModeValue("M-L2");
+    public final GenericValue<Integer> gainRight1 = new GenericValue<Integer>("G-R1", "dB", -72, 24);
+    public final GenericValue<Integer> gainRight2 = new GenericValue<Integer>("G-R2", "dB", -72, 24);
+    public final GenericValue<Integer> fcRight1 = new GenericValue<Integer>("F-R1", "Hz", 20, 20000);
+    public final GenericValue<Integer> fcRight2 = new GenericValue<Integer>("F-R2", "Hz", 20, 20000);
+    public final GenericValue<Double> qRight1 = new GenericValue<Double>("Q-R1", "", 0.1, 10.0);
+    public final GenericValue<Double> qRight2 = new GenericValue<Double>("Q-R2", "", 0.1, 10.0);
+    public final EqModeValue modeRight1 = new EqModeValue("M-R1");
+    public final EqModeValue modeRight2 = new EqModeValue("M-R2");
 
     @Override
     public String getName() {
