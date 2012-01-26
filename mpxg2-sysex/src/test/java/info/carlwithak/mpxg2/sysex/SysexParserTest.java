@@ -542,7 +542,7 @@ public class SysexParserTest {
             null,
             ShiftDual.class,
             DiatonicHmy.class,
-            null, //Panner.class,
+            Panner.class,
             AutoPan.class,
             TremoloMono.class,
             null, //TremoloStereo.class,

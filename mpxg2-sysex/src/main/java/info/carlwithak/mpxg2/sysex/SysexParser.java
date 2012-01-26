@@ -535,7 +535,9 @@ public class SysexParser {
             case 7:
                 effect1 = DiatonicHmyParser.parse(effect1Parameters);
                 break;
-            // TODO 8 - Panner
+            case 8:
+                effect1 = PannerParser.parse(effect1Parameters);
+                break;
             case 9:
                 effect1 = AutoPanParser.parse(effect1Parameters);
                 break;
