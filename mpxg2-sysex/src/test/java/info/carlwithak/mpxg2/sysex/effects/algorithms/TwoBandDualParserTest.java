@@ -31,7 +31,7 @@ import static org.junit.Assert.assertThat;
 public class TwoBandDualParserTest {
 
     @Test
-    public void testParse_SpaceEcho() {
+    public void testParse_SoloRoom() {
         byte[] effectParameters = {4, 6, 0, 0, 2, 14, 14, 6, 0, 0, 7, 0, 0, 0, 2, 14, 2, 5, 3, 0, 7, 0, 2, 0, 2, 14, 14, 6, 0, 0, 7, 0, 0, 0, 2, 14, 4, 10, 6, 0, 7, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         TwoBandDual twoBandDual = TwoBandDualParser.parse(effectParameters);
         assertThat(twoBandDual.mix, is(value(100)));
