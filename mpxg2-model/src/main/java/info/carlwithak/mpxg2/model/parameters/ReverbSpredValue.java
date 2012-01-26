@@ -46,7 +46,22 @@ public class ReverbSpredValue extends GenericValue<Integer> {
             23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24,
             24, 24, 24, 25, 25, 25, 25, 25, 25
         },
-        {},
+        {
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2,
+            2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4,
+            4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7,
+            7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9,
+            9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11,
+            11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13,
+            13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 15, 15,
+            15, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16, 16, 16, 16, 17,
+            17, 17, 17, 17, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 18, 18,
+            18, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 20, 20, 20, 20,
+            20, 20, 20, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22,
+            22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24,
+            24, 24, 24, 24, 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26,
+            26, 26, 26, 26, 26, 26, 26, 26, 26, 27
+        },
         {},
         {},
         {},
@@ -570,18 +585,32 @@ public class ReverbSpredValue extends GenericValue<Integer> {
 
     private final GenericValue<Boolean> link;
     private final GenericValue<Double> size;
+    private final GenericValue<Integer> time;
 
     public ReverbSpredValue(final String name, final GenericValue<Boolean> link, final GenericValue<Double> size) {
         super(name, "", 0, 255);
         this.link = link;
         this.size = size;
+        this.time = null;
+    }
+
+    public ReverbSpredValue(final String name, final GenericValue<Boolean> link, final ReverbTimeValue time) {
+        super(name, "", 0, 255);
+        this.link = link;
+        this.size = null;
+        this.time = time;
     }
 
     @Override
     public String getDisplayString() {
         String spred;
         if (link.getValue()) {
-            int sizeIndex = (int) ((size.getValue() - 4) * 2);
+            final int sizeIndex;
+            if (size != null) {
+                sizeIndex = (int) ((size.getValue() - 4) * 2);
+            } else { // time != null
+                sizeIndex = time.getValue();
+            }
             spred = Integer.toString(REVERB_SPRED[sizeIndex][getValue()]);
         } else {
             spred = Integer.toString(getValue());

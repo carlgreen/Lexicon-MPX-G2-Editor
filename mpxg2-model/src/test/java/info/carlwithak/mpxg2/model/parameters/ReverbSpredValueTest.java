@@ -34,15 +34,18 @@ import static org.junit.Assert.assertThat;
 public class ReverbSpredValueTest {
     private final GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
     private final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
-    private final ReverbSpredValue value = new ReverbSpredValue("Spred", link, size);
+    private final ReverbTimeValue time = new ReverbTimeValue("Time");
+    private ReverbSpredValue value;
     private final boolean linkValue;
-    private final double sizeValue;
+    private final Double sizeValue;
+    private final Integer timeValue;
     private final int index;
     private final String display;
 
-    public ReverbSpredValueTest(final boolean linkValue, final double sizeValue, final int index, final String display) {
+    public ReverbSpredValueTest(final boolean linkValue, final Double sizeValue, final Integer timeValue, final int index, final String display) {
         this.linkValue = linkValue;
         this.sizeValue = sizeValue;
+        this.timeValue = timeValue;
         this.index = index;
         this.display = display;
     }
@@ -51,54 +54,64 @@ public class ReverbSpredValueTest {
     public static Collection data() {
         return Arrays.asList(new Object[][] {
             /* no link */
-            { false, 5.0, 0, "0" },
-            { false, 17.0, 127, "127" },
-            { false, 17.0, 255, "255" },
+            { false, 5.0, null, 0, "0" },
+            { false, 17.0, null, 127, "127" },
+            { false, 17.0, null, 255, "255" },
             /* size 4.0 */
-            { true, 4.0, 0, "0" },
-            { true, 4.0, 9, "0" },
-            { true, 4.0, 10, "1" },
-            { true, 4.0, 249, "24" },
-            { true, 4.0, 255, "25" },
+            { true, 4.0, null, 0, "0" },
+            { true, 4.0, null, 9, "0" },
+            { true, 4.0, null, 10, "1" },
+            { true, 4.0, null, 249, "24" },
+            { true, 4.0, null, 255, "25" },
             /* size 22.5 */
-            { true, 22.5, 0, "0" },
-            { true, 22.5, 3, "0" },
-            { true, 22.5, 4, "1" },
-            { true, 22.5, 222, "73" },
-            { true, 22.5, 253, "83" },
-            { true, 22.5, 254, "84" },
-            { true, 22.5, 255, "84" },
+            { true, 22.5, null, 0, "0" },
+            { true, 22.5, null, 3, "0" },
+            { true, 22.5, null, 4, "1" },
+            { true, 22.5, null, 222, "73" },
+            { true, 22.5, null, 253, "83" },
+            { true, 22.5, null, 254, "84" },
+            { true, 22.5, null, 255, "84" },
             /* size 24.0 */
-            { true, 24.0, 0, "0" },
-            { true, 24.0, 2, "0" },
-            { true, 24.0, 3, "1" },
-            { true, 24.0, 120, "42" },
-            { true, 24.0, 254, "88" },
-            { true, 24.0, 255, "89" },
+            { true, 24.0, null, 0, "0" },
+            { true, 24.0, null, 2, "0" },
+            { true, 24.0, null, 3, "1" },
+            { true, 24.0, null, 120, "42" },
+            { true, 24.0, null, 254, "88" },
+            { true, 24.0, null, 255, "89" },
             /* size 28.0 */
-            { true, 28.0, 0, "0" },
-            { true, 28.0, 2, "0" },
-            { true, 28.0, 3, "1" },
-            { true, 28.0, 120, "48" },
-            { true, 28.0, 254, "101" },
-            { true, 28.0, 255, "102" },
+            { true, 28.0, null, 0, "0" },
+            { true, 28.0, null, 2, "0" },
+            { true, 28.0, null, 3, "1" },
+            { true, 28.0, null, 120, "48" },
+            { true, 28.0, null, 254, "101" },
+            { true, 28.0, null, 255, "102" },
             /* size 35.0 */
-            { true, 35.0, 0, "0" },
-            { true, 35.0, 2, "0" },
-            { true, 35.0, 3, "1" },
-            { true, 35.0, 39, "19" },
-            { true, 35.0, 41, "19" },
-            { true, 35.0, 254, "123" },
-            { true, 35.0, 255, "124" },
+            { true, 35.0, null, 0, "0" },
+            { true, 35.0, null, 2, "0" },
+            { true, 35.0, null, 3, "1" },
+            { true, 35.0, null, 39, "19" },
+            { true, 35.0, null, 41, "19" },
+            { true, 35.0, null, 254, "123" },
+            { true, 35.0, null, 255, "124" },
             /* size 53.0 */
-            { true, 53.0, 0, "0" },
-            { true, 53.0, 1, "0" },
-            { true, 53.0, 2, "1" },
-            { true, 53.0, 125, "89" },
-            { true, 53.0, 254, "180" },
-            { true, 53.0, 255, "181" },
+            { true, 53.0, null, 0, "0" },
+            { true, 53.0, null, 1, "0" },
+            { true, 53.0, null, 2, "1" },
+            { true, 53.0, null, 125, "89" },
+            { true, 53.0, null, 254, "180" },
+            { true, 53.0, null, 255, "181" },
             /* size 53.5 */
-            { true, 53.5, 164, "117" }
+            { true, 53.5, null, 164, "117" },
+            /* time 140ms (0) */
+            { true, null, 0, 0, "0" },
+            { true, null, 0, 9, "0" },
+            { true, null, 0, 10, "1" },
+            { true, null, 0, 255, "25" },
+            /* time 145ms (1) */
+            { true, null, 1, 0, "0" },
+            { true, null, 1, 9, "0" },
+            { true, null, 1, 10, "1" },
+            { true, null, 1, 255, "27" }
         });
     }
 
@@ -106,6 +119,12 @@ public class ReverbSpredValueTest {
     public void testGetDisplayString() {
         link.setValue(linkValue);
         size.setValue(sizeValue);
+        time.setValue(timeValue);
+        if (sizeValue != null) {
+            value = new ReverbSpredValue("Spred", link, size);
+        } else if (timeValue != null) {
+            value = new ReverbSpredValue("Spred", link, time);
+        }
         value.setValue(index);
         assertThat(value.getDisplayString(), is(display));
     }
