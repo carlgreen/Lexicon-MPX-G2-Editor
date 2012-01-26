@@ -1,0 +1,122 @@
+PCM 60 Room
+  Guitar Style: Acoustic, Bass, Blues, Clean, Country, Jazz, Rock
+  Effect Type: Delay, EQ, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=2=G=C=D=R=E=O
+  Reverb: Chamber (On)
+    Toe Switch: disabled
+    Mix: 35%
+    Level: +6dB
+    Size: 10.0m
+    Link: On
+    Diff: 100%
+    P Dly: 6ms
+    Bass: 1.0X
+    Decay: 0.50s
+    Xovr: 398Hz
+    Rt HC: 7.5kHz
+    Shape: 0
+    Spred: 13
+  EQ: 1-Band (S) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Gain: -72dB
+    Fc: 11000Hz
+    Q: 0.7
+    Mode: HShlf
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +5dB
+    Mid: 0dB
+    Hi: 3dB
+    InLvl: 0dB
+    LoCut: 5
+    Feel: 0
+    Drive: 30
+    Tone: 20
+    Bass: +20dB
+    Trebl: +8dB
+    Level: 45dB
+  Softrow:
+    1: Gain Drive
+    2: Gain Drive
+    3: Gain Level
+    4: Reverb Mix
+    5: Reverb Size
+    6: Reverb Diff
+    7: Reverb P Dly
+    8: Reverb Decay
+    9: Reverb Rt HC
+    10: Reverb Spred
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +3dB
+      Bypass Level: 0dB
+    Reverb:
+      Mix: 35%
+      Level: +6dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

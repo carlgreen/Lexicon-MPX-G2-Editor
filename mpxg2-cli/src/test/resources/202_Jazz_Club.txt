@@ -1,0 +1,126 @@
+Jazz Club
+  Guitar Style: Blues, Clean, Jazz
+  Effect Type: EQ, Gain, Pitch, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=2=G=E=C=D=R=O
+  Reverb: Chamber (On)
+    Toe Switch: disabled
+    Mix: 35%
+    Level: 0dB
+    Size: 28.0m
+    Link: On
+    Diff: 86%
+    P Dly: 27ms
+    Bass: 1.5X
+    Decay: 0.97s
+    Xovr: 818Hz
+    Rt HC: 13.2kHz
+    Shape: 131
+    Spred: 91
+  EQ: 2-Band (S) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Gain1: 0dB
+    Fc 1: 150Hz
+    Q 1: 0.7
+    Mode1: LShlf
+    Gain2: 0dB
+    Fc 2: 5000Hz
+    Q 2: 0.7
+    Mode2: HShlf
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: 0dB
+    Mid: +3dB
+    Hi: 0dB
+    InLvl: 0dB
+    LoCut: 2
+    Feel: 32
+    Drive: 0
+    Tone: 22
+    Bass: +12dB
+    Trebl: +12dB
+    Level: 59dB
+  Softrow:
+    1: Gain InLvl
+    2: Gain Drive
+    3: Gain Level
+    4: Reverb Mix
+    5: Reverb Size
+    6: Reverb Diff
+    7: Reverb P Dly
+    8: Reverb Decay
+    9: Reverb Rt HC
+    10: Reverb Spred
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +3dB
+      Bypass Level: 0dB
+    Reverb:
+      Mix: 35%
+      Level: 0dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

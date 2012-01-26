@@ -1,0 +1,126 @@
+Gated Verb
+  Guitar Style: Acoustic, Bass, Blues, Clean, Country, Jazz, Rock
+  Effect Type: Delay, EQ, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=2=G=E=C=D=R=O
+  Reverb: Gate (On)
+    Toe Switch: disabled
+    Mix: 50%
+    Level: +6dB
+    Time: 145ms
+    Link: On
+    Diff: 66%
+    P Dly: 0ms
+    LoSlp: 0
+    HiSlp: 0
+    Xovr: 1.5kHz
+    Rt HC: 14.1kHz
+    Shape: 18
+    Spred: 24
+  EQ: 2-Band (S) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Gain1: 0dB
+    Fc 1: 150Hz
+    Q 1: 0.7
+    Mode1: LShlf
+    Gain2: 0dB
+    Fc 2: 5000Hz
+    Q 2: 0.7
+    Mode2: HShlf
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +10dB
+    Mid: +5dB
+    Hi: 12dB
+    InLvl: -14dB
+    LoCut: 0
+    Feel: 32
+    Drive: 22
+    Tone: 26
+    Bass: +15dB
+    Trebl: +9dB
+    Level: 45dB
+  Softrow:
+    1: Gain Drive
+    2: Gain Level
+    3: Reverb Mix
+    4: Reverb Time
+    5: Reverb Diff
+    6: Reverb P Dly
+    7: Reverb LoSlp
+    8: Reverb HiSlp
+    9: Reverb Xovr
+    10: Reverb Rt HC
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +3dB
+      Bypass Level: 0dB
+    Reverb:
+      Mix: 50%
+      Level: +6dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

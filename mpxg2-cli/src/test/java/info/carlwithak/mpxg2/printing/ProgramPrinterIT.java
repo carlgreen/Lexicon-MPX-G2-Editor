@@ -1028,6 +1028,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("199_Rotary_Cab");
     }
 
+    @Test
+    public void testPrintTrackingRoom_StandAlone() throws Exception {
+        testParseAndPrint("200_TrackingRoom");
+    }
+
+    @Test
+    public void testPrintAcousticRoom_StandAlone() throws Exception {
+        testParseAndPrint("201_Acoustic_Room");
+    }
+
+    @Test
+    public void testPrintJazzClub_StandAlone() throws Exception {
+        testParseAndPrint("202_Jazz_Club");
+    }
+
+    @Test
+    public void testPrintSoloRoom_StandAlone() throws Exception {
+        testParseAndPrint("203_Solo_Room");
+    }
+
+    @Test
+    public void testPrintRhythmRoomL_StandAlone() throws Exception {
+        testParseAndPrint("204_RhythmRoom_L");
+    }
+
+    @Test
+    public void testPrintRhythmRoomR_StandAlone() throws Exception {
+        testParseAndPrint("205_RhythmRoom_R");
+    }
+
+    @Test
+    public void testPrintMicPlacement_StandAlone() throws Exception {
+        testParseAndPrint("206_MicPlacement");
+    }
+
+    @Test
+    public void testPrintTapePlate_StandAlone() throws Exception {
+        testParseAndPrint("207_Tape_Plate");
+    }
+
+    @Test
+    public void testPrintPCM60Room_StandAlone() throws Exception {
+        testParseAndPrint("208_PCM_60_Room");
+    }
+
+    @Test
+    public void testPrintGatedVerb_StandAlone() throws Exception {
+        testParseAndPrint("209_Gated_Verb");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

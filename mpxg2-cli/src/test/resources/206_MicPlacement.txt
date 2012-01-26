@@ -1,0 +1,137 @@
+MicPlacement
+  Guitar Style: Blues, Rock
+  Effect Type: Delay, Gain, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=2=G=C=E=D=R=1=O
+            |=======|
+  Chorus: Comb 1 (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    LoCut: 100Hz
+    HiCut: 6500Hz
+    Comb: 0
+    Notch: +30
+  Reverb: Ambience (On)
+    Toe Switch: disabled
+    Mix: 56%
+    Level: 0dB
+    Size: 26.0m
+    Link: On
+    Diff: 60%
+    P Dly: 10ms
+    DTime: 0.42s
+    D Lvl: Full
+    Rt HC: 12.8kHz
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +10dB
+    Mid: +7dB
+    Hi: 12dB
+    InLvl: 0dB
+    LoCut: 5
+    Feel: 46
+    Drive: 30
+    Tone: 31
+    Bass: +9dB
+    Trebl: +10dB
+    Level: 42dB
+  Softrow:
+    1: Knob Value
+    2: Gain InLvl
+    3: Gain Feel
+    4: Gain Drive
+    5: Gain Tone
+    6: Gain Bass
+    7: Gain Trebl
+    8: Gain Level
+    10: Reverb Mix
+  Patching:
+    Patch 1:
+      Source: Ctls Knob
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Chorus Comb
+        Min: 0
+        Mid: --
+        Max: 50
+    Patch 2:
+      Source: Ctls Knob
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Chorus Notch
+        Min: +60
+        Mid: --
+        Max: +10
+  Controllers:
+    Knob:
+      Value: 8
+      Low: 0
+      High: 50
+      Name: Placement
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: +8
+      Bypass Level: +8
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    Chorus:
+      Mix: 100%
+      Level: 0dB
+    Reverb:
+      Mix: 56%
+      Level: 0dB
+  Tempo:
+    Rate: 112 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Stack1Warm
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

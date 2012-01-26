@@ -1,0 +1,123 @@
+TrackingRoom
+  Guitar Style: Bass, Blues, Clean, Country, Jazz, Rock
+  Effect Type: EQ, Reverb, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=2=G=E=C=D=R=O
+  Reverb: Ambience (On)
+    Toe Switch: disabled
+    Mix: 70%
+    Level: +6dB
+    Size: 12.5m
+    Link: On
+    Diff: 84%
+    P Dly: 0ms
+    DTime: 0.56s
+    D Lvl: Off
+    Rt HC: 10.6kHz
+  EQ: 2-Band (S) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Gain1: 0dB
+    Fc 1: 150Hz
+    Q 1: 0.7
+    Mode1: LShlf
+    Gain2: 0dB
+    Fc 2: 5000Hz
+    Q 2: 0.7
+    Mode2: HShlf
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +8dB
+    Mid: -5dB
+    Hi: 8dB
+    InLvl: -18dB
+    LoCut: 0
+    Feel: 32
+    Drive: 25
+    Tone: 20
+    Bass: +10dB
+    Trebl: +15dB
+    Level: 56dB
+  Softrow:
+    1: Gain Drive
+    2: Gain Level
+    3: Reverb Mix
+    4: Reverb Size
+    5: Reverb P Dly
+    6: Reverb Rt HC
+    7: Equalizer Gain1
+    8: Equalizer Gain2
+    9: Equalizer Q 1
+    10: Equalizer Q 2
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +3dB
+      Bypass Level: 0dB
+    Reverb:
+      Mix: 70%
+      Level: +6dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo2Brite
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
