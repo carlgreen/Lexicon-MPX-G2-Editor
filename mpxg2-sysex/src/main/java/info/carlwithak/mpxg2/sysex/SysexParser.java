@@ -76,6 +76,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.Flanger24MonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FourBandMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.GateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OctaBuzzParser;
@@ -782,7 +783,9 @@ public class SysexParser {
             case 4:
                 reverb = AmbienceParser.parse(reverbParameters);
                 break;
-            // TODO 5 - Gate
+            case 5:
+                reverb = GateParser.parse(reverbParameters);
+                break;
             default:
                 throw new ParseException("Invalid Reverb algorithm number: " + algorithmNumber);
         }

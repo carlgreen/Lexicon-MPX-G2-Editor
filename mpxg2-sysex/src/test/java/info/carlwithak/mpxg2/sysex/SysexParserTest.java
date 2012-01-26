@@ -58,6 +58,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.FourBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.Gate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
@@ -671,7 +672,7 @@ public class SysexParserTest {
             Hall.class,
             Plate.class,
             Ambience.class,
-            null // Gate.class
+            Gate.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
