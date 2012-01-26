@@ -79,6 +79,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OctaBuzzParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OrangePhaseParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
@@ -799,7 +800,9 @@ public class SysexParser {
             case 4:
                 eq = FourBandMonoParser.parse(eqParameters);
                 break;
-            // TODO 5 - 1-Band (S)
+            case 5:
+                eq = OneBandStereoParser.parse(eqParameters);
+                break;
             case 6:
                 eq = TwoBandStereoParser.parse(eqParameters);
                 break;
