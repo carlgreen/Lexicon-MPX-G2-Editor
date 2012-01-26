@@ -53,6 +53,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.OneBandStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
@@ -937,6 +938,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -72dB\n    Fc 1: 820Hz\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: +6dB\n    Fc 2: 1200Hz\n    Q 2: 2.5\n    Mode2: LShlf\n    Gain3: +10dB\n    Fc 3: 1700Hz\n    Q 3: 1.5\n    Mode3: Band\n    Gain4: -72dB\n    Fc 4: 3800Hz\n    Q 4: 0.7\n    Mode4: HShlf\n";
         String actual = AlgorithmPrinter.print(fourBandMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintOneBandStereo() throws PrintException {
+        OneBandStereo oneBandStereo = new OneBandStereo();
+        oneBandStereo.mix.setValue(100);
+        oneBandStereo.level.setValue(0);
+        oneBandStereo.gain.setValue(-72);
+        oneBandStereo.fc.setValue(11000);
+        oneBandStereo.q.setValue(0.7);
+        oneBandStereo.mode.setValue(2);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: -72dB\n    Fc: 11000Hz\n    Q: 0.7\n    Mode: HShlf\n";
+        String actual = AlgorithmPrinter.print(oneBandStereo);
 
         assertEquals(expected, actual);
     }
