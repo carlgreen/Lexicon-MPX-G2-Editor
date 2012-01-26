@@ -50,6 +50,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.FourBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.Gate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
@@ -891,6 +892,28 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 18%\n    Level: 0dB\n    Size: 24.5m\n    Link: On\n    Diff: 60%\n    P Dly: 7ms\n    DTime: 1.41s\n    D Lvl: Off\n    Rt HC: 12.8kHz\n";
         String actual = AlgorithmPrinter.print(ambience);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintGate() throws PrintException {
+        Gate gate = new Gate();
+        gate.mix.setValue(50);
+        gate.level.setValue(6);
+        gate.time.setValue(1);
+        gate.link.setValue(true);
+        gate.diff.setValue(66);
+        gate.preDelay.setValue(0);
+        gate.loSlope.setValue(0);
+        gate.hiSlope.setValue(0);
+        gate.xovr.setValue(19);
+        gate.rtHC.setValue(41);
+        gate.shape.setValue(18);
+        gate.spred.setValue(231);
+
+        String expected = "    Mix: 50%\n    Level: +6dB\n    Time: 145ms\n    Link: On\n    Diff: 66%\n    P Dly: 0ms\n    LoSlp: 0\n    HiSlp: 0\n    Xovr: 1.5kHz\n    Rt HC: 14.1kHz\n    Shape: 18\n    Spred: 24\n";
+        String actual = AlgorithmPrinter.print(gate);
 
         assertEquals(expected, actual);
     }
