@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.Comb1;
-import java.util.Arrays;
 
 /**
  * Class to parse parameter data for Comb 1 effect.
