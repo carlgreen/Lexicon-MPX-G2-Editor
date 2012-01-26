@@ -105,4 +105,9 @@ public class GenericValue<T> implements Parameter, Cloneable {
         return clone;
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " " + getValue();
+    }
+
 }
