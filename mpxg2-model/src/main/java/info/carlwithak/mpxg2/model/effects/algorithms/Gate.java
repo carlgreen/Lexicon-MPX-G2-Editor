@@ -18,9 +18,13 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.Reverb;
+import info.carlwithak.mpxg2.model.parameters.CrossoverValue;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.HighCutValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.ReverbSpredValue;
+import info.carlwithak.mpxg2.model.parameters.ReverbTimeValue;
 
 /**
  * Class for Gate parameters.
@@ -30,16 +34,16 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Gate extends Reverb {
     private static final String NAME = "Gate";
 
-    public final GenericValue<Integer> time = new GenericValue<Integer>("Time", "ms", 140, 700);
+    public final ReverbTimeValue time = new ReverbTimeValue("Time");
     public final OnOffValue link = new OnOffValue("Link");
     public final GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
     public final GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
     public final GenericValue<Integer> loSlope = new GenericValue<Integer>("LoSlp", "", -16, 16);
     public final GenericValue<Integer> hiSlope = new GenericValue<Integer>("HiSlp", "", -16, 16);
-    public final GenericValue<Integer> xovr = new GenericValue<Integer>("Xovr", "Hz", 0, 255); // 30 - 24700
-    public final GenericValue<Integer> rtHC = new GenericValue<Integer>("Rt HC", "Hz", 0, 255); // 525 - 24700
+    public final CrossoverValue xovr = new CrossoverValue("Xovr");
+    public final HighCutValue rtHC = new HighCutValue("Rt HC");
     public final GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
-    public final GenericValue<Integer> spred = new GenericValue<Integer>("Spred", "", 0, 255);
+    public final ReverbSpredValue spred = new ReverbSpredValue("Spred", link, time);
 
     @Override
     public String getName() {
