@@ -47,6 +47,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqExtPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeMono;
@@ -1258,6 +1259,18 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n";
         String actual = AlgorithmPrinter.print(pedalVol);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintEqExtPedalVol() throws PrintException {
+        EqExtPedalVol extPedalVol = new EqExtPedalVol();
+        extPedalVol.mix.setValue(50);
+        extPedalVol.level.setValue(6);
+
+        String expected = "    Mix: 50%\n    Level: +6dB\n";
+        String actual = AlgorithmPrinter.print(extPedalVol);
 
         assertEquals(expected, actual);
     }
