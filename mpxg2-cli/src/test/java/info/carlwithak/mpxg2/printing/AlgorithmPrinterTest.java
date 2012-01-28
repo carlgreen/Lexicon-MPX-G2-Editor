@@ -54,6 +54,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.FourBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.FXOneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Gate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
@@ -378,6 +379,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Fc: 88Hz\n    FRes: 34\n    Mod: 2120Hz\n    Scale: +50%\n    Pan: C\n";
         String actual = AlgorithmPrinter.print(sweepFilter);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintFXOneBandMono() throws PrintException {
+        FXOneBandMono oneBandMono = new FXOneBandMono();
+        oneBandMono.mix.setValue(100);
+        oneBandMono.level.setValue(0);
+        oneBandMono.gain.setValue(24);
+        oneBandMono.fc.setValue(20000);
+        oneBandMono.q.setValue(10.0);
+        oneBandMono.mode.setValue(2);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain: +24dB\n    Fc: 20000Hz\n    Q: 10.0\n    Mode: HShlf\n";
+        String actual = AlgorithmPrinter.print(oneBandMono);
 
         assertEquals(expected, actual);
     }
