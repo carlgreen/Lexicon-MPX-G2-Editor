@@ -63,6 +63,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DiatonicHmyParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
@@ -522,7 +523,9 @@ public class SysexParser {
             case 0:
                 effect1 = null;
                 break;
-            // TODO 1 - Detune (M)
+            case 1:
+                effect1 = DetuneMonoParser.parse(effect1Parameters);
+                break;
             // TODO 2 - Detune (S)
             case 3:
                 effect1 = DetuneDualParser.parse(effect1Parameters);
