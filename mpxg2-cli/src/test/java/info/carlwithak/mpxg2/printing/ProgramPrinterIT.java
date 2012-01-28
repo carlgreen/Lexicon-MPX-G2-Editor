@@ -1253,6 +1253,26 @@ public class ProgramPrinterIT {
         testParseAndPrint("244_BootsyBass");
     }
 
+    @Test
+    public void testPrintJam1SH_StandAlone() throws Exception {
+        testParseAndPrint("245_Jam_1_SH+");
+    }
+
+    @Test
+    public void testPrintJam1Cordovox_StandAlone() throws Exception {
+        testParseAndPrint("246_Jam1Cordovox");
+    }
+
+    @Test
+    public void testPrintJam2Pitch_StandAlone() throws Exception {
+        testParseAndPrint("247_Jam_2_Pitch+");
+    }
+
+    @Test
+    public void testPrintJam2AutoWah_StandAlone() throws Exception {
+        testParseAndPrint("248_Jam2AutoWah");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
