@@ -33,6 +33,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusExtPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
@@ -642,7 +643,7 @@ public class SysexParserTest {
             ChorusVolumeStereo.class,
             ChorusVolumeDual.class,
             ChorusPedalVol.class,
-            null //ExtPedalVol.class
+            ChorusExtPedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {

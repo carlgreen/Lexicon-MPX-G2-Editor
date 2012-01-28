@@ -50,6 +50,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.BlueCompParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Centrifuge1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusDetuneMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusExtPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeDualParser;
@@ -765,7 +766,9 @@ public class SysexParser {
             case 16:
                 chorus = ChorusPedalVolParser.parse(chorusParameters);
                 break;
-            // TODO 17 - ExtPedalVol
+            case 17:
+                chorus = ChorusExtPedalVolParser.parse(chorusParameters);
+                break;
             default:
                 throw new ParseException("Invalid Chorus algorithm number: " + algorithmNumber);
         }
