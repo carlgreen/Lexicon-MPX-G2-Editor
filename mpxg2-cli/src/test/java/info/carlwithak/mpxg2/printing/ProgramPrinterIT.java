@@ -1178,6 +1178,21 @@ public class ProgramPrinterIT {
         testParseAndPrint("229_TechnoChords");
     }
 
+    @Test
+    public void testPrintModernAB_StandAlone() throws Exception {
+        testParseAndPrint("230_Modern_AB");
+    }
+
+    @Test
+    public void testPrintBritishAB_StandAlone() throws Exception {
+        testParseAndPrint("231_British_AB");
+    }
+
+    @Test
+    public void testPrintAmericanAB_StandAlone() throws Exception {
+        testParseAndPrint("232_American_AB");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
