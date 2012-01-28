@@ -76,6 +76,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ExtPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FXOneBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Flanger24MonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerMonoParser;
@@ -619,7 +620,9 @@ public class SysexParser {
             case 30:
                 effect1 = PedalVolParser.parse(effect1Parameters);
                 break;
-            // TODO 31 - ExtPedalVol
+            case 31:
+                effect1 = ExtPedalVolParser.parse(effect1Parameters);
+                break;
             // TODO 32 - Test Tone
             // TODO 33 - Click
             default:
@@ -703,7 +706,9 @@ public class SysexParser {
             case 23:
                 effect2 = PedalVolParser.parse(effect2Parameters);
                 break;
-            // TODO 24 - ExtPedalVol
+            case 24:
+                effect2 = ExtPedalVolParser.parse(effect2Parameters);
+                break;
             // TODO 25 - Test Tone
             // TODO 26 - Click
             default:

@@ -58,6 +58,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.ExtPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
@@ -573,7 +574,8 @@ public class SysexParserTest {
             VolumeMono.class,
             VolumeStereo.class,
             VolumeDual.class,
-            PedalVol.class
+            PedalVol.class,
+            ExtPedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
@@ -609,7 +611,8 @@ public class SysexParserTest {
             VolumeMono.class,
             VolumeStereo.class,
             VolumeDual.class,
-            PedalVol.class
+            PedalVol.class,
+            ExtPedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
