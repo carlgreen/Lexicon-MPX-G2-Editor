@@ -30,6 +30,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Click;
 import info.carlwithak.mpxg2.model.effects.algorithms.Comb1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
@@ -543,6 +544,18 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: -12dB\n    Note: D4\n    Bal: -50\n";
         String actual = AlgorithmPrinter.print(testTone);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintClick() throws PrintException {
+        Click click = new Click();
+        click.mix.setValue(8);
+        click.level.setValue(0);
+
+        String expected = "    Mix: 8%\n    Level: 0dB\n";
+        String actual = AlgorithmPrinter.print(click);
 
         assertEquals(expected, actual);
     }
