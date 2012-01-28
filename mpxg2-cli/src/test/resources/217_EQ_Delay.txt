@@ -1,0 +1,120 @@
+EQ   Delay
+  Guitar Style: Rock
+  Effect Type: Delay, EQ, Gain, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=G=D=2=E=C=R=O
+  Delay: Delay (M) (On)
+    Toe Switch: disabled
+    Mix: 64%
+    Level: 0dB
+    Time: 250ms
+    Fbk: +20%
+    Fbk insert: EQ
+    Clear: Off
+  EQ: 2-Band (M) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Gain1: +7dB
+    Fc 1: 750Hz
+    Q 1: 0.7
+    Mode1: Band
+    Gain2: -21dB
+    Fc 2: 4000Hz
+    Q 2: 0.7
+    Mode2: HShlf
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +1dB
+    Mid: +3dB
+    Hi: 19dB
+    InLvl: -29dB
+    LoCut: 0
+    Feel: 32
+    Drive: 22
+    Tone: 19
+    Bass: +15dB
+    Trebl: +6dB
+    Level: 51dB
+  Softrow:
+    1: Delay Mix
+    2: Delay Time
+    3: Delay Fbk
+    4: Delay Clear
+    5: Equalizer Gain1
+    6: Equalizer Gain2
+    7: Equalizer Fc 2
+    8: Equalizer Q 1
+    9: Equalizer Q 2
+    10: Equalizer Q 1
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    Delay:
+      Mix: 64%
+      Level: 0dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -80dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

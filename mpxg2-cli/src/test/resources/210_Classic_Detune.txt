@@ -1,0 +1,116 @@
+ClassicDTune
+  Guitar Style: Blues, Clean, Jazz, Rock
+  Effect Type: Gain, Pitch
+  Application Type: Stand alone
+  Effect Routing:
+    I=2=G=1=E=C=D=R=O
+  Effect 1: Shift (D) (On)
+    Toe Switch: disabled
+    Mix: 50%
+    Level: +6dB
+    Tune1: +8
+    Optimize: 50
+    Tune2: -8
+    Glide: On
+  Delay: Echo (D) (Off)
+    Toe Switch: disabled
+    Mix: 10%
+    Level: 0dB
+    Time1: 400ms
+    Time2: 300ms
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Fbk 1: 0%
+    Fbk insert: Delay
+    Fbk 2: 0%
+    Damp1: 20%
+    Damp2: 20%
+    Clear: Off
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +10dB
+    Mid: -14dB
+    Hi: 10dB
+    InLvl: -15dB
+    LoCut: 0
+    Feel: 32
+    Drive: 15
+    Tone: 20
+    Bass: +12dB
+    Trebl: +20dB
+    Level: 62dB
+  Softrow:
+    3: Effect 1 Mix
+    4: Effect 1 Tune1
+    5: Effect 1 Tune2
+    6: Effect 1 Glide
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 50%
+      Level: +6dB
+    Delay:
+      Mix: 10%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Brite
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

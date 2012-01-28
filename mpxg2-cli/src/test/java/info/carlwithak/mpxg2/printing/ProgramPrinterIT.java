@@ -1078,6 +1078,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("209_Gated_Verb");
     }
 
+    @Test
+    public void testPrintClassicDetune_StandAlone() throws Exception {
+        testParseAndPrint("210_Classic_Detune");
+    }
+
+    @Test
+    public void testPrintCompChrs_StandAlone() throws Exception {
+        testParseAndPrint("211_Comp+Chrs");
+    }
+
+    @Test
+    public void testPrintStereoPhaser_StandAlone() throws Exception {
+        testParseAndPrint("212_Stereo_Phaser");
+    }
+
+    @Test
+    public void testPrintEnvAutoPan_StandAlone() throws Exception {
+        testParseAndPrint("213_Env_AutoPan");
+    }
+
+    @Test
+    public void testPrintEnvAutoWahs_StandAlone() throws Exception {
+        testParseAndPrint("214_Env_AutoWahs");
+    }
+
+    @Test
+    public void testPrintEnvFilterLP_StandAlone() throws Exception {
+        testParseAndPrint("215_EnvFilter_LP");
+    }
+
+    @Test
+    public void testPrintDualDelay_StandAlone() throws Exception {
+        testParseAndPrint("216_Dual_Delay");
+    }
+
+    @Test
+    public void testPrintEQDelay_StandAlone() throws Exception {
+        testParseAndPrint("217_EQ_Delay");
+    }
+
+    @Test
+    public void testPrintAnalogEcho_StandAlone() throws Exception {
+        testParseAndPrint("218_Analog_Echo");
+    }
+
+    @Test
+    public void testPrintInfiniteEcho_StandAlone() throws Exception {
+        testParseAndPrint("219_InfiniteEcho");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

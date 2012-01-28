@@ -1,0 +1,113 @@
+Dual Delay
+  Guitar Style: Blues, Clean, Rock
+  Effect Type: Delay, Gain, Speaker Sim
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=2=G=D=E=C=R=O
+  Delay: Delay (D) (On)
+    Toe Switch: disabled
+    Mix: 50%
+    Level: 0dB
+    Time1: 2500ms
+    Time2: 3300ms
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Pan 1: 50L
+    Pan 2: 50R
+    Fbk 1: +15%
+    Fbk insert: Delay
+    Fbk 2: +15%
+    XFbk1: 0%
+    XFbk2: 0%
+    Clear: Off
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +1dB
+    Mid: +3dB
+    Hi: 19dB
+    InLvl: -19dB
+    LoCut: 0
+    Feel: 32
+    Drive: 22
+    Tone: 19
+    Bass: +15dB
+    Trebl: +6dB
+    Level: 55dB
+  Softrow:
+    1: Delay Mix
+    2: Delay Time1
+    3: Delay Time2
+    4: Delay Lvl 1
+    5: Delay Lvl 2
+    6: Delay Pan 1
+    7: Delay Pan 2
+    8: Delay Fbk 1
+    9: Delay Fbk 2
+    10: Delay Clear
+  Patching:
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    Delay:
+      Mix: 50%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Stack1Warm
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -80dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
