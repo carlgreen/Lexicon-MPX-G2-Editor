@@ -1228,6 +1228,31 @@ public class ProgramPrinterIT {
         testParseAndPrint("239_EMajMin3");
     }
 
+    @Test
+    public void testPrintBassComp1_StandAlone() throws Exception {
+        testParseAndPrint("240_BassComp1");
+    }
+
+    @Test
+    public void testPrintBassCompChrs_StandAlone() throws Exception {
+        testParseAndPrint("241_BassCompChrs");
+    }
+
+    @Test
+    public void testPrintBassFuzz_StandAlone() throws Exception {
+        testParseAndPrint("242_Bass_Fuzz");
+    }
+
+    @Test
+    public void testPrintBassPitchPdl_StandAlone() throws Exception {
+        testParseAndPrint("243_BassPitchPdl");
+    }
+
+    @Test
+    public void testPrintBootsyBass_StandAlone() throws Exception {
+        testParseAndPrint("244_BootsyBass");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

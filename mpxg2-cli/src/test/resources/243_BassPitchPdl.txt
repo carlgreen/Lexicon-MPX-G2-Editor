@@ -1,0 +1,145 @@
+BassPitchPdl
+  Guitar Style: Acoustic, Bass, Blues, Clean, Country, Jazz, Rock
+  Effect Type: Delay, Gain, Pitch
+  Application Type: Stand alone
+  Effect Routing:
+    I=1=2=G=C=E=D=R=O
+  Effect 1: Shift (D) (On)
+    Toe Switch: on=bypass
+    Mix: 100%
+    Level: 0dB
+    Tune1: +1200
+    Optimize: 10
+    Tune2: -1200
+    Glide: On
+  Effect 2: Volume (D) (On)
+    Toe Switch: on=bypass
+    Mix: 100%
+    Level: +6dB
+    Vol-L: 100%
+    Vol-R: 0%
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +5dB
+    Mid: 0dB
+    Hi: 10dB
+    InLvl: 0dB
+    LoCut: 5
+    Feel: 0
+    Drive: 37
+    Tone: 20
+    Bass: +20dB
+    Trebl: +10dB
+    Level: 40dB
+  Softrow:
+    1: Gain Drive
+    2: Gain Tone
+    3: Gain Bass
+    4: Gain Trebl
+    5: Gain Level
+  Patching:
+    Patch 1:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Vol-L
+        Min: 100%
+        Mid: --
+        Max: 0%
+    Patch 2:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Vol-R
+        Min: 0%
+        Mid: --
+        Max: 100%
+    Patch 3:
+      Source: Midi CC48
+        Min: 0
+        Mid: --
+        Max: 120
+      Destination: Effect 1 Tune1
+        Min: 0
+        Mid: --
+        Max: +1200
+    Patch 4:
+      Source: Midi CC48
+        Min: 0
+        Mid: --
+        Max: 120
+      Destination: Effect 1 Tune2
+        Min: 0
+        Mid: --
+        Max: -1200
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 50
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: In
+      Src2: In
+      ATrim: 70
+      Resp: 80
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: 0dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 100%
+      Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: +6dB
+  Tempo:
+    Rate: 223 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Stack1Warm
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
