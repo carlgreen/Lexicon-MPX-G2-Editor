@@ -67,6 +67,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DiatonicHmyParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DigiDrive1Parser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DigiDrive2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
@@ -581,7 +582,9 @@ public class SysexParser {
             case 18:
                 effect1 = DigiDrive1Parser.parse(effect1Parameters);
                 break;
-            // TODO 19 - DigiDrive2
+            case 19:
+                effect1 = DigiDrive2Parser.parse(effect1Parameters);
+                break;
             case 20:
                 effect1 = OctaBuzzParser.parse(effect1Parameters);
                 break;
@@ -661,7 +664,9 @@ public class SysexParser {
             case 11:
                 effect2 = DigiDrive1Parser.parse(effect2Parameters);
                 break;
-            // TODO 12 - DigiDrive2
+            case 12:
+                effect2 = DigiDrive2Parser.parse(effect2Parameters);
+                break;
             case 13:
                 effect2 = OctaBuzzParser.parse(effect2Parameters);
                 break;

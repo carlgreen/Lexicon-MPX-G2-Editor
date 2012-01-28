@@ -17,7 +17,6 @@
 
 package info.carlwithak.mpxg2.sysex;
 
-import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive1;
 import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.EffectsStatus;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
@@ -49,6 +48,8 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
+import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive1;
+import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
@@ -560,7 +561,7 @@ public class SysexParserTest {
             RedComp.class,
             BlueComp.class,
             DigiDrive1.class,
-            null, //DigiDrive2.class,
+            DigiDrive2.class,
             OctaBuzz.class,
             SweepFilter.class,
             null,
@@ -596,7 +597,7 @@ public class SysexParserTest {
             RedComp.class,
             BlueComp.class,
             DigiDrive1.class,
-            null, //DigiDrive2.class,
+            DigiDrive2.class,
             OctaBuzz.class,
             SweepFilter.class,
             null,
