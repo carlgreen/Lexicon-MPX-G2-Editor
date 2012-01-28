@@ -62,6 +62,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.FourBandMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.FXOneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Gate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
@@ -564,7 +565,7 @@ public class SysexParserTest {
             DigiDrive2.class,
             OctaBuzz.class,
             SweepFilter.class,
-            null,
+            FXOneBandMono.class,
             Wah1.class,
             Wah2.class,
             PedalWah1.class,
@@ -600,7 +601,7 @@ public class SysexParserTest {
             DigiDrive2.class,
             OctaBuzz.class,
             SweepFilter.class,
-            null,
+            FXOneBandMono.class,
             Wah1.class,
             Wah2.class,
             PedalWah1.class,
