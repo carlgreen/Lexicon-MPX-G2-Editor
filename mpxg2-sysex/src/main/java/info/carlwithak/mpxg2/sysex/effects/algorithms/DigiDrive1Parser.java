@@ -38,13 +38,13 @@ public class DigiDrive1Parser {
         int drive = effectParameters[4] + effectParameters[5] * 16;
         digiDrive1.drive.setValue(drive);
 
-        int low = effectParameters[6] + effectParameters[7] * 16;
+        int low = (byte) (effectParameters[6] + effectParameters[7] * 16);
         digiDrive1.low.setValue(low);
 
-        int mid = effectParameters[8] + effectParameters[9] * 16;
+        int mid = (byte) (effectParameters[8] + effectParameters[9] * 16);
         digiDrive1.mid.setValue(mid);
 
-        int high = effectParameters[10] + effectParameters[11] * 16;
+        int high = (byte) (effectParameters[10] + effectParameters[11] * 16);
         digiDrive1.high.setValue(high);
 
         return digiDrive1;

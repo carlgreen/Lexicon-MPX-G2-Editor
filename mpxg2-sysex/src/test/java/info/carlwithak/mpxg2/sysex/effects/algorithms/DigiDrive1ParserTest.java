@@ -32,12 +32,12 @@ public class DigiDrive1ParserTest {
 
     @Test
     public void testParse() {
-        byte[] effectParameters = {4, 6, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 15, 15, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        byte[] effectParameters = {4, 6, 0, 0, 4, 6, 9, 11, 0, 0, 0, 0, 15, 15, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         DigiDrive1 digiDrive1 = DigiDrive1Parser.parse(effectParameters);
         assertThat(digiDrive1.mix, is(value(100)));
         assertThat(digiDrive1.level, is(value(0)));
         assertThat(digiDrive1.drive, is(value(100)));
-        assertThat(digiDrive1.low, is(value(0)));
+        assertThat(digiDrive1.low, is(value(-71)));
         assertThat(digiDrive1.mid, is(value(0)));
         assertThat(digiDrive1.high, is(value(0)));
     }
