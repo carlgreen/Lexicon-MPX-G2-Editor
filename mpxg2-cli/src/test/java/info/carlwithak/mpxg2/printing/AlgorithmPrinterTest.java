@@ -72,6 +72,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
@@ -117,6 +118,21 @@ public class AlgorithmPrinterTest {
         // TODO level should be 'Off'
         String expected = "    Mix: 100%\n    Level: -90dB\n    Tune: -1200\n    Optimize: 50\n    Glide: On\n";
         String actual = AlgorithmPrinter.print(shiftMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintShiftStereo() throws PrintException {
+        ShiftStereo shiftStereo = new ShiftStereo();
+        shiftStereo.mix.setValue(100);
+        shiftStereo.level.setValue(0);
+        shiftStereo.tune.setValue(-200);
+        shiftStereo.optimize.setValue(50);
+        shiftStereo.glide.setValue(true);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Tune: -200\n    Optimize: 50\n    Glide: On\n";
+        String actual = AlgorithmPrinter.print(shiftStereo);
 
         assertEquals(expected, actual);
     }
