@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.model.parameters.NoteValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 
 /**
@@ -29,7 +30,7 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class TestTone extends Effect {
     private static final String NAME = "Test Tone";
 
-    public final GenericValue<Integer> note = new GenericValue<Integer>("Note", "", 0, 127); // C0 - G10
+    public final NoteValue note = new NoteValue("Note");
     public final GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
 
     @Override
