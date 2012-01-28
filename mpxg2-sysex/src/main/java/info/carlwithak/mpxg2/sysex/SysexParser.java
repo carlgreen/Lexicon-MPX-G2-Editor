@@ -550,7 +550,9 @@ public class SysexParser {
             case 10:
                 effect1 = TremoloMonoParser.parse(effect1Parameters);
                 break;
-            // TODO 11 - Tremolo (S)
+            case 11:
+                effect1 = TremoloStereoParser.parse(effect1Parameters);
+                break;
             case 12:
                 effect1 = UniVybeParser.parse(effect1Parameters);
                 break;
@@ -596,7 +598,9 @@ public class SysexParser {
             case 28:
                 effect1 = VolumeStereoParser.parse(effect1Parameters);
                 break;
-            // TODO 29 - Volume (D)
+            case 29:
+                effect1 = VolumeDualParser.parse(effect1Parameters);
+                break;
             case 30:
                 effect1 = PedalVolParser.parse(effect1Parameters);
                 break;

@@ -549,7 +549,7 @@ public class SysexParserTest {
             Panner.class,
             AutoPan.class,
             TremoloMono.class,
-            null, //TremoloStereo.class,
+            TremoloStereo.class,
             UniVybe.class,
             CustomVybe.class,
             Phaser.class,
@@ -567,7 +567,7 @@ public class SysexParserTest {
             PedalWah2.class,
             VolumeMono.class,
             VolumeStereo.class,
-            null, //VolumeDual.class,
+            VolumeDual.class,
             PedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
