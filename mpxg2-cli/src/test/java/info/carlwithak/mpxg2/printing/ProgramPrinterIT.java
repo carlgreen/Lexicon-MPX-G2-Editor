@@ -1128,6 +1128,56 @@ public class ProgramPrinterIT {
         testParseAndPrint("219_InfiniteEcho");
     }
 
+    @Test
+    public void testPrintSurfsUp_StandAlone() throws Exception {
+        testParseAndPrint("220_Surfs_Up");
+    }
+
+    @Test
+    public void testPrintSlideComp_StandAlone() throws Exception {
+        testParseAndPrint("221_Slide_Comp");
+    }
+
+    @Test
+    public void testPrintFunkFX_StandAlone() throws Exception {
+        testParseAndPrint("222_Funk+FX");
+    }
+
+    @Test
+    public void testPrintBalladLead_StandAlone() throws Exception {
+        testParseAndPrint("223_Ballad_Lead");
+    }
+
+    @Test
+    public void testPrintDeDaDaDa_StandAlone() throws Exception {
+        testParseAndPrint("224_De_DaDaDa");
+    }
+
+    @Test
+    public void testPrintRockabilly_StandAlone() throws Exception {
+        testParseAndPrint("225_Rockabilly");
+    }
+
+    @Test
+    public void testPrintCountryRock_StandAlone() throws Exception {
+        testParseAndPrint("226_Country_Rock");
+    }
+
+    @Test
+    public void testPrintUltraClean_StandAlone() throws Exception {
+        testParseAndPrint("227_Ultra_Clean");
+    }
+
+    @Test
+    public void testPrintAcousticFX1_StandAlone() throws Exception {
+        testParseAndPrint("228_Acoustic_FX1");
+    }
+
+    @Test
+    public void testPrintTechnoChords_StandAlone() throws Exception {
+        testParseAndPrint("229_TechnoChords");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
