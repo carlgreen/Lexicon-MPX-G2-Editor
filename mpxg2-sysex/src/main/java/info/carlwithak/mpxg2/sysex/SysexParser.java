@@ -64,6 +64,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DelayStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DetuneStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DiatonicHmyParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
@@ -527,7 +528,9 @@ public class SysexParser {
             case 1:
                 effect1 = DetuneMonoParser.parse(effect1Parameters);
                 break;
-            // TODO 2 - Detune (S)
+            case 2:
+                effect1 = DetuneStereoParser.parse(effect1Parameters);
+                break;
             case 3:
                 effect1 = DetuneDualParser.parse(effect1Parameters);
                 break;
@@ -608,6 +611,7 @@ public class SysexParser {
             // TODO 32 - Test Tone
             // TODO 33 - Click
             default:
+                System.out.println(java.util.Arrays.toString(effect1Parameters));
                 throw new ParseException("Invalid Effect 1 algorithm number: " + algorithmNumber);
         }
         return effect1;

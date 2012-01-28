@@ -46,6 +46,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
@@ -540,7 +541,7 @@ public class SysexParserTest {
         // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             DetuneMono.class,
-            null,
+            DetuneStereo.class,
             DetuneDual.class,
             ShiftMono.class,
             null,
