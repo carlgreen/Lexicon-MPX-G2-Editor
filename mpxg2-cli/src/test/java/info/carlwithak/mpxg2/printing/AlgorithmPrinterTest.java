@@ -50,6 +50,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.ExtPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
@@ -513,6 +514,18 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n";
         String actual = AlgorithmPrinter.print(pedalVol);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintExtPedalVol() throws PrintException {
+        ExtPedalVol extPedalVol = new ExtPedalVol();
+        extPedalVol.mix.setValue(50);
+        extPedalVol.level.setValue(6);
+
+        String expected = "    Mix: 50%\n    Level: +6dB\n";
+        String actual = AlgorithmPrinter.print(extPedalVol);
 
         assertEquals(expected, actual);
     }
