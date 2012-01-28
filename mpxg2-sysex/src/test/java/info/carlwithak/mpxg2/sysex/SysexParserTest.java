@@ -87,6 +87,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
+import info.carlwithak.mpxg2.model.effects.algorithms.TestTone;
 import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
@@ -576,7 +577,8 @@ public class SysexParserTest {
             VolumeStereo.class,
             VolumeDual.class,
             PedalVol.class,
-            ExtPedalVol.class
+            ExtPedalVol.class,
+            TestTone.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
@@ -613,7 +615,8 @@ public class SysexParserTest {
             VolumeStereo.class,
             VolumeDual.class,
             PedalVol.class,
-            ExtPedalVol.class
+            ExtPedalVol.class,
+            TestTone.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
