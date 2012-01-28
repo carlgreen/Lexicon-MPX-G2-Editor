@@ -73,6 +73,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.EqExtPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeMonoParser;
@@ -881,7 +882,9 @@ public class SysexParser {
             case 14:
                 eq = EqPedalVolParser.parse(eqParameters);
                 break;
-            // TODO 15 - ExtPedalVol
+            case 15:
+                eq = EqExtPedalVolParser.parse(eqParameters);
+                break;
             default:
                 throw new ParseException("Invalid EQ algorithm number: " + algorithmNumber);
         }
