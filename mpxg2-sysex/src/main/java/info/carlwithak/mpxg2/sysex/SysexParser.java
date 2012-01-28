@@ -56,6 +56,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ClickParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Comb1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CrossoverParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CrunchParser;
@@ -629,7 +630,9 @@ public class SysexParser {
             case 32:
                 effect1 = TestToneParser.parse(effect1Parameters);
                 break;
-            // TODO 33 - Click
+            case 33:
+                effect1 = ClickParser.parse(effect1Parameters);
+                break;
             default:
                 throw new ParseException("Invalid Effect 1 algorithm number: " + algorithmNumber);
         }
@@ -717,7 +720,9 @@ public class SysexParser {
             case 25:
                 effect2 = TestToneParser.parse(effect2Parameters);
                 break;
-            // TODO 26 - Click
+            case 26:
+                effect2 = ClickParser.parse(effect2Parameters);
+                break;
             default:
                 throw new ParseException("Invalid Effect 2 algorithm number: " + algorithmNumber);
         }

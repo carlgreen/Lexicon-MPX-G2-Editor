@@ -38,6 +38,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.Click;
 import info.carlwithak.mpxg2.model.effects.algorithms.Comb1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
@@ -578,7 +579,8 @@ public class SysexParserTest {
             VolumeDual.class,
             PedalVol.class,
             ExtPedalVol.class,
-            TestTone.class
+            TestTone.class,
+            Click.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
@@ -616,7 +618,8 @@ public class SysexParserTest {
             VolumeDual.class,
             PedalVol.class,
             ExtPedalVol.class,
-            TestTone.class
+            TestTone.class,
+            Click.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
