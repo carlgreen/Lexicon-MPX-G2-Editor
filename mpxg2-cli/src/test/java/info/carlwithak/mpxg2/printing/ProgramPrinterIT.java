@@ -1273,6 +1273,16 @@ public class ProgramPrinterIT {
         testParseAndPrint("248_Jam2AutoWah");
     }
 
+    @Test
+    public void testPrintUnityGain() throws Exception {
+        testParseAndPrint("249_Unity_Gain");
+    }
+
+    @Test
+    public void testPrintCleanSlate() throws Exception {
+        testParseAndPrint("250_Clean_Slate");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);
