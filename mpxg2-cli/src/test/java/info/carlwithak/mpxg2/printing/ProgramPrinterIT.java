@@ -1193,6 +1193,41 @@ public class ProgramPrinterIT {
         testParseAndPrint("232_American_AB");
     }
 
+    @Test
+    public void testPrintDetuneTrem_StandAlone() throws Exception {
+        testParseAndPrint("233_Detune_Trem");
+    }
+
+    @Test
+    public void testPrintDualAutoWahs_StandAlone() throws Exception {
+        testParseAndPrint("234_DualAutoWahs");
+    }
+
+    @Test
+    public void testPrintTremoWah_StandAlone() throws Exception {
+        testParseAndPrint("235_TremoWah");
+    }
+
+    @Test
+    public void testPrintPitchCascade_StandAlone() throws Exception {
+        testParseAndPrint("236_Pitch_Cascade");
+    }
+
+    @Test
+    public void testPrintOctaves_StandAlone() throws Exception {
+        testParseAndPrint("237_Octaves");
+    }
+
+    @Test
+    public void testPrintPdl2nds_StandAlone() throws Exception {
+        testParseAndPrint("238_Pdl_2nds");
+    }
+
+    @Test
+    public void testPrintEMajMin3_StandAlone() throws Exception {
+        testParseAndPrint("239_EMajMin3");
+    }
+
     private void testParseAndPrint(String filename) throws Exception {
         File expectedFile = new File(this.getClass().getClassLoader().getResource(filename + ".txt").toURI());
         String expected = readFile(expectedFile);

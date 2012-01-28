@@ -1,0 +1,182 @@
+PitchCascade
+  Guitar Style: Blues, Clean, Jazz, Rock
+  Effect Type: Delay, Gain, Pitch
+  Application Type: Stand alone
+  Effect Routing:
+    I=G=2=========R=O
+        |=E=D=1=C=|
+  Effect 1: Shift (D) (On)
+    Toe Switch: on=bypass
+    Mix: 100%
+    Level: 0dB
+    Tune1: +700
+    Optimize: 10
+    Tune2: -1200
+    Glide: On
+  Effect 2: Volume (D) (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: +3dB
+    Vol-L: 100%
+    Vol-R: 100%
+  Delay: Delay (D) (On)
+    Toe Switch: disabled
+    Mix: 50%
+    Level: +6dB
+    Time1: 1:1
+    Time2: 4:3
+    Lvl 1: 0dB
+    Lvl 2: 0dB
+    Pan 1: 50L
+    Pan 2: 50R
+    Fbk 1: 0%
+    Fbk insert: Effect 1
+    Fbk 2: 0%
+    XFbk1: +181%
+    XFbk2: +75%
+    Clear: Off
+  Reverb: Ambience (Off)
+    Toe Switch: disabled
+    Mix: 39%
+    Level: +6dB
+    Size: 22.5m
+    Link: On
+    Diff: 60%
+    P Dly: 0ms
+    DTime: 1.41s
+    D Lvl: Off
+    Rt HC: 6.3kHz
+  EQ: Pedal Vol (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+  Gain: Preamp (On)
+    Toe Switch: disabled
+    Lo: +10dB
+    Mid: -15dB
+    Hi: 25dB
+    InLvl: -15dB
+    LoCut: 0
+    Feel: 32
+    Drive: 25
+    Tone: 15
+    Bass: +8dB
+    Trebl: +12dB
+    Level: 53dB
+  Softrow:
+    1: Gain Drive
+    2: Gain Tone
+    3: Gain Level
+    4: Effect 1 Mix
+    5: Delay Mix
+    6: Delay Time1
+    7: Delay Time2
+    8: Delay XFbk1
+    9: Delay XFbk1
+    10: Reverb Mix
+  Patching:
+    Patch 1:
+      Source: Midi Toe
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Level
+        Min: +3dB
+        Mid: --
+        Max: 0dB
+    Patch 2:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 1 Tune1
+        Min: +700
+        Mid: --
+        Max: -500
+    Patch 3:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 1 Tune2
+        Min: -1200
+        Mid: --
+        Max: +1200
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 0.60Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: Off
+      Src2: Off
+      ATrim: 100
+      Resp: 64
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +3dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 100%
+      Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: +3dB
+    Delay:
+      Mix: 50%
+      Level: +6dB
+    Reverb:
+      Mix: 39%
+      Level: +6dB
+    Eq:
+      Mix: 100%
+      Level: 0dB
+  Tempo:
+    Rate: 120 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Stack1Norml
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -85dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0

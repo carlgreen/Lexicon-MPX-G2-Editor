@@ -1,0 +1,187 @@
+DualAutoWahs
+  Guitar Style: 
+  Effect Type: 
+  Application Type: 
+  Effect Routing:
+    I=G===1-D=E=C=R=O
+      |=2==_|
+  Effect 1: Wah  2 (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Sweep: 50
+    Bass: 4
+    Type: Model V
+    Resp: 100
+    Gain: +9dB
+  Effect 2: Wah  2 (On)
+    Toe Switch: disabled
+    Mix: 100%
+    Level: 0dB
+    Sweep: 50
+    Bass: 3
+    Type: Model C
+    Resp: 100
+    Gain: +10dB
+  Delay: Echo (S) (Off)
+    Toe Switch: disabled
+    Mix: 16%
+    Level: 0dB
+    Time: 3:1
+    Fbk: +20%
+    Fbk insert: Delay
+    Damp: 16%
+    Clear: Off
+  Reverb: Plate (On)
+    Toe Switch: disabled
+    Mix: 10%
+    Level: 0dB
+    Size: 23.0m
+    Link: On
+    Diff: 68%
+    P Dly: 68ms
+    Bass: 0.8X
+    Decay: 0.70s
+    Xovr: 461Hz
+    Rt HC: 6.4kHz
+    Shape: 88
+    Spred: 84
+  Gain: Tone (On)
+    Toe Switch: disabled
+    Lo: 0dB
+    Mid: 0dB
+    Hi: 0dB
+    InLvl: 0dB
+    Level: 64dB
+  Softrow:
+    1: Gain Level
+    2: LFO1 PW
+    3: LFO1 Phase
+    4: Effect 1 Bass
+    5: Effect 2 Bass
+    6: Delay Mix
+    7: Delay Time
+    8: Delay Fbk
+    9: Reverb Mix
+    10: Reverb Decay
+  Patching:
+    Patch 1:
+      Source: Ctls Tri1
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 1 Sweep
+        Min: 0
+        Mid: --
+        Max: 100
+    Patch 2:
+      Source: Ctls Cos1
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Effect 2 Sweep
+        Min: 0
+        Mid: --
+        Max: 100
+    Patch 3:
+      Source: Midi CC48
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: LFO1 Depth
+        Min: 0%
+        Mid: --
+        Max: 100%
+    Patch 4:
+      Source: Ctls Env
+        Min: 0
+        Mid: --
+        Max: 10
+      Destination: LFO1 Rate
+        Min: 0.60Hz
+        Mid: --
+        Max: 3.00Hz
+    Patch 5:
+      Source: Ctls A/B
+        Min: 0
+        Mid: --
+        Max: 127
+      Destination: Byp Dly
+        Min: On
+        Mid: --
+        Max: Off
+  Controllers:
+    Knob:
+      Value: 50
+      Low: 0
+      High: 100
+      Name: Delay Adj
+    LFO 1:
+      Mode: On
+      Rate: 1.00Hz
+      PW: 55%
+      Phase: +120
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    LFO 2:
+      Mode: On
+      Rate: 0.92Hz
+      PW: 50%
+      Phase: 0
+      Depth: 100%
+      OnLvl: 64
+      OnSrc: None
+    Random:
+      RndLo: 0
+      RndHi: 127
+      Rate: 1.00Hz
+    A/B:
+      Mode: Trigger
+      ARate: 100
+      BRate: 100
+      OnLvl: 64
+      OnSrc: None
+    Envelope:
+      Src1: In
+      Src2: In
+      ATrim: 100
+      Resp: 58
+  Mix:
+    Send:
+      Level: 0
+      Bypass Level: 0
+    Post:
+      Mix: 100%
+      Level: +3dB
+      Bypass Level: 0dB
+    FX1:
+      Mix: 100%
+      Level: 0dB
+    FX2:
+      Mix: 100%
+      Level: 0dB
+    Delay:
+      Mix: 16%
+      Level: 0dB
+    Reverb:
+      Mix: 10%
+      Level: 0dB
+  Tempo:
+    Rate: 102 BPM
+    Source: internal
+    Beat Value: quarter
+    Tap Average: 2 beats
+    Tap Source: none
+  Speaker Sim: On
+    Cabinet: Combo1Brite
+  Noise Gate:
+    Enable: Guitar Input
+    Send: On
+    Thrsh: -83dB
+    Atten: -40dB
+    Offset: -3dB
+    ATime: 0
+    HTime: 100
+    RTime: 100
+    Delay: 0
