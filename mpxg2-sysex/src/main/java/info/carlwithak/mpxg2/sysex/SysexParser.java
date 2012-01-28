@@ -634,8 +634,12 @@ public class SysexParser {
             case 5:
                 effect2 = UniVybeParser.parse(effect2Parameters);
                 break;
-            // TODO 6 - CustomVybe
-            // TODO 7 - Phaser
+            case 6:
+                effect2 = CustomVybeParser.parse(effect2Parameters);
+                break;
+            case 7:
+                effect2 = PhaserParser.parse(effect2Parameters);
+                break;
             case 8:
                 effect2 = OrangePhaseParser.parse(effect2Parameters);
                 break;
