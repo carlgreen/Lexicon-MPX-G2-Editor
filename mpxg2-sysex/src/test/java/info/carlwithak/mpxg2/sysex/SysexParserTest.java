@@ -603,7 +603,7 @@ public class SysexParserTest {
             VolumeMono.class,
             VolumeStereo.class,
             VolumeDual.class,
-            null //PedalVol.class
+            PedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {

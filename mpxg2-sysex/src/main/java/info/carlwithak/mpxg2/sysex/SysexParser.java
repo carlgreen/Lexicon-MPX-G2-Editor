@@ -668,7 +668,9 @@ public class SysexParser {
             case 22:
                 effect2 = VolumeDualParser.parse(effect2Parameters);
                 break;
-            // TODO 23 - PedalVol
+            case 23:
+                effect2 = PedalVolParser.parse(effect2Parameters);
+                break;
             // TODO 24 - ExtPedalVol
             // TODO 25 - Test Tone
             // TODO 26 - Click
