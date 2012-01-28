@@ -586,7 +586,7 @@ public class SysexParserTest {
             AutoPan.class,
             TremoloMono.class,
             TremoloStereo.class,
-            null, //UniVybe.class,
+            UniVybe.class,
             null, //CustomVybe.class,
             null, //Phaser.class,
             OrangePhase.class,

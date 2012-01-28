@@ -627,7 +627,9 @@ public class SysexParser {
             case 4:
                 effect2 = TremoloStereoParser.parse(effect2Parameters);
                 break;
-            // TODO 5 - UniVybe
+            case 5:
+                effect2 = UniVybeParser.parse(effect2Parameters);
+                break;
             // TODO 6 - CustomVybe
             // TODO 7 - Phaser
             case 8:
