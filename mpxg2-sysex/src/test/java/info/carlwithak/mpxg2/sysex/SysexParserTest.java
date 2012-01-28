@@ -668,7 +668,6 @@ public class SysexParserTest {
     @Test
     public void testParseReverb() throws ParseException {
         final byte[] reverbParameterData = new byte[64];
-        // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             Chamber.class,
             Hall.class,
@@ -677,9 +676,7 @@ public class SysexParserTest {
             Gate.class
         };
         for (int i = 0; i < classes.length; i++) {
-            if (notNullValue().matches(classes[i])) {
-                assertThat(SysexParser.parseReverb(i + 1, reverbParameterData), is(instanceOf(classes[i])));
-            }
+            assertThat(SysexParser.parseReverb(i + 1, reverbParameterData), is(instanceOf(classes[i])));
         }
     }
 
