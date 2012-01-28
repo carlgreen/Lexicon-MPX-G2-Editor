@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.Eq;
+import info.carlwithak.mpxg2.model.parameters.EqModeValue;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 
@@ -29,18 +30,18 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class ThreeBandMono extends Eq {
     private static final String NAME = "3-Band (M)";
 
-    public final GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Double> q1 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    public final GenericValue<Double> q2 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    public final GenericValue<Double> q3 = new GenericValue<Double>("Q", "", 0.1, 10.0);
-    public final GenericValue<Integer> mode1 = new GenericValue<Integer>("Mode", "", 0, 2);
-    public final GenericValue<Integer> mode2 = new GenericValue<Integer>("Mode", "", 0, 2);
-    public final GenericValue<Integer> mode3 = new GenericValue<Integer>("Mode", "", 0, 2);
+    public final GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
+    public final GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
+    public final GenericValue<Integer> gain3 = new GenericValue<Integer>("Gain3", "dB", -72, 24);
+    public final GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc3 = new GenericValue<Integer>("Fc 3", "Hz", 20, 20000);
+    public final GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
+    public final GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
+    public final GenericValue<Double> q3 = new GenericValue<Double>("Q 3", "", 0.1, 10.0);
+    public final EqModeValue mode1 = new EqModeValue("Mode1");
+    public final EqModeValue mode2 = new EqModeValue("Mode2");
+    public final EqModeValue mode3 = new EqModeValue("Mode3");
 
     @Override
     public String getName() {
