@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.sysex;
 
+import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive1;
 import info.carlwithak.mpxg2.model.Ab;
 import info.carlwithak.mpxg2.model.EffectsStatus;
 import info.carlwithak.mpxg2.model.EnvelopeGenerator;
@@ -558,7 +559,7 @@ public class SysexParserTest {
             OrangePhase.class,
             RedComp.class,
             BlueComp.class,
-            null, //DigiDrive1.class,
+            DigiDrive1.class,
             null, //DigiDrive2.class,
             OctaBuzz.class,
             SweepFilter.class,
@@ -594,7 +595,7 @@ public class SysexParserTest {
             OrangePhase.class,
             RedComp.class,
             BlueComp.class,
-            null, //DigiDrive1.class,
+            DigiDrive1.class,
             null, //DigiDrive2.class,
             OctaBuzz.class,
             SweepFilter.class,
