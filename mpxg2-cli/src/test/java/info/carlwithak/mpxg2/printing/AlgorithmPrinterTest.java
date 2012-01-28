@@ -37,6 +37,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DelayStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
@@ -477,6 +478,21 @@ public class AlgorithmPrinterTest {
         detuneMono.preDelay.setValue(22);
 
         String expected = "    Mix: 100%\n    Level: +3dB\n    Tune: 7\n    Optimize: 10ms\n    P Dly: 22ms\n";
+        String actual = AlgorithmPrinter.print(detuneMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDetuneMono() throws PrintException {
+        DetuneMono detuneMono = new DetuneMono();
+        detuneMono.mix.setValue(100);
+        detuneMono.level.setValue(0);
+        detuneMono.tune.setValue(10);
+        detuneMono.optimize.setValue(10);
+        detuneMono.preDelay.setValue(10);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Tune: 10\n    Optimize: 10ms\n    P Dly: 10ms\n";
         String actual = AlgorithmPrinter.print(detuneMono);
 
         assertEquals(expected, actual);
