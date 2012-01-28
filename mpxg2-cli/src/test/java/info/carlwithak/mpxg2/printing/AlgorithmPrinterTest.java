@@ -72,6 +72,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
+import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloStereo;
@@ -966,6 +967,30 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: -5dB\n    Fc 1: 200Hz\n    Q 1: 0.7\n    Mode1: LShlf\n    Gain2: -7dB\n    Fc 2: 5000Hz\n    Q 2: 0.7\n    Mode2: HShlf\n";
         String actual = AlgorithmPrinter.print(twoBandMono);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintThreeBandMono() throws PrintException {
+        ThreeBandMono threeBandMono = new ThreeBandMono();
+        threeBandMono.mix.setValue(100);
+        threeBandMono.level.setValue(0);
+        threeBandMono.gain1.setValue(4);
+        threeBandMono.fc1.setValue(300);
+        threeBandMono.q1.setValue(0.5);
+        threeBandMono.mode1.setValue(0);
+        threeBandMono.gain2.setValue(4);
+        threeBandMono.fc2.setValue(1200);
+        threeBandMono.q2.setValue(1.0);
+        threeBandMono.mode2.setValue(1);
+        threeBandMono.gain3.setValue(6);
+        threeBandMono.fc3.setValue(6000);
+        threeBandMono.q3.setValue(0.5);
+        threeBandMono.mode3.setValue(1);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Gain1: +4dB\n    Fc 1: 300Hz\n    Q 1: 0.5\n    Mode1: LShlf\n    Gain2: +4dB\n    Fc 2: 1200Hz\n    Q 2: 1.0\n    Mode2: Band\n    Gain3: +6dB\n    Fc 3: 6000Hz\n    Q 3: 0.5\n    Mode3: Band\n";
+        String actual = AlgorithmPrinter.print(threeBandMono);
 
         assertEquals(expected, actual);
     }
