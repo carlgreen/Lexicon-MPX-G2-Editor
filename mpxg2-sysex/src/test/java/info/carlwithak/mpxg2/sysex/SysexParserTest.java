@@ -546,7 +546,6 @@ public class SysexParserTest {
     @Test
     public void testParseEffect1() throws ParseException {
         final byte[] effect1ParameterData = new byte[64];
-        // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             DetuneMono.class,
             DetuneStereo.class,
@@ -583,16 +582,13 @@ public class SysexParserTest {
             Click.class
         };
         for (int i = 0; i < classes.length; i++) {
-            if (notNullValue().matches(classes[i])) {
-                assertThat(SysexParser.parseEffect1(i + 1, effect1ParameterData), is(instanceOf(classes[i])));
-            }
+            assertThat(SysexParser.parseEffect1(i + 1, effect1ParameterData), is(instanceOf(classes[i])));
         }
     }
 
     @Test
     public void testParseEffect2() throws ParseException {
         final byte[] effect2ParameterData = new byte[64];
-        // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             Panner.class,
             AutoPan.class,
@@ -622,9 +618,7 @@ public class SysexParserTest {
             Click.class
         };
         for (int i = 0; i < classes.length; i++) {
-            if (notNullValue().matches(classes[i])) {
-                assertThat(SysexParser.parseEffect2(i + 1, effect2ParameterData), is(instanceOf(classes[i])));
-            }
+            assertThat(SysexParser.parseEffect2(i + 1, effect2ParameterData), is(instanceOf(classes[i])));
         }
     }
 
