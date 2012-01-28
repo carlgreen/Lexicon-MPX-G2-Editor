@@ -80,6 +80,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
+import info.carlwithak.mpxg2.model.effects.algorithms.TestTone;
 import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
 import info.carlwithak.mpxg2.model.effects.algorithms.TremoloMono;
@@ -528,6 +529,20 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 50%\n    Level: +6dB\n";
         String actual = AlgorithmPrinter.print(extPedalVol);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTestTone() throws PrintException {
+        TestTone testTone = new TestTone();
+        testTone.mix.setValue(100);
+        testTone.level.setValue(-12);
+        testTone.note.setValue(50);
+        testTone.balance.setValue(-50);
+
+        String expected = "    Mix: 100%\n    Level: -12dB\n    Note: D4\n    Bal: -50\n";
+        String actual = AlgorithmPrinter.print(testTone);
 
         assertEquals(expected, actual);
     }
