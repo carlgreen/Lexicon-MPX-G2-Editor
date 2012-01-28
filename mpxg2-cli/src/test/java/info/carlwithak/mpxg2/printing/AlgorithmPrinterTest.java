@@ -41,6 +41,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DetuneMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.DetuneStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive1;
+import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
@@ -332,6 +333,22 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Drive: 100\n    Low: 0dB\n    Mid: 0dB\n    High: 0dB\n";
         String actual = AlgorithmPrinter.print(digiDrive1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDigiDrive2() throws PrintException {
+        DigiDrive2 digiDrive2 = new DigiDrive2();
+        digiDrive2.mix.setValue(100);
+        digiDrive2.level.setValue(0);
+        digiDrive2.drive.setValue(100);
+        digiDrive2.low.setValue(-1);
+        digiDrive2.mid.setValue(0);
+        digiDrive2.high.setValue(1);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Drive: 100\n    Low: -1dB\n    Mid: 0dB\n    High: +1dB\n";
+        String actual = AlgorithmPrinter.print(digiDrive2);
 
         assertEquals(expected, actual);
     }
