@@ -98,6 +98,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.RotaryCabParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ThreeBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ToneParser;
@@ -537,7 +538,9 @@ public class SysexParser {
             case 4:
                 effect1 = ShiftMonoParser.parse(effect1Parameters);
                 break;
-            // TODO 5 - Shift (S)
+            case 5:
+                effect1 = ShiftStereoParser.parse(effect1Parameters);
+                break;
             case 6:
                 effect1 = ShiftDualParser.parse(effect1Parameters);
                 break;
@@ -611,7 +614,6 @@ public class SysexParser {
             // TODO 32 - Test Tone
             // TODO 33 - Click
             default:
-                System.out.println(java.util.Arrays.toString(effect1Parameters));
                 throw new ParseException("Invalid Effect 1 algorithm number: " + algorithmNumber);
         }
         return effect1;

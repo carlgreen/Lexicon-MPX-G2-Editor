@@ -80,6 +80,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.RotaryCab;
 import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
@@ -544,7 +545,7 @@ public class SysexParserTest {
             DetuneStereo.class,
             DetuneDual.class,
             ShiftMono.class,
-            null,
+            ShiftStereo.class,
             ShiftDual.class,
             DiatonicHmy.class,
             Panner.class,
