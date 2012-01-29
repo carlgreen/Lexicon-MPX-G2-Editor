@@ -57,6 +57,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.ExtPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.FcSplitter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
@@ -1349,6 +1350,21 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    G-L1: -30dB\n    F-L1: 110Hz\n    Q-L1: 0.7\n    M-L1: LShlf\n    G-L2: -30dB\n    F-L2: 850Hz\n    Q-L2: 0.7\n    M-L2: HShlf\n    G-R1: -30dB\n    F-R1: 110Hz\n    Q-R1: 0.7\n    M-R1: LShlf\n    G-R2: -30dB\n    F-R2: 1700Hz\n    Q-R2: 0.7\n    M-R2: HShlf\n";
         String actual = AlgorithmPrinter.print(twoBandDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintFcSplitter() throws PrintException {
+        FcSplitter fcSplitter = new FcSplitter();
+        fcSplitter.mix.setValue(100);
+        fcSplitter.level.setValue(6);
+        fcSplitter.loCut.setValue(800);
+        fcSplitter.hiCut.setValue(800);
+        fcSplitter.balance.setValue(0);
+
+        String expected = "    Mix: 100%\n    Level: +6dB\n    LoCut: 800Hz\n    HiCut: 800Hz\n    Bal: 0\n";
+        String actual = AlgorithmPrinter.print(fcSplitter);
 
         assertEquals(expected, actual);
     }
