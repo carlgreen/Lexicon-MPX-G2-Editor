@@ -32,7 +32,7 @@ public class SplitPreamp extends Gain {
     public final GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
     public final GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 25);
     public final GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 50);
-    public final GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvL", "dB", -64, 0);
+    public final GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
     public final GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "", 0, 20);
     public final GenericValue<Integer> feel = new GenericValue<Integer>("Feel", "", 0, 64);
     public final GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 60);
