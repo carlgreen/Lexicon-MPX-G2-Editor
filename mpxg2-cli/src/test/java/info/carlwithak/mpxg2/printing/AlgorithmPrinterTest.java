@@ -64,6 +64,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.FXOneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Gate;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
+import info.carlwithak.mpxg2.model.effects.algorithms.Looper;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandStereo;
@@ -100,6 +101,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Wah1;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import info.carlwithak.mpxg2.model.parameters.BeatRate;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
+import info.carlwithak.mpxg2.model.parameters.TapMsRate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -1008,6 +1010,26 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 2%\n    Level: +1dB\n    Time1: 4:4\n    Time2: 2:1\n    Lvl 1: 0dB\n    Lvl 2: 0dB\n    Fbk 1: +1%\n    Fbk insert: Delay\n    Fbk 2: +1%\n    Damp1: 20%\n    Damp2: 20%\n    Clear: Off\n";
         String actual = AlgorithmPrinter.print(echoDual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintLooper() throws PrintException {
+        Looper looper = new Looper();
+        looper.mix.setValue(100);
+        looper.level.setValue(0);
+        looper.setTime(new TapMsRate("Time", 2000));
+        looper.inMix.setValue(90);
+        looper.feedbackInsert.setValue(3);
+        looper.sensitivity.setValue(100);
+        looper.pan.setValue(0);
+        looper.release.setValue(100);
+        looper.attack.setValue(100);
+        looper.clear.setValue(false);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Time: 2000ms\n    InMix: 90%\n    Fbk insert: Delay\n    Sense: 100\n    Pan: C\n    Rls: 100\n    Atk: 100\n    Clear: Off\n";
+        String actual = AlgorithmPrinter.print(looper);
 
         assertEquals(expected, actual);
     }
