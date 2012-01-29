@@ -720,7 +720,6 @@ public class SysexParserTest {
     @Test
     public void testParseGain() throws ParseException {
         final byte[] gainParameterData = new byte[64];
-        // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             Tone.class,
             Crunch.class,
@@ -731,9 +730,7 @@ public class SysexParserTest {
             SplitPreamp.class
         };
         for (int i = 0; i < classes.length; i++) {
-            if (notNullValue().matches(classes[i])) {
-                assertThat(SysexParser.parseGain(i + 1, gainParameterData), is(instanceOf(classes[i])));
-            }
+            assertThat(SysexParser.parseGain(i + 1, gainParameterData), is(instanceOf(classes[i])));
         }
     }
 
