@@ -38,7 +38,7 @@ public class Centrifuge2 extends Chorus {
     public final GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 2", "%", 0, 100);
     public final GenericValue<Integer> sync2 = new GenericValue<Integer>("Sync2", "", -120, 120);
     public final GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
-    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
 
     @Override
     public String getName() {
