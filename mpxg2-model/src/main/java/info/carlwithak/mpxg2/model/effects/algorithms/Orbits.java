@@ -35,10 +35,10 @@ public class Orbits extends Chorus {
     public final GenericValue<Integer> sync1 = new GenericValue<Integer>("Sync1", "°", -120, 120);
     public final GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
     private Rate rate2;
-    public final GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 1", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 2", "%", 0, 100);
     public final GenericValue<Integer> sync2 = new GenericValue<Integer>("Sync2", "°", -120, 120);
     public final GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
-    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
     public final GenericValue<Integer> width = new GenericValue<Integer>("Width", "%", 0, 100);
 
     @Override

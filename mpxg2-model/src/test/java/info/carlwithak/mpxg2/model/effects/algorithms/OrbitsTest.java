@@ -86,7 +86,7 @@ public class OrbitsTest {
 
     @Test
     public void testRes() {
-        assertEquals("", orbits.getParameter(10).getUnit());
+        assertEquals("%", orbits.getParameter(10).getUnit());
     }
 
     @Test
