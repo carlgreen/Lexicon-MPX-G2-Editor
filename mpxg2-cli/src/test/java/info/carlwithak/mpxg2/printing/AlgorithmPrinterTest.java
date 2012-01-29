@@ -87,6 +87,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.SplitPreamp;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.TestTone;
 import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
@@ -1550,4 +1551,26 @@ public class AlgorithmPrinterTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testPrintSplitPreamp() throws PrintException {
+        SplitPreamp splitPreamp = new SplitPreamp();
+        splitPreamp.lo.setValue(3);
+        splitPreamp.mid.setValue(4);
+        splitPreamp.hi.setValue(10);
+        splitPreamp.inLevel.setValue(0);
+        splitPreamp.loCut.setValue(2);
+        splitPreamp.feel.setValue(32);
+        splitPreamp.drive.setValue(30);
+        splitPreamp.tone.setValue(25);
+        splitPreamp.bass.setValue(0);
+        splitPreamp.treble.setValue(12);
+        splitPreamp.level.setValue(54);
+
+        String expected = "    Lo: +3dB\n    Mid: +4dB\n    Hi: 10dB\n    InLvl: 0dB\n    LoCut: 2\n    Feel: 32\n    Drive: 30\n    Tone: 25\n    Bass: 0dB\n    Trebl: +12dB\n    Level: 54dB\n";
+        String actual = AlgorithmPrinter.print(splitPreamp);
+
+        assertEquals(expected, actual);
+    }
+
 }

@@ -87,6 +87,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.SplitPreamp;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.TestTone;
 import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
@@ -172,6 +173,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.ScreamerPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ShiftDualPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ShiftMonoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ShiftStereoPrinter;
+import info.carlwithak.mpxg2.printing.effects.algorithms.SplitPreampPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.SweepFilterPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.TestTonePrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ThreeBandMonoPrinter;
@@ -294,6 +296,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(Overdrive.class, new OverdrivePrinter());
        PRINTERS.put(Distortion.class, new DistortionPrinter());
        PRINTERS.put(Preamp.class, new PreampPrinter());
+       PRINTERS.put(SplitPreamp.class, new SplitPreampPrinter());
     };
 
     static String print(Object algorithm) throws PrintException {
