@@ -1,0 +1,68 @@
+/*
+ *  Copyright (C) 2012 Carl Green
+ * 
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+package info.carlwithak.mpxg2.sysex.effects.algorithms;
+
+import info.carlwithak.mpxg2.model.effects.algorithms.SplitPreamp;
+
+/**
+ * Class to parse parameter data for SplitPreamp effect.
+ *
+ * @author Carl Green
+ */
+public class SplitPreampParser {
+
+    public static SplitPreamp parse(byte[] effectParameters) {
+        SplitPreamp splitPreamp = new SplitPreamp();
+
+        int lo = effectParameters[0] + effectParameters[1] * 16;
+        splitPreamp.lo.setValue(lo);
+
+        int mid = (byte) (effectParameters[2] + effectParameters[3] * 16);
+        splitPreamp.mid.setValue(mid);
+
+        int hi = (byte) (effectParameters[4] + effectParameters[5] * 16);
+        splitPreamp.hi.setValue(hi);
+
+        int inLevel = (byte) (effectParameters[6] + effectParameters[7] * 16);
+        splitPreamp.inLevel.setValue(inLevel);
+
+        int loCut = (byte) (effectParameters[8] + effectParameters[9] * 16);
+        splitPreamp.loCut.setValue(loCut);
+
+        int feel = (byte) (effectParameters[10] + effectParameters[11] * 16);
+        splitPreamp.feel.setValue(feel);
+
+        int drive = (byte) (effectParameters[12] + effectParameters[13] * 16);
+        splitPreamp.drive.setValue(drive);
+
+        int tone = (byte) (effectParameters[14] + effectParameters[15] * 16);
+        splitPreamp.tone.setValue(tone);
+
+        int bass = (byte) (effectParameters[16] + effectParameters[17] * 16);
+        splitPreamp.bass.setValue(bass);
+
+        int treble = (byte) (effectParameters[18] + effectParameters[19] * 16);
+        splitPreamp.treble.setValue(treble);
+
+        int level = (byte) (effectParameters[20] + effectParameters[21] * 16);
+        splitPreamp.level.setValue(level);
+
+        return splitPreamp;
+    }
+
+}

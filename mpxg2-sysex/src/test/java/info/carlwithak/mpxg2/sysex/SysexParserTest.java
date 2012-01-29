@@ -95,6 +95,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.SplitPreamp;
 import info.carlwithak.mpxg2.model.effects.algorithms.SweepFilter;
 import info.carlwithak.mpxg2.model.effects.algorithms.TestTone;
 import info.carlwithak.mpxg2.model.effects.algorithms.ThreeBandMono;
@@ -727,7 +728,7 @@ public class SysexParserTest {
             Overdrive.class,
             Distortion.class,
             Preamp.class,
-            null // SplitPreamp.class
+            SplitPreamp.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {

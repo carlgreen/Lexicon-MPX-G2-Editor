@@ -113,6 +113,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ScreamerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ShiftStereoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.SplitPreampParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.SweepFilterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.TestToneParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ThreeBandMonoParser;
@@ -946,7 +947,9 @@ public class SysexParser {
             case 6:
                 gain = PreampParser.parse(gainParameters);
                 break;
-            // TODO 7 - SplitPreamp
+            case 7:
+                gain = SplitPreampParser.parse(gainParameters);
+                break;
             default:
                 throw new ParseException("Invalid Gain algorithm number: " + algorithmNumber);
         }
