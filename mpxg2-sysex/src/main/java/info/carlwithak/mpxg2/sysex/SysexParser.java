@@ -48,6 +48,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.AmbienceParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.AutoPanParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.BlueCompParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Centrifuge1Parser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.Centrifuge2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChamberParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusDetuneMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusExtPedalVolParser;
@@ -763,7 +764,9 @@ public class SysexParser {
             case 9:
                 chorus = Centrifuge1Parser.parse(chorusParameters);
                 break;
-            // TODO 10 - Centrifuge2
+            case 10:
+                chorus = Centrifuge2Parser.parse(chorusParameters);
+                break;
             case 11:
                 chorus = Comb1Parser.parse(chorusParameters);
                 break;

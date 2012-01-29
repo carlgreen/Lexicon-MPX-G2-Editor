@@ -30,6 +30,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
@@ -637,7 +638,7 @@ public class SysexParserTest {
             Aerosol.class,
             Orbits.class,
             Centrifuge1.class,
-            null, //Centrifuge2.class,
+            Centrifuge2.class,
             Comb1.class,
             null, //Comb2.class,
             ChorusVolumeMono.class,
