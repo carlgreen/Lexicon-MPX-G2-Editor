@@ -73,6 +73,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.DiatonicHmyParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DigiDrive1Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DigiDrive2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.DistortionParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.DuckerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EchoStereoParser;
@@ -826,7 +827,9 @@ public class SysexParser {
             case 8:
                 delay = JamManParser.parse(delayParameters);
                 break;
-            // TODO 9 - Ducker
+            case 9:
+                delay = DuckerParser.parse(delayParameters);
+                break;
             default:
                 throw new ParseException("Invalid Delay algorithm number: " + algorithmNumber);
         }
