@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
 import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Centrifuge2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusDetuneMono;
@@ -773,6 +774,27 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: +6dB\n    Rate1: 0.60Hz\n    PW 1: 45%\n    Sync1: +120\n    Dpth1: 100%\n    Rate2: 1.00Hz\n    PW 2: 100%\n    Sync2: -120\n    Dpth2: 43%\n    Res: +100%\n";
         String actual = AlgorithmPrinter.print(centrifuge1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintCentrifuge2() throws PrintException {
+        Centrifuge2 centrifuge2 = new Centrifuge2();
+        centrifuge2.mix.setValue(100);
+        centrifuge2.level.setValue(0);
+        centrifuge2.setRate1(new FrequencyRate("Rate1", 0.83));
+        centrifuge2.pulseWidth1.setValue(50);
+        centrifuge2.sync1.setValue(90);
+        centrifuge2.depth1.setValue(55);
+        centrifuge2.setRate2(new FrequencyRate("Rate2", 4.01));
+        centrifuge2.pulseWidth2.setValue(50);
+        centrifuge2.sync2.setValue(90);
+        centrifuge2.depth2.setValue(63);
+        centrifuge2.resonance.setValue(0);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.83Hz\n    PW 1: 50%\n    Sync1: +90\n    Dpth1: 55%\n    Rate2: 4.01Hz\n    PW 2: 50%\n    Sync2: +90\n    Dpth2: 63%\n    Res: 0%\n";
+        String actual = AlgorithmPrinter.print(centrifuge2);
 
         assertEquals(expected, actual);
     }
