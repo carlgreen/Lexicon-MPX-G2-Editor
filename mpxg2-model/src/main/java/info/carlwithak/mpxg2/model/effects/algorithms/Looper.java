@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.Delay;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.InsertPosition;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
+import info.carlwithak.mpxg2.model.parameters.PanValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 import info.carlwithak.mpxg2.model.parameters.Rate;
 
@@ -36,7 +37,7 @@ public class Looper extends Delay {
     public final GenericValue<Integer> inMix = new GenericValue<Integer>("InMix", "%", 0, 100);
     public final InsertPosition feedbackInsert = new InsertPosition("Fbk insert");
     public final GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
-    public final GenericValue<Integer> pan = new GenericValue<Integer>("Pan", "LCR", -50, 50);
+    public final PanValue pan = new PanValue("Pan", -50, 50);
     public final GenericValue<Integer> release = new GenericValue<Integer>("Rls", "", 0, 100);
     public final GenericValue<Integer> attack = new GenericValue<Integer>("Atk", "", 0, 100);
     public final OnOffValue clear = new OnOffValue("Clear");
