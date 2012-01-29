@@ -92,6 +92,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.OctaBuzzParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OrangePhaseParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.OrbitsParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OverdriveParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PannerParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.PedalVolParser;
@@ -756,7 +757,9 @@ public class SysexParser {
             case 7:
                 chorus = AerosolParser.parse(chorusParameters);
                 break;
-            // TODO 8 - Orbits
+            case 8:
+                chorus = OrbitsParser.parse(chorusParameters);
+                break;
             case 9:
                 chorus = Centrifuge1Parser.parse(chorusParameters);
                 break;

@@ -73,6 +73,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
+import info.carlwithak.mpxg2.model.effects.algorithms.Orbits;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -634,7 +635,7 @@ public class SysexParserTest {
             FlangerStereo.class,
             RotaryCab.class,
             Aerosol.class,
-            null, //Orbits.class,
+            Orbits.class,
             Centrifuge1.class,
             null, //Centrifuge2.class,
             Comb1.class,
