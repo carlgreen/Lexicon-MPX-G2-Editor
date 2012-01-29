@@ -41,6 +41,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Click;
 import info.carlwithak.mpxg2.model.effects.algorithms.Comb1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Comb2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
@@ -640,7 +641,7 @@ public class SysexParserTest {
             Centrifuge1.class,
             Centrifuge2.class,
             Comb1.class,
-            null, //Comb2.class,
+            Comb2.class,
             ChorusVolumeMono.class,
             ChorusVolumeStereo.class,
             ChorusVolumeDual.class,

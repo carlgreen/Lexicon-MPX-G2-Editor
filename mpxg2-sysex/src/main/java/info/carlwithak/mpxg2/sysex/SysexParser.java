@@ -59,6 +59,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ChorusVolumeStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ClickParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Comb1Parser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.Comb2Parser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CrossoverParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CrunchParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.CustomVybeParser;
@@ -770,7 +771,9 @@ public class SysexParser {
             case 11:
                 chorus = Comb1Parser.parse(chorusParameters);
                 break;
-            // TODO 12 - Comb 2
+            case 12:
+                chorus = Comb2Parser.parse(chorusParameters);
+                break;
             case 13:
                 chorus = ChorusVolumeMonoParser.parse(chorusParameters);
                 break;
