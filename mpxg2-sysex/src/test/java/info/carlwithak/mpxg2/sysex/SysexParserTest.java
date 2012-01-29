@@ -59,6 +59,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Ducker;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqExtPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeMono;
@@ -707,7 +708,7 @@ public class SysexParserTest {
             EqVolumeStereo.class,
             EqVolumeDual.class,
             EqPedalVol.class,
-            null
+            EqExtPedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
             if (notNullValue().matches(classes[i])) {
