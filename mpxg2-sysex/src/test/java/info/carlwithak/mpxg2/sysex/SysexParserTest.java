@@ -628,7 +628,6 @@ public class SysexParserTest {
     @Test
     public void testParseChorus() throws ParseException {
         final byte[] chorusParameterData = new byte[64];
-        // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             ChorusAlgorithm.class,
             ChorusDetuneMono.class,
@@ -649,9 +648,7 @@ public class SysexParserTest {
             ChorusExtPedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
-            if (notNullValue().matches(classes[i])) {
-                assertThat(SysexParser.parseChorus(i + 1, chorusParameterData), is(instanceOf(classes[i])));
-            }
+            assertThat(SysexParser.parseChorus(i + 1, chorusParameterData), is(instanceOf(classes[i])));
         }
     }
 
