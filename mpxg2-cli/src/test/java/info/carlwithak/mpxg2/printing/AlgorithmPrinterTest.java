@@ -47,6 +47,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.DiatonicHmy;
 import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive1;
 import info.carlwithak.mpxg2.model.effects.algorithms.DigiDrive2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Distortion;
+import info.carlwithak.mpxg2.model.effects.algorithms.Ducker;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EchoStereo;
@@ -1050,6 +1051,24 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Size: 250ms\n    Fbk: 0%\n    Fbk insert: Delay\n    Clear: Off\n    Layer: Off\n    Replc: Off\n    Delay: Off\n    MuteS: Off\n";
         String actual = AlgorithmPrinter.print(jamMan);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintDucker() throws PrintException {
+        Ducker ducker = new Ducker();
+        ducker.mix.setValue(100);
+        ducker.level.setValue(0);
+        ducker.setTime(new TapMsRate("Time", 350));
+        ducker.feedback.setValue(-26);
+        ducker.feedbackInsert.setValue(3);
+        ducker.sensitivity.setValue(100);
+        ducker.release.setValue(10);
+        ducker.clear.setValue(false);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Time: 350ms\n    Fbk: -26%\n    Fbk insert: Delay\n    Sense: 100\n    Rls: 10\n    Clear: Off\n";
+        String actual = AlgorithmPrinter.print(ducker);
 
         assertEquals(expected, actual);
     }
