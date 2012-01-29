@@ -93,6 +93,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.LooperParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OctaBuzzParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandDualParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OrangePhaseParser;
@@ -887,7 +888,9 @@ public class SysexParser {
             case 6:
                 eq = TwoBandStereoParser.parse(eqParameters);
                 break;
-            // TODO 7 - 1-Band (D)
+            case 7:
+                eq = OneBandDualParser.parse(eqParameters);
+                break;
             case 8:
                 eq = TwoBandDualParser.parse(eqParameters);
                 break;

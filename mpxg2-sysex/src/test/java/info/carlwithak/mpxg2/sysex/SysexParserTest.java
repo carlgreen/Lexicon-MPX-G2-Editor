@@ -75,6 +75,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import info.carlwithak.mpxg2.model.effects.algorithms.Looper;
 import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
+import info.carlwithak.mpxg2.model.effects.algorithms.OneBandDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
@@ -700,7 +701,7 @@ public class SysexParserTest {
             FourBandMono.class,
             OneBandStereo.class,
             TwoBandStereo.class,
-            null,
+            OneBandDual.class,
             TwoBandDual.class,
             null,
             Crossover.class,
