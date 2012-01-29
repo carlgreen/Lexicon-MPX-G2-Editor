@@ -51,44 +51,39 @@ public class Comb2Test {
     }
 
     @Test
-    public void testComb() {
-        assertEquals("", comb2.getParameter(4).getUnit());
-    }
-
-    @Test
     public void testNotch() {
-        assertEquals("", comb2.getParameter(5).getUnit());
+        assertEquals("", comb2.getParameter(4).getUnit());
     }
 
     @Test
     public void testRate() {
         comb2.setRate(new FrequencyRate("Rate", 0.5));
-        assertEquals("Rate", comb2.getParameter(6).getName());
-        assertEquals("Hz", comb2.getParameter(6).getUnit());
+        assertEquals("Rate", comb2.getParameter(5).getName());
+        assertEquals("Hz", comb2.getParameter(5).getUnit());
     }
 
     @Test
     public void testPulseWidth() {
-        assertEquals("%", comb2.getParameter(7).getUnit());
+        assertEquals("%", comb2.getParameter(6).getUnit());
     }
 
     @Test
     public void testDepth2() {
-        assertEquals("%", comb2.getParameter(8).getUnit());
+        assertEquals("%", comb2.getParameter(7).getUnit());
     }
 
     @Test
     public void testRes() {
-        assertEquals("", comb2.getParameter(9).getUnit());
+        assertEquals("%", comb2.getParameter(8).getUnit());
     }
 
     @Test
     public void testPhase() {
-        assertEquals("°", comb2.getParameter(10).getUnit());
+        assertEquals("°", comb2.getParameter(9).getUnit());
     }
 
     @Test
     public void testInvalid() {
-        assertNull(comb2.getParameter(11));
+        assertNull(comb2.getParameter(10));
     }
 }

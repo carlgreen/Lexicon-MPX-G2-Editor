@@ -33,12 +33,11 @@ public class Comb2 extends Chorus {
 
     public final GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "Hz", 100, 100000);
     public final GenericValue<Integer> hiCut = new GenericValue<Integer>("HiCut", "Hz", 100, 100000);
-    public final GenericValue<Integer> comb = new GenericValue<Integer>("Comb", "", 0, 100);
     public final GenericValue<Integer> notch = new GenericValue<Integer>("Notch", "", -100, 100);
     private Rate rate;
     public final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
     public final GenericValue<Integer> depth = new GenericValue<Integer>("Dpth", "%", 0, 100);
-    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
     public final PhaseValue phase = new PhaseValue("Phase");
 
     @Override
@@ -61,24 +60,21 @@ public class Comb2 extends Chorus {
                 parameter = hiCut;
                 break;
             case 4:
-                parameter = comb;
-                break;
-            case 5:
                 parameter = notch;
                 break;
-            case 6:
+            case 5:
                 parameter = rate;
                 break;
-            case 7:
+            case 6:
                 parameter = pulseWidth;
                 break;
-            case 8:
+            case 7:
                 parameter = depth;
                 break;
-            case 9:
+            case 8:
                 parameter = resonance;
                 break;
-            case 10:
+            case 9:
                 parameter = phase;
                 break;
             default:
