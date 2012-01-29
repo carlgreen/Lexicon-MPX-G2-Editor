@@ -33,6 +33,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Click;
 import info.carlwithak.mpxg2.model.effects.algorithms.Comb1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Comb2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
@@ -811,6 +812,26 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    LoCut: 100Hz\n    HiCut: 6500Hz\n    Comb: 0\n    Notch: +30\n";
         String actual = AlgorithmPrinter.print(comb1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintComb2() throws PrintException {
+        Comb2 comb2 = new Comb2();
+        comb2.mix.setValue(50);
+        comb2.level.setValue(0);
+        comb2.loCut.setValue(300);
+        comb2.hiCut.setValue(4400);
+        comb2.notch.setValue(-100);
+        comb2.setRate(new FrequencyRate("Rate", 2.47));
+        comb2.pulseWidth.setValue(59);
+        comb2.depth.setValue(24);
+        comb2.resonance.setValue(1);
+        comb2.phase.setValue(0);
+
+        String expected = "    Mix: 50%\n    Level: 0dB\n    LoCut: 300Hz\n    HiCut: 4400Hz\n    Notch: -100\n    Rate: 2.47Hz\n    PW: 59%\n    Dpth: 24%\n    Res: +1%\n    Phase: 0°\n";
+        String actual = AlgorithmPrinter.print(comb2);
 
         assertEquals(expected, actual);
     }

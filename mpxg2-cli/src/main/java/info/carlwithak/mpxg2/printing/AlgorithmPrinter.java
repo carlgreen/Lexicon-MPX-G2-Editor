@@ -33,6 +33,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.ChorusVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.Click;
 import info.carlwithak.mpxg2.model.effects.algorithms.Comb1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Comb2;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crossover;
 import info.carlwithak.mpxg2.model.effects.algorithms.Crunch;
 import info.carlwithak.mpxg2.model.effects.algorithms.CustomVybe;
@@ -113,6 +114,7 @@ import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusVolumeMonoPrinter
 import info.carlwithak.mpxg2.printing.effects.algorithms.ChorusVolumeStereoPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.ClickPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.Comb1Printer;
+import info.carlwithak.mpxg2.printing.effects.algorithms.Comb2Printer;
 import info.carlwithak.mpxg2.printing.effects.algorithms.CrossoverPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.CrunchPrinter;
 import info.carlwithak.mpxg2.printing.effects.algorithms.CustomVybePrinter;
@@ -248,6 +250,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(Centrifuge1.class, new Centrifuge1Printer());
        PRINTERS.put(Centrifuge2.class, new Centrifuge2Printer());
        PRINTERS.put(Comb1.class, new Comb1Printer());
+       PRINTERS.put(Comb2.class, new Comb2Printer());
        PRINTERS.put(DelayMono.class, new DelayMonoPrinter());
        PRINTERS.put(DelayStereo.class, new DelayStereoPrinter());
        PRINTERS.put(DelayDual.class, new DelayDualPrinter());
