@@ -84,6 +84,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.EqVolumeStereoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.ExtPedalVolParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FXOneBandMonoParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.FcSplitterParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.Flanger24MonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.FlangerStereoParser;
@@ -894,7 +895,9 @@ public class SysexParser {
             case 8:
                 eq = TwoBandDualParser.parse(eqParameters);
                 break;
-            // TODO 9 - Fc Splitter
+            case 9:
+                eq = FcSplitterParser.parse(eqParameters);
+                break;
             case 10:
                 eq = CrossoverParser.parse(eqParameters);
                 break;

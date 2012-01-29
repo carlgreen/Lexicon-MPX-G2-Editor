@@ -65,6 +65,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeDual;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.EqVolumeStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.ExtPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.FcSplitter;
 import info.carlwithak.mpxg2.model.effects.algorithms.Flanger24Mono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.FlangerStereo;
@@ -703,7 +704,7 @@ public class SysexParserTest {
             TwoBandStereo.class,
             OneBandDual.class,
             TwoBandDual.class,
-            null,
+            FcSplitter.class,
             Crossover.class,
             EqVolumeMono.class,
             EqVolumeStereo.class,
