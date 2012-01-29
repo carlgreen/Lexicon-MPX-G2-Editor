@@ -90,6 +90,7 @@ import info.carlwithak.mpxg2.sysex.effects.algorithms.FourBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.GateParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.HallParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.JamManParser;
+import info.carlwithak.mpxg2.sysex.effects.algorithms.LooperParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OctaBuzzParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandMonoParser;
 import info.carlwithak.mpxg2.sysex.effects.algorithms.OneBandStereoParser;
@@ -819,7 +820,9 @@ public class SysexParser {
             case 6:
                 delay = EchoDualParser.parse(delayParameters);
                 break;
-            // TODO 7 - Looper
+            case 7:
+                delay = LooperParser.parse(delayParameters);
+                break;
             case 8:
                 delay = JamManParser.parse(delayParameters);
                 break;
