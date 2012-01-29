@@ -66,6 +66,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.OctaBuzz;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.OneBandStereo;
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
+import info.carlwithak.mpxg2.model.effects.algorithms.Orbits;
 import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
 import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
 import info.carlwithak.mpxg2.model.effects.algorithms.PedalVol;
@@ -729,6 +730,28 @@ public class AlgorithmPrinterTest {
 
         String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 0.26Hz\n    PW 1: 45%\n    Dpth1: 70%\n    Rate2: 0.26Hz\n    PW 2: 55%\n    Dpth2: 60%\n    Res 1: -60\n    Res 2: +60\n";
         String actual = AlgorithmPrinter.print(aerosol);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintOrbits() throws PrintException {
+        Orbits orbits = new Orbits();
+        orbits.mix.setValue(100);
+        orbits.level.setValue(0);
+        orbits.setRate1(new FrequencyRate("Rate1", 1.00));
+        orbits.pulseWidth1.setValue(45);
+        orbits.sync1.setValue(-90);
+        orbits.depth1.setValue(50);
+        orbits.setRate2(new FrequencyRate("Rate2", 2.57));
+        orbits.pulseWidth2.setValue(55);
+        orbits.sync2.setValue(90);
+        orbits.depth2.setValue(50);
+        orbits.resonance.setValue(-10);
+        orbits.width.setValue(66);
+
+        String expected = "    Mix: 100%\n    Level: 0dB\n    Rate1: 1.00Hz\n    PW 1: 45%\n    Sync1: -90°\n    Dpth1: 50%\n    Rate2: 2.57Hz\n    PW 2: 55%\n    Sync2: +90°\n    Dpth2: 50%\n    Res: -10%\n    Width: 66%\n";
+        String actual = AlgorithmPrinter.print(orbits);
 
         assertEquals(expected, actual);
     }
