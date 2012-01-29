@@ -21,8 +21,6 @@ import info.carlwithak.mpxg2.model.effects.algorithms.OneBandDual;
 
 /**
  * Class to parse parameter data for 1-Band (D) effect.
-
-/**
  *
  * @author Carl Green
  */
