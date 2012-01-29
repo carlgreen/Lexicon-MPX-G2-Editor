@@ -694,7 +694,6 @@ public class SysexParserTest {
     @Test
     public void testParseEq() throws ParseException {
         final byte[] eqParameterData = new byte[64];
-        // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             OneBandMono.class,
             TwoBandMono.class,
@@ -713,9 +712,7 @@ public class SysexParserTest {
             EqExtPedalVol.class
         };
         for (int i = 0; i < classes.length; i++) {
-            if (notNullValue().matches(classes[i])) {
-                assertThat(SysexParser.parseEq(i + 1, eqParameterData), is(instanceOf(classes[i])));
-            }
+            assertThat(SysexParser.parseEq(i + 1, eqParameterData), is(instanceOf(classes[i])));
         }
     }
 
