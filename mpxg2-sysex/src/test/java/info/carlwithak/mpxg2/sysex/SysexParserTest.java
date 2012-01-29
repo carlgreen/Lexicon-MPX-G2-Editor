@@ -657,7 +657,6 @@ public class SysexParserTest {
     @Test
     public void testParseDelay() throws ParseException {
         final byte[] delayParameterData = new byte[64];
-        // TODO replace nulls with classes and remove assumption
         final Class[] classes = {
             DelayMono.class,
             DelayStereo.class,
@@ -670,9 +669,7 @@ public class SysexParserTest {
             Ducker.class
         };
         for (int i = 0; i < classes.length; i++) {
-            if (notNullValue().matches(classes[i])) {
-                assertThat(SysexParser.parseDelay(i + 1, delayParameterData), is(instanceOf(classes[i])));
-            }
+            assertThat(SysexParser.parseDelay(i + 1, delayParameterData), is(instanceOf(classes[i])));
         }
     }
 
