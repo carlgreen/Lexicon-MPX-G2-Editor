@@ -44,7 +44,8 @@ public class TempoTapSourceValueTest {
     @Parameterized.Parameters
     public static Collection data() {
         return Arrays.asList(new Object[][] {
-            { 0, "None" }
+            { 0, "None" },
+            { 144, "CC118" }
         });
     }
 
