@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.parameters;
 
 /**
+ * TODO merge with OnSourceValue
  *
  * @author Carl Green
  */
