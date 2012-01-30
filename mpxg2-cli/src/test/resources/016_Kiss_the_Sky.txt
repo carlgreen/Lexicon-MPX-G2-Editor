@@ -155,7 +155,7 @@ Kiss the Sky
     Source: internal
     Beat Value: quarter
     Tap Average: 2 beats
-    Tap Source: none
+    Tap Source: None
   Speaker Sim: Off
     Cabinet: Stack2Warm
   Noise Gate:

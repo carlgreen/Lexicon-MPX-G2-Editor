@@ -167,7 +167,7 @@ PitchCascade
     Source: internal
     Beat Value: quarter
     Tap Average: 2 beats
-    Tap Source: none
+    Tap Source: None
   Speaker Sim: On
     Cabinet: Stack1Norml
   Noise Gate:

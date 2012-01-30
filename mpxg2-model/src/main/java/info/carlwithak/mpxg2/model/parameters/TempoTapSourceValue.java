@@ -24,7 +24,7 @@ package info.carlwithak.mpxg2.model.parameters;
 public class TempoTapSourceValue extends GenericValue<Integer> {
 
     private final static String[] TAP_SOURCES = {
-        "none"
+        "None"
     };
 
     public TempoTapSourceValue(final String name) {

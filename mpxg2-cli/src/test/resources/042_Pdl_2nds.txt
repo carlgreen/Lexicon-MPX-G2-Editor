@@ -171,7 +171,7 @@ Pdl 2nds
     Source: internal
     Beat Value: quarter
     Tap Average: 2 beats
-    Tap Source: none
+    Tap Source: None
   Speaker Sim: Off
     Cabinet: Combo1Norml
   Noise Gate:

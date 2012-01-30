@@ -167,7 +167,7 @@ Jam2AutoWah
     Source: internal
     Beat Value: 16 beats
     Tap Average: 2 beats
-    Tap Source: none
+    Tap Source: None
   Speaker Sim: On
     Cabinet: Combo1Norml
   Noise Gate:
