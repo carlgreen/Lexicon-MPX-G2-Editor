@@ -19,9 +19,9 @@ package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.SourceValue;
 import info.carlwithak.mpxg2.model.parameters.TempoBeatValue;
 import info.carlwithak.mpxg2.model.parameters.TempoSourceValue;
-import info.carlwithak.mpxg2.model.parameters.TempoTapSourceValue;
 
 /**
  *
@@ -31,7 +31,7 @@ public class Tempo implements DataObject {
     private GenericValue<Integer> rate = new GenericValue<Integer>("Rate", " BPM", 41, 400);
     private TempoSourceValue source = new TempoSourceValue("Source");
     private TempoBeatValue beatValue = new TempoBeatValue("Beat Value");
-    private TempoTapSourceValue tapSource = new TempoTapSourceValue("Tap Source");
+    private SourceValue tapSource = new SourceValue("Tap Source");
     private GenericValue<Integer> tapAverage = new GenericValue<Integer>("Tap Average", " beats", 2, 8);
     private GenericValue<Integer> tapSourceLevel = new GenericValue<Integer>("Scr Level", "", 0, 127);
 
@@ -75,7 +75,7 @@ public class Tempo implements DataObject {
         return beatValue;
     }
 
-    public TempoTapSourceValue getTapSource() {
+    public SourceValue getTapSource() {
         return tapSource;
     }
 

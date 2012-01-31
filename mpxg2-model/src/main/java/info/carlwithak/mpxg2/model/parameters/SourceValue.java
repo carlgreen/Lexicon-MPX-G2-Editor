@@ -18,13 +18,12 @@
 package info.carlwithak.mpxg2.model.parameters;
 
 /**
- * TODO merge with TempoTapSourceValue
  *
  * @author Carl Green
  */
-public class OnSourceValue extends GenericValue<Integer> {
+public class SourceValue extends GenericValue<Integer> {
 
-    private final static String[] ON_SOURCES = {
+    private final static String[] SOURCES = {
         "None", "Off", "On", "Knob", "Puls1", "Tri1", "Sine1", "Cos1", "Puls2",
         "Tri2", "Sine2", "Cos2", "Rand", "Env", "InLvl", "RnLvl", "A/B", "ATrg",
         "BTrg", "ABTrg", "Pedal", "Tog1", "Tog2", "Tog3", "Sw1", "Sw2", "Sw3",
@@ -45,13 +44,13 @@ public class OnSourceValue extends GenericValue<Integer> {
         "High♪", "Tempo", "Cmds", "Gate", "Trig", "LGate", "TSw", "Toe"
     };
 
-    public OnSourceValue(final String name) {
+    public SourceValue(final String name) {
         super(name, "", 0, 158);
     }
 
     @Override
     public String getDisplayString() {
-        return ON_SOURCES[getValue()];
+        return SOURCES[getValue()];
     }
 
 }

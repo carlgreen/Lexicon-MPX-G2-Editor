@@ -19,9 +19,9 @@ package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.LfoModeValue;
-import info.carlwithak.mpxg2.model.parameters.OnSourceValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 import info.carlwithak.mpxg2.model.parameters.Rate;
+import info.carlwithak.mpxg2.model.parameters.SourceValue;
 
 /**
  * Class to hold information about the LFO controllers.
@@ -35,7 +35,7 @@ public class Lfo implements DataObject {
     private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "", -120, 120);
     private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
     private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
-    private OnSourceValue onSource = new OnSourceValue("OnSrc");
+    private SourceValue onSource = new SourceValue("OnSrc");
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
@@ -96,7 +96,7 @@ public class Lfo implements DataObject {
         return onLevel;
     }
 
-    public OnSourceValue getOnSource() {
+    public SourceValue getOnSource() {
         return onSource;
     }
 

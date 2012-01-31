@@ -19,8 +19,8 @@ package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.parameters.AbModeValue;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
-import info.carlwithak.mpxg2.model.parameters.OnSourceValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.SourceValue;
 
 /**
  * Class to hold information about the A/B controller.
@@ -32,7 +32,7 @@ public class Ab implements DataObject {
     private GenericValue<Integer> aRate = new GenericValue<Integer>("ARate", "", 0, 100);
     private GenericValue<Integer> bRate = new GenericValue<Integer>("BRate", "", 0, 100);
     private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
-    private OnSourceValue onSource = new OnSourceValue("OnSrc");
+    private SourceValue onSource = new SourceValue("OnSrc");
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
@@ -91,7 +91,7 @@ public class Ab implements DataObject {
         this.onLevel.setValue(onLevel);
     }
 
-    public OnSourceValue getOnSource() {
+    public SourceValue getOnSource() {
         return onSource;
     }
 

@@ -31,12 +31,12 @@ import static org.junit.Assert.assertThat;
  * @author Carl Green
  */
 @RunWith(Parameterized.class)
-public class TempoTapSourceValueTest {
-    private final TempoTapSourceValue value = new TempoTapSourceValue("Beat Value");
+public class SourceValueTest {
+    private final SourceValue value = new SourceValue("OnSrc");
     private final int index;
     private final String display;
 
-    public TempoTapSourceValueTest(final int index, final String display) {
+    public SourceValueTest(final int index, final String display) {
         this.index = index;
         this.display = display;
     }
