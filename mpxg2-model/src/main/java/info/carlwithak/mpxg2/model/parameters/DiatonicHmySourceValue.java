@@ -22,12 +22,12 @@ package info.carlwithak.mpxg2.model.parameters;
  *
  * @author Carl Green
  */
-public class SourceValue extends GenericValue<Integer> {
+public class DiatonicHmySourceValue extends GenericValue<Integer> {
     private final static String[] SOURCES = {
         "", "Guitar Input", "Returns Only"
     };
 
-    public SourceValue(final String name) {
+    public DiatonicHmySourceValue(final String name) {
         super(name, "", 1, 2);
         setValue(1); // default to Guitar Input
     }

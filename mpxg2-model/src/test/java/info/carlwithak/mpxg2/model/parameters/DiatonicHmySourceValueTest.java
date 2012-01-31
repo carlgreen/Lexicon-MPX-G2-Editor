@@ -31,12 +31,12 @@ import static org.junit.Assert.assertThat;
  * @author Carl Green
  */
 @RunWith(Parameterized.class)
-public class SourceValueTest {
-    private final SourceValue value = new SourceValue("Src");
+public class DiatonicHmySourceValueTest {
+    private final DiatonicHmySourceValue value = new DiatonicHmySourceValue("Src");
     private final int index;
     private final String display;
 
-    public SourceValueTest(final int index, final String display) {
+    public DiatonicHmySourceValueTest(final int index, final String display) {
         this.index = index;
         this.display = display;
     }

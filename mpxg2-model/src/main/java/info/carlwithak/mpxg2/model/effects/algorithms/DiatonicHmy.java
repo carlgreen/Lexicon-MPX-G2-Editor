@@ -18,12 +18,12 @@
 package info.carlwithak.mpxg2.model.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.Effect;
+import info.carlwithak.mpxg2.model.parameters.DiatonicHmySourceValue;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.IntervalValue;
 import info.carlwithak.mpxg2.model.parameters.KeyValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
 import info.carlwithak.mpxg2.model.parameters.ScaleValue;
-import info.carlwithak.mpxg2.model.parameters.SourceValue;
 
 /**
  * Class for Diatonic Hmy parameters.
@@ -38,7 +38,7 @@ public class DiatonicHmy extends Effect {
     public final IntervalValue interval = new IntervalValue("Int");
     public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
     public final GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -83, 0);
-    public final SourceValue source = new SourceValue("Src");
+    public final DiatonicHmySourceValue source = new DiatonicHmySourceValue("Src");
 
     @Override
     public String getName() {
