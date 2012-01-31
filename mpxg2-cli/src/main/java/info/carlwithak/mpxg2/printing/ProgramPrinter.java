@@ -249,7 +249,7 @@ public class ProgramPrinter {
     }
 
     static String printPatch(final Program program, final Patch patch, final int patchNumber) {
-        if (patch.getSourceIndex() == 0) {
+        if (patch.getSourceIndex() == 0 || patch.getDestinationEffectIndex() == null) {
             return "";
         }
         DataObject effect = program.getEffect(patch.getDestinationEffectIndex());
