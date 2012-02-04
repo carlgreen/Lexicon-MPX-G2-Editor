@@ -21,6 +21,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Looper;
 import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
 import static info.carlwithak.mpxg2.test.IsTapMs.tapMs;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
@@ -45,7 +46,7 @@ public class LooperParserTest {
         assertThat(looper.pan, is(value(0)));
         assertThat(looper.release, is(value(100)));
         assertThat(looper.attack, is(value(100)));
-        assertThat(looper.clear, is(value(false)));
+        assertThat(looper.clear, is(off()));
     }
 
 }

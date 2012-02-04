@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -42,7 +43,7 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.feedback, is(value(0)));
         assertThat(echoStereo.insert, is(value(3)));
         assertThat(echoStereo.damp, is(value(16)));
-        assertThat(echoStereo.clear, is(value(false)));
+        assertThat(echoStereo.clear, is(off()));
     }
 
     @Test
@@ -55,6 +56,6 @@ public class EchoStereoParserTest {
         assertThat(echoStereo.feedback, is(value(0)));
         assertThat(echoStereo.insert, is(value(3)));
         assertThat(echoStereo.damp, is(value(16)));
-        assertThat(echoStereo.clear, is(value(false)));
+        assertThat(echoStereo.clear, is(off()));
     }
 }

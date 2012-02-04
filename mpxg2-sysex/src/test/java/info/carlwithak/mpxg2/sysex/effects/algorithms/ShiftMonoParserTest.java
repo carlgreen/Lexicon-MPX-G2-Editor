@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftMono;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -38,6 +39,6 @@ public class ShiftMonoParserTest {
         assertThat(shiftMono.level, is(value(-90))); // Off
         assertThat(shiftMono.tune, is(value(-1200)));
         assertThat(shiftMono.optimize, is(value(50)));
-        assertThat(shiftMono.glide, is(value(true)));
+        assertThat(shiftMono.glide, is(on()));
     }
 }

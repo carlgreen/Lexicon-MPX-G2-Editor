@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -39,6 +40,6 @@ public class ShiftDualParserTest {
         assertThat(shiftDual.tune1, is(value(-1200)));
         assertThat(shiftDual.optimize, is(value(10)));
         assertThat(shiftDual.tune2, is(value(-500)));
-        assertThat(shiftDual.glide, is(value(true)));
+        assertThat(shiftDual.glide, is(on()));
     }
 }

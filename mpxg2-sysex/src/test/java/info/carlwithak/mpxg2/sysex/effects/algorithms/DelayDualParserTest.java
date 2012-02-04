@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -49,7 +50,7 @@ public class DelayDualParserTest {
         assertThat(delayDual.feedback2, is(value(10)));
         assertThat(delayDual.xFbk1, is(value(0)));
         assertThat(delayDual.xFbk2, is(value(0)));
-        assertThat(delayDual.clear, is(value(false)));
+        assertThat(delayDual.clear, is(off()));
     }
 
     @Test
@@ -69,6 +70,6 @@ public class DelayDualParserTest {
         assertThat(delayDual.feedback2, is(value(0)));
         assertThat(delayDual.xFbk1, is(value(0)));
         assertThat(delayDual.xFbk2, is(value(0)));
-        assertThat(delayDual.clear, is(value(false)));
+        assertThat(delayDual.clear, is(off()));
     }
 }

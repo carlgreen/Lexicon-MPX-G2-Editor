@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Hall;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -37,7 +38,7 @@ public class HallParserTest {
         assertThat(hall.mix, is(value(20)));
         assertThat(hall.level, is(value(0)));
         assertThat(hall.size, is(value(53.0)));
-        assertThat(hall.link, is(value(true)));
+        assertThat(hall.link, is(on()));
         assertThat(hall.diff, is(value(80)));
         assertThat(hall.preDelay, is(value(25)));
         assertThat(hall.bass, is(value(5))); // 1.2X is number 5 in list

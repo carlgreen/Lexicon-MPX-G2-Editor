@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Gate;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -37,7 +38,7 @@ public class GateParserTest {
         assertThat(gate.mix, is(value(50)));
         assertThat(gate.level, is(value(6)));
         assertThat(gate.time, is(value(1))); // 145 is number 1 in list
-        assertThat(gate.link, is(value(true)));
+        assertThat(gate.link, is(on()));
         assertThat(gate.diff, is(value(66)));
         assertThat(gate.preDelay, is(value(0)));
         assertThat(gate.loSlope, is(value(0)));

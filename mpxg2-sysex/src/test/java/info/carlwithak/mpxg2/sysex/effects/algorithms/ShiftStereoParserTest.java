@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.ShiftStereo;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -38,7 +39,7 @@ public class ShiftStereoParserTest {
         assertThat(shiftStereo.level, is(value(0)));
         assertThat(shiftStereo.tune, is(value(-200)));
         assertThat(shiftStereo.optimize, is(value(50)));
-        assertThat(shiftStereo.glide, is(value(true)));
+        assertThat(shiftStereo.glide, is(on()));
     }
 
 }

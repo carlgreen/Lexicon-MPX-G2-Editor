@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -37,7 +38,7 @@ public class ChamberParserTest {
         assertThat(chamber.mix, is(value(28)));
         assertThat(chamber.level, is(value(0)));
         assertThat(chamber.size, is(value(24.0)));
-        assertThat(chamber.link, is(value(true)));
+        assertThat(chamber.link, is(on()));
         assertThat(chamber.diff, is(value(22)));
         assertThat(chamber.preDelay, is(value(0)));
         assertThat(chamber.bass, is(value(6))); // 1.5X is number 6 in list
@@ -55,7 +56,7 @@ public class ChamberParserTest {
         assertThat(chamber.mix, is(value(35)));
         assertThat(chamber.level, is(value(0)));
         assertThat(chamber.size, is(value(28.0)));
-        assertThat(chamber.link, is(value(true)));
+        assertThat(chamber.link, is(on()));
         assertThat(chamber.diff, is(value(90)));
         assertThat(chamber.preDelay, is(value(82)));
         assertThat(chamber.bass, is(value(5))); // 1.2X is number 5 in list

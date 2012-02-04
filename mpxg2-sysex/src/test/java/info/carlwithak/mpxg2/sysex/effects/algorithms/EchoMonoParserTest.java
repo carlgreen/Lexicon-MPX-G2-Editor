@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -42,6 +43,6 @@ public class EchoMonoParserTest {
         assertThat(echoMono.feedback, is(value(-15)));
         assertThat(echoMono.insert, is(value(3)));
         assertThat(echoMono.damp, is(value(20)));
-        assertThat(echoMono.clear, is(value(false)));
+        assertThat(echoMono.clear, is(off()));
     }
 }

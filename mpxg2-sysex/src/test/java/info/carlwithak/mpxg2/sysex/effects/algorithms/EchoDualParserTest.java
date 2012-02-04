@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
 import static info.carlwithak.mpxg2.test.IsTapMs.tapMs;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
@@ -48,7 +49,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.feedback2, is(value(1)));
         assertThat(echoDual.damp1, is(value(20)));
         assertThat(echoDual.damp2, is(value(20)));
-        assertThat(echoDual.clear, is(value(false)));
+        assertThat(echoDual.clear, is(off()));
     }
 
     @Test
@@ -66,7 +67,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.feedback2, is(value(15)));
         assertThat(echoDual.damp1, is(value(25)));
         assertThat(echoDual.damp2, is(value(25)));
-        assertThat(echoDual.clear, is(value(false)));
+        assertThat(echoDual.clear, is(off()));
     }
 
     @Test
@@ -84,7 +85,7 @@ public class EchoDualParserTest {
         assertThat(echoDual.feedback2, is(value(-20)));
         assertThat(echoDual.damp1, is(value(20)));
         assertThat(echoDual.damp2, is(value(20)));
-        assertThat(echoDual.clear, is(value(false)));
+        assertThat(echoDual.clear, is(off()));
     }
 
     @Test
@@ -102,6 +103,6 @@ public class EchoDualParserTest {
         assertThat(echoDual.feedback2, is(value(-20)));
         assertThat(echoDual.damp1, is(value(20)));
         assertThat(echoDual.damp2, is(value(20)));
-        assertThat(echoDual.clear, is(value(false)));
+        assertThat(echoDual.clear, is(off()));
     }
 }

@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -37,7 +38,7 @@ public class AmbienceParserTest {
         assertThat(ambience.mix, is(value(18)));
         assertThat(ambience.level, is(value(0)));
         assertThat(ambience.size, is(value(24.5)));
-        assertThat(ambience.link, is(value(true)));
+        assertThat(ambience.link, is(on()));
         assertThat(ambience.diff, is(value(60)));
         assertThat(ambience.preDelay, is(value(7)));
         assertThat(ambience.decayTime, is(value(51))); // 1.41s is number 51 in list

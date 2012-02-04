@@ -22,6 +22,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsTapMs.tapMs;
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -43,7 +44,7 @@ public class DuckerParserTest {
         assertThat(ducker.feedbackInsert, is(value(3)));
         assertThat(ducker.sensitivity, is(value(100)));
         assertThat(ducker.release, is(value(10)));
-        assertThat(ducker.clear, is(value(false)));
+        assertThat(ducker.clear, is(off()));
     }
 
 }

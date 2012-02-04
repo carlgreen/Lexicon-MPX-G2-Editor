@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.JamMan;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -39,10 +40,10 @@ public class JamManParserTest {
         assertThat(jamMan.size, is(value(250)));
         assertThat(jamMan.feedback, is(value(0)));
         assertThat(jamMan.insert, is(value(3)));
-        assertThat(jamMan.clear, is(value(false)));
-        assertThat(jamMan.layer, is(value(false)));
-        assertThat(jamMan.replace, is(value(false)));
-        assertThat(jamMan.delay, is(value(false)));
-        assertThat(jamMan.mute, is(value(false)));
+        assertThat(jamMan.clear, is(off()));
+        assertThat(jamMan.layer, is(off()));
+        assertThat(jamMan.replace, is(off()));
+        assertThat(jamMan.delay, is(off()));
+        assertThat(jamMan.mute, is(off()));
     }
 }

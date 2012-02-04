@@ -64,6 +64,8 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsOnOff.off;
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsText.text;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
@@ -198,14 +200,14 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("G2 Blue")));
 
         EffectsStatus effectsStatus = program.getEffectsStatus();
-        assertThat(effectsStatus.getEffect1On(), is(value(true)));
-        assertThat(effectsStatus.getEffect2On(), is(value(false)));
-        assertThat(effectsStatus.getChorusOn(), is(value(true)));
-        assertThat(effectsStatus.getDelayOn(), is(value(true)));
-        assertThat(effectsStatus.getReverbOn(), is(value(false)));
-        assertThat(effectsStatus.getEqOn(), is(value(false)));
-        assertThat(effectsStatus.getGainOn(), is(value(false)));
-        assertThat(effectsStatus.getInsertOn(), is(value(true)));
+        assertThat(effectsStatus.getEffect1On(), is(on()));
+        assertThat(effectsStatus.getEffect2On(), is(off()));
+        assertThat(effectsStatus.getChorusOn(), is(on()));
+        assertThat(effectsStatus.getDelayOn(), is(on()));
+        assertThat(effectsStatus.getReverbOn(), is(off()));
+        assertThat(effectsStatus.getEqOn(), is(off()));
+        assertThat(effectsStatus.getGainOn(), is(off()));
+        assertThat(effectsStatus.getInsertOn(), is(on()));
 
         assertEquals(6, program.getSoftRowEffectType(0));
         assertEquals(3, program.getSoftRowParameter(0));
@@ -331,7 +333,7 @@ public class SysexParserIT {
 
         NoiseGate noiseGate = program.getNoiseGate();
         assertThat(noiseGate.getEnable(), is(value(1)));
-        assertThat(noiseGate.getSend(), is(value(true)));
+        assertThat(noiseGate.getSend(), is(on()));
         assertThat(noiseGate.getThreshold(), is(value(-83)));
         assertThat(noiseGate.getAttenuation(), is(value(-85)));
         assertThat(noiseGate.getOffset(), is(value(-3)));
@@ -343,7 +345,7 @@ public class SysexParserIT {
 
         assertEquals(0, program.getBypassState());
 
-        assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
+        assertThat(program.isSpeakerSimulatorEnable(), is(off()));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
         SendMix sendMix = program.getSendMix();
@@ -1837,14 +1839,14 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Clean Slate")));
 
         EffectsStatus effectsStatus = program.getEffectsStatus();
-        assertThat(effectsStatus.getEffect1On(), is(value(false)));
-        assertThat(effectsStatus.getEffect2On(), is(value(false)));
-        assertThat(effectsStatus.getChorusOn(), is(value(false)));
-        assertThat(effectsStatus.getDelayOn(), is(value(false)));
-        assertThat(effectsStatus.getReverbOn(), is(value(false)));
-        assertThat(effectsStatus.getEqOn(), is(value(false)));
-        assertThat(effectsStatus.getGainOn(), is(value(false)));
-        assertThat(effectsStatus.getInsertOn(), is(value(true)));
+        assertThat(effectsStatus.getEffect1On(), is(off()));
+        assertThat(effectsStatus.getEffect2On(), is(off()));
+        assertThat(effectsStatus.getChorusOn(), is(off()));
+        assertThat(effectsStatus.getDelayOn(), is(off()));
+        assertThat(effectsStatus.getReverbOn(), is(off()));
+        assertThat(effectsStatus.getEqOn(), is(off()));
+        assertThat(effectsStatus.getGainOn(), is(off()));
+        assertThat(effectsStatus.getInsertOn(), is(on()));
 
         Tempo tempo = program.getTempo();
         assertThat(tempo.getRate(), is(value(120)));
@@ -1949,7 +1951,7 @@ public class SysexParserIT {
 
         NoiseGate noiseGate = program.getNoiseGate();
         assertThat(noiseGate.getEnable(), is(value(0)));
-        assertThat(noiseGate.getSend(), is(value(false)));
+        assertThat(noiseGate.getSend(), is(off()));
         assertThat(noiseGate.getThreshold(), is(value(-83)));
         assertThat(noiseGate.getAttenuation(), is(value(-80)));
         assertThat(noiseGate.getOffset(), is(value(-3)));
@@ -1960,7 +1962,7 @@ public class SysexParserIT {
 
         assertEquals(0, program.getBypassState());
 
-        assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
+        assertThat(program.isSpeakerSimulatorEnable(), is(off()));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
         SendMix sendMix = program.getSendMix();
@@ -2086,14 +2088,14 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Unity Gain")));
 
         EffectsStatus effectsStatus = program.getEffectsStatus();
-        assertThat(effectsStatus.getEffect1On(), is(value(true)));
-        assertThat(effectsStatus.getEffect2On(), is(value(false)));
-        assertThat(effectsStatus.getChorusOn(), is(value(false)));
-        assertThat(effectsStatus.getDelayOn(), is(value(false)));
-        assertThat(effectsStatus.getReverbOn(), is(value(false)));
-        assertThat(effectsStatus.getEqOn(), is(value(false)));
-        assertThat(effectsStatus.getGainOn(), is(value(false)));
-        assertThat(effectsStatus.getInsertOn(), is(value(true)));
+        assertThat(effectsStatus.getEffect1On(), is(on()));
+        assertThat(effectsStatus.getEffect2On(), is(off()));
+        assertThat(effectsStatus.getChorusOn(), is(off()));
+        assertThat(effectsStatus.getDelayOn(), is(off()));
+        assertThat(effectsStatus.getReverbOn(), is(off()));
+        assertThat(effectsStatus.getEqOn(), is(off()));
+        assertThat(effectsStatus.getGainOn(), is(off()));
+        assertThat(effectsStatus.getInsertOn(), is(on()));
 
         Tempo tempo = program.getTempo();
         assertThat(tempo.getRate(), is(value(170)));
@@ -2198,7 +2200,7 @@ public class SysexParserIT {
 
         NoiseGate noiseGate = program.getNoiseGate();
         assertThat(noiseGate.getEnable(), is(value(0)));
-        assertThat(noiseGate.getSend(), is(value(false)));
+        assertThat(noiseGate.getSend(), is(off()));
         assertThat(noiseGate.getThreshold(), is(value(-83)));
         assertThat(noiseGate.getAttenuation(), is(value(-80)));
         assertThat(noiseGate.getOffset(), is(value(-3)));
@@ -2209,7 +2211,7 @@ public class SysexParserIT {
 
         assertEquals(0, program.getBypassState());
 
-        assertThat(program.isSpeakerSimulatorEnable(), is(value(false)));
+        assertThat(program.isSpeakerSimulatorEnable(), is(off()));
         assertThat(program.getSpeakerSimulatorCabinet(), is(value(1)));
 
         SendMix sendMix = program.getSendMix();

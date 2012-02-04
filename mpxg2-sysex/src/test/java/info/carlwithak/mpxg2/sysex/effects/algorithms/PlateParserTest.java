@@ -20,6 +20,7 @@ package info.carlwithak.mpxg2.sysex.effects.algorithms;
 import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
 import org.junit.Test;
 
+import static info.carlwithak.mpxg2.test.IsOnOff.on;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -37,7 +38,7 @@ public class PlateParserTest {
         assertThat(plate.mix, is(value(100)));
         assertThat(plate.level, is(value(6)));
         assertThat(plate.size, is(value(22.5)));
-        assertThat(plate.link, is(value(true)));
+        assertThat(plate.link, is(on()));
         assertThat(plate.diff, is(value(66)));
         assertThat(plate.preDelay, is(value(169)));
         assertThat(plate.bass, is(value(5))); // 1.2X is number 5 in list
@@ -55,7 +56,7 @@ public class PlateParserTest {
         assertThat(plate.mix, is(value(28)));
         assertThat(plate.level, is(value(0)));
         assertThat(plate.size, is(value(16.5)));
-        assertThat(plate.link, is(value(true)));
+        assertThat(plate.link, is(on()));
         assertThat(plate.diff, is(value(90)));
         assertThat(plate.preDelay, is(value(10)));
         assertThat(plate.bass, is(value(0))); // 0.2X is number 0 in list
