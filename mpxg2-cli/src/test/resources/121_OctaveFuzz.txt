@@ -46,7 +46,7 @@ Octave Fuzz
         Mid: --
         Max: +253dB
     Patch 2:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127

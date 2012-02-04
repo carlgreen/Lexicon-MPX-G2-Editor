@@ -87,7 +87,7 @@ EnvFilter LP
         Mid: --
         Max: 19500Hz
     Patch 4:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127

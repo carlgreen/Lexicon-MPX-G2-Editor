@@ -80,7 +80,7 @@ Octaves
     9: Reverb Mix
   Patching:
     Patch 1:
-      Source: Midi Toe
+      Source: MIDI Toe
         Min: 0
         Mid: --
         Max: 127

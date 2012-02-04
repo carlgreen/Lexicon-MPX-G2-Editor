@@ -84,7 +84,7 @@ DualAutoWahs
         Mid: --
         Max: 100
     Patch 3:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127

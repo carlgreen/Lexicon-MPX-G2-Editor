@@ -97,7 +97,7 @@ TechnoChords
         Mid: --
         Max: 50%
     Patch 5:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127

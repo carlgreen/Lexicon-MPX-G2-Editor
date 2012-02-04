@@ -74,7 +74,7 @@ PitchCascade
     10: Reverb Mix
   Patching:
     Patch 1:
-      Source: Midi Toe
+      Source: MIDI Toe
         Min: 0
         Mid: --
         Max: 127
@@ -101,7 +101,7 @@ PitchCascade
         Mid: --
         Max: +1200
     Patch 4:
-      Source: Midi Toe
+      Source: MIDI Toe
         Min: 0
         Mid: --
         Max: 127
@@ -110,7 +110,7 @@ PitchCascade
         Mid: --
         Max: +241%
     Patch 5:
-      Source: Midi Toe
+      Source: MIDI Toe
         Min: 0
         Mid: --
         Max: 127

@@ -59,7 +59,7 @@ Jam 1  Uni+
         Mid: --
         Max: On
     Patch 2:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127
@@ -68,7 +68,7 @@ Jam 1  Uni+
         Mid: --
         Max: Off
     Patch 3:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127

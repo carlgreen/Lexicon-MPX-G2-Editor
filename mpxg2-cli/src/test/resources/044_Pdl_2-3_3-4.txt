@@ -89,7 +89,7 @@ Pdl 2~3  3~4
         Mid: --
         Max: 100%
     Patch 3:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 120
@@ -98,7 +98,7 @@ Pdl 2~3  3~4
         Mid: --
         Max: +400
     Patch 4:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 120

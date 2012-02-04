@@ -79,7 +79,7 @@ Jam 2 Phase
         Mid: --
         Max: On
     Patch 2:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127

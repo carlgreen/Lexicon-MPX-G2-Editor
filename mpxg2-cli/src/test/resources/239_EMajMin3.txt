@@ -90,7 +90,7 @@ E Maj/Min 3
         Mid: --
         Max: 2.76s
     Patch 3:
-      Source: Midi Toe
+      Source: MIDI Toe
         Min: 0
         Mid: --
         Max: 127

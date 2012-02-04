@@ -85,7 +85,7 @@ InfiniteEcho
         Mid: --
         Max: 10
     Patch 2:
-      Source: Midi CC47
+      Source: MIDI CC47
         Min: 0
         Mid: --
         Max: 127

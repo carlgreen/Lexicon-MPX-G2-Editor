@@ -102,7 +102,7 @@ Jam 1 S&H+
         Mid: --
         Max: On
     Patch 5:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127

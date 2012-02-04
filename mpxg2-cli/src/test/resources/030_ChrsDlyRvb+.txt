@@ -90,7 +90,7 @@ ChrsDlyRvb+
         Mid: --
         Max: +70%
     Patch 2:
-      Source: Midi Toe
+      Source: MIDI Toe
         Min: 0
         Mid: --
         Max: 127

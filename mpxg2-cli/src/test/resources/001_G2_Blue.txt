@@ -103,7 +103,7 @@ G2 Blue
         Mid: --
         Max: +4%
     Patch 5:
-      Source: Midi Toe
+      Source: MIDI Toe
         Min: 0
         Mid: --
         Max: 127

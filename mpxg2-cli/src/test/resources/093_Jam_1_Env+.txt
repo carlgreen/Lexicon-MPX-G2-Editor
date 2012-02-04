@@ -107,7 +107,7 @@ Jam 1 Env+
         Mid: --
         Max: On
     Patch 5:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127

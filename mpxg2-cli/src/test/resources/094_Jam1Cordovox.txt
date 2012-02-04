@@ -81,7 +81,7 @@ Jam1Cordovox
     10: Reverb Decay
   Patching:
     Patch 1:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127
@@ -99,7 +99,7 @@ Jam1Cordovox
         Mid: --
         Max: On
     Patch 3:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127
@@ -108,7 +108,7 @@ Jam1Cordovox
         Mid: 4.00Hz
         Max: 5.16Hz
     Patch 4:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127
@@ -117,7 +117,7 @@ Jam1Cordovox
         Mid: 2.00Hz
         Max: 6.00Hz
     Patch 5:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127

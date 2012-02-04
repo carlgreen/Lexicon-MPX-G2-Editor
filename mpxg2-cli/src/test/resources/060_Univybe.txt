@@ -15,7 +15,7 @@ Univybe
     9: Effect 1 Rate
   Patching:
     Patch 1:
-      Source: Midi CC48
+      Source: MIDI CC48
         Min: 0
         Mid: --
         Max: 127

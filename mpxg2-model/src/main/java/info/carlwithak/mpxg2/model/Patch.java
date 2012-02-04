@@ -60,7 +60,7 @@ public class Patch {
         /* Midi Controls */
         MIDI_BEND, MIDI_TOUCH, MIDI_VEL, MIDI_LASTNOTE, MIDI_LOWNOTE,
         MIDI_HIGHNOTE, MIDI_TEMPO, MIDI_CMNDS, MIDI_GATE, MIDI_TRIG, MIDI_LGATE,
-        MIDI_TSW, MIDI_TOE("Midi Toe");
+        MIDI_TSW, MIDI_TOE("MIDI Toe");
 
         private final String displayName;
 
@@ -71,7 +71,7 @@ public class Patch {
         private PatchSource() {
             final String MIDI_CONTROLLER_PREFIX = "MIDI_CC";
             if (name().indexOf(MIDI_CONTROLLER_PREFIX) > -1) {
-                this.displayName = "Midi CC" + name().substring(MIDI_CONTROLLER_PREFIX.length());
+                this.displayName = "MIDI CC" + name().substring(MIDI_CONTROLLER_PREFIX.length());
             } else {
                 this.displayName = name();
             }

@@ -70,7 +70,7 @@ Jam2 Flange+
         Mid: --
         Max: On
     Patch 2:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127
@@ -79,7 +79,7 @@ Jam2 Flange+
         Mid: --
         Max: Off
     Patch 3:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127

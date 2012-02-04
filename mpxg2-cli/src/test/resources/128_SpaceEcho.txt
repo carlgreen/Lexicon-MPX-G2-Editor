@@ -60,7 +60,7 @@ Space Echo
     8: Chorus Dpth2
   Patching:
     Patch 1:
-      Source: Midi CC42
+      Source: MIDI CC42
         Min: 0
         Mid: --
         Max: 127
