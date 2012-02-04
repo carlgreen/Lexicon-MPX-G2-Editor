@@ -45,7 +45,7 @@ public class SourceValueTest {
     public static Collection data() {
         return Arrays.asList(new Object[][] {
             { 0, "None" },
-            { 144, "CC118" }
+            { 144, "CC119" }
         });
     }
 
