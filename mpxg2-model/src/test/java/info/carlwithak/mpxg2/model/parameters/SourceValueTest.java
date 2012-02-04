@@ -35,17 +35,20 @@ public class SourceValueTest {
     private final SourceValue value = new SourceValue("OnSrc");
     private final int index;
     private final String display;
+    private final String typedString;
 
-    public SourceValueTest(final int index, final String display) {
+    public SourceValueTest(final int index, final String display, final String typedString) {
         this.index = index;
         this.display = display;
+        this.typedString = typedString;
     }
 
     @Parameterized.Parameters
     public static Collection data() {
         return Arrays.asList(new Object[][] {
-            { 0, "None" },
-            { 144, "CC119" }
+            { 0, "None", "Unassigned" },
+            { 1, "Off", "Ctls Off" },
+            { 144, "CC119", "MIDI CC119" }
         });
     }
 
@@ -53,6 +56,12 @@ public class SourceValueTest {
     public void testGetDisplayString() {
         value.setValue(index);
         assertThat(value.getDisplayString(), is(display));
+    }
+
+    @Test
+    public void testGetTypedString() {
+        value.setValue(index);
+        assertThat(value.getTypedString(), is(typedString));
     }
 
 }

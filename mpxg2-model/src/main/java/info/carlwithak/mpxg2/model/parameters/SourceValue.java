@@ -56,4 +56,11 @@ public class SourceValue extends GenericValue<Integer> {
         return SOURCES[getValue()];
     }
 
+    public String getTypedString() {
+        if (getValue() == 0) {
+            return "Unassigned";
+        }
+        return (getValue() < 27 ? "Ctls" : "MIDI") + " " + getDisplayString();
+    }
+
 }
