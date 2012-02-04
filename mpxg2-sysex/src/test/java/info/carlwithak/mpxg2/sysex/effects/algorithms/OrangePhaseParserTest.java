@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
-import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
@@ -32,7 +31,7 @@ import static org.junit.Assert.assertThat;
 public class OrangePhaseParserTest {
 
     @Test
-    public void testParse_VHRig() throws ParseException {
+    public void testParse_VHRig() {
         byte[] effectParameters = {4, 6, 0, 0, 4, 1, 0, 0, 0, 0, 4, 6, 10, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         OrangePhase orangePhase = OrangePhaseParser.parse(effectParameters);
         assertThat(orangePhase.mix, is(value(100)));

@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
-import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
@@ -32,7 +31,7 @@ import static org.junit.Assert.assertThat;
 public class BlueCompParserTest {
 
     @Test
-    public void testParse_AnotherBrick() throws ParseException {
+    public void testParse_AnotherBrick() {
         byte[] effectParameters = {4, 6, 6, 0, 5, 0, 4, 14, 5, 0, 4, 1, 0, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
         assertThat(blueComp.mix, is(value(100)));
@@ -45,7 +44,7 @@ public class BlueCompParserTest {
     }
 
     @Test
-    public void testParse_SlideComp() throws ParseException {
+    public void testParse_SlideComp() {
         byte[] effectParameters = {4, 6, 0, 0, 10, 0, 13, 13, 0, 0, 4, 4, 0, 0, 14, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         BlueComp blueComp = BlueCompParser.parse(effectParameters);
         assertThat(blueComp.mix, is(value(100)));

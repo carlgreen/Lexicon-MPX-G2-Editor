@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.OrangePhase;
-import info.carlwithak.mpxg2.sysex.ParseException;
 
 /**
  * Class to parse parameter data for OrangePhase effect.
@@ -27,7 +26,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
  */
 public class OrangePhaseParser {
 
-    public static OrangePhase parse(byte[] effectParameters) throws ParseException {
+    public static OrangePhase parse(byte[] effectParameters) {
         OrangePhase orangePhase = new OrangePhase();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;

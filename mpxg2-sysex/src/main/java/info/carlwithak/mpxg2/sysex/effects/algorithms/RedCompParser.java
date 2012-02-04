@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
-import info.carlwithak.mpxg2.sysex.ParseException;
 
 /**
  * Class to parse parameter data for Red Comp effect.
@@ -27,7 +26,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
  */
 public class RedCompParser {
 
-    public static RedComp parse(byte[] effectParameters) throws ParseException {
+    public static RedComp parse(byte[] effectParameters) {
         RedComp redComp = new RedComp();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;

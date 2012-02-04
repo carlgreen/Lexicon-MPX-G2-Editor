@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.RedComp;
-import info.carlwithak.mpxg2.sysex.ParseException;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsValue.value;
@@ -32,7 +31,7 @@ import static org.junit.Assert.assertThat;
 public class RedCompParserTest {
 
     @Test
-    public void testParse_PedalSwell() throws ParseException {
+    public void testParse_PedalSwell() {
         byte[] effectParameters = {4, 6, 6, 0, 6, 4, 0, 0, 4, 2, 4, 14, 7, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         RedComp redComp = RedCompParser.parse(effectParameters);
         assertThat(redComp.mix, is(value(100)));

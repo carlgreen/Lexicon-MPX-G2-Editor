@@ -18,7 +18,6 @@
 package info.carlwithak.mpxg2.sysex.effects.algorithms;
 
 import info.carlwithak.mpxg2.model.effects.algorithms.BlueComp;
-import info.carlwithak.mpxg2.sysex.ParseException;
 
 /**
  * Class to parse parameter data for Blue Comp effect.
@@ -27,7 +26,7 @@ import info.carlwithak.mpxg2.sysex.ParseException;
  */
 public class BlueCompParser {
 
-    public static BlueComp parse(byte[] effectParameters) throws ParseException {
+    public static BlueComp parse(byte[] effectParameters) {
         BlueComp blueComp = new BlueComp();
 
         int mix = effectParameters[0] + effectParameters[1] * 16;
