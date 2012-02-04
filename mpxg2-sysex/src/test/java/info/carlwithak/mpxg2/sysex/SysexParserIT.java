@@ -236,7 +236,7 @@ public class SysexParserIT {
         assertThat(tempo.getTapSourceLevel(), is(value(64)));
 
         Patch patch1 = program.getPatch(1);
-        assertEquals(16, patch1.getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertThat(patch1.source, is(value(16))); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, patch1.getSourceMin().intValue());
         assertNull(patch1.getSourceMid());
         assertEquals(127, patch1.getSourceMax().intValue());
@@ -246,7 +246,7 @@ public class SysexParserIT {
         assertThat(((GenericValue<Integer>) patch1.getDestinationMid()), is(value((Integer) null)));
         assertThat(((GenericValue<Integer>) patch1.getDestinationMax()), is(value(30)));
         Patch patch2 = program.getPatch(2);
-        assertEquals(16, patch2.getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertThat(patch2.source, is(value(16))); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, patch2.getSourceMin().intValue());
         assertNull(patch2.getSourceMid());
         assertEquals(127, patch2.getSourceMax().intValue());
@@ -256,7 +256,7 @@ public class SysexParserIT {
         assertThat((BeatRate) patch2.getDestinationMid(), is(beat(null, null)));
         assertThat((BeatRate) patch2.getDestinationMax(), is(beat(4, 2)));
         Patch patch3 = program.getPatch(3);
-        assertEquals(16, patch3.getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertThat(patch3.source, is(value(16))); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, patch3.getSourceMin().intValue());
         assertNull(patch3.getSourceMid());
         assertEquals(127, patch3.getSourceMax().intValue());
@@ -266,7 +266,7 @@ public class SysexParserIT {
         assertThat(((GenericValue<Integer>) patch3.getDestinationMid()), is(value((Integer) null)));
         assertThat(((GenericValue<Integer>) patch3.getDestinationMax()), is(value(15)));
         Patch patch4 = program.getPatch(4);
-        assertEquals(16, patch4.getSourceIndex()); // TODO why is the source 16 (0x10) not 3 (0x03)?
+        assertThat(patch4.source, is(value(16))); // TODO why is the source 16 (0x10) not 3 (0x03)?
         assertEquals(0, patch4.getSourceMin().intValue());
         assertNull(patch4.getSourceMid());
         assertEquals(127, patch4.getSourceMax().intValue());
@@ -276,7 +276,7 @@ public class SysexParserIT {
         assertThat(((GenericValue<Integer>) patch4.getDestinationMid()), is(value((Integer) null)));
         assertThat(((GenericValue<Integer>) patch4.getDestinationMax()), is(value(4)));
         Patch patch5 = program.getPatch(5);
-        assertEquals(157, patch5.getSourceIndex()); // TODO why is the source 157 (0x9d) not 21 (0x15)?
+        assertThat(patch5.source, is(value(157))); // TODO why is the source 157 (0x9d) not 21 (0x15)?
         assertEquals(0, patch5.getSourceMin().intValue());
         assertNull(patch5.getSourceMid());
         assertEquals(127, patch5.getSourceMax().intValue());
@@ -1854,7 +1854,7 @@ public class SysexParserIT {
         assertThat(tempo.getTapSourceLevel(), is(value(64)));
 
         Patch patch1 = program.getPatch(1);
-        assertEquals(0, patch1.getSourceIndex());
+        assertThat(patch1.source, is(value(0)));
         assertEquals(0, patch1.getSourceMin().intValue());
         assertNull(patch1.getSourceMid());
         assertEquals(127, patch1.getSourceMax().intValue());
@@ -1864,7 +1864,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch1.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch1.getDestinationMax(), is(nullValue()));
         Patch patch2 = program.getPatch(2);
-        assertEquals(0, patch2.getSourceIndex());
+        assertThat(patch2.source, is(value(0)));
         assertEquals(0, patch2.getSourceMin().intValue());
         assertNull(patch2.getSourceMid());
         assertEquals(127, patch2.getSourceMax().intValue());
@@ -1874,7 +1874,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch2.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch2.getDestinationMax(), is(nullValue()));
         Patch patch3 = program.getPatch(3);
-        assertEquals(0, patch3.getSourceIndex());
+        assertThat(patch3.source, is(value(0)));
         assertEquals(0, patch3.getSourceMin().intValue());
         assertNull(patch3.getSourceMid());
         assertEquals(127, patch3.getSourceMax().intValue());
@@ -1884,7 +1884,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch3.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch3.getDestinationMax(), is(nullValue()));
         Patch patch4 = program.getPatch(4);
-        assertEquals(0, patch4.getSourceIndex());
+        assertThat(patch4.source, is(value(0)));
         assertEquals(0, patch4.getSourceMin().intValue());
         assertNull(patch4.getSourceMid());
         assertEquals(127, patch4.getSourceMax().intValue());
@@ -1894,7 +1894,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch4.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch4.getDestinationMax(), is(nullValue()));
         Patch patch5 = program.getPatch(5);
-        assertEquals(0, patch5.getSourceIndex());
+        assertThat(patch5.source, is(value(0)));
         assertEquals(0, patch5.getSourceMin().intValue());
         assertNull(patch5.getSourceMid());
         assertEquals(127, patch5.getSourceMax().intValue());
@@ -2103,7 +2103,7 @@ public class SysexParserIT {
         assertThat(tempo.getTapSourceLevel(), is(value(64)));
 
         Patch patch1 = program.getPatch(1);
-        assertEquals(0, patch1.getSourceIndex());
+        assertThat(patch1.source, is(value(0)));
         assertEquals(0, patch1.getSourceMin().intValue());
         assertNull(patch1.getSourceMid());
         assertEquals(127, patch1.getSourceMax().intValue());
@@ -2113,7 +2113,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch1.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch1.getDestinationMax(), is(nullValue()));
         Patch patch2 = program.getPatch(2);
-        assertEquals(0, patch2.getSourceIndex());
+        assertThat(patch2.source, is(value(0)));
         assertEquals(0, patch2.getSourceMin().intValue());
         assertNull(patch2.getSourceMid());
         assertEquals(127, patch2.getSourceMax().intValue());
@@ -2123,7 +2123,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch2.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch2.getDestinationMax(), is(nullValue()));
         Patch patch3 = program.getPatch(3);
-        assertEquals(0, patch3.getSourceIndex());
+        assertThat(patch3.source, is(value(0)));
         assertEquals(0, patch3.getSourceMin().intValue());
         assertNull(patch3.getSourceMid());
         assertEquals(127, patch3.getSourceMax().intValue());
@@ -2133,7 +2133,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch3.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch3.getDestinationMax(), is(nullValue()));
         Patch patch4 = program.getPatch(4);
-        assertEquals(0, patch4.getSourceIndex());
+        assertThat(patch4.source, is(value(0)));
         assertEquals(0, patch4.getSourceMin().intValue());
         assertNull(patch4.getSourceMid());
         assertEquals(127, patch4.getSourceMax().intValue());
@@ -2143,7 +2143,7 @@ public class SysexParserIT {
         assertThat((GenericValue<Integer>) patch4.getDestinationMid(), is(nullValue()));
         assertThat((GenericValue<Integer>) patch4.getDestinationMax(), is(nullValue()));
         Patch patch5 = program.getPatch(5);
-        assertEquals(0, patch5.getSourceIndex());
+        assertThat(patch5.source, is(value(0)));
         assertEquals(0, patch5.getSourceMin().intValue());
         assertNull(patch5.getSourceMid());
         assertEquals(127, patch5.getSourceMax().intValue());

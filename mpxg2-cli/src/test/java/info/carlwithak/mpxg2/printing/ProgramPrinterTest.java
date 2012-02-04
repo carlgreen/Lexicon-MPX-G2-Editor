@@ -136,7 +136,7 @@ public class ProgramPrinterTest {
         OneBandMono oneBandMono = new OneBandMono();
 
         Patch patch = new Patch();
-        patch.setSource(3);
+        patch.source.setValue(3);
         patch.setSourceMin(0);
         patch.setSourceMax(25);
         patch.setDestinationEffect(5);
@@ -165,7 +165,7 @@ public class ProgramPrinterTest {
     @Test
     public void testPrintPatch_toSendLevel() {
         Patch patch = new Patch();
-        patch.setSource(3);
+        patch.source.setValue(3);
         patch.setSourceMin(0);
         patch.setSourceMax(25);
         patch.setDestinationEffect(16);

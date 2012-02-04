@@ -987,7 +987,7 @@ public class SysexParser {
         int destinationMax = readInt(bytes, 20, 4);
 
         Patch patch = new Patch();
-        patch.setSource(source);
+        patch.source.setValue(source);
         patch.setSourceMin(sourceMin);
         patch.setSourceMid(sourceMid == NO_SOURCE_MID ? null : sourceMid);
         patch.setSourceMax(sourceMax);

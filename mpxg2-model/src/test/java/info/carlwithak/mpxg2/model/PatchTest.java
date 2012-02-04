@@ -44,22 +44,6 @@ public class PatchTest {
     }
 
     @Test
-    public void testGetAndSetSource() {
-        assertEquals(0, patch.getSourceIndex());
-        patch.setSource(157);
-        assertEquals(157, patch.getSourceIndex());
-    }
-
-    @Test
-    public void testGetSourceName() {
-        assertNull(patch.getSourceName());
-        patch.setSource(Patch.PatchSource.MIDI_CC19.ordinal());
-        assertEquals("MIDI CC19", patch.getSourceName());
-        patch.setSource(Patch.PatchSource.CTLS_AB.ordinal());
-        assertEquals("Ctls A/B", patch.getSourceName());
-    }
-
-    @Test
     public void testGetAndSetDestinationEffect() {
         assertNull(patch.getDestinationEffectIndex());
         patch.setDestinationEffect(4);

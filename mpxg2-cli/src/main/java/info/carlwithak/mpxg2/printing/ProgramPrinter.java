@@ -249,7 +249,7 @@ public class ProgramPrinter {
     }
 
     static String printPatch(final Program program, final Patch patch, final int patchNumber) {
-        if (patch.getSourceIndex() == 0 || patch.getDestinationEffectIndex() == null) {
+        if (patch.source.getValue() == 0 || patch.getDestinationEffectIndex() == null) {
             return "";
         }
         DataObject effect = program.getEffect(patch.getDestinationEffectIndex());
@@ -259,7 +259,7 @@ public class ProgramPrinter {
         String patchParameter = effect.getParameter(patch.getDestinationParameter()).getName();
         StringBuilder sb = new StringBuilder();
         sb.append("    Patch ").append(patchNumber).append(":\n");
-        sb.append("      Source: ").append(patch.getSourceName()).append("\n");
+        sb.append("      Source: ").append(patch.source.getTypedString()).append("\n");
         sb.append("        Min: ").append(patch.getSourceMin()).append("\n");
         sb.append("        Mid: ").append(patch.getSourceMid() == null ? "--" : patch.getSourceMid()).append("\n");
         sb.append("        Max: ").append(patch.getSourceMax()).append("\n");
