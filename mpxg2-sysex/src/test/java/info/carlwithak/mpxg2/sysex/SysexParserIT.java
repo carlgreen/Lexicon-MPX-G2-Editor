@@ -64,6 +64,7 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsText.text;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -194,7 +195,7 @@ public class SysexParserIT {
         assertNull(program.getEq());
         assertTrue(program.getGain() instanceof Screamer);
 
-        assertThat(program.getProgramName(), is(value("G2 Blue")));
+        assertThat(program.getProgramName(), is(text("G2 Blue")));
 
         EffectsStatus effectsStatus = program.getEffectsStatus();
         assertThat(effectsStatus.getEffect1On(), is(value(true)));
@@ -290,7 +291,7 @@ public class SysexParserIT {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertThat(knob.getName(), is(value("Delay Adj")));
+        assertThat(knob.getName(), is(text("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));
@@ -540,7 +541,7 @@ public class SysexParserIT {
 
         assertTrue(program.getEffect2() instanceof BlueComp);
 
-        assertThat(program.getProgramName(), is(value("AnotherBrick")));
+        assertThat(program.getProgramName(), is(text("AnotherBrick")));
     }
 
     /**
@@ -553,7 +554,7 @@ public class SysexParserIT {
 
         assertTrue(program.getEffect1() instanceof SweepFilter);
 
-        assertThat(program.getProgramName(), is(value("EnvFilter LP")));
+        assertThat(program.getProgramName(), is(text("EnvFilter LP")));
     }
 
     /**
@@ -570,13 +571,13 @@ public class SysexParserIT {
         assertTrue(program.getDelay() instanceof DelayStereo);
         assertTrue(program.getReverb() instanceof Hall);
 
-        assertThat(program.getProgramName(), is(value("TremoWah")));
+        assertThat(program.getProgramName(), is(text("TremoWah")));
 
         Knob knob = program.getKnob();
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertThat(knob.getName(), is(value("Delay Adj")));
+        assertThat(knob.getName(), is(text("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));
@@ -623,7 +624,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("009_JamMan.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("JamMan")));
+        assertThat(program.getProgramName(), is(text("JamMan")));
     }
 
     /**
@@ -634,7 +635,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("010_VH_Rig.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("VH Rig")));
+        assertThat(program.getProgramName(), is(text("VH Rig")));
     }
 
     /**
@@ -645,7 +646,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("011_Rotary_Cab.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Rotary Cab")));
+        assertThat(program.getProgramName(), is(text("Rotary Cab")));
     }
 
     /**
@@ -656,7 +657,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("012_Little_Wing.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Little Wing")));
+        assertThat(program.getProgramName(), is(text("Little Wing")));
     }
 
     /**
@@ -667,7 +668,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("013_TechnoChords.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TechnoChords")));
+        assertThat(program.getProgramName(), is(text("TechnoChords")));
     }
 
     /**
@@ -678,7 +679,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("014_Pedal_Swell.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Pedal Swell")));
+        assertThat(program.getProgramName(), is(text("Pedal Swell")));
     }
 
     /**
@@ -689,7 +690,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("015_Slide_Comp.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Slide Comp")));
+        assertThat(program.getProgramName(), is(text("Slide Comp")));
     }
 
     /**
@@ -700,7 +701,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("016_Kiss_the_Sky.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Kiss the Sky")));
+        assertThat(program.getProgramName(), is(text("Kiss the Sky")));
     }
 
     /**
@@ -711,7 +712,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("017_Unchained.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Unchained")));
+        assertThat(program.getProgramName(), is(text("Unchained")));
     }
 
     /**
@@ -722,7 +723,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("018_Stomp!.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Stomp!")));
+        assertThat(program.getProgramName(), is(text("Stomp!")));
     }
 
     /**
@@ -733,7 +734,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("019_OctaWah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("OctaWah")));
+        assertThat(program.getProgramName(), is(text("OctaWah")));
     }
 
     /**
@@ -744,7 +745,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("020_Wah_&_Uni.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Wah & Uni")));
+        assertThat(program.getProgramName(), is(text("Wah & Uni")));
     }
 
     /**
@@ -755,7 +756,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("021_ToeWah_Flng.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("ToeWah/Flng")));
+        assertThat(program.getProgramName(), is(text("ToeWah/Flng")));
     }
 
     /**
@@ -766,7 +767,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("022_ToeWah_Phas.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("ToeWah/Phas")));
+        assertThat(program.getProgramName(), is(text("ToeWah/Phas")));
     }
 
     /**
@@ -777,7 +778,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("023_ToeWah_Chrs.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("ToeWah/Chrs")));
+        assertThat(program.getProgramName(), is(text("ToeWah/Chrs")));
     }
 
     /**
@@ -788,7 +789,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("024_ToeWah_Aero.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("ToeWah/Aero")));
+        assertThat(program.getProgramName(), is(text("ToeWah/Aero")));
     }
 
     /**
@@ -799,7 +800,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("025_ToeWah_Uni.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("ToeWah/Uni")));
+        assertThat(program.getProgramName(), is(text("ToeWah/Uni")));
     }
 
     /**
@@ -810,7 +811,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("026_Wah_&_Flange.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Wah & Flange")));
+        assertThat(program.getProgramName(), is(text("Wah & Flange")));
     }
 
     /**
@@ -821,7 +822,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("027_Wah_&_Phaser.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Wah & Phaser")));
+        assertThat(program.getProgramName(), is(text("Wah & Phaser")));
     }
 
     /**
@@ -832,7 +833,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("028_Wah_&_Chorus.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Wah & Chorus")));
+        assertThat(program.getProgramName(), is(text("Wah & Chorus")));
     }
 
     /**
@@ -843,7 +844,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("029_Wah_&_Aero.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Wah & Aero")));
+        assertThat(program.getProgramName(), is(text("Wah & Aero")));
     }
 
     /**
@@ -854,7 +855,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("030_ChrsDlyRvb+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("ChrsDlyRvb+")));
+        assertThat(program.getProgramName(), is(text("ChrsDlyRvb+")));
     }
 
     /**
@@ -865,7 +866,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("031_TS_Chorus+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TS Chorus+")));
+        assertThat(program.getProgramName(), is(text("TS Chorus+")));
     }
 
     /**
@@ -876,7 +877,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("032_TS_Delay+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TS Delay+")));
+        assertThat(program.getProgramName(), is(text("TS Delay+")));
     }
 
     /**
@@ -887,7 +888,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("033_TS_ChrsDly+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TS ChrsDly+")));
+        assertThat(program.getProgramName(), is(text("TS ChrsDly+")));
     }
 
     /**
@@ -898,7 +899,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("034_TS_Reverb+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TS Reverb+")));
+        assertThat(program.getProgramName(), is(text("TS Reverb+")));
     }
 
     /**
@@ -909,7 +910,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("035_TS_ChrsRvb+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TS ChrsRvb+")));
+        assertThat(program.getProgramName(), is(text("TS ChrsRvb+")));
     }
 
     /**
@@ -920,7 +921,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("036_CompChorus+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("CompChorus+")));
+        assertThat(program.getProgramName(), is(text("CompChorus+")));
     }
 
     /**
@@ -931,7 +932,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("037_CompDelay+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("CompDelay+")));
+        assertThat(program.getProgramName(), is(text("CompDelay+")));
     }
 
     /**
@@ -942,7 +943,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("038_CompChrsDly+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("CompChrsDly+")));
+        assertThat(program.getProgramName(), is(text("CompChrsDly+")));
     }
 
     /**
@@ -953,7 +954,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("039_CompChrsRvb+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("CompChrsRvb+")));
+        assertThat(program.getProgramName(), is(text("CompChrsRvb+")));
     }
 
     /**
@@ -964,7 +965,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("040_PitchCascade.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("PitchCascade")));
+        assertThat(program.getProgramName(), is(text("PitchCascade")));
     }
 
     /**
@@ -975,7 +976,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("041_Pdl_Octaves.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Pdl Octaves")));
+        assertThat(program.getProgramName(), is(text("Pdl Octaves")));
     }
 
     /**
@@ -986,7 +987,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("042_Pdl_2nds.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Pdl 2nds")));
+        assertThat(program.getProgramName(), is(text("Pdl 2nds")));
     }
 
     /**
@@ -997,7 +998,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("043_Pdl_2-3_b3-3.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Pdl 2~3 b3~3"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Pdl 2~3 b3~3"))); // TODO this can't be right
     }
 
     /**
@@ -1008,7 +1009,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("044_Pdl_2-3_3-4.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Pdl 2~3  3~4"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Pdl 2~3  3~4"))); // TODO this can't be right
     }
 
     /**
@@ -1019,7 +1020,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("045_Pdl_4-5_5-6.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Pdl 4~5 5~6"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Pdl 4~5 5~6"))); // TODO this can't be right
     }
 
     /**
@@ -1030,7 +1031,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("046_Octaves.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Octaves")));
+        assertThat(program.getProgramName(), is(text("Octaves")));
     }
 
     /**
@@ -1041,7 +1042,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("047_4ths_&_5ths.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("4ths & 5ths")));
+        assertThat(program.getProgramName(), is(text("4ths & 5ths")));
     }
 
     /**
@@ -1052,7 +1053,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("048_E_Maj_Min_3.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("E Maj/Min 3")));
+        assertThat(program.getProgramName(), is(text("E Maj/Min 3")));
     }
 
     /**
@@ -1063,7 +1064,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("049_E_Dor_Mix_3.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("E Dor/Mix 3")));
+        assertThat(program.getProgramName(), is(text("E Dor/Mix 3")));
     }
 
     /**
@@ -1074,7 +1075,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("050_Detune+Trem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Detune+Trem")));
+        assertThat(program.getProgramName(), is(text("Detune+Trem")));
     }
 
     /**
@@ -1085,7 +1086,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("051_Square_Trem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Square Trem")));
+        assertThat(program.getProgramName(), is(text("Square Trem")));
     }
 
     /**
@@ -1096,7 +1097,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("052_Trem_AutoWah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Trem~AutoWah"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Trem~AutoWah"))); // TODO this can't be right
     }
 
     /**
@@ -1107,7 +1108,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("053_Env_Trem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Env Trem")));
+        assertThat(program.getProgramName(), is(text("Env Trem")));
     }
 
     /**
@@ -1118,7 +1119,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("054_Env_AutoWahs.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Env AutoWahs")));
+        assertThat(program.getProgramName(), is(text("Env AutoWahs")));
     }
 
     /**
@@ -1129,7 +1130,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("055_Chaos_Dance.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Chaos Dance")));
+        assertThat(program.getProgramName(), is(text("Chaos Dance")));
     }
 
     /**
@@ -1140,7 +1141,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("056_Round_Trem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Round Trem")));
+        assertThat(program.getProgramName(), is(text("Round Trem")));
     }
 
     /**
@@ -1151,7 +1152,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("057_Tap_AutoWah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Tap AutoWah")));
+        assertThat(program.getProgramName(), is(text("Tap AutoWah")));
     }
 
     /**
@@ -1162,7 +1163,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("058_Verbolo.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Verbolo")));
+        assertThat(program.getProgramName(), is(text("Verbolo")));
     }
 
     /**
@@ -1173,7 +1174,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("059_DynaChrsTrem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("DynaChrsTrem")));
+        assertThat(program.getProgramName(), is(text("DynaChrsTrem")));
     }
 
     /**
@@ -1184,7 +1185,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("060_Univybe.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Univybe")));
+        assertThat(program.getProgramName(), is(text("Univybe")));
     }
 
     /**
@@ -1195,7 +1196,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("061_Octave_Fuzz.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Octave Fuzz")));
+        assertThat(program.getProgramName(), is(text("Octave Fuzz")));
     }
 
     /**
@@ -1206,7 +1207,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("062_Phaser.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Phaser")));
+        assertThat(program.getProgramName(), is(text("Phaser")));
     }
 
     /**
@@ -1217,7 +1218,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("063_EnvFilter.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("EnvFilter")));
+        assertThat(program.getProgramName(), is(text("EnvFilter")));
     }
 
     /**
@@ -1228,7 +1229,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("064_C-Wah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("C-Wah")));
+        assertThat(program.getProgramName(), is(text("C-Wah")));
     }
 
     /**
@@ -1239,7 +1240,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("065_Blue_Comp.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Blue Comp")));
+        assertThat(program.getProgramName(), is(text("Blue Comp")));
     }
 
     /**
@@ -1250,7 +1251,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("066_Vintage_Trem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Vintage Trem")));
+        assertThat(program.getProgramName(), is(text("Vintage Trem")));
     }
 
     /**
@@ -1261,7 +1262,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("067_IPS_TapeSlap.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("IPS TapeSlap")));
+        assertThat(program.getProgramName(), is(text("IPS TapeSlap")));
     }
 
     /**
@@ -1272,7 +1273,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("068_Space_Echo.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Space Echo")));
+        assertThat(program.getProgramName(), is(text("Space Echo")));
     }
 
     /**
@@ -1283,7 +1284,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("069_Octabuzz.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Octabuzz")));
+        assertThat(program.getProgramName(), is(text("Octabuzz")));
     }
 
     /**
@@ -1294,7 +1295,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("070_OrangePhase.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("OrangePhase")));
+        assertThat(program.getProgramName(), is(text("OrangePhase")));
     }
 
     /**
@@ -1305,7 +1306,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("071_Gray_Flange.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Gray Flange")));
+        assertThat(program.getProgramName(), is(text("Gray Flange")));
     }
 
     /**
@@ -1316,7 +1317,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("072_Red_Comp.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Red Comp")));
+        assertThat(program.getProgramName(), is(text("Red Comp")));
     }
 
     /**
@@ -1327,7 +1328,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("073_S_H_Pedal.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("S/H Pedal")));
+        assertThat(program.getProgramName(), is(text("S/H Pedal")));
     }
 
     /**
@@ -1338,7 +1339,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("074_V-Wah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("V-Wah")));
+        assertThat(program.getProgramName(), is(text("V-Wah")));
     }
 
     /**
@@ -1349,7 +1350,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("075_Modern_Trem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Modern Trem")));
+        assertThat(program.getProgramName(), is(text("Modern Trem")));
     }
 
     /**
@@ -1360,7 +1361,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("076_Tap_Echo.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Tap Echo")));
+        assertThat(program.getProgramName(), is(text("Tap Echo")));
     }
 
     /**
@@ -1371,7 +1372,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("077_Env_Wah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Env Wah")));
+        assertThat(program.getProgramName(), is(text("Env Wah")));
     }
 
     /**
@@ -1382,7 +1383,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("078_StereoChorus.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("StereoChorus")));
+        assertThat(program.getProgramName(), is(text("StereoChorus")));
     }
 
     /**
@@ -1393,7 +1394,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("079_ClasscDetune.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("ClasscDetune")));
+        assertThat(program.getProgramName(), is(text("ClasscDetune")));
     }
 
     /**
@@ -1404,7 +1405,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("080_Tone_Boost.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Tone Boost")));
+        assertThat(program.getProgramName(), is(text("Tone Boost")));
     }
 
     /**
@@ -1415,7 +1416,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("081_Crunch_Boost.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Crunch Boost")));
+        assertThat(program.getProgramName(), is(text("Crunch Boost")));
     }
 
     /**
@@ -1426,7 +1427,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("082_TS_Lead.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TS Lead")));
+        assertThat(program.getProgramName(), is(text("TS Lead")));
     }
 
     /**
@@ -1437,7 +1438,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("083_TS_Boost.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TS Boost")));
+        assertThat(program.getProgramName(), is(text("TS Boost")));
     }
 
     /**
@@ -1448,7 +1449,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("084_OD_Lead.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("OD Lead")));
+        assertThat(program.getProgramName(), is(text("OD Lead")));
     }
 
     /**
@@ -1459,7 +1460,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("085_OD_Boost.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("OD Boost")));
+        assertThat(program.getProgramName(), is(text("OD Boost")));
     }
 
     /**
@@ -1470,7 +1471,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("086_Dist_Lead.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Dist Lead")));
+        assertThat(program.getProgramName(), is(text("Dist Lead")));
     }
 
     /**
@@ -1481,7 +1482,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("087_Dist_Boost.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Dist Boost")));
+        assertThat(program.getProgramName(), is(text("Dist Boost")));
     }
 
     /**
@@ -1492,7 +1493,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("088_Fuzz_1.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Fuzz 1")));
+        assertThat(program.getProgramName(), is(text("Fuzz 1")));
     }
 
     /**
@@ -1503,7 +1504,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("089_Fuzz_2.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Fuzz 2")));
+        assertThat(program.getProgramName(), is(text("Fuzz 2")));
     }
 
     /**
@@ -1514,7 +1515,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("090_Jam_Chrs+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam Chrs+")));
+        assertThat(program.getProgramName(), is(text("Jam Chrs+")));
     }
 
     /**
@@ -1525,7 +1526,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("091_Jam_1__Uni+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam 1  Uni+")));
+        assertThat(program.getProgramName(), is(text("Jam 1  Uni+")));
     }
 
     /**
@@ -1536,7 +1537,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("092_Jam_1_S&H+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam 1 S&H+")));
+        assertThat(program.getProgramName(), is(text("Jam 1 S&H+")));
     }
 
     /**
@@ -1547,7 +1548,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("093_Jam_1_Env+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam 1 Env+")));
+        assertThat(program.getProgramName(), is(text("Jam 1 Env+")));
     }
 
     /**
@@ -1558,7 +1559,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("094_Jam1Cordovox.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam1Cordovox")));
+        assertThat(program.getProgramName(), is(text("Jam1Cordovox")));
     }
 
     /**
@@ -1569,7 +1570,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("095_Jam_2_Flange.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam 2 Flange")));
+        assertThat(program.getProgramName(), is(text("Jam 2 Flange")));
     }
 
     /**
@@ -1580,7 +1581,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("096_Jam_2_Phase.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam 2 Phase")));
+        assertThat(program.getProgramName(), is(text("Jam 2 Phase")));
     }
 
     /**
@@ -1591,7 +1592,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("097_Jam_2_Pitch+.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam 2 Pitch+")));
+        assertThat(program.getProgramName(), is(text("Jam 2 Pitch+")));
     }
 
     /**
@@ -1602,7 +1603,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("098_Jam_2_Trem.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam 2 Trem")));
+        assertThat(program.getProgramName(), is(text("Jam 2 Trem")));
     }
 
     /**
@@ -1613,7 +1614,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("099_Jam2AutoWah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Jam2AutoWah")));
+        assertThat(program.getProgramName(), is(text("Jam2AutoWah")));
     }
 
     /**
@@ -1624,7 +1625,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("100_VintageRig.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("VintageRig")));
+        assertThat(program.getProgramName(), is(text("VintageRig")));
     }
 
     /**
@@ -1635,7 +1636,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("101_Pdl_Octaves.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Pdl Octaves")));
+        assertThat(program.getProgramName(), is(text("Pdl Octaves")));
     }
 
     /**
@@ -1646,7 +1647,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("102_TechnoChords.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("TechnoChords")));
+        assertThat(program.getProgramName(), is(text("TechnoChords")));
     }
 
     /**
@@ -1657,7 +1658,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("103_Cordovox.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Cordovox")));
+        assertThat(program.getProgramName(), is(text("Cordovox")));
     }
 
     /**
@@ -1668,7 +1669,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("104_Analog__Echo.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Analog  Echo")));
+        assertThat(program.getProgramName(), is(text("Analog  Echo")));
     }
 
     /**
@@ -1679,7 +1680,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("105_Wah_&_Uni.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Wah & Uni")));
+        assertThat(program.getProgramName(), is(text("Wah & Uni")));
     }
 
     /**
@@ -1690,7 +1691,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("106_EnvFilter_LP.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("EnvFilter LP")));
+        assertThat(program.getProgramName(), is(text("EnvFilter LP")));
     }
 
     /**
@@ -1701,7 +1702,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("107_InfiniteEcho.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("InfiniteEcho")));
+        assertThat(program.getProgramName(), is(text("InfiniteEcho")));
     }
 
     /**
@@ -1712,7 +1713,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("108_Fuzz_Wah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("Fuzz Wah")));
+        assertThat(program.getProgramName(), is(text("Fuzz Wah")));
     }
 
     /**
@@ -1723,7 +1724,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("109_JamMan.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(value("JamMan")));
+        assertThat(program.getProgramName(), is(text("JamMan")));
     }
 
     /**
@@ -1833,7 +1834,7 @@ public class SysexParserIT {
         assertNull(program.getEq());
         assertNull(program.getGain());
 
-        assertThat(program.getProgramName(), is(value("Clean Slate")));
+        assertThat(program.getProgramName(), is(text("Clean Slate")));
 
         EffectsStatus effectsStatus = program.getEffectsStatus();
         assertThat(effectsStatus.getEffect1On(), is(value(false)));
@@ -1908,7 +1909,7 @@ public class SysexParserIT {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertThat(knob.getName(), is(value("Delay Adj")));
+        assertThat(knob.getName(), is(text("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));
@@ -2082,7 +2083,7 @@ public class SysexParserIT {
         assertNull(program.getEq());
         assertNull(program.getGain());
 
-        assertThat(program.getProgramName(), is(value("Unity Gain")));
+        assertThat(program.getProgramName(), is(text("Unity Gain")));
 
         EffectsStatus effectsStatus = program.getEffectsStatus();
         assertThat(effectsStatus.getEffect1On(), is(value(true)));
@@ -2157,7 +2158,7 @@ public class SysexParserIT {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertThat(knob.getName(), is(value("Delay Adj")));
+        assertThat(knob.getName(), is(text("Delay Adj")));
 
         Lfo lfo1 = program.getLfo1();
         assertThat(lfo1.getMode(), is(value(1)));

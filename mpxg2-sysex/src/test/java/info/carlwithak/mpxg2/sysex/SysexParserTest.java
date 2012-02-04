@@ -125,10 +125,10 @@ import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsBeat.beat;
 import static info.carlwithak.mpxg2.test.IsFrequency.frequency;
+import static info.carlwithak.mpxg2.test.IsText.text;
 import static info.carlwithak.mpxg2.test.IsValue.value;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
-import static org.hamcrest.core.IsNull.notNullValue;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -761,7 +761,7 @@ public class SysexParserTest {
         assertThat(knob.getValue(), is(value(50)));
         assertThat(knob.getLow(), is(value(0)));
         assertThat(knob.getHigh(), is(value(100)));
-        assertThat(knob.getName(), is(value("Delay Adj")));
+        assertThat(knob.getName(), is(text("Delay Adj")));
     }
 
     @Test

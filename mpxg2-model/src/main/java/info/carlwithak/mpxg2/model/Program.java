@@ -23,9 +23,9 @@ import info.carlwithak.mpxg2.model.effects.Effect;
 import info.carlwithak.mpxg2.model.effects.Eq;
 import info.carlwithak.mpxg2.model.effects.Gain;
 import info.carlwithak.mpxg2.model.effects.Reverb;
-import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import info.carlwithak.mpxg2.model.parameters.SpeakerSimulatorCabinetValue;
+import info.carlwithak.mpxg2.model.parameters.TextValue;
 import java.util.Arrays;
 import java.util.List;
 
@@ -87,7 +87,7 @@ public class Program {
     private int eqToePatch;
     private int gainToePatch;
 
-    private GenericValue<String> programName = new GenericValue<String>("Name", "", "", ""); // TODO length validation
+    private final TextValue programName = new TextValue("Name", 12);
 
     private EffectsStatus effectsStatus;
 
@@ -488,7 +488,7 @@ public class Program {
         this.gainToePatch = gainToePatch;
     }
 
-    public GenericValue<String> getProgramName() {
+    public TextValue getProgramName() {
         return programName;
     }
 

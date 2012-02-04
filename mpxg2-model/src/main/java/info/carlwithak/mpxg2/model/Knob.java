@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.TextValue;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Knob implements DataObject {
     private GenericValue<Integer> value = new GenericValue<Integer>("Value", "", 0, 127);
     private GenericValue<Integer> low = new GenericValue<Integer>("Low", "", 0, 127);
     private GenericValue<Integer> high = new GenericValue<Integer>("High", "", 0, 127);
-    private GenericValue<String> name = new GenericValue<String>("Name", "", "", ""); // TODO length validation
+    private TextValue name = new TextValue("Name", 12);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {
@@ -61,7 +62,7 @@ public class Knob implements DataObject {
         return high;
     }
 
-    public GenericValue<String> getName() {
+    public TextValue getName() {
         return name;
     }
 
