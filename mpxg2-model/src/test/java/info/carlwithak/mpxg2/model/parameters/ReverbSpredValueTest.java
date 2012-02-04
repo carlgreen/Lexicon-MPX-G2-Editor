@@ -32,7 +32,7 @@ import static org.junit.Assert.assertThat;
  */
 @RunWith(Parameterized.class)
 public class ReverbSpredValueTest {
-    private final GenericValue<Boolean> link = new GenericValue<Boolean>("Link", "OnOff", false, true);
+    private final OnOffValue link = new OnOffValue("Link");
     private final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
     private final ReverbTimeValue time = new ReverbTimeValue("Time");
     private ReverbSpredValue value;

@@ -648,18 +648,18 @@ public class ReverbSpredValue extends GenericValue<Integer> {
         }
     };
 
-    private final GenericValue<Boolean> link;
+    private final OnOffValue link;
     private final GenericValue<Double> size;
     private final GenericValue<Integer> time;
 
-    public ReverbSpredValue(final String name, final GenericValue<Boolean> link, final GenericValue<Double> size) {
+    public ReverbSpredValue(final String name, final OnOffValue link, final GenericValue<Double> size) {
         super(name, "", 0, 255);
         this.link = link;
         this.size = size;
         this.time = null;
     }
 
-    public ReverbSpredValue(final String name, final GenericValue<Boolean> link, final ReverbTimeValue time) {
+    public ReverbSpredValue(final String name, final OnOffValue link, final ReverbTimeValue time) {
         super(name, "", 0, 255);
         this.link = link;
         this.size = null;

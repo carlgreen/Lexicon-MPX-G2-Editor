@@ -121,10 +121,10 @@ public class DecayTimeValue extends GenericValue<Integer> {
         }
     };
 
-    private final GenericValue<Boolean> link;
+    private final OnOffValue link;
     private final GenericValue<Double> size;
 
-    public DecayTimeValue(final String name, final GenericValue<Boolean> link, final GenericValue<Double> size) {
+    public DecayTimeValue(final String name, final OnOffValue link, final GenericValue<Double> size) {
         super(name, "s", 0, 63);
         this.link = link;
         this.size = size;
