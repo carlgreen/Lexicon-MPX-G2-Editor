@@ -17,8 +17,8 @@
 
 package info.carlwithak.mpxg2.printing;
 
-import info.carlwithak.mpxg2.model.RoutingData;
 import info.carlwithak.mpxg2.model.Program;
+import info.carlwithak.mpxg2.model.RoutingData;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
