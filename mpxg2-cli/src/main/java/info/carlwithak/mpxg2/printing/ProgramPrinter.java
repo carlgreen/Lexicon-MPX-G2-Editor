@@ -58,7 +58,6 @@ public class ProgramPrinter {
         sb.append("  Guitar Style: ").append(printGuitarStyles(program)).append("\n");
         sb.append("  Effect Type: ").append(printEffectTypes(program)).append("\n");
         sb.append("  Application Type: ").append(printApplicationTypes(program)).append("\n");
-        // TODO indicate inactive effects
         sb.append("  Effect Routing:\n");
         for (String line : RoutingPrinter.print(program).split("\n")) {
             sb.append("    ").append(line).append("\n");
