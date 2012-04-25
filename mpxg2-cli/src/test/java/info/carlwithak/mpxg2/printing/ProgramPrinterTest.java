@@ -107,7 +107,6 @@ public class ProgramPrinterTest {
         assertEquals("", sb.toString());
 
         sb = new StringBuilder();
-        // TODO would be good to mock the effect here
         PedalVol pedalVol = new PedalVol();
         pedalVol.mix.setValue(0);
         pedalVol.level.setValue(0);
