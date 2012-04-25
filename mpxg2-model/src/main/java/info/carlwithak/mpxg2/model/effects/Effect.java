@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.effects;
 
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.VolumeValue;
 
 /**
  * Base class for Effect 1 and 2 effects.
@@ -27,7 +28,7 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
  */
 public abstract class Effect implements EffectObject {
     public final GenericValue<Integer> mix = new GenericValue<Integer>("Mix", "%", 0, 100);
-    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", -90, 6);
+    public final VolumeValue level = new VolumeValue("Level", -90, 6);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

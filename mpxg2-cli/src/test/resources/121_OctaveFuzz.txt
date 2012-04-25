@@ -8,7 +8,7 @@ Octave Fuzz
   Effect 1: Shift (M) (Off)
     Toe Switch: off=bypass
     Mix: 100%
-    Level: -90dB
+    Level: Off
     Tune: -1200
     Optimize: 50
     Glide: On
@@ -42,7 +42,7 @@ Octave Fuzz
         Mid: --
         Max: 127
       Destination: Effect 1 Level
-        Min: -90dB
+        Min: Off
         Mid: --
         Max: +253dB
     Patch 2:
@@ -101,7 +101,7 @@ Octave Fuzz
       Bypass Level: 0dB
     FX1:
       Mix: 100%
-      Level: -90dB
+      Level: Off
     FX2:
       Mix: 100%
       Level: +3dB

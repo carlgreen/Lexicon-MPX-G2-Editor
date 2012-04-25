@@ -132,8 +132,7 @@ public class AlgorithmPrinterTest {
         shiftMono.optimize.setValue(50);
         shiftMono.glide.setValue(true);
 
-        // TODO level should be 'Off'
-        String expected = "    Mix: 100%\n    Level: -90dB\n    Tune: -1200\n    Optimize: 50\n    Glide: On\n";
+        String expected = "    Mix: 100%\n    Level: Off\n    Tune: -1200\n    Optimize: 50\n    Glide: On\n";
         String actual = AlgorithmPrinter.print(shiftMono);
 
         assertEquals(expected, actual);
