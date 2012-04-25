@@ -3,7 +3,7 @@ Old Eddie
   Effect Type: Distortion, Flanger, Gain, Phaser, Reverb
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=C=D=G=2---O
+    I=E=1=C=D=G=₂---O
               |===R_|
   Effect 1: OrangePhase (On)
     Toe Switch: disabled

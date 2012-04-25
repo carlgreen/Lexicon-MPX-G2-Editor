@@ -3,7 +3,7 @@ Metal Stack
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=2=G=C=E=D=R=1=O
+    I=2=G=c=E=D=R=1=O
             |=======|
   Effect 1: Volume (S) (On)
     Toe Switch: disabled

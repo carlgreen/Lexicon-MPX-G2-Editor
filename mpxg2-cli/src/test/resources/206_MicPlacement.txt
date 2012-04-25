@@ -3,7 +3,7 @@ MicPlacement
   Effect Type: Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=C=E=D=R=1=O
+    I=₂=G=C=e=d=R=₁=O
             |=======|
   Chorus: Comb 1 (On)
     Toe Switch: disabled

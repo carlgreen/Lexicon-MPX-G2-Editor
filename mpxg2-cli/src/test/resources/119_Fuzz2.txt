@@ -3,7 +3,7 @@ Fuzz 2
   Effect Type: 
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=2=E=C=D=R=G=O
+    I=₁=₂=e=c=d=r=G=O
   Gain: Overdrive (On)
     Toe Switch: disabled
     Lo: +11dB

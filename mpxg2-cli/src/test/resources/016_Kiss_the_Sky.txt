@@ -3,7 +3,7 @@ Kiss the Sky
   Effect Type: Delay, Distortion, Gain, Pitch, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=2=1=G=E=R=C=D=O
+    I=2=1=G=E=R=c=D=O
   Effect 1: OctaBuzz (On)
     Toe Switch: disabled
     Mix: 100%

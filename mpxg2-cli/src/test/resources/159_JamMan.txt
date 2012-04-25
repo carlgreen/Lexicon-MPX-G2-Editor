@@ -3,7 +3,7 @@ JamMan
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=E=1=2=G=C=D=R=O
+    I=E=1=₂=G=C=D=R=O
               |=====|
   Effect 1: Pedal Wah 1 (Off)
     Toe Switch: off=bypass

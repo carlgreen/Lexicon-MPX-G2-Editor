@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.DataObject;
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.RoutingData;
 
@@ -27,8 +28,11 @@ import info.carlwithak.mpxg2.model.RoutingData;
  */
 public class RoutingPrinter {
 
-    private static final String[] ROUTING_EFFECT_IDS = {
+    private static final String[] ROUTING_EFFECT_IDS_ACTIVE = {
         "1", "2", "C", "D", "R", "E", "G", "O", "I"
+    };
+    private static final String[] ROUTING_EFFECT_IDS_INACTIVE = {
+        "₁", "₂", "c", "d", "r", "e", "g"
     };
 
     private static final String[] ROUTING_INPUT_CONNECTIONS = {
@@ -77,9 +81,9 @@ public class RoutingPrinter {
             if (routing == 1) {
                 // find next upper effect input and derive from that
                 upper.append(getNextUpperInputConnection(routes, i) == 0 ? '=' : '-');
-                lower.append(routingEffectIdToString(route.getEffectId()));
+                lower.append(routingEffectIdToString(route.getEffectId(), program));
             } else {
-                upper.append(routingEffectIdToString(route.getEffectId()));
+                upper.append(routingEffectIdToString(route.getEffectId(), program));
                 if (routing == 2 || routing == 3) {
                     lower.append('|');
                 } else if (route.getPathType() == 1) {
@@ -115,8 +119,11 @@ public class RoutingPrinter {
         return new RoutingPrinter(program).print();
     }
 
-    private static String routingEffectIdToString(final int routingEffectId) {
-        return ROUTING_EFFECT_IDS[routingEffectId];
+    private static String routingEffectIdToString(final int routingEffectId, final Program program) {
+        final DataObject effect = program.getEffect(routingEffectId);
+        return effect == null && routingEffectId < ROUTING_EFFECT_IDS_INACTIVE.length
+                ? ROUTING_EFFECT_IDS_INACTIVE[routingEffectId]
+                : ROUTING_EFFECT_IDS_ACTIVE[routingEffectId];
     }
 
     private static String routingInputConnectionToString(final int routingInputConnection) {

@@ -3,7 +3,7 @@ Tap Echo
   Effect Type: Delay
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=G=C=====R=O
+    I=₁=₂=g=c=====r=O
             |=E=D===|
   Delay: Echo (D) (On)
     Toe Switch: disabled

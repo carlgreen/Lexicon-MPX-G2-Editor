@@ -3,7 +3,7 @@ C-Wah
   Effect Type: Wah
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=2=E=C=D=R=G=O
+    I=1=₂=e=c=d=r=g=O
   Effect 1: Pedal Wah 2 (On)
     Toe Switch: off=bypass
     Mix: 100%

@@ -3,7 +3,7 @@ TechnoChords
   Effect Type: Delay, Mod
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=2=G=E=C=D=R=1=O
+    I=2=G=E=c=D=R=1=O
   Effect 1: Auto Pan (On)
     Toe Switch: disabled
     Mix: 100%

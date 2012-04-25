@@ -3,7 +3,7 @@ Little Amp
   Effect Type: Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G=D=C=R=O
+    I=e=₁=₂=G=d=c=r=O
   Gain: Preamp (On)
     Toe Switch: disabled
     Lo: +25dB

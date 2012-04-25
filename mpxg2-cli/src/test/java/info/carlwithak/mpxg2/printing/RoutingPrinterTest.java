@@ -19,6 +19,24 @@ package info.carlwithak.mpxg2.printing;
 
 import info.carlwithak.mpxg2.model.Program;
 import info.carlwithak.mpxg2.model.RoutingData;
+import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
+import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
+import info.carlwithak.mpxg2.model.effects.algorithms.Chamber;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusAlgorithm;
+import info.carlwithak.mpxg2.model.effects.algorithms.ChorusPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.DelayDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.DetuneDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EchoDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.EqPedalVol;
+import info.carlwithak.mpxg2.model.effects.algorithms.Overdrive;
+import info.carlwithak.mpxg2.model.effects.algorithms.Panner;
+import info.carlwithak.mpxg2.model.effects.algorithms.PedalWah1;
+import info.carlwithak.mpxg2.model.effects.algorithms.Plate;
+import info.carlwithak.mpxg2.model.effects.algorithms.Screamer;
+import info.carlwithak.mpxg2.model.effects.algorithms.ShiftDual;
+import info.carlwithak.mpxg2.model.effects.algorithms.Tone;
+import info.carlwithak.mpxg2.model.effects.algorithms.UniVybe;
+import info.carlwithak.mpxg2.model.effects.algorithms.VolumeDual;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -111,7 +129,14 @@ public class RoutingPrinterTest {
         routing.setPathType(0);
         program.setRouting8(routing);
 
-        String expected = "I=1=2=G=C=D=R=E=O";
+        program.setEffect1(new UniVybe());
+        program.setEffect2(new PedalWah1());
+        program.setChorus(new ChorusPedalVol());
+        program.setDelay(new EchoDual());
+        program.setReverb(new Ambience());
+        program.setGain(new Screamer());
+
+        String expected = "I=1=2=G=C=D=R=e=O";
 
         assertEquals(expected, RoutingPrinter.print(program));
     }
@@ -197,8 +222,13 @@ public class RoutingPrinterTest {
         routing.setPathType(0);
         program.setRouting8(routing);
 
-        // TODO E, C inactive
-        String expected = "I=E=C=G=1===R=2=O\n" +
+        program.setEffect1(new DetuneDual());
+        program.setEffect2(new Panner());
+        program.setDelay(new EchoDual());
+        program.setReverb(new Plate());
+        program.setGain(new Screamer());
+
+        String expected = "I=e=c=G=1===R=2=O\n" +
                           "        |=D===|";
         String actual = RoutingPrinter.print(program);
 
@@ -286,11 +316,204 @@ public class RoutingPrinterTest {
         routing.setPathType(1);
         program.setRouting8(routing);
 
+        program.setEffect1(new AutoPan());
+        program.setEffect2(new AutoPan());
+        program.setChorus(new ChorusAlgorithm());
+        program.setDelay(new EchoDual());
+        program.setReverb(new Chamber());
+        program.setEq(new EqPedalVol());
+        program.setGain(new Tone());
+
         String expected = "I=E=G=C--\\2=D=R=O\n" +
                           "      |/1=======|";
         String actual = RoutingPrinter.print(program);
 
         assertEquals(expected, actual);
+    }
+
+    /**
+     * Test printing a textual representation of the routing.
+     *
+     * PowerChords has "lower case numbers".
+     */
+    @Test
+    public void testPrintPowerChords() throws PrintException {
+        Program program = new Program();
+
+        RoutingData routing = new RoutingData();
+        routing.setEffectId(8);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting0(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(1);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting1(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(6);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting2(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(5);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting3(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(0);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting4(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(2);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting5(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(3);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting6(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(4);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting7(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(7);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting8(routing);
+
+        program.setEffect1(new ShiftDual());
+        program.setDelay(new DelayDual());
+        program.setReverb(new Chamber());
+        program.setGain(new Overdrive());
+
+        String expected = "I=₂=G=e=1=c=D=R=O";
+
+        assertEquals(expected, RoutingPrinter.print(program));
+    }
+
+    /**
+     * Test printing a textual representation of the routing.
+     *
+     * Pitch Cascade has inactive effects on the lower routing.
+     */
+    @Test
+    public void testPrintPitchCascase() throws PrintException {
+        Program program = new Program();
+
+        RoutingData routing = new RoutingData();
+        routing.setEffectId(8);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting0(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(6);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting1(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(1);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(3);
+        routing.setPathType(0);
+        program.setRouting2(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(5);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting3(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(3);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting4(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(0);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting5(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(2);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(1);
+        routing.setPathType(1);
+        program.setRouting6(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(4);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(2);
+        routing.setPathType(1);
+        program.setRouting7(routing);
+
+        routing = new RoutingData();
+        routing.setEffectId(7);
+        routing.setUpperInputConnection(0);
+        routing.setLowerInputConnection(0);
+        routing.setRouting(0);
+        routing.setPathType(0);
+        program.setRouting8(routing);
+
+        program.setEffect1(new ShiftDual());
+        program.setEffect2(new VolumeDual());
+        program.setDelay(new DelayDual());
+        program.setReverb(new Ambience());
+        program.setEq(new EqPedalVol());
+        program.setGain(new Overdrive());
+
+        String expected = "I=G=2=========R=O\n" +
+                          "    |=E=D=1=c=|";
+
+        assertEquals(expected, RoutingPrinter.print(program));
     }
 
     /**

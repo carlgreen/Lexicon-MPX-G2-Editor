@@ -3,7 +3,7 @@ Comp+Chorus
   Effect Type: Chorus, Gain
   Application Type: Stand alone
   Effect Routing:
-    I=1=G=2=C=D=E=R=O
+    I=1=G=₂=C=D=e=R=O
   Effect 1: Red Comp (On)
     Toe Switch: disabled
     Mix: 100%

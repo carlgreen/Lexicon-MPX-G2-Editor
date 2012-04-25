@@ -3,7 +3,7 @@ Angus...
   Effect Type: Distortion, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G=D=C=R=O
+    I=e=₁=₂=G=d=c=R=O
   Reverb: Ambience (On)
     Toe Switch: disabled
     Mix: 40%

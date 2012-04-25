@@ -4,7 +4,7 @@ PitchCascade
   Application Type: Stand alone
   Effect Routing:
     I=G=2=========R=O
-        |=E=D=1=C=|
+        |=E=D=1=c=|
   Effect 1: Shift (D) (On)
     Toe Switch: on=bypass
     Mix: 100%

@@ -3,7 +3,7 @@ PCM 60 Room
   Effect Type: Delay, EQ, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=C=D=R=E=O
+    I=₁=₂=G=c=d=R=E=O
   Reverb: Chamber (On)
     Toe Switch: disabled
     Mix: 35%

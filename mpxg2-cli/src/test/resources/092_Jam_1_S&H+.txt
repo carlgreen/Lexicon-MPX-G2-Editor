@@ -3,7 +3,7 @@ Jam 1 S&H+
   Effect Type: Delay, Gain, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=E=G=C=D=R=O
+    I=₁=2=E=G=c=D=R=O
             |=======|
   Effect 2: SweepFilter (On)
     Toe Switch: disabled

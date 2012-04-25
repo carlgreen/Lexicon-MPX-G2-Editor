@@ -3,7 +3,7 @@ TrackingRoom
   Effect Type: EQ, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=₁=₂=G=E=c=d=R=O
   Reverb: Ambience (On)
     Toe Switch: disabled
     Mix: 70%

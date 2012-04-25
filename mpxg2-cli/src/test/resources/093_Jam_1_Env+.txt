@@ -3,7 +3,7 @@ Jam 1 Env+
   Effect Type: Delay, Gain, Mod, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=E=2=1=G=C=D=R=O
+    I=E=2=1=G=c=D=R=O
             |=======|
   Effect 1: Tremolo (M) (Off)
     Toe Switch: disabled

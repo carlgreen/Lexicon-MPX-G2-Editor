@@ -3,7 +3,7 @@ OD Lead
   Effect Type: Distortion, Gain, Overdrive
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=₁=₂=G=e=c=d=r=O
   Gain: Overdrive (On)
     Toe Switch: disabled
     Lo: 0dB

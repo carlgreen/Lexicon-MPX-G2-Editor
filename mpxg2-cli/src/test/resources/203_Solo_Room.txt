@@ -3,7 +3,7 @@ Solo Room
   Effect Type: Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=R=======O
+    I=₁=₂=G=R=======O
             |=C=E=D=|
   Chorus: Volume (S) (On)
     Toe Switch: disabled

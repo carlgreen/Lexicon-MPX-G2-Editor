@@ -3,7 +3,7 @@ Jam2 Flange+
   Effect Type: Chorus, Delay, Distortion, Flanger, Gain
   Application Type: Amp Input Only
   Effect Routing:
-    I=E=1=2=C=D=R=G=O
+    I=E=₁=2=C=D=r=G=O
   Effect 2: Pedal Wah 2 (Off)
     Toe Switch: off=bypass
     Mix: 100%

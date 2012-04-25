@@ -3,7 +3,7 @@ Country Rock
   Effect Type: Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=2=E=1=G===C===O
+    I=2=E=1=G===c===O
             |=D===R=|
   Effect 1: Red Comp (On)
     Toe Switch: disabled

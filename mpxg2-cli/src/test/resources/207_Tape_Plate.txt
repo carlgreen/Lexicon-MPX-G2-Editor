@@ -3,8 +3,8 @@ Tape~Plate
   Effect Type: Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=2=E=G=1=======O
-          |===C=D=R=|
+    I=₂=e=G=1=======O
+          |===c=D=R=|
   Effect 1: Volume (S) (On)
     Toe Switch: disabled
     Mix: 100%

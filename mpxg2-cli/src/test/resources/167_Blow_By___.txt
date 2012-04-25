@@ -3,7 +3,7 @@ Blow By...
   Effect Type: Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=C=E=D=R=O
+    I=₁=2=G=c=e=D=R=O
   Effect 2: Pedal Wah 2 (Off)
     Toe Switch: off=bypass
     Mix: 100%

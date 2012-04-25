@@ -3,7 +3,7 @@ Sandman
   Effect Type: Distortion, EQ, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=C=E=D=R=O
+    I=1=₂=G=C=E=d=R=O
               |=====|
   Effect 1: Pedal Wah 1 (Off)
     Toe Switch: off=bypass

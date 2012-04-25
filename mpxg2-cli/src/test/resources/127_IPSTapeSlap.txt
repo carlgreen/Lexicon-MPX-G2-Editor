@@ -3,7 +3,7 @@ IPS TapeSlap
   Effect Type: Delay
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=2=E=C=D=R=G=O
+    I=₁=₂=e=c=D=r=g=O
   Delay: Echo (S) (On)
     Toe Switch: disabled
     Mix: 20%

@@ -3,7 +3,7 @@ Tap Echo
   Effect Type: Delay
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=2=C=====R=G=O
+    I=₁=₂=c=====r=g=O
           |=E=D===|
   Delay: Echo (D) (On)
     Toe Switch: disabled

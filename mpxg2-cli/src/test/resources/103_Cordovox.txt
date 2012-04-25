@@ -3,7 +3,7 @@ Cordovox
   Effect Type: Chorus, Delay, Gain, Reverb
   Application Type: Amp Input Only
   Effect Routing:
-    I=E=C=2=1=D=R=G=O
+    I=E=C=₂=1=d=r=G=O
         |=========|
   Effect 1: Tremolo (M) (On)
     Toe Switch: disabled

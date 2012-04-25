@@ -3,7 +3,7 @@ British 70's
   Effect Type: Gain, Reverb, Speaker Sim, Wah
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=D=C=R=O
+    I=₁=₂=G=e=d=c=R=O
   Reverb: Ambience (On)
     Toe Switch: disabled
     Mix: 10%

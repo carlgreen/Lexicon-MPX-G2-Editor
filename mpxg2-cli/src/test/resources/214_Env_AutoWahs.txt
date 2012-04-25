@@ -3,7 +3,7 @@ Env AutoWahs
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=G===1-D=E=C=R=O
+    I=G===1-D=e=c=R=O
       |=2==_|
   Effect 1: Wah  2 (On)
     Toe Switch: on=bypass

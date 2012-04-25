@@ -3,7 +3,7 @@ E Maj/Min 3
   Effect Type: Chorus, Gain, Overdrive, Pitch, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=G=2=======C=D=O
+    I=G=2=======c=D=O
         |=E=1=R=|
   Effect 1: Diatonic Hmy (On)
     Toe Switch: on=bypass

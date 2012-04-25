@@ -3,7 +3,7 @@ Clean Slate
   Effect Type: Delay, Gain, Pitch
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=₁=₂=g=e=c=d=r=O
   Softrow:
   Patching:
   Controllers:

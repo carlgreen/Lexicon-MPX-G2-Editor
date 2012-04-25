@@ -3,7 +3,7 @@ Crunch Boost
   Effect Type: Gain
   Application Type: 
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=₁=₂=G=e=c=d=r=O
   Gain: Crunch (On)
     Toe Switch: disabled
     Lo: +10dB

@@ -3,7 +3,7 @@ Pedal Swell
   Effect Type: Chorus, Delay, Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=2=G=1=D=C=R=O
+    I=E=2=G=1=D=C=r=O
   Effect 1: Auto Pan (On)
     Toe Switch: disabled
     Mix: 100%

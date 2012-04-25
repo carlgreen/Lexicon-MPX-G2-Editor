@@ -3,7 +3,7 @@ Jam 1 S&H+
   Effect Type: Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=₁=2=G=E=c=D=R=O
   Effect 2: SweepFilter (On)
     Toe Switch: disabled
     Mix: 100%

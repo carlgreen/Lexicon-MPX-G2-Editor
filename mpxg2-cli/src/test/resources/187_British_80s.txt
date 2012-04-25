@@ -3,7 +3,7 @@ British 80's
   Effect Type: Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=D=G=C=2=R=E=O
+    I=₁=d=G=c=₂=R=e=O
   Reverb: Ambience (On)
     Toe Switch: disabled
     Mix: 20%

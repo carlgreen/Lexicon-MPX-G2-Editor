@@ -3,7 +3,7 @@ Pdl Octaves
   Effect Type: Delay, Gain, Pitch
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=C=E=D=R=O
+    I=1=2=G=C=e=D=R=O
   Effect 1: Shift (D) (On)
     Toe Switch: on=bypass
     Mix: 100%

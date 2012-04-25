@@ -3,7 +3,7 @@ Octave Fuzz
   Effect Type: Distortion, Gain, Pitch
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I===2=C=G=E=D=R=O
+    I===2=c=G=E=d=r=O
     |=1=====|
   Effect 1: Shift (M) (On)
     Toe Switch: off=bypass

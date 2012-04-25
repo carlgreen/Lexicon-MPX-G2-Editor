@@ -3,7 +3,7 @@ The Edge...
   Effect Type: Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=E=2=G=D=C=R=O
+    I=1=e=₂=G=D=c=R=O
   Effect 1: Pedal Vol (Off)
     Toe Switch: off=bypass
     Mix: 100%

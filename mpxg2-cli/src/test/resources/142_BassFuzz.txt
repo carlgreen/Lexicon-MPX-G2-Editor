@@ -3,7 +3,7 @@ Bass Fuzz
   Effect Type: Gain
   Application Type: 
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=1=₂=G=e=c=d=r=O
   Effect 1: Blue Comp (On)
     Toe Switch: disabled
     Mix: 100%

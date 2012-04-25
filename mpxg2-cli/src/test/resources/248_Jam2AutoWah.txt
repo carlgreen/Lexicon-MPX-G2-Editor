@@ -3,7 +3,7 @@ Jam2AutoWah
   Effect Type: Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=2=1=G=C=D=R=O
+    I=E=2=₁=G=c=D=R=O
             |=======|
   Effect 2: Wah  2 (On)
     Toe Switch: on=bypass

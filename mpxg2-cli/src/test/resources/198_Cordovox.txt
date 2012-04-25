@@ -3,7 +3,7 @@ Cordovox
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=G=C--\2=D=R=E=O
+    I=G=C--\2=d=R=e=O
         |/1=========|
   Effect 1: Auto Pan (On)
     Toe Switch: disabled

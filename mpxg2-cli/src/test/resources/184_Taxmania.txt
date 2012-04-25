@@ -3,7 +3,7 @@ Taxmania
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=1=G=C=2=D=R=E=O
+    I=1=G=c=₂=d=R=e=O
   Effect 1: Blue Comp (On)
     Toe Switch: disabled
     Mix: 100%

@@ -3,7 +3,7 @@ TechnoChords
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=C=2=G=E=D=R=1=O
+    I=C=2=G=E=D=r=1=O
   Effect 1: Auto Pan (On)
     Toe Switch: disabled
     Mix: 100%

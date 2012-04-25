@@ -4,7 +4,7 @@ TransChorus1
   Application Type: Stand alone
   Effect Routing:
     I=2=G===========O
-        |=C=E=1=D=R=|
+        |=C=E=₁=D=R=|
   Effect 2: Blue Comp (On)
     Toe Switch: disabled
     Mix: 100%

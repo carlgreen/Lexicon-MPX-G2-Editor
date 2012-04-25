@@ -3,7 +3,7 @@ Jam 2 Phase
   Effect Type: Delay, Distortion, Gain, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=E=1=2=G=C=D=R=O
+    I=E=1=2=G=c=D=R=O
             |=======|
   Effect 1: OrangePhase (On)
     Toe Switch: disabled

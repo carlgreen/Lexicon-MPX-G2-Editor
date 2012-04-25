@@ -3,7 +3,7 @@ Jam 2 Pitch+
   Effect Type: Delay, Distortion, Gain, Pitch, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=E=1=2=G=C=D=R=O
+    I=E=1=₂=G=c=D=R=O
             |=======|
   Effect 1: Shift (M) (On)
     Toe Switch: on=bypass

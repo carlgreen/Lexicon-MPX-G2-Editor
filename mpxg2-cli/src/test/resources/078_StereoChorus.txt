@@ -3,7 +3,7 @@ StereoChorus
   Effect Type: Chorus
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=₁=₂=g=e=C=d=r=O
   Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 64%

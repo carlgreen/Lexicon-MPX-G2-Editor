@@ -3,7 +3,7 @@ British A/B
   Effect Type: Chorus, Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=D=C=R=O
+    I=₁=2=G=e=D=C=R=O
   Effect 2: Pedal Wah 2 (Off)
     Toe Switch: off=bypass
     Mix: 100%

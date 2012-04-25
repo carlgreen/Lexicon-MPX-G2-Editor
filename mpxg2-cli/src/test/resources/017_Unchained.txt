@@ -3,7 +3,7 @@ Unchained
   Effect Type: Delay, Flanger, Gain, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=2=C=G=E=1=D=R=O
+    I=₂=C=G=E=₁=D=R=O
   Chorus: Centrifuge1 (On)
     Toe Switch: disabled
     Mix: 60%

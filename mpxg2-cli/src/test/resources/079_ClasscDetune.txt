@@ -3,7 +3,7 @@ ClasscDetune
   Effect Type: Pitch
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=2=G=1=E=C=D=R=O
+    I=₂=g=1=e=c=d=r=O
   Effect 1: Shift (D) (On)
     Toe Switch: disabled
     Mix: 50%

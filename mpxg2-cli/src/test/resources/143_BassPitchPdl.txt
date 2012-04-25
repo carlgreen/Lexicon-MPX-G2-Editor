@@ -3,7 +3,7 @@ BassPitchPdl
   Effect Type: Gain
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=2=G=C=E=D=R=O
+    I=1=2=G=c=e=d=r=O
   Effect 1: Shift (D) (On)
     Toe Switch: on=bypass
     Mix: 100%

@@ -3,7 +3,7 @@ Jazzman
   Effect Type: Chorus, Delay, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G=C=D=R=O
+    I=E=1=₂=G=C=D=R=O
   Effect 1: Blue Comp (On)
     Toe Switch: disabled
     Mix: 100%

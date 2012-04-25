@@ -3,7 +3,7 @@ Rockabilly
   Effect Type: Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G===C===O
+    I=E=₁=₂=G===c===O
             |=D===R=|
   Delay: Echo (M) (On)
     Toe Switch: disabled

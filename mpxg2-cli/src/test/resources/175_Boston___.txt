@@ -3,7 +3,7 @@ Boston...
   Effect Type: Chorus, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=2=1=G=E=C=D=R=O
+    I=₂=1=G=E=C=D=R=O
   Effect 1: Blue Comp (On)
     Toe Switch: disabled
     Mix: 100%

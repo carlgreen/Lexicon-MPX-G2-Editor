@@ -3,7 +3,7 @@ Chaos Dance
   Effect Type: Delay, Gain, Pitch
   Application Type: Stand alone
   Effect Routing:
-    I=E=C=1=2=G=D=R=O
+    I=e=c=₁=2=G=D=R=O
   Effect 2: SweepFilter (On)
     Toe Switch: on=bypass
     Mix: 100%

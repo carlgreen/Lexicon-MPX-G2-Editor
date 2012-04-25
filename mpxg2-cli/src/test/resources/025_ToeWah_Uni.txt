@@ -3,7 +3,7 @@ ToeWah/Uni
   Effect Type: Delay, Gain, Mod, Wah
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=G=C=E=D=R=O
+    I=1=2=G=c=E=D=R=O
   Effect 1: Custom Vybe (On)
     Toe Switch: on=bypass
     Mix: 100%

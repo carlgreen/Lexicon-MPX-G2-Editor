@@ -3,7 +3,7 @@ Square Trem
   Effect Type: Delay, Gain, Pitch
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=1=E=C=D===O
+    I=2=G=1=e=c=D===O
           |=======R=|
   Effect 1: Shift (D) (Off)
     Toe Switch: disabled

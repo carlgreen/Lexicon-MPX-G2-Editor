@@ -3,7 +3,7 @@ Satch...
   Effect Type: Chorus, Delay, Distortion, Gain, Speaker Sim, Wah
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G=D===R=O
+    I=e=1=₂=G=D===r=O
             |===C===|
   Effect 1: Pedal Wah 2 (Off)
     Toe Switch: off=bypass

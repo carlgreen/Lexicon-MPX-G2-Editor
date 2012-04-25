@@ -3,7 +3,7 @@ TremoWah
   Effect Type: Gain, Mod, Speaker Sim, Wah
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=1=D=C=R=E=O
+    I=2=G=1=D=c=r=E=O
   Effect 1: Tremolo (M) (On)
     Toe Switch: disabled
     Mix: 100%

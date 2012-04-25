@@ -3,7 +3,7 @@ Carlos S...
   Effect Type: Distortion, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=D=C=R=O
+    I=1=₂=G=E=d=c=R=O
   Effect 1: Red Comp (On)
     Toe Switch: disabled
     Mix: 100%

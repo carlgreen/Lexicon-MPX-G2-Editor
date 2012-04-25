@@ -3,7 +3,7 @@ Gray Flange
   Effect Type: Flanger
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=C=G=E=D=R=O
+    I=₁=₂=C=g=e=d=r=O
   Chorus: Centrifuge1 (On)
     Toe Switch: disabled
     Mix: 100%

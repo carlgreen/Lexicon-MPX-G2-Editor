@@ -3,7 +3,7 @@ Dist Lead
   Effect Type: Distortion, Gain
   Application Type: Amp Input Only
   Effect Routing:
-    I=2=1=E=C=D=R=G=O
+    I=₂=₁=e=c=d=r=G=O
   Gain: Distortion (On)
     Toe Switch: disabled
     Lo: +5dB

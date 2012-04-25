@@ -3,8 +3,8 @@ Space Echo
   Effect Type: Chorus, Delay, EQ, Gain
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=G=======C===1=O
-      |=D=E=2===R=|
+    I=G=======C===₁=O
+      |=D=E=2===r=|
   Effect 2: Volume (M) (On)
     Toe Switch: disabled
     Mix: 100%

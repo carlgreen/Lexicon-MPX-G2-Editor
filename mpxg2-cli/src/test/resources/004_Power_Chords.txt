@@ -3,7 +3,7 @@ Power Chords
   Effect Type: Gain, Pitch, Reverb
   Application Type: Amp Input + FX Loop, Stand alone
   Effect Routing:
-    I=2=G=E=1=C=D=R=O
+    I=₂=G=e=1=c=D=R=O
   Effect 1: Shift (D) (On)
     Toe Switch: on=bypass
     Mix: 100%

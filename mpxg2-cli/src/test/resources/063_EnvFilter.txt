@@ -3,7 +3,7 @@ EnvFilter
   Effect Type: Mod, Wah
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=2=1=G=E=C=D=R=O
+    I=2=1=g=e=c=d=r=O
   Effect 1: SweepFilter (On)
     Toe Switch: disabled
     Mix: 100%

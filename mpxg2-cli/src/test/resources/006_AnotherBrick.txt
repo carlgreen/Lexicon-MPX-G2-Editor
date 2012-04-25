@@ -3,7 +3,7 @@ AnotherBrick
   Effect Type: Chorus, Delay, Gain, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=E=1=2=G-D=C=R=O
+    I=E=₁=2=G-D=C=R=O
             |===|
   Effect 2: Blue Comp (On)
     Toe Switch: disabled

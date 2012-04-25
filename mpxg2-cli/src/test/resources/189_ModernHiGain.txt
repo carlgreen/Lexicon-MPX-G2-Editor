@@ -3,7 +3,7 @@ ModernHiGain
   Effect Type: Distortion, EQ, Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=D=C=R=O
+    I=₁=₂=G=E=d=c=R=O
   Reverb: Ambience (Off)
     Toe Switch: disabled
     Mix: 20%

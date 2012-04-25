@@ -3,7 +3,7 @@ RhythmRoom R
   Effect Type: Delay, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=R=1=======O
+    I=₂=G=R=1=======O
           |===C=E=D=|
   Effect 1: Panner (On)
     Toe Switch: disabled

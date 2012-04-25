@@ -3,7 +3,7 @@ Jazz Bright
   Effect Type: Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=G=C=D=E=R=2=O
+    I=₁=G=C=d=e=R=₂=O
   Chorus: Chorus (Off)
     Toe Switch: disabled
     Mix: 40%

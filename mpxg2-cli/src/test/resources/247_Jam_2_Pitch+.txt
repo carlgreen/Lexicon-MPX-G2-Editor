@@ -3,7 +3,7 @@ Jam 2 Pitch+
   Effect Type: Delay, Gain, Pitch, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G=C=D=R=O
+    I=E=1=₂=G=c=D=R=O
             |=======|
   Effect 1: Shift (M) (On)
     Toe Switch: on=bypass

@@ -3,7 +3,7 @@ JamMan
   Effect Type: Chorus, Delay, Distortion, Gain, Reverb
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=2=E=C=D===G=O
+    I=1=₂=E=C=D===G=O
               |=R=|
   Effect 1: Pedal Wah 1 (Off)
     Toe Switch: off=bypass

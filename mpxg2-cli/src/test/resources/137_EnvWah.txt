@@ -3,7 +3,7 @@ Env Wah
   Effect Type: Mod
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=C=====D=R=G=O
+    I=1=c=====d=r=g=O
     |=====E=2=======|
   Effect 1: Wah  2 (On)
     Toe Switch: off=bypass

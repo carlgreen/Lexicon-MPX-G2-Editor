@@ -3,7 +3,7 @@ ClassicDTune
   Effect Type: Gain, Pitch
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=1=E=C=D=R=O
+    I=₂=G=1=e=c=D=r=O
   Effect 1: Shift (D) (On)
     Toe Switch: disabled
     Mix: 50%

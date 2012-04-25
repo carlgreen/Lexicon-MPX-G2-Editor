@@ -3,7 +3,7 @@ ToeWah/Flng
   Effect Type: Delay, Flanger, Gain, Wah
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=G=C=E=D=R=O
+    I=₁=2=G=C=E=D=R=O
   Effect 2: Pedal Wah 1 (Off)
     Toe Switch: off=bypass
     Mix: 100%

@@ -3,7 +3,7 @@ Phaser
   Effect Type: Phaser
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=1=₂=g=e=c=d=r=O
   Effect 1: Phaser (On)
     Toe Switch: disabled
     Mix: 100%

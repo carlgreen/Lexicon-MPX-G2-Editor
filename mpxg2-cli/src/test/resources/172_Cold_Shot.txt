@@ -3,7 +3,7 @@ Cold Shot
   Effect Type: Chorus, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=E\C=1=R=D=O
+    I=2=G=E\C=1=R=d=O
           |====/|
   Effect 1: Auto Pan (On)
     Toe Switch: disabled

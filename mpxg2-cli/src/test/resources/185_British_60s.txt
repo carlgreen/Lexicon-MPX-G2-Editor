@@ -3,7 +3,7 @@ British 60's
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=E=1=2=G=D=C=R=O
+    I=e=₁=₂=G=d=c=R=O
   Reverb: Ambience (On)
     Toe Switch: disabled
     Mix: 25%

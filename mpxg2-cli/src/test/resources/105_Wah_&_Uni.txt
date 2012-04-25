@@ -3,7 +3,7 @@ Wah & Uni
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=1=2=E=C=D=R=G=O
+    I=1=2=e=C=D=r=G=O
   Effect 1: UniVybe (On)
     Toe Switch: on=bypass
     Mix: 100%

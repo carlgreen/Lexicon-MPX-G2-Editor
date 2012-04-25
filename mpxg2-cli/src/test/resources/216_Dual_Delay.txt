@@ -3,7 +3,7 @@ Dual Delay
   Effect Type: Delay, Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=D=E=C=R=O
+    I=₁=₂=G=D=e=c=r=O
   Delay: Delay (D) (On)
     Toe Switch: disabled
     Mix: 50%

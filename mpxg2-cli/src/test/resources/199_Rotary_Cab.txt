@@ -3,7 +3,7 @@ Rotary
   Effect Type: Chorus, Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=2=1=G=E=C=D=R=O
+    I=₂=₁=G=e=C=d=R=O
   Chorus: Rotary Cab (On)
     Toe Switch: disabled
     Mix: 100%

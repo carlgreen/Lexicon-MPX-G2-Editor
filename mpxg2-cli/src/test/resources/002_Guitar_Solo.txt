@@ -3,7 +3,7 @@ Guitar Solo
   Effect Type: Delay, Gain, Pitch, Reverb
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=E=C=G=1===R=2=O
+    I=e=c=G=1===R=2=O
             |=D===|
   Effect 1: Detune (D) (On)
     Toe Switch: disabled

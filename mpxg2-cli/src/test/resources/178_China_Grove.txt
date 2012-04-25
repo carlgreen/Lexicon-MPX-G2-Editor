@@ -3,7 +3,7 @@ China Grove
   Effect Type: Delay, Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=C=D=R=O
+    I=₁=2=G=e=c=D=r=O
   Effect 2: Pedal Wah 2 (Off)
     Toe Switch: off=bypass
     Mix: 100%

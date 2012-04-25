@@ -3,7 +3,7 @@ Jazz Dark
   Effect Type: Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=C=D=E=R=O
+    I=₁=₂=G=C=d=e=R=O
   Chorus: Chorus (Off)
     Toe Switch: disabled
     Mix: 40%

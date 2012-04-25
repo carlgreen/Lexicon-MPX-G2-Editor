@@ -3,7 +3,7 @@ Univybe
   Effect Type: Mod
   Application Type: Amp Input Only
   Effect Routing:
-    I=1=2=E=C=D=R=G=O
+    I=1=₂=e=c=d=r=g=O
   Effect 1: UniVybe (On)
     Toe Switch: disabled
     Mix: 100%

@@ -3,7 +3,7 @@ Slide Comp
   Effect Type: Delay, Gain
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=E=2=1=G=D=C=R=O
+    I=e=2=1=G=D=C=R=O
   Effect 1: Blue Comp (On)
     Toe Switch: disabled
     Mix: 100%

@@ -3,7 +3,7 @@ Jimmy P...
   Effect Type: Gain, Reverb, Wah
   Application Type: Stand alone
   Effect Routing:
-    I=1=2=G=E=D=C=R=O
+    I=1=₂=G=e=d=c=R=O
   Effect 1: Pedal Wah 2 (Off)
     Toe Switch: off=bypass
     Mix: 100%

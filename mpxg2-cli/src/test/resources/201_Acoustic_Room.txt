@@ -3,7 +3,7 @@ AcousticRoom
   Effect Type: EQ, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=G=2=D=C=1=E=R=O
+    I=G=₂=d=c=1=E=R=O
       |=============|
   Effect 1: Blue Comp (On)
     Toe Switch: disabled

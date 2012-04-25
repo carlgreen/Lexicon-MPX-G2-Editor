@@ -3,7 +3,7 @@ E Maj/Min 3
   Effect Type: Pitch, Reverb
   Application Type: Stand alone
   Effect Routing:
-    I=G=2=======C=D=O
+    I=G=2=======C=d=O
         |=E=1=R=|
   Effect 1: Diatonic Hmy (On)
     Toe Switch: on=bypass

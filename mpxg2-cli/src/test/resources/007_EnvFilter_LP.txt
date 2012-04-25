@@ -3,7 +3,7 @@ EnvFilter LP
   Effect Type: 
   Application Type: 
   Effect Routing:
-    I=1=G=E=C=====R=O
+    I=1=g=e=c=====r=O
         |=====2=D===|
   Effect 1: SweepFilter (On)
     Toe Switch: on=bypass

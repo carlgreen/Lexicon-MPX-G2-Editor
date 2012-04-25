@@ -3,8 +3,8 @@ Analog  Echo
   Effect Type: Delay, EQ, Gain
   Application Type: Stand alone
   Effect Routing:
-    I=1=D=G=======R=O
-          |=C=2=E===|
+    I=₁=D=G=======R=O
+          |=C=₂=E===|
   Chorus: Chorus (On)
     Toe Switch: disabled
     Mix: 100%

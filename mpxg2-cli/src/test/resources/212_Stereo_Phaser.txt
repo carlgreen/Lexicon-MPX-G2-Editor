@@ -3,7 +3,7 @@ StereoPhaser
   Effect Type: Delay, Gain, Phaser, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=G=D--\2-R=E=C=O
+    I=G=D--\2-R=e=c=O
         |/1==_|
   Effect 1: OrangePhase (On)
     Toe Switch: disabled

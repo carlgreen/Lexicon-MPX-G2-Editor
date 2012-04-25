@@ -3,7 +3,7 @@ Vibro Cab
   Effect Type: Chorus, Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=G=E\C=1=D=R=2=O
+    I=G=E\C=1=d=R=2=O
         |/=====/|
   Effect 1: Auto Pan (On)
     Toe Switch: disabled

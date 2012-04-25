@@ -3,7 +3,7 @@ Jam1Cordovox
   Effect Type: Chorus, Delay, Gain, Overdrive, Reverb, Speaker Sim
   Application Type: Amp Input + FX Loop
   Effect Routing:
-    I=G=C===2=R=E=D=O
+    I=G=C===2=R=e=D=O
         |=1=======|
   Effect 1: Auto Pan (On)
     Toe Switch: disabled

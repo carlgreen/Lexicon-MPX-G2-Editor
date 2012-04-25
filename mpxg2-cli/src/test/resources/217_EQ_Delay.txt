@@ -3,7 +3,7 @@ EQ   Delay
   Effect Type: Delay, EQ, Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=1=G=D=2=E=C=R=O
+    I=₁=G=D=₂=E=c=r=O
   Delay: Delay (M) (On)
     Toe Switch: disabled
     Mix: 64%

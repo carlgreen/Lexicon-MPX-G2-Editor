@@ -3,7 +3,7 @@ Trem~AutoWah
   Effect Type: Delay, Gain, Pitch
   Application Type: Stand alone
   Effect Routing:
-    I=G=E===1-R=D=C=O
+    I=G=E===1-R=d=c=O
         |=2_=_|
   Effect 1: Wah  2 (On)
     Toe Switch: on=bypass

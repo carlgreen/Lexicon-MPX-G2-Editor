@@ -3,7 +3,7 @@ Roadhouse
   Effect Type: Gain, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=2=1=G=D=C=R=O
+    I=e=₂=1=G=d=c=R=O
             |=======|
   Effect 1: Blue Comp (On)
     Toe Switch: disabled

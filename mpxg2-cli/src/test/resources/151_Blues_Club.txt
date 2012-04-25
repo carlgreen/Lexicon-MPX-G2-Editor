@@ -3,7 +3,7 @@ Blues Club
   Effect Type: Gain, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G=D=C=R=O
+    I=E=1=2=G=D=c=R=O
             |=======|
   Effect 1: Blue Comp (On)
     Toe Switch: disabled

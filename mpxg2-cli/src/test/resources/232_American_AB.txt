@@ -3,7 +3,7 @@ Amercan A/B
   Effect Type: Delay, Gain, Mod, Reverb, Speaker Sim
   Application Type: Stand alone
   Effect Routing:
-    I=E=1=2=G=D=C=R=O
+    I=E=1=2=G=D=c=R=O
   Effect 1: Red Comp (On)
     Toe Switch: disabled
     Mix: 100%

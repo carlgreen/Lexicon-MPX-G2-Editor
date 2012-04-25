@@ -3,7 +3,7 @@ Round Trem
   Effect Type: Delay, Gain, Pitch
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=1===C=D===O
+    I=2=G=1===c=D===O
           |=E=====R=|
   Effect 1: Shift (D) (Off)
     Toe Switch: disabled

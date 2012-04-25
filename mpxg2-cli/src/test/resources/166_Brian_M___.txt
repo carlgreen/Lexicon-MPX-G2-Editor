@@ -3,7 +3,7 @@ Brian M...
   Effect Type: Gain, Pitch, Reverb, Speaker Sim, Wah
   Application Type: Stand alone
   Effect Routing:
-    I=2=G=1=C=E=D=R=O
+    I=2=G=1=c=e=d=R=O
   Effect 1: Detune (D) (On)
     Toe Switch: disabled
     Mix: 40%
