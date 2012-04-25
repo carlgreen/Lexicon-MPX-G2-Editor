@@ -112,6 +112,7 @@ Jazz Dark
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None
+    Tap Source Level: 64
   Speaker Sim: On
     Cabinet: Combo2Brite
   Noise Gate:

@@ -90,6 +90,7 @@ British 80's
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None
+    Tap Source Level: 64
   Speaker Sim: On
     Cabinet: Combo2Norml
   Noise Gate:

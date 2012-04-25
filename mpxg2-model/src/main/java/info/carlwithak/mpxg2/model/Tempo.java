@@ -33,7 +33,7 @@ public class Tempo implements DataObject {
     private TempoBeatValue beatValue = new TempoBeatValue("Beat Value");
     private SourceValue tapSource = new SourceValue("Tap Source");
     private GenericValue<Integer> tapAverage = new GenericValue<Integer>("Tap Average", " beats", 2, 8);
-    private GenericValue<Integer> tapSourceLevel = new GenericValue<Integer>("Scr Level", "", 0, 127);
+    private GenericValue<Integer> tapSourceLevel = new GenericValue<Integer>("Tap Source Level", "", 0, 127);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

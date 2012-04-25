@@ -57,7 +57,7 @@ public class TempoTest {
 
     @Test
     public void testSourceLevel() {
-        assertThat(tempo.getParameter(5).getName(), is("Scr Level"));
+        assertThat(tempo.getParameter(5).getName(), is("Tap Source Level"));
     }
 
     @Test

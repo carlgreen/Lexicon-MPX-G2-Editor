@@ -340,7 +340,7 @@ public class ProgramPrinter {
         sb.append(printParameter(tempo.getBeatValue()));
         sb.append(printParameter(tempo.getTapAverage()));
         sb.append(printParameter(tempo.getTapSource()));
-        // TODO print source level?
+        sb.append(printParameter(tempo.getTapSourceLevel()));
         return sb.toString();
     }
 
