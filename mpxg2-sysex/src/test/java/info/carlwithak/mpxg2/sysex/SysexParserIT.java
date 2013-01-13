@@ -1000,7 +1000,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("043_Pdl_2-3_b3-3.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(text("Pdl 2~3 b3~3"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Pdl 2~3 b3~3")));
     }
 
     /**
@@ -1011,7 +1011,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("044_Pdl_2-3_3-4.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(text("Pdl 2~3  3~4"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Pdl 2~3  3~4")));
     }
 
     /**
@@ -1022,7 +1022,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("045_Pdl_4-5_5-6.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(text("Pdl 4~5 5~6"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Pdl 4~5 5~6")));
     }
 
     /**
@@ -1099,7 +1099,7 @@ public class SysexParserIT {
         File preset = new File(this.getClass().getClassLoader().getResource("052_Trem_AutoWah.syx").toURI());
         Program program = SysexParser.parsePrograms(preset).get(0);
 
-        assertThat(program.getProgramName(), is(text("Trem~AutoWah"))); // TODO this can't be right
+        assertThat(program.getProgramName(), is(text("Trem~AutoWah")));
     }
 
     /**
