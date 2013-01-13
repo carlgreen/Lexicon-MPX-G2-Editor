@@ -887,6 +887,16 @@ public class SysexParserTest {
         assertThat(val.getFrequency(), (is(2.0)));
     }
 
+    @Test
+    public void testCreatePatchDestinationParameterFromRate2() throws ParseException {
+        FrequencyRate input = new FrequencyRate("a", 1.0);
+        Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", -3);
+        assertThat(actual, is(instanceOf(FrequencyRate.class)));
+        FrequencyRate val = (FrequencyRate) actual;
+        assertThat(actual.getName(), (is("a2")));
+        assertThat(val.getFrequency(), (is(2.53)));
+    }
+
     @Test(expected = ParseException.class)
     public void testCreatePatchDestinationParameterFromUnsupportedType() throws ParseException {
         Parameter parameter = mock(Parameter.class);

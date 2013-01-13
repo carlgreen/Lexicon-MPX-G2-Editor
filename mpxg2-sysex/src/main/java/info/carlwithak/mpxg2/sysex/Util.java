@@ -37,4 +37,11 @@ public class Util {
     public static int wrapInteger(final int value) {
         return value > 32768 ? value - 65536 : value;
     }
+
+    /**
+     * @return value unwrapped if it is negative
+     */
+    public static int unwrapByte(final int value) {
+        return value < 0 ? 256 + value : value;
+    }
 }

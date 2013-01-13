@@ -44,4 +44,11 @@ public class UtilTest {
         assertEquals(-1200, Util.wrapInteger(64336));
     }
 
+    @Test
+    public void testUnwrapByte() {
+        assertEquals(0, Util.unwrapByte(0));
+        assertEquals(1, Util.unwrapByte(1));
+        assertEquals(255, Util.unwrapByte(-1));
+        assertEquals(166, Util.unwrapByte(-90));
+    }
 }

@@ -1039,7 +1039,7 @@ public class SysexParser {
             } else if (baseParameter instanceof TapMsRate) {
                 rateType = 4;
             }
-            byte[] bbMin = intToArray(value + (rateType * 256 * 256), 6);
+            byte[] bbMin = intToArray(Util.unwrapByte(value) + (rateType * 256 * 256), 6);
             destinationParameter = RateParser.parse(name, bbMin);
         }
         if (destinationParameter == null) {
