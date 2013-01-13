@@ -114,6 +114,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
 import info.carlwithak.mpxg2.model.parameters.Parameter;
+import info.carlwithak.mpxg2.model.parameters.VolumeValue;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -826,6 +827,28 @@ public class SysexParserTest {
         assertThat(val.getMinValue(), (is(-1)));
         assertThat(val.getMaxValue(), (is(1)));
         assertThat(val.getValue(), (is(1)));
+    }
+
+    @Test
+    public void testCreatePatchDestinationParameterFromGenericValueIntegerOutOfRange() throws ParseException {
+        GenericValue<Integer> input = new GenericValue<Integer>("a1", "", -4800, 1900);
+        input.setValue(-500);
+        Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 65036);
+        assertThat(actual, is(instanceOf(GenericValue.class)));
+        @SuppressWarnings("unchecked")
+        GenericValue<Integer> val = (GenericValue<Integer>) actual;
+        assertThat(val.getValue(), (is(-500)));
+    }
+
+    @Test
+    public void testCreatePatchDestinationParameterFromVolumeOutOfRange() throws ParseException {
+        VolumeValue input = new VolumeValue("a1", -90, 6);
+        input.setValue(0);
+        Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 253);
+        assertThat(actual, is(instanceOf(GenericValue.class)));
+        @SuppressWarnings("unchecked")
+        GenericValue<Integer> val = (GenericValue<Integer>) actual;
+        assertThat(val.getValue(), (is(-3)));
     }
 
     @Test

@@ -87,7 +87,7 @@ Big Blue
       Destination: Gain Mid
         Min: +10dB
         Mid: --
-        Max: +244dB
+        Max: -12dB
   Controllers:
     Knob:
       Value: 50

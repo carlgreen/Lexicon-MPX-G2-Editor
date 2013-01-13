@@ -44,7 +44,7 @@ Octave Fuzz
       Destination: Effect 1 Level
         Min: Off
         Mid: --
-        Max: +253dB
+        Max: -3dB
     Patch 2:
       Source: MIDI CC48
         Min: 0

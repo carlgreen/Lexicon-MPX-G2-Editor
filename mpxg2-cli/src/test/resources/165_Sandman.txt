@@ -73,7 +73,7 @@ Sandman
       Destination: Gain Mid
         Min: +10dB
         Mid: --
-        Max: +231dB
+        Max: -25dB
     Patch 2:
       Source: Ctls A/B
         Min: 0

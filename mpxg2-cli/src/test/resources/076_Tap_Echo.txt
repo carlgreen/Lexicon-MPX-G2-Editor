@@ -43,7 +43,7 @@ Tap Echo
       Destination: Eq Level
         Min: 0dB
         Mid: --
-        Max: +166dB
+        Max: -90dB
   Controllers:
     Knob:
       Value: 50

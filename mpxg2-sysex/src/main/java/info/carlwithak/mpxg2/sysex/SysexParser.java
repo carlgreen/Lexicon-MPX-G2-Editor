@@ -1016,7 +1016,16 @@ public class SysexParser {
             }
             if (value != 0x8000) {
                 if (((GenericValue) baseParameter).getValue() instanceof Integer) {
-                    ((GenericValue<Integer>) destinationParameter).setValue(value);
+                    if (value > ((GenericValue<Integer>) baseParameter).getMaxValue()) {
+                        // magic value that seems to work, for now
+                        if (((GenericValue<Integer>) baseParameter).getMaxValue() < 256) {
+                            ((GenericValue<Integer>) destinationParameter).setValue(Integer.valueOf((byte) value));
+                        } else {
+                            ((GenericValue<Integer>) destinationParameter).setValue(Util.wrapInteger(value));
+                        }
+                    } else {
+                        ((GenericValue<Integer>) destinationParameter).setValue(value);
+                    }
                 } else if (((GenericValue) baseParameter).getValue() instanceof Boolean) {
                     ((GenericValue<Boolean>) destinationParameter).setValue(Util.parseBoolean(value));
                 }

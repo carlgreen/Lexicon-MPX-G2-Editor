@@ -78,7 +78,7 @@ Detune+Trem
       Destination: Reverb Level
         Min: -90dB
         Mid: --
-        Max: +244dB
+        Max: -12dB
     Patch 3:
       Source: Ctls A/B
         Min: 0

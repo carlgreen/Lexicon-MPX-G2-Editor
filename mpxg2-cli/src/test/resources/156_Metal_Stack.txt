@@ -79,7 +79,7 @@ Metal Stack
       Destination: Gain Mid
         Min: +10dB
         Mid: --
-        Max: +246dB
+        Max: -10dB
     Patch 2:
       Source: Ctls A/B
         Min: 0

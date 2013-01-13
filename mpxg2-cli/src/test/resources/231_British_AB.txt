@@ -80,7 +80,7 @@ British A/B
       Destination: Gain Mid
         Min: +10dB
         Mid: --
-        Max: +237dB
+        Max: -19dB
     Patch 2:
       Source: Ctls A/B
         Min: 0

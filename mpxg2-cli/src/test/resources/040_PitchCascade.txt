@@ -108,7 +108,7 @@ PitchCascade
       Destination: Delay XFbk1
         Min: -75%
         Mid: --
-        Max: +241%
+        Max: -15%
     Patch 5:
       Source: MIDI Toe
         Min: 0

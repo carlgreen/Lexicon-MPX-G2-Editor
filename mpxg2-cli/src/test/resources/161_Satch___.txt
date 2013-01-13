@@ -72,7 +72,7 @@ Satch...
       Destination: Gain Mid
         Min: +15dB
         Mid: --
-        Max: +246dB
+        Max: -10dB
     Patch 2:
       Source: Ctls A/B
         Min: 0
