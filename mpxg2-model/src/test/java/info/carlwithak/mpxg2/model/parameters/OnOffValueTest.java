@@ -42,7 +42,7 @@ public class OnOffValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { true, "On" },
             { false, "Off" }

@@ -42,7 +42,7 @@ public class KeyValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 0, "C" },
             { 1, "C#" },

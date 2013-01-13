@@ -42,7 +42,7 @@ public class NoiseGateEnableValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 0, "Off" },
             { 2, "Returns Only" }

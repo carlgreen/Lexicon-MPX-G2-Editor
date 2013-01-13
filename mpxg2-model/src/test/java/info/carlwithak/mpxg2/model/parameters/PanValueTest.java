@@ -42,7 +42,7 @@ public class PanValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { -10, "10L" },
             { 0, "C" },

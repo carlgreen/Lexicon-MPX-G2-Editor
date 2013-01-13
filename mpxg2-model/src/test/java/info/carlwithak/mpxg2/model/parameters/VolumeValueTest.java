@@ -41,7 +41,7 @@ public class VolumeValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { -90, "Off" },
             { -89, "-89dB" },

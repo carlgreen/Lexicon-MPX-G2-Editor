@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.EffectObject;
 import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
@@ -209,7 +210,7 @@ public class AlgorithmPrinter {
     /**
      * Mapping between algorithms and their printers. Is there a better way?
      */
-    private static final HashMap<Class, Printer> PRINTERS = new HashMap<Class, Printer>();
+    private static final HashMap<Class<? extends EffectObject>, Printer> PRINTERS = new HashMap<Class<? extends EffectObject>, Printer>();
     static {
        PRINTERS.put(ShiftMono.class, new ShiftMonoPrinter());
        PRINTERS.put(ShiftStereo.class, new ShiftStereoPrinter());

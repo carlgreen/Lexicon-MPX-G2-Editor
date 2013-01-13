@@ -42,7 +42,7 @@ public class SpeakerSimulatorCabinetValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 0, "Combo1Brite" },
             { 1, "Combo1Norml" },

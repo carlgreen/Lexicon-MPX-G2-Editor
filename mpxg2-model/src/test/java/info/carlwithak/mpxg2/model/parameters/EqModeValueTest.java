@@ -42,7 +42,7 @@ public class EqModeValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 0, "LShlf" },
             { 1, "Band" },

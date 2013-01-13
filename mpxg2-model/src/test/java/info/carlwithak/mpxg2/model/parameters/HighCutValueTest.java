@@ -42,7 +42,7 @@ public class HighCutValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 0, "525Hz" },
             { 1, "589Hz" },

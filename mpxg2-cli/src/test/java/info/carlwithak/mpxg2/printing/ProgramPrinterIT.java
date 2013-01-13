@@ -44,7 +44,7 @@ public class ProgramPrinterIT {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<String[]> data() {
         return Arrays.asList(new String[][] {
             { "001_G2_Blue" },
             { "002_Guitar_Solo" },

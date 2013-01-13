@@ -44,7 +44,7 @@ public class SourceValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 0, "None", "Unassigned" },
             { 1, "Off", "Ctls Off" },

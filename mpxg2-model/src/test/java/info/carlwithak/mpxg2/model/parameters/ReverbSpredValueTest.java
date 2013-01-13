@@ -51,7 +51,7 @@ public class ReverbSpredValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             /* no link */
             { false, 5.0, null, 0, "0" },

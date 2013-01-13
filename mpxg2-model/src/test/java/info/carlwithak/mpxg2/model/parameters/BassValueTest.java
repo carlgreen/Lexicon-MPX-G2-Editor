@@ -42,7 +42,7 @@ public class BassValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 0, "0.2X" },
             { 1, "0.4X" },

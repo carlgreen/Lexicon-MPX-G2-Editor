@@ -42,7 +42,7 @@ public class DiatonicHmySourceValueTest {
     }
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
             { 1, "Guitar Input" },
             { 2, "Returns Only" }
