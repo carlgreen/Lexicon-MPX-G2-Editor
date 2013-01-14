@@ -17,9 +17,9 @@
 
 package info.carlwithak.mpxg2.test;
 
-import org.hamcrest.Matcher;
 import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.junit.Test;
 
 import static info.carlwithak.mpxg2.test.IsOnOff.off;
