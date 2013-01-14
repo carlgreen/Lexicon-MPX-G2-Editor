@@ -22,6 +22,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 
 /**
+ * Would be good to restrict T only to subclasses of Number.
  *
  * @author Carl Green
  */
