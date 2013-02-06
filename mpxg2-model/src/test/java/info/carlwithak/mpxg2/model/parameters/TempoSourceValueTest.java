@@ -44,7 +44,8 @@ public class TempoSourceValueTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-            { 0, "internal" }
+            { 0, "internal" },
+            { 1, "midi" }
         });
     }
 
