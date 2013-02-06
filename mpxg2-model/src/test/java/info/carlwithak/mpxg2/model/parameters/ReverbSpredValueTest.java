@@ -111,7 +111,14 @@ public class ReverbSpredValueTest {
             { true, null, 1, 0, "0" },
             { true, null, 1, 9, "0" },
             { true, null, 1, 10, "1" },
-            { true, null, 1, 255, "27" }
+            { true, null, 1, 255, "27" },
+            /* time 195ms (11) */
+            { true, null, 11, 0, "0" },
+            { true, null, 11, 5, "0" },
+            { true, null, 11, 6, "1" },
+            { true, null, 11, 231, "38" },
+            { true, null, 11, 254, "42" },
+            { true, null, 11, 255, "43" },
         });
     }
 
