@@ -85,7 +85,7 @@ British 70's
       Level: +6dB
   Tempo:
     Rate: 170 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

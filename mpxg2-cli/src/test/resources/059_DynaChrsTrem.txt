@@ -151,7 +151,7 @@ DynaChrsTrem
       Level: 0dB
   Tempo:
     Rate: 399 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

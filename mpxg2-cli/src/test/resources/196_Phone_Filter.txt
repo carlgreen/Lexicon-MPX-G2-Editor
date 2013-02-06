@@ -130,7 +130,7 @@ Phone Filter
       Level: 0dB
   Tempo:
     Rate: 254 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

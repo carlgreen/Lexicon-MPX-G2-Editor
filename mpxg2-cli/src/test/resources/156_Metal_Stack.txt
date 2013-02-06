@@ -178,7 +178,7 @@ Metal Stack
       Level: -2dB
   Tempo:
     Rate: 112 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

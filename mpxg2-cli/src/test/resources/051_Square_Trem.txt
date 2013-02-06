@@ -144,7 +144,7 @@ Square Trem
       Level: -12dB
   Tempo:
     Rate: 308 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

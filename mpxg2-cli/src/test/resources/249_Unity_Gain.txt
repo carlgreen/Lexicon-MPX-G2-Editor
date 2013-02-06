@@ -61,7 +61,7 @@ Unity Gain
       Level: 0dB
   Tempo:
     Rate: 170 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

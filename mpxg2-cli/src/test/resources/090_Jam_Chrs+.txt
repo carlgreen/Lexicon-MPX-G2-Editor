@@ -153,7 +153,7 @@ Jam Chrs+
       Level: 0dB
   Tempo:
     Rate: 120 BPM
-    Source: internal
+    Source: Internal
     Beat Value: 16 beats
     Tap Average: 2 beats
     Tap Source: None

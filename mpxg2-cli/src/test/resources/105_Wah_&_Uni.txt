@@ -154,7 +154,7 @@ Wah & Uni
       Level: +1dB
   Tempo:
     Rate: 120 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

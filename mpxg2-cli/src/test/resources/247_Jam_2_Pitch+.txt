@@ -150,7 +150,7 @@ Jam 2 Pitch+
       Level: 0dB
   Tempo:
     Rate: 114 BPM
-    Source: internal
+    Source: Internal
     Beat Value: 16 beats
     Tap Average: 2 beats
     Tap Source: None

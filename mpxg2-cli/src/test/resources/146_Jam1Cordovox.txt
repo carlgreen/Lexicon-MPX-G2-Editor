@@ -150,7 +150,7 @@ Jam1Cordovox
       Level: 0dB
   Tempo:
     Rate: 137 BPM
-    Source: internal
+    Source: Internal
     Beat Value: 16 beats
     Tap Average: 2 beats
     Tap Source: None

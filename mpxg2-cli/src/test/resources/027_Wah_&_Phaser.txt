@@ -142,7 +142,7 @@ Wah & Phaser
       Level: 0dB
   Tempo:
     Rate: 90 BPM
-    Source: internal
+    Source: Internal
     Beat Value: quarter
     Tap Average: 2 beats
     Tap Source: None

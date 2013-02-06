@@ -286,7 +286,7 @@ public class ProgramPrinterTest {
         tempo.getTapAverage().setValue(2);
         tempo.getTapSourceLevel().setValue(64);
 
-        String expected = "    Rate: 170 BPM\n    Source: internal\n    Beat Value: quarter\n    Tap Average: 2 beats\n    Tap Source: None\n    Tap Source Level: 64\n";
+        String expected = "    Rate: 170 BPM\n    Source: Internal\n    Beat Value: quarter\n    Tap Average: 2 beats\n    Tap Source: None\n    Tap Source Level: 64\n";
         assertThat(ProgramPrinter.printTempo(tempo), is(expected));
     }
 

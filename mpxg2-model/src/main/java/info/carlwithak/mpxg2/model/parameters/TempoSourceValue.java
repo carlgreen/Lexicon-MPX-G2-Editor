@@ -24,7 +24,7 @@ package info.carlwithak.mpxg2.model.parameters;
 public class TempoSourceValue extends GenericValue<Integer> {
 
     private final static String[] TEMPO_SOURCES = {
-        "internal", "midi"
+        "Internal", "MIDI"
     };
 
     public TempoSourceValue(final String name) {
