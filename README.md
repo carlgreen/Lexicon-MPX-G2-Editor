@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/carlgreen/Lexicon-MPX-G2-Editor.svg?branch=master)](https://travis-ci.org/carlgreen/Lexicon-MPX-G2-Editor)
+
 An editor for the Lexicon MPX G2 effects unit.
 
 # Roadmap
