@@ -119,6 +119,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Before;
@@ -163,9 +164,11 @@ public class SysexParserTest {
 
     /**
      * Test parsing invalid data.
+     *
+     * @throws IOException if the test file cannot be created or read
      */
     @Test
-    public void testParseInvalidData() throws Exception {
+    public void testParseInvalidData() throws IOException {
         String expectedMessage = null;
         try {
             File temp = tempFileWithData(new byte[]{(byte) 0xe0});
@@ -530,12 +533,8 @@ public class SysexParserTest {
         File temp = File.createTempFile("test_", ".syx", new File("target/test-classes/"));
         temp.deleteOnExit();
 
-        OutputStream out = null;
-        try {
-            out = new FileOutputStream(temp);
+        try (OutputStream out = new FileOutputStream(temp)) {
             out.write(data);
-        } finally {
-            out.close();
         }
 
         return temp;
@@ -739,9 +738,13 @@ public class SysexParserTest {
 
     /**
      * Test parsing the various noise gate values.
+     *
+     * @throws URISyntaxException
+     * @throws IOException if the file cannot be read
+     * @throws ParseException if the file cannot be parsed
      */
     @Test
-    public void testParseNoiseGate() throws Exception {
+    public void testParseNoiseGate() throws URISyntaxException, IOException, ParseException {
         File preset = new File(this.getClass().getClassLoader().getResource("noisegate.syx").toURI());
         NoiseGate noiseGate = SysexParser.parsePrograms(preset).get(0).getNoiseGate();
 
@@ -816,7 +819,7 @@ public class SysexParserTest {
 
     @Test
     public void testCreatePatchDestinationParameterFromGenericValueInteger() throws ParseException {
-        GenericValue<Integer> input = new GenericValue<Integer>("a1", "b", -1, 1);
+        GenericValue<Integer> input = new GenericValue<>("a1", "b", -1, 1);
         input.setValue(-1);
         Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 1);
         assertThat(actual, is(instanceOf(GenericValue.class)));
@@ -831,7 +834,7 @@ public class SysexParserTest {
 
     @Test
     public void testCreatePatchDestinationParameterFromGenericValueIntegerOutOfRange() throws ParseException {
-        GenericValue<Integer> input = new GenericValue<Integer>("a1", "", -4800, 1900);
+        GenericValue<Integer> input = new GenericValue<>("a1", "", -4800, 1900);
         input.setValue(-500);
         Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 65036);
         assertThat(actual, is(instanceOf(GenericValue.class)));
@@ -853,7 +856,7 @@ public class SysexParserTest {
 
     @Test
     public void testCreatePatchDestinationParameterFromGenericValueBoolean() throws ParseException {
-        GenericValue<Boolean> input = new GenericValue<Boolean>("a1", "b", false, true);
+        GenericValue<Boolean> input = new GenericValue<>("a1", "b", false, true);
         input.setValue(false);
         Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 1);
         assertThat(actual, is(instanceOf(GenericValue.class)));
@@ -868,7 +871,7 @@ public class SysexParserTest {
 
     @Test
     public void testCreatePatchDestinationParameterFromUnsetGenericValue() throws ParseException {
-        GenericValue<Integer> input = new GenericValue<Integer>("a1", "b", -1, 1);
+        GenericValue<Integer> input = new GenericValue<>("a1", "b", -1, 1);
         input.setValue(-1);
         Parameter actual = SysexParser.createPatchDestinationParameter(input, "a2", 0x8000);
         assertThat(actual, is(instanceOf(GenericValue.class)));
