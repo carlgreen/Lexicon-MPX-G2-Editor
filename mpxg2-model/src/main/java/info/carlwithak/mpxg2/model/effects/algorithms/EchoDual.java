@@ -34,13 +34,13 @@ public class EchoDual extends Delay {
 
     private Rate time1;
     private Rate time2;
-    public final GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
-    public final GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
-    public final GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
+    public final GenericValue<Integer> level1 = new GenericValue<>("Lvl 1", "dB", -90, 6);
+    public final GenericValue<Integer> level2 = new GenericValue<>("Lvl 2", "dB", -90, 6);
+    public final GenericValue<Integer> feedback1 = new GenericValue<>("Fbk 1", "%", -100, 100);
     public final InsertPosition insert = new InsertPosition("Fbk insert");
-    public final GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
-    public final GenericValue<Integer> damp1 = new GenericValue<Integer>("Damp1", "%", 0, 100);
-    public final GenericValue<Integer> damp2 = new GenericValue<Integer>("Damp2", "%", 0, 100);
+    public final GenericValue<Integer> feedback2 = new GenericValue<>("Fbk 2", "%", -100, 100);
+    public final GenericValue<Integer> damp1 = new GenericValue<>("Damp1", "%", 0, 100);
+    public final GenericValue<Integer> damp2 = new GenericValue<>("Damp2", "%", 0, 100);
     public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override

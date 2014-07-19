@@ -35,7 +35,7 @@ import static org.mockito.Mockito.when;
  * @author Carl Green
  */
 public class IsValueTest {
-    private final GenericValue<String> value = new GenericValue<String>(null, null, null, null);
+    private final GenericValue<String> value = new GenericValue<>(null, null, null, null);
     private final Matcher<GenericValue<String>> isValue = value("something");
     private final Matcher<GenericValue<String>> nullIsValue = value(null);
 

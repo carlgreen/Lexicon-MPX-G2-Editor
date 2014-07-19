@@ -36,8 +36,8 @@ public class DiatonicHmy extends Effect {
     public final KeyValue key = new KeyValue("Key");
     public final ScaleValue scale = new ScaleValue("Scale");
     public final IntervalValue interval = new IntervalValue("Int");
-    public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
-    public final GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", -83, 0);
+    public final GenericValue<Integer> optimize = new GenericValue<>("Optimize", "", 0, 100);
+    public final GenericValue<Integer> threshold = new GenericValue<>("Thrsh", "dB", -83, 0);
     public final DiatonicHmySourceValue source = new DiatonicHmySourceValue("Src");
 
     @Override

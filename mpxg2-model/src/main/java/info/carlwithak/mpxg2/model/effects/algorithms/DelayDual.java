@@ -35,15 +35,15 @@ public class DelayDual extends Delay {
 
     private Rate time1;
     private Rate time2;
-    public final GenericValue<Integer> level1 = new GenericValue<Integer>("Lvl 1", "dB", -90, 6);
-    public final GenericValue<Integer> level2 = new GenericValue<Integer>("Lvl 2", "dB", -90, 6);
+    public final GenericValue<Integer> level1 = new GenericValue<>("Lvl 1", "dB", -90, 6);
+    public final GenericValue<Integer> level2 = new GenericValue<>("Lvl 2", "dB", -90, 6);
     public final PanValue pan1 = new PanValue("Pan 1", -50, 50);
     public final PanValue pan2 = new PanValue("Pan 2", -50, 50);
-    public final GenericValue<Integer> feedback1 = new GenericValue<Integer>("Fbk 1", "%", -100, 100);
+    public final GenericValue<Integer> feedback1 = new GenericValue<>("Fbk 1", "%", -100, 100);
     public final InsertPosition insert = new InsertPosition("Fbk insert");
-    public final GenericValue<Integer> feedback2 = new GenericValue<Integer>("Fbk 2", "%", -100, 100);
-    public final GenericValue<Integer> xFbk1 = new GenericValue<Integer>("XFbk1", "%", -100, 100);
-    public final GenericValue<Integer> xFbk2 = new GenericValue<Integer>("XFbk2", "%", -100, 100);
+    public final GenericValue<Integer> feedback2 = new GenericValue<>("Fbk 2", "%", -100, 100);
+    public final GenericValue<Integer> xFbk1 = new GenericValue<>("XFbk1", "%", -100, 100);
+    public final GenericValue<Integer> xFbk2 = new GenericValue<>("XFbk2", "%", -100, 100);
     public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override

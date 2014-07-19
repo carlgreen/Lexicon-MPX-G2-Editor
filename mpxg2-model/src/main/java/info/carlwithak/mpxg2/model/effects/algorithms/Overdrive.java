@@ -29,15 +29,15 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Overdrive extends Gain {
     private static final String NAME = "Overdrive";
 
-    public final GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -15, 15);
-    public final GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -15, 15);
-    public final GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 15);
-    public final GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
-    public final GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "", 0, 20);
-    public final GenericValue<Integer> feel = new GenericValue<Integer>("Feel", "", 0, 64);
-    public final GenericValue<Integer> drive = new GenericValue<Integer>("Drive", "", 0, 40);
-    public final GenericValue<Integer> tone = new GenericValue<Integer>("Tone", "", 0, 25);
-    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+    public final GenericValue<Integer> lo = new GenericValue<>("Lo", "dB", -15, 15);
+    public final GenericValue<Integer> mid = new GenericValue<>("Mid", "dB", -15, 15);
+    public final GenericValue<Integer> hi = new GenericValue<>("Hi", "dB", 0, 15);
+    public final GenericValue<Integer> inLevel = new GenericValue<>("InLvl", "dB", -64, 0);
+    public final GenericValue<Integer> loCut = new GenericValue<>("LoCut", "", 0, 20);
+    public final GenericValue<Integer> feel = new GenericValue<>("Feel", "", 0, 64);
+    public final GenericValue<Integer> drive = new GenericValue<>("Drive", "", 0, 40);
+    public final GenericValue<Integer> tone = new GenericValue<>("Tone", "", 0, 25);
+    public final GenericValue<Integer> level = new GenericValue<>("Level", "dB", 0, 64);
 
     @Override
     public String getName() {

@@ -29,8 +29,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class EnvelopeGenerator implements DataObject {
     private final EnvelopeGeneratorSourceValue src1 = new EnvelopeGeneratorSourceValue("Src1");
     private final EnvelopeGeneratorSourceValue src2 = new EnvelopeGeneratorSourceValue("Src2");
-    private final GenericValue<Integer> aTrim = new GenericValue<Integer>("ATrim", "", 0, 100);
-    private final GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
+    private final GenericValue<Integer> aTrim = new GenericValue<>("ATrim", "", 0, 100);
+    private final GenericValue<Integer> response = new GenericValue<>("Resp", "", 0, 100);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

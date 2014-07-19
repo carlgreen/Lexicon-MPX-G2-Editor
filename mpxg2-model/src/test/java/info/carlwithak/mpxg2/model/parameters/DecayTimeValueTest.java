@@ -33,7 +33,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(Parameterized.class)
 public class DecayTimeValueTest {
     private final OnOffValue link = new OnOffValue("Link");
-    private final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 4.0, 35.0);
+    private final GenericValue<Double> size = new GenericValue<>("Size", "m", 4.0, 35.0);
     private final DecayTimeValue value = new DecayTimeValue("Decay", link, size);
     private final boolean linkValue;
     private final double sizeValue;

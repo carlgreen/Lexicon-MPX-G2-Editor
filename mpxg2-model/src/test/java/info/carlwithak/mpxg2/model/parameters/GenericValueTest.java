@@ -33,8 +33,8 @@ import org.junit.Test;
  * @author Carl Green
  */
 public class GenericValueTest {
-    private final GenericValue<String> genericValue = new GenericValue<String>("some name", "a unit", "c", "f");
-    private final GenericValue<String> nullGenericValue = new GenericValue<String>("some name", "a unit", "c", "f");
+    private final GenericValue<String> genericValue = new GenericValue<>("some name", "a unit", "c", "f");
+    private final GenericValue<String> nullGenericValue = new GenericValue<>("some name", "a unit", "c", "f");
 
     @Before
     public void setup() {
@@ -79,7 +79,7 @@ public class GenericValueTest {
     public void testGetDisplayString() {
         assertThat(genericValue.getDisplayString(), is("xa unit"));
 
-        GenericValue<Integer> unsignedValue = new GenericValue<Integer>("Level", "dB", 0, 6);
+        GenericValue<Integer> unsignedValue = new GenericValue<>("Level", "dB", 0, 6);
 
         unsignedValue.setValue(6);
         assertThat(unsignedValue.getDisplayString(), is("6dB"));
@@ -87,7 +87,7 @@ public class GenericValueTest {
 
     @Test
     public void testGetDisplayString_Signed() {
-        GenericValue<Integer> signedValue = new GenericValue<Integer>("Level", "dB", -90, 6);
+        GenericValue<Integer> signedValue = new GenericValue<>("Level", "dB", -90, 6);
 
         signedValue.setValue(6);
         assertThat(signedValue.getDisplayString(), is("+6dB"));

@@ -140,13 +140,13 @@ public class ProgramPrinterTest {
         patch.setSourceMax(25);
         patch.setDestinationEffect(5);
         patch.setDestinationParameter(2);
-        GenericValue<Integer> destinationMin = new GenericValue<Integer>("Min", "dB", -72, 24);
+        GenericValue<Integer> destinationMin = new GenericValue<>("Min", "dB", -72, 24);
         destinationMin.setValue(0);
         patch.setDestinationMin(destinationMin);
-        GenericValue<Integer> destinationMid = new GenericValue<Integer>("Mid", "dB", -72, 24);
+        GenericValue<Integer> destinationMid = new GenericValue<>("Mid", "dB", -72, 24);
         destinationMid.setValue(null);
         patch.setDestinationMid(destinationMid);
-        GenericValue<Integer> destinationMax = new GenericValue<Integer>("Max", "dB", -72, 24);
+        GenericValue<Integer> destinationMax = new GenericValue<>("Max", "dB", -72, 24);
         destinationMax.setValue(24);
         patch.setDestinationMax(destinationMax);
 
@@ -169,13 +169,13 @@ public class ProgramPrinterTest {
         patch.setSourceMax(25);
         patch.setDestinationEffect(16);
         patch.setDestinationParameter(0);
-        GenericValue<Integer> destinationMin = new GenericValue<Integer>("Min", "", -56, 0);
+        GenericValue<Integer> destinationMin = new GenericValue<>("Min", "", -56, 0);
         destinationMin.setValue(0);
         patch.setDestinationMin(destinationMin);
-        GenericValue<Integer> destinationMid = new GenericValue<Integer>("Mid", "", -56, 0);
+        GenericValue<Integer> destinationMid = new GenericValue<>("Mid", "", -56, 0);
         destinationMid.setValue(null);
         patch.setDestinationMid(destinationMid);
-        GenericValue<Integer> destinationMax = new GenericValue<Integer>("Max", "", -56, 0);
+        GenericValue<Integer> destinationMax = new GenericValue<>("Max", "", -56, 0);
         destinationMax.setValue(6);
         patch.setDestinationMax(destinationMax);
 

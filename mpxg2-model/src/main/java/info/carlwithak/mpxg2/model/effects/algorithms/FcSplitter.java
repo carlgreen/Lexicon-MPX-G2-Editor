@@ -29,9 +29,9 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class FcSplitter extends Eq {
     private static final String NAME = "Fc Splitter";
 
-    public final GenericValue<Integer> loCut = new GenericValue<Integer>("LoCut", "Hz", 100, 10000);
-    public final GenericValue<Integer> hiCut = new GenericValue<Integer>("HiCut", "Hz", 100, 10000);
-    public final GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
+    public final GenericValue<Integer> loCut = new GenericValue<>("LoCut", "Hz", 100, 10000);
+    public final GenericValue<Integer> hiCut = new GenericValue<>("HiCut", "Hz", 100, 10000);
+    public final GenericValue<Integer> balance = new GenericValue<>("Bal", "", -50, 50);
 
     @Override
     public String getName() {

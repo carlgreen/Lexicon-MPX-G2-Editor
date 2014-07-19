@@ -34,12 +34,12 @@ public class Looper extends Delay {
     private static final String NAME = "Looper";
 
     private Rate time;
-    public final GenericValue<Integer> inMix = new GenericValue<Integer>("InMix", "%", 0, 100);
+    public final GenericValue<Integer> inMix = new GenericValue<>("InMix", "%", 0, 100);
     public final InsertPosition feedbackInsert = new InsertPosition("Fbk insert");
-    public final GenericValue<Integer> sensitivity = new GenericValue<Integer>("Sense", "", 0, 100);
+    public final GenericValue<Integer> sensitivity = new GenericValue<>("Sense", "", 0, 100);
     public final PanValue pan = new PanValue("Pan", -50, 50);
-    public final GenericValue<Integer> release = new GenericValue<Integer>("Rls", "", 0, 100);
-    public final GenericValue<Integer> attack = new GenericValue<Integer>("Atk", "", 0, 100);
+    public final GenericValue<Integer> release = new GenericValue<>("Rls", "", 0, 100);
+    public final GenericValue<Integer> attack = new GenericValue<>("Atk", "", 0, 100);
     public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override

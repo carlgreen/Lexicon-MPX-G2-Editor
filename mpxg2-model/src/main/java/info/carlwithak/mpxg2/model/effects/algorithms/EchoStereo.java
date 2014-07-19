@@ -33,9 +33,9 @@ public class EchoStereo extends Delay {
     private static final String NAME = "Echo (S)";
 
     private Rate time;
-    public final GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
+    public final GenericValue<Integer> feedback = new GenericValue<>("Fbk", "%", -100, 100);
     public final InsertPosition insert = new InsertPosition("Fbk insert");
-    public final GenericValue<Integer> damp = new GenericValue<Integer>("Damp", "%", 0, 100);
+    public final GenericValue<Integer> damp = new GenericValue<>("Damp", "%", 0, 100);
     public final OnOffValue clear = new OnOffValue("Clear");
 
     @Override

@@ -210,7 +210,7 @@ public class AlgorithmPrinter {
     /**
      * Mapping between algorithms and their printers. Is there a better way?
      */
-    private static final HashMap<Class<? extends EffectObject>, Printer> PRINTERS = new HashMap<Class<? extends EffectObject>, Printer>();
+    private static final HashMap<Class<? extends EffectObject>, Printer> PRINTERS = new HashMap<>();
     static {
        PRINTERS.put(ShiftMono.class, new ShiftMonoPrinter());
        PRINTERS.put(ShiftStereo.class, new ShiftStereoPrinter());

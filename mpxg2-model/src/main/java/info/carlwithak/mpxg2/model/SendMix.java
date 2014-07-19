@@ -25,8 +25,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
  * @author Carl Green
  */
 public class SendMix implements DataObject {
-    private final GenericValue<Integer> sendLevel = new GenericValue<Integer>("Level", "", -56, 0);
-    private final GenericValue<Integer> sendBypassLevel = new GenericValue<Integer>("Bypass Level", "", -56, 0);
+    private final GenericValue<Integer> sendLevel = new GenericValue<>("Level", "", -56, 0);
+    private final GenericValue<Integer> sendBypassLevel = new GenericValue<>("Bypass Level", "", -56, 0);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

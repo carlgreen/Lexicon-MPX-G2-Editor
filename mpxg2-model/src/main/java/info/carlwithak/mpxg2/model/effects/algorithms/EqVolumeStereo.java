@@ -29,7 +29,7 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class EqVolumeStereo extends Eq {
     private static final String NAME = "Volume (S)";
 
-    public final GenericValue<Integer> volume = new GenericValue<Integer>("Volume", "%", 0, 100);
+    public final GenericValue<Integer> volume = new GenericValue<>("Volume", "%", 0, 100);
 
     @Override
     public String getName() {

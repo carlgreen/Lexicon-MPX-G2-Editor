@@ -30,12 +30,12 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class TwoBandMono extends Eq {
     private static final String NAME = "2-Band (M)";
 
-    public final GenericValue<Integer> gain1 = new GenericValue<Integer>("Gain1", "dB", -72, 24);
-    public final GenericValue<Integer> gain2 = new GenericValue<Integer>("Gain2", "dB", -72, 24);
-    public final GenericValue<Integer> fc1 = new GenericValue<Integer>("Fc 1", "Hz", 20, 20000);
-    public final GenericValue<Integer> fc2 = new GenericValue<Integer>("Fc 2", "Hz", 20, 20000);
-    public final GenericValue<Double> q1 = new GenericValue<Double>("Q 1", "", 0.1, 10.0);
-    public final GenericValue<Double> q2 = new GenericValue<Double>("Q 2", "", 0.1, 10.0);
+    public final GenericValue<Integer> gain1 = new GenericValue<>("Gain1", "dB", -72, 24);
+    public final GenericValue<Integer> gain2 = new GenericValue<>("Gain2", "dB", -72, 24);
+    public final GenericValue<Integer> fc1 = new GenericValue<>("Fc 1", "Hz", 20, 20000);
+    public final GenericValue<Integer> fc2 = new GenericValue<>("Fc 2", "Hz", 20, 20000);
+    public final GenericValue<Double> q1 = new GenericValue<>("Q 1", "", 0.1, 10.0);
+    public final GenericValue<Double> q2 = new GenericValue<>("Q 2", "", 0.1, 10.0);
     public final EqModeValue mode1 = new EqModeValue("Mode1");
     public final EqModeValue mode2 = new EqModeValue("Mode2");
 

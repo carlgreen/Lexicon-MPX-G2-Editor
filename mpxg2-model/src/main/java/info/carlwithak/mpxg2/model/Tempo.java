@@ -28,12 +28,12 @@ import info.carlwithak.mpxg2.model.parameters.TempoSourceValue;
  * @author Carl Green
  */
 public class Tempo implements DataObject {
-    private final GenericValue<Integer> rate = new GenericValue<Integer>("Rate", " BPM", 41, 400);
+    private final GenericValue<Integer> rate = new GenericValue<>("Rate", " BPM", 41, 400);
     private final TempoSourceValue source = new TempoSourceValue("Source");
     private final TempoBeatValue beatValue = new TempoBeatValue("Beat Value");
     private final SourceValue tapSource = new SourceValue("Tap Source");
-    private final GenericValue<Integer> tapAverage = new GenericValue<Integer>("Tap Average", " beats", 2, 8);
-    private final GenericValue<Integer> tapSourceLevel = new GenericValue<Integer>("Tap Source Level", "", 0, 127);
+    private final GenericValue<Integer> tapAverage = new GenericValue<>("Tap Average", " beats", 2, 8);
+    private final GenericValue<Integer> tapSourceLevel = new GenericValue<>("Tap Source Level", "", 0, 127);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

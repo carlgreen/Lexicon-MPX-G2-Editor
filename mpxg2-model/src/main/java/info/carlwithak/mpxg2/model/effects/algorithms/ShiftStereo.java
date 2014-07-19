@@ -30,8 +30,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class ShiftStereo extends Effect {
     private static final String NAME = "Shift (S)";
 
-    public final GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", -4800, 1900); // cents
-    public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "", 0, 100);
+    public final GenericValue<Integer> tune = new GenericValue<>("Tune", "", -4800, 1900); // cents
+    public final GenericValue<Integer> optimize = new GenericValue<>("Optimize", "", 0, 100);
     public final OnOffValue glide = new OnOffValue("Glide");
 
     @Override

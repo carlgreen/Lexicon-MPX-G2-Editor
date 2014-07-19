@@ -30,10 +30,10 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class SweepFilter extends Effect {
     private static final String NAME = "SweepFilter";
 
-    public final GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Integer> fRes = new GenericValue<Integer>("FRes", "", 1, 100);
-    public final GenericValue<Integer> mod = new GenericValue<Integer>("Mod", "Hz", 20, 20000);
-    public final GenericValue<Integer> scale = new GenericValue<Integer>("Scale", "%", -100, 100);
+    public final GenericValue<Integer> fc = new GenericValue<>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Integer> fRes = new GenericValue<>("FRes", "", 1, 100);
+    public final GenericValue<Integer> mod = new GenericValue<>("Mod", "Hz", 20, 20000);
+    public final GenericValue<Integer> scale = new GenericValue<>("Scale", "%", -100, 100);
     public final PanValue pan = new PanValue("Pan", -50, 50);
 
     @Override

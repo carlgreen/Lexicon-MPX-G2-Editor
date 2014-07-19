@@ -31,12 +31,12 @@ public class RotaryCab extends Chorus {
     private static final String NAME = "Rotary Cab";
 
     private Rate rate1;
-    public final GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
+    public final GenericValue<Integer> depth1 = new GenericValue<>("Dpth1", "%", 0, 100);
     private Rate rate2;
-    public final GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
-    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "", -100, 100);
-    public final GenericValue<Integer> width = new GenericValue<Integer>("Width", "%", 0, 100);
-    public final GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
+    public final GenericValue<Integer> depth2 = new GenericValue<>("Dpth2", "%", 0, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<>("Res", "", -100, 100);
+    public final GenericValue<Integer> width = new GenericValue<>("Width", "%", 0, 100);
+    public final GenericValue<Integer> balance = new GenericValue<>("Bal", "", -50, 50);
 
     @Override
     public String getName() {

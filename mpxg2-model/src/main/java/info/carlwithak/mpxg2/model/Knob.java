@@ -26,9 +26,9 @@ import info.carlwithak.mpxg2.model.parameters.TextValue;
  * @author Carl Green
  */
 public class Knob implements DataObject {
-    private final GenericValue<Integer> value = new GenericValue<Integer>("Value", "", 0, 127);
-    private final GenericValue<Integer> low = new GenericValue<Integer>("Low", "", 0, 127);
-    private final GenericValue<Integer> high = new GenericValue<Integer>("High", "", 0, 127);
+    private final GenericValue<Integer> value = new GenericValue<>("Value", "", 0, 127);
+    private final GenericValue<Integer> low = new GenericValue<>("Low", "", 0, 127);
+    private final GenericValue<Integer> high = new GenericValue<>("High", "", 0, 127);
     private final TextValue name = new TextValue("Name", 12);
 
     @Override

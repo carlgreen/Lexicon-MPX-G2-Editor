@@ -30,13 +30,13 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class OneBandDual extends Eq {
     private static final String NAME = "1-Band (D)";
 
-    public final GenericValue<Integer> gainLeft = new GenericValue<Integer>("G-L", "dB", -72, 24);
-    public final GenericValue<Integer> fcLeft = new GenericValue<Integer>("Fc-L", "Hz", 20, 20000);
-    public final GenericValue<Double> qLeft = new GenericValue<Double>("Q-L", "", 0.1, 10.0);
+    public final GenericValue<Integer> gainLeft = new GenericValue<>("G-L", "dB", -72, 24);
+    public final GenericValue<Integer> fcLeft = new GenericValue<>("Fc-L", "Hz", 20, 20000);
+    public final GenericValue<Double> qLeft = new GenericValue<>("Q-L", "", 0.1, 10.0);
     public final EqModeValue modeLeft = new EqModeValue("M-L");
-    public final GenericValue<Integer> gainRight = new GenericValue<Integer>("G-R", "dB", -72, 24);
-    public final GenericValue<Integer> fcRight = new GenericValue<Integer>("Fc-R", "Hz", 20, 20000);
-    public final GenericValue<Double> qRight = new GenericValue<Double>("Q-R", "", 0.1, 10.0);
+    public final GenericValue<Integer> gainRight = new GenericValue<>("G-R", "dB", -72, 24);
+    public final GenericValue<Integer> fcRight = new GenericValue<>("Fc-R", "Hz", 20, 20000);
+    public final GenericValue<Double> qRight = new GenericValue<>("Q-R", "", 0.1, 10.0);
     public final EqModeValue modeRight = new EqModeValue("M-R");
 
     @Override

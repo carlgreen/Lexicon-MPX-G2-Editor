@@ -31,13 +31,13 @@ public class ChorusAlgorithm extends Chorus {
     private static final String NAME = "Chorus";
 
     private Rate rate1;
-    public final GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("PW 1", "%", 0, 100);
-    public final GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth1 = new GenericValue<>("PW 1", "%", 0, 100);
+    public final GenericValue<Integer> depth1 = new GenericValue<>("Dpth1", "%", 0, 100);
     private Rate rate2;
-    public final GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 2", "%", 0, 100);
-    public final GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
-    public final GenericValue<Integer> resonance1 = new GenericValue<Integer>("Res 1", "", -100, 100);
-    public final GenericValue<Integer> resonance2 = new GenericValue<Integer>("Res 2", "", -100, 100);
+    public final GenericValue<Integer> pulseWidth2 = new GenericValue<>("PW 2", "%", 0, 100);
+    public final GenericValue<Integer> depth2 = new GenericValue<>("Dpth2", "%", 0, 100);
+    public final GenericValue<Integer> resonance1 = new GenericValue<>("Res 1", "", -100, 100);
+    public final GenericValue<Integer> resonance2 = new GenericValue<>("Res 2", "", -100, 100);
 
     @Override
     public String getName() {

@@ -31,14 +31,14 @@ public class Centrifuge1 extends Chorus {
     private static final String NAME = "Centrifuge1";
 
     private Rate rate1;
-    public final GenericValue<Integer> pulseWidth1 = new GenericValue<Integer>("PW 1", "%", 0, 100);
-    public final GenericValue<Integer> sync1 = new GenericValue<Integer>("Sync1", "", -120, 120);
-    public final GenericValue<Integer> depth1 = new GenericValue<Integer>("Dpth1", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth1 = new GenericValue<>("PW 1", "%", 0, 100);
+    public final GenericValue<Integer> sync1 = new GenericValue<>("Sync1", "", -120, 120);
+    public final GenericValue<Integer> depth1 = new GenericValue<>("Dpth1", "%", 0, 100);
     private Rate rate2;
-    public final GenericValue<Integer> pulseWidth2 = new GenericValue<Integer>("PW 2", "%", 0, 100);
-    public final GenericValue<Integer> sync2 = new GenericValue<Integer>("Sync2", "", -120, 120);
-    public final GenericValue<Integer> depth2 = new GenericValue<Integer>("Dpth2", "%", 0, 100);
-    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
+    public final GenericValue<Integer> pulseWidth2 = new GenericValue<>("PW 2", "%", 0, 100);
+    public final GenericValue<Integer> sync2 = new GenericValue<>("Sync2", "", -120, 120);
+    public final GenericValue<Integer> depth2 = new GenericValue<>("Dpth2", "%", 0, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<>("Res", "%", -100, 100);
 
     @Override
     public String getName() {

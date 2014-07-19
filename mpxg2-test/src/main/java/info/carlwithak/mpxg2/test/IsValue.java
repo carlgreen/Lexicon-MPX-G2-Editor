@@ -53,7 +53,7 @@ public class IsValue<T> extends BaseMatcher<GenericValue<T>> {
 
     @Factory
     public static <T> Matcher<GenericValue<T>> value(final T value) {
-        return new IsValue<T>(value);
+        return new IsValue<>(value);
     }
 
 }

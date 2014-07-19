@@ -33,7 +33,7 @@ public class DelayStereo extends Delay {
     private static final String NAME = "Delay (S)";
 
     private Rate time;
-    public final GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
+    public final GenericValue<Integer> feedback = new GenericValue<>("Fbk", "%", -100, 100);
     public final InsertPosition insert = new InsertPosition("Fbk insert");
     public final OnOffValue clear = new OnOffValue("Clear");
 

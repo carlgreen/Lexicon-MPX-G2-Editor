@@ -31,8 +31,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class JamMan extends Delay {
     private static final String NAME = "JamMan";
 
-    public final GenericValue<Integer> size = new GenericValue<Integer>("Size", "ms", 0, 20000);
-    public final GenericValue<Integer> feedback = new GenericValue<Integer>("Fbk", "%", -100, 100);
+    public final GenericValue<Integer> size = new GenericValue<>("Size", "ms", 0, 20000);
+    public final GenericValue<Integer> feedback = new GenericValue<>("Fbk", "%", -100, 100);
     public final InsertPosition insert = new InsertPosition("Fbk insert");
     public final OnOffValue clear = new OnOffValue("Clear");
     public final OnOffValue layer = new OnOffValue("Layer");

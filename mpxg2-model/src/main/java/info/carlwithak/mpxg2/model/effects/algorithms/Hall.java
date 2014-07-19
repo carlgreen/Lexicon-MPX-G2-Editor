@@ -35,15 +35,15 @@ import info.carlwithak.mpxg2.model.parameters.ReverbSpredValue;
 public class Hall extends Reverb {
     private static final String NAME = "Hall";
 
-    public final GenericValue<Double> size = new GenericValue<Double>("Size", "m", 20.0, 76.0);
+    public final GenericValue<Double> size = new GenericValue<>("Size", "m", 20.0, 76.0);
     public final OnOffValue link = new OnOffValue("Link");
-    public final GenericValue<Integer> diff = new GenericValue<Integer>("Diff", "%", 0, 100);
-    public final GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 250);
+    public final GenericValue<Integer> diff = new GenericValue<>("Diff", "%", 0, 100);
+    public final GenericValue<Integer> preDelay = new GenericValue<>("P Dly", "ms", 0, 250);
     public final BassValue bass = new BassValue("Bass");
     public final DecayTimeValue decay = new DecayTimeValue("Decay", link, size);
     public final CrossoverValue xovr = new CrossoverValue("Xovr");
     public final HighCutValue rtHC = new HighCutValue("Rt HC");
-    public final GenericValue<Integer> shape = new GenericValue<Integer>("Shape", "", 0, 255);
+    public final GenericValue<Integer> shape = new GenericValue<>("Shape", "", 0, 255);
     public final ReverbSpredValue spred = new ReverbSpredValue("Spred", link, size);
 
     @Override

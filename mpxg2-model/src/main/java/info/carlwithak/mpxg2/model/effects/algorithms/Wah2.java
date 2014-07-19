@@ -30,11 +30,11 @@ import info.carlwithak.mpxg2.model.parameters.WahType;
 public class Wah2 extends Effect {
     private static final String NAME = "Wah  2";
 
-    public final GenericValue<Integer> sweep = new GenericValue<Integer>("Sweep", "", 0, 100);
-    public final GenericValue<Integer> bass = new GenericValue<Integer>("Bass", "", 0, 100);
+    public final GenericValue<Integer> sweep = new GenericValue<>("Sweep", "", 0, 100);
+    public final GenericValue<Integer> bass = new GenericValue<>("Bass", "", 0, 100);
     public final WahType type = new WahType();
-    public final GenericValue<Integer> response = new GenericValue<Integer>("Resp", "", 0, 100);
-    public final GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> response = new GenericValue<>("Resp", "", 0, 100);
+    public final GenericValue<Integer> gain = new GenericValue<>("Gain", "dB", -72, 24);
 
     @Override
     public String getName() {

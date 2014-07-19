@@ -25,9 +25,9 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
  * @author Carl Green
  */
 public class PostMix implements DataObject {
-    private final GenericValue<Integer> postMix = new GenericValue<Integer>("Mix", "%", 0, 100);
-    private final GenericValue<Integer> postLevel = new GenericValue<Integer>("Level", "dB", -90, 6);
-    private final GenericValue<Integer> postBypassLevel = new GenericValue<Integer>("Bypass Level", "dB", -90, 6);
+    private final GenericValue<Integer> postMix = new GenericValue<>("Mix", "%", 0, 100);
+    private final GenericValue<Integer> postLevel = new GenericValue<>("Level", "dB", -90, 6);
+    private final GenericValue<Integer> postBypassLevel = new GenericValue<>("Bypass Level", "dB", -90, 6);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

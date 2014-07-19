@@ -31,11 +31,11 @@ public class Flanger24Mono extends Chorus {
     private static final String NAME = "Flanger24 (M)";
 
     private Rate rate;
-    public final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
-    public final GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
-    public final GenericValue<Integer> resonance = new GenericValue<Integer>("Res", "%", -100, 100);
-    public final GenericValue<Integer> glide = new GenericValue<Integer>("Glide", "", 0, 100);
-    public final GenericValue<Integer> blend = new GenericValue<Integer>("Blend", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth = new GenericValue<>("PW", "%", 0, 100);
+    public final GenericValue<Integer> depth = new GenericValue<>("Depth", "%", 0, 100);
+    public final GenericValue<Integer> resonance = new GenericValue<>("Res", "%", -100, 100);
+    public final GenericValue<Integer> glide = new GenericValue<>("Glide", "", 0, 100);
+    public final GenericValue<Integer> blend = new GenericValue<>("Blend", "%", 0, 100);
 
     @Override
     public String getName() {

@@ -32,14 +32,14 @@ public class UtilTest {
 
     @Test
     public void testPrintParameter() {
-        GenericValue<Integer> parameter = new GenericValue<Integer>("Name", "u", 0, 1);
+        GenericValue<Integer> parameter = new GenericValue<>("Name", "u", 0, 1);
         parameter.setValue(1);
         assertThat(Util.printParameter(parameter), is("    Name: 1u\n"));
     }
 
     @Test
     public void testPrintParameterWithoutValue() {
-        GenericValue<Integer> parameter = new GenericValue<Integer>("Name", "u", 0, 1);
+        GenericValue<Integer> parameter = new GenericValue<>("Name", "u", 0, 1);
         parameter.setValue(null);
         assertThat(Util.printParameter(parameter), is("    Name: --\n"));
     }

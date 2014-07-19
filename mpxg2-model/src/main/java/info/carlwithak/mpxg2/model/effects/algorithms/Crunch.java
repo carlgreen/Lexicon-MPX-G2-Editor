@@ -29,11 +29,11 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class Crunch extends Gain {
     private static final String NAME = "Crunch";
 
-    public final GenericValue<Integer> lo = new GenericValue<Integer>("Lo", "dB", -25, 25);
-    public final GenericValue<Integer> mid = new GenericValue<Integer>("Mid", "dB", -25, 25);
-    public final GenericValue<Integer> hi = new GenericValue<Integer>("Hi", "dB", 0, 50);
-    public final GenericValue<Integer> inLevel = new GenericValue<Integer>("InLvl", "dB", -64, 0);
-    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", 0, 64);
+    public final GenericValue<Integer> lo = new GenericValue<>("Lo", "dB", -25, 25);
+    public final GenericValue<Integer> mid = new GenericValue<>("Mid", "dB", -25, 25);
+    public final GenericValue<Integer> hi = new GenericValue<>("Hi", "dB", 0, 50);
+    public final GenericValue<Integer> inLevel = new GenericValue<>("InLvl", "dB", -64, 0);
+    public final GenericValue<Integer> level = new GenericValue<>("Level", "dB", 0, 64);
 
     @Override
     public String getName() {

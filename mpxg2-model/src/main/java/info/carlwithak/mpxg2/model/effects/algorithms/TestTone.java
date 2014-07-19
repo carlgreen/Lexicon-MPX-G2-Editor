@@ -31,7 +31,7 @@ public class TestTone extends Effect {
     private static final String NAME = "Test Tone";
 
     public final NoteValue note = new NoteValue("Note");
-    public final GenericValue<Integer> balance = new GenericValue<Integer>("Bal", "", -50, 50);
+    public final GenericValue<Integer> balance = new GenericValue<>("Bal", "", -50, 50);
 
     @Override
     public String getName() {

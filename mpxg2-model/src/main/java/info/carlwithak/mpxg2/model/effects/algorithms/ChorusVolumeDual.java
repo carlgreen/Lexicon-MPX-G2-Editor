@@ -29,8 +29,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class ChorusVolumeDual extends Chorus {
     private static final String NAME = "Volume (D)";
 
-    public final GenericValue<Integer> volumeLeft = new GenericValue<Integer>("Vol-L", "%", 0, 100);
-    public final GenericValue<Integer> volumeRight = new GenericValue<Integer>("Vol-R", "%", 0, 100);
+    public final GenericValue<Integer> volumeLeft = new GenericValue<>("Vol-L", "%", 0, 100);
+    public final GenericValue<Integer> volumeRight = new GenericValue<>("Vol-R", "%", 0, 100);
 
     @Override
     public String getName() {

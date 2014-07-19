@@ -27,7 +27,7 @@ import info.carlwithak.mpxg2.model.parameters.VolumeValue;
  * @author Carl Green
  */
 public abstract class Effect implements EffectObject {
-    public final GenericValue<Integer> mix = new GenericValue<Integer>("Mix", "%", 0, 100);
+    public final GenericValue<Integer> mix = new GenericValue<>("Mix", "%", 0, 100);
     public final VolumeValue level = new VolumeValue("Level", -90, 6);
 
     @Override

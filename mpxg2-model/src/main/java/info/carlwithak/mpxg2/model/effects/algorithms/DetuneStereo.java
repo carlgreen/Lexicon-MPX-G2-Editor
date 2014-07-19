@@ -29,9 +29,9 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class DetuneStereo extends Effect {
     private static final String NAME = "Detune (S)";
 
-    public final GenericValue<Integer> tune = new GenericValue<Integer>("Tune", "", 0, 100);
-    public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "ms", 10, 40);
-    public final GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 25);
+    public final GenericValue<Integer> tune = new GenericValue<>("Tune", "", 0, 100);
+    public final GenericValue<Integer> optimize = new GenericValue<>("Optimize", "ms", 10, 40);
+    public final GenericValue<Integer> preDelay = new GenericValue<>("P Dly", "ms", 0, 25);
 
     @Override
     public String getName() {

@@ -29,10 +29,10 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class DetuneDual extends Effect {
     private static final String NAME = "Detune (D)";
 
-    public final GenericValue<Integer> tune1 = new GenericValue<Integer>("Tune1", "", 0, 100);
-    public final GenericValue<Integer> optimize = new GenericValue<Integer>("Optimize", "ms", 10, 60);
-    public final GenericValue<Integer> tune2 = new GenericValue<Integer>("Tune2", "", 0, 100);
-    public final GenericValue<Integer> preDelay = new GenericValue<Integer>("P Dly", "ms", 0, 70);
+    public final GenericValue<Integer> tune1 = new GenericValue<>("Tune1", "", 0, 100);
+    public final GenericValue<Integer> optimize = new GenericValue<>("Optimize", "ms", 10, 60);
+    public final GenericValue<Integer> tune2 = new GenericValue<>("Tune2", "", 0, 100);
+    public final GenericValue<Integer> preDelay = new GenericValue<>("P Dly", "ms", 0, 70);
 
     @Override
     public String getName() {

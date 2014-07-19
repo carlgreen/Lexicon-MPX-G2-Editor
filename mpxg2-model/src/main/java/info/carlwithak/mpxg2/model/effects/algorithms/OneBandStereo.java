@@ -30,9 +30,9 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
 public class OneBandStereo extends Eq {
     private static final String NAME = "1-Band (S)";
 
-    public final GenericValue<Integer> gain = new GenericValue<Integer>("Gain", "dB", -72, 24);
-    public final GenericValue<Integer> fc = new GenericValue<Integer>("Fc", "Hz", 20, 20000);
-    public final GenericValue<Double> q = new GenericValue<Double>("Q", "", 0.1, 10.0);
+    public final GenericValue<Integer> gain = new GenericValue<>("Gain", "dB", -72, 24);
+    public final GenericValue<Integer> fc = new GenericValue<>("Fc", "Hz", 20, 20000);
+    public final GenericValue<Double> q = new GenericValue<>("Q", "", 0.1, 10.0);
     public final EqModeValue mode = new EqModeValue("Mode");
 
     @Override

@@ -26,8 +26,8 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
  * @author Carl Green
  */
 public abstract class Chorus implements EffectObject {
-    public final GenericValue<Integer> mix = new GenericValue<Integer>("Mix", "%", 0, 100);
-    public final GenericValue<Integer> level = new GenericValue<Integer>("Level", "dB", -90, 6);
+    public final GenericValue<Integer> mix = new GenericValue<>("Mix", "%", 0, 100);
+    public final GenericValue<Integer> level = new GenericValue<>("Level", "dB", -90, 6);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

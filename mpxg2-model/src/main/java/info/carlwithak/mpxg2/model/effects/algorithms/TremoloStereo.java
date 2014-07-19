@@ -32,8 +32,8 @@ public class TremoloStereo extends Effect {
     private static final String NAME = "Tremolo (S)";
 
     private Rate rate;
-    public final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
-    public final GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
+    public final GenericValue<Integer> pulseWidth = new GenericValue<>("PW", "%", 0, 100);
+    public final GenericValue<Integer> depth = new GenericValue<>("Depth", "%", 0, 100);
     public final PhaseValue phase = new PhaseValue("Phase");
 
     @Override
