@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class TestToneTest {
-    private TestTone testTone = new TestTone();
+    private final TestTone testTone = new TestTone();
 
     @Test
     public void testMix() {

@@ -24,7 +24,7 @@ package info.carlwithak.mpxg2.model.parameters;
  */
 public class BeatRate implements Rate {
 
-    private String name;
+    private final String name;
     private Integer measures;
     private Integer beats;
 

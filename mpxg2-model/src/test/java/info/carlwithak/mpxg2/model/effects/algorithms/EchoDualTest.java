@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class EchoDualTest {
-    private EchoDual echoDual = new EchoDual();
+    private final EchoDual echoDual = new EchoDual();
 
     @Test
     public void testMix() {

@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class RedCompTest {
-    private RedComp redComp = new RedComp();
+    private final RedComp redComp = new RedComp();
 
     @Test
     public void testMix() {

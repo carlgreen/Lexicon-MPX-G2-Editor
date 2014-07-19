@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class EqVolumeDualTest {
-    private EqVolumeDual volumeDual = new EqVolumeDual();
+    private final EqVolumeDual volumeDual = new EqVolumeDual();
 
     @Test
     public void testMix() {

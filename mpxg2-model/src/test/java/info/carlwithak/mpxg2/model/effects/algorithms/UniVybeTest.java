@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class UniVybeTest {
-    private UniVybe uniVybe = new UniVybe();
+    private final UniVybe uniVybe = new UniVybe();
 
     @Test
     public void testMix() {

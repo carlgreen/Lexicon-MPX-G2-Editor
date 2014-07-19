@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class FlangerMonoTest {
-    private FlangerMono flangerMono = new FlangerMono();
+    private final FlangerMono flangerMono = new FlangerMono();
 
     @Test
     public void testMix() {

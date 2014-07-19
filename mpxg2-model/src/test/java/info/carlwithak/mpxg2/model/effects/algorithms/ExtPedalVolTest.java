@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ExtPedalVolTest {
-    private ExtPedalVol extPedalVol = new ExtPedalVol();
+    private final ExtPedalVol extPedalVol = new ExtPedalVol();
 
     @Test
     public void testMix() {

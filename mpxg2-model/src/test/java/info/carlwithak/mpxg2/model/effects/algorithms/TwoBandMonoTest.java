@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class TwoBandMonoTest {
-    private TwoBandMono twoBandMono = new TwoBandMono();
+    private final TwoBandMono twoBandMono = new TwoBandMono();
 
     @Test
     public void testMix() {

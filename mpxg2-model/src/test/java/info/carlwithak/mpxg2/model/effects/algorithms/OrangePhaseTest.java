@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class OrangePhaseTest {
-    private OrangePhase orangePhase = new OrangePhase();
+    private final OrangePhase orangePhase = new OrangePhase();
 
     @Test
     public void testMix() {

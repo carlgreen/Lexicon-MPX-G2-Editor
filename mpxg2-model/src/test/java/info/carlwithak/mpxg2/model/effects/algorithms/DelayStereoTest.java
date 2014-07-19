@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DelayStereoTest {
-    private DelayStereo delayStereo = new DelayStereo();
+    private final DelayStereo delayStereo = new DelayStereo();
 
     @Test
     public void testMix() {

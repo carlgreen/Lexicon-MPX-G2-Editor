@@ -28,11 +28,11 @@ import info.carlwithak.mpxg2.model.parameters.SourceValue;
  * @author Carl Green
  */
 public class Ab implements DataObject {
-    private AbModeValue mode = new AbModeValue("Mode");
-    private GenericValue<Integer> aRate = new GenericValue<Integer>("ARate", "", 0, 100);
-    private GenericValue<Integer> bRate = new GenericValue<Integer>("BRate", "", 0, 100);
-    private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
-    private SourceValue onSource = new SourceValue("OnSrc");
+    private final AbModeValue mode = new AbModeValue("Mode");
+    private final GenericValue<Integer> aRate = new GenericValue<Integer>("ARate", "", 0, 100);
+    private final GenericValue<Integer> bRate = new GenericValue<Integer>("BRate", "", 0, 100);
+    private final GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
+    private final SourceValue onSource = new SourceValue("OnSrc");
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

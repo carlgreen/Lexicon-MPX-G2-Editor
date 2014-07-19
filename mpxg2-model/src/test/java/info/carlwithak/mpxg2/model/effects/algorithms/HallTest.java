@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class HallTest {
-    private Hall hall = new Hall();
+    private final Hall hall = new Hall();
 
     @Test
     public void testMix() {

@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class RotaryCabTest {
-    private RotaryCab rotaryCab = new RotaryCab();
+    private final RotaryCab rotaryCab = new RotaryCab();
 
     @Test
     public void testMix() {

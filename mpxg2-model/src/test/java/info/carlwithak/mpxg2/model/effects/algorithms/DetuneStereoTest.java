@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DetuneStereoTest {
-    private DetuneStereo detuneStereo = new DetuneStereo();
+    private final DetuneStereo detuneStereo = new DetuneStereo();
 
     @Test
     public void testMix() {

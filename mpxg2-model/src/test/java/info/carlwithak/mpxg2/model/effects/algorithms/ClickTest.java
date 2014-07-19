@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ClickTest {
-    private Click click = new Click();
+    private final Click click = new Click();
 
     @Test
     public void testMix() {

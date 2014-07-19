@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ShiftDualTest {
-    private ShiftDual shiftDual = new ShiftDual();
+    private final ShiftDual shiftDual = new ShiftDual();
 
     @Test
     public void testMix() {

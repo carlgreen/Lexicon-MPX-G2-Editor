@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class LooperTest {
-    private Looper looper = new Looper();
+    private final Looper looper = new Looper();
 
     @Test
     public void testMix() {

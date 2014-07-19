@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PedalWah1Test {
-    private PedalWah1 pedalWah1 = new PedalWah1();
+    private final PedalWah1 pedalWah1 = new PedalWah1();
 
     @Test
     public void testMix() {

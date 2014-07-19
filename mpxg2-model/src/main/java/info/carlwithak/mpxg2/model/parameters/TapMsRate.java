@@ -23,7 +23,7 @@ package info.carlwithak.mpxg2.model.parameters;
  */
 public class TapMsRate implements Rate {
 
-    private String name;
+    private final String name;
     private Integer ms;
 
     public TapMsRate(final String name, final Integer ms) {

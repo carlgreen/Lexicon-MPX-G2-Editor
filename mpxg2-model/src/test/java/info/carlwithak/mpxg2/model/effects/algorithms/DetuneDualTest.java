@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DetuneDualTest {
-    private DetuneDual detuneDual = new DetuneDual();
+    private final DetuneDual detuneDual = new DetuneDual();
 
     @Test
     public void testMix() {

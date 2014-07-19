@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ScreamerTest {
-    private Screamer screamer = new Screamer();
+    private final Screamer screamer = new Screamer();
 
     @Test
     public void testLo() {

@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ChorusVolumeMonoTest {
-    private ChorusVolumeMono volumeMono = new ChorusVolumeMono();
+    private final ChorusVolumeMono volumeMono = new ChorusVolumeMono();
 
     @Test
     public void testMix() {

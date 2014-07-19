@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class FourBandMonoTest {
-    private FourBandMono fourBandMono = new FourBandMono();
+    private final FourBandMono fourBandMono = new FourBandMono();
 
     @Test
     public void testMix() {

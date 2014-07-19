@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class FcSplitterTest {
-    private FcSplitter fcSplitter = new FcSplitter();
+    private final FcSplitter fcSplitter = new FcSplitter();
 
     @Test
     public void testMix() {

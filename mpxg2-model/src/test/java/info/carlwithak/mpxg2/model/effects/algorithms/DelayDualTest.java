@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DelayDualTest {
-    private DelayDual delayDual = new DelayDual();
+    private final DelayDual delayDual = new DelayDual();
 
     @Test
     public void testMix() {

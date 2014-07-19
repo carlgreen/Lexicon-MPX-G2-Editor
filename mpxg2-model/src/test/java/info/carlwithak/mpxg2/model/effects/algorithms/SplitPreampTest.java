@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class SplitPreampTest {
-    private SplitPreamp splitPreamp = new SplitPreamp();
+    private final SplitPreamp splitPreamp = new SplitPreamp();
 
     @Test
     public void testLo() {

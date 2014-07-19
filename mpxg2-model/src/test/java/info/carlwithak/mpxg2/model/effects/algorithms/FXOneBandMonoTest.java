@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class FXOneBandMonoTest {
-    private FXOneBandMono oneBandMono = new FXOneBandMono();
+    private final FXOneBandMono oneBandMono = new FXOneBandMono();
 
     @Test
     public void testMix() {

@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DuckerTest {
-    private Ducker ducker = new Ducker();
+    private final Ducker ducker = new Ducker();
 
     @Test
     public void testMix() {

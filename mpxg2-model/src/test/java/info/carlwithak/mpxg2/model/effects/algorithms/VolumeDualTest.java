@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class VolumeDualTest {
-    private VolumeDual volumeDual = new VolumeDual();
+    private final VolumeDual volumeDual = new VolumeDual();
 
     @Test
     public void testMix() {

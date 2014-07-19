@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class OneBandStereoTest {
-    private OneBandStereo oneBandStereo = new OneBandStereo();
+    private final OneBandStereo oneBandStereo = new OneBandStereo();
 
     @Test
     public void testMix() {

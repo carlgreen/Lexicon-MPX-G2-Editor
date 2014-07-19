@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class AmbienceTest {
-    private Ambience ambience = new Ambience();
+    private final Ambience ambience = new Ambience();
 
     @Test
     public void testMix() {

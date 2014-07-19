@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ChorusAlgorithmTest {
-    private ChorusAlgorithm chorus = new ChorusAlgorithm();
+    private final ChorusAlgorithm chorus = new ChorusAlgorithm();
 
     @Test
     public void testMix() {

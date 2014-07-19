@@ -28,7 +28,7 @@ public class FrequencyRate implements Rate {
 
     private static final DecimalFormat DECIMAL_2DP = new DecimalFormat("0.00");
 
-    private String name;
+    private final String name;
     private Double frequency;
 
     public FrequencyRate(final String name, final Double frequency) {

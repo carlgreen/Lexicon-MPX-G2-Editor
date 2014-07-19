@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ShiftMonoTest {
-    private ShiftMono shiftMono = new ShiftMono();
+    private final ShiftMono shiftMono = new ShiftMono();
 
     @Test
     public void testMix() {

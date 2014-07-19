@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PannerTest {
-    private Panner panner = new Panner();
+    private final Panner panner = new Panner();
 
     @Test
     public void testMix() {

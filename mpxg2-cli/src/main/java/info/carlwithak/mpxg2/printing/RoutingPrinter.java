@@ -39,9 +39,9 @@ public class RoutingPrinter {
         "=", "-", "_", "\\", "/"
     };
 
-    private Program program;
-    private StringBuilder upper = new StringBuilder();
-    private StringBuilder lower = new StringBuilder();
+    private final Program program;
+    private final StringBuilder upper = new StringBuilder();
+    private final StringBuilder lower = new StringBuilder();
 
     private RoutingPrinter(final Program program) {
         this.program = program;

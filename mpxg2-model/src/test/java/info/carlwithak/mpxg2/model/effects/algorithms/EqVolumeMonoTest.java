@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class EqVolumeMonoTest {
-    private EqVolumeMono volumeMono = new EqVolumeMono();
+    private final EqVolumeMono volumeMono = new EqVolumeMono();
 
     @Test
     public void testMix() {

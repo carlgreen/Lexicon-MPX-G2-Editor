@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class FlangerStereoTest {
-    private FlangerStereo flangerStereo = new FlangerStereo();
+    private final FlangerStereo flangerStereo = new FlangerStereo();
 
     @Test
     public void testMix() {

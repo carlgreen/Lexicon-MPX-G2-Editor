@@ -29,13 +29,13 @@ import info.carlwithak.mpxg2.model.parameters.SourceValue;
  * @author Carl Green
  */
 public class Lfo implements DataObject {
-    private LfoModeValue mode = new LfoModeValue("Mode");
+    private final LfoModeValue mode = new LfoModeValue("Mode");
     private Rate rate;
-    private GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
-    private GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "", -120, 120);
-    private GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
-    private GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
-    private SourceValue onSource = new SourceValue("OnSrc");
+    private final GenericValue<Integer> pulseWidth = new GenericValue<Integer>("PW", "%", 0, 100);
+    private final GenericValue<Integer> phase = new GenericValue<Integer>("Phase", "", -120, 120);
+    private final GenericValue<Integer> depth = new GenericValue<Integer>("Depth", "%", 0, 100);
+    private final GenericValue<Integer> onLevel = new GenericValue<Integer>("OnLvl", "", 0, 127);
+    private final SourceValue onSource = new SourceValue("OnSrc");
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

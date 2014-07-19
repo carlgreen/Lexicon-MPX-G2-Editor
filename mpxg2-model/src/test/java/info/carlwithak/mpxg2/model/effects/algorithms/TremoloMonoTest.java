@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class TremoloMonoTest {
-    private TremoloMono tremoloMono = new TremoloMono();
+    private final TremoloMono tremoloMono = new TremoloMono();
 
     @Test
     public void testMix() {

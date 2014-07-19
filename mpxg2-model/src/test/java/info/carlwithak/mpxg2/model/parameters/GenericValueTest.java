@@ -33,8 +33,8 @@ import org.junit.Test;
  * @author Carl Green
  */
 public class GenericValueTest {
-    private GenericValue<String> genericValue = new GenericValue<String>("some name", "a unit", "c", "f");
-    private GenericValue<String> nullGenericValue = new GenericValue<String>("some name", "a unit", "c", "f");
+    private final GenericValue<String> genericValue = new GenericValue<String>("some name", "a unit", "c", "f");
+    private final GenericValue<String> nullGenericValue = new GenericValue<String>("some name", "a unit", "c", "f");
 
     @Before
     public void setup() {

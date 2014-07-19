@@ -29,8 +29,8 @@ import static org.junit.Assert.assertThat;
  * @author Carl Green
  */
 public class TextValueTest {
-    private TextValue value = new TextValue("some name", 3);
-    private TextValue nullValue = new TextValue("some name", 3);
+    private final TextValue value = new TextValue("some name", 3);
+    private final TextValue nullValue = new TextValue("some name", 3);
 
     @Before
     public void setup() {

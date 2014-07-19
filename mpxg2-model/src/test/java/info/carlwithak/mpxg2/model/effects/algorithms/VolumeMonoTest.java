@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class VolumeMonoTest {
-    private VolumeMono volumeMono = new VolumeMono();
+    private final VolumeMono volumeMono = new VolumeMono();
 
     @Test
     public void testMix() {

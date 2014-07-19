@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class Comb1Test {
-    private Comb1 comb1 = new Comb1();
+    private final Comb1 comb1 = new Comb1();
 
     @Test
     public void testMix() {

@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DigiDrive1Test {
-    private DigiDrive1 digiDrive1 = new DigiDrive1();
+    private final DigiDrive1 digiDrive1 = new DigiDrive1();
 
     @Test
     public void testMix() {

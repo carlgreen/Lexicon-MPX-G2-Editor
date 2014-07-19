@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class AutoPanTest {
-    private AutoPan autoPan = new AutoPan();
+    private final AutoPan autoPan = new AutoPan();
 
     @Test
     public void testMix() {

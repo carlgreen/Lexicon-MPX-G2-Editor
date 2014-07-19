@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class OverdriveTest {
-    private Overdrive overdrive = new Overdrive();
+    private final Overdrive overdrive = new Overdrive();
 
     @Test
     public void testLo() {

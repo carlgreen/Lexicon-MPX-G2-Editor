@@ -30,15 +30,15 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
  * @author Carl Green
  */
 public class NoiseGate implements DataObject {
-    private NoiseGateEnableValue enable = new NoiseGateEnableValue("Enable");
-    private OnOffValue send = new OnOffValue("Send");
-    private GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", 0, 0);
-    private GenericValue<Integer> attenuation = new GenericValue<Integer>("Atten", "dB", 0, 0);
-    private GenericValue<Integer> offset = new GenericValue<Integer>("Offset", "dB", 0, 0);
-    private GenericValue<Integer> aTime = new GenericValue<Integer>("ATime", "", 0, 0);
-    private GenericValue<Integer> hTime = new GenericValue<Integer>("HTime", "", 0, 0);
-    private GenericValue<Integer> rTime = new GenericValue<Integer>("RTime", "", 0, 0);
-    private GenericValue<Integer> delay = new GenericValue<Integer>("Delay", "", 0, 0);
+    private final NoiseGateEnableValue enable = new NoiseGateEnableValue("Enable");
+    private final OnOffValue send = new OnOffValue("Send");
+    private final GenericValue<Integer> threshold = new GenericValue<Integer>("Thrsh", "dB", 0, 0);
+    private final GenericValue<Integer> attenuation = new GenericValue<Integer>("Atten", "dB", 0, 0);
+    private final GenericValue<Integer> offset = new GenericValue<Integer>("Offset", "dB", 0, 0);
+    private final GenericValue<Integer> aTime = new GenericValue<Integer>("ATime", "", 0, 0);
+    private final GenericValue<Integer> hTime = new GenericValue<Integer>("HTime", "", 0, 0);
+    private final GenericValue<Integer> rTime = new GenericValue<Integer>("RTime", "", 0, 0);
+    private final GenericValue<Integer> delay = new GenericValue<Integer>("Delay", "", 0, 0);
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

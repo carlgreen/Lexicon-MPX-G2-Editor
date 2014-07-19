@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class EqVolumeStereoTest {
-    private EqVolumeStereo volumeStereo = new EqVolumeStereo();
+    private final EqVolumeStereo volumeStereo = new EqVolumeStereo();
 
     @Test
     public void testMix() {

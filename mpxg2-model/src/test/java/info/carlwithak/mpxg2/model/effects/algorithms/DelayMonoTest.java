@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DelayMonoTest {
-    private DelayMono delayMono = new DelayMono();
+    private final DelayMono delayMono = new DelayMono();
 
     @Test
     public void testMix() {

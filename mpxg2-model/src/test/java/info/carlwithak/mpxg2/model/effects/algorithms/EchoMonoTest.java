@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class EchoMonoTest {
-    private EchoMono echoMono = new EchoMono();
+    private final EchoMono echoMono = new EchoMono();
 
     @Test
     public void testMix() {

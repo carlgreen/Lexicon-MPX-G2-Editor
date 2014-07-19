@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class SweepFilterTest {
-    private SweepFilter sweepFilter = new SweepFilter();
+    private final SweepFilter sweepFilter = new SweepFilter();
 
     @Test
     public void testMix() {

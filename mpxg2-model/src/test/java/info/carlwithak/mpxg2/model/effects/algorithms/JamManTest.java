@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class JamManTest {
-    private JamMan jamMan = new JamMan();
+    private final JamMan jamMan = new JamMan();
 
     @Test
     public void testMix() {

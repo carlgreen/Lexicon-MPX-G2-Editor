@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class EchoStereoTest {
-    private EchoStereo echoStereo = new EchoStereo();
+    private final EchoStereo echoStereo = new EchoStereo();
 
     @Test
     public void testMix() {

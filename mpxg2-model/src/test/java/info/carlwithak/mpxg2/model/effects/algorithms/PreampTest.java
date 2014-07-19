@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PreampTest {
-    private Preamp preamp = new Preamp();
+    private final Preamp preamp = new Preamp();
 
     @Test
     public void testLo() {

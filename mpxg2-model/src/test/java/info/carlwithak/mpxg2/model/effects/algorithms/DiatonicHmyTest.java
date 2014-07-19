@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DiatonicHmyTest {
-    private DiatonicHmy diatonicHmy = new DiatonicHmy();
+    private final DiatonicHmy diatonicHmy = new DiatonicHmy();
 
     @Test
     public void testMix() {

@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ShiftStereoTest {
-    private ShiftStereo shiftStereo = new ShiftStereo();
+    private final ShiftStereo shiftStereo = new ShiftStereo();
 
     @Test
     public void testMix() {

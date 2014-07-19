@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class AerosolTest {
-    private Aerosol aerosol = new Aerosol();
+    private final Aerosol aerosol = new Aerosol();
 
     @Test
     public void testMix() {

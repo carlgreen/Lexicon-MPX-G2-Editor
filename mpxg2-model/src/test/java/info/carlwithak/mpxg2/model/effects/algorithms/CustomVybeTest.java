@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class CustomVybeTest {
-    private CustomVybe customVybe = new CustomVybe();
+    private final CustomVybe customVybe = new CustomVybe();
 
     @Test
     public void testMix() {

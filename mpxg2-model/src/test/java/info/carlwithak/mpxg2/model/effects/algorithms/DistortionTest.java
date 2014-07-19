@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class DistortionTest {
-    private Distortion distortion = new Distortion();
+    private final Distortion distortion = new Distortion();
 
     @Test
     public void testLo() {

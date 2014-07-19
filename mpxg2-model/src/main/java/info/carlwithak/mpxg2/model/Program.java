@@ -91,11 +91,11 @@ public class Program {
 
     private EffectsStatus effectsStatus;
 
-    private List<SoftRowItem> softRow = Arrays.<SoftRowItem>asList(null, null, null, null, null, null, null, null, null, null);
+    private final List<SoftRowItem> softRow = Arrays.<SoftRowItem>asList(null, null, null, null, null, null, null, null, null, null);
 
     private Tempo tempo;
 
-    private Patch[] patches = new Patch[5];
+    private final Patch[] patches = new Patch[5];
 
     // controllers
     private Knob knob;
@@ -111,8 +111,8 @@ public class Program {
     private int bypassState;
 
     // speaker simulator
-    private OnOffValue speakerSimulatorEnable = new OnOffValue("Enable");
-    private SpeakerSimulatorCabinetValue speakerSimulatorCabinet = new SpeakerSimulatorCabinetValue("Cabinet");
+    private final OnOffValue speakerSimulatorEnable = new OnOffValue("Enable");
+    private final SpeakerSimulatorCabinetValue speakerSimulatorCabinet = new SpeakerSimulatorCabinetValue("Cabinet");
 
     // mix
     private SendMix sendMix;

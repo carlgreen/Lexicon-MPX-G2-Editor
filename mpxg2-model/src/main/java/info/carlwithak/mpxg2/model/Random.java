@@ -27,8 +27,8 @@ import info.carlwithak.mpxg2.model.parameters.Rate;
  * @author Carl Green
  */
 public class Random implements DataObject {
-    private GenericValue<Integer> low = new GenericValue<Integer>("RndLo", "", 0, 127);
-    private GenericValue<Integer> high = new GenericValue<Integer>("RndHi", "", 0, 127);
+    private final GenericValue<Integer> low = new GenericValue<Integer>("RndLo", "", 0, 127);
+    private final GenericValue<Integer> high = new GenericValue<Integer>("RndHi", "", 0, 127);
     private Rate rate;
 
     @Override

@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class Centrifuge1Test {
-    private Centrifuge1 centrifuge1 = new Centrifuge1();
+    private final Centrifuge1 centrifuge1 = new Centrifuge1();
 
     @Test
     public void testMix() {

@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PhaserTest {
-    private Phaser phaser = new Phaser();
+    private final Phaser phaser = new Phaser();
 
     @Test
     public void testMix() {

@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class GateTest {
-    private Gate gate = new Gate();
+    private final Gate gate = new Gate();
 
     @Test
     public void testMix() {

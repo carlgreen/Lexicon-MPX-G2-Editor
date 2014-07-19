@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class PlateTest {
-    private Plate plate = new Plate();
+    private final Plate plate = new Plate();
 
     @Test
     public void testMix() {

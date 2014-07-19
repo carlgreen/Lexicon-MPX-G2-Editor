@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ChorusDetuneMonoTest {
-    private ChorusDetuneMono detuneMono = new ChorusDetuneMono();
+    private final ChorusDetuneMono detuneMono = new ChorusDetuneMono();
 
     @Test
     public void testMix() {

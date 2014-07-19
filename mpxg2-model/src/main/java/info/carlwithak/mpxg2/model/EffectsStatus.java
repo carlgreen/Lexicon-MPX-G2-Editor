@@ -25,14 +25,14 @@ import info.carlwithak.mpxg2.model.parameters.Parameter;
  * @author Carl Green
  */
 public class EffectsStatus implements DataObject {
-    private OnOffValue effect1On = new OnOffValue("FX1");
-    private OnOffValue effect2On = new OnOffValue("FX2");
-    private OnOffValue chorusOn = new OnOffValue("Chrs");
-    private OnOffValue delayOn = new OnOffValue("Dly");
-    private OnOffValue reverbOn = new OnOffValue("Rvb");
-    private OnOffValue eqOn = new OnOffValue("EQ");
-    private OnOffValue gainOn = new OnOffValue("Gain");
-    private OnOffValue insertOn = new OnOffValue("Ins");
+    private final OnOffValue effect1On = new OnOffValue("FX1");
+    private final OnOffValue effect2On = new OnOffValue("FX2");
+    private final OnOffValue chorusOn = new OnOffValue("Chrs");
+    private final OnOffValue delayOn = new OnOffValue("Dly");
+    private final OnOffValue reverbOn = new OnOffValue("Rvb");
+    private final OnOffValue eqOn = new OnOffValue("EQ");
+    private final OnOffValue gainOn = new OnOffValue("Gain");
+    private final OnOffValue insertOn = new OnOffValue("Ins");
 
     @Override
     public Parameter getParameter(final int parameterIndex) {

@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class OrbitsTest {
-    private Orbits orbits = new Orbits();
+    private final Orbits orbits = new Orbits();
 
     @Test
     public void testMix() {

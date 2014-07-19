@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class CrunchTest {
-    private Crunch crunch = new Crunch();
+    private final Crunch crunch = new Crunch();
 
     @Test
     public void testLo() {

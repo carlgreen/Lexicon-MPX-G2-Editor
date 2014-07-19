@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class CrossoverTest {
-    private Crossover crossover = new Crossover();
+    private final Crossover crossover = new Crossover();
 
     @Test
     public void testMix() {

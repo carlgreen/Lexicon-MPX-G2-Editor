@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class Wah1Test {
-    private Wah1 wah1 = new Wah1();
+    private final Wah1 wah1 = new Wah1();
 
     @Test
     public void testMix() {

@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class ChamberTest {
-    private Chamber chamber = new Chamber();
+    private final Chamber chamber = new Chamber();
 
     @Test
     public void testMix() {

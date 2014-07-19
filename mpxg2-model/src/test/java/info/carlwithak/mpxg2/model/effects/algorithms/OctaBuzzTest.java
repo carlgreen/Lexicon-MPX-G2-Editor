@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class OctaBuzzTest {
-    private OctaBuzz octaBuzz = new OctaBuzz();
+    private final OctaBuzz octaBuzz = new OctaBuzz();
 
     @Test
     public void testMix() {

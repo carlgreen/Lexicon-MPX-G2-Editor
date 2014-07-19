@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
  * @author Carl Green
  */
 public class BlueCompTest {
-    private BlueComp blueComp = new BlueComp();
+    private final BlueComp blueComp = new BlueComp();
 
     @Test
     public void testMix() {
