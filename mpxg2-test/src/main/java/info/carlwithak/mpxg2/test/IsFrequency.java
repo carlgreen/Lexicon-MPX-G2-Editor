@@ -41,7 +41,7 @@ public class IsFrequency extends BaseMatcher<Rate> {
     @Override
     public boolean matches(final Object item) {
         if (item instanceof FrequencyRate) {
-            FrequencyRate rate = (FrequencyRate) item;
+            final FrequencyRate rate = (FrequencyRate) item;
             return equalTo(value).matches(rate.getFrequency());
         }
         return false;

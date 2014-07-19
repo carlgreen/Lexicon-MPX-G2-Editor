@@ -43,7 +43,7 @@ public class IsBeat extends BaseMatcher<Rate> {
     @Override
     public boolean matches(final Object item) {
         if (item instanceof BeatRate) {
-            BeatRate rate = (BeatRate) item;
+            final BeatRate rate = (BeatRate) item;
             return equalTo(value1).matches(rate.getMeasures()) && equalTo(value2).matches(rate.getBeats());
         }
         return false;
@@ -55,7 +55,7 @@ public class IsBeat extends BaseMatcher<Rate> {
     }
 
     @Factory
-    public static Matcher<Rate> beat(Integer value1, Integer value2) {
+    public static Matcher<Rate> beat(final Integer value1, final Integer value2) {
         return new IsBeat(value1, value2);
     }
 

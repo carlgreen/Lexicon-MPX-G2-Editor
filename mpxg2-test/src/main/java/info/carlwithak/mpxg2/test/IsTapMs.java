@@ -41,7 +41,7 @@ public class IsTapMs extends BaseMatcher<Rate> {
     @Override
     public boolean matches(final Object item) {
         if (item instanceof TapMsRate) {
-            TapMsRate rate = (TapMsRate) item;
+            final TapMsRate rate = (TapMsRate) item;
             return equalTo(value).matches(rate.getMs());
         }
         return false;

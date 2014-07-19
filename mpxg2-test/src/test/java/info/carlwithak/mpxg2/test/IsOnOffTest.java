@@ -64,7 +64,7 @@ public class IsOnOffTest {
 
     @Test
     public void testOnDescription() {
-        Description d = mock(Description.class);
+        final Description d = mock(Description.class);
         when(d.appendText(any(String.class))).thenReturn(d);
         onValue.describeTo(d);
         verify(d).appendValue(true);
@@ -72,7 +72,7 @@ public class IsOnOffTest {
 
     @Test
     public void testOffDescription() {
-        Description d = mock(Description.class);
+        final Description d = mock(Description.class);
         when(d.appendText(any(String.class))).thenReturn(d);
         offValue.describeTo(d);
         verify(d).appendValue(false);

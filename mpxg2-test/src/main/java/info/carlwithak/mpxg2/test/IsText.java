@@ -40,7 +40,7 @@ public class IsText extends BaseMatcher<TextValue> {
     @Override
     public boolean matches(final Object item) {
         if (item instanceof TextValue) {
-            TextValue parameter = (TextValue) item;
+            final TextValue parameter = (TextValue) item;
             return equalTo(text).matches(parameter.getValue());
         }
         return false;

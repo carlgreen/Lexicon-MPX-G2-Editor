@@ -54,7 +54,7 @@ public class IsFrequencyTest {
 
     @Test
     public void testDescription() {
-        Description d = mock(Description.class);
+        final Description d = mock(Description.class);
         when(d.appendText(any(String.class))).thenReturn(d);
         isFrequency.describeTo(d);
         verify(d).appendValue(1.0);

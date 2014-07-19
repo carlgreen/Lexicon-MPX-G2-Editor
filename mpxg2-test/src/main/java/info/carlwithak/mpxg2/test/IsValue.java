@@ -42,7 +42,7 @@ public class IsValue<T> extends BaseMatcher<GenericValue<T>> {
     @Override
     public boolean matches(final Object item) {
         if (item instanceof GenericValue) {
-            GenericValue<?> parameter = (GenericValue<?>) item;
+            final GenericValue<?> parameter = (GenericValue<?>) item;
             return equalTo(value).matches(parameter.getValue());
         }
         return false;

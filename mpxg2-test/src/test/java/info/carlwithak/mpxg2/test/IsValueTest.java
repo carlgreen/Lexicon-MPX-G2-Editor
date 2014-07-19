@@ -53,7 +53,7 @@ public class IsValueTest {
 
     @Test
     public void testDescription() {
-        Description d = mock(Description.class);
+        final Description d = mock(Description.class);
         when(d.appendText(any(String.class))).thenReturn(d);
         isValue.describeTo(d);
         verify(d).appendValue("something");

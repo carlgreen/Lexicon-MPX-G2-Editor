@@ -40,7 +40,7 @@ public class IsOnOff extends BaseMatcher<OnOffValue> {
     @Override
     public boolean matches(final Object item) {
         if (item instanceof OnOffValue) {
-            OnOffValue parameter = (OnOffValue) item;
+            final OnOffValue parameter = (OnOffValue) item;
             return equalTo(value).matches(parameter.getValue());
         }
         return false;
