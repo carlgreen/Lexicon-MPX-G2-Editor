@@ -37,9 +37,9 @@ import info.carlwithak.mpxg2.model.parameters.OnOffValue;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static org.junit.matchers.JUnitMatchers.containsString;
 
 /**
  * Tests for ProgramPrinter.
