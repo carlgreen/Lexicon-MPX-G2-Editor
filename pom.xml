@@ -47,7 +47,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.6</java.version>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
     <build>
@@ -57,10 +58,10 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                        <testSource>${java.version}</testSource>
-                        <testTarget>${java.version}</testTarget>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <testSource>${maven.compiler.source}</testSource>
+                        <testTarget>${maven.compiler.target}</testTarget>
                         <compilerArgument>-Xlint:all</compilerArgument>
                         <showWarnings>true</showWarnings>
                         <showDeprecation>true</showDeprecation>
@@ -115,7 +116,7 @@
                                 <artifactId>maven-pmd-plugin</artifactId>
                                 <version>2.5</version>
                                 <configuration>
-                                    <targetJdk>${java.version}</targetJdk>
+                                    <targetJdk>${maven.compiler.target}</targetJdk>
                                     <linkXRef>false</linkXRef>
                                 </configuration>
                             </plugin>
