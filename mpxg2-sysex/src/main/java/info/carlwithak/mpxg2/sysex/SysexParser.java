@@ -190,19 +190,13 @@ public class SysexParser {
     }
 
     public static List<Program> parsePrograms(final File presets) throws IOException, ParseException {
-        InputStream in = null;
-        try {
-            in = new FileInputStream(presets);
-            List<Program> programs = new ArrayList<Program>();
+        try (InputStream in = new FileInputStream(presets)) {
+            List<Program> programs = new ArrayList<>();
             Program program;
             while ((program = parseProgram(in)) != null) {
                 programs.add(program);
             }
             return programs;
-        } finally {
-            if (in != null) {
-                in.close();
-            }
         }
     }
 
