@@ -984,7 +984,7 @@ public class SysexParser {
         patch.setSourceMax(sourceMax);
         patch.setDestinationEffect(destinationEffect == NO_DESTINATION ? null : destinationEffect);
         patch.setDestinationParameter(destinationParameter);
-        if (patch != null && patch.getDestinationEffectIndex() != null) {
+        if (patch.getDestinationEffectIndex() != null) {
             DataObject effect = program.getEffect(patch.getDestinationEffectIndex());
             Parameter baseParameter = effect == null ? null : effect.getParameter(patch.getDestinationParameter());
             if (baseParameter != null) {
