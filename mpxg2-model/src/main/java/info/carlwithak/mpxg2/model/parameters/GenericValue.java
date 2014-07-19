@@ -24,6 +24,8 @@ import java.security.PrivilegedAction;
 /**
  * Would be good to restrict T only to subclasses of Number.
  *
+ * @param <T> type of data to be held
+ *
  * @author Carl Green
  */
 public class GenericValue<T> implements Parameter, Cloneable {

@@ -505,6 +505,9 @@ public class ReverbSpredPrinter {
     };
 
     /**
+     * @param link
+     * @param size
+     * @param reverbSpred
      * @return String representation of reverb spred index.
      */
     public static String reverbSpredToString(boolean link, double size, int reverbSpred) {

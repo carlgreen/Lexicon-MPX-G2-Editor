@@ -28,6 +28,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 /**
  * Hamcrest matcher for generic value parameters.
  *
+ * @param <T> type of data held in generic value
+ *
  * @author Carl Green
  */
 public class IsValue<T> extends BaseMatcher<GenericValue<T>> {

@@ -52,6 +52,8 @@ public class RoutingPrinterTest {
      * Test printing a textual representation of the routing.
      *
      * G2 Blue is a simple all along the upper route routing.
+     *
+     * @throws PrintException if an error is encountered while printing
      */
     @Test
     public void testPrintG2Blue() throws PrintException {
@@ -145,6 +147,8 @@ public class RoutingPrinterTest {
      * Test printing a textual representation of the routing.
      *
      * Guitar Solo splits into the lower route.
+     *
+     * @throws PrintException if an error is encountered while printing
      */
     @Test
     public void testPrintGuitarSolo() throws PrintException {
@@ -239,6 +243,8 @@ public class RoutingPrinterTest {
      * Test printing a textual representation of the routing.
      *
      * Cordovox splits and has mono and stereo paths.
+     *
+     * @throws PrintException if an error is encountered while printing
      */
     @Test
     public void testPrintCordovox() throws PrintException {
@@ -335,6 +341,8 @@ public class RoutingPrinterTest {
      * Test printing a textual representation of the routing.
      *
      * PowerChords has "lower case numbers".
+     *
+     * @throws PrintException if an error is encountered while printing
      */
     @Test
     public void testPrintPowerChords() throws PrintException {
@@ -426,6 +434,8 @@ public class RoutingPrinterTest {
      * Test printing a textual representation of the routing.
      *
      * Pitch Cascade has inactive effects on the lower routing.
+     *
+     * @throws PrintException if an error is encountered while printing
      */
     @Test
     public void testPrintPitchCascase() throws PrintException {
@@ -519,6 +529,8 @@ public class RoutingPrinterTest {
     /**
      * Test printing an invalid routing where it splits into two routes but
      * never combines again.
+     *
+     * @throws PrintException if an error is encountered while printing
      */
     @Test(expected = PrintException.class)
     public void testInvalidRouting() throws PrintException {

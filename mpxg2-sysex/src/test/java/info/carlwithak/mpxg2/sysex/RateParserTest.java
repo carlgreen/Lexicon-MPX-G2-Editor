@@ -34,9 +34,11 @@ public class RateParserTest {
 
     /**
      * Test parse with frequency data.
+     *
+     * @throws ParseException if the data is not valid
      */
     @Test
-    public void testParseFrequency() throws Exception {
+    public void testParseFrequency() throws ParseException {
         byte[] bytes0 = {0, 0, 0, 0, 0, 0};
         Rate expected = new FrequencyRate("Rate", 0.0);
         Rate actual = RateParser.parse("Rate", bytes0);
@@ -55,9 +57,11 @@ public class RateParserTest {
 
     /**
      * Test parse with cycles:beat data.
+     *
+     * @throws ParseException if the data is not valid
      */
     @Test
-    public void testParseBeat() throws Exception {
+    public void testParseBeat() throws ParseException {
         byte[] bytes11 = {1, 0, 1, 0, 1, 0};
         Rate expected = new BeatRate("Rate", 1, 1);
         Rate actual = RateParser.parse("Rate", bytes11);
@@ -76,9 +80,11 @@ public class RateParserTest {
 
     /**
      * Test parse with tap ms data.
+     *
+     * @throws ParseException if the data is not valid
      */
     @Test
-    public void testParseTapMs() throws Exception {
+    public void testParseTapMs() throws ParseException {
         byte[] bytes100 = {4, 6, 0, 0, 4, 0};
         Rate expected = new TapMsRate("Rate", 100);
         Rate actual = RateParser.parse("Rate", bytes100);

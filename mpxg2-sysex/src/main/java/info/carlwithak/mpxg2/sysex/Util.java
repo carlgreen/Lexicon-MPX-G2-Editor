@@ -25,6 +25,7 @@ package info.carlwithak.mpxg2.sysex;
 public class Util {
 
     /**
+     * @param value
      * @return true if value is 1, otherwise false
      */
     public static boolean parseBoolean(final int value) {
@@ -32,6 +33,7 @@ public class Util {
     }
 
     /**
+     * @param value
      * @return value wrapped if it is larger than 32768
      */
     public static int wrapInteger(final int value) {
@@ -39,6 +41,7 @@ public class Util {
     }
 
     /**
+     * @param value
      * @return value unwrapped if it is negative
      */
     public static int unwrapByte(final int value) {
