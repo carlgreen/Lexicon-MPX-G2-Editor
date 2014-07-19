@@ -17,10 +17,8 @@
 package info.carlwithak.mpxg2.model;
 
 import info.carlwithak.mpxg2.model.parameters.FrequencyRate;
-import java.beans.IntrospectionException;
 import org.junit.Test;
 
-import static info.carlwithak.mpxg2.model.Util.testBean;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
