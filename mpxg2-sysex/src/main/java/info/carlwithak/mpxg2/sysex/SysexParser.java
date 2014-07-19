@@ -133,7 +133,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -327,9 +326,7 @@ public class SysexParser {
             routingData.setRouting(routing);
             try {
                 SET_ROUTING_METHODS[i].invoke(program, routingData);
-            } catch (IllegalAccessException e) {
-                throw new ParseException("Could not call \"setRoutingData" + i + "\"", e);
-            } catch (InvocationTargetException e) {
+            } catch (ReflectiveOperationException e) {
                 throw new ParseException("Could not call \"setRoutingData" + i + "\"", e);
             }
         }
@@ -1011,7 +1008,7 @@ public class SysexParser {
         if (baseParameter instanceof GenericValue) {
             try {
                 destinationParameter = ((GenericValue) baseParameter).clone(name);
-            } catch (Exception e) {
+            } catch (CloneNotSupportedException | ReflectiveOperationException e) {
                 throw new ParseException("Could not create patch parameter for " + baseParameter, e);
             }
             if (value != 0x8000) {

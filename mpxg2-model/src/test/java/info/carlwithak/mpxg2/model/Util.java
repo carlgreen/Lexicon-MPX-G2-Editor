@@ -71,7 +71,7 @@ public class Util {
 
                         assertEquals(String.format("Failed while testing property %s", prop.getName()), expectedValue, actualValue);
 
-                    } catch (Exception ex) {
+                    } catch (ReflectiveOperationException ex) {
                         fail(String.format("An exception was thrown while testing the property %s: %s", prop.getName(), ex.toString()));
                     }
                 }
