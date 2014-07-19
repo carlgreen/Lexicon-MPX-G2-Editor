@@ -17,6 +17,7 @@
 
 package info.carlwithak.mpxg2.printing;
 
+import info.carlwithak.mpxg2.model.effects.EffectObject;
 import info.carlwithak.mpxg2.model.effects.algorithms.Aerosol;
 import info.carlwithak.mpxg2.model.effects.algorithms.Ambience;
 import info.carlwithak.mpxg2.model.effects.algorithms.AutoPan;
@@ -109,6 +110,7 @@ import info.carlwithak.mpxg2.model.parameters.TapMsRate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 /**
  * Tests AlgorithmPrinter and all the implementation of AlgorithmPrinter.Printer.
@@ -119,7 +121,7 @@ public class AlgorithmPrinterTest {
 
     @Test(expected=PrintException.class)
     public void testPrintInvalidAlgorithm() throws PrintException {
-        String notAnAlgorithm = "Not an algorithm";
+        EffectObject notAnAlgorithm = mock(EffectObject.class);
         AlgorithmPrinter.print(notAnAlgorithm);
     }
 

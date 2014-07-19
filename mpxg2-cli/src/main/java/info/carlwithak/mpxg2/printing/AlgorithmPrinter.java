@@ -300,7 +300,7 @@ public class AlgorithmPrinter {
        PRINTERS.put(SplitPreamp.class, new SplitPreampPrinter());
     };
 
-    static String print(Object algorithm) throws PrintException {
+    static String print(EffectObject algorithm) throws PrintException {
         if (!PRINTERS.containsKey(algorithm.getClass())) {
             throw new PrintException("No printer found for " + algorithm.getClass());
         }
