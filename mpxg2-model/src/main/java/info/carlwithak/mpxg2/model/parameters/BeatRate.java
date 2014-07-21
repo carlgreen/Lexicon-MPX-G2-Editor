@@ -17,6 +17,8 @@
 
 package info.carlwithak.mpxg2.model.parameters;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+
 /**
  * Holds a rate measure in things (eg cycles, echoes) per beat.
  *
@@ -79,25 +81,10 @@ public class BeatRate implements Rate {
             return false;
         }
         final BeatRate other = (BeatRate) obj;
-        if (this.measures == null) {
-            if (other.measures != null) {
-                return false;
-            }
-        } else {
-            if (!this.measures.equals(other.measures)) {
-                return false;
-            }
-        }
-        if (this.beats == null) {
-            if (other.beats != null) {
-                return false;
-            }
-        } else {
-            if (!this.beats.equals(other.beats)) {
-                return false;
-            }
-        }
-        return true;
+        return new EqualsBuilder()
+                .append(this.measures, other.measures)
+                .append(this.beats, other.beats)
+                .isEquals();
     }
 
     @Override
