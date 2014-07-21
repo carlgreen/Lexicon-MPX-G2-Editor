@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.parameters;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * Holds a rate measure in things (eg cycles, echoes) per beat.
@@ -89,10 +90,10 @@ public class BeatRate implements Rate {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + this.measures;
-        hash = 59 * hash + this.beats;
-        return hash;
+        return new HashCodeBuilder(7, 59)
+                .append(this.measures)
+                .append(this.beats)
+                .toHashCode();
     }
 
     @Override

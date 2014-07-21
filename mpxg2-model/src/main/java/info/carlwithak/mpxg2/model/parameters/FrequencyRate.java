@@ -19,6 +19,7 @@ package info.carlwithak.mpxg2.model.parameters;
 
 import java.text.DecimalFormat;
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * Holds a rate measure in hertz.
@@ -82,9 +83,9 @@ public class FrequencyRate implements Rate {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.frequency) ^ (Double.doubleToLongBits(this.frequency) >>> 32));
-        return hash;
+        return new HashCodeBuilder(5, 13)
+                .append(this.frequency.doubleValue())
+                .toHashCode();
     }
 
     @Override
