@@ -18,6 +18,7 @@
 package info.carlwithak.mpxg2.model.parameters;
 
 import java.text.DecimalFormat;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
  * Holds a rate measure in hertz.
@@ -76,10 +77,7 @@ public class FrequencyRate implements Rate {
         if (this.frequency == null || other.frequency == null) {
             return this.frequency == null && other.frequency == null;
         }
-        if (Double.doubleToLongBits(this.frequency) != Double.doubleToLongBits(other.frequency)) {
-            return false;
-        }
-        return true;
+        return new EqualsBuilder().append(this.frequency.doubleValue(), other.frequency.doubleValue()).isEquals();
     }
 
     @Override
