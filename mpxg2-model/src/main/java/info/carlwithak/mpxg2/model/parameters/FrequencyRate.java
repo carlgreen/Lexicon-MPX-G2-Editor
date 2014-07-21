@@ -20,6 +20,8 @@ package info.carlwithak.mpxg2.model.parameters;
 import java.text.DecimalFormat;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Holds a rate measure in hertz.
@@ -90,6 +92,8 @@ public class FrequencyRate implements Rate {
 
     @Override
     public String toString() {
-        return "FrequencyRate{" + "frequency=" + frequency + '}';
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+                .append("frequency", frequency)
+                .toString();
     }
 }

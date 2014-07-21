@@ -95,6 +95,6 @@ public class TapMsRateTest {
 
     @Test
     public void testToString() {
-        assertEquals("TapMsRate{ms=100}", tapMsRate.toString());
+        assertEquals("TapMsRate[ms=100]", tapMsRate.toString());
     }
 }

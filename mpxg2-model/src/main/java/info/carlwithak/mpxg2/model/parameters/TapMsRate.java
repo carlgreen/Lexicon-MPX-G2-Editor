@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.model.parameters;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  *
@@ -85,7 +87,9 @@ public class TapMsRate implements Rate {
 
     @Override
     public String toString() {
-        return "TapMsRate{" + "ms=" + ms + '}';
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+                .append("ms", ms)
+                .toString();
     }
 
 }

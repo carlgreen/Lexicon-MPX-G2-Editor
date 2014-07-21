@@ -115,6 +115,6 @@ public class BeatRateTest {
 
     @Test
     public void testToString() {
-        assertEquals("BeatRate{measures=1,beats=2}", beatRate.toString());
+        assertEquals("BeatRate[measures=1,beats=2]", beatRate.toString());
     }
 }

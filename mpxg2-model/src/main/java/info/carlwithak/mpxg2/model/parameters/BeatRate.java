@@ -19,6 +19,8 @@ package info.carlwithak.mpxg2.model.parameters;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Holds a rate measure in things (eg cycles, echoes) per beat.
@@ -98,6 +100,9 @@ public class BeatRate implements Rate {
 
     @Override
     public String toString() {
-        return "BeatRate{" + "measures=" + measures + ",beats=" + beats + '}';
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+                .append("measures", measures)
+                .append("beats", beats)
+                .toString();
     }
 }

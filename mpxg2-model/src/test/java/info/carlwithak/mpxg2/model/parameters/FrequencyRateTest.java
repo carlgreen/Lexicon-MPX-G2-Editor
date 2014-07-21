@@ -89,6 +89,6 @@ public class FrequencyRateTest {
 
     @Test
     public void testToString() {
-        assertEquals("FrequencyRate{frequency=1.0}", freqRate.toString());
+        assertEquals("FrequencyRate[frequency=1.0]", freqRate.toString());
     }
 }
