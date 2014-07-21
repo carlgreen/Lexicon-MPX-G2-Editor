@@ -17,6 +17,9 @@
 
 package info.carlwithak.mpxg2.model.parameters;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 /**
  *
  * @author Carl Green
@@ -68,20 +71,16 @@ public class TapMsRate implements Rate {
             return false;
         }
         final TapMsRate other = (TapMsRate) obj;
-        if (this.ms == null) {
-            return other.ms == null;
-        }
-        if (!this.ms.equals(other.ms)) {
-            return false;
-        }
-        return true;
+        return new EqualsBuilder()
+                .append(this.ms, other.ms)
+                .isEquals();
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + this.ms;
-        return hash;
+        return new HashCodeBuilder(7, 53)
+                .append(this.ms)
+                .toHashCode();
     }
 
     @Override
