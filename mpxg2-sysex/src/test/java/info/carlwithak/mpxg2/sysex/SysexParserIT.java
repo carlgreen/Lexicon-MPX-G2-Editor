@@ -59,6 +59,7 @@ import info.carlwithak.mpxg2.model.effects.algorithms.VolumeMono;
 import info.carlwithak.mpxg2.model.effects.algorithms.Wah2;
 import info.carlwithak.mpxg2.model.parameters.BeatRate;
 import info.carlwithak.mpxg2.model.parameters.GenericValue;
+import info.carlwithak.mpxg2.test.IsValue;
 import java.io.File;
 import org.junit.Test;
 
@@ -246,7 +247,7 @@ public class SysexParserIT {
         assertThat(patch1.getDestinationEffectIndex(), is(3));
         assertEquals(0, patch1.getDestinationParameter());
         assertThat(((GenericValue<Integer>) patch1.getDestinationMin()), is(value(2)));
-        assertThat(((GenericValue<Integer>) patch1.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch1.getDestinationMid()), is(IsValue.<Integer>value(null)));
         assertThat(((GenericValue<Integer>) patch1.getDestinationMax()), is(value(30)));
         Patch patch2 = program.getPatch(2);
         assertThat(patch2.source, is(value(16))); // Ctls A/B, see SourceValue.SOURCES
@@ -266,7 +267,7 @@ public class SysexParserIT {
         assertThat(patch3.getDestinationEffectIndex(), is(3));
         assertEquals(6, patch3.getDestinationParameter());
         assertThat(((GenericValue<Integer>) patch3.getDestinationMin()), is(value(1)));
-        assertThat(((GenericValue<Integer>) patch3.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch3.getDestinationMid()), is(IsValue.<Integer>value(null)));
         assertThat(((GenericValue<Integer>) patch3.getDestinationMax()), is(value(15)));
         Patch patch4 = program.getPatch(4);
         assertThat(patch4.source, is(value(16))); // Ctls A/B, see SourceValue.SOURCES
@@ -276,7 +277,7 @@ public class SysexParserIT {
         assertThat(patch4.getDestinationEffectIndex(), is(3));
         assertEquals(7, patch4.getDestinationParameter());
         assertThat(((GenericValue<Integer>) patch4.getDestinationMin()), is(value(1)));
-        assertThat(((GenericValue<Integer>) patch4.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch4.getDestinationMid()), is(IsValue.<Integer>value(null)));
         assertThat(((GenericValue<Integer>) patch4.getDestinationMax()), is(value(4)));
         Patch patch5 = program.getPatch(5);
         assertThat(patch5.source, is(value(157))); // MIDI Toe, see SourceValue.SOURCES
@@ -286,7 +287,7 @@ public class SysexParserIT {
         assertThat(patch5.getDestinationEffectIndex(), is(16));
         assertEquals(0, patch5.getDestinationParameter());
         assertThat(((GenericValue<Integer>) patch5.getDestinationMin()), is(value(0)));
-        assertThat(((GenericValue<Integer>) patch5.getDestinationMid()), is(value((Integer) null)));
+        assertThat(((GenericValue<Integer>) patch5.getDestinationMid()), is(IsValue.<Integer>value(null)));
         assertThat(((GenericValue<Integer>) patch5.getDestinationMax()), is(value(6)));
 
         Knob knob = program.getKnob();
