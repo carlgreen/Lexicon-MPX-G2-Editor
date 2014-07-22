@@ -83,9 +83,6 @@ import static org.junit.Assert.assertTrue;
  */
 public class SysexParserIT {
 
-    /**
-     * Test parsing the G2 Blue preset.
-     */
     @Test
     @SuppressWarnings("unchecked")
     public void testParseG2Blue() throws Exception {
@@ -360,9 +357,6 @@ public class SysexParserIT {
         assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
 
-    /**
-     * Test parsing the Guitar Solo preset.
-     */
     @Test
     public void testParseGuitarSolo() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("002_Guitar_Solo.syx").toURI());
@@ -431,9 +425,6 @@ public class SysexParserIT {
         assertEquals(0, routing.getPathType());
     }
 
-    /**
-     * Test parsing the Cordovox preset.
-     */
     @Test
     public void testParseCordovox() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("003_Cordovox.syx").toURI());
@@ -503,9 +494,6 @@ public class SysexParserIT {
         assertEquals(1, routing.getPathType());
     }
 
-    /**
-     * Test parsing the Power Chords preset.
-     */
     @Test
     public void testParsePowerChords() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("004_Power_Chords.syx").toURI());
@@ -517,9 +505,6 @@ public class SysexParserIT {
         assertTrue(program.getGain() instanceof Overdrive);
     }
 
-    /**
-     * Test parsing the Vybe/Flange preset.
-     */
     @Test
     public void testParseVybeFlange() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("005_Vybe_Flange.syx").toURI());
@@ -534,9 +519,6 @@ public class SysexParserIT {
         assertTrue(program.getGain() instanceof Screamer);
     }
 
-    /**
-     * Test parsing the AnotherBrick preset.
-     */
     @Test
     public void testParseAnotherBrick() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("006_AnotherBrick.syx").toURI());
@@ -547,9 +529,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("AnotherBrick")));
     }
 
-    /**
-     * Test parsing the EnvFilter LP preset.
-     */
     @Test
     public void testParseEnvFilterLP() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("007_EnvFilter_LP.syx").toURI());
@@ -560,9 +539,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("EnvFilter LP")));
     }
 
-    /**
-     * Test parsing the TremoWah preset.
-     */
     @Test
     public void testParseTremoWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("008_TremoWah.syx").toURI());
@@ -619,9 +595,6 @@ public class SysexParserIT {
         assertThat(envelopeGenerator.getResponse(), is(value(64)));
     }
 
-    /**
-     * Test parsing the JamMan preset.
-     */
     @Test
     public void testParseJamMan() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("009_JamMan.syx").toURI());
@@ -630,9 +603,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("JamMan")));
     }
 
-    /**
-     * Test parsing the VH Rig preset.
-     */
     @Test
     public void testParseVHRig() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("010_VH_Rig.syx").toURI());
@@ -641,9 +611,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("VH Rig")));
     }
 
-    /**
-     * Test parsing the Rotary Cab preset.
-     */
     @Test
     public void testParseRotaryCab() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("011_Rotary_Cab.syx").toURI());
@@ -652,9 +619,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Rotary Cab")));
     }
 
-    /**
-     * Test parsing the Little Wing preset.
-     */
     @Test
     public void testParseLittleWing() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("012_Little_Wing.syx").toURI());
@@ -663,9 +627,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Little Wing")));
     }
 
-    /**
-     * Test parsing the TechnoChords preset.
-     */
     @Test
     public void testParseTechnoChords() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("013_TechnoChords.syx").toURI());
@@ -674,9 +635,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TechnoChords")));
     }
 
-    /**
-     * Test parsing the Pedal Swell preset.
-     */
     @Test
     public void testParsePedalSwell() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("014_Pedal_Swell.syx").toURI());
@@ -685,9 +643,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Pedal Swell")));
     }
 
-    /**
-     * Test parsing the Slide Comp preset.
-     */
     @Test
     public void testParseSlideComp() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("015_Slide_Comp.syx").toURI());
@@ -696,9 +651,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Slide Comp")));
     }
 
-    /**
-     * Test parsing the Kiss the Sky preset.
-     */
     @Test
     public void testParseKissTheSky() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("016_Kiss_the_Sky.syx").toURI());
@@ -707,9 +659,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Kiss the Sky")));
     }
 
-    /**
-     * Test parsing the Unchained preset.
-     */
     @Test
     public void testParseUnchained() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("017_Unchained.syx").toURI());
@@ -718,9 +667,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Unchained")));
     }
 
-    /**
-     * Test parsing the Stomp! preset.
-     */
     @Test
     public void testParseStomp() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("018_Stomp!.syx").toURI());
@@ -729,9 +675,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Stomp!")));
     }
 
-    /**
-     * Test parsing the OctaWah preset.
-     */
     @Test
     public void testParseOctaWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("019_OctaWah.syx").toURI());
@@ -740,9 +683,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("OctaWah")));
     }
 
-    /**
-     * Test parsing the Wah & Uni preset.
-     */
     @Test
     public void testParseWahUni() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("020_Wah_&_Uni.syx").toURI());
@@ -751,9 +691,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Wah & Uni")));
     }
 
-    /**
-     * Test parsing the ToeWah/Flng preset.
-     */
     @Test
     public void testParseToeWahFlng() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("021_ToeWah_Flng.syx").toURI());
@@ -762,9 +699,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("ToeWah/Flng")));
     }
 
-    /**
-     * Test parsing the ToeWah/Phas preset.
-     */
     @Test
     public void testParseToeWahPhas() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("022_ToeWah_Phas.syx").toURI());
@@ -773,9 +707,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("ToeWah/Phas")));
     }
 
-    /**
-     * Test parsing the ToeWah/Chrs preset.
-     */
     @Test
     public void testParseToeWahChrs() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("023_ToeWah_Chrs.syx").toURI());
@@ -784,9 +715,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("ToeWah/Chrs")));
     }
 
-    /**
-     * Test parsing the ToeWah/Aero preset.
-     */
     @Test
     public void testParseToeWahAero() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("024_ToeWah_Aero.syx").toURI());
@@ -795,9 +723,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("ToeWah/Aero")));
     }
 
-    /**
-     * Test parsing the ToeWah/Uni preset.
-     */
     @Test
     public void testParseToeWahUni() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("025_ToeWah_Uni.syx").toURI());
@@ -806,9 +731,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("ToeWah/Uni")));
     }
 
-    /**
-     * Test parsing the Wah & Flange preset.
-     */
     @Test
     public void testParseWahFlange() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("026_Wah_&_Flange.syx").toURI());
@@ -817,9 +739,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Wah & Flange")));
     }
 
-    /**
-     * Test parsing the Wah & Phaser preset.
-     */
     @Test
     public void testParseWahPhaser() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("027_Wah_&_Phaser.syx").toURI());
@@ -828,9 +747,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Wah & Phaser")));
     }
 
-    /**
-     * Test parsing the Wah & Chorus preset.
-     */
     @Test
     public void testParseWahChorus() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("028_Wah_&_Chorus.syx").toURI());
@@ -839,9 +755,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Wah & Chorus")));
     }
 
-    /**
-     * Test parsing the Wah & Aero preset.
-     */
     @Test
     public void testParseWahAero() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("029_Wah_&_Aero.syx").toURI());
@@ -850,9 +763,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Wah & Aero")));
     }
 
-    /**
-     * Test parsing the ChrsDlyRvb+ preset.
-     */
     @Test
     public void testParseChrsDlyRvb() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("030_ChrsDlyRvb+.syx").toURI());
@@ -861,9 +771,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("ChrsDlyRvb+")));
     }
 
-    /**
-     * Test parsing the TS Chorus+ preset.
-     */
     @Test
     public void testParseTSChorus() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("031_TS_Chorus+.syx").toURI());
@@ -872,9 +779,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TS Chorus+")));
     }
 
-    /**
-     * Test parsing the TS Delay+ preset.
-     */
     @Test
     public void testParseTSDelay() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("032_TS_Delay+.syx").toURI());
@@ -883,9 +787,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TS Delay+")));
     }
 
-    /**
-     * Test parsing the TS ChrsDly+ preset.
-     */
     @Test
     public void testParseTSChrsDly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("033_TS_ChrsDly+.syx").toURI());
@@ -894,9 +795,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TS ChrsDly+")));
     }
 
-    /**
-     * Test parsing the TS Reverb+ preset.
-     */
     @Test
     public void testParseTSReverb() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("034_TS_Reverb+.syx").toURI());
@@ -905,9 +803,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TS Reverb+")));
     }
 
-    /**
-     * Test parsing the TS ChrsRvb+ preset.
-     */
     @Test
     public void testParseTSChrsRvb() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("035_TS_ChrsRvb+.syx").toURI());
@@ -916,9 +811,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TS ChrsRvb+")));
     }
 
-    /**
-     * Test parsing the CompChorus+ preset.
-     */
     @Test
     public void testParseCompChorus() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("036_CompChorus+.syx").toURI());
@@ -927,9 +819,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("CompChorus+")));
     }
 
-    /**
-     * Test parsing the CompDelay+ preset.
-     */
     @Test
     public void testParseCompDelay() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("037_CompDelay+.syx").toURI());
@@ -938,9 +827,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("CompDelay+")));
     }
 
-    /**
-     * Test parsing the CompChrsDly+ preset.
-     */
     @Test
     public void testParseCompChrsDly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("038_CompChrsDly+.syx").toURI());
@@ -949,9 +835,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("CompChrsDly+")));
     }
 
-    /**
-     * Test parsing the CompChrsRvb+ preset.
-     */
     @Test
     public void testParseCompChrsRvb() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("039_CompChrsRvb+.syx").toURI());
@@ -960,9 +843,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("CompChrsRvb+")));
     }
 
-    /**
-     * Test parsing the PitchCascade preset.
-     */
     @Test
     public void testParsePitchCascade() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("040_PitchCascade.syx").toURI());
@@ -971,9 +851,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("PitchCascade")));
     }
 
-    /**
-     * Test parsing the Pdl Octaves preset.
-     */
     @Test
     public void testParsePdlOctaves() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("041_Pdl_Octaves.syx").toURI());
@@ -982,9 +859,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Pdl Octaves")));
     }
 
-    /**
-     * Test parsing the Pdl 2nds preset.
-     */
     @Test
     public void testParsePdl2nds() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("042_Pdl_2nds.syx").toURI());
@@ -993,9 +867,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Pdl 2nds")));
     }
 
-    /**
-     * Test parsing the Pdl 2~3 b3~3 preset.
-     */
     @Test
     public void testParsePdl2_3_b3_3() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("043_Pdl_2-3_b3-3.syx").toURI());
@@ -1004,9 +875,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Pdl 2~3 b3~3")));
     }
 
-    /**
-     * Test parsing the Pdl 2~3  3~4 preset.
-     */
     @Test
     public void testParsePdl2_3_3_4() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("044_Pdl_2-3_3-4.syx").toURI());
@@ -1015,9 +883,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Pdl 2~3  3~4")));
     }
 
-    /**
-     * Test parsing the Pdl 4~5 5~6 preset.
-     */
     @Test
     public void testParsePdl4_5_5_6() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("045_Pdl_4-5_5-6.syx").toURI());
@@ -1026,9 +891,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Pdl 4~5 5~6")));
     }
 
-    /**
-     * Test parsing the Octaves preset.
-     */
     @Test
     public void testParseOctaves() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("046_Octaves.syx").toURI());
@@ -1037,9 +899,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Octaves")));
     }
 
-    /**
-     * Test parsing the 4ths & 5ths preset.
-     */
     @Test
     public void testParse4ths5ths() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("047_4ths_&_5ths.syx").toURI());
@@ -1048,9 +907,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("4ths & 5ths")));
     }
 
-    /**
-     * Test parsing the E Maj/Min 3 preset.
-     */
     @Test
     public void testParseEMajMin3() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("048_E_Maj_Min_3.syx").toURI());
@@ -1059,9 +915,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("E Maj/Min 3")));
     }
 
-    /**
-     * Test parsing the E Dor/Mix 3 preset.
-     */
     @Test
     public void testParseEDorMix3() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("049_E_Dor_Mix_3.syx").toURI());
@@ -1070,9 +923,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("E Dor/Mix 3")));
     }
 
-    /**
-     * Test parsing the Detune+Trem preset.
-     */
     @Test
     public void testParseDetuneTrem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("050_Detune+Trem.syx").toURI());
@@ -1081,9 +931,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Detune+Trem")));
     }
 
-    /**
-     * Test parsing the Square Trem preset.
-     */
     @Test
     public void testParseSquareTrem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("051_Square_Trem.syx").toURI());
@@ -1092,9 +939,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Square Trem")));
     }
 
-    /**
-     * Test parsing the Trem~AutoWah preset.
-     */
     @Test
     public void testParseTremAutoWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("052_Trem_AutoWah.syx").toURI());
@@ -1103,9 +947,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Trem~AutoWah")));
     }
 
-    /**
-     * Test parsing the Env Trem preset.
-     */
     @Test
     public void testParseEnvTrem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("053_Env_Trem.syx").toURI());
@@ -1114,9 +955,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Env Trem")));
     }
 
-    /**
-     * Test parsing the Env AutoWahs preset.
-     */
     @Test
     public void testParseEnvAutoWahs() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("054_Env_AutoWahs.syx").toURI());
@@ -1125,9 +963,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Env AutoWahs")));
     }
 
-    /**
-     * Test parsing the Chaos Dance preset.
-     */
     @Test
     public void testParseChaosDance() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("055_Chaos_Dance.syx").toURI());
@@ -1136,9 +971,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Chaos Dance")));
     }
 
-    /**
-     * Test parsing the Round Trem preset.
-     */
     @Test
     public void testParseRoundTrem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("056_Round_Trem.syx").toURI());
@@ -1147,9 +979,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Round Trem")));
     }
 
-    /**
-     * Test parsing the Tap AutoWah preset.
-     */
     @Test
     public void testParseTapAutoWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("057_Tap_AutoWah.syx").toURI());
@@ -1158,9 +987,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Tap AutoWah")));
     }
 
-    /**
-     * Test parsing the Verbolo preset.
-     */
     @Test
     public void testParseVerbolo() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("058_Verbolo.syx").toURI());
@@ -1169,9 +995,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Verbolo")));
     }
 
-    /**
-     * Test parsing the DynaChrsTrem preset.
-     */
     @Test
     public void testParseDynaChrsTrem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("059_DynaChrsTrem.syx").toURI());
@@ -1180,9 +1003,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("DynaChrsTrem")));
     }
 
-    /**
-     * Test parsing the Univybe preset.
-     */
     @Test
     public void testParseUnivybe() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("060_Univybe.syx").toURI());
@@ -1191,9 +1011,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Univybe")));
     }
 
-    /**
-     * Test parsing the Octave Fuzz preset.
-     */
     @Test
     public void testParseOctaveFuzz() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("061_Octave_Fuzz.syx").toURI());
@@ -1202,9 +1019,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Octave Fuzz")));
     }
 
-    /**
-     * Test parsing the Phaser preset.
-     */
     @Test
     public void testParsePhaser() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("062_Phaser.syx").toURI());
@@ -1213,9 +1027,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Phaser")));
     }
 
-    /**
-     * Test parsing the EnvFilter preset.
-     */
     @Test
     public void testParseEnvFilter() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("063_EnvFilter.syx").toURI());
@@ -1224,9 +1035,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("EnvFilter")));
     }
 
-    /**
-     * Test parsing the C-Wah preset.
-     */
     @Test
     public void testParseCWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("064_C-Wah.syx").toURI());
@@ -1235,9 +1043,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("C-Wah")));
     }
 
-    /**
-     * Test parsing the Blue Comp preset.
-     */
     @Test
     public void testParseBlueComp() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("065_Blue_Comp.syx").toURI());
@@ -1246,9 +1051,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Blue Comp")));
     }
 
-    /**
-     * Test parsing the Vintage Trem preset.
-     */
     @Test
     public void testParseVintageTrem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("066_Vintage_Trem.syx").toURI());
@@ -1257,9 +1059,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Vintage Trem")));
     }
 
-    /**
-     * Test parsing the IPS TapeSlap preset.
-     */
     @Test
     public void testParseIPSTapeSlap() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("067_IPS_TapeSlap.syx").toURI());
@@ -1268,9 +1067,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("IPS TapeSlap")));
     }
 
-    /**
-     * Test parsing the Space Echo preset.
-     */
     @Test
     public void testParseSpaceEcho() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("068_Space_Echo.syx").toURI());
@@ -1279,9 +1075,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Space Echo")));
     }
 
-    /**
-     * Test parsing the Octabuzz preset.
-     */
     @Test
     public void testParseOctabuzz() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("069_Octabuzz.syx").toURI());
@@ -1290,9 +1083,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Octabuzz")));
     }
 
-    /**
-     * Test parsing the OrangePhase preset.
-     */
     @Test
     public void testParseOrangePhase() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("070_OrangePhase.syx").toURI());
@@ -1301,9 +1091,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("OrangePhase")));
     }
 
-    /**
-     * Test parsing the Gray Flange preset.
-     */
     @Test
     public void testParseGrayFlange() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("071_Gray_Flange.syx").toURI());
@@ -1312,9 +1099,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Gray Flange")));
     }
 
-    /**
-     * Test parsing the Red Comp preset.
-     */
     @Test
     public void testParseRedComp() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("072_Red_Comp.syx").toURI());
@@ -1323,9 +1107,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Red Comp")));
     }
 
-    /**
-     * Test parsing the S/H Pedal preset.
-     */
     @Test
     public void testParseSHPedal() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("073_S_H_Pedal.syx").toURI());
@@ -1334,9 +1115,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("S/H Pedal")));
     }
 
-    /**
-     * Test parsing the V-Wah preset.
-     */
     @Test
     public void testParseVWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("074_V-Wah.syx").toURI());
@@ -1345,9 +1123,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("V-Wah")));
     }
 
-    /**
-     * Test parsing the Modern Trem preset.
-     */
     @Test
     public void testParseModernTrem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("075_Modern_Trem.syx").toURI());
@@ -1356,9 +1131,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Modern Trem")));
     }
 
-    /**
-     * Test parsing the Tap Echo preset.
-     */
     @Test
     public void testParseTapEcho() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("076_Tap_Echo.syx").toURI());
@@ -1367,9 +1139,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Tap Echo")));
     }
 
-    /**
-     * Test parsing the Env Wah preset.
-     */
     @Test
     public void testParseEnvWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("077_Env_Wah.syx").toURI());
@@ -1378,9 +1147,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Env Wah")));
     }
 
-    /**
-     * Test parsing the StereoChorus preset.
-     */
     @Test
     public void testParseStereoChorus() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("078_StereoChorus.syx").toURI());
@@ -1389,9 +1155,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("StereoChorus")));
     }
 
-    /**
-     * Test parsing the ClasscDetune preset.
-     */
     @Test
     public void testParseClasscDetune() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("079_ClasscDetune.syx").toURI());
@@ -1400,9 +1163,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("ClasscDetune")));
     }
 
-    /**
-     * Test parsing the Tone Boost preset.
-     */
     @Test
     public void testParseToneBoost() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("080_Tone_Boost.syx").toURI());
@@ -1411,9 +1171,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Tone Boost")));
     }
 
-    /**
-     * Test parsing the Crunch Boost preset.
-     */
     @Test
     public void testParseCrunchBoost() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("081_Crunch_Boost.syx").toURI());
@@ -1422,9 +1179,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Crunch Boost")));
     }
 
-    /**
-     * Test parsing the TS Lead preset.
-     */
     @Test
     public void testParseTSLead() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("082_TS_Lead.syx").toURI());
@@ -1433,9 +1187,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TS Lead")));
     }
 
-    /**
-     * Test parsing the TS Boost preset.
-     */
     @Test
     public void testParseTSBoost() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("083_TS_Boost.syx").toURI());
@@ -1444,9 +1195,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TS Boost")));
     }
 
-    /**
-     * Test parsing the OD Lead preset.
-     */
     @Test
     public void testParseODLead() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("084_OD_Lead.syx").toURI());
@@ -1455,9 +1203,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("OD Lead")));
     }
 
-    /**
-     * Test parsing the OD Boost preset.
-     */
     @Test
     public void testParseODBoost() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("085_OD_Boost.syx").toURI());
@@ -1466,9 +1211,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("OD Boost")));
     }
 
-    /**
-     * Test parsing the Dist Lead preset.
-     */
     @Test
     public void testParseDistLead() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("086_Dist_Lead.syx").toURI());
@@ -1477,9 +1219,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Dist Lead")));
     }
 
-    /**
-     * Test parsing the Dist Boost preset.
-     */
     @Test
     public void testParseDistBoost() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("087_Dist_Boost.syx").toURI());
@@ -1488,9 +1227,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Dist Boost")));
     }
 
-    /**
-     * Test parsing the Fuzz 1 preset.
-     */
     @Test
     public void testParseFuzz1() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("088_Fuzz_1.syx").toURI());
@@ -1499,9 +1235,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Fuzz 1")));
     }
 
-    /**
-     * Test parsing the Fuzz 2 preset.
-     */
     @Test
     public void testParseFuzz2() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("089_Fuzz_2.syx").toURI());
@@ -1510,9 +1243,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Fuzz 2")));
     }
 
-    /**
-     * Test parsing the Jam Chrs+ preset.
-     */
     @Test
     public void testParseJamChrs() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("090_Jam_Chrs+.syx").toURI());
@@ -1521,9 +1251,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam Chrs+")));
     }
 
-    /**
-     * Test parsing the Jam 1 Uni+ preset.
-     */
     @Test
     public void testParseJam1Uni() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("091_Jam_1__Uni+.syx").toURI());
@@ -1532,9 +1259,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam 1  Uni+")));
     }
 
-    /**
-     * Test parsing the Jam 1 S&H+ preset.
-     */
     @Test
     public void testParseJam1SH() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("092_Jam_1_S&H+.syx").toURI());
@@ -1543,9 +1267,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam 1 S&H+")));
     }
 
-    /**
-     * Test parsing the Jam 1 Env+ preset.
-     */
     @Test
     public void testParseJam1Env() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("093_Jam_1_Env+.syx").toURI());
@@ -1554,9 +1275,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam 1 Env+")));
     }
 
-    /**
-     * Test parsing the Jam1Cordovox preset.
-     */
     @Test
     public void testParseJam1Cordovox() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("094_Jam1Cordovox.syx").toURI());
@@ -1565,9 +1283,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam1Cordovox")));
     }
 
-    /**
-     * Test parsing the Jam 2 Flange preset.
-     */
     @Test
     public void testParseJam2Flange() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("095_Jam_2_Flange.syx").toURI());
@@ -1576,9 +1291,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam 2 Flange")));
     }
 
-    /**
-     * Test parsing the Jam 2 Phase preset.
-     */
     @Test
     public void testParseJam2Phase() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("096_Jam_2_Phase.syx").toURI());
@@ -1587,9 +1299,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam 2 Phase")));
     }
 
-    /**
-     * Test parsing the Jam 2 Pitch+ preset.
-     */
     @Test
     public void testParseJam2Pitch() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("097_Jam_2_Pitch+.syx").toURI());
@@ -1598,9 +1307,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam 2 Pitch+")));
     }
 
-    /**
-     * Test parsing the Jam 2 Trem preset.
-     */
     @Test
     public void testParseJam2Trem() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("098_Jam_2_Trem.syx").toURI());
@@ -1609,9 +1315,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam 2 Trem")));
     }
 
-    /**
-     * Test parsing the Jam2AutoWah preset.
-     */
     @Test
     public void testParseJam2AutoWah() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("099_Jam2AutoWah.syx").toURI());
@@ -1620,9 +1323,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Jam2AutoWah")));
     }
 
-    /**
-     * Test parsing the VintageRig preset.
-     */
     @Test
     public void testParseVintageRig_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("100_VintageRig.syx").toURI());
@@ -1631,9 +1331,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("VintageRig")));
     }
 
-    /**
-     * Test parsing the Pdl Octaves preset.
-     */
     @Test
     public void testParsePdlOctaves_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("101_Pdl_Octaves.syx").toURI());
@@ -1642,9 +1339,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Pdl Octaves")));
     }
 
-    /**
-     * Test parsing the TechnoChords preset.
-     */
     @Test
     public void testParseTechnoChords_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("102_TechnoChords.syx").toURI());
@@ -1653,9 +1347,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("TechnoChords")));
     }
 
-    /**
-     * Test parsing the Cordovox preset.
-     */
     @Test
     public void testParseCordovox_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("103_Cordovox.syx").toURI());
@@ -1664,9 +1355,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Cordovox")));
     }
 
-    /**
-     * Test parsing the Analog  Echo preset.
-     */
     @Test
     public void testParseAnalogEcho_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("104_Analog__Echo.syx").toURI());
@@ -1675,9 +1363,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Analog  Echo")));
     }
 
-    /**
-     * Test parsing the Wah & Uni preset.
-     */
     @Test
     public void testParseWahUni_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("105_Wah_&_Uni.syx").toURI());
@@ -1686,9 +1371,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Wah & Uni")));
     }
 
-    /**
-     * Test parsing the EnvFilter LP preset.
-     */
     @Test
     public void testParseEnvFilterLP_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("106_EnvFilter_LP.syx").toURI());
@@ -1697,9 +1379,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("EnvFilter LP")));
     }
 
-    /**
-     * Test parsing the InfiniteEcho preset.
-     */
     @Test
     public void testParseInfiniteEcho_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("107_InfiniteEcho.syx").toURI());
@@ -1708,9 +1387,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("InfiniteEcho")));
     }
 
-    /**
-     * Test parsing the Fuzz Wah preset.
-     */
     @Test
     public void testParseFuzzWah_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("108_Fuzz_Wah.syx").toURI());
@@ -1719,9 +1395,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("Fuzz Wah")));
     }
 
-    /**
-     * Test parsing the JamMan preset.
-     */
     @Test
     public void testParseJamMan_InputOnly() throws Exception {
         File preset = new File(this.getClass().getClassLoader().getResource("109_JamMan.syx").toURI());
@@ -1730,9 +1403,6 @@ public class SysexParserIT {
         assertThat(program.getProgramName(), is(text("JamMan")));
     }
 
-    /**
-     * Test parsing the Clean Slate preset, which has pretty much nothing defined.
-     */
     @Test
     @SuppressWarnings("unchecked")
     public void testParseCleanSlate() throws Exception {
@@ -1977,9 +1647,6 @@ public class SysexParserIT {
         assertEquals(301, program.getProgramNumber()); // 301 is the active program
     }
 
-    /**
-     * Test parsing the Unity Gain preset, which has a little more than Clean Slate defined.
-     */
     @Test
     @SuppressWarnings("unchecked")
     public void testParseUnityGain() throws Exception {
